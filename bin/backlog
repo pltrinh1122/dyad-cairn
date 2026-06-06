@@ -1,0 +1,61 @@
+#!/bin/bash
+# Orchestrator CLI for the cross-repo boundary
+
+if [ "$1" == "list" ]; then
+    python3 -c '
+import sys
+sys.path.append(".")
+from skills.github_client import fetch_open_issues
+issues = fetch_open_issues()
+if not issues:
+    print("Backlog is empty.")
+else:
+    print("--- REMOTE BACKLOG (GitHub Issues) ---")
+    for issue in issues:
+        print(f"[{issue[\"number\"]}] {issue[\"title\"]} ({issue[\"url\"]})")
+'
+elif [ "$1" == "rack" ]; then
+    if [ -z "$2" ]; then
+        echo "Usage: ./bin/backlog rack <node_id_from_frontier>"
+        exit 1
+    fi
+    # Translate a local DAG node into a remote GH Issue
+    python3 -c "
+import sys
+import yaml
+sys.path.append('.')
+from skills.github_client import create_issue
+
+node_id = sys.argv[1]
+with open('artifacts/frontier_state.yml', 'r') as f:
+    state = yaml.safe_load(f)
+
+if node_id not in state['nodes']:
+    print(f'ERROR: Node {node_id} not found in local DAG.')
+    sys.exit(1)
+
+node = state['nodes'][node_id]
+title = f\"[Node] {node.get('title', node_id)}\"
+body = f\"**Goal:** {node.get('goal', 'No goal specified.')}\\n\\n**Dependencies:** {node.get('dependencies', [])}\"
+
+print(f'Pushing {node_id} to remote backlog...')
+url = create_issue(title, body)
+print(f'Successfully racked: {url}')
+" "$2"
+
+elif [ "$1" == "view" ]; then
+    if [ -z "$2" ]; then
+        echo "Usage: ./bin/backlog view <issue_number>"
+        exit 1
+    fi
+    python3 -c "
+import sys
+sys.path.append('.')
+from skills.github_client import view_issue
+print(view_issue(sys.argv[1]))
+" "$2"
+
+else
+    echo "Usage: ./bin/backlog <list|rack <id>|view <id>>"
+    exit 1
+fi
