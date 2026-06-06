@@ -9,7 +9,7 @@ nodes:
     title: Cut First Stone (Hard Guardrails Playbook)
     goal: Extract the hard-guardrails lesson into a formal stone.yaml package and
       PR it to the commons/ Library.
-    status: ACTIVE
+    status: IN_REVIEW
     dependencies:
     - node_0
   node_2:

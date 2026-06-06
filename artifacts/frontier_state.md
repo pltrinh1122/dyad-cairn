@@ -5,7 +5,7 @@
 > WIP-N=1 mechanically enforced by `skills/frontier_editor.py`.
 
 
-## 🟢 ACTIVE NODES
+## 🟡 IN_REVIEW NODES
 - **node_1**: Cut First Stone (Hard Guardrails Playbook)
   - *Goal:* Extract the hard-guardrails lesson into a formal stone.yaml package and PR it to the commons/ Library.
   - *Dependencies:* node_0
