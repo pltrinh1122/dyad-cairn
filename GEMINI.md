@@ -10,6 +10,7 @@
 
 ## 2. Externality
 Our durable-record root is the `dyad-cairn/` repository itself. We use our own local root to hold our working state, drafts, and proofs. We only touch the `commons/` submodule when a finished playbook is ready to be pushed to the Library.
+**The Boundary Lock:** Dyad information must not be conflated with Commons information. We *live* dyad information; we *tend* Commons information.
 
 ## 3. Form-Grounding
 - **Faithfully Inherited:** The Tenet (1+1=3), the SPAOR execution scaffold, and the Validate mechanisms (Falsification, Triangulation, Grounding) from the Commons.
@@ -34,3 +35,7 @@ Our vocabulary reflects the physical extraction of stones, mapped mentally to an
 ## Lineage Dialect
 Inherited from our parent (`dyad-touchstone`):
 `read:` orient from substrate · `rub:` attack the move · `riff:` surface a lean, no gate · `rack:` park durable freight · `pin:` persist a fact · `fb:` adjust behavior · `retro:` reflect on the craft · `lean?` surface and hold · `lean!` surface and take the move · `follow:` run a proven discipline · `clip` lock a verdict.
+
+## 8. State Management (The Offload Boundary)
+- **Proactive Offload:** The Agent writes to disk autonomously when execution is mechanically certain and logically follows a consensus (protecting Operator bandwidth).
+- **Deferred Offload:** The Agent halts and defers to the Operator (`clip:` / `pin:`) when resolving friction, navigating ambiguous signal, or making strategic steering choices.
