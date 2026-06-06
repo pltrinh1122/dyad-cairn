@@ -1,21 +1,28 @@
 nodes:
   node_0:
     title: Instantiate Workflow State-Machine
-    goal: Build the physical tracking layer for our SPAO loop (this Frontier DAG and
-      the LIFO Execution Stack).
+    goal: Build the physical tracking layer for our SPAOR loop (this Frontier DAG
+      and the LIFO Execution Stack).
     status: DONE
     dependencies: []
   node_1:
     title: Cut First Stone (Hard Guardrails Playbook)
     goal: Extract the hard-guardrails lesson into a formal stone.yaml package and
       PR it to the commons/ Library.
-    status: IN_REVIEW
+    status: DONE
     dependencies:
     - node_0
-  node_2:
-    title: The Mason Toolchain (The Chisel)
-    goal: Build the ./bin/mason universal validation and installation CLI for the
-      Commons.
+  node_2a:
+    title: Mason Toolchain Scaffold & CLI Skeleton
+    goal: Build the generic CLI shell (./bin/mason) including argument parsing, logging,
+      and I/O.
+    status: DONE
+    dependencies:
+    - node_0
+  node_2b:
+    title: Mason Validation Engine & Installation Logic
+    goal: Implement the strict schema validation against the local stone.yaml schema
+      format and installation logic.
     status: BLOCKED
     dependencies:
-    - node_1
+    - node_2a
