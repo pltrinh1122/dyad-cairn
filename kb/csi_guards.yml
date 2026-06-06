@@ -1,0 +1,18 @@
+# The CSI Guard Registry
+# This file tracks all active mechanical traps and their specific closure keys.
+# It explicitly defines whether a guard is Symmetric (State-Bound) or Asymmetric (Process-Bound).
+
+guards:
+  - id: topology_mass_monitor
+    type: Symmetric
+    description: "Monitors the file count (mass) of skills/, bin/, and kb/ to prevent monolithic degradation."
+    armed_condition: "File count in a monitored directory exceeds its CAPACITY_LIMIT in tests/test_topology_monitor.py"
+    disarmed_condition: "Directory is physically compressed (refactored), OR limit is raised following an Ontological Bond (Retro)."
+    trigger_location: "tests/test_topology_monitor.py (CI Gate)"
+
+  - id: retro_lock
+    type: Asymmetric
+    description: "Locks the SPAOR state machine to mandate cognitive reflection (CSS format) before resuming payload execution."
+    armed_condition: "Execution of ./bin/retro-start (creates dyad-state/RETRO_ACTIVE.lock)"
+    disarmed_condition: "Execution of ./bin/retro <summary> <path/to/retro.md> which validates the CSS format and syncs the ledger."
+    trigger_location: "All orchestration wrappers (e.g., ./bin/node, ./bin/backlog)"
