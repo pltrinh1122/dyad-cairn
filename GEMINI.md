@@ -40,8 +40,3 @@ Inherited from our parent (`dyad-touchstone`):
 - **Proactive Offload:** The Agent writes to disk autonomously when execution is mechanically certain and logically follows a consensus (protecting Operator bandwidth).
 - **Deferred Offload:** The Agent halts and defers to the Operator (`clip:` / `pin:`) when resolving friction, navigating ambiguous signal, or making strategic steering choices.
 
-## 9. The Ledger Structure
-`GEMINI.md` serves strictly as the repository for Dyad knowledge, never Commons data. It is partitioned into two functions:
-- **The Anchor:** Proven, load-bearing structural rules that govern our Techne (like this document).
-- **The Index:** Pointers to volatile, unproven Dyad state (scratchpads, drafts of rules) located within our local root. Knowledge stays in the index until it survives enough friction to earn Anchor status.
-  - [Bootstrap Retro: Philosophical Fuel](dyad-state/bootstrap-retro.md)
