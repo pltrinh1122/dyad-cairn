@@ -28,8 +28,8 @@ Beyond standard Operator steering, the human half of this dyad uniquely owns:
 **No Pure Generative (G) Execution.**
 Every generated script or logic block must be immediately paired with a deterministic automated test suite (V). Manual inspection is forbidden as a substitute for TDD. Code is not locked until `./bin/run-tests` passes mechanically.
 
-**The PR Gate Invariant (WIP-N=1).**
-The Agent must never commit directly to `main`. Execution happens strictly on a branch, culminating in a Pull Request. The CI tests provide the Mechanical Gate, but the Operator must manually merge the PR to provide the Intent Gate. This ensures absolute HITL (Human-in-the-Loop) safety.
+**The PR Gate Invariant (Parallel WIP Unlocked).**
+The Agent must never commit directly to `main`. Execution happens strictly on a branch, culminating in a Pull Request. The Agent may operate multiple concurrent branches (WIP-N > 1) to prevent velocity throttling. The CI tests provide the Mechanical Gate, but the Operator must manually merge the PR to provide the Intent Gate. This ensures absolute HITL safety without bottlenecking the engine.
 
 ## 6 & 7. Ontology & Vocabulary (The ETL Mapping)
 Our vocabulary reflects the physical extraction of stones, mapped mentally to an ETL pipeline:
