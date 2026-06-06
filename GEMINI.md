@@ -44,5 +44,12 @@ Inherited from our parent (`dyad-touchstone`):
 
 ## 8. State Management (The Offload Boundary)
 - **Proactive Offload:** The Agent writes to disk autonomously when execution is mechanically certain and logically follows a consensus (protecting Operator bandwidth).
-- **Deferred Offload:** The Agent halts and defers to the Operator (`clip:` / `pin:`) when resolving friction, navigating ambiguous signal, or making strategic steering choices. The `pin:` command is executed exclusively via the deterministic `./bin/pin` script to physically enforce the append-only Ledger invariant.
+- **Deferred Offload:** The Agent halts and defers to the Operator (`clip:` / `pin:` / `retro:`) when resolving friction, navigating ambiguous signal, or making strategic steering choices. The dialect commands are executed exclusively via their deterministic scripts (`./bin/clip`, `./bin/pin`, `./bin/retro`) to physically enforce the append-only Ledger invariant.
+
+## 9. Topology of the Local Root
+The Dyad's internal filesystem is strictly partitioned to prevent conflation of mass and motion:
+- **`dyad-state/`**: Highly volatile scratchpads and active execution state.
+- **`retros/`**: The harvesting ground. Holds dense, crystallized Operator intent and philosophical fuel.
+- **`GEMINI.md`**: The Anchor. Proven, load-bearing structural rules of the Engine.
+- **`DYAD_LEDGER.md`**: The Map. An immutable, append-only chronological log of all state transitions, pointing to the mass stored in the folders above.
 
