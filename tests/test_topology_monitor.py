@@ -28,8 +28,10 @@ def test_topology_capacity(directory, limit):
     
     # The Cybernetic Steering Vector (CSI) for refactoring
     assert mass <= limit, (
-        f"🚨 TOPOLOGY MASS EXCEEDED in '{directory}/'. "
-        f"Current: {mass}, Limit: {limit}. "
-        f"It is time to refactor the repo organization (e.g., sub-packages). "
-        f"Do not bypass this test."
+        f"🚨 TOPOLOGY MASS EXCEEDED in '{directory}/' (Current: {mass}, Limit: {limit}).\n"
+        f"The Topology Mass Monitor is ARMED. The CI gate is physically sealed.\n"
+        f"To DISARM this monitor, you must satisfy one of the following physical conditions:\n"
+        f"  1. COMPRESS: Physically refactor '{directory}/' (e.g., into sub-packages) to reduce its mass below {limit}.\n"
+        f"  2. EXPAND: Raise the limit in this file, BUT this strictly requires forging a new Ontological Bond (a formal `retro:`) proving the Dyad's cognitive capacity has permanently scaled.\n"
+        f"VIOLATION: Silently increasing the limit without an anchoring Retro, or smoothing the mortar to bypass this trigger, violates the Orthogonality Invariant."
     )
