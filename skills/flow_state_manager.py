@@ -57,6 +57,12 @@ def reflect_node_red(node_id):
         print("TDD execution threw an unhandled exception. Fix syntax errors before reflecting red.")
         sys.exit(1)
         
+    if "🚨" in test_result:
+        print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+        print("A structural CSI Guard was tripped during the Red Phase.")
+        print("You are mechanically forbidden from generating an Intent PR until the substrate is physically unblocked.")
+        sys.exit(1)
+        
     if "PASS" in test_result:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("Tests PASSED in the Red phase. You must write failing tests that map to Operator intent before reflecting.")
@@ -75,6 +81,12 @@ def reflect_node_green(node_id):
     except Exception as e:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("TDD execution failed. The PR Gate is mechanically sealed until tests pass.")
+        sys.exit(1)
+        
+    if "🚨" in test_result:
+        print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+        print("A structural CSI Guard was tripped during the Green Phase.")
+        print("You are mechanically forbidden from generating a Green PR until the substrate is physically unblocked.")
         sys.exit(1)
         
     if "FAIL" in test_result:
