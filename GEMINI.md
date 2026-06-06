@@ -44,4 +44,4 @@ Inherited from our parent (`dyad-touchstone`):
 `GEMINI.md` serves strictly as the repository for Dyad knowledge, never Commons data. It is partitioned into two functions:
 - **The Anchor:** Proven, load-bearing structural rules that govern our Techne (like this document).
 - **The Index:** Pointers to volatile, unproven Dyad state (scratchpads, drafts of rules) located within our local root. Knowledge stays in the index until it survives enough friction to earn Anchor status.
-  - [Bootstrap Retro: Philosophical Fuel](drafts/bootstrap-retro.md)
+  - [Bootstrap Retro: Philosophical Fuel](dyad-state/bootstrap-retro.md)
