@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ "$1" == "frontier" ]; then
+    python3 skills/frontier_reader.py
+else
+    echo "Usage: ./bin/read frontier"
+    exit 1
+fi
