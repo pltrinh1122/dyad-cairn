@@ -38,5 +38,5 @@ Inherited from our parent (`dyad-touchstone`):
 
 ## 8. State Management (The Offload Boundary)
 - **Proactive Offload:** The Agent writes to disk autonomously when execution is mechanically certain and logically follows a consensus (protecting Operator bandwidth).
-- **Deferred Offload:** The Agent halts and defers to the Operator (`clip:` / `pin:`) when resolving friction, navigating ambiguous signal, or making strategic steering choices.
+- **Deferred Offload:** The Agent halts and defers to the Operator (`clip:` / `pin:`) when resolving friction, navigating ambiguous signal, or making strategic steering choices. The `pin:` command is executed exclusively via the deterministic `./bin/pin` script to physically enforce the append-only Ledger invariant.
 
