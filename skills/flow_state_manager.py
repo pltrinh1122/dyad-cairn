@@ -20,9 +20,24 @@ def checkout_node(node_id):
 
 def reflect_node(node_id):
     print(f"[FLOW] Reflecting Node {node_id}...")
-    # Commits code, opens PR, and updates frontier status
-    print("Code committed and PR generation simulated.")
-    # Here we would call frontier_editor.py to change status to IN_REVIEW
+    
+    # 1. Push branch to remote
+    # Get current branch
+    branch = run_cmd("git rev-parse --abbrev-ref HEAD")
+    print(f"[FLOW] Pushing branch {branch} to remote...")
+    run_cmd(f"git push -u origin {branch}")
+    
+    # 2. Open Pull Request
+    print("[FLOW] Generating Pull Request...")
+    # Import inside function to avoid circular/early imports if not needed
+    sys.path.append('.')
+    from skills.github_client import create_pr
+    title = f"[Node] Complete {node_id}"
+    body = f"Automated PR for Node {node_id} completion."
+    pr_url = create_pr(title, body)
+    print(f"[FLOW] PR successfully opened at: {pr_url}")
+    
+    # 3. Transition DAG Status
     run_cmd(f"python3 skills/frontier_editor.py")
     print(f"[FLOW] Node {node_id} status transitioned to IN_REVIEW. Execution halted.")
 

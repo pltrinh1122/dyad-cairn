@@ -22,5 +22,9 @@ def view_issue(issue_id):
     out = run_gh_cmd(["issue", "view", str(issue_id)])
     return out
 
+def create_pr(title, body):
+    out = run_gh_cmd(["pr", "create", "--title", title, "--body", body])
+    return out.strip()
+
 if __name__ == "__main__":
     print("This is a stateless skill module for GitHub API. Do not run directly.")
