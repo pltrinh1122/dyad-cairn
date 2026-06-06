@@ -1,0 +1,3 @@
+#!/bin/bash
+# Orchestrator CLI for the SPAO loop lifecycle
+python3 skills/flow_state_manager.py "$@"
