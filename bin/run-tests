@@ -1,3 +1,7 @@
 #!/bin/bash
 # Orchestrator CLI for TDD execution
+if ! python3 -c "import pytest" &> /dev/null || ! python3 -c "import yaml" &> /dev/null; then
+    echo "[TEST HARNESS] Bootstrapping missing test dependencies..."
+    pip install pytest pyyaml --break-system-packages --quiet || true
+fi
 python3 skills/testing_harness.py "$@"
