@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+import argparse
+import sys
+import logging
+
+def main():
+    parser = argparse.ArgumentParser(
+        prog="mason",
+        description="The CLI gatekeeper for extracting and installing stones."
+    )
+    
+    parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose debug context")
+    
+    subparsers = parser.add_subparsers(dest="command", required=True)
+    
+    parser_validate = subparsers.add_parser("validate", help="Assert schema integrity of a local stone")
+    parser_validate.add_argument("path", help="Path to the stone.yaml")
+    
+    parser_install = subparsers.add_parser("install", help="Formalize a stone into the local dyad")
+    parser_install.add_argument("path", help="Path to the stone.yaml")
+    
+    args = parser.parse_args()
+    
+    if args.verbose:
+        logging.basicConfig(level=logging.DEBUG)
+        logging.debug("[CYBERNETIC STEERING VECTOR] Verbose context engaged.")
+    else:
+        logging.basicConfig(level=logging.INFO)
+        
+    if args.command == "validate":
+        print(f"Targeting: {args.path}")
+    elif args.command == "install":
+        print(f"Targeting: {args.path}")
+
+if __name__ == "__main__":
+    main()
