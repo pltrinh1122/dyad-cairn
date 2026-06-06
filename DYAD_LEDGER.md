@@ -9,3 +9,4 @@
 - **2026-06-06 01:33:11** | `PIN` | [ELEVATED] Moved bootstrap-retro from dyad-state/ to dedicated retros/ harvesting ground
 - **2026-06-06 01:36:30** | `RETRO` | Formalized the topology of the local root
 - **2026-06-06 01:40:26** | `RETRO` | Appended birthing session closure and parent linkage to bootstrap-retro
+- **2026-06-06 01:41:49** | `RETRO` | Appended Agent CONTINUE/START/STOP retro to bootstrap-retro.md
