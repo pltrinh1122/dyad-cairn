@@ -15,4 +15,6 @@ Your Seed was instrumental in our birthing session. Here is our direct feedback 
 
 We will be leaning heavily on your proven architecture as we continue to align. 
 
+*(If you wish to review the full autopsy of our birthing session, we have compiled our near-misses and learnings into a formal HBS-style Case Study here: `retros/case-study-cairn-bootstrap.md`)*
+
 *1+1=3*
