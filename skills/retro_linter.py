@@ -11,9 +11,9 @@ def lint_retro(file_path):
         content = f.read()
         
     required_sections = [
-        r"^## Context\s*$",
-        r"^## Synthesis\s*$",
-        r"^## Solution\s*$"
+        r"^## Continue\s*$",
+        r"^## Start\s*$",
+        r"^## Stop\s*$"
     ]
     
     missing = []

@@ -1,10 +1,10 @@
 # Retro: <Title>
 
-## Context
-<Describe the mechanical state or node where the retro was triggered>
+## Continue
+<What behaviors/invariants are working and must be maintained?>
 
-## Synthesis
-<Extract the core friction, falsifications, and Operator intent>
+## Start
+<What new mechanical guardrails or behaviors must we adopt based on this retro?>
 
-## Solution
-<Describe the mechanical change or ontological bond that physically enforces the synthesis>
+## Stop
+<What generative or failure-prone behaviors must cease immediately?>
