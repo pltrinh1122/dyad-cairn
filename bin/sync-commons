@@ -1,0 +1,27 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+    echo "Usage: ./bin/sync-commons \"<Synthesis of changes>\""
+    echo "You must provide a cognitive synthesis of the upstream changes being pulled."
+    exit 1
+fi
+
+echo "=========================================================================="
+echo "SYNCHRONIZING COMMONS SUBMODULE"
+echo "=========================================================================="
+
+cd commons || exit 1
+git checkout main
+git pull --rebase origin main
+if [ $? -ne 0 ]; then
+    echo "[ERROR] Failed to pull from commons upstream."
+    exit 1
+fi
+cd ..
+
+python3 skills/ledger_manager.py COMMONS_SYNC "$1"
+if [ $? -eq 0 ]; then
+    echo "[PASS] Commons synchronized and synthesis anchored to ledger."
+else
+    echo "[ERROR] Failed to anchor synthesis to ledger."
+    exit 1
+fi

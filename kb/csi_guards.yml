@@ -16,3 +16,10 @@ guards:
     armed_condition: "Execution of ./bin/retro-start (creates dyad-state/RETRO_ACTIVE.lock)"
     disarmed_condition: "Execution of ./bin/retro <summary> <path/to/retro.md> which validates the CSS format and syncs the ledger."
     trigger_location: "All orchestration wrappers (e.g., ./bin/node, ./bin/backlog)"
+
+  - id: commons_drift
+    type: Asymmetric
+    description: "Traps the CI Gate if the commons/ library submodule diverges from upstream origin/main."
+    armed_condition: "Upstream commits detected by tests/test_commons_sync.py"
+    disarmed_condition: "Execution of ./bin/sync-commons <synthesis> which pulls the changes and physically anchors the cognitive ingestion to the Ledger."
+    trigger_location: "tests/test_commons_sync.py (CI Gate)"
