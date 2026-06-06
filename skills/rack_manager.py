@@ -1,8 +1,9 @@
 import sys
 import yaml
 import os
+from datetime import datetime
 
-YML_FILE = "artifacts/prompt_backlog.yml"
+YML_FILE = "artifacts/rack_state.yml"
 
 def load_stack():
     if not os.path.exists(YML_FILE):

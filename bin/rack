@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 skills/prompt_manager.py "$@"
+python3 skills/rack_manager.py "$@"
