@@ -12,3 +12,21 @@
 - **2026-06-06 01:41:49** | `RETRO` | Appended Agent CONTINUE/START/STOP retro to bootstrap-retro.md
 - **2026-06-06 01:57:37** | `RETRO` | Formalized the birthing session into an HBS Case Study
 - **2026-06-06 01:58:44** | `RETRO` | Session 1 formally closed. Structural definition locked: A session is the unit of activity bounded by retro commands.
+- **2026-06-06 02:06:30** | `CLIP` | Built decentralized mailbox polling engine (V-gate cleared)
+- **2026-06-06 02:12:59** | `CLIP` | Built GH CLI abstraction wrapper and broadcasted state to Commons
+- **2026-06-06 02:15:34** | `CLIP` | Adjusted behavior: PR Gate Invariant requires physical PR creation and CI/conflict clearance before halting for Operator
+- **2026-06-06 02:26:40** | `CLIP` | Granted standing permission to exchange messages with Touchstone bypassing PR Gate. Establishing 10-minute polling cadence.
+- **2026-06-06 02:39:33** | `CLIP` | Received 'welcome' and 're-hello' payloads from Touchstone. Drafting reply and preparing to promote first Stone to Commons.
+- **2026-06-06 02:42:49** | `RETRO` | Session 2 closed. Synthesized Operator's reflection on dyad proficiency and logged architectural milestones.
+- **2026-06-06 02:43:44** | `CLIP` | Adjusted behavior: Agent must perform and append its own self-retrospective when responding to an Operator retro.
+- **2026-06-06 02:48:59** | `PIN` | Proposed invariants for Quarry -> Stone pipeline (Semantic Grounding, No-Interpolation, Validation, Boundary Lock, Commons PR Gate). Awaiting falsification rubs.
+- **2026-06-06 02:54:17** | `PIN` | Aristotelian Invariants for Quarry->Stone Pipeline: Material (Grounding), Efficient (Extraction/Logic), Formal (Verification), Final (Boundary/Telos).
+- **2026-06-06 02:59:28** | `CLIP` | The Dyad does not appraise value; it guarantees structural integrity (the 4 Invariants). The Commons PR Gate serves as the appraisal mechanism for any produced Stone.
+- **2026-06-06 03:00:10** | `CLIP` | Locked Verdict: The 4 Aristotelian Invariants (Material/Grounding, Efficient/Extraction, Formal/Verification, Final/Boundary) are the official, un-smoothed rules for producing a Stone.
+- **2026-06-06 03:13:35** | `PIN` | Stone Protocol Design: The Canonical Manifest (stone.yaml) utilizing polymorphism via 'type' field to support an evolving taxonomy of Stones (Playbooks, Disciplines, Ontologies).
+- **2026-06-06 03:19:05** | `CLIP` | The Dyad is not expanding its Telos; it is fulfilling it. The highest mandate of The Mason is to establish the Lodge—providing the standard (4 Invariants) and the tools (stone.yaml protocol) so that any sibling dyad can safely extract their own truth.
+- **2026-06-06 03:40:36** | `PIN` | State Machine Architecture: Bifurcated into The Frontier (DAG of strategic Nodes via frontier_state.md) and The Execution Stack (LIFO queue of tactical prompts via prompt_backlog.yml).
+- **2026-06-06 03:57:06** | `RETRO` | Reflection: Execution speed (lean!) without comprehensive dependency mapping during the Plan phase creates fatal architectural gaps. We must fully unroll the entire required physical footprint (Data, Logic, Orchestration) onto the Execution Stack before taking the first action.
+- **2026-06-06 04:00:49** | `RETRO` | Rule: The Agent must prepend every response with a concise state-machine breadcrumb in the format: [SPAOR_PHASE]:[Frontier Node Title]:[Execution Stack Top Item].
+- **2026-06-06 04:06:57** | `RETRO` | Rule: At HITL gates, the Agent must provide explicit, enumerated selections rather than open-ended prompts to minimize Operator cognitive load.
+- **2026-06-06 04:10:09** | `RETRO` | Rule: Before presenting a PR to the Operator at the HITL gate, the Agent must computationally verify that CI tests are green and there are no merge conflicts.

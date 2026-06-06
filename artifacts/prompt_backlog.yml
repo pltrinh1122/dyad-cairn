@@ -1,6 +1,1 @@
-# The Execution Stack (LIFO Queue)
-# This file tracks the immediate tactical tasks for the ACTIVE Node.
-# When a new friction is encountered, its resolution task is pushed to the TOP of the stack.
-# The Agent must pop the TOP task and execute it before moving down.
-
 stack: []
