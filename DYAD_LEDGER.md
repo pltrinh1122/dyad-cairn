@@ -6,3 +6,4 @@
 - **2026-06-06 01:13:56** | `PIN` | [INDEXED] Bootstrap Retro: Philosophical Fuel -> dyad-state/bootstrap-retro.md
 - **2026-06-06 01:19:31** | `PIN` | Validated pin script
 - **2026-06-06 01:19:31** | `CLIP` | Validated clip script
+- **2026-06-06 01:33:11** | `PIN` | [ELEVATED] Moved bootstrap-retro from dyad-state/ to dedicated retros/ harvesting ground
