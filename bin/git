@@ -1,0 +1,17 @@
+#!/bin/bash
+# dyad-cairn git abstraction wrapper
+# Enforces the PR Gate and Abstraction Doctrine invariants
+
+if [[ "$1" == "commit" || "$1" == "push" ]]; then
+    current_branch=$(/usr/bin/git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    if [[ "$current_branch" == "main" || "$current_branch" == "master" ]]; then
+        echo "[ERROR] The PR Gate Violation: Direct $1 to main is strictly forbidden."
+        echo "The Agent must operate on a branch and open a PR."
+        echo "The Operator acts as the final manual merge gate (Intent)."
+        echo "Use 'git checkout -b <branch>' before committing."
+        exit 1
+    fi
+fi
+
+# Pass through all commands to the system git
+exec /usr/bin/git "$@"

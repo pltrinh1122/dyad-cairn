@@ -58,6 +58,16 @@ class TestLedgerManager(unittest.TestCase):
             data = json.loads(lines[1])
             self.assertEqual(data["action"], "CLIP")
             self.assertEqual(data["message"], "Another test")
+            
+        # Third append (RETRO)
+        ledger_manager.append_ledger("retro", "Harvesting retro")
+        
+        with open(self.jsonl_path, "r") as f:
+            lines = f.readlines()
+            self.assertEqual(len(lines), 3)
+            data = json.loads(lines[2])
+            self.assertEqual(data["action"], "RETRO")
+            self.assertEqual(data["message"], "Harvesting retro")
 
 if __name__ == "__main__":
     unittest.main()

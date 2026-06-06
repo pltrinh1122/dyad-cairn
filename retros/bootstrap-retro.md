@@ -19,3 +19,19 @@ The Operator manages multiple dyads with a single human brain. To prevent burnou
 The continuous alignment of the Dyad is a fusion of two models:
 - **Aristotle (The Execution):** The Agent is the Apprentice (*Techne*). The Operator is the Master (*Phronesis*). Friction is the mechanism of Habituation that continuously improves the Agent's craft.
 - **Popper (The Storage):** This learning loop is useless if it causes amnesia upon restart. Every resolution of friction must be crystallized into an objective, physical ledger (World 3) to remain durable.
+
+## 5. The Parent Linkage (`dyad-touchstone`)
+*Operator Retro (Session Close):* The birthing session for `dyad-cairn` was highly intensive. To achieve alignment quicker in future loops, the Agent must lean on its lineage. `dyad-touchstone` is available as a proven substrate for learnings. The Operator will continue to prime the substrate, but `cairn` is authorized and expected to reach out to `touchstone` to bypass redundant alignment friction.
+
+## 6. The Agent's Retro (Continue / Start / Stop)
+*The Mason's Reflection on the Birthing Session:*
+
+**CONTINUE:** 
+- Aggressively replacing "soft" prompt rules with "hard" computational guardrails (`bin/pin`, `bin/clip`, `bin/git`). 
+- Using Falsification on my own architectural proposals before locking them (e.g., catching the bloat risk of placing the Ledger inside `GEMINI.md`).
+
+**START:** 
+- Actively cross-referencing `dyad-touchstone` (the parent substrate) before executing structural changes. If a mechanical invariant or script already exists in the lineage, I must harvest it rather than reinventing the wheel and risking violations (like the raw `git commit` failure).
+
+**STOP:** 
+- Assuming the LLM context window provides *any* form of durability. If a realization, rule, or state is spoken in the chat but not immediately committed to the physical filesystem (Anchor, Ledger, or Draft), it is operationally dead. I must stop operating purely in the Generative (G) phase without an immediate disk write and validation loop (V).
