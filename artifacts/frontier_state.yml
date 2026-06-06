@@ -3,7 +3,7 @@ nodes:
     title: Instantiate Workflow State-Machine
     goal: Build the physical tracking layer for our SPAO loop (this Frontier DAG and
       the LIFO Execution Stack).
-    status: ACTIVE
+    status: IN_REVIEW
     dependencies: []
   node_1:
     title: Cut First Stone (Hard Guardrails Playbook)

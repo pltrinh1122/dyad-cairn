@@ -5,7 +5,7 @@
 > WIP-N=1 mechanically enforced by `skills/frontier_editor.py`.
 
 
-## 🟢 ACTIVE NODES
+## 🟡 IN_REVIEW NODES
 - **node_0**: Instantiate Workflow State-Machine
   - *Goal:* Build the physical tracking layer for our SPAO loop (this Frontier DAG and the LIFO Execution Stack).
 
