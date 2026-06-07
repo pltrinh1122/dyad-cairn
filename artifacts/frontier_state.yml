@@ -32,3 +32,9 @@ nodes:
     type: PROBE
     dependencies:
     - node_19_probe_state_sync_collision
+  node_22_probe_retro_css_formatting:
+    status: IN_REVIEW
+    title: Probe RETRO CSS Formatting
+    goal: Spin up a trail to investigate the root cause of why RETRO logs are not
+      presented using the CSS template, and resolve the formatting.
+    type: PROBE

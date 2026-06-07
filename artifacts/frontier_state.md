@@ -15,6 +15,8 @@
 - **node_21_probe_reflect_boundary_collision** [PROBE]: Probe Reflect Boundary Collision
   - *Goal:* Investigate the Reflect Boundary Collision. Determine invariants for how agents coordinate git states during reflect-green.
   - *Dependencies:* node_19_probe_state_sync_collision
+- **node_22_probe_retro_css_formatting** [PROBE]: Probe RETRO CSS Formatting
+  - *Goal:* Spin up a trail to investigate the root cause of why RETRO logs are not presented using the CSS template, and resolve the formatting.
 
 ## 🔴 BLOCKED NODES
 - **node_4c_probe_anchor_compilation** [PROBE]: Probe Anchor Compilation Invariant
