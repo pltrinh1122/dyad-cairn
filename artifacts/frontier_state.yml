@@ -33,13 +33,6 @@ nodes:
       map to the substrate without polluting the SPAOR loop.
     title: Probe Todo Ingestion Pipeline
     type: probe
-  node_12_probe_ontological_binder:
-    type: PROBE
-    status: ACTIVE
-    title: Construct the Ontological Binder
-    goal: Build bin/bind to enforce simultaneous mutation of the Ledger, AGENT.md,
-      and the physical substrate.
-    dependencies: []
   node_16_probe_stone_schema:
     type: PROBE
     status: READY
