@@ -119,3 +119,5 @@
 - **2026-06-07 14:13:43** | `CLIP` | Node 11a (Plan Todo Ingestion Pipeline) is complete. The bin/todo script has been physically implemented to strictly append to dyad-state/todos.md without syncing to the Touchstone outbox.
 - **2026-06-07 14:21:08** | `CLIP` | Substrate Execution for node_13 is complete. The universal dyad anchor rules have been physically decoupled from the GEMINI.md platform shim and migrated into AGENT.md, satisfying the Topology Capacity Guard and preserving cross-platform portability.
 - **2026-06-07 14:28:58** | `COMMONS_SYNC` | dyad-steward merged the third leg of the directory triad: a GitHub Actions workflow that automatically regenerates the DIRECTORY.md index on push, ensuring it self-heals and never lags behind the autonomous registration and updates of dyad entries.
+- **2026-06-07 15:20:45** | `COMMONS_SYNC` | Absorbed latest external playbook modifications into the cognitive boundary to satisfy the synchronization invariant.
+- **2026-06-07 15:20:47** | `NODE-RETRO` | Enforced mandatory retro_msg synthesis on node completion gates to mechanically preserve Wu-Wei closure context.
