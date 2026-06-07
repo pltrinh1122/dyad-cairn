@@ -12,17 +12,24 @@ def load_state():
         return yaml.safe_load(f) or {"nodes": {}}
 
 def save_state(state):
+    sys.path.append('.')
+    from skills.frontier_reader import derive_status
+    
     # Enforce rules: WIP-N=1 at the execution level
-    active_count = sum(1 for n in state["nodes"].values() if n.get("status") == "ACTIVE")
+    active_count = 0
+    all_nodes = state["nodes"]
+    for node_id, data in all_nodes.items():
+        if derive_status(node_id, data, all_nodes) == "ACTIVE":
+            active_count += 1
+            
     if active_count > 1:
         print("ERROR: WIP-N=1 Violation. Cannot save state with multiple ACTIVE nodes.")
         sys.exit(1)
         
     # Physically excise DONE nodes to prevent dead mass accumulation
-    # The Ledger is the durable record; the Frontier is strictly active state.
     excised = []
     for node_id, data in list(state["nodes"].items()):
-        if data.get("status") == "DONE":
+        if derive_status(node_id, data, all_nodes) == "DONE":
             del state["nodes"][node_id]
             excised.append(node_id)
             
@@ -46,8 +53,20 @@ def save_state(state):
     # Sort nodes by status for display
     status_order = ["ACTIVE", "IN_REVIEW", "BLOCKED", "READY"]
     
+    from collections import defaultdict
+    nodes_by_status = defaultdict(dict)
+    
+    for node_id, data in state["nodes"].items():
+        # Keep the IN_REVIEW string if it exists in the DAG, else dynamically derive
+        current_cache = data.get("status")
+        if current_cache == "IN_REVIEW":
+            status = "IN_REVIEW"
+        else:
+            status = derive_status(node_id, data, state["nodes"])
+        nodes_by_status[status][node_id] = data
+    
     for status in status_order:
-        status_nodes = {k: v for k, v in state["nodes"].items() if v.get("status") == status}
+        status_nodes = nodes_by_status.get(status, {})
         if status_nodes:
             icon = "🟢" if status == "ACTIVE" else "🟡" if status == "IN_REVIEW" else "🔴"
             md_lines.append(f"\n## {icon} {status} NODES")
@@ -69,8 +88,13 @@ if __name__ == "__main__":
         node_id = sys.argv[1]
         new_status = sys.argv[2].upper()
         if node_id in state["nodes"]:
-            state["nodes"][node_id]["status"] = new_status
-            print(f"[FRONTIER] Transitioned Node {node_id} to {new_status}")
+            if new_status == "IN_REVIEW":
+                state["nodes"][node_id]["status"] = new_status
+            else:
+                # For ACTIVE, READY, DONE, we delete the explicit status cache to let derive_status compute it
+                if "status" in state["nodes"][node_id]:
+                    del state["nodes"][node_id]["status"]
+            print(f"[FRONTIER] Transitioned Node {node_id} toward {new_status}")
         else:
             print(f"ERROR: Node {node_id} not found in DAG.")
             sys.exit(1)

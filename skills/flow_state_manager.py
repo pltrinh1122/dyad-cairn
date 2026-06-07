@@ -141,7 +141,8 @@ def reflect_node_green(node_id, retro_msg):
         
     print(f"[FLOW] Synthesis Invariant: Appending retro_msg to Ledger...")
     from skills import ledger_manager
-    ledger_manager.append_ledger("node-retro", retro_msg)
+    full_retro_msg = f"[{node_id}] {retro_msg}"
+    ledger_manager.append_ledger("node-retro", full_retro_msg)
     
     # Commit the ledger before generating the PR so it's included in the execution payload
     run_cmd('git add DYAD_LEDGER.md dyad-state/ledger.jsonl && git commit -m "chore(ledger): retro synthesis for green phase"')
@@ -258,7 +259,8 @@ def complete_node(node_id, retro_msg):
         
     print(f"[FLOW] Synthesis Invariant: Appending retro_msg to Ledger...")
     from skills import ledger_manager
-    ledger_manager.append_ledger("node-retro", retro_msg)
+    full_retro_msg = f"[{node_id}] {retro_msg}"
+    ledger_manager.append_ledger("node-retro", full_retro_msg)
     run_cmd('git add DYAD_LEDGER.md dyad-state/ledger.jsonl && git commit -m "chore(ledger): retro synthesis for completion"')
         
     print(f"[FLOW] Tests passed mechanically. Transitioning Node {node_id} to DONE.")

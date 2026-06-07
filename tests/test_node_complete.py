@@ -21,7 +21,7 @@ def test_complete_node_success():
         fsm.complete_node(node_id, retro_msg)
         
         mock_run_cmd.assert_any_call("python3 skills/testing_harness.py", allow_fail=True)
-        mock_append.assert_called_once_with("node-retro", retro_msg)
+        mock_append.assert_called_once_with("node-retro", "[node_123] test retro")
         mock_run_cmd.assert_any_call(f"python3 skills/frontier_editor.py {node_id} DONE")
 
 def test_complete_node_failure():
