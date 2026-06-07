@@ -30,3 +30,10 @@ guards:
     armed_condition: "A Python import statement (non-stdlib) is not present in requirements.txt"
     disarmed_condition: "Adding the package to requirements.txt"
     trigger_location: "tests/test_dependency_guard.py (CI Gate)"
+
+  - id: remote_gap_sync
+    type: Asymmetric
+    description: "Traps the SPAOR flow if the remote GitHub Actions Pipeline (GAP) diverges from the expected local state (Survivor Bias)."
+    armed_condition: "A PR is created or updated, triggering a CI run."
+    disarmed_condition: "Execution of GAP verification passing (or reflecting the correct intended failure) in CI."
+    trigger_location: "skills/flow_state_manager.py (PR Reflection)"

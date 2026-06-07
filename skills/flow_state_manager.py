@@ -143,6 +143,26 @@ def create_reflection_pr(node_id, is_green):
     pr_url = create_pr(title, body)
     print(f"[FLOW] PR successfully opened/updated at: {pr_url}")
     
+    print("[FLOW] Synchronizing with remote GitHub Actions Pipeline (GAP)...")
+    import time
+    time.sleep(5) # Allow GitHub to register the PR and start workflows
+    gap_result = subprocess.run("gh pr checks --watch", shell=True, capture_output=True, text=True)
+    
+    if is_green:
+        if gap_result.returncode != 0:
+            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+            print("A structural CSI Guard was tripped: The remote GAP failed during the Green Phase!")
+            print("This indicates a Survivor Bias split-brain (e.g. environmental drift).")
+            sys.exit(1)
+        print("[FLOW] Remote GAP successfully passed. Split-brain falsified.")
+    else:
+        if gap_result.returncode == 0:
+            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+            print("A structural CSI Guard was tripped: The remote GAP PASSED during the Red Phase!")
+            print("Tests must fail in the remote environment to validate the Intent Gate.")
+            sys.exit(1)
+        print("[FLOW] Remote GAP successfully failed as expected. Split-brain falsified.")
+    
     # 3. Transition DAG Status
     run_cmd(f"python3 skills/frontier_editor.py")
     print(f"[FLOW] Node {node_id} status transitioned to IN_REVIEW. Execution halted.")
