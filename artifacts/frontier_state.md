@@ -5,6 +5,10 @@
 > WIP-N=1 mechanically enforced by `skills/frontier_editor.py`.
 
 
+## 🟢 ACTIVE NODES
+- **node_18_probe_ui_csi_guard** [PROBE]: Probe UI CSI Guard Architecture
+  - *Goal:* Architect a mechanical UI CSI Guard to physically trap or monitor the generative output, ensuring the Agent abides by UI presentation invariants (e.g., ascii trees for frontier/rack reads) instead of relying on weak prompt instructions.
+
 ## 🔴 READY NODES
 - **node_10_build_gap_reader** [EXECUTE]: Build GAP-Compliant Frontier Reader
   - *Goal:* Upgrade frontier_reader.py to dynamically derive node status from the physical substrate (branches, tests) rather than relying on cached strings, fulfilling the GAP invariant.
@@ -15,5 +19,3 @@
   - *Dependencies:* node_4a_execute_matrix_schema
 - **node_9_probe_css_presentation** [PROBE]: Probe Missing CSS Presentation
   - *Goal:* Investigate why the Agent consistently fails to explicitly present the CSS (Continue, Start, Stop) template in the chat UI during Dyad Retros, despite the mechanical UI presentation firing in the logs.
-- **node_18_probe_ui_csi_guard** [PROBE]: Probe UI CSI Guard Architecture
-  - *Goal:* Architect a mechanical UI CSI Guard to physically trap or monitor the generative output, ensuring the Agent abides by UI presentation invariants (e.g., ascii trees for frontier/rack reads) instead of relying on weak prompt instructions.
