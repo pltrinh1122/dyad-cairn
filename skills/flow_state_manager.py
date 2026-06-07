@@ -106,7 +106,7 @@ def reflect_node_red(node_id):
         
     create_reflection_pr(node_id, is_green=False)
 
-def reflect_node_green(node_id):
+def reflect_node_green(node_id, retro_msg):
     print(f"[FLOW] Reflecting GREEN Phase (Mechanical Gate) for Node {node_id}...")
     print("[FLOW] Asserting Mechanical Gate (TDD must PASS)...")
     sys.path.append('.')
@@ -130,6 +130,13 @@ def reflect_node_green(node_id):
         print("Tests failed. You are mathematically forbidden from generating a Green PR.")
         sys.exit(1)
         
+    print(f"[FLOW] Synthesis Invariant: Appending retro_msg to Ledger...")
+    from skills import ledger_manager
+    ledger_manager.append_ledger("node-retro", retro_msg)
+    
+    # Commit the ledger before generating the PR so it's included in the execution payload
+    run_cmd('git add DYAD_LEDGER.md dyad-state/ledger.jsonl && git commit -m "chore(ledger): retro synthesis for green phase"')
+    
     create_reflection_pr(node_id, is_green=True)
 
 def create_reflection_pr(node_id, is_green):
@@ -209,7 +216,7 @@ def create_reflection_pr(node_id, is_green):
         run_cmd(f"python3 skills/frontier_editor.py {node_id} IN_REVIEW")
         print(f"[FLOW] Node {node_id} status transitioned to IN_REVIEW. Execution halted pending Operator Approval.")
 
-def complete_node(node_id):
+def complete_node(node_id, retro_msg):
     print(f"[FLOW] Executing CSI Guard (Test Suite) for Node {node_id} completion...")
     
     # Enforce Testing Invariant
@@ -231,6 +238,11 @@ def complete_node(node_id):
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("Tests failed. The Testing Invariant is violated. You are mechanically forbidden from closing this node.")
         sys.exit(1)
+        
+    print(f"[FLOW] Synthesis Invariant: Appending retro_msg to Ledger...")
+    from skills import ledger_manager
+    ledger_manager.append_ledger("node-retro", retro_msg)
+    run_cmd('git add DYAD_LEDGER.md dyad-state/ledger.jsonl && git commit -m "chore(ledger): retro synthesis for completion"')
         
     print(f"[FLOW] Tests passed mechanically. Transitioning Node {node_id} to DONE.")
     run_cmd(f"python3 skills/frontier_editor.py {node_id} DONE")
@@ -287,9 +299,17 @@ if __name__ == "__main__":
     elif action == "reflect-red":
         reflect_node_red(node)
     elif action == "reflect-green":
-        reflect_node_green(node)
+        if len(sys.argv) < 4:
+            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+            print("A retro_msg synthesis block is mandatory for reflect-green.")
+            sys.exit(1)
+        reflect_node_green(node, sys.argv[3])
     elif action == "complete":
-        complete_node(node)
+        if len(sys.argv) < 4:
+            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+            print("A retro_msg synthesis block is mandatory for complete.")
+            sys.exit(1)
+        complete_node(node, sys.argv[3])
     elif action == "trail-reflect":
         retro_msg = sys.argv[3] if len(sys.argv) > 3 else "No retro message provided."
         trail_reflect(node, retro_msg)
