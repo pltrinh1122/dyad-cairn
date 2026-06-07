@@ -16,7 +16,7 @@ nodes:
     type: probe
   node_18_probe_spaor_plan_violation:
     dependencies:
-    - node_17a_plan_audit_dag_architecture
+    - node_17b_execute_audit_dag
     status: BLOCKED
     goal: (AUDIT DEBT) Investigate and remediate the systemic SPAOR violation where
       the Agent pre-emptively hallucinates [PLAN] nodes for unexecuted [PROBE] nodes.
@@ -24,11 +24,8 @@ nodes:
       hallucination.
     title: Audit SPAOR PLAN Violation
     type: probe
-  node_17a_plan_audit_dag_architecture:
+  node_17b_execute_audit_dag:
     status: IN_REVIEW
-    title: Plan Audit DAG Implementation
-    goal: Parameterize the existing SPAOR engine (frontier_editor.py, flow_state_manager.py)
-      to dynamically mount the target Data Store (yaml file) via environment variable
-      or CLI. Inject the check_audit_lock() to physically freeze the pipeline ONLY
-      when the Frontier data store is mounted and governance debt exists.
+    title: Execute Audit DAG Implementation
+    goal: Parameterize the SPAOR engine and inject check_audit_lock() per plan_node_17a.md
     type: PLAN
