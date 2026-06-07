@@ -167,3 +167,4 @@
 - **2026-06-07 20:41:12** | `TODO` | test_noisy_intent_12345
 - **2026-06-07 20:41:40** | `TODO` | test_noisy_intent_12345
 - **2026-06-07 20:41:40** | `NODE-RETRO` | [node_17_probe_audit_dag_architecture] Ratified the Audit Lock invariant. The Frontier DAG is mechanically suspended by flow_state_manager.py whenever audit_state.yml contains pending nodes, enforcing Alignment Precedes Execution. Spawning node_17a_plan.
+- **2026-06-07 20:49:28** | `CLIP` | Falsification: The Dual-DAG architecture does not require duplicate orchestrator code. The Audit DAG and Frontier DAG are mathematically identical in execution (SPAOR); they differ only in their data store (YAML file). The true invariant is a single parameterized SPAOR Engine. The Audit Lock is simply a conditional check that fires only when the Frontier data store is mounted.
