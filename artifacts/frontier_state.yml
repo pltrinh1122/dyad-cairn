@@ -14,18 +14,3 @@ nodes:
       projected into the immutable GEMINI.md anchor.
     title: Probe Anchor Compilation Invariant
     type: probe
-  node_18_probe_spaor_plan_violation:
-    dependencies:
-    - node_17b_execute_audit_dag
-    status: BLOCKED
-    goal: (AUDIT DEBT) Investigate and remediate the systemic SPAOR violation where
-      the Agent pre-emptively hallucinates [PLAN] nodes for unexecuted [PROBE] nodes.
-      Implement the necessary CSI Guard or architectural constraints to trap this
-      hallucination.
-    title: Audit SPAOR PLAN Violation
-    type: probe
-  node_17b_execute_audit_dag:
-    status: IN_REVIEW
-    title: Execute Audit DAG Implementation
-    goal: Parameterize the SPAOR engine and inject check_audit_lock() per plan_node_17a.md
-    type: PLAN

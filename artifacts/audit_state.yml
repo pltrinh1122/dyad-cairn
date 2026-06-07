@@ -1,0 +1,8 @@
+nodes:
+  node_audit_1780867291:
+    status: IN_REVIEW
+    title: 'Audit: Audit SPAOR PLAN Violation'
+    goal: Investigate and remediate the systemic SPAOR violation where the Agent pre-emptively
+      hallucinates [PLAN] nodes for unexecuted [PROBE] nodes. Implement the necessary
+      CSI Guard or architectural constraints to trap this hallucination.
+    type: PROBE
