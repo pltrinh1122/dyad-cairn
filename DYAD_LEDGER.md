@@ -107,3 +107,5 @@
 - **2026-06-07 04:10:31** | `CLIP` | Boundary Lock Refinement: Tools built for the Commons (like dip.py) must possess their own isolated physical ledger to track their development decisions. dyad-cairn's ledger is exclusively for the Meta-Orchestrator. Maintainers will read the tool's ledger, not Cairn's.
 - **2026-06-07 04:17:07** | `RETRO` | Rub: The Execute Node transitions lack a physical testing CSI Guard, relying dangerously on generative memory.
 - **2026-06-07 04:17:07** | `CLIP` | Execute CSI Guard Invariant: An EXECUTE node cannot be closed without a deterministic CI gate. We must replace manual DAG updates with a physical node-closure script (e.g., ./bin/node complete).
+- **2026-06-07 04:20:34** | `RETRO` | Rub: Execute CSI Guards are insufficient for trail completion. A trail requires Synthesis (Retro), Issue Closure, and Trail Pruning, necessitating an explicit [REFLECT] phase.
+- **2026-06-07 04:20:34** | `CLIP` | [REFLECT] Phase Invariant: A trail is not complete when code merges. It is only complete when learnings are synthesized, the GH-Issue is closed, and the parent trail is pruned. This requires an explicit Reflect CSI Guard.

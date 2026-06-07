@@ -13,12 +13,11 @@ nodes:
       projected into the immutable GEMINI.md anchor.
     status: BLOCKED
     dependencies: []
-  node_5_probe_reflect_phase:
-    title: Probe the [REFLECT] Phase Requirement
-    type: probe
-    goal: Rub the necessity of an explicit [REFLECT] node-type or phase following
-      [EXECUTE] to capture execution-level learnings (best practices, pitfalls) before
-      closing the trail.
+  node_8_plan_csi_guard_reflect:
+    title: Plan CSI Guard for Reflect Phase
+    type: plan
+    goal: Design and test a deterministic CLI command (e.g., ./bin/node reflect) that
+      enforces the synthesis, issue closure, and trail pruning invariants.
     status: BLOCKED
     dependencies: []
   node_7_plan_csi_guard_execute:
