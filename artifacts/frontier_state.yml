@@ -14,11 +14,11 @@ nodes:
       projected into the immutable GEMINI.md anchor.
     title: Probe Anchor Compilation Invariant
     type: probe
-  node_9_probe_css_presentation:
+  node_12_plan_local_executioner_loop:
     dependencies: []
     status: READY
-    goal: Investigate why the Agent consistently fails to explicitly present the CSS
-      (Continue, Start, Stop) template in the chat UI during Dyad Retros, despite
-      the mechanical UI presentation firing in the logs.
-    title: Probe Missing CSS Presentation
-    type: probe
+    goal: Design and formalize the Git Worktree partitioning strategy and the `./bin/claude-watch`
+      listener script to safely isolate the Claude execution thread from the Architect's
+      workspace without substrate entanglement.
+    title: Plan Local Executioner Worktree Architecture
+    type: plan
