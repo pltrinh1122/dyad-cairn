@@ -1,7 +1,52 @@
 #!/usr/bin/env python3
 import sys
 import os
+import yaml
 import datetime
+
+def append_todo(intent):
+    # Log to the Ledger
+    sys.path.append('.')
+    from skills import ledger_manager
+    ledger_manager.append_ledger("todo", intent)
+
+    todo_dir = "artifacts"
+    os.makedirs(todo_dir, exist_ok=True)
+    todo_yml = os.path.join(todo_dir, "todos.yml")
+    todo_md = os.path.join(todo_dir, "todos.md")
+    
+    timestamp = datetime.datetime.utcnow().isoformat() + "Z"
+    todo_id = f"todo_{int(datetime.datetime.utcnow().timestamp())}"
+    
+    # Update YAML
+    if os.path.exists(todo_yml):
+        with open(todo_yml, "r") as f:
+            todos = yaml.safe_load(f) or {}
+    else:
+        todos = {}
+        
+    if "backlog" not in todos:
+        todos["backlog"] = {}
+        
+    todos["backlog"][todo_id] = {
+        "intent": intent,
+        "timestamp": timestamp
+    }
+    
+    with open(todo_yml, "w") as f:
+        yaml.dump(todos, f, default_flow_style=False, sort_keys=False)
+        
+    # Project Markdown View
+    with open(todo_md, "w") as f:
+        f.write("# Todo Backlog (Pre-DAG Holding Pen)\n\n")
+        f.write("> Ideas parked here have not formally entered the SPAOR execution loop.\n")
+        f.write("> Use `./bin/node convert-todo <todo_id>` to ingest an item into the DAG.\n\n")
+        
+        for tid, data in todos["backlog"].items():
+            f.write(f"- **{tid}** ({data['timestamp']}): {data['intent']}\n")
+            
+    print(f"[TODO] Successfully parked todo in holding pen: {intent}")
+    print(f"[TODO] ID: {tid}")
 
 def main():
     if len(sys.argv) < 2:
@@ -9,16 +54,7 @@ def main():
         sys.exit(1)
         
     intent = sys.argv[1]
-    todo_dir = "dyad-state"
-    os.makedirs(todo_dir, exist_ok=True)
-    todo_path = os.path.join(todo_dir, "todos.md")
-    
-    timestamp = datetime.datetime.utcnow().isoformat() + "Z"
-    
-    with open(todo_path, "a") as f:
-        f.write(f"- **{timestamp}** | {intent}\n")
-        
-    print(f"[TODO] Successfully parked todo: {intent}")
+    append_todo(intent)
 
 if __name__ == "__main__":
     main()

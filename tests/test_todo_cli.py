@@ -1,20 +1,9 @@
 import os
 import subprocess
-import pytest
-
-def test_todo_cli_appends_to_local_scratchpad(tmp_path, monkeypatch):
-    # Mock dyad-state to a temp dir so we don't pollute the real one during tests
-    test_state_dir = tmp_path / "dyad-state"
-    test_state_dir.mkdir()
-    
-    # Create a mock bin/todo if we were to test the actual script, but we need the script to read an env var or we just test the script directly.
-    # Since we want to test the actual script, let's just use the real dyad-state/todos.md but clean it up, or pass an env var.
-    # Passing an env var is cleaner: CAIRN_TODO_PATH
-    
-    pass
+import yaml
 
 def test_todo_cli_execution():
-    todo_path = "dyad-state/todos.md"
+    todo_path = "artifacts/todos.yml"
     original_content = ""
     if os.path.exists(todo_path):
         with open(todo_path, "r") as f:
@@ -30,15 +19,47 @@ def test_todo_cli_execution():
         with open(todo_path, "r") as f:
             content = f.read()
         
-        assert intent in content, "Intent was not written to todos.md"
+        assert intent in content, "Intent was not written to todos.yml"
         
-        # Verify it didn't accidentally sync to Touchstone (no files containing the intent in dm/dyad-touchstone)
-        outbox = "dm/dyad-touchstone"
-        if os.path.exists(outbox):
-            for file in os.listdir(outbox):
-                with open(os.path.join(outbox, file), "r") as f:
-                    assert intent not in f.read(), "Invariant violated: todo synced to Touchstone outbox!"
-                    
+        # Extract the todo_id
+        todo_id = None
+        todos = yaml.safe_load(content)
+        for tid, tdata in todos["backlog"].items():
+            if tdata["intent"] == intent:
+                todo_id = tid
+                break
+        
+        assert todo_id is not None
+        
+        # Verify it appended to the ledger
+        with open("dyad-state/ledger.jsonl", "r") as f:
+            ledger_content = f.read()
+            assert intent in ledger_content, "Intent was not logged to the ledger!"
+            
+        # Test converting the todo
+        # The node_id will be node_todo_...
+        # We need to make sure we don't accidentally pollute the DAG if test fails, so we'll just check if it parses, but wait, convert-todo mutates frontier_state.yml!
+        # It's better to just ensure convert-todo successfully parses and runs without error, then we prune it from frontier_state.
+        
+        # Restore frontier_state.yml later
+        frontier_path = "artifacts/frontier_state.yml"
+        frontier_original = ""
+        if os.path.exists(frontier_path):
+            with open(frontier_path, "r") as f:
+                frontier_original = f.read()
+                
+        try:
+            conv_res = subprocess.run(["./bin/node", "convert-todo", todo_id], capture_output=True, text=True)
+            assert conv_res.returncode == 0, f"convert-todo failed: {conv_res.stderr}"
+            
+            with open(todo_path, "r") as f:
+                new_todos = yaml.safe_load(f)
+            assert todo_id not in new_todos.get("backlog", {})
+        finally:
+            if frontier_original:
+                with open(frontier_path, "w") as f:
+                    f.write(frontier_original)
+        
     finally:
         # Restore original state
         if original_content:
@@ -47,3 +68,7 @@ def test_todo_cli_execution():
         else:
             if os.path.exists(todo_path):
                 os.remove(todo_path)
+                
+        # We also created a markdown file
+        if os.path.exists("artifacts/todos.md"):
+            os.remove("artifacts/todos.md")

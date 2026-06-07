@@ -5,6 +5,10 @@
 > WIP-N=1 mechanically enforced by `skills/frontier_editor.py`.
 
 
+## 🟢 ACTIVE NODES
+- **node_11_probe_todo_pipeline** [PROBE]: Probe Todo Ingestion Pipeline
+  - *Goal:* Architect and define the mechanical ingestion pipeline for the `todo:` dialect marker, investigating how a pre-DAG holding pen (e.g., `bin/todo`) should physically map to the substrate without polluting the SPAOR loop.
+
 ## 🔴 READY NODES
 - **node_10_build_gap_reader** [EXECUTE]: Build GAP-Compliant Frontier Reader
   - *Goal:* Upgrade frontier_reader.py to dynamically derive node status from the physical substrate (branches, tests) rather than relying on cached strings, fulfilling the GAP invariant.
@@ -15,5 +19,3 @@
   - *Dependencies:* node_4a_execute_matrix_schema
 - **node_9_probe_css_presentation** [PROBE]: Probe Missing CSS Presentation
   - *Goal:* Investigate why the Agent consistently fails to explicitly present the CSS (Continue, Start, Stop) template in the chat UI during Dyad Retros, despite the mechanical UI presentation firing in the logs.
-- **node_11_probe_todo_pipeline** [PROBE]: Probe Todo Ingestion Pipeline
-  - *Goal:* Architect and define the mechanical ingestion pipeline for the `todo:` dialect marker, investigating how a pre-DAG holding pen (e.g., `bin/todo`) should physically map to the substrate without polluting the SPAOR loop.
