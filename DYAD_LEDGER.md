@@ -91,3 +91,5 @@
 - **2026-06-07 03:38:09** | `CLIP` | Falsification: Discover is a Node-Type (Probe), not a phase. Probe nodes exclusively mutate the DAG and Ledgers. Execute nodes exclusively mutate functional logic. Conflating the two shatters the Context Partition invariant.
 - **2026-06-07 03:39:37** | `RETRO` | Operator: 'the most important output of a probe is to discover a single invariant...'
 - **2026-06-07 03:39:37** | `CLIP` | Falsification: The most important output of a Probe is the falsification of the condition. While an atomic probe yields a single invariant if true, its highest value is actively aborting execution trails when conditions prove false.
+- **2026-06-07 03:42:06** | `RETRO` | Operator: 'how can you manufacture an invariant? are you suggesting that perhaps the invariant is at the wrong layer...'
+- **2026-06-07 03:42:06** | `CLIP` | Falsification: Invariants are inherent truths of a system; they cannot be manufactured. A Probe must drill down past superficial constraints to discover the actual root cause (the physical invariant). Only then can an execution node be planned.
