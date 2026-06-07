@@ -13,18 +13,26 @@ def test_mason_installs_stone_safely(tmp_path):
     pkg_path.mkdir()
     stone_file = pkg_path / "stone.yaml"
     
+    # Create the physical source assets in the dummy package
+    src_dir = pkg_path / "src"
+    src_dir.mkdir()
+    
+    kb_src = src_dir / "HOW-0002.md"
+    kb_src.write_text("# Dummy KB")
+    
+    bin_src = src_dir / "script.sh"
+    bin_src.write_text("#!/bin/bash\necho test")
+    os.chmod(bin_src, 0o755)  # Set executable permissions on source file
+    
     dummy_yaml = """
-name: hard-guardrails
+stone_id: hard-guardrails
 version: 1.0.0
-description: "A hard guardrail"
 type: CLI
-payload:
-  how_to: |
-    # HOW-0002-hard-guardrails.md
-    This is a dummy test file.
-  script: |
-    #!/bin/bash
-    echo 'hard-guardrail test'
+assets:
+  - source: "src/HOW-0002.md"
+    destination: "kb/HOW-0002-hard-guardrails.md"
+  - source: "src/script.sh"
+    destination: "bin/hard-guardrails"
 """
     stone_file.write_text(dummy_yaml)
     
@@ -44,8 +52,6 @@ payload:
     
     # 3. Falsification: If it fails, print stderr to help debug
     assert result.returncode == 0, f"Mason install failed: {result.stderr}"
-    
-    # 4. Assert Physical Payload Transfer
     assert os.path.exists(kb_dest), "Generative KB asset was not installed."
     assert os.path.exists(bin_dest), "Deterministic BIN asset was not installed."
     
