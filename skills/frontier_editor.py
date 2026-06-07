@@ -52,7 +52,8 @@ def save_state(state):
             icon = "🟢" if status == "ACTIVE" else "🟡" if status == "IN_REVIEW" else "🔴"
             md_lines.append(f"\n## {icon} {status} NODES")
             for node_id, data in status_nodes.items():
-                md_lines.append(f"- **{node_id}**: {data.get('title', 'Unknown')}")
+                node_type = f" [{data['type'].upper()}]" if "type" in data else ""
+                md_lines.append(f"- **{node_id}**{node_type}: {data.get('title', 'Unknown')}")
                 if "goal" in data:
                     md_lines.append(f"  - *Goal:* {data['goal']}")
                 if "dependencies" in data and data["dependencies"]:
