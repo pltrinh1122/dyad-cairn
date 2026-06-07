@@ -23,6 +23,6 @@ nodes:
     title: Mason Validation Engine & Installation Logic
     goal: Implement the strict schema validation against the local stone.yaml schema
       format and installation logic.
-    status: BLOCKED
+    status: DONE
     dependencies:
     - node_2a
