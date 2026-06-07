@@ -6,14 +6,13 @@
 
 
 ## 🟢 ACTIVE NODES
-- **node_4a_probe_matrix_schema** [PROBE]: Probe Matrix Schema Invariant
-  - *Goal:* Investigate the strict physical schema required for dip_state.yml to capture the 7 dimensions and track Operator approval signatures.
+- **node_4a_plan_matrix_schema** [PLAN]: Plan Matrix Schema Invariant
+  - *Goal:* Design the strict YAML schema (the 7 dimensions + tripartite state of content, status, signature) and output the Red Phase TDD Specs for the parser/writer.
 
 ## 🔴 BLOCKED NODES
 - **node_4b_probe_sonar_halting** [PROBE]: Probe Sonar Halting Conditions
   - *Goal:* Investigate the mechanical halting conditions for dip.py. Discover the exact physical rules that trigger sys.exit(1) (e.g. missing signature, empty dimension).
 - **node_4c_probe_anchor_compilation** [PROBE]: Probe Anchor Compilation Invariant
   - *Goal:* Investigate how a fully saturated dip_state.yml is safely and deterministically projected into the immutable GEMINI.md anchor.
-  - *Dependencies:* node_4a_probe_matrix_schema
 - **node_5_probe_reflect_phase** [PROBE]: Probe the [REFLECT] Phase Requirement
   - *Goal:* Rub the necessity of an explicit [REFLECT] node-type or phase following [EXECUTE] to capture execution-level learnings (best practices, pitfalls) before closing the trail.

@@ -1,9 +1,9 @@
 nodes:
-  node_4a_probe_matrix_schema:
-    title: Probe Matrix Schema Invariant
-    type: probe
-    goal: Investigate the strict physical schema required for dip_state.yml to capture
-      the 7 dimensions and track Operator approval signatures.
+  node_4a_plan_matrix_schema:
+    title: Plan Matrix Schema Invariant
+    type: plan
+    goal: Design the strict YAML schema (the 7 dimensions + tripartite state of content,
+      status, signature) and output the Red Phase TDD Specs for the parser/writer.
     status: ACTIVE
     dependencies: []
   node_4b_probe_sonar_halting:
@@ -19,8 +19,7 @@ nodes:
     goal: Investigate how a fully saturated dip_state.yml is safely and deterministically
       projected into the immutable GEMINI.md anchor.
     status: BLOCKED
-    dependencies:
-    - node_4a_probe_matrix_schema
+    dependencies: []
   node_5_probe_reflect_phase:
     title: Probe the [REFLECT] Phase Requirement
     type: probe
