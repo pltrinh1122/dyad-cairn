@@ -1,9 +1,23 @@
 nodes:
-  node_4:
-    title: Dyad Instantiation Protocol (CSI Sonar)
+  node_4a_probe_matrix_schema:
+    title: Probe Matrix Schema Invariant
     type: probe
-    goal: Materialize dip.py as a validation sonar that parses an offline Instantiation
-      Matrix (dip_state.yml) to mechanically verify the 7 dimensions without dictating
-      conversational flow.
+    goal: Investigate the strict physical schema required for dip_state.yml to capture
+      the 7 dimensions and track Operator approval signatures.
     status: ACTIVE
     dependencies: []
+  node_4b_probe_sonar_halting:
+    title: Probe Sonar Halting Conditions
+    type: probe
+    goal: Investigate the mechanical halting conditions for dip.py. Discover the exact
+      physical rules that trigger sys.exit(1) (e.g. missing signature, empty dimension).
+    status: BLOCKED
+    dependencies: []
+  node_4c_probe_anchor_compilation:
+    title: Probe Anchor Compilation Invariant
+    type: probe
+    goal: Investigate how a fully saturated dip_state.yml is safely and deterministically
+      projected into the immutable GEMINI.md anchor.
+    status: BLOCKED
+    dependencies:
+    - node_4a_probe_matrix_schema
