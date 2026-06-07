@@ -4,12 +4,16 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-if [ ! -z "$2" ]; then
-    python3 skills/retro_linter.py "$2"
-    if [ $? -ne 0 ]; then
-        echo "🚨 CSI GUARDRAIL BLOCK: Retro does not match CSS template."
-        exit 1
-    fi
+if [ -z "$2" ]; then
+    echo "Usage: ./bin/retro <summary> <path/to/retro.md>"
+    echo "ERROR: CSS Template (path/to/retro.md) is strictly mandatory to fulfill the Cognitive State Synchronization invariant."
+    exit 1
+fi
+
+python3 skills/retro_linter.py "$2"
+if [ $? -ne 0 ]; then
+    echo "🚨 CSI GUARDRAIL BLOCK: Retro does not match CSS template."
+    exit 1
 fi
 
 python3 skills/ledger_manager.py retro "$1" "$2"

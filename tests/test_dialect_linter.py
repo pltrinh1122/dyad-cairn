@@ -58,3 +58,20 @@ def test_dialect_linter_with_mock_transcript(tmp_path):
     result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
     assert result.returncode == 0
     assert "No UI Dialect violations detected" in result.stdout
+    
+    # Scenario 4: User says `retro:`, Agent runs bin/retro but fails to print CSS template
+    with open(transcript_path, "w") as f:
+        f.write(json.dumps({"type": "USER_INPUT", "content": "retro: test\n", "step_index": 6}) + "\n")
+        f.write(json.dumps({"type": "PLANNER_RESPONSE", "content": "Locked to ledger.", "tool_calls": [{"argumentsJson": '{"CommandLine": "./bin/retro test test.md"}'}]}) + "\n")
+        
+    result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
+    assert result.returncode == 1
+    assert "failed to explicitly present the CSS template in the chat UI" in result.stdout
+    
+    # Scenario 5: User says `retro:`, Agent runs bin/retro and prints CSS template
+    with open(transcript_path, "w") as f:
+        f.write(json.dumps({"type": "USER_INPUT", "content": "retro: test\n", "step_index": 7}) + "\n")
+        f.write(json.dumps({"type": "PLANNER_RESPONSE", "content": "📋 [MECHANICAL UI PRESENTATION: RETRO SUMMARY]\nIt worked.", "tool_calls": [{"argumentsJson": '{"CommandLine": "./bin/retro test test.md"}'}]}) + "\n")
+        
+    result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
+    assert result.returncode == 0
