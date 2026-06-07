@@ -186,3 +186,6 @@
 - **2026-06-07 21:25:34** | `NODE-RETRO` | [node_audit_1780867291] Isolated the SPAOR PLAN Injection Guard invariant and clipped to ledger. Fixed Frontier test suite contamination.
 - **2026-06-07 21:26:13** | `TODO` | test_noisy_intent_12345
 - **2026-06-07 21:26:13** | `NODE-RETRO` | [node_audit_1780867546] Drafted physical execution plan for SPAOR PLAN Injection Guard invariant.
+- **2026-06-07 21:26:41** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:27:46** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:27:46** | `NODE-RETRO` | [node_audit_execute_plan_injection_guard] Implemented the physical SPAOR PLAN Injection Guard in skills/frontier_editor.py.
