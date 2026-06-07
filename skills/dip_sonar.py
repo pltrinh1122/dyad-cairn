@@ -1,5 +1,6 @@
 import os
 import yaml
+import re
 
 class MatrixValidationError(Exception):
     """Exception raised when dip_state.yml fails physical invariant validation."""
@@ -11,12 +12,31 @@ class ProvenanceExtractionError(Exception):
 
 def get_required_dimensions(provenance_path=None):
     """
-    Dynamically extracts required dimensions from physical provenance (commons/AGENT.md).
-    For now, returns an empty list or parses a file. The full implementation of this
-    will be done by sibling probe (node_4b or a parser probe). 
-    This function is explicitly mocked in the schema tests.
+    Dynamically extracts required dimensions from physical provenance.
     """
-    return []
+    if provenance_path is None:
+        provenance_path = "commons/AGENT.md"
+        
+    if not os.path.exists(provenance_path):
+        raise ProvenanceExtractionError("Provenance file not found")
+        
+    with open(provenance_path, "r", encoding="utf-8") as f:
+        content = f.read()
+        
+    dimensions = []
+    pattern = re.compile(r"\|\s*(\d+)\s*\|\s*(?:\*\*)?([^|*]+?)(?:\*\*)?\s*\|")
+    for line in content.splitlines():
+        match = pattern.search(line)
+        if match:
+            idx = match.group(1).strip()
+            raw_dim = match.group(2).strip()
+            sanitized_dim = raw_dim.lower().replace(" ", "_").replace("-", "_")
+            dimensions.append(f"{idx}_{sanitized_dim}")
+            
+    if not dimensions:
+        raise ProvenanceExtractionError("Failed to extract dimension table from provenance")
+        
+    return dimensions
 
 def validate_matrix(file_path):
     if not os.path.exists(file_path):
