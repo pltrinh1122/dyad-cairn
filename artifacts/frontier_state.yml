@@ -1,32 +1,35 @@
 nodes:
-  node_4b_execute_sonar_halting:
-    title: Execute Provenance Extraction Invariant
+  node_10_build_gap_reader:
+    dependencies: []
+    goal: Upgrade frontier_reader.py to dynamically derive node status from the physical
+      substrate (branches, tests) rather than relying on cached strings, fulfilling
+      the GAP invariant.
+    title: Build GAP-Compliant Frontier Reader
     type: execute
+  node_4b_execute_sonar_halting:
+    dependencies: []
     goal: Implement the markdown parser in dip_sonar.py to dynamically extract the
       required dimensions, passing the TDD tests.
-    status: ACTIVE
-    dependencies: []
+    title: Execute Provenance Extraction Invariant
+    type: execute
   node_4c_probe_anchor_compilation:
-    title: Probe Anchor Compilation Invariant
-    type: probe
-    goal: Investigate how a fully saturated dip_state.yml is safely and deterministically
-      projected into the immutable GEMINI.md anchor.
-    status: BLOCKED
     dependencies:
     - node_4a_execute_matrix_schema
+    goal: Investigate how a fully saturated dip_state.yml is safely and deterministically
+      projected into the immutable GEMINI.md anchor.
+    title: Probe Anchor Compilation Invariant
+    type: probe
   node_7_plan_csi_guard_execute:
-    title: Plan CSI Guard for Execute Nodes
-    type: plan
+    dependencies: []
     goal: Design and test a deterministic CLI command (e.g., ./bin/node complete)
       that enforces the Testing Invariant before allowing a node to transition to
       DONE.
-    status: BLOCKED
-    dependencies: []
+    title: Plan CSI Guard for Execute Nodes
+    type: plan
   node_9_probe_css_presentation:
-    title: Probe Missing CSS Presentation
-    type: probe
+    dependencies: []
     goal: Investigate why the Agent consistently fails to explicitly present the CSS
       (Continue, Start, Stop) template in the chat UI during Dyad Retros, despite
       the mechanical UI presentation firing in the logs.
-    status: BLOCKED
-    dependencies: []
+    title: Probe Missing CSS Presentation
+    type: probe
