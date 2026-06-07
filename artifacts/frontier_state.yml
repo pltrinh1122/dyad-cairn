@@ -33,9 +33,3 @@ nodes:
       map to the substrate without polluting the SPAOR loop.
     title: Probe Todo Ingestion Pipeline
     type: probe
-  node_16_probe_stone_schema:
-    type: PROBE
-    status: READY
-    title: Investigate Evolved stone.yaml Schema
-    goal: 'Probe the ''Missing required field: stone_id'' failure in test_mason_install_stone.py
-      to discover the new structural invariants for the mason CLI.'
