@@ -6,8 +6,8 @@
 
 
 ## 🟢 ACTIVE NODES
-- **node_4b_plan_sonar_halting** [PLAN]: Plan Provenance Extraction Invariant
-  - *Goal:* Design the regex/markdown parser to extract required dimensions from commons/AGENT.md and output the TDD specs for structural halting if extraction fails.
+- **node_4b_execute_sonar_halting** [EXECUTE]: Execute Provenance Extraction Invariant
+  - *Goal:* Implement the markdown parser in dip_sonar.py to dynamically extract the required dimensions, passing the TDD tests.
 
 ## 🔴 BLOCKED NODES
 - **node_4c_probe_anchor_compilation** [PROBE]: Probe Anchor Compilation Invariant
