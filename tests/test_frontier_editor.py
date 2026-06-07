@@ -22,8 +22,8 @@ def test_in_review_does_not_override_blocked(monkeypatch):
     # Create a state where node_2 depends on node_1
     state = {
         "nodes": {
-            "node_1": {"status": "IN_REVIEW", "dependencies": [], "type": "PROBE", "title": "Node 1"},
-            "node_2": {"status": "IN_REVIEW", "dependencies": ["node_1"], "type": "PROBE", "title": "Node 2"}
+            "node_fake_991": {"status": "IN_REVIEW", "dependencies": [], "type": "PROBE", "title": "Node 1"},
+            "node_fake_992": {"status": "IN_REVIEW", "dependencies": ["node_fake_991"], "type": "PROBE", "title": "Node 2"}
         }
     }
     
@@ -45,7 +45,7 @@ def test_in_review_does_not_override_blocked(monkeypatch):
     with open(md_path, "r") as f:
         md_content = f.read()
         
-    assert "├── node_1" in md_content or "└── node_1" in md_content
+    assert "├── node_fake_991" in md_content or "└── node_fake_991" in md_content
     
     # node_2 should be BLOCKED because node_1 is not DONE
     # node_1 should be IN_REVIEW

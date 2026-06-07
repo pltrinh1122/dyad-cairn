@@ -90,40 +90,22 @@ def save_state(state):
         yaml.dump(state, f, default_flow_style=False, sort_keys=False)
         
     # Generate MD projection (Materialized View)
+    from skills.frontier_reader import build_tree
+    
+    dag_name = "Audit State" if "audit" in YML_FILE else "Frontier State"
+    source_file = "artifacts/audit_state.yml" if "audit" in YML_FILE else "artifacts/frontier_state.yml"
+    
     md_lines = [
-        "# The Frontier State (DAG)\n",
+        f"# The {dag_name} (DAG)\n",
         "> This is a computationally managed projection. **DO NOT EDIT DIRECTLY.**",
-        "> Source of truth is `artifacts/frontier_state.yml`.",
-        "> WIP-N=1 mechanically enforced by `skills/frontier_editor.py`.\n"
+        f"> Source of truth is `{source_file}`.",
+        "> WIP-N=1 mechanically enforced by `skills/frontier_editor.py`.\n",
+        "```text"
     ]
     
-    # Sort nodes by status for display
-    status_order = ["ACTIVE", "IN_REVIEW", "BLOCKED", "READY"]
-    
-    from collections import defaultdict
-    nodes_by_status = defaultdict(dict)
-    
-    for node_id, data in state["nodes"].items():
-        # Keep the IN_REVIEW string if it exists in the DAG, else dynamically derive
-        current_cache = data.get("status")
-        if current_cache == "IN_REVIEW":
-            status = "IN_REVIEW"
-        else:
-            status = derive_status(node_id, data, state["nodes"])
-        nodes_by_status[status][node_id] = data
-    
-    for status in status_order:
-        status_nodes = nodes_by_status.get(status, {})
-        if status_nodes:
-            icon = "🟢" if status == "ACTIVE" else "🟡" if status == "IN_REVIEW" else "🔴"
-            md_lines.append(f"\n## {icon} {status} NODES")
-            for node_id, data in status_nodes.items():
-                node_type = f" [{data['type'].upper()}]" if "type" in data else ""
-                md_lines.append(f"- **{node_id}**{node_type}: {data.get('title', 'Unknown')}")
-                if "goal" in data:
-                    md_lines.append(f"  - *Goal:* {data['goal']}")
-                if "dependencies" in data and data["dependencies"]:
-                    md_lines.append(f"  - *Dependencies:* {', '.join(data['dependencies'])}")
+    tree_lines = build_tree(state.get("nodes", {}))
+    md_lines.extend(tree_lines)
+    md_lines.append("```")
     
     with open(MD_FILE, "w") as f:
         f.write("\n".join(md_lines) + "\n")
