@@ -201,3 +201,6 @@
 - **2026-06-07 22:02:48** | `NODE-RETRO` | [node_23_probe_frontier_ascii_tree] Analyzed root cause of ascii-tree erasure and IN_REVIEW dependency override. Drafted structural execution plan.
 - **2026-06-07 22:02:59** | `TODO` | test_noisy_intent_12345
 - **2026-06-07 22:02:59** | `NODE-RETRO` | [node_23_plan_frontier_ascii_tree] Approved artifacts/plan_node_23.md as the Execution Spec.
+- **2026-06-07 22:10:01** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:11:45** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:11:45** | `NODE-RETRO` | [node_23a_execute_frontier_ascii_tree] Implemented the physical logic for rendering ASCII-trees in markdown and preventing IN_REVIEW from masquerading BLOCKED dependencies.
