@@ -7,7 +7,7 @@
 
 ## 🟡 IN_REVIEW NODES
 - **node_17a_plan_audit_dag_architecture** [PLAN]: Plan Audit DAG Implementation
-  - *Goal:* Refactor flow_state_manager.py to inject check_audit_lock() to physically freeze the Frontier when governance debt exists, and formalize the ./bin/audit CLI router to spawn Audit DAG nodes.
+  - *Goal:* Parameterize the existing SPAOR engine (frontier_editor.py, flow_state_manager.py) to dynamically mount the target Data Store (yaml file) via environment variable or CLI. Inject the check_audit_lock() to physically freeze the pipeline ONLY when the Frontier data store is mounted and governance debt exists.
 
 ## 🔴 BLOCKED NODES
 - **node_4c_probe_anchor_compilation** [PROBE]: Probe Anchor Compilation Invariant
