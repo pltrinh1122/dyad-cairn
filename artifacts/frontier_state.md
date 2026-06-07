@@ -6,8 +6,8 @@
 
 
 ## 🟢 ACTIVE NODES
-- **node_4b_probe_sonar_halting** [PROBE]: Probe Sonar Halting Conditions
-  - *Goal:* Investigate the mechanical halting conditions for dip.py. Discover the exact physical rules that trigger sys.exit(1) (e.g. missing signature, empty dimension).
+- **node_4b_plan_sonar_halting** [PLAN]: Plan Provenance Extraction Invariant
+  - *Goal:* Design the regex/markdown parser to extract required dimensions from commons/AGENT.md and output the TDD specs for structural halting if extraction fails.
 
 ## 🔴 BLOCKED NODES
 - **node_4c_probe_anchor_compilation** [PROBE]: Probe Anchor Compilation Invariant
