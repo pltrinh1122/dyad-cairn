@@ -33,3 +33,10 @@ nodes:
       map to the substrate without polluting the SPAOR loop.
     title: Probe Todo Ingestion Pipeline
     type: probe
+  node_11a_plan_todo_pipeline:
+    dependencies: []
+    goal: Build `bin/todo` CLI to append raw conversational intent to `dyad-state/todos.md`.
+      Enforce the invariant that `todos` are purely local and never sync to Touchstone
+      outbox.
+    title: Plan Todo Ingestion Pipeline
+    type: plan
