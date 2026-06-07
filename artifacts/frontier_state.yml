@@ -1,1 +1,8 @@
-nodes: {}
+nodes:
+  node_4:
+    title: Dyad Instantiation Protocol (CSI Sonar)
+    goal: Materialize dip.py as a validation sonar that parses an offline Instantiation
+      Matrix (dip_state.yml) to mechanically verify the 7 dimensions without dictating
+      conversational flow.
+    status: ACTIVE
+    dependencies: []
