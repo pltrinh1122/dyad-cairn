@@ -40,3 +40,17 @@ def test_derive_status_ready_with_done_dependency():
     ledger = "node_1 completed."
     status = derive_status("node_2", all_nodes["node_2"], all_nodes, ledger_content=ledger, active_branches="")
     assert status == "READY"
+
+def test_build_tree_returns_list():
+    from skills.frontier_reader import build_tree
+    nodes = {
+        "node_1": {"title": "Node 1", "dependencies": []},
+        "node_2": {"title": "Node 2", "dependencies": ["node_1"]}
+    }
+    lines = build_tree(nodes)
+    assert isinstance(lines, list)
+    assert len(lines) == 2
+    assert "node_1" in lines[0]
+    assert "node_2" in lines[1]
+    assert "├──" in lines[0] or "└──" in lines[0]
+    assert "├──" in lines[1] or "└──" in lines[1]

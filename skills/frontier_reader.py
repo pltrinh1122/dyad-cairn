@@ -79,10 +79,18 @@ def build_tree(nodes):
         if is_root:
             roots.append(n)
 
+    lines = []
+
     def print_tree(node_id, prefix=""):
-        status = derive_status(node_id, nodes[node_id], nodes)
+        derived = derive_status(node_id, nodes[node_id], nodes)
+        if nodes[node_id].get('status') == "IN_REVIEW" and derived == "READY":
+            status = "IN_REVIEW"
+        else:
+            status = derived
+            
         title = nodes[node_id].get('title', 'Unknown')
-        print(f"{prefix}├── {node_id} [{status}]: {title}")
+        node_type = f" [{nodes[node_id]['type'].upper()}]" if "type" in nodes[node_id] else ""
+        lines.append(f"{prefix}├── {node_id} [{status}]{node_type}: {title}")
         
         node_children = children.get(node_id, [])
         for i, child in enumerate(node_children):
@@ -93,6 +101,8 @@ def build_tree(nodes):
 
     for root in roots:
         print_tree(root, "")
+        
+    return lines
 
 def main():
     try:
@@ -102,7 +112,9 @@ def main():
         nodes = state.get('nodes', {})
         dag_name = "AUDIT DAG" if "audit" in yml_file else "FRONTIER DAG"
         print(f"{dag_name}:")
-        build_tree(nodes)
+        tree_lines = build_tree(nodes)
+        for line in tree_lines:
+            print(line)
     except Exception as e:
         print(f"Error reading frontier: {e}")
         sys.exit(1)
