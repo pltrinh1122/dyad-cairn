@@ -1,11 +1,4 @@
 nodes:
-  node_4b_execute_sonar_halting:
-    dependencies: []
-    status: READY
-    goal: Implement the markdown parser in dip_sonar.py to dynamically extract the
-      required dimensions, passing the TDD tests.
-    title: Execute Provenance Extraction Invariant
-    type: execute
   node_4c_probe_anchor_compilation:
     dependencies:
     - node_4a_execute_matrix_schema
@@ -21,6 +14,8 @@ nodes:
       invariants for how concurrent agents mutating the same structural files resolve
       data consistency and merge conflicts without shattering.
     type: PROBE
+    dependencies:
+    - node_4c_probe_anchor_compilation
   node_20_probe_authorization_gate_collision:
     status: IN_REVIEW
     title: Probe Authorization Gate Collision
