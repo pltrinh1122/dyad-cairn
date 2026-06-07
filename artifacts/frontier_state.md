@@ -17,6 +17,8 @@
   - *Dependencies:* node_19_probe_state_sync_collision
 - **node_22_probe_retro_css_formatting** [PROBE]: Probe RETRO CSS Formatting
   - *Goal:* Spin up a trail to investigate the root cause of why RETRO logs are not presented using the CSS template, and resolve the formatting.
+- **node_23_probe_frontier_ascii_tree** [PROBE]: Probe Frontier ASCII-Tree Rendering
+  - *Goal:* Spin up a PROBE to determine why frontier is no-longer presented as an ascii-tree (similar to a directory) to reflect DAG relationships.
 
 ## 🔴 BLOCKED NODES
 - **node_4c_probe_anchor_compilation** [PROBE]: Probe Anchor Compilation Invariant

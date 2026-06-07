@@ -38,3 +38,9 @@ nodes:
     goal: Spin up a trail to investigate the root cause of why RETRO logs are not
       presented using the CSS template, and resolve the formatting.
     type: PROBE
+  node_23_probe_frontier_ascii_tree:
+    status: IN_REVIEW
+    title: Probe Frontier ASCII-Tree Rendering
+    goal: Spin up a PROBE to determine why frontier is no-longer presented as an ascii-tree
+      (similar to a directory) to reflect DAG relationships.
+    type: PROBE
