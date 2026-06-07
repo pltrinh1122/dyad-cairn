@@ -37,3 +37,10 @@ guards:
     armed_condition: "A PR is created or updated, triggering a CI run."
     disarmed_condition: "Execution of GAP verification passing (or reflecting the correct intended failure) in CI."
     trigger_location: "skills/flow_state_manager.py (PR Reflection)"
+
+  - id: ui_dialect_enforcer
+    type: Asymmetric
+    description: "Monitors the Agent's raw conversational transcript. If the Agent replies to a UI invariant marker (e.g. read:) with raw markdown hallucination instead of invoking the mechanical script (e.g. bin/read), it blocks node completion."
+    armed_condition: "User inputs a marker bound to a mechanical UI script (e.g. read: <domain>)."
+    disarmed_condition: "Agent invokes the corresponding binary (e.g. ./bin/read) via tool call."
+    trigger_location: "skills/dialect_linter.py (Checked at node complete/reflect-green)"

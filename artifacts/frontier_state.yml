@@ -31,7 +31,7 @@ nodes:
     title: Probe Missing CSS Presentation
     type: probe
   node_18_probe_ui_csi_guard:
-    status: READY
+    status: ACTIVE
     title: Probe UI CSI Guard Architecture
     goal: Architect a mechanical UI CSI Guard to physically trap or monitor the generative
       output, ensuring the Agent abides by UI presentation invariants (e.g., ascii

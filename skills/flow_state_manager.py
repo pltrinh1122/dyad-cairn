@@ -109,6 +109,14 @@ def reflect_node_red(node_id):
 
 def reflect_node_green(node_id, retro_msg):
     print(f"[FLOW] Reflecting GREEN Phase (Mechanical Gate) for Node {node_id}...")
+    print("[FLOW] Asserting Mechanical UI Gate (Dialect Linter)...")
+    linter_result = subprocess.run("python3 skills/dialect_linter.py", shell=True, capture_output=True, text=True)
+    if linter_result.returncode != 0:
+        print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+        print(linter_result.stdout)
+        print("The Agent must physically run the UI presentation tools. You are blocked.")
+        sys.exit(1)
+        
     print("[FLOW] Asserting Mechanical Gate (TDD must PASS)...")
     sys.path.append('.')
     try:
@@ -220,6 +228,14 @@ def create_reflection_pr(node_id, is_green):
 def complete_node(node_id, retro_msg):
     print(f"[FLOW] Executing CSI Guard (Test Suite) for Node {node_id} completion...")
     
+    print("[FLOW] Asserting Mechanical UI Gate (Dialect Linter)...")
+    linter_result = subprocess.run("python3 skills/dialect_linter.py", shell=True, capture_output=True, text=True)
+    if linter_result.returncode != 0:
+        print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+        print(linter_result.stdout)
+        print("The Agent must physically run the UI presentation tools. You are blocked from Completion.")
+        sys.exit(1)
+        
     # Enforce Testing Invariant
     sys.path.append('.')
     try:
