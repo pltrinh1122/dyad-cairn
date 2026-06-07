@@ -6,5 +6,9 @@
 
 
 ## 🟡 IN_REVIEW NODES
-- **node_12_bind_conversational_gates** [PLAN]: Bind Conversational Dialect to Mechanical CSI Guards
-  - *Goal:* Structurally bind 'bind:', 'lean.', and the Wu-Wei Closure Action by building their physical deterministic wrappers (bin/bind, bin/node inject/authorize, and reflect-green retro_msg enforcement).
+- **node_12_plan_ontological_binder** [PLAN]: Construct the Ontological Binder
+  - *Goal:* Build bin/bind to enforce simultaneous mutation of the Ledger, AGENT.md, and the physical substrate.
+- **node_14_plan_design_review_gate** [PLAN]: Construct the Design-Review Gate
+  - *Goal:* Build bin/node inject (defaults to IN_REVIEW) and bin/node authorize (flips to READY) to map the lean. and lean! HTIL gates.
+- **node_15_plan_wuwei_closure_gate** [PLAN]: Construct the Wu-Wei Closure Gate
+  - *Goal:* Update skills/flow_state_manager.py to enforce a retro_msg synthesis block on reflect-green.
