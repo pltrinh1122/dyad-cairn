@@ -145,3 +145,6 @@
 - **2026-06-07 19:21:41** | `TODO` | test_noisy_intent_12345
 - **2026-06-07 19:21:41** | `NODE-RETRO` | [node_10_build_gap_reader] Stripped out cached status strings from frontier_state.yml. Rebuilt frontier_editor.py to dynamically enforce WIP-N=1 and View Projection using derive_status. Updated derive_status to accurately compute GAP by ensuring the ledger records explicitly prefix node_ids.
 - **2026-06-07 19:23:57** | `RETRO` | feels smoother already. let's keep dogfooding to see if there are remaning grains that we can rub.
+- **2026-06-07 19:54:46** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 19:55:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 19:55:17** | `NODE-RETRO` | [node_9_probe_css_presentation] Upgraded the dialect_linter to violently trap the retro: invariant, mandating mechanical invocation and full UI presentation of the CSS template.
