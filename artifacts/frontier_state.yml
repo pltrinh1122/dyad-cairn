@@ -22,3 +22,11 @@ nodes:
       DONE.
     status: BLOCKED
     dependencies: []
+  node_9_probe_css_presentation:
+    title: Probe Missing CSS Presentation
+    type: probe
+    goal: Investigate why the Agent consistently fails to explicitly present the CSS
+      (Continue, Start, Stop) template in the chat UI during Dyad Retros, despite
+      the mechanical UI presentation firing in the logs.
+    status: BLOCKED
+    dependencies: []

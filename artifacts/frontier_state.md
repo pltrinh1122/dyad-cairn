@@ -15,3 +15,5 @@
   - *Dependencies:* node_4a_execute_matrix_schema
 - **node_7_plan_csi_guard_execute** [PLAN]: Plan CSI Guard for Execute Nodes
   - *Goal:* Design and test a deterministic CLI command (e.g., ./bin/node complete) that enforces the Testing Invariant before allowing a node to transition to DONE.
+- **node_9_probe_css_presentation** [PROBE]: Probe Missing CSS Presentation
+  - *Goal:* Investigate why the Agent consistently fails to explicitly present the CSS (Continue, Start, Stop) template in the chat UI during Dyad Retros, despite the mechanical UI presentation firing in the logs.
