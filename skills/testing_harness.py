@@ -9,7 +9,10 @@ def run_tests(args):
         print("[TEST HARNESS] No 'tests/' directory found. Nothing to run.")
         sys.exit(0)
         
-    cmd = ["python3", "-m", "pytest", "tests/"] + args
+    cmd = ["python3", "-m", "pytest", "tests/"]
+    if os.path.exists("commons"):
+        cmd.append("commons/")
+    cmd.extend(args)
     print(f"[TEST HARNESS] Executing: {' '.join(cmd)}")
     
     result = subprocess.run(cmd, capture_output=True, text=True)
@@ -20,6 +23,7 @@ def run_tests(args):
         
     if result.returncode != 0:
         print("[TEST HARNESS] FAIL: Tests did not pass.")
+        print("[CYBERNETIC STEERING VECTOR] The constraints above define your next move. Consume the error trace, align your synthesis, and act.")
         sys.exit(1)
     else:
         print("[TEST HARNESS] PASS: All tests passed mechanically.")
