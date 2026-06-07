@@ -102,3 +102,5 @@
 - **2026-06-07 03:59:10** | `CLIP` | HTIL Gate Approved: Provenance-bound Red Phase Spec for Matrix Schema is ratified. Execution authorized.
 - **2026-06-07 04:02:46** | `RETRO` | Operator: 'this feels strangely simple. there's no written spec...'
 - **2026-06-07 04:02:46** | `CLIP` | Falsification: The 'spec' is not missing; it is physically partitioned into the Ontological Bond (Ledger/Retros for the Why, TDD Tests for the How). Future maintenance is executed strictly by probing the tests and falsifying the retros, never by reading static documentation.
+- **2026-06-07 04:05:27** | `RETRO` | Operator: 'the ledger is of cairn. the maintainer are only interested in the dip ledger...'
+- **2026-06-07 04:05:27** | `CLIP` | Falsification: Conflating the Builder's ledger with the Tool's spec violates the Boundary Lock invariant. Tools built for the Commons (like dip.py) must carry their own isolated Ontological Bond (tests and docs) to ensure clean inheritance without coupling to dyad-cairn's internal state.
