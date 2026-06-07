@@ -44,7 +44,7 @@ def save_state(state):
     ]
     
     # Sort nodes by status for display
-    status_order = ["ACTIVE", "IN_REVIEW", "BLOCKED"]
+    status_order = ["ACTIVE", "IN_REVIEW", "BLOCKED", "READY"]
     
     for status in status_order:
         status_nodes = {k: v for k, v in state["nodes"].items() if v.get("status") == status}

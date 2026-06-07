@@ -1,6 +1,7 @@
 nodes:
   node_10_build_gap_reader:
     dependencies: []
+    status: READY
     goal: Upgrade frontier_reader.py to dynamically derive node status from the physical
       substrate (branches, tests) rather than relying on cached strings, fulfilling
       the GAP invariant.
@@ -8,6 +9,7 @@ nodes:
     type: execute
   node_4b_execute_sonar_halting:
     dependencies: []
+    status: READY
     goal: Implement the markdown parser in dip_sonar.py to dynamically extract the
       required dimensions, passing the TDD tests.
     title: Execute Provenance Extraction Invariant
@@ -15,12 +17,14 @@ nodes:
   node_4c_probe_anchor_compilation:
     dependencies:
     - node_4a_execute_matrix_schema
+    status: READY
     goal: Investigate how a fully saturated dip_state.yml is safely and deterministically
       projected into the immutable GEMINI.md anchor.
     title: Probe Anchor Compilation Invariant
     type: probe
   node_9_probe_css_presentation:
     dependencies: []
+    status: READY
     goal: Investigate why the Agent consistently fails to explicitly present the CSS
       (Continue, Start, Stop) template in the chat UI during Dyad Retros, despite
       the mechanical UI presentation firing in the logs.
@@ -28,6 +32,7 @@ nodes:
     type: probe
   node_11_probe_todo_pipeline:
     dependencies: []
+    status: READY
     goal: Architect and define the mechanical ingestion pipeline for the `todo:` dialect
       marker, investigating how a pre-DAG holding pen (e.g., `bin/todo`) should physically
       map to the substrate without polluting the SPAOR loop.
