@@ -15,8 +15,9 @@ nodes:
     title: Probe Anchor Compilation Invariant
     type: probe
   node_12_plan_local_executioner_loop:
-    dependencies: []
-    status: READY
+    dependencies:
+    - node_13_probe_authorization_gate_collision
+    status: BLOCKED
     goal: Design and formalize the Git Worktree partitioning strategy and the `./bin/claude-watch`
       listener script to safely isolate the Claude execution thread from the Architect's
       workspace without substrate entanglement.
