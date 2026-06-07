@@ -1,5 +1,55 @@
 import yaml
 import sys
+import os
+import subprocess
+
+def derive_status(node_id, node_data, all_nodes, ledger_content=None, active_branches=None):
+    if ledger_content is None:
+        if os.path.exists("DYAD_LEDGER.md"):
+            with open("DYAD_LEDGER.md", "r", encoding="utf-8") as f:
+                ledger_content = f.read()
+        else:
+            ledger_content = ""
+            
+    if active_branches is None:
+        try:
+            res = subprocess.run(["git", "branch"], capture_output=True, text=True)
+            active_branches = res.stdout if res.returncode == 0 else ""
+        except Exception:
+            active_branches = ""
+
+    import re
+    prefix_match = re.match(r"(node_[0-9a-z]+)", node_id)
+    prefix = prefix_match.group(1) if prefix_match else node_id
+
+    if ledger_content:
+        norm_prefix = prefix.replace("_", " ").lower()
+        if node_id in ledger_content or (prefix and norm_prefix in ledger_content.lower()):
+            return "DONE"
+            
+    if active_branches:
+        for line in active_branches.splitlines():
+            branch = line.replace("*", "").strip()
+            if branch == 'main':
+                continue
+            if node_id in branch or (prefix and prefix in branch):
+                return "ACTIVE"
+        
+    deps = node_data.get('dependencies', [])
+    if not deps:
+        return "READY"
+        
+    for dep_id in deps:
+        if dep_id not in all_nodes:
+            dep_status = derive_status(dep_id, {}, all_nodes, ledger_content, active_branches)
+            if dep_status != "DONE":
+                return "BLOCKED"
+            continue
+        dep_status = derive_status(dep_id, all_nodes[dep_id], all_nodes, ledger_content, active_branches)
+        if dep_status != "DONE":
+            return "BLOCKED"
+            
+    return "READY"
 
 def build_tree(nodes):
     # A simple horizontal ASCII tree
@@ -16,17 +66,21 @@ def build_tree(nodes):
     
     for n, data in nodes.items():
         deps = data.get('dependencies', [])
-        if not deps:
-            roots.append(n)
-        else:
-            for d in deps:
+        is_root = True
+        
+        for d in deps:
+            if d in nodes:
+                is_root = False
                 if d in children:
                     children[d].append(n)
                 else:
                     children[d] = [n]
+                    
+        if is_root:
+            roots.append(n)
 
     def print_tree(node_id, prefix=""):
-        status = nodes[node_id].get('status', 'UNKNOWN')
+        status = derive_status(node_id, nodes[node_id], nodes)
         title = nodes[node_id].get('title', 'Unknown')
         print(f"{prefix}├── {node_id} [{status}]: {title}")
         

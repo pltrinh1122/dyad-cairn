@@ -172,6 +172,32 @@ def create_reflection_pr(node_id, is_green):
         run_cmd(f"python3 skills/frontier_editor.py {node_id} IN_REVIEW")
         print(f"[FLOW] Node {node_id} status transitioned to IN_REVIEW. Execution halted pending Operator Approval.")
 
+def complete_node(node_id):
+    print(f"[FLOW] Executing CSI Guard (Test Suite) for Node {node_id} completion...")
+    
+    # Enforce Testing Invariant
+    sys.path.append('.')
+    try:
+        test_result = run_cmd("python3 skills/testing_harness.py", allow_fail=True)
+        print(test_result)
+    except Exception:
+        print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+        print("TDD execution failed to run. You cannot complete an EXECUTE node without passing tests.")
+        sys.exit(1)
+        
+    if "🚨" in test_result:
+        print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+        print("A structural CSI Guard was tripped. You cannot complete this node.")
+        sys.exit(1)
+        
+    if "FAIL" in test_result or "ERROR" in test_result:
+        print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+        print("Tests failed. The Testing Invariant is violated. You are mechanically forbidden from closing this node.")
+        sys.exit(1)
+        
+    print(f"[FLOW] Tests passed mechanically. Transitioning Node {node_id} to DONE.")
+    run_cmd(f"python3 skills/frontier_editor.py {node_id} DONE")
+
 def trail_reflect(trail_id, retro_msg):
     print(f"[FLOW] Executing Trail Reflect for {trail_id}...")
     
@@ -191,7 +217,7 @@ def trail_reflect(trail_id, retro_msg):
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: python3 skills/flow_state_manager.py <plan|checkout|reflect-red|reflect-green|trail-reflect> <node_id> [retro_msg]")
+        print("Usage: python3 skills/flow_state_manager.py <plan|checkout|reflect-red|reflect-green|complete|trail-reflect> <node_id> [retro_msg]")
         sys.exit(1)
     
     check_retro_lock()
@@ -218,6 +244,8 @@ if __name__ == "__main__":
         reflect_node_red(node)
     elif action == "reflect-green":
         reflect_node_green(node)
+    elif action == "complete":
+        complete_node(node)
     elif action == "trail-reflect":
         retro_msg = sys.argv[3] if len(sys.argv) > 3 else "No retro message provided."
         trail_reflect(node, retro_msg)
