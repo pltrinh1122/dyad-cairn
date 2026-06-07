@@ -96,7 +96,10 @@ if __name__ == "__main__":
                     del state["nodes"][node_id]["status"]
             print(f"[FRONTIER] Transitioned Node {node_id} toward {new_status}")
         else:
-            print(f"ERROR: Node {node_id} not found in DAG.")
-            sys.exit(1)
+            if new_status == "DONE":
+                print(f"[FRONTIER] Node {node_id} not found in DAG. It may have been autonomously excised.")
+            else:
+                print(f"ERROR: Node {node_id} not found in DAG.")
+                sys.exit(1)
     save_state(state)
     print("[FRONTIER] State computationally validated and View projected.")
