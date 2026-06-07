@@ -1,9 +1,9 @@
 nodes:
-  node_4a_plan_matrix_schema:
-    title: Plan Matrix Schema Invariant
-    type: plan
-    goal: Design the strict YAML schema (the 7 dimensions + tripartite state of content,
-      status, signature) and output the Red Phase TDD Specs for the parser/writer.
+  node_4a_execute_matrix_schema:
+    title: Execute Matrix Schema Invariant
+    type: execute
+    goal: Implement the skills/dip_sonar.py functional logic to pass the TDD matrix
+      schema invariant tests.
     status: ACTIVE
     dependencies: []
   node_4b_probe_sonar_halting:
