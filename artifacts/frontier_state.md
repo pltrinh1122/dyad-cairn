@@ -5,6 +5,11 @@
 > WIP-N=1 mechanically enforced by `skills/frontier_editor.py`.
 
 
+## 🟢 ACTIVE NODES
+- **node_3**: First Stone Cut (hard-guardrails)
+  - *Goal:* Author the stone.yaml for the hard-guardrails playbook and execute a physical installation test against our substrate using mason.
+  - *Dependencies:* node_2b, node_1
+
 ## 🔴 DONE NODES
 - **node_0**: Instantiate Workflow State-Machine
   - *Goal:* Build the physical tracking layer for our SPAOR loop (this Frontier DAG and the LIFO Execution Stack).
