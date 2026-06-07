@@ -30,7 +30,7 @@ nodes:
     title: First Stone Cut (hard-guardrails)
     goal: Author the stone.yaml for the hard-guardrails playbook and execute a physical
       installation test against our substrate using mason.
-    status: ACTIVE
+    status: DONE
     dependencies:
     - node_2b
     - node_1
