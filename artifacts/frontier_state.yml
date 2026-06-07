@@ -14,21 +14,12 @@ nodes:
       projected into the immutable GEMINI.md anchor.
     title: Probe Anchor Compilation Invariant
     type: probe
-  node_12_plan_local_executioner_loop:
-    dependencies:
-    - node_13_probe_authorization_gate_collision
-    status: BLOCKED
-    goal: Design and formalize the Git Worktree partitioning strategy and the `./bin/claude-watch`
-      listener script to safely isolate the Claude execution thread from the Architect's
-      workspace without substrate entanglement.
-    title: Plan Local Executioner Worktree Architecture
-    type: plan
-  node_13_probe_authorization_gate_collision:
+  node_14_probe_state_sync_collision:
     dependencies: []
     status: READY
-    goal: Investigate the Authorization Gate Collision where a full-auto Executioner
-      clone running PLAN+EXECUTE autonomously bypasses the HTIL Design-Review Gate
-      ('lean!'). Determine the architectural invariant for mapping the SPAOR phases
-      across the dual-agent boundary.
-    title: Probe Authorization Gate Collision
+    goal: Investigate the Ledger and State Sync Collision. Determine the physical
+      invariants for how concurrent agents mutating the same structural files (DYAD_LEDGER.md,
+      frontier_state.yml) resolve data consistency and merge conflicts without shattering
+      autonomous execution.
+    title: Probe Ledger and State Sync Collision
     type: probe
