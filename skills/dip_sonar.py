@@ -20,7 +20,23 @@ def get_required_dimensions(provenance_path=None):
     if not os.path.exists(provenance_path):
         raise ProvenanceExtractionError("Provenance file not found")
         
-    raise NotImplementedError("Executioner must implement the parser to extract dimensions from markdown.")
+    with open(provenance_path, "r", encoding="utf-8") as f:
+        content = f.read()
+        
+    dimensions = []
+    pattern = re.compile(r"\|\s*(\d+)\s*\|\s*(?:\*\*)?([^|*]+?)(?:\*\*)?\s*\|")
+    for line in content.splitlines():
+        match = pattern.search(line)
+        if match:
+            idx = match.group(1).strip()
+            raw_dim = match.group(2).strip()
+            sanitized_dim = raw_dim.lower().replace(" ", "_").replace("-", "_")
+            dimensions.append(f"{idx}_{sanitized_dim}")
+            
+    if not dimensions:
+        raise ProvenanceExtractionError("Failed to extract dimension table from provenance")
+        
+    return dimensions
 
 def validate_matrix(file_path):
     if not os.path.exists(file_path):
