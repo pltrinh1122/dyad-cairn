@@ -21,3 +21,11 @@ nodes:
       closing the trail.
     status: BLOCKED
     dependencies: []
+  node_7_plan_csi_guard_execute:
+    title: Plan CSI Guard for Execute Nodes
+    type: plan
+    goal: Design and test a deterministic CLI command (e.g., ./bin/node complete)
+      that enforces the Testing Invariant before allowing a node to transition to
+      DONE.
+    status: BLOCKED
+    dependencies: []

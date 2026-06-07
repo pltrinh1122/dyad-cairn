@@ -14,3 +14,5 @@
   - *Goal:* Investigate how a fully saturated dip_state.yml is safely and deterministically projected into the immutable GEMINI.md anchor.
 - **node_5_probe_reflect_phase** [PROBE]: Probe the [REFLECT] Phase Requirement
   - *Goal:* Rub the necessity of an explicit [REFLECT] node-type or phase following [EXECUTE] to capture execution-level learnings (best practices, pitfalls) before closing the trail.
+- **node_7_plan_csi_guard_execute** [PLAN]: Plan CSI Guard for Execute Nodes
+  - *Goal:* Design and test a deterministic CLI command (e.g., ./bin/node complete) that enforces the Testing Invariant before allowing a node to transition to DONE.
