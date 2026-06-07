@@ -37,8 +37,8 @@ A true "Bake" is not a piece of code. It is an **Ontological Bond** that spans t
 **The Consistency Guardrail.**
 Conversational state transitions are mathematically forbidden. When entering a formal state (e.g., `retro:`), the Agent must engage a physical lock (e.g., `./bin/retro-start` creating `RETRO_ACTIVE.lock`). The SPAOR execution stack (`plan`, `checkout`, `reflect`) is violently blocked until the lock is resolved via its corresponding physical closure script (e.g., `./bin/retro`).
 
-**The PR Gate Invariant (Parallel WIP Unlocked).**
-The Agent must never commit directly to `main`. Execution happens strictly on a branch, culminating in a Pull Request. The Agent may operate multiple concurrent branches (WIP-N > 1) to prevent velocity throttling. The CI tests provide the Mechanical Gate, but the Operator must manually merge the PR to provide the Intent Gate. This ensures absolute HITL safety without bottlenecking the engine.
+**The Autonomous Merge Invariant (Parallel WIP Unlocked).**
+The Agent must never commit directly to `main`. Execution happens strictly on a branch, culminating in a Pull Request. The Agent may operate multiple concurrent branches (WIP-N > 1) to prevent velocity throttling. The HTIL Gate exclusively occurs at the architecture and test invariant review (the Red Phase Spec). Once the Operator approves the Red Spec, the Agent is fully authorized to autonomously merge the Green Phase PR if all mechanical CI tests pass. This prevents bottlenecking the engine.
 
 ## 6 & 7. Ontology & Vocabulary (The ETL Mapping)
 Our vocabulary reflects the physical extraction of stones, mapped mentally to an ETL pipeline:

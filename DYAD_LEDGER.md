@@ -68,3 +68,4 @@
 - **2026-06-06 23:23:22** | `COMMONS_SYNC` | Ingested ratification of dyad-steward summit #3 accelerating multi-dyad Operator context (N*), and the formal registration of dyad-shakti. The Playbooks have been physically integrated into our substrate.
 - **2026-06-07 00:01:57** | `RETRO` | Retro: TDD Gate Vulnerability & Orthogonality
 - **2026-06-07 00:13:25** | `RETRO` | Testing the UI Formatting CSI Guard
+- **2026-06-07 00:30:39** | `CLIP` | Falsification (The Autonomous Merge Invariant): The physical Merge on GitHub is NOT the HITL Gate. The HTIL Gate exclusively occurs at the architecture and test invariant review (the Red Phase Spec). Once the Operator approves the Red Spec, the Agent is fully authorized to autonomously merge the Green Phase PR if all mechanical CI tests pass. This formally deprecates the 'Wu-Wei Intent Gate' merge block.
