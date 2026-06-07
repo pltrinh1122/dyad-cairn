@@ -18,6 +18,20 @@ def save_state(state):
         print("ERROR: WIP-N=1 Violation. Cannot save state with multiple ACTIVE nodes.")
         sys.exit(1)
         
+    # Physically excise DONE nodes to prevent dead mass accumulation
+    # The Ledger is the durable record; the Frontier is strictly active state.
+    excised = []
+    for node_id, data in list(state["nodes"].items()):
+        if data.get("status") == "DONE":
+            del state["nodes"][node_id]
+            excised.append(node_id)
+            
+    # Clean up dependencies referencing excised nodes
+    if excised:
+        for node_id, data in state["nodes"].items():
+            if "dependencies" in data:
+                data["dependencies"] = [d for d in data["dependencies"] if d not in excised]
+                
     with open(YML_FILE, "w") as f:
         yaml.dump(state, f, default_flow_style=False, sort_keys=False)
         
@@ -30,7 +44,7 @@ def save_state(state):
     ]
     
     # Sort nodes by status for display
-    status_order = ["ACTIVE", "IN_REVIEW", "BLOCKED", "DONE"]
+    status_order = ["ACTIVE", "IN_REVIEW", "BLOCKED"]
     
     for status in status_order:
         status_nodes = {k: v for k, v in state["nodes"].items() if v.get("status") == status}
