@@ -208,3 +208,6 @@
 {"timestamp": "2026-06-07T22:39:23.732527+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-07T22:39:23.870363+00:00Z", "action": "NODE-RETRO", "message": "[node_audit_execute_reflection_review_gates] Implemented Reflection Review HITL blocks via trail-reflect and trail-dispose. Corrected Audit DAG injection to bypass IN_REVIEW Design Review."}
 {"timestamp": "2026-06-07T22:39:53.559711+00:00Z", "action": "TRAIL-RETRO", "message": "Implemented structural logic to bypass IN_REVIEW on the Audit DAG and established the Reflection Review HITL Gate."}
+{"timestamp": "2026-06-07T22:56:10.147360+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-07T22:57:07.715837+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-07T22:57:07.867068+00:00Z", "action": "NODE-RETRO", "message": "[node_24_probe_declarative_hitl_gates] Successfully migrated from magic string environment assertions to explicit declarative config.gates on both DAGs. The Intent of the gates is now structurally bound to the physical file it governs."}

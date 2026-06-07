@@ -213,3 +213,6 @@
 - **2026-06-07 22:39:23** | `TODO` | test_noisy_intent_12345
 - **2026-06-07 22:39:23** | `NODE-RETRO` | [node_audit_execute_reflection_review_gates] Implemented Reflection Review HITL blocks via trail-reflect and trail-dispose. Corrected Audit DAG injection to bypass IN_REVIEW Design Review.
 - **2026-06-07 22:39:53** | `TRAIL-RETRO` | Implemented structural logic to bypass IN_REVIEW on the Audit DAG and established the Reflection Review HITL Gate.
+- **2026-06-07 22:56:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:57:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:57:07** | `NODE-RETRO` | [node_24_probe_declarative_hitl_gates] Successfully migrated from magic string environment assertions to explicit declarative config.gates on both DAGs. The Intent of the gates is now structurally bound to the physical file it governs.
