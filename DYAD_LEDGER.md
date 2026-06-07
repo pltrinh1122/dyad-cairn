@@ -142,3 +142,5 @@
 - **2026-06-07 19:16:44** | `CLIP` | Canonical Standardization: GAP means Grounded-Aligned Progress, the discipline of re-deriving state from the physical substrate to kill stale-cache hallucinations. The acronym was previously hallucinated as 'GitHub Actions Pipeline' in dyad-cairn. The remote CI is simply the Touchstone used to enforce GAP.
 - **2026-06-07 19:20:22** | `TODO` | test_noisy_intent_12345
 - **2026-06-07 19:20:59** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 19:21:41** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 19:21:41** | `NODE-RETRO` | [node_10_build_gap_reader] Stripped out cached status strings from frontier_state.yml. Rebuilt frontier_editor.py to dynamically enforce WIP-N=1 and View Projection using derive_status. Updated derive_status to accurately compute GAP by ensuring the ledger records explicitly prefix node_ids.
