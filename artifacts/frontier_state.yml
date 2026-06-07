@@ -14,3 +14,26 @@ nodes:
       projected into the immutable GEMINI.md anchor.
     title: Probe Anchor Compilation Invariant
     type: probe
+  node_19_probe_state_sync_collision:
+    status: IN_REVIEW
+    title: Probe Ledger and State Sync Collision
+    goal: Investigate the Ledger and State Sync Collision. Determine the physical
+      invariants for how concurrent agents mutating the same structural files resolve
+      data consistency and merge conflicts without shattering.
+    type: PROBE
+  node_20_probe_authorization_gate_collision:
+    status: IN_REVIEW
+    title: Probe Authorization Gate Collision
+    goal: Investigate the Authorization Gate Collision where a full-auto Executioner
+      clone running PLAN+EXECUTE autonomously bypasses the HTIL Design-Review Gate.
+    type: PROBE
+    dependencies:
+    - node_19_probe_state_sync_collision
+  node_21_probe_reflect_boundary_collision:
+    status: IN_REVIEW
+    title: Probe Reflect Boundary Collision
+    goal: Investigate the Reflect Boundary Collision. Determine invariants for how
+      agents coordinate git states during reflect-green.
+    type: PROBE
+    dependencies:
+    - node_19_probe_state_sync_collision
