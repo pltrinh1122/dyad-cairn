@@ -21,3 +21,11 @@ nodes:
     status: BLOCKED
     dependencies:
     - node_4a_probe_matrix_schema
+  node_5_probe_reflect_phase:
+    title: Probe the [REFLECT] Phase Requirement
+    type: probe
+    goal: Rub the necessity of an explicit [REFLECT] node-type or phase following
+      [EXECUTE] to capture execution-level learnings (best practices, pitfalls) before
+      closing the trail.
+    status: BLOCKED
+    dependencies: []

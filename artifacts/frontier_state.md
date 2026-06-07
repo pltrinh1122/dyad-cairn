@@ -15,3 +15,5 @@
 - **node_4c_probe_anchor_compilation** [PROBE]: Probe Anchor Compilation Invariant
   - *Goal:* Investigate how a fully saturated dip_state.yml is safely and deterministically projected into the immutable GEMINI.md anchor.
   - *Dependencies:* node_4a_probe_matrix_schema
+- **node_5_probe_reflect_phase** [PROBE]: Probe the [REFLECT] Phase Requirement
+  - *Goal:* Rub the necessity of an explicit [REFLECT] node-type or phase following [EXECUTE] to capture execution-level learnings (best practices, pitfalls) before closing the trail.
