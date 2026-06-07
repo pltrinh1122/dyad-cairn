@@ -14,3 +14,5 @@
   - *Goal:* Investigate how a fully saturated dip_state.yml is safely and deterministically projected into the immutable GEMINI.md anchor.
 - **node_5_probe_reflect_phase** [PROBE]: Probe the [REFLECT] Phase Requirement
   - *Goal:* Rub the necessity of an explicit [REFLECT] node-type or phase following [EXECUTE] to capture execution-level learnings (best practices, pitfalls) before closing the trail.
+- **node_6_plan_tool_ledger** [PLAN]: Plan Isolated Ledger for Tools
+  - *Goal:* Design and instantiate a physical ledger structure (e.g. dip_ledger.md) specifically to track the development decisions of dip.py and future tools separately from dyad-cairn.

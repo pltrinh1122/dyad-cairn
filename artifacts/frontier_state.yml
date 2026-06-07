@@ -21,3 +21,11 @@ nodes:
       closing the trail.
     status: BLOCKED
     dependencies: []
+  node_6_plan_tool_ledger:
+    title: Plan Isolated Ledger for Tools
+    type: plan
+    goal: Design and instantiate a physical ledger structure (e.g. dip_ledger.md)
+      specifically to track the development decisions of dip.py and future tools separately
+      from dyad-cairn.
+    status: BLOCKED
+    dependencies: []
