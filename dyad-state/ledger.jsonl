@@ -172,3 +172,10 @@
 {"timestamp": "2026-06-07T21:17:23.155270+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-07T21:17:23.269209+00:00Z", "action": "NODE-RETRO", "message": "[node_17b_execute_audit_dag] Implemented parameterized SPAOR engine and Audit Lock. bin/audit and bin/audit-node successfully deployed."}
 {"timestamp": "2026-06-07T21:22:44.540329+00:00Z", "action": "CLIP", "message": "Invariant: The SPAOR PLAN Injection Guard. A [PLAN] node is physically forbidden from existing in the DAG unless its parent [PROBE] node is either actively being executed (current branch) or has already been completed (exists in DYAD_LEDGER.md). To prevent the Agent from hallucinating future PLAN nodes via direct file mutation, frontier_editor.py save_state() must assert this invariant across all PLAN nodes in the DAG."}
+{"timestamp": "2026-06-07T21:23:04.443719+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-07T21:23:30.475913+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-07T21:24:29.707180+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-07T21:25:09.583011+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-07T21:25:19.968542+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-07T21:25:34.611144+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-07T21:25:34.710552+00:00Z", "action": "NODE-RETRO", "message": "[node_audit_1780867291] Isolated the SPAOR PLAN Injection Guard invariant and clipped to ledger. Fixed Frontier test suite contamination."}
