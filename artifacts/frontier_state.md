@@ -6,13 +6,13 @@
 
 
 ## 🟢 ACTIVE NODES
-- **node_4b_execute_sonar_halting** [EXECUTE]: Execute Provenance Extraction Invariant
-  - *Goal:* Implement the markdown parser in dip_sonar.py to dynamically extract the required dimensions, passing the TDD tests.
+- **node_6_plan_tool_ledger** [PLAN]: Plan Isolated Ledger for Tools
+  - *Goal:* Design and instantiate a physical ledger structure (e.g. dip_ledger.md) specifically to track the development decisions of dip.py and future tools separately from dyad-cairn.
 
 ## 🔴 BLOCKED NODES
+- **node_4b_execute_sonar_halting** [EXECUTE]: Execute Provenance Extraction Invariant
+  - *Goal:* Implement the markdown parser in dip_sonar.py to dynamically extract the required dimensions, passing the TDD tests.
 - **node_4c_probe_anchor_compilation** [PROBE]: Probe Anchor Compilation Invariant
   - *Goal:* Investigate how a fully saturated dip_state.yml is safely and deterministically projected into the immutable GEMINI.md anchor.
 - **node_5_probe_reflect_phase** [PROBE]: Probe the [REFLECT] Phase Requirement
   - *Goal:* Rub the necessity of an explicit [REFLECT] node-type or phase following [EXECUTE] to capture execution-level learnings (best practices, pitfalls) before closing the trail.
-- **node_6_plan_tool_ledger** [PLAN]: Plan Isolated Ledger for Tools
-  - *Goal:* Design and instantiate a physical ledger structure (e.g. dip_ledger.md) specifically to track the development decisions of dip.py and future tools separately from dyad-cairn.

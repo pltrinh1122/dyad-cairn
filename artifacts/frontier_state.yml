@@ -4,7 +4,7 @@ nodes:
     type: execute
     goal: Implement the markdown parser in dip_sonar.py to dynamically extract the
       required dimensions, passing the TDD tests.
-    status: ACTIVE
+    status: BLOCKED
     dependencies: []
   node_4c_probe_anchor_compilation:
     title: Probe Anchor Compilation Invariant
@@ -27,5 +27,5 @@ nodes:
     goal: Design and instantiate a physical ledger structure (e.g. dip_ledger.md)
       specifically to track the development decisions of dip.py and future tools separately
       from dyad-cairn.
-    status: BLOCKED
+    status: ACTIVE
     dependencies: []
