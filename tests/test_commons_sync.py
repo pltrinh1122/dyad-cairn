@@ -12,7 +12,7 @@ def test_commons_sync():
     
     # Check if HEAD matches origin/main
     result = subprocess.run(
-        ["git", "rev-list", "HEAD...origin/main", "--count"],
+        ["git", "rev-list", "HEAD..origin/main", "--count"],
         cwd=commons_dir,
         capture_output=True,
         text=True
