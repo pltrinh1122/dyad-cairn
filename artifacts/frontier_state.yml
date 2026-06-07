@@ -1,17 +1,10 @@
 nodes:
-  node_4a_execute_matrix_schema:
-    title: Execute Matrix Schema Invariant
-    type: execute
-    goal: Implement the skills/dip_sonar.py functional logic to pass the TDD matrix
-      schema invariant tests.
-    status: ACTIVE
-    dependencies: []
   node_4b_probe_sonar_halting:
     title: Probe Sonar Halting Conditions
     type: probe
     goal: Investigate the mechanical halting conditions for dip.py. Discover the exact
       physical rules that trigger sys.exit(1) (e.g. missing signature, empty dimension).
-    status: BLOCKED
+    status: ACTIVE
     dependencies: []
   node_4c_probe_anchor_compilation:
     title: Probe Anchor Compilation Invariant

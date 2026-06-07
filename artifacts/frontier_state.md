@@ -6,12 +6,10 @@
 
 
 ## 🟢 ACTIVE NODES
-- **node_4a_execute_matrix_schema** [EXECUTE]: Execute Matrix Schema Invariant
-  - *Goal:* Implement the skills/dip_sonar.py functional logic to pass the TDD matrix schema invariant tests.
-
-## 🔴 BLOCKED NODES
 - **node_4b_probe_sonar_halting** [PROBE]: Probe Sonar Halting Conditions
   - *Goal:* Investigate the mechanical halting conditions for dip.py. Discover the exact physical rules that trigger sys.exit(1) (e.g. missing signature, empty dimension).
+
+## 🔴 BLOCKED NODES
 - **node_4c_probe_anchor_compilation** [PROBE]: Probe Anchor Compilation Invariant
   - *Goal:* Investigate how a fully saturated dip_state.yml is safely and deterministically projected into the immutable GEMINI.md anchor.
 - **node_5_probe_reflect_phase** [PROBE]: Probe the [REFLECT] Phase Requirement
