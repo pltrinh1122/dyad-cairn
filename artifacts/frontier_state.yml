@@ -42,7 +42,7 @@ nodes:
     dependencies: []
   node_15_probe_wuwei_closure_gate:
     type: PROBE
-    status: READY
+    status: ACTIVE
     title: Construct the Wu-Wei Closure Gate
     goal: Update skills/flow_state_manager.py to enforce a retro_msg synthesis block
       on reflect-green.
