@@ -19,13 +19,6 @@ nodes:
       projected into the immutable GEMINI.md anchor.
     title: Probe Anchor Compilation Invariant
     type: probe
-  node_7_plan_csi_guard_execute:
-    dependencies: []
-    goal: Design and test a deterministic CLI command (e.g., ./bin/node complete)
-      that enforces the Testing Invariant before allowing a node to transition to
-      DONE.
-    title: Plan CSI Guard for Execute Nodes
-    type: plan
   node_9_probe_css_presentation:
     dependencies: []
     goal: Investigate why the Agent consistently fails to explicitly present the CSS
@@ -33,3 +26,17 @@ nodes:
       the mechanical UI presentation firing in the logs.
     title: Probe Missing CSS Presentation
     type: probe
+  node_11_probe_todo_pipeline:
+    dependencies: []
+    goal: Architect and define the mechanical ingestion pipeline for the `todo:` dialect
+      marker, investigating how a pre-DAG holding pen (e.g., `bin/todo`) should physically
+      map to the substrate without polluting the SPAOR loop.
+    title: Probe Todo Ingestion Pipeline
+    type: probe
+  node_11a_plan_todo_pipeline:
+    dependencies: []
+    goal: Build `bin/todo` CLI to append raw conversational intent to `dyad-state/todos.md`.
+      Enforce the invariant that `todos` are purely local and never sync to Touchstone
+      outbox.
+    title: Plan Todo Ingestion Pipeline
+    type: plan

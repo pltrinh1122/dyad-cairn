@@ -3,8 +3,6 @@ if [ "$1" == "frontier" ]; then
     python3 skills/frontier_reader.py
 elif [ "$1" == "guards" ] || [ "$1" == "arm/disarm" ]; then
     python3 skills/guards_reader.py
-elif [ "$1" == "rack" ]; then
-    ./bin/rack list
 else
     echo "Usage: ./bin/read <frontier|guards>"
     exit 1
