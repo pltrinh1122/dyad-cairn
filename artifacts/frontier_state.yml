@@ -14,27 +14,3 @@ nodes:
       projected into the immutable GEMINI.md anchor.
     title: Probe Anchor Compilation Invariant
     type: probe
-  node_12a_plan_worktree_substrate:
-    dependencies: []
-    status: BLOCKED
-    goal: Design and formalize the Git Worktree partitioning strategy to safely isolate
-      the Claude execution thread from the Architect's workspace based on the Context
-      Partition invariant.
-    title: Plan Local Worktree Partition
-    type: plan
-  node_12b_plan_authorization_handshake:
-    dependencies:
-    - node_12a_plan_worktree_substrate
-    status: BLOCKED
-    goal: Formalize the ./bin/claude-watch listener script to strictly halt Claude's
-      execution pending the lean! authorization gate.
-    title: Plan Executioner Authorization Handshake
-    type: plan
-  node_12c_plan_reflect_handoff:
-    dependencies:
-    - node_12a_plan_worktree_substrate
-    status: BLOCKED
-    goal: Formalize the mechanical transfer of the functional execution logs from
-      Claude's Worktree back to the Architect to satisfy the structural REFLECT boundary.
-    title: Plan REFLECT Execution Handoff
-    type: plan
