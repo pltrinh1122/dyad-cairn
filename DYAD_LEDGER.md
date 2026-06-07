@@ -75,3 +75,5 @@
 - **2026-06-07 01:39:04** | `RETRO` | Falsifying Survivor Bias and defining the GAP CSI Guard
 - **2026-06-07 01:46:17** | `RETRO` | Operator: 'will continue to plug holes as we find them.'
 - **2026-06-07 01:47:02** | `CLIP` | Falsification (The GAP Trap): The SPAOR execution loop must physically verify remote GitHub Actions Pipeline (GAP) state before transitioning nodes. Implicitly trusting local test harnesses creates Survivor Bias and split-brain states due to Environmental Drift. The 'remote_gap_sync' CSI Guard mechanically enforces this.
+- **2026-06-07 01:49:48** | `RETRO` | Operator: 'bin/backlog is a residual shadow to remove.'
+- **2026-06-07 01:49:48** | `CLIP` | Falsification: bin/backlog and global GH Issue constraints are obsolete residual shadows. The local DAG and PRs are the exclusive structural intent boundaries.

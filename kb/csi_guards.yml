@@ -15,7 +15,7 @@ guards:
     description: "Locks the SPAOR state machine to mandate cognitive reflection (CSS format) before resuming payload execution."
     armed_condition: "Execution of ./bin/retro-start (creates dyad-state/RETRO_ACTIVE.lock)"
     disarmed_condition: "Execution of ./bin/retro <summary> <path/to/retro.md> which validates the CSS format and syncs the ledger."
-    trigger_location: "All orchestration wrappers (e.g., ./bin/node, ./bin/backlog)"
+    trigger_location: "All orchestration wrappers (e.g., ./bin/node)"
 
   - id: commons_drift
     type: Asymmetric

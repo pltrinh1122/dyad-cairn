@@ -36,8 +36,7 @@ def check_sovereignty_trigger():
 
 def plan_node(node_id):
     print(f"[FLOW] Planning Node {node_id}...")
-    # Calls bin/backlog to rack the node (stubbed logic)
-    print(run_cmd(f"./bin/backlog rack {node_id}"))
+    print(f"[FLOW] Local DAG asserts planning. No remote issue required.")
 
 def checkout_node(node_id):
     branch_name = f"active/{node_id}"
