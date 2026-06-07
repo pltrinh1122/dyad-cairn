@@ -226,3 +226,5 @@
 - **2026-06-07 23:48:40** | `TODO` | test_noisy_intent_12345
 - **2026-06-07 23:49:08** | `TODO` | test_noisy_intent_12345
 - **2026-06-07 23:49:08** | `NODE-RETRO` | [node_22_probe_retro_css_formatting] Discovered invariant: The Retro Ledger Persistence Trap. skills/ledger_manager.py drops the CSS payload during append_ledger, causing only the summary to persist. DYAD_LEDGER.md renderer also needs refactoring to safely encapsulate multi-line strings without breaking list layout.
+- **2026-06-07 23:54:09** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 23:54:09** | `NODE-RETRO` | [node_22_plan_retro_css_formatting] Plan successfully mapped to artifacts/plan_node_22_retro_css_formatting.md.
