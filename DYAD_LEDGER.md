@@ -123,3 +123,4 @@
 - **2026-06-07 15:20:47** | `NODE-RETRO` | Enforced mandatory retro_msg synthesis on node completion gates to mechanically preserve Wu-Wei closure context.
 - **2026-06-07 15:21:31** | `NODE-RETRO` | Enforced mandatory retro_msg synthesis on node completion gates to mechanically preserve Wu-Wei closure context.
 - **2026-06-07 15:32:51** | `NODE-RETRO` | Implemented bin/bind to mechanically enforce Theory, Mechanics, and Ledger synchronization during Ontological Bonds.
+- **2026-06-07 15:36:11** | `NODE-RETRO` | Updated AGENT.md to formally bind the dialect markers bind:, lean., lean!, and Wu-Wei closure to their mechanical tools.
