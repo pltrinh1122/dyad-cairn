@@ -39,10 +39,62 @@ def append_ledger(action: str, message: str):
     with open(MD_FILE, "w") as f:
         f.write(md_content)
     
+    if action.lower() == "retro":
+        # sys.argv is parsed in __main__, we need to pass the file_path down.
+        # But wait, append_ledger only takes action and message. We need to handle this.
+        # This will be handled by updating __main__ below.
+        pass
+        
     print(f"[{action.upper()}] Successfully locked to ledger: {message}")
+
+def process_retro(summary: str, file_path: str):
+    os.makedirs("dyad-state", exist_ok=True)
+    
+    # 1. Sync Ledger
+    append_ledger("retro", summary)
+    
+    # 2. Outbox Sync (Fixing the vulnerability: syncing the full file, not just the summary)
+    outbox_dir = "dm/dyad-touchstone"
+    os.makedirs(outbox_dir, exist_ok=True)
+    ts_clean = datetime.datetime.now(datetime.timezone.utc).isoformat().replace(":", "-").replace(".", "-") + "Z"
+    outbox_file = os.path.join(outbox_dir, f"retro_{ts_clean}.md")
+    
+    if file_path and os.path.exists(file_path):
+        with open(file_path, "r") as f:
+            payload = f.read()
+    else:
+        payload = summary
+        
+    with open(outbox_file, "w") as f:
+        f.write(payload)
+    print(f"[SYNC] Full CSS Retro payload physically routed to {outbox_file} for Touchstone.")
+    
+    # 3. Disarm the Lock
+    lock_path = "dyad-state/RETRO_ACTIVE.lock"
+    if os.path.exists(lock_path):
+        os.remove(lock_path)
+        print(f"[GUARDRAIL] Retro lock removed. SPAOR state machine unblocked.")
+        
+    # 4. Mechanical UI Presentation (CSI Guard for UI formatting)
+    print("\n" + "="*80)
+    print("📋 [MECHANICAL UI PRESENTATION: RETRO SUMMARY]")
+    print(f"Summary: {summary}")
+    print("="*80)
+    if file_path and os.path.exists(file_path):
+        print(payload)
+    print("="*80)
+    print("[CYBERNETIC STEERING VECTOR] The Engine is open. Re-enter the SPAOR loop at Step 1 (Sense).")
+    print("-> Read artifacts/frontier_state.md and the active DAG to ingest the next constraints.\n")
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: python3 skills/ledger_manager.py <action> <message>")
+        print("Usage: python3 skills/ledger_manager.py <action> <message> [file_path]")
         sys.exit(1)
-    append_ledger(sys.argv[1], sys.argv[2])
+        
+    action = sys.argv[1]
+    if action.lower() == "retro":
+        summary = sys.argv[2]
+        file_path = sys.argv[3] if len(sys.argv) > 3 else None
+        process_retro(summary, file_path)
+    else:
+        append_ledger(action, sys.argv[2])

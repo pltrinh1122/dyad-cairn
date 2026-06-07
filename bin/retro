@@ -12,4 +12,4 @@ if [ ! -z "$2" ]; then
     fi
 fi
 
-python3 skills/ledger_manager.py retro "$1"
+python3 skills/ledger_manager.py retro "$1" "$2"

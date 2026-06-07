@@ -27,10 +27,43 @@ def main():
     else:
         logging.basicConfig(level=logging.INFO)
         
+    import yaml
+    from skills.mason_validator import validate_stone, install_stone, SecurityException
+    import os
+
     if args.command == "validate":
         print(f"Targeting: {args.path}")
+        try:
+            with open(args.path, "r") as f:
+                manifest = yaml.safe_load(f)
+            result = validate_stone(manifest)
+            if result.is_valid:
+                print("[PASS] Stone manifest conforms to the physical schema.")
+            else:
+                print(f"[FAIL] Schema violations detected: {result.errors}")
+                sys.exit(1)
+        except Exception as e:
+            print(f"[ERROR] Failed to parse {args.path}: {e}")
+            sys.exit(1)
+
     elif args.command == "install":
         print(f"Targeting: {args.path}")
+        try:
+            with open(args.path, "r") as f:
+                manifest = yaml.safe_load(f)
+            # The package directory is assumed to be the directory containing stone.yaml
+            pkg_dir = os.path.dirname(os.path.abspath(args.path))
+            # The dyad's root is the current working directory
+            install_root = os.getcwd()
+            
+            install_stone(pkg_dir, install_root, manifest)
+            print(f"[PASS] Stone {manifest.get('stone_id')} successfully fused to the substrate.")
+        except SecurityException as se:
+            print(f"[SECURITY VIOLATION] {se}")
+            sys.exit(1)
+        except Exception as e:
+            print(f"[ERROR] Installation failed: {e}")
+            sys.exit(1)
 
 if __name__ == "__main__":
     main()
