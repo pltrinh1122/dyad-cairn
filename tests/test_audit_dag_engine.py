@@ -2,6 +2,7 @@ import os
 import subprocess
 import yaml
 import pytest
+import shutil
 
 def test_audit_lock_blocks_frontier():
     """
@@ -10,6 +11,10 @@ def test_audit_lock_blocks_frontier():
     """
     # Setup: Create a mock audit_state.yml with a pending node
     audit_path = "artifacts/audit_state.yml"
+    backup_path = audit_path + ".bak"
+    if os.path.exists(audit_path):
+        shutil.copy(audit_path, backup_path)
+    
     mock_audit = {
         "nodes": {
             "node_audit_test_1": {
@@ -47,7 +52,9 @@ def test_audit_lock_blocks_frontier():
         
     finally:
         # Teardown
-        if os.path.exists(audit_path):
+        if os.path.exists(backup_path):
+            shutil.move(backup_path, audit_path)
+        elif os.path.exists(audit_path):
             os.remove(audit_path)
 
 def test_audit_dag_execution_bypasses_lock():
@@ -57,6 +64,10 @@ def test_audit_dag_execution_bypasses_lock():
     """
     # Setup
     audit_path = "artifacts/audit_state.yml"
+    backup_path = audit_path + ".bak"
+    if os.path.exists(audit_path):
+        shutil.copy(audit_path, backup_path)
+        
     mock_audit = {
         "nodes": {
             "node_audit_test_2": {
@@ -90,5 +101,7 @@ def test_audit_dag_execution_bypasses_lock():
         
     finally:
         # Teardown
-        if os.path.exists(audit_path):
+        if os.path.exists(backup_path):
+            shutil.move(backup_path, audit_path)
+        elif os.path.exists(audit_path):
             os.remove(audit_path)

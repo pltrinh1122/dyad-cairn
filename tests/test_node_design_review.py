@@ -7,11 +7,16 @@ import shutil
 TEST_YML = "artifacts/frontier_state.yml"
 
 @pytest.fixture
-def clean_dag():
+def clean_dag(monkeypatch):
+    monkeypatch.delenv("DYAD_DAG_STORE", raising=False)
     # Setup
     os.makedirs("artifacts", exist_ok=True)
     if os.path.exists(TEST_YML):
         shutil.copy(TEST_YML, TEST_YML + ".bak")
+        
+    audit_yml = "artifacts/audit_state.yml"
+    if os.path.exists(audit_yml):
+        shutil.move(audit_yml, audit_yml + ".testbak")
     
     initial_state = {"nodes": {}}
     with open(TEST_YML, "w") as f:
@@ -22,6 +27,9 @@ def clean_dag():
     # Teardown
     if os.path.exists(TEST_YML + ".bak"):
         shutil.move(TEST_YML + ".bak", TEST_YML)
+        
+    if os.path.exists(audit_yml + ".testbak"):
+        shutil.move(audit_yml + ".testbak", audit_yml)
 
 def test_node_inject_forces_in_review(clean_dag):
     """

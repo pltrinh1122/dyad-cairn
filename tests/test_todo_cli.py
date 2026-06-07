@@ -11,6 +11,15 @@ def test_todo_cli_execution():
             
     intent = "test_noisy_intent_12345"
     
+    if "DYAD_DAG_STORE" in os.environ:
+        del os.environ["DYAD_DAG_STORE"]
+        
+    audit_path = "artifacts/audit_state.yml"
+    audit_bak = audit_path + ".testbak"
+    if os.path.exists(audit_path):
+        import shutil
+        shutil.move(audit_path, audit_bak)
+        
     try:
         result = subprocess.run(["./bin/todo", intent], capture_output=True, text=True)
         assert result.returncode == 0, f"todo CLI failed: {result.stderr}"
@@ -72,3 +81,7 @@ def test_todo_cli_execution():
         # We also created a markdown file
         if os.path.exists("artifacts/todos.md"):
             os.remove("artifacts/todos.md")
+            
+        if os.path.exists(audit_bak):
+            import shutil
+            shutil.move(audit_bak, audit_path)
