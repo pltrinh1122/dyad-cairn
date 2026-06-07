@@ -43,6 +43,43 @@ def checkout_node(node_id):
     print(f"[FLOW] Checking out branch: {branch_name}")
     run_cmd(f"git checkout -b {branch_name}")
 
+def inject_node(node_id, title, goal):
+    print(f"[FLOW] Injecting Node {node_id} (IN_REVIEW)...")
+    sys.path.append('.')
+    from skills.frontier_editor import load_state, save_state
+    state = load_state()
+    if node_id in state["nodes"]:
+        print(f"ERROR: Node {node_id} already exists.")
+        sys.exit(1)
+        
+    node_type = "PROBE" if "probe" in node_id else "PLAN"
+    state["nodes"][node_id] = {
+        "status": "IN_REVIEW",
+        "title": title,
+        "goal": goal,
+        "type": node_type
+    }
+    save_state(state)
+    print(f"[FLOW] Node {node_id} successfully injected and blocked at the Design-Review Gate.")
+
+def authorize_node(node_id):
+    print(f"[FLOW] Authorizing Node {node_id}...")
+    sys.path.append('.')
+    from skills.frontier_editor import load_state, save_state
+    state = load_state()
+    if node_id not in state["nodes"]:
+        print(f"ERROR: Node {node_id} not found.")
+        sys.exit(1)
+        
+    current_status = state["nodes"][node_id].get("status")
+    if current_status != "IN_REVIEW":
+        print(f"ERROR: Node {node_id} is {current_status}. It must be IN_REVIEW to be authorized.")
+        sys.exit(1)
+        
+    state["nodes"][node_id]["status"] = "READY"
+    save_state(state)
+    print(f"[FLOW] Node {node_id} transitioned to READY. Execution authorized.")
+
 def reflect_node_red(node_id):
     print(f"[FLOW] Reflecting RED Phase (Intent Gate) for Node {node_id}...")
     print("[FLOW] Asserting Mechanical Gate (TDD must FAIL)...")
@@ -240,6 +277,13 @@ if __name__ == "__main__":
         plan_node(node)
     elif action == "checkout":
         checkout_node(node)
+    elif action == "inject":
+        if len(sys.argv) < 5:
+            print("Usage: python3 skills/flow_state_manager.py inject <node_id> \"<Title>\" \"<Goal>\"")
+            sys.exit(1)
+        inject_node(node, sys.argv[3], sys.argv[4])
+    elif action == "authorize":
+        authorize_node(node)
     elif action == "reflect-red":
         reflect_node_red(node)
     elif action == "reflect-green":

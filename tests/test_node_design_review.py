@@ -28,7 +28,7 @@ def test_node_inject_forces_in_review(clean_dag):
     Test that 'bin/node inject' physically defaults a new node to IN_REVIEW.
     It should not be possible to inject a node directly to READY.
     """
-    cmd = ["./bin/node", "inject", "node_99_test", "Test Node", "Test Goal"]
+    cmd = ["bash", "./bin/node", "inject", "node_99_test", "Test Node", "Test Goal"]
     result = subprocess.run(cmd, capture_output=True, text=True)
     assert result.returncode == 0, f"Inject failed: {result.stderr}"
     
@@ -46,7 +46,7 @@ def test_node_authorize_requires_in_review(clean_dag):
     and succeeds in transitioning to READY if it is IN_REVIEW.
     """
     # 1. Authorize an unknown node
-    cmd = ["./bin/node", "authorize", "node_unknown"]
+    cmd = ["bash", "./bin/node", "authorize", "node_unknown"]
     result = subprocess.run(cmd, capture_output=True, text=True)
     assert result.returncode != 0
     assert "not found" in result.stdout or "not found" in result.stderr
@@ -58,7 +58,7 @@ def test_node_authorize_requires_in_review(clean_dag):
     with open(TEST_YML, "w") as f:
         yaml.dump(state, f)
         
-    cmd = ["./bin/node", "authorize", "node_99_active"]
+    cmd = ["bash", "./bin/node", "authorize", "node_99_active"]
     result = subprocess.run(cmd, capture_output=True, text=True)
     assert result.returncode != 0
     assert "must be IN_REVIEW" in result.stdout or "must be IN_REVIEW" in result.stderr
@@ -68,7 +68,7 @@ def test_node_authorize_requires_in_review(clean_dag):
     with open(TEST_YML, "w") as f:
         yaml.dump(state, f)
         
-    cmd = ["./bin/node", "authorize", "node_99_review"]
+    cmd = ["bash", "./bin/node", "authorize", "node_99_review"]
     result = subprocess.run(cmd, capture_output=True, text=True)
     assert result.returncode == 0
     
