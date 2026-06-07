@@ -5,14 +5,6 @@
 > WIP-N=1 mechanically enforced by `skills/frontier_editor.py`.
 
 
-## 🟢 ACTIVE NODES
-- **node_10_build_gap_reader** [EXECUTE]: Build GAP-Compliant Frontier Reader
-  - *Goal:* Upgrade frontier_reader.py to dynamically derive node status from the physical substrate (branches, tests) rather than relying on cached strings, fulfilling the GAP invariant.
-
-## 🟡 IN_REVIEW NODES
-- **node_todo_1780885259** [PLAN]: Convert Todo: todo_1780885259
-  - *Goal:* test_noisy_intent_12345
-
 ## 🔴 BLOCKED NODES
 - **node_4c_probe_anchor_compilation** [PROBE]: Probe Anchor Compilation Invariant
   - *Goal:* Investigate how a fully saturated dip_state.yml is safely and deterministically projected into the immutable GEMINI.md anchor.

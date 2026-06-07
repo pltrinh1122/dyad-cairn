@@ -1,12 +1,4 @@
 nodes:
-  node_10_build_gap_reader:
-    dependencies: []
-    status: READY
-    goal: Upgrade frontier_reader.py to dynamically derive node status from the physical
-      substrate (branches, tests) rather than relying on cached strings, fulfilling
-      the GAP invariant.
-    title: Build GAP-Compliant Frontier Reader
-    type: execute
   node_4b_execute_sonar_halting:
     dependencies: []
     status: READY
