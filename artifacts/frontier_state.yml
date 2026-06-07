@@ -33,10 +33,25 @@ nodes:
       map to the substrate without polluting the SPAOR loop.
     title: Probe Todo Ingestion Pipeline
     type: probe
-  node_11a_plan_todo_pipeline:
-    dependencies: []
-    goal: Build `bin/todo` CLI to append raw conversational intent to `dyad-state/todos.md`.
-      Enforce the invariant that `todos` are purely local and never sync to Touchstone
-      outbox.
-    title: Plan Todo Ingestion Pipeline
-    type: plan
+  node_12_probe_ontological_binder:
+    type: PROBE
+    status: READY
+    title: Construct the Ontological Binder
+    goal: Build bin/bind to enforce simultaneous mutation of the Ledger, AGENT.md,
+      and the physical substrate.
+    dependencies:
+    - node_14_probe_design_review_gate
+  node_14_probe_design_review_gate:
+    type: PROBE
+    status: ACTIVE
+    title: Construct the Design-Review Gate
+    goal: Build bin/node inject (defaults to IN_REVIEW) and bin/node authorize (flips
+      to READY) to map the lean. and lean! HTIL gates.
+  node_15_probe_wuwei_closure_gate:
+    type: PROBE
+    status: READY
+    title: Construct the Wu-Wei Closure Gate
+    goal: Update skills/flow_state_manager.py to enforce a retro_msg synthesis block
+      on reflect-green.
+    dependencies:
+    - node_14_probe_design_review_gate
