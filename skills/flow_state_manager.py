@@ -323,7 +323,10 @@ def trail_dispose(trail_id):
     run_cmd("gh pr merge --merge --delete-branch")
     
     # 2. Issue Closure Invariant
-    run_cmd(f"gh issue close {trail_id}")
+    # This may fail if the node is a PROBE and was never synced to a GitHub issue.
+    # We suppress the error to ensure the DAG is pruned correctly.
+    import subprocess
+    subprocess.run(f"gh issue close {trail_id}", shell=True, capture_output=True)
     
     # 3. Trail Pruning Invariant
     run_cmd(f"python3 skills/frontier_editor.py {trail_id} PRUNE")
