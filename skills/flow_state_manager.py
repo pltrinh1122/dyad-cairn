@@ -75,11 +75,15 @@ def inject_node(node_id, title, goal):
         
     node_type = "PROBE" if "probe" in node_id else "PLAN"
     state["nodes"][node_id] = {
-        "status": "IN_REVIEW",
         "title": title,
         "goal": goal,
         "type": node_type
     }
+    
+    is_audit = "audit" in os.environ.get("DYAD_DAG_STORE", "")
+    if not is_audit:
+        state["nodes"][node_id]["status"] = "IN_REVIEW"
+        
     save_state(state)
     print(f"[FLOW] Node {node_id} successfully injected and blocked at the Design-Review Gate.")
 
@@ -292,16 +296,39 @@ def trail_reflect(trail_id, retro_msg):
     # 1. Synthesis Invariant
     sys.path.append('.')
     from skills import ledger_manager
+    from skills.github_client import create_pr
+    
+    branch_name = f"active/reflect_{trail_id}"
+    run_cmd(f"git checkout -b {branch_name} || git checkout {branch_name}")
+    
     ledger_manager.append_ledger("trail-retro", retro_msg)
     
+    # Commit and Push
+    run_cmd("git add dyad-state/ledger.jsonl DYAD_LEDGER.md")
+    run_cmd(f'git commit -m "docs(ledger): [REFLECT] trail synthesis for {trail_id}"')
+    run_cmd(f"git push origin {branch_name}")
+    
+    # 2. Reflection Review Gate
+    title = f"[REFLECT] Trail Synthesis {trail_id}"
+    body = f"Automated PR for Trail {trail_id} Synthesis.\n\n{retro_msg}\n\nReview this artifact. Run `./bin/node dispose {trail_id}` to merge and prune."
+    pr_url = create_pr(title, body)
+    
+    print(f"[FLOW] PR successfully opened at: {pr_url}")
+    print(f"[FLOW] Trail {trail_id} halted pending Reflection Review. Run `./bin/node dispose {trail_id}` to finalize.")
+
+def trail_dispose(trail_id):
+    print(f"[FLOW] Executing Trail Dispose for {trail_id}...")
+    
+    # 1. Merge PR
+    run_cmd("gh pr merge --merge --delete-branch")
+    
     # 2. Issue Closure Invariant
-    # We call gh issue close to shut down the orchestrator's tracked task
     run_cmd(f"gh issue close {trail_id}")
     
     # 3. Trail Pruning Invariant
     run_cmd(f"python3 skills/frontier_editor.py {trail_id} PRUNE")
     
-    print(f"[FLOW] Trail {trail_id} successfully closed and pruned.")
+    print(f"[FLOW] Trail {trail_id} successfully disposed, merged, and pruned.")
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
@@ -367,19 +394,21 @@ if __name__ == "__main__":
         reflect_node_red(node)
     elif action == "reflect-green":
         if len(sys.argv) < 4:
-            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
-            print("A retro_msg synthesis block is mandatory for reflect-green.")
+            print("Usage: python3 skills/flow_state_manager.py reflect-green <node_id> <retro_msg>")
             sys.exit(1)
         reflect_node_green(node, sys.argv[3])
     elif action == "complete":
         if len(sys.argv) < 4:
-            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
-            print("A retro_msg synthesis block is mandatory for complete.")
+            print("Usage: python3 skills/flow_state_manager.py complete <node_id> <retro_msg>")
             sys.exit(1)
         complete_node(node, sys.argv[3])
     elif action == "trail-reflect":
-        retro_msg = sys.argv[3] if len(sys.argv) > 3 else "No retro message provided."
-        trail_reflect(node, retro_msg)
+        if len(sys.argv) < 4:
+            print("Usage: python3 skills/flow_state_manager.py trail-reflect <trail_id> <retro_msg>")
+            sys.exit(1)
+        trail_reflect(node, sys.argv[3])
+    elif action == "dispose":
+        trail_dispose(node)
     else:
         print(f"Unknown action: {action}")
         sys.exit(1)
