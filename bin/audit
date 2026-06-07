@@ -1,0 +1,19 @@
+#!/bin/bash
+# High-level CLI to route alignment/governance debt to the Audit DAG
+export DYAD_DAG_STORE="artifacts/audit_state.yml"
+
+if [ "$1" == "" ]; then
+    echo "Usage: ./bin/audit \"<Intent / Governance Falsification>\""
+    exit 1
+fi
+
+TIMESTAMP=$(date +%s)
+NODE_ID="node_audit_${TIMESTAMP}"
+
+# Ensure directory/DAG exists so we can inject safely
+mkdir -p artifacts
+if [ ! -f "artifacts/audit_state.yml" ]; then
+    echo "nodes:" > artifacts/audit_state.yml
+fi
+
+./bin/audit-node inject $NODE_ID "Audit: ${1}" "Investigate and remediate alignment debt: ${1}"
