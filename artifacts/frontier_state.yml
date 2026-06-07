@@ -22,3 +22,12 @@ nodes:
       workspace without substrate entanglement.
     title: Plan Local Executioner Worktree Architecture
     type: plan
+  node_13_probe_authorization_gate_collision:
+    dependencies: []
+    status: READY
+    goal: Investigate the Authorization Gate Collision where a full-auto Executioner
+      clone running PLAN+EXECUTE autonomously bypasses the HTIL Design-Review Gate
+      ('lean!'). Determine the architectural invariant for mapping the SPAOR phases
+      across the dual-agent boundary.
+    title: Probe Authorization Gate Collision
+    type: probe

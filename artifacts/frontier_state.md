@@ -15,3 +15,5 @@
   - *Goal:* Implement the markdown parser in dip_sonar.py to dynamically extract the required dimensions, passing the TDD tests.
 - **node_12_plan_local_executioner_loop** [PLAN]: Plan Local Executioner Worktree Architecture
   - *Goal:* Design and formalize the Git Worktree partitioning strategy and the `./bin/claude-watch` listener script to safely isolate the Claude execution thread from the Architect's workspace without substrate entanglement.
+- **node_13_probe_authorization_gate_collision** [PROBE]: Probe Authorization Gate Collision
+  - *Goal:* Investigate the Authorization Gate Collision where a full-auto Executioner clone running PLAN+EXECUTE autonomously bypasses the HTIL Design-Review Gate ('lean!'). Determine the architectural invariant for mapping the SPAOR phases across the dual-agent boundary.
