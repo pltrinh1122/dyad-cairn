@@ -23,3 +23,12 @@ nodes:
       autonomous execution.
     title: Probe Ledger and State Sync Collision
     type: probe
+  node_16_probe_reflect_boundary_collision:
+    dependencies: []
+    status: READY
+    goal: Investigate the ownership of the [REFLECT] phase across the dual-agent boundary.
+      If the Executioner executes the logic, how does the Architect synthesize the
+      structural retro without hallucinatory decoupling? Determine the mechanical
+      hand-off of the functional execution logs to the structural state.
+    title: Probe REFLECT Boundary Collision
+    type: probe
