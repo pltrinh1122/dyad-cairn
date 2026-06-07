@@ -205,3 +205,5 @@
 - **2026-06-07 22:11:45** | `TODO` | test_noisy_intent_12345
 - **2026-06-07 22:11:45** | `NODE-RETRO` | [node_23a_execute_frontier_ascii_tree] Implemented the physical logic for rendering ASCII-trees in markdown and preventing IN_REVIEW from masquerading BLOCKED dependencies.
 - **2026-06-07 22:12:21** | `TRAIL-RETRO` | Restored ASCII-Tree topological view and aligned IN_REVIEW dependency overrides. The Dyad's structural sight is fully restored.
+- **2026-06-07 22:20:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:20:30** | `NODE-RETRO` | [node_audit_probe_reflection_review_gates] Drafted Execution Spec for Reflection Review HITL Block and Audit DAG Design Review bypass.
