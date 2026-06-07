@@ -207,3 +207,8 @@
 - **2026-06-07 22:12:21** | `TRAIL-RETRO` | Restored ASCII-Tree topological view and aligned IN_REVIEW dependency overrides. The Dyad's structural sight is fully restored.
 - **2026-06-07 22:20:30** | `TODO` | test_noisy_intent_12345
 - **2026-06-07 22:20:30** | `NODE-RETRO` | [node_audit_probe_reflection_review_gates] Drafted Execution Spec for Reflection Review HITL Block and Audit DAG Design Review bypass.
+- **2026-06-07 22:21:25** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:39:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:39:17** | `COMMONS_SYNC` | Synced upstream playbooks: Added hard-guardrails and updated onboarding documentation regarding /btw channel.
+- **2026-06-07 22:39:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:39:23** | `NODE-RETRO` | [node_audit_execute_reflection_review_gates] Implemented Reflection Review HITL blocks via trail-reflect and trail-dispose. Corrected Audit DAG injection to bypass IN_REVIEW Design Review.
