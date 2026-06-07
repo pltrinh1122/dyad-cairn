@@ -40,13 +40,6 @@ nodes:
     goal: Build bin/bind to enforce simultaneous mutation of the Ledger, AGENT.md,
       and the physical substrate.
     dependencies: []
-  node_15_probe_wuwei_closure_gate:
-    type: PROBE
-    status: ACTIVE
-    title: Construct the Wu-Wei Closure Gate
-    goal: Update skills/flow_state_manager.py to enforce a retro_msg synthesis block
-      on reflect-green.
-    dependencies: []
   node_16_probe_stone_schema:
     type: PROBE
     status: READY
