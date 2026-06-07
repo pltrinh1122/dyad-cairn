@@ -6,13 +6,14 @@
 
 
 ## 🟢 ACTIVE NODES
-- **node_4b_execute_sonar_halting** [EXECUTE]: Execute Provenance Extraction Invariant
-  - *Goal:* Implement the markdown parser in dip_sonar.py to dynamically extract the required dimensions, passing the TDD tests.
+- **node_8_execute_csi_guard_reflect** [EXECUTE]: Execute CSI Guard for Reflect Phase
+  - *Goal:* Implement the trail_reflect logic in flow_state_manager.py to satisfy the TDD specs, enforcing synthesis, issue closure, and trail pruning.
 
 ## 🔴 BLOCKED NODES
+- **node_4b_execute_sonar_halting** [EXECUTE]: Execute Provenance Extraction Invariant
+  - *Goal:* Implement the markdown parser in dip_sonar.py to dynamically extract the required dimensions, passing the TDD tests.
 - **node_4c_probe_anchor_compilation** [PROBE]: Probe Anchor Compilation Invariant
   - *Goal:* Investigate how a fully saturated dip_state.yml is safely and deterministically projected into the immutable GEMINI.md anchor.
-- **node_8_plan_csi_guard_reflect** [PLAN]: Plan CSI Guard for Reflect Phase
-  - *Goal:* Design and test a deterministic CLI command (e.g., ./bin/node reflect) that enforces the synthesis, issue closure, and trail pruning invariants.
+  - *Dependencies:* node_4a_execute_matrix_schema
 - **node_7_plan_csi_guard_execute** [PLAN]: Plan CSI Guard for Execute Nodes
   - *Goal:* Design and test a deterministic CLI command (e.g., ./bin/node complete) that enforces the Testing Invariant before allowing a node to transition to DONE.
