@@ -6,8 +6,8 @@
 
 
 ## 🟢 ACTIVE NODES
-- **node_6_plan_tool_ledger** [PLAN]: Plan Isolated Ledger for Tools
-  - *Goal:* Design and instantiate a physical ledger structure (e.g. dip_ledger.md) specifically to track the development decisions of dip.py and future tools separately from dyad-cairn.
+- **node_6_execute_tool_ledger** [EXECUTE]: Execute Isolated Ledger for Tools
+  - *Goal:* Implement the functional logic in ledger_manager.py to dynamically route logs to tool-specific ledgers, satisfying the TDD tests.
 
 ## 🔴 BLOCKED NODES
 - **node_4b_execute_sonar_halting** [EXECUTE]: Execute Provenance Extraction Invariant
