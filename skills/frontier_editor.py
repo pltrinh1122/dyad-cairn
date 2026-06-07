@@ -15,6 +15,53 @@ def save_state(state):
     sys.path.append('.')
     from skills.frontier_reader import derive_status
     
+    # Enforce SPAOR PLAN Injection Guard
+    import subprocess
+    import re
+    
+    # Get current branch safely
+    try:
+        branch_result = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"], 
+            capture_output=True, text=True, check=True
+        )
+        current_branch = branch_result.stdout.strip()
+    except Exception:
+        current_branch = "unknown"
+        
+    for node_id, data in state.get("nodes", {}).items():
+        if data.get("type", "").upper() == "PLAN":
+            # Extract parent prefix, e.g., node_17a_plan_x -> node_17a
+            # Also handle if it's node_17_plan_x -> node_17
+            match = re.match(r"(node_[0-9a-z]+)_plan", node_id)
+            if match:
+                parent_prefix = match.group(1)
+                # The parent probe node must start with this prefix and contain _probe
+                # But in DYAD_LEDGER.md, it's just recorded by its exact ID.
+                # However, we only have the prefix from the plan node!
+                # Wait, DYAD_LEDGER.md records [node_X_probe_Y]. We can just regex search for `\[{parent_prefix}_probe`
+                
+                # Condition 1: Are we currently checked out on the parent PROBE branch?
+                is_on_probe_branch = current_branch.startswith(f"active/{parent_prefix}_probe")
+                
+                # Condition 2: Is the parent PROBE node in the Ledger as DONE?
+                is_probe_in_ledger = False
+                ledger_path = "DYAD_LEDGER.md"
+                if os.path.exists(ledger_path):
+                    with open(ledger_path, "r") as lf:
+                        ledger_content = lf.read()
+                    # e.g., `[node_17_probe`
+                    if re.search(rf"\[{parent_prefix}_probe", ledger_content):
+                        is_probe_in_ledger = True
+                        
+                if not (is_on_probe_branch or is_probe_in_ledger):
+                    print("==========================================================================")
+                    print("🚨 SPAOR PLAN INJECTION GUARD FIRED 🚨")
+                    print(f"You attempted to inject PLAN node '{node_id}' for unexecuted PROBE '{parent_prefix}'.")
+                    print("PLAN can only be created while in a PROBE for itself, not for other PROBE.")
+                    print("==========================================================================")
+                    sys.exit(1)
+
     # Enforce rules: WIP-N=1 at the execution level
     active_count = 0
     all_nodes = state["nodes"]

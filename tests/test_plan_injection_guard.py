@@ -68,7 +68,7 @@ def test_plan_injection_guard_passes_when_on_probe_branch(clean_dag, monkeypatch
             stdout = "active/node_99_probe_test\n"
             stderr = ""
             def strip(self): return self.stdout.strip()
-        if "git rev-parse" in cmd:
+        if isinstance(cmd, list) and cmd[0] == "git" and cmd[1] == "rev-parse":
             return MockResult()
         return subprocess.run(cmd, *args, **kwargs)
         
