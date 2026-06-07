@@ -47,14 +47,6 @@ nodes:
     goal: Update skills/flow_state_manager.py to enforce a retro_msg synthesis block
       on reflect-green.
     dependencies: []
-  node_14a_plan_design_review_gate:
-    type: PLAN
-    status: BLOCKED
-    title: Implement DAG Authorization Lock
-    goal: Build ./bin/node inject and ./bin/node authorize to physically decouple
-      node creation from execution authorization.
-    dependencies:
-    - node_16_probe_stone_schema
   node_16_probe_stone_schema:
     type: PROBE
     status: READY
