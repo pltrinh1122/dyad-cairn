@@ -190,3 +190,7 @@
 - **2026-06-07 21:27:46** | `TODO` | test_noisy_intent_12345
 - **2026-06-07 21:27:46** | `NODE-RETRO` | [node_audit_execute_plan_injection_guard] Implemented the physical SPAOR PLAN Injection Guard in skills/frontier_editor.py.
 - **2026-06-07 21:41:24** | `CLIP` | Invariant: Executioner Boundary. The Executioner agent context is mechanically isolated to [EXECUTE] nodes. All [PROBE] and [PLAN] nodes must be handled exclusively by the Architect agent context.
+- **2026-06-07 21:43:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:43:35** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:44:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:44:17** | `NODE-RETRO` | [node_4b_execute_sonar_halting] Implemented dip_sonar.py get_required_dimensions markdown extraction logic.
