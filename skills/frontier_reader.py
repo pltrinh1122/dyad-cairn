@@ -96,10 +96,12 @@ def build_tree(nodes):
 
 def main():
     try:
-        with open("artifacts/frontier_state.yml", "r") as f:
+        yml_file = os.environ.get("DYAD_DAG_STORE", "artifacts/frontier_state.yml")
+        with open(yml_file, "r") as f:
             state = yaml.safe_load(f)
         nodes = state.get('nodes', {})
-        print("FRONTIER DAG:")
+        dag_name = "AUDIT DAG" if "audit" in yml_file else "FRONTIER DAG"
+        print(f"{dag_name}:")
         build_tree(nodes)
     except Exception as e:
         print(f"Error reading frontier: {e}")

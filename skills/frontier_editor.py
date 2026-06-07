@@ -2,8 +2,8 @@ import sys
 import yaml
 import os
 
-YML_FILE = "artifacts/frontier_state.yml"
-MD_FILE = "artifacts/frontier_state.md"
+YML_FILE = os.environ.get("DYAD_DAG_STORE", "artifacts/frontier_state.yml")
+MD_FILE = YML_FILE.replace(".yml", ".md")
 
 def load_state():
     if not os.path.exists(YML_FILE):

@@ -34,7 +34,27 @@ def check_sovereignty_trigger():
         print("==========================================================================")
         # In a fully realized state, this might sys.exit(1) until Operator acknowledges.
 
+def check_audit_lock():
+    import yaml
+    import os
+    # Only enforce if we are operating on the Frontier DAG
+    current_store = os.environ.get("DYAD_DAG_STORE", "artifacts/frontier_state.yml")
+    if current_store != "artifacts/frontier_state.yml":
+        return
 
+    audit_file = "artifacts/audit_state.yml"
+    if os.path.exists(audit_file):
+        with open(audit_file, "r") as f:
+            state = yaml.safe_load(f) or {"nodes": {}}
+        for node_id, data in state.get("nodes", {}).items():
+            if data.get("status") != "DONE":
+                print("==========================================================================")
+                print("🚨 GOVERNANCE DEBT GUARDRAIL FIRED 🚨")
+                print("The Audit DAG has unresolved alignment nodes. Alignment Precedes Execution.")
+                print("You are mechanically forbidden from transitioning the Frontier DAG until")
+                print("the Audit DAG is physically cleared (all nodes DONE).")
+                print("==========================================================================")
+                sys.exit(1)
 def plan_node(node_id):
     print(f"[FLOW] Planning Node {node_id}...")
     print(f"[FLOW] Local DAG asserts planning. No remote issue required.")
@@ -290,6 +310,7 @@ if __name__ == "__main__":
     
     check_retro_lock()
     check_sovereignty_trigger()
+    check_audit_lock()
     
     # Assert outbox sync
     sys.path.append('.')
