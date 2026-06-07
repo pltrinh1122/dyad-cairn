@@ -14,18 +14,9 @@ nodes:
       projected into the immutable GEMINI.md anchor.
     title: Probe Anchor Compilation Invariant
     type: probe
-  node_17_probe_audit_dag_architecture:
-    dependencies: []
-    status: READY
-    goal: Investigate the structural implementation of the dual-DAG architecture (audit_state.yml).
-      Define how the Operator 'audit:' command or CSI Guard traps physically block
-      the Frontier DAG and route cognitive execution to the Audit DAG for alignment
-      remediation.
-    title: Probe Audit DAG Architecture
-    type: probe
   node_18_probe_spaor_plan_violation:
     dependencies:
-    - node_17_probe_audit_dag_architecture
+    - node_17a_plan_audit_dag_architecture
     status: BLOCKED
     goal: (AUDIT DEBT) Investigate and remediate the systemic SPAOR violation where
       the Agent pre-emptively hallucinates [PLAN] nodes for unexecuted [PROBE] nodes.
@@ -33,3 +24,10 @@ nodes:
       hallucination.
     title: Audit SPAOR PLAN Violation
     type: probe
+  node_17a_plan_audit_dag_architecture:
+    status: IN_REVIEW
+    title: Plan Audit DAG Implementation
+    goal: Refactor flow_state_manager.py to inject check_audit_lock() to physically
+      freeze the Frontier when governance debt exists, and formalize the ./bin/audit
+      CLI router to spawn Audit DAG nodes.
+    type: PLAN
