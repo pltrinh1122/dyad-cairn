@@ -40,7 +40,7 @@ guards:
 
   - id: ui_dialect_enforcer
     type: Asymmetric
-    description: "Monitors the Agent's raw conversational transcript. If the Agent replies to a UI invariant marker (e.g. read:) with raw markdown hallucination instead of invoking the mechanical script (e.g. bin/read), it blocks node completion."
-    armed_condition: "User inputs a marker bound to a mechanical UI script (e.g. read: <domain>)."
-    disarmed_condition: "Agent invokes the corresponding binary (e.g. ./bin/read) via tool call."
+    description: "Monitors the Agent's raw conversational transcript. If the Agent replies to a UI invariant marker (e.g. read: or retro:) with raw markdown hallucination instead of invoking the mechanical script and explicitly presenting the expected UI template, it blocks node completion."
+    armed_condition: "User inputs a marker bound to a mechanical UI script (e.g. read: <domain> or retro: <summary>)."
+    disarmed_condition: "Agent invokes the corresponding binary (e.g. ./bin/read or ./bin/retro) via tool call AND physically renders the corresponding UI template in the chat (e.g., 📋 [MECHANICAL UI PRESENTATION: RETRO SUMMARY])."
     trigger_location: "skills/dialect_linter.py (Checked at node complete/reflect-green)"
