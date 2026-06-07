@@ -113,3 +113,4 @@
 - **2026-06-07 04:22:41** | `CLIP` | Trail Retro Invariant: The [REFLECT] phase of a trail strictly outputs a Trail Retro. Trail Retros must never use the CSS template and must never be outboxed to the parent dyad.
 - **2026-06-07 04:28:48** | `RETRO` | Rub: The Agent failed to draw boundaries on when a session is done, exhausting the Operator by infinitely chaining node executions.
 - **2026-06-07 04:28:48** | `CLIP` | Session Boundary Invariant: Completing a node does not authorize immediate execution of the next. The Agent must explicitly halt at major execution or falsification boundaries and defer to the Operator to close the session.
+- **2026-06-07 04:31:17** | `CLIP` | CSS Presentation Invariant: The Agent must physically present the full Continue/Start/Stop (CSS) Markdown payload in the conversational UI whenever a Dyad Retro is executed, ensuring the Operator can visually verify the payload synced to Touchstone.
