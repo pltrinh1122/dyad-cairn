@@ -82,3 +82,4 @@
 - **2026-06-07 01:54:01** | `RETRO` | Operator: 'identify residual shadow from dyad-wu-wei...'
 - **2026-06-07 01:54:01** | `CLIP` | Falsification: bin/git, bin/gh, and bin/rack are Sandbox Wardens and redundant abstractions inherited from dyad-wu-wei. They conflict with Cairn's Substrate Execution and DAG planner.
 - **2026-06-07 03:07:23** | `RETRO` | Operator: 'great, no more lingering shadow of dyad-wu-wei. now the void will be clearly demarcated.'
+- **2026-06-07 03:08:00** | `CLIP` | Demarcating the Void: With all obsolete sandbox wardens from dyad-wu-wei excised, we now operate in the structural void. We trust the local DAG and remote PRs as absolute intent boundaries, replacing false historical safety with true, physical execution constraints.
