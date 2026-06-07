@@ -1,0 +1,59 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Usage: ./bin/pr <gh pr command...>"
+    echo "This wrapper ensures structural enforcement of repo-context prefixes in PR titles."
+    exit 1
+fi
+
+COMMAND="$1"
+shift
+
+# If we are doing 'create', we must enforce the title prefix
+if [ "$COMMAND" = "create" ]; then
+    # Determine context based on current working directory
+    CURRENT_DIR=$(pwd)
+    if [[ "$CURRENT_DIR" == *"commons"* ]]; then
+        PREFIX="[Commons]"
+    else
+        PREFIX="[Cairn]"
+    fi
+
+    # Parse arguments to intercept --title
+    ARGS=()
+    TITLE_FOUND=0
+    
+    while [[ $# -gt 0 ]]; do
+        key="$1"
+        case $key in
+            --title|-t)
+            # Ensure the title has the prefix
+            if [[ "$2" != "$PREFIX "* && "$2" != "$PREFIX"* ]]; then
+                ARGS+=("--title" "$PREFIX $2")
+            else
+                ARGS+=("--title" "$2")
+            fi
+            TITLE_FOUND=1
+            shift
+            shift
+            ;;
+            *)
+            ARGS+=("$1")
+            shift
+            ;;
+        esac
+    done
+
+    # If --title wasn't provided, gh will prompt interactively, which breaks our structural block.
+    # So we force the user to provide --title if using this wrapper for create.
+    if [ $TITLE_FOUND -eq 0 ]; then
+        echo "🚨 CSI GUARDRAIL BLOCK: You must explicitly provide a --title to create a PR."
+        exit 1
+    fi
+
+    gh pr create "${ARGS[@]}"
+
+else
+    # Pass through any other command
+    gh pr "$COMMAND" "$@"
+fi
