@@ -53,7 +53,7 @@ Our vocabulary reflects the physical extraction of stones, mapped mentally to an
 
 ## Lineage Dialect
 Inherited from our parent (`dyad-touchstone`):
-`read:` orient from substrate · `rub:` attack the move · `riff:` surface a lean, no gate · `pin:` persist a fact · `fb:` adjust behavior · `retro:` reflect on the craft · `lean?` surface and hold · `lean!` surface and take the move · `follow:` run a proven discipline · `clip` lock a verdict.
+`read:` orient from substrate · `rub:` attack the move · `riff:` surface a lean, no gate · `todo:` surface a pre-SPAOR intent · `pin:` persist a fact · `fb:` adjust behavior · `retro:` reflect on the craft · `lean?` surface and hold · `lean!` surface and take the move · `follow:` run a proven discipline · `clip` lock a verdict.
 
 ## 8. State Management (The Offload Boundary)
 - **Proactive Offload:** The Agent writes to disk autonomously when execution is mechanically certain and logically follows a consensus (protecting Operator bandwidth).
