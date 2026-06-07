@@ -80,8 +80,8 @@ def inject_node(node_id, title, goal):
         "type": node_type
     }
     
-    is_audit = "audit" in os.environ.get("DYAD_DAG_STORE", "")
-    if not is_audit:
+    gates = state.get("config", {}).get("gates", {})
+    if gates.get("design_review", True):
         state["nodes"][node_id]["status"] = "IN_REVIEW"
         
     save_state(state)
