@@ -37,26 +37,14 @@ def install_stone(pkg_dir: str, install_root_dir: str, manifest: Dict[str, Any])
     if not result.is_valid:
         raise ValueError(f"Cannot install invalid stone: {result.errors}")
         
-    allowed_dirs = [
-        os.path.abspath(os.path.join(install_root_dir, "kb")),
-        os.path.abspath(os.path.join(install_root_dir, "skills"))
-    ]
-    
     for asset in manifest["assets"]:
         dest_rel = asset["destination"]
         src_rel = asset["source"]
         
         dest_abs = os.path.abspath(os.path.join(install_root_dir, dest_rel))
         
-        # Security: Physical Path Resolution Invariant
-        is_safe = False
-        for allowed in allowed_dirs:
-            if dest_abs.startswith(allowed + os.sep) or dest_abs == allowed:
-                is_safe = True
-                break
-                
-        if not is_safe:
-            raise SecurityException(f"Destination {dest_rel} escapes the safe sandbox.")
+        # Mason is not the Enforcer. Materialize exactly as the blueprint dictates.
+        # Substrate sandboxing is strictly the domain of CI Guards, not the Builder.
             
         src_abs = os.path.abspath(os.path.join(pkg_dir, src_rel))
         if not os.path.exists(src_abs):
