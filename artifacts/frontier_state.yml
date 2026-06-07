@@ -30,11 +30,3 @@ nodes:
       the mechanical UI presentation firing in the logs.
     title: Probe Missing CSS Presentation
     type: probe
-  node_11_probe_todo_pipeline:
-    dependencies: []
-    status: ACTIVE
-    goal: Architect and define the mechanical ingestion pipeline for the `todo:` dialect
-      marker, investigating how a pre-DAG holding pen (e.g., `bin/todo`) should physically
-      map to the substrate without polluting the SPAOR loop.
-    title: Probe Todo Ingestion Pipeline
-    type: probe
