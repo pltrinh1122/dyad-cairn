@@ -2,13 +2,32 @@ import os
 import subprocess
 import shutil
 
-def test_mason_installs_stone_safely():
+def test_mason_installs_stone_safely(tmp_path):
     """
     RED PHASE SPEC for node_3.
     Asserts that `mason install` correctly extracts a physical stone payload 
     and writes it to BOTH the kb/ and bin/ directories (the Generative Why and the Deterministic How).
     """
-    pkg_path = "commons/library/hard-guardrails"
+    # Create a dummy stone.yaml in a temporary directory to ensure determinism
+    pkg_path = tmp_path / "dummy-package"
+    pkg_path.mkdir()
+    stone_file = pkg_path / "stone.yaml"
+    
+    dummy_yaml = """
+name: hard-guardrails
+version: 1.0.0
+description: "A hard guardrail"
+type: CLI
+payload:
+  how_to: |
+    # HOW-0002-hard-guardrails.md
+    This is a dummy test file.
+  script: |
+    #!/bin/bash
+    echo 'hard-guardrail test'
+"""
+    stone_file.write_text(dummy_yaml)
+    
     kb_dest = "kb/HOW-0002-hard-guardrails.md"
     bin_dest = "bin/hard-guardrails"
     
@@ -19,7 +38,7 @@ def test_mason_installs_stone_safely():
         os.remove(bin_dest)
         
     # 2. Execute installation
-    cmd = ["./bin/mason", "install", pkg_path + "/stone.yaml"]
+    cmd = ["./bin/mason", "install", str(stone_file)]
     env = dict(os.environ, PYTHONPATH=os.getcwd())
     result = subprocess.run(cmd, capture_output=True, text=True, env=env)
     
