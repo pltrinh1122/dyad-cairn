@@ -23,8 +23,16 @@ def view_issue(issue_id):
     return out
 
 def create_pr(title, body):
-    out = run_gh_cmd(["pr", "create", "--title", title, "--body", body])
-    return out.strip()
+    cmd = ["gh", "pr", "create", "--title", title, "--body", body]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        if "already exists" in result.stderr:
+            # Extract the URL from stderr
+            lines = result.stderr.strip().split('\n')
+            return lines[-1]
+        print(f"ERROR: GitHub API failed: {result.stderr}")
+        sys.exit(1)
+    return result.stdout.strip()
 
 def create_repo(repo_name, public=True, push=True):
     cmd = ["gh", "repo", "create", repo_name]
