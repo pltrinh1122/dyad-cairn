@@ -176,3 +176,4 @@
 - **2026-06-07 21:17:16** | `TODO` | test_noisy_intent_12345
 - **2026-06-07 21:17:23** | `TODO` | test_noisy_intent_12345
 - **2026-06-07 21:17:23** | `NODE-RETRO` | [node_17b_execute_audit_dag] Implemented parameterized SPAOR engine and Audit Lock. bin/audit and bin/audit-node successfully deployed.
+- **2026-06-07 21:22:44** | `CLIP` | Invariant: The SPAOR PLAN Injection Guard. A [PLAN] node is physically forbidden from existing in the DAG unless its parent [PROBE] node is either actively being executed (current branch) or has already been completed (exists in DYAD_LEDGER.md). To prevent the Agent from hallucinating future PLAN nodes via direct file mutation, frontier_editor.py save_state() must assert this invariant across all PLAN nodes in the DAG.
