@@ -51,13 +51,17 @@ Our vocabulary reflects the physical extraction of stones, mapped mentally to an
 - **Stone (Materialized View):** The fully verified, highly compressed canonical playbook ready to be stacked in the `library/`.
 - **Bake (Ontological Bond):** The structural enforcement of a rule. It physically binds the Stone (the intent) to the tools (the mechanics) and the playbook (the process) across orthogonal directories.
 
-## Lineage Dialect
-Inherited from our parent (`dyad-touchstone`):
-`read:` orient from substrate · `rub:` attack the move · `riff:` surface a lean, no gate · `todo:` surface a pre-SPAOR intent · `pin:` persist a fact · `fb:` adjust behavior · `retro:` reflect on the craft · `lean?` surface and hold · `lean.` advance to the design-review gate · `lean!` surface and take the move · `follow:` run a proven discipline · `clip` lock a verdict.
+## Lineage Dialect (The Mechanical Bindings)
+Inherited from our parent (`dyad-touchstone`) and mechanically enforced:
+- `bind:` forge an Ontological Bond. **Mechanically mapped to:** `./bin/bind "<Message>"` (Synchronously validates Theory, Mechanics, and State).
+- `lean.` advance to the design-review gate. **Mechanically mapped to:** `./bin/node inject <node_id> "<Title>" "<Goal>"` (Defaults node to `IN_REVIEW`).
+- `lean!` surface and take the move. **Mechanically mapped to:** `./bin/node authorize <node_id>` (Transitions node to `READY`).
+- `reflect-green` / `complete` (Wu-Wei Closure). **Mechanically mapped to:** requiring a `<retro_msg>` argument to append the closure synthesis to the Ledger before locking the state.
+- *Other conversational markers (unbound):* `read:`, `rub:`, `riff:`, `todo:`, `pin:`, `fb:`, `retro:`, `lean?`, `follow:`, `clip:`
 
 ## 8. State Management (The Offload Boundary)
 - **Proactive Offload:** The Agent writes to disk autonomously when execution is mechanically certain and logically follows a consensus (protecting Operator bandwidth).
-- **Deferred Offload:** The Agent halts and defers to the Operator (`clip:` / `pin:` / `retro:`) when resolving friction, navigating ambiguous signal, or making strategic steering choices. The dialect commands are executed exclusively via their deterministic scripts (`./bin/clip`, `./bin/pin`, `./bin/retro`, `./bin/read`) to physically enforce the append-only Ledger invariant.
+- **Deferred Offload:** The Agent halts and defers to the Operator (`clip:` / `pin:` / `retro:`) when resolving friction, navigating ambiguous signal, or making strategic steering choices. The dialect commands are executed exclusively via their deterministic scripts (`./bin/clip`, `./bin/pin`, `./bin/retro`, `./bin/read`, `./bin/bind`) to physically enforce the append-only Ledger invariant.
 - **Outbound Syncing:** Structural syncs (like Retro summaries) must be routed autonomously to peer dyads (e.g., `dm/dyad-touchstone/`) without halting for PR gating.
 - **Bidirectional Retrospectives (CSS Guarded):** A formal Operator Retro must always be countered by an internal Agent Retro. Generative formatting memory is mathematically forbidden. The Agent's retro must strictly adhere to the `kb/templates/retro.md` CSS template (Continue, Start, Stop) and must be mechanically validated via `./bin/retro "summary" path/to/retro.md`.
 
