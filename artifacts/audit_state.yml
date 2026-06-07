@@ -1,1 +1,6 @@
+config:
+  gates:
+    design_review: false
+    execution_review: false
+    reflection_review: true
 nodes: {}

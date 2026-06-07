@@ -1,3 +1,8 @@
+config:
+  gates:
+    design_review: true
+    execution_review: false
+    reflection_review: true
 nodes:
   node_4c_probe_anchor_compilation:
     dependencies:
@@ -38,9 +43,9 @@ nodes:
     goal: Spin up a trail to investigate the root cause of why RETRO logs are not
       presented using the CSS template, and resolve the formatting.
     type: PROBE
-  node_23_probe_frontier_ascii_tree:
-    status: IN_REVIEW
-    title: Probe Frontier ASCII-Tree Rendering
-    goal: Spin up a PROBE to determine why frontier is no-longer presented as an ascii-tree
-      (similar to a directory) to reflect DAG relationships.
+  node_24_probe_declarative_hitl_gates:
+    title: Probe Declarative HITL Gates
+    goal: Extract magic string DAG assertions into declarative config.gates on both
+      DAGs.
     type: PROBE
+    status: IN_REVIEW
