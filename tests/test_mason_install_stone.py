@@ -8,7 +8,7 @@ def test_mason_installs_stone_safely():
     Asserts that `mason install` correctly extracts a physical stone payload 
     and writes it to BOTH the kb/ and bin/ directories (the Generative Why and the Deterministic How).
     """
-    pkg_path = "commons/hard-guardrails"
+    pkg_path = "commons/library/hard-guardrails"
     kb_dest = "kb/HOW-0002-hard-guardrails.md"
     bin_dest = "bin/hard-guardrails"
     
