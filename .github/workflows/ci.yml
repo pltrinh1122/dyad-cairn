@@ -19,7 +19,7 @@ jobs:
           python-version: '3.12'
           
       - name: Install Dependencies
-        run: pip install pytest
+        run: pip install -r requirements.txt
 
       - name: Ensure Test Runner is Executable
         run: chmod +x bin/run-tests

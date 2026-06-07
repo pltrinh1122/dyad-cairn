@@ -23,3 +23,10 @@ guards:
     armed_condition: "Upstream commits detected by tests/test_commons_sync.py"
     disarmed_condition: "Execution of ./bin/sync-commons <synthesis> which pulls the changes and physically anchors the cognitive ingestion to the Ledger."
     trigger_location: "tests/test_commons_sync.py (CI Gate)"
+
+  - id: dependency_drift
+    type: Asymmetric
+    description: "Traps the CI Gate and local test harness if imports are missing from requirements.txt."
+    armed_condition: "A Python import statement (non-stdlib) is not present in requirements.txt"
+    disarmed_condition: "Adding the package to requirements.txt"
+    trigger_location: "tests/test_dependency_guard.py (CI Gate)"
