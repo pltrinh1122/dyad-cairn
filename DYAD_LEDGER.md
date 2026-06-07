@@ -97,3 +97,5 @@
 - **2026-06-07 03:45:39** | `CLIP` | Falsification: A Probe's mechanical lifecycle is strict: if it discovers multiple invariants, it spawns sibling [PROBE] nodes and terminates. If it discovers exactly one invariant (atomic), it populates a [PLAN] node and terminates.
 - **2026-06-07 03:47:36** | `RETRO` | Operator: 'fantastic progress in maturing the wuwei-engineering process.'
 - **2026-06-07 03:48:21** | `CLIP` | Wu-Wei Engineering Maturity: The dyad-cairn architecture is fundamentally sound. The theory is complete, and the scaffolding is ready. We now operate entirely within the physical [PROBE] → [PLAN] → [EXECUTE] fractal pipeline, devoid of obsolete abstractions.
+- **2026-06-07 03:56:48** | `RETRO` | Operator: 'why all 7 are required? what is the provenance requirement for that...'
+- **2026-06-07 03:56:48** | `CLIP` | Falsification: The Matrix Completeness Invariant is not '7 dimensions'. It is 'whatever dimensions are defined in commons/AGENT.md'. Hardcoding the dimensions in dip.py breaks the Ontological Bond. The Sonar must dynamically extract its schema from the physical provenance.
