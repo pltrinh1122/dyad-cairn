@@ -1,5 +1,6 @@
 import sys
 import subprocess
+import os
 
 def run_cmd(cmd, allow_fail=False):
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
@@ -289,6 +290,33 @@ if __name__ == "__main__":
         plan_node(node)
     elif action == "checkout":
         checkout_node(node)
+    elif action == "convert-todo":
+        # Convert a parked todo into an injected node
+        import yaml
+        todo_yml = "artifacts/todos.yml"
+        if not os.path.exists(todo_yml):
+            print("ERROR: No todos holding pen found.")
+            sys.exit(1)
+            
+        with open(todo_yml, "r") as f:
+            todos = yaml.safe_load(f) or {}
+            
+        if "backlog" not in todos or node not in todos["backlog"]:
+            print(f"ERROR: Todo ID {node} not found in holding pen.")
+            sys.exit(1)
+            
+        intent = todos["backlog"][node]["intent"]
+        
+        # Inject the node
+        node_id = f"node_todo_{node.split('_')[1]}"
+        inject_node(node_id, f"Convert Todo: {node}", intent)
+        
+        # Remove from backlog
+        del todos["backlog"][node]
+        with open(todo_yml, "w") as f:
+            yaml.dump(todos, f, default_flow_style=False, sort_keys=False)
+            
+        print(f"[TODO] Successfully converted {node} into {node_id} (IN_REVIEW).")
     elif action == "inject":
         if len(sys.argv) < 5:
             print("Usage: python3 skills/flow_state_manager.py inject <node_id> \"<Title>\" \"<Goal>\"")
