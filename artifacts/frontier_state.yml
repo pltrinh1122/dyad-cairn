@@ -39,19 +39,25 @@ nodes:
     title: Construct the Ontological Binder
     goal: Build bin/bind to enforce simultaneous mutation of the Ledger, AGENT.md,
       and the physical substrate.
-    dependencies:
-    - node_14_probe_design_review_gate
-  node_14_probe_design_review_gate:
-    type: PROBE
-    status: ACTIVE
-    title: Construct the Design-Review Gate
-    goal: Build bin/node inject (defaults to IN_REVIEW) and bin/node authorize (flips
-      to READY) to map the lean. and lean! HTIL gates.
+    dependencies: []
   node_15_probe_wuwei_closure_gate:
     type: PROBE
     status: READY
     title: Construct the Wu-Wei Closure Gate
     goal: Update skills/flow_state_manager.py to enforce a retro_msg synthesis block
       on reflect-green.
+    dependencies: []
+  node_14a_plan_design_review_gate:
+    type: PLAN
+    status: BLOCKED
+    title: Implement DAG Authorization Lock
+    goal: Build ./bin/node inject and ./bin/node authorize to physically decouple
+      node creation from execution authorization.
     dependencies:
-    - node_14_probe_design_review_gate
+    - node_16_probe_stone_schema
+  node_16_probe_stone_schema:
+    type: PROBE
+    status: READY
+    title: Investigate Evolved stone.yaml Schema
+    goal: 'Probe the ''Missing required field: stone_id'' failure in test_mason_install_stone.py
+      to discover the new structural invariants for the mason CLI.'

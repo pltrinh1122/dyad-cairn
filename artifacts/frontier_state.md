@@ -5,6 +5,7 @@
 > WIP-N=1 mechanically enforced by `skills/frontier_editor.py`.
 
 
-## 🟢 ACTIVE NODES
-- **node_14_probe_design_review_gate** [PROBE]: Construct the Design-Review Gate
-  - *Goal:* Build bin/node inject (defaults to IN_REVIEW) and bin/node authorize (flips to READY) to map the lean. and lean! HTIL gates.
+## 🔴 BLOCKED NODES
+- **node_14a_plan_design_review_gate** [PLAN]: Implement DAG Authorization Lock
+  - *Goal:* Build ./bin/node inject and ./bin/node authorize to physically decouple node creation from execution authorization.
+  - *Dependencies:* node_16_probe_stone_schema
