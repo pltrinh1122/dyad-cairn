@@ -4,7 +4,7 @@ nodes:
     type: execute
     goal: Implement the markdown parser in dip_sonar.py to dynamically extract the
       required dimensions, passing the TDD tests.
-    status: BLOCKED
+    status: ACTIVE
     dependencies: []
   node_4c_probe_anchor_compilation:
     title: Probe Anchor Compilation Invariant
@@ -14,13 +14,6 @@ nodes:
     status: BLOCKED
     dependencies:
     - node_4a_execute_matrix_schema
-  node_8_execute_csi_guard_reflect:
-    title: Execute CSI Guard for Reflect Phase
-    type: execute
-    goal: Implement the trail_reflect logic in flow_state_manager.py to satisfy the
-      TDD specs, enforcing synthesis, issue closure, and trail pruning.
-    status: ACTIVE
-    dependencies: []
   node_7_plan_csi_guard_execute:
     title: Plan CSI Guard for Execute Nodes
     type: plan

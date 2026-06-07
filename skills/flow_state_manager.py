@@ -172,9 +172,26 @@ def create_reflection_pr(node_id, is_green):
         run_cmd(f"python3 skills/frontier_editor.py {node_id} IN_REVIEW")
         print(f"[FLOW] Node {node_id} status transitioned to IN_REVIEW. Execution halted pending Operator Approval.")
 
+def trail_reflect(trail_id, retro_msg):
+    print(f"[FLOW] Executing Trail Reflect for {trail_id}...")
+    
+    # 1. Synthesis Invariant
+    sys.path.append('.')
+    from skills import ledger_manager
+    ledger_manager.append_ledger("trail-retro", retro_msg)
+    
+    # 2. Issue Closure Invariant
+    # We call gh issue close to shut down the orchestrator's tracked task
+    run_cmd(f"gh issue close {trail_id}")
+    
+    # 3. Trail Pruning Invariant
+    run_cmd(f"python3 skills/frontier_editor.py {trail_id} PRUNE")
+    
+    print(f"[FLOW] Trail {trail_id} successfully closed and pruned.")
+
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: python3 skills/flow_state_manager.py <plan|checkout|reflect> <node_id>")
+        print("Usage: python3 skills/flow_state_manager.py <plan|checkout|reflect-red|reflect-green|trail-reflect> <node_id> [retro_msg]")
         sys.exit(1)
     
     check_retro_lock()
@@ -201,6 +218,9 @@ if __name__ == "__main__":
         reflect_node_red(node)
     elif action == "reflect-green":
         reflect_node_green(node)
+    elif action == "trail-reflect":
+        retro_msg = sys.argv[3] if len(sys.argv) > 3 else "No retro message provided."
+        trail_reflect(node, retro_msg)
     else:
         print(f"Unknown action: {action}")
         sys.exit(1)
