@@ -162,9 +162,15 @@ def create_reflection_pr(node_id, is_green):
             sys.exit(1)
         print("[FLOW] Remote GAP successfully failed as expected. Split-brain falsified.")
     
-    # 3. Transition DAG Status
-    run_cmd(f"python3 skills/frontier_editor.py")
-    print(f"[FLOW] Node {node_id} status transitioned to IN_REVIEW. Execution halted.")
+    # 3. Transition DAG Status and Merge (if Green)
+    if is_green:
+        print(f"[FLOW] Executing Autonomous Merge for Green Phase...")
+        run_cmd("gh pr merge --merge --delete-branch")
+        run_cmd(f"python3 skills/frontier_editor.py {node_id} DONE")
+        print(f"[FLOW] Node {node_id} status transitioned to DONE. Execution completed.")
+    else:
+        run_cmd(f"python3 skills/frontier_editor.py {node_id} IN_REVIEW")
+        print(f"[FLOW] Node {node_id} status transitioned to IN_REVIEW. Execution halted pending Operator Approval.")
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:

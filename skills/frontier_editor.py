@@ -50,8 +50,14 @@ def save_state(state):
 # Basic CLI stub for pipeline triggering
 if __name__ == "__main__":
     state = load_state()
-    # Future: parse sys.argv to actively add/modify nodes
-    if len(sys.argv) > 1:
-        print("Mutations not fully implemented yet, simply verifying DAG and regenerating View.")
+    if len(sys.argv) == 3:
+        node_id = sys.argv[1]
+        new_status = sys.argv[2].upper()
+        if node_id in state["nodes"]:
+            state["nodes"][node_id]["status"] = new_status
+            print(f"[FRONTIER] Transitioned Node {node_id} to {new_status}")
+        else:
+            print(f"ERROR: Node {node_id} not found in DAG.")
+            sys.exit(1)
     save_state(state)
     print("[FRONTIER] State computationally validated and View projected.")
