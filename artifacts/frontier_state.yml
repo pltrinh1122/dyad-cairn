@@ -33,21 +33,21 @@ nodes:
       map to the substrate without polluting the SPAOR loop.
     title: Probe Todo Ingestion Pipeline
     type: probe
-  node_12_plan_ontological_binder:
-    type: PLAN
-    status: IN_REVIEW
+  node_12_probe_ontological_binder:
+    type: PROBE
+    status: READY
     title: Construct the Ontological Binder
     goal: Build bin/bind to enforce simultaneous mutation of the Ledger, AGENT.md,
       and the physical substrate.
-  node_14_plan_design_review_gate:
-    type: PLAN
-    status: IN_REVIEW
+  node_14_probe_design_review_gate:
+    type: PROBE
+    status: READY
     title: Construct the Design-Review Gate
     goal: Build bin/node inject (defaults to IN_REVIEW) and bin/node authorize (flips
       to READY) to map the lean. and lean! HTIL gates.
-  node_15_plan_wuwei_closure_gate:
-    type: PLAN
-    status: IN_REVIEW
+  node_15_probe_wuwei_closure_gate:
+    type: PROBE
+    status: READY
     title: Construct the Wu-Wei Closure Gate
     goal: Update skills/flow_state_manager.py to enforce a retro_msg synthesis block
       on reflect-green.
