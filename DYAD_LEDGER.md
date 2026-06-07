@@ -151,3 +151,4 @@
 - **2026-06-07 19:55:49** | `RETRO` | feels smoother already. let's keep dogfooding to see if there are remaning grains that we can rub.
 - **2026-06-07 19:59:20** | `TODO` | test_noisy_intent_12345
 - **2026-06-07 19:59:20** | `NODE-RETRO` | [node_11_probe_dual_agent_orchestration] Probed dual agent architecture. Designed HOW-0003-dual-agent-orchestration.md to outline GitHub Actions as the message bus for delegating PLAN/EXECUTE/REFLECT to a remote Claude instance.
+- **2026-06-07 20:13:19** | `CLIP` | Falsification: A [PROBE] node is not complete until it mechanically mutates the DAG. The strict hard-invariant for a successful atomic PROBE is the physical instantiation of a [PLAN] node on the Frontier. Verbal suggestions to spawn a node violate the execution boundary.
