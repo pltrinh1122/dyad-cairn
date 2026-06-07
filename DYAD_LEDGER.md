@@ -79,3 +79,5 @@
 - **2026-06-07 01:49:48** | `CLIP` | Falsification: bin/backlog and global GH Issue constraints are obsolete residual shadows. The local DAG and PRs are the exclusive structural intent boundaries.
 - **2026-06-07 01:51:42** | `RETRO` | Operator: 'rub: bin/node'
 - **2026-06-07 01:51:42** | `CLIP` | Falsification: bin/node execution hallucinated the Autonomous Merge Invariant and lacked physical DAG mutation.
+- **2026-06-07 01:54:01** | `RETRO` | Operator: 'identify residual shadow from dyad-wu-wei...'
+- **2026-06-07 01:54:01** | `CLIP` | Falsification: bin/git, bin/gh, and bin/rack are Sandbox Wardens and redundant abstractions inherited from dyad-wu-wei. They conflict with Cairn's Substrate Execution and DAG planner.

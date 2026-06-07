@@ -1,4 +1,0 @@
-#!/bin/bash
-export PYTHONPATH="${PYTHONPATH}:$(pwd)"
-echo "[bin/gh] Guardrail intercept: enforcing strict GH CLI proxy..."
-command gh "$@"
