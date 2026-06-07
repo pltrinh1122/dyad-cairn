@@ -10,8 +10,6 @@ def test_append_ledger_default_cairn(monkeypatch):
         jsonl = os.path.join(state_dir, "ledger.jsonl")
         md = os.path.join(tmpdir, "DYAD_LEDGER.md")
         
-        monkeypatch.setattr(lm, "JSONL_FILE", jsonl)
-        monkeypatch.setattr(lm, "MD_FILE", md)
         monkeypatch.setattr(lm, "get_state_dir", lambda tool: state_dir if not tool else os.path.join(tmpdir, f"{tool}-state"))
         monkeypatch.setattr(lm, "get_jsonl_file", lambda tool: jsonl if not tool else os.path.join(tmpdir, f"{tool}-state", "ledger.jsonl"))
         monkeypatch.setattr(lm, "get_md_file", lambda tool: md if not tool else os.path.join(tmpdir, f"{tool.upper()}_LEDGER.md"))

@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 skills/ledger_manager.py clip "$1"
+python3 skills/ledger_manager.py clip "$@"

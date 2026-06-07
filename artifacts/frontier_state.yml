@@ -4,7 +4,7 @@ nodes:
     type: execute
     goal: Implement the markdown parser in dip_sonar.py to dynamically extract the
       required dimensions, passing the TDD tests.
-    status: BLOCKED
+    status: ACTIVE
     dependencies: []
   node_4c_probe_anchor_compilation:
     title: Probe Anchor Compilation Invariant
@@ -20,11 +20,4 @@ nodes:
       [EXECUTE] to capture execution-level learnings (best practices, pitfalls) before
       closing the trail.
     status: BLOCKED
-    dependencies: []
-  node_6_execute_tool_ledger:
-    title: Execute Isolated Ledger for Tools
-    type: execute
-    goal: Implement the functional logic in ledger_manager.py to dynamically route
-      logs to tool-specific ledgers, satisfying the TDD tests.
-    status: ACTIVE
     dependencies: []

@@ -14,9 +14,9 @@ class TestLedgerManager(unittest.TestCase):
         self.jsonl_path = os.path.join(self.test_dir, "ledger.jsonl")
         self.md_path = os.path.join(self.test_dir, "LEDGER.md")
         
-        # Patch the file paths
-        patcher_jsonl = patch("skills.ledger_manager.JSONL_FILE", self.jsonl_path)
-        patcher_md = patch("skills.ledger_manager.MD_FILE", self.md_path)
+        # Patch the dynamic path functions
+        patcher_jsonl = patch("skills.ledger_manager.get_jsonl_file", return_value=self.jsonl_path)
+        patcher_md = patch("skills.ledger_manager.get_md_file", return_value=self.md_path)
         patcher_mkdir = patch("os.makedirs", lambda name, exist_ok: None)
         
         self.addCleanup(patcher_jsonl.stop)

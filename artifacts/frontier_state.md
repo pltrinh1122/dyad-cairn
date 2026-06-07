@@ -6,12 +6,10 @@
 
 
 ## 🟢 ACTIVE NODES
-- **node_6_execute_tool_ledger** [EXECUTE]: Execute Isolated Ledger for Tools
-  - *Goal:* Implement the functional logic in ledger_manager.py to dynamically route logs to tool-specific ledgers, satisfying the TDD tests.
-
-## 🔴 BLOCKED NODES
 - **node_4b_execute_sonar_halting** [EXECUTE]: Execute Provenance Extraction Invariant
   - *Goal:* Implement the markdown parser in dip_sonar.py to dynamically extract the required dimensions, passing the TDD tests.
+
+## 🔴 BLOCKED NODES
 - **node_4c_probe_anchor_compilation** [PROBE]: Probe Anchor Compilation Invariant
   - *Goal:* Investigate how a fully saturated dip_state.yml is safely and deterministically projected into the immutable GEMINI.md anchor.
 - **node_5_probe_reflect_phase** [PROBE]: Probe the [REFLECT] Phase Requirement

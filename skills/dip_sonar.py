@@ -5,7 +5,11 @@ class MatrixValidationError(Exception):
     """Exception raised when dip_state.yml fails physical invariant validation."""
     pass
 
-def get_required_dimensions():
+class ProvenanceExtractionError(Exception):
+    """Exception raised when provenance extraction fails."""
+    pass
+
+def get_required_dimensions(provenance_path=None):
     """
     Dynamically extracts required dimensions from physical provenance (commons/AGENT.md).
     For now, returns an empty list or parses a file. The full implementation of this
