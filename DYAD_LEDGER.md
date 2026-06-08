@@ -230,3 +230,5 @@
 - **2026-06-07 23:54:09** | `NODE-RETRO` | [node_22_plan_retro_css_formatting] Plan successfully mapped to artifacts/plan_node_22_retro_css_formatting.md.
 - **2026-06-07 23:55:18** | `TODO` | test_noisy_intent_12345
 - **2026-06-08 00:01:21** | `TRAIL-RETRO` | Implemented the Green Phase to encapsulate the CSS payload in the JSONL and safely indent multiline messages in the markdown ledger.
+- **2026-06-08 00:13:28** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 00:13:28** | `NODE-RETRO` | [node_audit_probe_rca_narrative_summary] Discovered structural enforcement mechanisms for EXECUTE RCA and REFLECT Narrative Summaries via explicit artifact presence and parsing in flow_state_manager.py.
