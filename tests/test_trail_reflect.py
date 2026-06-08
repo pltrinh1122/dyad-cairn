@@ -45,7 +45,7 @@ def test_trail_reflect_csi_guard():
         
         retro_msg = "Probe Invariant: verified. Execution RCA: see details."
         # Assert 1: The Synthesis Invariant (Trail Retro logged to Ledger)
-        mock_append_ledger.assert_called_once_with("trail-retro", retro_msg)
+        mock_append_ledger.assert_called_once_with("trail-retro", f"[{trail_id}]\n{retro_msg}")
         
         # Assert 2: The Reflection Review Gate (PR Created but not merged/pruned)
         mock_create_pr.assert_called_once()

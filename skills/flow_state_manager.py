@@ -83,9 +83,15 @@ def inject_node(node_id, title, goal):
     gates = state.get("config", {}).get("gates", {})
     if gates.get("design_review", True):
         state["nodes"][node_id]["status"] = "IN_REVIEW"
-        
     save_state(state)
-    print(f"[FLOW] Node {node_id} successfully injected and blocked at the Design-Review Gate.")
+    
+    if state["nodes"][node_id].get("status") == "IN_REVIEW":
+        print(f"[FLOW] Node {node_id} successfully injected and blocked at the Design-Review Gate.")
+        sys.path.append('.')
+        from skills.design_review_ui import present_design_review
+        present_design_review(node_id, state)
+    else:
+        print(f"[FLOW] Node {node_id} successfully injected (Design-Review Gate disabled).")
 
 def authorize_node(node_id):
     print(f"[FLOW] Authorizing Node {node_id}...")
