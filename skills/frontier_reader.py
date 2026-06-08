@@ -32,7 +32,7 @@ def derive_status(node_id, node_data, all_nodes, ledger_content=None, active_bra
             branch = line.replace("*", "").strip()
             if branch == 'main':
                 continue
-            if node_id in branch or (prefix and prefix in branch):
+            if node_id in branch:
                 return "ACTIVE"
         
     deps = node_data.get('dependencies', [])
