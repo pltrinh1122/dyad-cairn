@@ -3,10 +3,4 @@ config:
     design_review: false
     execution_review: false
     reflection_review: true
-nodes:
-  node_audit_fix_dialect_linter:
-    title: Fix Dialect Linter XML Tag Parsing
-    goal: Audit and fix skills/dialect_linter.py to correctly parse <USER_REQUEST>
-      tags and properly scan all planner responses within a turn for tool calls and
-      UI presentations.
-    type: PLAN
+nodes: {}

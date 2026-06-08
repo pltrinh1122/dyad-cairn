@@ -5,5 +5,4 @@
 > WIP-N=1 mechanically enforced by `skills/frontier_editor.py`.
 
 ```text
-├── node_audit_fix_dialect_linter [READY] [PLAN]: Fix Dialect Linter XML Tag Parsing
 ```
