@@ -141,6 +141,13 @@ def reflect_node_green(node_id, retro_msg):
         print("The Agent must physically run the UI presentation tools. You are blocked.")
         sys.exit(1)
         
+    if "_execute_" in node_id:
+        rca_file = f"artifacts/rca_{node_id}.md"
+        if not os.path.exists(rca_file):
+            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+            print(f"Missing RCA artifact. EXECUTE nodes must author an industry standard RCA at '{rca_file}'.")
+            sys.exit(1)
+
     print("[FLOW] Asserting Mechanical Gate (TDD must PASS)...")
     sys.path.append('.')
     try:
@@ -261,6 +268,13 @@ def complete_node(node_id, retro_msg):
         print("The Agent must physically run the UI presentation tools. You are blocked from Completion.")
         sys.exit(1)
         
+    if "_execute_" in node_id:
+        rca_file = f"artifacts/rca_{node_id}.md"
+        if not os.path.exists(rca_file):
+            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+            print(f"Missing RCA artifact. EXECUTE nodes must author an industry standard RCA at '{rca_file}'.")
+            sys.exit(1)
+
     # Enforce Testing Invariant
     sys.path.append('.')
     try:
@@ -290,13 +304,27 @@ def complete_node(node_id, retro_msg):
     print(f"[FLOW] Tests passed mechanically. Transitioning Node {node_id} to DONE.")
     run_cmd(f"python3 skills/frontier_editor.py {node_id} DONE")
 
-def trail_reflect(trail_id, retro_msg):
+def trail_reflect(trail_id, retro_msg=None):
     print(f"[FLOW] Executing Trail Reflect for {trail_id}...")
     
     # 1. Synthesis Invariant
     sys.path.append('.')
     from skills import ledger_manager
     from skills.github_client import create_pr
+    
+    synthesis_file = f"artifacts/trail_synthesis_{trail_id}.md"
+    if not os.path.exists(synthesis_file):
+        print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+        print(f"Missing Trail Synthesis artifact. REFLECT nodes must author '{synthesis_file}'.")
+        sys.exit(1)
+        
+    with open(synthesis_file, "r") as f:
+        retro_msg = f.read()
+        
+    if "Probe Invariant" not in retro_msg or "Execution RCA" not in retro_msg:
+        print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+        print("Trail Synthesis must contain a narrative summary for (1) positive assertion of the Probe Invariant and (2) reference to individual Execution RCA.")
+        sys.exit(1)
     
     branch_name = f"active/reflect_{trail_id}"
     run_cmd(f"git checkout -b {branch_name} || git checkout {branch_name}")
@@ -406,10 +434,8 @@ if __name__ == "__main__":
             sys.exit(1)
         complete_node(node, sys.argv[3])
     elif action == "trail-reflect":
-        if len(sys.argv) < 4:
-            print("Usage: python3 skills/flow_state_manager.py trail-reflect <trail_id> <retro_msg>")
-            sys.exit(1)
-        trail_reflect(node, sys.argv[3])
+        msg = sys.argv[3] if len(sys.argv) > 3 else None
+        trail_reflect(node, msg)
     elif action == "dispose":
         trail_dispose(node)
     else:
