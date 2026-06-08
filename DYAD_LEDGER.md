@@ -218,3 +218,15 @@
 - **2026-06-07 22:57:07** | `NODE-RETRO` | [node_24_probe_declarative_hitl_gates] Successfully migrated from magic string environment assertions to explicit declarative config.gates on both DAGs. The Intent of the gates is now structurally bound to the physical file it governs.
 - **2026-06-07 22:59:55** | `TRAIL-RETRO` | Successfully migrated from magic string environment assertions to explicit declarative config.gates on both DAGs. The Intent of the gates is now structurally bound to the physical file it governs.
 - **2026-06-07 23:00:47** | `OPERATOR-RETRO` | progressing, and that is important.
+- **2026-06-07 23:18:04** | `TODO` | to audit dag - resolve design-review-ui.
+- **2026-06-07 23:30:49** | `CLIP` | Synthesized the CSI Guard architecture into 'The CSI Forge' (The Ontological Forge) - a build-time compiler that strikes declarative intent against a Generative Firewall to produce physical, decoupled mechanical locks without relying on G-Enforcement.
+- **2026-06-07 23:35:11** | `TODO` | insert a probe to Audit DAG to fix the CSS UI once the new architecture is implemented
+- **2026-06-07 23:38:16** | `RETRO` | Bifurcate execution: deliberate design for architecture, rapid lean! for payload
+- **2026-06-07 23:39:36** | `CLIP` | Aligned on execution bifurcation: deliberate architectural sparring vs rapid payload lean!
+- **2026-06-07 23:48:40** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 23:49:08** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 23:49:08** | `NODE-RETRO` | [node_22_probe_retro_css_formatting] Discovered invariant: The Retro Ledger Persistence Trap. skills/ledger_manager.py drops the CSS payload during append_ledger, causing only the summary to persist. DYAD_LEDGER.md renderer also needs refactoring to safely encapsulate multi-line strings without breaking list layout.
+- **2026-06-07 23:54:09** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 23:54:09** | `NODE-RETRO` | [node_22_plan_retro_css_formatting] Plan successfully mapped to artifacts/plan_node_22_retro_css_formatting.md.
+- **2026-06-07 23:55:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 00:01:21** | `TRAIL-RETRO` | Implemented the Green Phase to encapsulate the CSS payload in the JSONL and safely indent multiline messages in the markdown ledger.

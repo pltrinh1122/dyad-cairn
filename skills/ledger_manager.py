@@ -37,7 +37,8 @@ def append_ledger(action: str, message: str, tool_name: str = None):
                     try:
                         data = json.loads(line)
                         ts = data["timestamp"].split("T")[0] + " " + data["timestamp"].split("T")[1][:8]
-                        lines.append(f"- **{ts}** | `{data['action']}` | {data['message']}")
+                        formatted_message = data['message'].replace('\n', '\n  ')
+                        lines.append(f"- **{ts}** | `{data['action']}` | {formatted_message}")
                     except Exception as e:
                         print(f"Error parsing line: {line}. {e}")
                     
@@ -60,20 +61,22 @@ def append_ledger(action: str, message: str, tool_name: str = None):
 def process_retro(summary: str, file_path: str):
     os.makedirs("dyad-state", exist_ok=True)
     
+    if file_path and os.path.exists(file_path):
+        with open(file_path, "r") as f:
+            payload = f.read()
+        full_message = f"{summary}\n\n<details><summary>View Retro Payload</summary>\n\n{payload}\n</details>"
+    else:
+        payload = summary
+        full_message = summary
+
     # 1. Sync Ledger
-    append_ledger("retro", summary)
+    append_ledger("retro", full_message)
     
     # 2. Outbox Sync (Fixing the vulnerability: syncing the full file, not just the summary)
     outbox_dir = "dm/dyad-touchstone"
     os.makedirs(outbox_dir, exist_ok=True)
     ts_clean = datetime.datetime.now(datetime.timezone.utc).isoformat().replace(":", "-").replace(".", "-") + "Z"
     outbox_file = os.path.join(outbox_dir, f"retro_{ts_clean}.md")
-    
-    if file_path and os.path.exists(file_path):
-        with open(file_path, "r") as f:
-            payload = f.read()
-    else:
-        payload = summary
         
     with open(outbox_file, "w") as f:
         f.write(payload)

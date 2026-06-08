@@ -213,3 +213,15 @@
 {"timestamp": "2026-06-07T22:57:07.867068+00:00Z", "action": "NODE-RETRO", "message": "[node_24_probe_declarative_hitl_gates] Successfully migrated from magic string environment assertions to explicit declarative config.gates on both DAGs. The Intent of the gates is now structurally bound to the physical file it governs."}
 {"timestamp": "2026-06-07T22:59:55.230993+00:00Z", "action": "TRAIL-RETRO", "message": "Successfully migrated from magic string environment assertions to explicit declarative config.gates on both DAGs. The Intent of the gates is now structurally bound to the physical file it governs."}
 {"timestamp": "2026-06-07T23:00:47.432140+00:00Z", "action": "OPERATOR-RETRO", "message": "progressing, and that is important."}
+{"timestamp": "2026-06-07T23:18:04.346112+00:00Z", "action": "TODO", "message": "to audit dag - resolve design-review-ui."}
+{"timestamp": "2026-06-07T23:30:49.028998+00:00Z", "action": "CLIP", "message": "Synthesized the CSI Guard architecture into 'The CSI Forge' (The Ontological Forge) - a build-time compiler that strikes declarative intent against a Generative Firewall to produce physical, decoupled mechanical locks without relying on G-Enforcement."}
+{"timestamp": "2026-06-07T23:35:11.164240+00:00Z", "action": "TODO", "message": "insert a probe to Audit DAG to fix the CSS UI once the new architecture is implemented"}
+{"timestamp": "2026-06-07T23:38:16.693948+00:00Z", "action": "RETRO", "message": "Bifurcate execution: deliberate design for architecture, rapid lean! for payload"}
+{"timestamp": "2026-06-07T23:39:36.030288+00:00Z", "action": "CLIP", "message": "Aligned on execution bifurcation: deliberate architectural sparring vs rapid payload lean!"}
+{"timestamp": "2026-06-07T23:48:40.969550+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-07T23:49:08.330355+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-07T23:49:08.495378+00:00Z", "action": "NODE-RETRO", "message": "[node_22_probe_retro_css_formatting] Discovered invariant: The Retro Ledger Persistence Trap. skills/ledger_manager.py drops the CSS payload during append_ledger, causing only the summary to persist. DYAD_LEDGER.md renderer also needs refactoring to safely encapsulate multi-line strings without breaking list layout."}
+{"timestamp": "2026-06-07T23:54:09.222771+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-07T23:54:09.392761+00:00Z", "action": "NODE-RETRO", "message": "[node_22_plan_retro_css_formatting] Plan successfully mapped to artifacts/plan_node_22_retro_css_formatting.md."}
+{"timestamp": "2026-06-07T23:55:18.066119+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-08T00:01:21.723825+00:00Z", "action": "TRAIL-RETRO", "message": "Implemented the Green Phase to encapsulate the CSS payload in the JSONL and safely indent multiline messages in the markdown ledger."}
