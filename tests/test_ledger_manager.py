@@ -69,5 +69,28 @@ class TestLedgerManager(unittest.TestCase):
             self.assertEqual(data["action"], "RETRO")
             self.assertEqual(data["message"], "Harvesting retro")
 
+    @patch("skills.ledger_manager.append_ledger")
+    def test_process_retro_persists_payload(self, mock_append):
+        def mock_exists(path):
+            if path == "dummy.md": return True
+            if path == "dyad-state/RETRO_ACTIVE.lock": return False
+            return False
+
+        with patch("os.path.exists", side_effect=mock_exists):
+            m_open = unittest.mock.mock_open(read_data="CSS\nPayload")
+            with patch("builtins.open", m_open):
+                ledger_manager.process_retro("Summary", "dummy.md")
+            
+        expected_message = "Summary\n\n<details><summary>View Retro Payload</summary>\n\nCSS\nPayload\n</details>"
+        mock_append.assert_called_with("retro", expected_message)
+
+    def test_append_ledger_multiline_formatting(self):
+        multiline_msg = "Line 1\nLine 2\nLine 3"
+        ledger_manager.append_ledger("retro", multiline_msg)
+        
+        with open(self.md_path, "r") as f:
+            md_content = f.read()
+            self.assertIn("Line 1\n  Line 2\n  Line 3", md_content)
+
 if __name__ == "__main__":
     unittest.main()
