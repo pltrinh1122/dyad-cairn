@@ -251,3 +251,6 @@
 {"timestamp": "2026-06-08T01:28:43.244838+00:00Z", "action": "NODE-RETRO", "message": "[node_audit_fix_dialect_linter] Fixed UI Dialect Linter parsing."}
 {"timestamp": "2026-06-08T01:30:35.582910+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-08T01:30:35.722535+00:00Z", "action": "NODE-RETRO", "message": "[node_19_probe_state_sync_collision] Probed State Sync Collisions and proposed a structural Sync gate."}
+{"timestamp": "2026-06-08T01:34:19.900558+00:00Z", "action": "TODO", "message": "audit HTIL Design Review UI to show unfalsified conditions and invariants from Probe instead of just the Goal."}
+{"timestamp": "2026-06-08T01:36:32.367368+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-08T01:36:32.499504+00:00Z", "action": "NODE-RETRO", "message": "[node_audit_design_review_invariants] Upgraded Design Review UI to extract and present Probe invariants."}

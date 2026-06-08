@@ -293,3 +293,6 @@
 - **2026-06-08 01:28:43** | `NODE-RETRO` | [node_audit_fix_dialect_linter] Fixed UI Dialect Linter parsing.
 - **2026-06-08 01:30:35** | `TODO` | test_noisy_intent_12345
 - **2026-06-08 01:30:35** | `NODE-RETRO` | [node_19_probe_state_sync_collision] Probed State Sync Collisions and proposed a structural Sync gate.
+- **2026-06-08 01:34:19** | `TODO` | audit HTIL Design Review UI to show unfalsified conditions and invariants from Probe instead of just the Goal.
+- **2026-06-08 01:36:32** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 01:36:32** | `NODE-RETRO` | [node_audit_design_review_invariants] Upgraded Design Review UI to extract and present Probe invariants.
