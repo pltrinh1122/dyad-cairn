@@ -100,9 +100,16 @@ def save_state(state):
         "> This is a computationally managed projection. **DO NOT EDIT DIRECTLY.**",
         f"> Source of truth is `{source_file}`.",
         "> WIP-N=1 mechanically enforced by `skills/frontier_editor.py`.\n",
-        "```text"
     ]
     
+    # 3. Synchronize GEMINI.md Anchor
+    try:
+        from skills.anchor_compiler import compile_anchor
+        compile_anchor()
+    except Exception as e:
+        print(f"[FLOW WARNING] Anchor Compilation skipped: {e}")
+
+    md_lines.append("```text")
     tree_lines = build_tree(state.get("nodes", {}))
     md_lines.extend(tree_lines)
     md_lines.append("```")

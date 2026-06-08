@@ -4,12 +4,6 @@ config:
     execution_review: false
     reflection_review: true
 nodes:
-  node_4c_probe_anchor_compilation:
-    status: READY
-    goal: Investigate how a fully saturated dip_state.yml is safely and deterministically
-      projected into the immutable GEMINI.md anchor.
-    title: Probe Anchor Compilation Invariant
-    type: probe
   node_19_probe_state_sync_collision:
     status: IN_REVIEW
     title: Probe Ledger and State Sync Collision
@@ -17,8 +11,7 @@ nodes:
       invariants for how concurrent agents mutating the same structural files resolve
       data consistency and merge conflicts without shattering.
     type: PROBE
-    dependencies:
-    - node_4c_probe_anchor_compilation
+    dependencies: []
   node_20_probe_authorization_gate_collision:
     status: IN_REVIEW
     title: Probe Authorization Gate Collision
@@ -35,14 +28,9 @@ nodes:
     type: PROBE
     dependencies:
     - node_19_probe_state_sync_collision
-  node_4c_plan_anchor_compiler:
-    title: Anchor Compilation Schema
-    goal: Design the schema for how the 7 dimensions map to Markdown sections.
-    type: PLAN
-    status: IN_REVIEW
   node_4c_execute_anchor_compiler:
     title: Anchor Compiler Implementation
     goal: Build skills/anchor_compiler.py and integrate it into the mechanical flow
       gates.
     type: PLAN
-    status: IN_REVIEW
+    status: READY
