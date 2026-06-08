@@ -3,10 +3,4 @@ config:
     design_review: false
     execution_review: false
     reflection_review: true
-nodes:
-  node_audit_design_review_invariants:
-    title: Surface Probe Invariants in UI
-    goal: Modify skills/design_review_ui.py to parse the parent Probe artifact and
-      present the unfalsified conditions and physical invariants instead of the static
-      DAG goal.
-    type: PLAN
+nodes: {}
