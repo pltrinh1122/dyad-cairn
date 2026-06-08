@@ -18,19 +18,21 @@ nodes:
       agents coordinate git states during reflect-green.
     type: PROBE
     dependencies: []
-  node_19_plan_pre_merge_sync:
-    title: Plan Pre-Merge Sync
-    goal: Plan the CLI tool to fetch and rebase active branches prior to completion.
-    type: PLAN
+  node_19a_probe_pre_merge_sync:
+    title: Probe Pre-Merge Sync
+    goal: Physically probe the mechanical behavior of concurrent git fetch and rebase
+      locking in the Dyad substrate.
+    type: PROBE
     status: IN_REVIEW
-  node_19_plan_ledger_resolution:
-    title: Plan Ledger Resolution
-    goal: Plan the structural mechanical script to parse and sort append-only ledger
-      collisions chronologically.
-    type: PLAN
+  node_19b_probe_ledger_resolution:
+    title: Probe Ledger Resolution
+    goal: Physically test deterministic chronology sorting and exact append behavior
+      on ledger collisions.
+    type: PROBE
     status: IN_REVIEW
-  node_19_plan_state_merging:
-    title: Plan Structural State Merging
-    goal: Plan the deep-merge algorithm to resolve concurrent YAML dictionary modifications.
-    type: PLAN
+  node_19c_probe_state_merging:
+    title: Probe Structural State Merging
+    goal: Physically test the last-write-wins dictionary resolution logic on concurrent
+      YAML writes.
+    type: PROBE
     status: IN_REVIEW

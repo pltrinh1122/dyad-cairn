@@ -7,7 +7,7 @@
 ```text
 ├── node_20_probe_authorization_gate_collision [IN_REVIEW] [PROBE]: Probe Authorization Gate Collision
 ├── node_21_probe_reflect_boundary_collision [IN_REVIEW] [PROBE]: Probe Reflect Boundary Collision
-├── node_19_plan_pre_merge_sync [IN_REVIEW] [PLAN]: Plan Pre-Merge Sync
-├── node_19_plan_ledger_resolution [IN_REVIEW] [PLAN]: Plan Ledger Resolution
-├── node_19_plan_state_merging [IN_REVIEW] [PLAN]: Plan Structural State Merging
+├── node_19a_probe_pre_merge_sync [IN_REVIEW] [PROBE]: Probe Pre-Merge Sync
+├── node_19b_probe_ledger_resolution [IN_REVIEW] [PROBE]: Probe Ledger Resolution
+├── node_19c_probe_state_merging [IN_REVIEW] [PROBE]: Probe Structural State Merging
 ```

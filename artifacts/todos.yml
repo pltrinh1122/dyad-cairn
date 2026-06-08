@@ -13,3 +13,10 @@ backlog:
     intent: audit HTIL Design Review UI to show unfalsified conditions and invariants
       from Probe instead of just the Goal.
     timestamp: '2026-06-08T01:34:19.901536Z'
+  todo_1780908485:
+    intent: audit why Agent thinks decomposition creates three plan instead of three
+      probes.
+    timestamp: '2026-06-08T01:48:05.879267Z'
+  todo_1780908506:
+    intent: audit why Agent didn't perform automatic decomposition.
+    timestamp: '2026-06-08T01:48:26.766532Z'
