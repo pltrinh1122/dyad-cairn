@@ -28,9 +28,3 @@ nodes:
     type: PROBE
     dependencies:
     - node_19_probe_state_sync_collision
-  node_4c_execute_anchor_compiler:
-    title: Anchor Compiler Implementation
-    goal: Build skills/anchor_compiler.py and integrate it into the mechanical flow
-      gates.
-    type: PLAN
-    status: READY

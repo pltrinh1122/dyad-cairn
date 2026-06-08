@@ -8,5 +8,4 @@
 ├── node_19_probe_state_sync_collision [IN_REVIEW] [PROBE]: Probe Ledger and State Sync Collision
 │   ├── node_20_probe_authorization_gate_collision [BLOCKED] [PROBE]: Probe Authorization Gate Collision
     ├── node_21_probe_reflect_boundary_collision [BLOCKED] [PROBE]: Probe Reflect Boundary Collision
-├── node_4c_execute_anchor_compiler [READY] [PLAN]: Anchor Compiler Implementation
 ```
