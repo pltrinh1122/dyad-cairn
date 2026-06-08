@@ -296,3 +296,5 @@
 - **2026-06-08 01:34:19** | `TODO` | audit HTIL Design Review UI to show unfalsified conditions and invariants from Probe instead of just the Goal.
 - **2026-06-08 01:36:32** | `TODO` | test_noisy_intent_12345
 - **2026-06-08 01:36:32** | `NODE-RETRO` | [node_audit_design_review_invariants] Upgraded Design Review UI to extract and present Probe invariants.
+- **2026-06-08 01:48:05** | `TODO` | audit why Agent thinks decomposition creates three plan instead of three probes.
+- **2026-06-08 01:48:26** | `TODO` | audit why Agent didn't perform automatic decomposition.

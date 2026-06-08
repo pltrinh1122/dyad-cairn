@@ -10,14 +10,20 @@ nodes:
     goal: Investigate the Authorization Gate Collision where a full-auto Executioner
       clone running PLAN+EXECUTE autonomously bypasses the HTIL Design-Review Gate.
     type: PROBE
-    dependencies: []
+    dependencies:
+    - node_19a_probe_pre_merge_sync
+    - node_19b_probe_ledger_resolution
+    - node_19c_probe_state_merging
   node_21_probe_reflect_boundary_collision:
     status: IN_REVIEW
     title: Probe Reflect Boundary Collision
     goal: Investigate the Reflect Boundary Collision. Determine invariants for how
       agents coordinate git states during reflect-green.
     type: PROBE
-    dependencies: []
+    dependencies:
+    - node_19a_probe_pre_merge_sync
+    - node_19b_probe_ledger_resolution
+    - node_19c_probe_state_merging
   node_19a_probe_pre_merge_sync:
     title: Probe Pre-Merge Sync
     goal: Physically probe the mechanical behavior of concurrent git fetch and rebase
