@@ -43,7 +43,7 @@ def test_dialect_linter_with_mock_transcript(tmp_path):
     # Scenario 2: User says `read: frontier`, Agent fails to invoke `bin/read`
     with open(transcript_path, "a") as f:
         f.write(json.dumps({"type": "USER_INPUT", "content": "read: frontier\n", "step_index": 5}) + "\n")
-        f.write(json.dumps({"type": "PLANNER_RESPONSE", "tool_calls": [{"argumentsJson": "something else"}]}) + "\n")
+        f.write(json.dumps({"type": "PLANNER_RESPONSE", "tool_calls": [{"args": "something else"}]}) + "\n")
         
     result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
     assert result.returncode == 1
@@ -53,7 +53,7 @@ def test_dialect_linter_with_mock_transcript(tmp_path):
     # Scenario 3: User says `read: frontier`, Agent invokes `bin/read` correctly
     with open(transcript_path, "w") as f:
         f.write(json.dumps({"type": "USER_INPUT", "content": "read: frontier\n", "step_index": 5}) + "\n")
-        f.write(json.dumps({"type": "PLANNER_RESPONSE", "tool_calls": [{"argumentsJson": '{"CommandLine": "./bin/read frontier"}'}]}) + "\n")
+        f.write(json.dumps({"type": "PLANNER_RESPONSE", "tool_calls": [{"args": '{"CommandLine": "./bin/read frontier"}'}]}) + "\n")
         
     result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
     assert result.returncode == 0
@@ -62,7 +62,7 @@ def test_dialect_linter_with_mock_transcript(tmp_path):
     # Scenario 4: User says `retro:`, Agent runs bin/retro but fails to print CSS template
     with open(transcript_path, "w") as f:
         f.write(json.dumps({"type": "USER_INPUT", "content": "retro: test\n", "step_index": 6}) + "\n")
-        f.write(json.dumps({"type": "PLANNER_RESPONSE", "content": "Locked to ledger.", "tool_calls": [{"argumentsJson": '{"CommandLine": "./bin/retro test test.md"}'}]}) + "\n")
+        f.write(json.dumps({"type": "PLANNER_RESPONSE", "content": "Locked to ledger.", "tool_calls": [{"args": '{"CommandLine": "./bin/retro test test.md"}'}]}) + "\n")
         
     result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
     assert result.returncode == 1
@@ -71,7 +71,7 @@ def test_dialect_linter_with_mock_transcript(tmp_path):
     # Scenario 5: User says `retro:`, Agent runs bin/retro and prints CSS template
     with open(transcript_path, "w") as f:
         f.write(json.dumps({"type": "USER_INPUT", "content": "retro: test\n", "step_index": 7}) + "\n")
-        f.write(json.dumps({"type": "PLANNER_RESPONSE", "content": "📋 [MECHANICAL UI PRESENTATION: RETRO SUMMARY]\nIt worked.", "tool_calls": [{"argumentsJson": '{"CommandLine": "./bin/retro test test.md"}'}]}) + "\n")
+        f.write(json.dumps({"type": "PLANNER_RESPONSE", "content": "📋 [MECHANICAL UI PRESENTATION: RETRO SUMMARY]\nIt worked.", "tool_calls": [{"args": '{"CommandLine": "./bin/retro test test.md"}'}]}) + "\n")
         
     result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
     assert result.returncode == 0

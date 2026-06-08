@@ -30,42 +30,47 @@ def audit_dialect():
         if step.get("type") == "USER_INPUT":
             content = step.get("content", "").strip()
             
+            # Remove <USER_REQUEST> wrappers for parsing
+            parsed_content = content.replace("<USER_REQUEST>", "").replace("</USER_REQUEST>", "").strip()
+            
             # Check for `read:`
-            if content.startswith("read:"):
+            if parsed_content.startswith("read:"):
+                used_read = False
                 for j in range(i+1, len(steps)):
                     next_step = steps[j]
+                    if next_step.get("type") == "USER_INPUT":
+                        break
                     if next_step.get("type") == "PLANNER_RESPONSE":
                         tool_calls = next_step.get("tool_calls", [])
-                        used_read = False
                         for tc in tool_calls:
-                            if "bin/read" in str(tc.get("argumentsJson", "")):
+                            if "bin/read" in str(tc.get("args", "")):
                                 used_read = True
-                                break
                                 
-                        if not used_read:
-                            violations.append(f"Violation at step {step.get('step_index')}: User issued 'read:' but Agent generated output without invoking 'bin/read'.")
-                        break
+                if not used_read:
+                    violations.append(f"Violation at step {step.get('step_index')}: User issued 'read:' but Agent generated output without invoking 'bin/read'.")
                         
             # Check for `retro:`
-            if content.startswith("retro:"):
+            if parsed_content.startswith("retro:"):
+                used_retro = False
+                ui_presented = False
                 for j in range(i+1, len(steps)):
                     next_step = steps[j]
+                    if next_step.get("type") == "USER_INPUT":
+                        break
                     if next_step.get("type") == "PLANNER_RESPONSE":
                         tool_calls = next_step.get("tool_calls", [])
-                        used_retro = False
                         for tc in tool_calls:
-                            if "bin/retro" in str(tc.get("argumentsJson", "")):
+                            if "bin/retro" in str(tc.get("args", "")):
                                 used_retro = True
-                                break
                                 
-                        if not used_retro:
-                            violations.append(f"Violation at step {step.get('step_index')}: User issued 'retro:' but Agent failed to mechanically invoke 'bin/retro'.")
-                            
-                        # Also assert the Agent visually presented the CSS output in the chat
                         response_text = next_step.get("content", "")
-                        if "📋 [MECHANICAL UI PRESENTATION: RETRO SUMMARY]" not in response_text:
-                            violations.append(f"Violation at step {step.get('step_index')}: Agent invoked 'bin/retro' but failed to explicitly present the CSS template in the chat UI.")
-                        break
+                        if "📋 [MECHANICAL UI PRESENTATION: RETRO SUMMARY]" in response_text:
+                            ui_presented = True
+                            
+                if not used_retro:
+                    violations.append(f"Violation at step {step.get('step_index')}: User issued 'retro:' but Agent failed to mechanically invoke 'bin/retro'.")
+                if not ui_presented:
+                    violations.append(f"Violation at step {step.get('step_index')}: Agent invoked 'bin/retro' but failed to explicitly present the CSS template in the chat UI.")
                         
     if violations:
         print("🚨 CSI GUARDRAIL BLOCK: UI Invariant Violation 🚨")

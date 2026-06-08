@@ -6,3 +6,6 @@ backlog:
   todo_1780879648:
     intent: audit why the design-reivew-ui isn't implmented.
     timestamp: 2026-06-08T00:47:28.%fZ
+  todo_1780906774:
+    intent: audit why retro CSS UI is still no firing.
+    timestamp: '2026-06-08T01:19:34.012389Z'
