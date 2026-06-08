@@ -298,3 +298,5 @@
 - **2026-06-08 01:36:32** | `NODE-RETRO` | [node_audit_design_review_invariants] Upgraded Design Review UI to extract and present Probe invariants.
 - **2026-06-08 01:48:05** | `TODO` | audit why Agent thinks decomposition creates three plan instead of three probes.
 - **2026-06-08 01:48:26** | `TODO` | audit why Agent didn't perform automatic decomposition.
+- **2026-06-08 01:59:27** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 01:59:27** | `NODE-RETRO` | [node_19a_probe_pre_merge_sync] Probed git mechanics and discovered native gitattributes custom merge driver hooking.
