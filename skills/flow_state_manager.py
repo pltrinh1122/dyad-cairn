@@ -329,7 +329,10 @@ def trail_reflect(trail_id, retro_msg=None):
     branch_name = f"active/reflect_{trail_id}"
     run_cmd(f"git checkout -b {branch_name} || git checkout {branch_name}")
     
-    ledger_manager.append_ledger("trail-retro", retro_msg)
+    full_retro_msg = retro_msg
+    if f"[{trail_id}]" not in full_retro_msg:
+        full_retro_msg = f"[{trail_id}]\n{retro_msg}"
+    ledger_manager.append_ledger("trail-retro", full_retro_msg)
     
     # Commit and Push
     run_cmd("git add dyad-state/ledger.jsonl DYAD_LEDGER.md")
