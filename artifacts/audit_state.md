@@ -5,4 +5,5 @@
 > WIP-N=1 mechanically enforced by `skills/frontier_editor.py`.
 
 ```text
+├── node_audit_design_review_invariants [READY] [PLAN]: Surface Probe Invariants in UI
 ```

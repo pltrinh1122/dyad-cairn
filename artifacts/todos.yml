@@ -9,3 +9,7 @@ backlog:
   todo_1780906774:
     intent: audit why retro CSS UI is still no firing.
     timestamp: '2026-06-08T01:19:34.012389Z'
+  todo_1780907659:
+    intent: audit HTIL Design Review UI to show unfalsified conditions and invariants
+      from Probe instead of just the Goal.
+    timestamp: '2026-06-08T01:34:19.901536Z'
