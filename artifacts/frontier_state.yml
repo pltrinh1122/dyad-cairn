@@ -18,9 +18,19 @@ nodes:
       agents coordinate git states during reflect-green.
     type: PROBE
     dependencies: []
-  node_19_plan_state_sync:
-    title: Plan State Sync Mechanic
-    goal: Plan the logic for skills/state_sync.py to mechanically resolve append-only
-      ledger and YAML dictionary merge conflicts.
+  node_19_plan_pre_merge_sync:
+    title: Plan Pre-Merge Sync
+    goal: Plan the CLI tool to fetch and rebase active branches prior to completion.
+    type: PLAN
+    status: IN_REVIEW
+  node_19_plan_ledger_resolution:
+    title: Plan Ledger Resolution
+    goal: Plan the structural mechanical script to parse and sort append-only ledger
+      collisions chronologically.
+    type: PLAN
+    status: IN_REVIEW
+  node_19_plan_state_merging:
+    title: Plan Structural State Merging
+    goal: Plan the deep-merge algorithm to resolve concurrent YAML dictionary modifications.
     type: PLAN
     status: IN_REVIEW
