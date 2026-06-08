@@ -223,3 +223,5 @@
 {"timestamp": "2026-06-07T23:49:08.495378+00:00Z", "action": "NODE-RETRO", "message": "[node_22_probe_retro_css_formatting] Discovered invariant: The Retro Ledger Persistence Trap. skills/ledger_manager.py drops the CSS payload during append_ledger, causing only the summary to persist. DYAD_LEDGER.md renderer also needs refactoring to safely encapsulate multi-line strings without breaking list layout."}
 {"timestamp": "2026-06-07T23:54:09.222771+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-07T23:54:09.392761+00:00Z", "action": "NODE-RETRO", "message": "[node_22_plan_retro_css_formatting] Plan successfully mapped to artifacts/plan_node_22_retro_css_formatting.md."}
+{"timestamp": "2026-06-07T23:55:18.066119+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-08T00:01:21.723825+00:00Z", "action": "TRAIL-RETRO", "message": "Implemented the Green Phase to encapsulate the CSS payload in the JSONL and safely indent multiline messages in the markdown ledger."}
