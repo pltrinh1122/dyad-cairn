@@ -12,7 +12,7 @@ def main():
     # 1. Frontier Quarry (frontier_state.yml)
     print("1. [ACTIVE] The Frontier DAG (artifacts/frontier_state.yml)")
     try:
-        from frontier_reader import build_tree
+        from skills.frontier_reader import build_tree
         with open("artifacts/frontier_state.yml", "r") as f:
             frontier = yaml.safe_load(f) or {}
         frontier_nodes = frontier.get("nodes", {})
