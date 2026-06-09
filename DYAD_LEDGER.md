@@ -323,3 +323,5 @@
   </details>
 - **2026-06-09 13:57:03** | `TODO` | test_noisy_intent_12345
 - **2026-06-09 13:57:03** | `NODE-RETRO` | [node_25_probe_htil_ui_gates] Fixed HTIL Design Review and Auto-Decomposition invariants
+- **2026-06-09 14:00:19** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 14:00:19** | `NODE-RETRO` | [node_todo_1780872273] The Quarry invariant is physically proven. Divergent friction successfully tracked and cleared via Mason. Quarry is 100% Zeroed.
