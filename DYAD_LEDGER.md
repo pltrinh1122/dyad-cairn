@@ -382,3 +382,5 @@
 - **2026-06-09 15:14:57** | `NODE-RETRO` | [node_21_probe_reflect_boundary_collision] Probed Reflect Boundary Collision. Decomposed into node_21a and node_21b.
 - **2026-06-09 15:19:53** | `TODO` | test_noisy_intent_12345
 - **2026-06-09 15:19:54** | `NODE-RETRO` | [node_22_probe_dag_decomposition] Synthesized DAG Decomposition Rub. Halted architectural split to establish E-Decomposition invariants.
+- **2026-06-09 15:21:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:21:23** | `NODE-RETRO` | [node_20a_probe_out_of_band_auth] Probed Out-of-Band Auth. E-Decomposition applied (no aggressive splitting).
