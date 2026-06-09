@@ -282,3 +282,5 @@
 {"timestamp": "2026-06-09T15:13:58.850669+00:00Z", "action": "TODO", "message": "CSI should steer Agent response to convert pure commands into Operator CTA. =-=-=  All chronological paths are currently halted at the Design-Review gate. Please run  ./bin/node authorize <node_id>  to unlock the next execution sequence."}
 {"timestamp": "2026-06-09T15:14:57.638859+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-09T15:14:57.801681+00:00Z", "action": "NODE-RETRO", "message": "[node_21_probe_reflect_boundary_collision] Probed Reflect Boundary Collision. Decomposed into node_21a and node_21b."}
+{"timestamp": "2026-06-09T15:19:53.906580+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-09T15:19:54.073291+00:00Z", "action": "NODE-RETRO", "message": "[node_22_probe_dag_decomposition] Synthesized DAG Decomposition Rub. Halted architectural split to establish E-Decomposition invariants."}
