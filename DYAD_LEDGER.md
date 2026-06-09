@@ -386,3 +386,5 @@
 - **2026-06-09 15:21:23** | `NODE-RETRO` | [node_20a_probe_out_of_band_auth] Probed Out-of-Band Auth. E-Decomposition applied (no aggressive splitting).
 - **2026-06-09 15:21:55** | `TODO` | test_noisy_intent_12345
 - **2026-06-09 15:21:55** | `NODE-RETRO` | [node_20b_probe_dag_write_permissions] Probed DAG Write Permissions. E-Decomposition applied (no aggressive splitting).
+- **2026-06-09 15:22:31** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:22:32** | `NODE-RETRO` | [node_21a_probe_dirty_tree_guard] Probed Dirty Tree Guard. E-Decomposition applied (no aggressive splitting).
