@@ -377,3 +377,6 @@
 - **2026-06-09 15:10:55** | `TODO` | test_noisy_intent_12345
 - **2026-06-09 15:11:05** | `TODO` | test_noisy_intent_12345
 - **2026-06-09 15:11:06** | `NODE-RETRO` | [node_20_probe_authorization_gate_collision] Probed HTIL gate bypassing. Decomposed into node_20a and node_20b.
+- **2026-06-09 15:13:58** | `TODO` | CSI should steer Agent response to convert pure commands into Operator CTA. =-=-=  All chronological paths are currently halted at the Design-Review gate. Please run  ./bin/node authorize <node_id>  to unlock the next execution sequence.
+- **2026-06-09 15:14:57** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:14:57** | `NODE-RETRO` | [node_21_probe_reflect_boundary_collision] Probed Reflect Boundary Collision. Decomposed into node_21a and node_21b.

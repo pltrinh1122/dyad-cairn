@@ -279,3 +279,6 @@
 {"timestamp": "2026-06-09T15:10:55.769766+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-09T15:11:05.866809+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-09T15:11:06.013549+00:00Z", "action": "NODE-RETRO", "message": "[node_20_probe_authorization_gate_collision] Probed HTIL gate bypassing. Decomposed into node_20a and node_20b."}
+{"timestamp": "2026-06-09T15:13:58.850669+00:00Z", "action": "TODO", "message": "CSI should steer Agent response to convert pure commands into Operator CTA. =-=-=  All chronological paths are currently halted at the Design-Review gate. Please run  ./bin/node authorize <node_id>  to unlock the next execution sequence."}
+{"timestamp": "2026-06-09T15:14:57.638859+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-09T15:14:57.801681+00:00Z", "action": "NODE-RETRO", "message": "[node_21_probe_reflect_boundary_collision] Probed Reflect Boundary Collision. Decomposed into node_21a and node_21b."}
