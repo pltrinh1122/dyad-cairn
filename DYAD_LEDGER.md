@@ -384,3 +384,5 @@
 - **2026-06-09 15:19:54** | `NODE-RETRO` | [node_22_probe_dag_decomposition] Synthesized DAG Decomposition Rub. Halted architectural split to establish E-Decomposition invariants.
 - **2026-06-09 15:21:23** | `TODO` | test_noisy_intent_12345
 - **2026-06-09 15:21:23** | `NODE-RETRO` | [node_20a_probe_out_of_band_auth] Probed Out-of-Band Auth. E-Decomposition applied (no aggressive splitting).
+- **2026-06-09 15:21:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:21:55** | `NODE-RETRO` | [node_20b_probe_dag_write_permissions] Probed DAG Write Permissions. E-Decomposition applied (no aggressive splitting).
