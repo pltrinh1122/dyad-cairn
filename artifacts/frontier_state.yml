@@ -10,19 +10,19 @@ nodes:
     goal: Investigate the Authorization Gate Collision where a full-auto Executioner
       clone running PLAN+EXECUTE autonomously bypasses the HTIL Design-Review Gate.
     type: PROBE
-    dependencies:
-    - node_19_plan_structural_mutex
   node_21_probe_reflect_boundary_collision:
     status: IN_REVIEW
     title: Probe Reflect Boundary Collision
     goal: Investigate the Reflect Boundary Collision. Determine invariants for how
       agents coordinate git states during reflect-green.
     type: PROBE
-    dependencies:
-    - node_19_plan_structural_mutex
-  node_19_plan_structural_mutex:
-    title: Plan Structural Mutex
-    goal: Plan the mechanical lock to block DAG branching when the structural state
-      is already checked out.
-    type: PLAN
+  node_19a_execute_structural_mutex:
+    title: Execute Structural Mutex
+    goal: Implement the structural mutex blockages per the execution spec in plan_node_19_structural_mutex.md.
+    type: EXECUTE
+  node_22_probe_dag_decomposition:
+    title: Probe DAG Decomposition
+    goal: Investigate breaking frontier_state.yml into individual node files to prevent
+      monolithic merge collisions and treat ledger entries as event sourcing.
+    type: PROBE
     status: IN_REVIEW

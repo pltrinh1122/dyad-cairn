@@ -111,10 +111,13 @@ def main():
             state = yaml.safe_load(f)
         nodes = state.get('nodes', {})
         dag_name = "AUDIT DAG" if "audit" in yml_file else "FRONTIER DAG"
-        print(f"{dag_name}:")
+        print("================================================================================")
+        print(f"📋 [MECHANICAL UI PRESENTATION: {dag_name}]")
+        print("================================================================================")
         tree_lines = build_tree(nodes)
         for line in tree_lines:
             print(line)
+        print("================================================================================")
     except Exception as e:
         print(f"Error reading frontier: {e}")
         sys.exit(1)

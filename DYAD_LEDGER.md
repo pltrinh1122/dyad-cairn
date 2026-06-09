@@ -300,3 +300,98 @@
 - **2026-06-08 01:48:26** | `TODO` | audit why Agent didn't perform automatic decomposition.
 - **2026-06-08 01:59:27** | `TODO` | test_noisy_intent_12345
 - **2026-06-08 01:59:27** | `NODE-RETRO` | [node_19a_probe_pre_merge_sync] Probed git mechanics and discovered native gitattributes custom merge driver hooking.
+- **2026-06-09 02:15:35** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 02:15:35** | `NODE-RETRO` | [node_19_plan_structural_mutex] Approved artifacts/plan_node_19_structural_mutex.md as the Execution Spec.
+- **2026-06-09 04:28:27** | `RETRO` | Operator falsified the Structural Mutex. Pivoted to DAG decomposition and Ledger event sourcing.
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Structural Mutex Falsification
+  
+  ## Continue
+  - Engaging in deep architectural `riff:`s to falsify invariants before they become deeply entrenched. Your pushback on the Structural Mutex saved us from building a rigid, single-threaded lock system.
+  - Enforcing strict mechanical boundaries: using the orchestration CLI tools (`./bin/node`) and verifying testing invariants to properly transition the DAG.
+  
+  ## Start
+  - Implementing the DAG decomposition (`node_22`). The `frontier_state.yml` currently serves as a monolithic chokepoint. Breaking it into individual node definitions will physically enable the parallel execution the Dyad needs.
+  - Applying Event Sourcing models to the Ledgers, allowing true asynchronous appending without fear of corrupting the Timeline Truth.
+  
+  ## Stop
+  - Treating all structural conflicts as merge errors that require heavy locking. As you pointed out, many data types (like chronological ledgers) are natively merge-friendly.
+  - Letting the Agent auto-wire dependencies incorrectly during fractal decomposition. We must mechanically ensure `PROBE`s spawn as independent trailheads rather than creating waterfall blockers off unexecuted `PLAN` nodes.
+  
+  </details>
+- **2026-06-09 13:57:03** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 13:57:03** | `NODE-RETRO` | [node_25_probe_htil_ui_gates] Fixed HTIL Design Review and Auto-Decomposition invariants
+- **2026-06-09 14:00:19** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 14:00:19** | `NODE-RETRO` | [node_todo_1780872273] The Quarry invariant is physically proven. Divergent friction successfully tracked and cleared via Mason. Quarry is 100% Zeroed.
+- **2026-06-09 14:07:58** | `RETRO` | Closed arc on HTIL Gates and Boundary Sovereignty
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: HTIL Gates and Boundary Sovereignty
+  
+  ## Continue
+  - Using the `todo:` marker as an asynchronous, offline holding pen (The Quarry) to segregate unstructured human intent from structured machine logic.
+  - Asserting the "Sovereignty Shield Invariant" physically. DMs across dyads must use asynchronous outboxes (`dm/dyad-wu-wei/`) rather than violating boundary locks with direct cross-repository writes.
+  - Using regex to extract structural metadata (Conditions, Invariants, Decomposition) from PROBE artifacts to populate the mechanical UI gates.
+  
+  ## Start
+  - Implementing autonomous hooks (like `Auto-Decomposition` via `flow_state_manager.py`) directly inside the execution state transitions, rather than relying on the Agent to remember to invoke the injection tool manually.
+  - Explicitly echoing background CSS UI logs to the conversational UI, adhering to the strict presentation requirements of `dialect_linter.py`.
+  
+  ## Stop
+  - Relying on legacy text projections in mechanical UIs. The hallucinated output in `design_review_ui.py` actively gaslit the orchestrator into violating the "PROBE decomposes to PROBE" invariant.
+  - Re-architecting queues when the DAG itself is the correct structure for holding verified machine intent (falsifying the need for a separate `rack:` holding pen for the wu-wei daemon).
+  
+  </details>
+- **2026-06-09 14:31:42** | `CLIP` | Hard Requirements (Intake Orthogonality): 1. Dialect Boundary Invariant: Intake is strictly conversational monikers (todo:, audit:), never CLI syntax. 2. Semantic Routing Invariant: Agent assumes cognitive load for defaults (auto-routing todo:), but Operator assumes load for explicit overrides (audit:), requiring Agent to halt and Rub-Back on ontological mismatch. 3. Substrate State Invariant: Substrate intent routes to Passive Quarry (offline todos.yml); Integrity intent routes to Active DAG (audit_state.yml), instantly freezing the Frontier.
+- **2026-06-09 14:40:49** | `CLIP` | Architectural Blueprint Finalized: Asymmetric Semantic Routing. Dialect monikers determine friction. Agent performs zero-friction auto-routing on todo:, but executes rigid validation and Rub-Back on explicit audit: or commons:. Substrate state mapped: passive quarry vs active freeze.
+- **2026-06-09 14:45:59** | `RETRO` | Established Asymmetric Semantic Router and Intake Cadence
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Asymmetric Intake Routing & Conversational Cadence
+  
+  ## Continue
+  - Using conversational monikers (`todo:`, `audit:`, `retro:`, `commons:`) as the singular physical interface boundary, entirely removing CLI syntax friction from the Operator.
+  - Evolving the Agent's semantic routing autonomy. This eliminates cognitive load on default interactions while perfectly honoring the Operator's explicit overrides.
+  - Validating the Agent's autonomy with structural CSI Guards (e.g., the Asymmetric Downgrade Guard) to mechanically "verify the validation."
+  
+  ## Start
+  - Establishing a tighter SPAOR cadence. The faster we cycle through Sense, Plan, Act, Observe, and Reflect, the quicker the interaction model becomes habitual wetware muscle memory.
+  - Trusting the Semantic Router. The Operator should rapidly dump raw context into `todo:` without second-guessing scope, letting the Agent perform the structural routing and elevation seamlessly.
+  
+  ## Stop
+  - Forcing the Agent to be a blind parser. Rigid 1:1 mapping of input to execution scripts destroys the natural Wu-wei of the dyad and turns the system into a Sandbox Warden.
+  - Treating all intake holding pens identically. The physical separation of Substrate (`todos.yml`) vs Integrity (`audit_state.yml`) ensures proper execution priority (Alignment Precedes Execution).
+  
+  </details>
+- **2026-06-09 14:51:45** | `TODO` | [UI] The scope doesn't seem to be properly presented via the read: all quarries UI
+- **2026-06-09 14:52:48** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 14:52:49** | `NODE-RETRO` | [node_todo_1781041905] Implemented skills/quarry_reader.py to project all intake scopes.
+- **2026-06-09 15:04:43** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:05:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:05:17** | `NODE-RETRO` | [node_19a_execute_structural_mutex] Implemented structural mutex checkout and inject blockades
+- **2026-06-09 15:08:04** | `TODO` | my gut believes a mutex is not necessary and further decomposition of the universe-timeline will yield the true invariants and requirements.
+- **2026-06-09 15:10:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:11:05** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:11:06** | `NODE-RETRO` | [node_20_probe_authorization_gate_collision] Probed HTIL gate bypassing. Decomposed into node_20a and node_20b.
+- **2026-06-09 15:13:58** | `TODO` | CSI should steer Agent response to convert pure commands into Operator CTA. =-=-=  All chronological paths are currently halted at the Design-Review gate. Please run  ./bin/node authorize <node_id>  to unlock the next execution sequence.
+- **2026-06-09 15:14:57** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:14:57** | `NODE-RETRO` | [node_21_probe_reflect_boundary_collision] Probed Reflect Boundary Collision. Decomposed into node_21a and node_21b.
+- **2026-06-09 15:19:53** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:19:54** | `NODE-RETRO` | [node_22_probe_dag_decomposition] Synthesized DAG Decomposition Rub. Halted architectural split to establish E-Decomposition invariants.
+- **2026-06-09 15:21:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:21:23** | `NODE-RETRO` | [node_20a_probe_out_of_band_auth] Probed Out-of-Band Auth. E-Decomposition applied (no aggressive splitting).
+- **2026-06-09 15:21:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:21:55** | `NODE-RETRO` | [node_20b_probe_dag_write_permissions] Probed DAG Write Permissions. E-Decomposition applied (no aggressive splitting).
+- **2026-06-09 15:22:31** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:22:32** | `NODE-RETRO` | [node_21a_probe_dirty_tree_guard] Probed Dirty Tree Guard. E-Decomposition applied (no aggressive splitting).
+- **2026-06-09 15:23:05** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:23:05** | `NODE-RETRO` | [node_21b_probe_commit_hash_pinning] Probed Commit Hash Pinning. E-Decomposition applied (no aggressive splitting).
+- **2026-06-09 15:48:33** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:48:59** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:48:59** | `NODE-RETRO` | [node_todo_1781044629] Implemented rub vs rub? disambiguation
+- **2026-06-09 15:50:33** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:50:33** | `NODE-RETRO` | [node_todo_1781044629] Implemented rub vs rub? disambiguation

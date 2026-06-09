@@ -1,3 +1,9 @@
 #!/bin/bash
 # Orchestrator CLI for the SPAO loop lifecycle
+
+if [ -z "$1" ] || [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
+    echo "Usage: ./bin/node <plan|checkout|reflect-red|reflect-green|complete|trail-reflect|dispose|design-review> <node_id> [retro_msg]"
+    exit 1
+fi
+
 python3 skills/flow_state_manager.py "$@"

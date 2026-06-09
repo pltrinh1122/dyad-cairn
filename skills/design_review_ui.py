@@ -56,13 +56,7 @@ def present_design_review(node_id, state=None):
                 if decomp_match:
                     print(f"Decomposition Strategy:\n{decomp_match.group(1).strip()}\n")
                 else:
-                    plan_nodes = [n for n in nodes.keys() if n.startswith(f"{prefix}_plan")]
-                    if len(plan_nodes) > 1:
-                        print(f"Decomposition Strategy:\nMechanically Decomposed into {len(plan_nodes)} PLAN nodes:")
-                        for p in plan_nodes:
-                            print(f"  - {p}")
-                    else:
-                        print("Decomposition Strategy: Single PLAN node mapped (No decomposition).")
+                    print("Decomposition Strategy: Atomic Probe (Mapped 1:1 to this PLAN).")
             else:
                 print(f"Goal:  {node_data.get('goal', 'No goal specified')}")
                 print(f"Warning: No parent probe artifact found (expected artifacts/probe_{prefix}_*.md).")

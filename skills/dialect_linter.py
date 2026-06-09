@@ -48,6 +48,32 @@ def audit_dialect():
                                 
                 if not used_read:
                     violations.append(f"Violation at step {step.get('step_index')}: User issued 'read:' but Agent generated output without invoking 'bin/read'.")
+                    
+            # CSI GUARD: The Asymmetric Downgrade Invariant
+            # If Operator explicitly asserts `audit:`, the Agent is mechanically forbidden
+            # from silently downgrading it to a passive `todo:`.
+            if parsed_content.startswith("audit:"):
+                for j in range(i+1, len(steps)):
+                    next_step = steps[j]
+                    if next_step.get("type") == "USER_INPUT":
+                        break
+                    if next_step.get("type") == "PLANNER_RESPONSE":
+                        tool_calls = next_step.get("tool_calls", [])
+                        for tc in tool_calls:
+                            if "bin/todo" in str(tc.get("args", "")):
+                                violations.append(f"Violation at step {step.get('step_index')}: CSI Downgrade Guard Tripped. Operator issued 'audit:', but Agent attempted to execute 'bin/todo'. Agent must execute 'bin/audit' or issue a conversational Rub-Back.")
+
+            # CSI GUARD: The Disambiguation of Rub (Interrogation)
+            if parsed_content.startswith("rub?"):
+                for j in range(i+1, len(steps)):
+                    next_step = steps[j]
+                    if next_step.get("type") == "USER_INPUT":
+                        break
+                    if next_step.get("type") == "PLANNER_RESPONSE":
+                        tool_calls = next_step.get("tool_calls", [])
+                        for tc in tool_calls:
+                            if "bin/" in str(tc.get("args", "")):
+                                violations.append(f"Violation at step {step.get('step_index')}: Operator issued 'rub?' requesting a Conversational Rub-Back, but Agent executed a script. Agent must not execute scripts when 'rub?' is used.")
                         
             # Check for `retro:`
             if parsed_content.startswith("retro:"):
