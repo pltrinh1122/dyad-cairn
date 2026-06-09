@@ -388,3 +388,5 @@
 - **2026-06-09 15:21:55** | `NODE-RETRO` | [node_20b_probe_dag_write_permissions] Probed DAG Write Permissions. E-Decomposition applied (no aggressive splitting).
 - **2026-06-09 15:22:31** | `TODO` | test_noisy_intent_12345
 - **2026-06-09 15:22:32** | `NODE-RETRO` | [node_21a_probe_dirty_tree_guard] Probed Dirty Tree Guard. E-Decomposition applied (no aggressive splitting).
+- **2026-06-09 15:23:05** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:23:05** | `NODE-RETRO` | [node_21b_probe_commit_hash_pinning] Probed Commit Hash Pinning. E-Decomposition applied (no aggressive splitting).
