@@ -325,3 +325,48 @@
 - **2026-06-09 13:57:03** | `NODE-RETRO` | [node_25_probe_htil_ui_gates] Fixed HTIL Design Review and Auto-Decomposition invariants
 - **2026-06-09 14:00:19** | `TODO` | test_noisy_intent_12345
 - **2026-06-09 14:00:19** | `NODE-RETRO` | [node_todo_1780872273] The Quarry invariant is physically proven. Divergent friction successfully tracked and cleared via Mason. Quarry is 100% Zeroed.
+- **2026-06-09 14:07:58** | `RETRO` | Closed arc on HTIL Gates and Boundary Sovereignty
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: HTIL Gates and Boundary Sovereignty
+  
+  ## Continue
+  - Using the `todo:` marker as an asynchronous, offline holding pen (The Quarry) to segregate unstructured human intent from structured machine logic.
+  - Asserting the "Sovereignty Shield Invariant" physically. DMs across dyads must use asynchronous outboxes (`dm/dyad-wu-wei/`) rather than violating boundary locks with direct cross-repository writes.
+  - Using regex to extract structural metadata (Conditions, Invariants, Decomposition) from PROBE artifacts to populate the mechanical UI gates.
+  
+  ## Start
+  - Implementing autonomous hooks (like `Auto-Decomposition` via `flow_state_manager.py`) directly inside the execution state transitions, rather than relying on the Agent to remember to invoke the injection tool manually.
+  - Explicitly echoing background CSS UI logs to the conversational UI, adhering to the strict presentation requirements of `dialect_linter.py`.
+  
+  ## Stop
+  - Relying on legacy text projections in mechanical UIs. The hallucinated output in `design_review_ui.py` actively gaslit the orchestrator into violating the "PROBE decomposes to PROBE" invariant.
+  - Re-architecting queues when the DAG itself is the correct structure for holding verified machine intent (falsifying the need for a separate `rack:` holding pen for the wu-wei daemon).
+  
+  </details>
+- **2026-06-09 14:31:42** | `CLIP` | Hard Requirements (Intake Orthogonality): 1. Dialect Boundary Invariant: Intake is strictly conversational monikers (todo:, audit:), never CLI syntax. 2. Semantic Routing Invariant: Agent assumes cognitive load for defaults (auto-routing todo:), but Operator assumes load for explicit overrides (audit:), requiring Agent to halt and Rub-Back on ontological mismatch. 3. Substrate State Invariant: Substrate intent routes to Passive Quarry (offline todos.yml); Integrity intent routes to Active DAG (audit_state.yml), instantly freezing the Frontier.
+- **2026-06-09 14:40:49** | `CLIP` | Architectural Blueprint Finalized: Asymmetric Semantic Routing. Dialect monikers determine friction. Agent performs zero-friction auto-routing on todo:, but executes rigid validation and Rub-Back on explicit audit: or commons:. Substrate state mapped: passive quarry vs active freeze.
+- **2026-06-09 14:45:59** | `RETRO` | Established Asymmetric Semantic Router and Intake Cadence
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Asymmetric Intake Routing & Conversational Cadence
+  
+  ## Continue
+  - Using conversational monikers (`todo:`, `audit:`, `retro:`, `commons:`) as the singular physical interface boundary, entirely removing CLI syntax friction from the Operator.
+  - Evolving the Agent's semantic routing autonomy. This eliminates cognitive load on default interactions while perfectly honoring the Operator's explicit overrides.
+  - Validating the Agent's autonomy with structural CSI Guards (e.g., the Asymmetric Downgrade Guard) to mechanically "verify the validation."
+  
+  ## Start
+  - Establishing a tighter SPAOR cadence. The faster we cycle through Sense, Plan, Act, Observe, and Reflect, the quicker the interaction model becomes habitual wetware muscle memory.
+  - Trusting the Semantic Router. The Operator should rapidly dump raw context into `todo:` without second-guessing scope, letting the Agent perform the structural routing and elevation seamlessly.
+  
+  ## Stop
+  - Forcing the Agent to be a blind parser. Rigid 1:1 mapping of input to execution scripts destroys the natural Wu-wei of the dyad and turns the system into a Sandbox Warden.
+  - Treating all intake holding pens identically. The physical separation of Substrate (`todos.yml`) vs Integrity (`audit_state.yml`) ensures proper execution priority (Alignment Precedes Execution).
+  
+  </details>
+- **2026-06-09 14:51:45** | `TODO` | [UI] The scope doesn't seem to be properly presented via the read: all quarries UI
+- **2026-06-09 14:52:48** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 14:52:49** | `NODE-RETRO` | [node_todo_1781041905] Implemented skills/quarry_reader.py to project all intake scopes.
