@@ -20,3 +20,9 @@ nodes:
     title: Execute Structural Mutex
     goal: Implement the structural mutex blockages per the execution spec in plan_node_19_structural_mutex.md.
     type: EXECUTE
+  node_22_probe_dag_decomposition:
+    title: Probe DAG Decomposition
+    goal: Investigate breaking frontier_state.yml into individual node files to prevent
+      monolithic merge collisions and treat ledger entries as event sourcing.
+    type: PROBE
+    status: IN_REVIEW

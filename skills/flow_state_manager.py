@@ -309,6 +309,25 @@ def complete_node(node_id, retro_msg):
         
     print(f"[FLOW] Tests passed mechanically. Transitioning Node {node_id} to DONE.")
     run_cmd(f"python3 skills/frontier_editor.py {node_id} DONE")
+    
+    # 4. Automatic Decomposition for PROBE nodes
+    if "_probe_" in node_id or node_id.endswith("_probe"):
+        probe_file = f"artifacts/{node_id}.md"
+        if os.path.exists(probe_file):
+            with open(probe_file, "r") as f:
+                content = f.read()
+            import re
+            decomp_match = re.search(r"(?im)^##\s+.*?Decomposition.*?\n(.*?)(?=\n##\s|\Z)", content, re.DOTALL)
+            if decomp_match:
+                print(f"[FLOW] Automatic Decomposition triggered for {node_id}...")
+                lines = decomp_match.group(1).strip().split('\n')
+                for line in lines:
+                    m = re.match(r"^\-\s+\*\*(node_[0-9a-z_]+)\*\*\:\s+(.*)$", line.strip())
+                    if m:
+                        new_node_id = m.group(1)
+                        goal = m.group(2).strip('"\'')
+                        print(f"       -> Injecting {new_node_id}")
+                        inject_node(new_node_id, f"Decomposed from {node_id}", goal)
 
 def trail_reflect(trail_id, retro_msg=None):
     print(f"[FLOW] Executing Trail Reflect for {trail_id}...")
@@ -445,6 +464,12 @@ if __name__ == "__main__":
     elif action == "trail-reflect":
         msg = sys.argv[3] if len(sys.argv) > 3 else None
         trail_reflect(node, msg)
+    elif action == "design-review":
+        sys.path.append('.')
+        from skills.design_review_ui import present_design_review
+        from skills.frontier_editor import load_state
+        state = load_state()
+        present_design_review(node, state)
     elif action == "dispose":
         trail_dispose(node)
     else:

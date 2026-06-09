@@ -8,4 +8,5 @@
 ├── node_20_probe_authorization_gate_collision [IN_REVIEW] [PROBE]: Probe Authorization Gate Collision
 ├── node_21_probe_reflect_boundary_collision [IN_REVIEW] [PROBE]: Probe Reflect Boundary Collision
 ├── node_19a_execute_structural_mutex [READY] [EXECUTE]: Execute Structural Mutex
+├── node_22_probe_dag_decomposition [IN_REVIEW] [PROBE]: Probe DAG Decomposition
 ```
