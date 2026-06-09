@@ -390,3 +390,6 @@
 - **2026-06-09 15:22:32** | `NODE-RETRO` | [node_21a_probe_dirty_tree_guard] Probed Dirty Tree Guard. E-Decomposition applied (no aggressive splitting).
 - **2026-06-09 15:23:05** | `TODO` | test_noisy_intent_12345
 - **2026-06-09 15:23:05** | `NODE-RETRO` | [node_21b_probe_commit_hash_pinning] Probed Commit Hash Pinning. E-Decomposition applied (no aggressive splitting).
+- **2026-06-09 15:48:33** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:48:59** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:48:59** | `NODE-RETRO` | [node_todo_1781044629] Implemented rub vs rub? disambiguation
