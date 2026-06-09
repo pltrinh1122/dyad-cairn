@@ -20,4 +20,3 @@ nodes:
     title: Execute Structural Mutex
     goal: Implement the structural mutex blockages per the execution spec in plan_node_19_structural_mutex.md.
     type: EXECUTE
-    status: IN_REVIEW
