@@ -370,3 +370,6 @@
 - **2026-06-09 14:51:45** | `TODO` | [UI] The scope doesn't seem to be properly presented via the read: all quarries UI
 - **2026-06-09 14:52:48** | `TODO` | test_noisy_intent_12345
 - **2026-06-09 14:52:49** | `NODE-RETRO` | [node_todo_1781041905] Implemented skills/quarry_reader.py to project all intake scopes.
+- **2026-06-09 15:04:43** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:05:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:05:17** | `NODE-RETRO` | [node_19a_execute_structural_mutex] Implemented structural mutex checkout and inject blockades
