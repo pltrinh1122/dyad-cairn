@@ -107,9 +107,9 @@ def authorize_node(node_id):
         print(f"ERROR: Node {node_id} is {current_status}. It must be IN_REVIEW to be authorized.")
         sys.exit(1)
         
-    state["nodes"][node_id]["status"] = "READY"
+    state["nodes"][node_id]["status"] = "AUTHORIZED"
     save_state(state)
-    print(f"[FLOW] Node {node_id} transitioned to READY. Execution authorized.")
+    print(f"[FLOW] Node {node_id} transitioned to AUTHORIZED. Added to Goal-Ready Queue.")
 
 def reflect_node_red(node_id):
     print(f"[FLOW] Reflecting RED Phase (Intent Gate) for Node {node_id}...")
@@ -130,7 +130,7 @@ def reflect_node_red(node_id):
         print("You are mechanically forbidden from generating an Intent PR until the substrate is physically unblocked.")
         sys.exit(1)
         
-    if "PASS" in test_result:
+    if "FAIL" not in test_result:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("Tests PASSED in the Red phase. You must write failing tests that map to Operator intent before reflecting.")
         sys.exit(1)

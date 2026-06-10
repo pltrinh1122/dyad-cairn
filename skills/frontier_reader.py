@@ -85,6 +85,8 @@ def build_tree(nodes):
         derived = derive_status(node_id, nodes[node_id], nodes)
         if nodes[node_id].get('status') == "IN_REVIEW" and derived == "READY":
             status = "IN_REVIEW"
+        elif nodes[node_id].get('status') == "AUTHORIZED" and derived == "READY":
+            status = "AUTHORIZED"
         else:
             status = derived
             

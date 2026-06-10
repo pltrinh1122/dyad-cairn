@@ -4,25 +4,8 @@ config:
     execution_review: false
     reflection_review: true
 nodes:
-  node_20_probe_authorization_gate_collision:
-    status: IN_REVIEW
-    title: Probe Authorization Gate Collision
-    goal: Investigate the Authorization Gate Collision where a full-auto Executioner
-      clone running PLAN+EXECUTE autonomously bypasses the HTIL Design-Review Gate.
-    type: PROBE
-  node_21_probe_reflect_boundary_collision:
-    status: IN_REVIEW
-    title: Probe Reflect Boundary Collision
-    goal: Investigate the Reflect Boundary Collision. Determine invariants for how
-      agents coordinate git states during reflect-green.
-    type: PROBE
-  node_19a_execute_structural_mutex:
-    title: Execute Structural Mutex
-    goal: Implement the structural mutex blockages per the execution spec in plan_node_19_structural_mutex.md.
+  node_execute_csi_cta:
+    title: Ensure CSI steers Agent responses to Operator CTAs
+    goal: Modify dialect_linter to enforce Operator CTAs for raw commands
     type: EXECUTE
-  node_22_probe_dag_decomposition:
-    title: Probe DAG Decomposition
-    goal: Investigate breaking frontier_state.yml into individual node files to prevent
-      monolithic merge collisions and treat ledger entries as event sourcing.
-    type: PROBE
-    status: IN_REVIEW
+    status: AUTHORIZED

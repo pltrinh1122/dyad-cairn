@@ -97,6 +97,24 @@ def audit_dialect():
                     violations.append(f"Violation at step {step.get('step_index')}: User issued 'retro:' but Agent failed to mechanically invoke 'bin/retro'.")
                 if not ui_presented:
                     violations.append(f"Violation at step {step.get('step_index')}: Agent invoked 'bin/retro' but failed to explicitly present the CSS template in the chat UI.")
+                    
+            # CSI GUARD: Operator CTA for Pure Commands
+            # If Operator uses a raw command without a dialect prefix, the Agent must NOT silently execute it.
+            # It must convert it to an Operator CTA.
+            known_prefixes = ["read:", "audit:", "rub:", "rub?", "retro:", "lean:", "lean?", "riff:", "execute:", "plan:", "probe:", "todo:", "/", "diff:"]
+            has_prefix = any(parsed_content.startswith(p) for p in known_prefixes)
+            if not has_prefix and parsed_content:
+                for j in range(i+1, len(steps)):
+                    next_step = steps[j]
+                    if next_step.get("type") == "USER_INPUT":
+                        break
+                    if next_step.get("type") == "PLANNER_RESPONSE":
+                        tool_calls = next_step.get("tool_calls", [])
+                        for tc in tool_calls:
+                            # If the Agent uses `run_command` (CommandLine) directly, it's a violation.
+                            if "CommandLine" in str(tc.get("args", "")) or "run_command" in tc.get("name", ""):
+                                violations.append(f"Violation at step {step.get('step_index')}: Operator issued a pure command without a dialect prefix. Agent executed a raw command. Agent must convert this into an Operator CTA.")
+                                break
                         
     if violations:
         print("🚨 CSI GUARDRAIL BLOCK: UI Invariant Violation 🚨")
