@@ -9,7 +9,9 @@ from skills import flow_state_manager as fsm
 
 def test_complete_node_success():
     with patch('skills.flow_state_manager.run_cmd') as mock_run_cmd, \
+         patch('subprocess.run') as mock_subrun, \
          patch('skills.ledger_manager.append_ledger') as mock_append:
+        mock_subrun.return_value.returncode = 0
         def side_effect(cmd, allow_fail=False):
             if "testing_harness.py" in cmd:
                 return "[TEST HARNESS] PASS: All tests passed mechanically."
@@ -26,8 +28,10 @@ def test_complete_node_success():
 
 def test_complete_node_missing_rca():
     with patch('skills.flow_state_manager.run_cmd') as mock_run_cmd, \
+         patch('subprocess.run') as mock_subrun, \
          patch('sys.exit') as mock_exit, \
          patch('os.path.exists') as mock_exists:
+        mock_subrun.return_value.returncode = 0
         mock_exit.side_effect = SystemExit
         mock_exists.return_value = False
         
@@ -42,8 +46,10 @@ def test_complete_node_missing_rca():
 
 def test_complete_node_failure():
     with patch('skills.flow_state_manager.run_cmd') as mock_run_cmd, \
+         patch('subprocess.run') as mock_subrun, \
          patch('sys.exit') as mock_exit, \
          patch('skills.ledger_manager.append_ledger') as mock_append:
+        mock_subrun.return_value.returncode = 0
         mock_exit.side_effect = SystemExit
         
         def side_effect(cmd, allow_fail=False):

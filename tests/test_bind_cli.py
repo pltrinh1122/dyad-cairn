@@ -29,7 +29,7 @@ def test_verify_and_bind_success():
                 assert "bind: Testing bond" in args[0]
         assert commit_called
 
-def test_verify_and_bind_missing_theory():
+def test_verify_and_bind_missing_theory(capsys):
     with patch('skills.ontological_binder.run_cmd') as mock_run_cmd, \
          patch('sys.exit') as mock_exit:
         mock_exit.side_effect = SystemExit
@@ -42,8 +42,10 @@ def test_verify_and_bind_missing_theory():
             pass
             
         mock_exit.assert_called_once_with(1)
+        captured = capsys.readouterr()
+        assert "[STEERING VECTOR] Stage at least one Theory file" in captured.out
 
-def test_verify_and_bind_missing_mechanics():
+def test_verify_and_bind_missing_mechanics(capsys):
     with patch('skills.ontological_binder.run_cmd') as mock_run_cmd, \
          patch('sys.exit') as mock_exit:
         mock_exit.side_effect = SystemExit
@@ -56,3 +58,5 @@ def test_verify_and_bind_missing_mechanics():
             pass
             
         mock_exit.assert_called_once_with(1)
+        captured = capsys.readouterr()
+        assert "[STEERING VECTOR] Stage at least one Mechanics file" in captured.out

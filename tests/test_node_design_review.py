@@ -36,7 +36,7 @@ def test_node_inject_forces_in_review(clean_dag):
     Test that 'bin/node inject' physically defaults a new node to IN_REVIEW.
     It should not be possible to inject a node directly to READY.
     """
-    cmd = ["bash", "./bin/node", "inject", "node_99_test", "Test Node", "Test Goal"]
+    cmd = ["bash", "./bin/node", "inject", "node_99_test", "Test Node", "Test Goal", "SUBSTRATE"]
     result = subprocess.run(cmd, capture_output=True, text=True)
     assert result.returncode == 0, f"Inject failed: {result.stderr}"
     

@@ -17,12 +17,14 @@ def verify_and_bind(message):
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("Ontological Bond Failed: The Theory Plane (AGENT.md, GEMINI.md, or kb/WHY-*) is missing from the staged files.")
         print("You must permanently codify the generative intent of this change.")
+        print("[STEERING VECTOR] Stage at least one Theory file (e.g., AGENT.md or kb/WHY-*) that documents the intent of this change, then rerun.")
         sys.exit(1)
         
     if not mechanics_files:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("Ontological Bond Failed: The Mechanics Plane (skills/, bin/, tests/, commons/) is missing from the staged files.")
         print("Philosophical intent cannot exist without mechanical enforcement.")
+        print("[STEERING VECTOR] Stage at least one Mechanics file (skills/, bin/, tests/, commons/) that physically enforces the intent, then rerun.")
         sys.exit(1)
         
     # Append to ledger and stage it
@@ -37,6 +39,7 @@ def verify_and_bind(message):
     if result.returncode != 0:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print(f"Failed to commit Ontological Bond: {result.stderr}")
+        print("[STEERING VECTOR] Inspect the git error above, resolve the underlying repository conflict, and rerun.")
         sys.exit(1)
         
     print(f"[BIND] Ontological Bond successfully forged: {message}")

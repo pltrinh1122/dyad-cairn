@@ -48,7 +48,7 @@ def test_audit_lock_blocks_frontier():
         # Assert: It must fail and emit the governance guardrail
         assert result.returncode == 1, "Frontier orchestrator must fail when audit debt exists."
         assert "GOVERNANCE DEBT GUARDRAIL FIRED" in result.stdout, "Must emit the exact CSI Guard text."
-        assert "Alignment Precedes Execution" in result.stdout, "Must enforce the Alignment invariant."
+        assert "The Audit DAG must be physically cleared" in result.stdout, "Must enforce the Alignment invariant."
         
     finally:
         # Teardown

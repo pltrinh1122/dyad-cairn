@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+import sys
+import os
+import yaml
+
+def main():
+    if len(sys.argv) < 4:
+        print("Usage: ./bin/rub <todo_id> <field> \"<content>\"")
+        print("Fields: what, why, scope")
+        sys.exit(1)
+        
+    todo_id = sys.argv[1]
+    field = sys.argv[2].lower()
+    content = sys.argv[3]
+    
+    if field not in ["what", "why", "scope"]:
+        print(f"ERROR: Invalid field '{field}'. Must be what, why, or scope.")
+        sys.exit(1)
+        
+    todo_yml = "artifacts/todos.yml"
+    if not os.path.exists(todo_yml):
+        print("ERROR: No todos holding pen found.")
+        sys.exit(1)
+        
+    with open(todo_yml, "r") as f:
+        todos = yaml.safe_load(f) or {}
+        
+    if "backlog" not in todos or todo_id not in todos["backlog"]:
+        print(f"ERROR: Todo ID {todo_id} not found in backlog.")
+        sys.exit(1)
+        
+    todo = todos["backlog"][todo_id]
+    
+    # Handle old schema migration automatically
+    if "rub_matrix" not in todo:
+        todo["raw_thought"] = todo.get("intent", "")
+        todo["rub_matrix"] = {"what": None, "why": None, "scope": None}
+        todo["status"] = "UNRUBBED"
+        if "intent" in todo:
+            del todo["intent"]
+            
+    todo["rub_matrix"][field] = content
+    
+    # Check if fully populated
+    matrix = todo["rub_matrix"]
+    if matrix["what"] and matrix["why"] and matrix["scope"]:
+        todo["status"] = "RUBBED"
+        
+    with open(todo_yml, "w") as f:
+        yaml.dump(todos, f, default_flow_style=False, sort_keys=False)
+        
+    print(f"[RUB] Successfully updated {field.upper()} for {todo_id}. Status: {todo['status']}")
+
+if __name__ == "__main__":
+    main()

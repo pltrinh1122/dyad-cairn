@@ -30,7 +30,10 @@ def check_sovereignty_trigger():
         print("==========================================================================")
         print("🚨 SOVEREIGNTY TRIGGER FIRED 🚨")
         print("The Commons has formally adopted 'stone.yaml'. Local sovereignty is void.")
+        print("Telemetry Exhaust:")
+        print(result.stdout.strip())
         print("Any mutations to the mason schema must now be treated as external blockers.")
+        print("[STEERING VECTOR] Synchronize with the Commons using `./bin/sync-commons` or pull upstream changes to resolve this blockage.")
         print("==========================================================================")
         # In a fully realized state, this might sys.exit(1) until Operator acknowledges.
 
@@ -46,15 +49,21 @@ def check_audit_lock():
     if os.path.exists(audit_file):
         with open(audit_file, "r") as f:
             state = yaml.safe_load(f) or {"nodes": {}}
+        failing_nodes = []
         for node_id, data in state.get("nodes", {}).items():
             if data.get("status") != "DONE":
-                print("==========================================================================")
-                print("🚨 GOVERNANCE DEBT GUARDRAIL FIRED 🚨")
-                print("The Audit DAG has unresolved alignment nodes. Alignment Precedes Execution.")
-                print("You are mechanically forbidden from transitioning the Frontier DAG until")
-                print("the Audit DAG is physically cleared (all nodes DONE).")
-                print("==========================================================================")
-                sys.exit(1)
+                failing_nodes.append(node_id)
+        if failing_nodes:
+            print("==========================================================================")
+            print("🚨 GOVERNANCE DEBT GUARDRAIL FIRED 🚨")
+            print("The following Audit nodes are unresolved:")
+            for n in failing_nodes:
+                print(f"  - {n}")
+            print("You are mechanically forbidden from transitioning the Frontier DAG until")
+            print("the Audit DAG is physically cleared (all nodes DONE).")
+            print("[STEERING VECTOR] The Audit DAG must be physically cleared (all nodes evaluated to DONE) before Frontier Execution can resume. The Agent must satisfy this invariant.")
+            print("==========================================================================")
+            sys.exit(1)
 def plan_node(node_id):
     print(f"[FLOW] Planning Node {node_id}...")
     print(f"[FLOW] Local DAG asserts planning. No remote issue required.")
@@ -64,7 +73,7 @@ def checkout_node(node_id):
     print(f"[FLOW] Checking out branch: {branch_name}")
     run_cmd(f"git checkout -b {branch_name}")
 
-def inject_node(node_id, title, goal):
+def inject_node(node_id, title, goal, scope):
     print(f"[FLOW] Injecting Node {node_id} (IN_REVIEW)...")
     sys.path.append('.')
     from skills.frontier_editor import load_state, save_state
@@ -77,7 +86,8 @@ def inject_node(node_id, title, goal):
     state["nodes"][node_id] = {
         "title": title,
         "goal": goal,
-        "type": node_type
+        "type": node_type,
+        "scope": scope
     }
     
     gates = state.get("config", {}).get("gates", {})
@@ -118,21 +128,23 @@ def reflect_node_red(node_id):
     try:
         from skills.testing_harness import run_tests
         test_result = run_cmd("python3 skills/testing_harness.py", allow_fail=True)
-        print(test_result)
     except Exception as e:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("TDD execution threw an unhandled exception. Fix syntax errors before reflecting red.")
+        print("[STEERING VECTOR] The Testing Invariant requires valid, syntactically correct Python. Run 'python3 skills/testing_harness.py' to isolate and resolve compile-time and import errors.")
         sys.exit(1)
         
     if "🚨" in test_result:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("A structural CSI Guard was tripped during the Red Phase.")
         print("You are mechanically forbidden from generating an Intent PR until the substrate is physically unblocked.")
+        print("[STEERING VECTOR] A structural CSI Guard remains actively tripped in the environment. Run 'python3 skills/testing_harness.py' to read the guard message and perform the required remediation.")
         sys.exit(1)
         
     if "FAIL" not in test_result:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("Tests PASSED in the Red phase. You must write failing tests that map to Operator intent before reflecting.")
+        print("[STEERING VECTOR] The Intent Gate invariant requires the presence of at least one failing test. Run 'python3 skills/testing_harness.py' to verify the failure after writing it.")
         sys.exit(1)
         
     create_reflection_pr(node_id, is_green=False)
@@ -143,8 +155,8 @@ def reflect_node_green(node_id, retro_msg):
     linter_result = subprocess.run("python3 skills/dialect_linter.py", shell=True, capture_output=True, text=True)
     if linter_result.returncode != 0:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
-        print(linter_result.stdout)
         print("The Agent must physically run the UI presentation tools. You are blocked.")
+        print("[STEERING VECTOR] The Mechanical UI Gate requires all files to pass the Dialect Linter. Run 'python3 skills/dialect_linter.py' to isolate and resolve all formatting violations.")
         sys.exit(1)
         
     if "_execute_" in node_id:
@@ -152,6 +164,7 @@ def reflect_node_green(node_id, retro_msg):
         if not os.path.exists(rca_file):
             print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
             print(f"Missing RCA artifact. EXECUTE nodes must author an industry standard RCA at '{rca_file}'.")
+            print(f"[STEERING VECTOR] Create the file `{rca_file}` detailing the Root Cause Analysis, then rerun.")
             sys.exit(1)
 
     print("[FLOW] Asserting Mechanical Gate (TDD must PASS)...")
@@ -159,21 +172,23 @@ def reflect_node_green(node_id, retro_msg):
     try:
         from skills.testing_harness import run_tests
         test_result = run_cmd("python3 skills/testing_harness.py", allow_fail=True)
-        print(test_result)
     except Exception as e:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("TDD execution failed. The PR Gate is mechanically sealed until tests pass.")
+        print("[STEERING VECTOR] The PR Gate requires the test suite to execute successfully. Run 'python3 skills/testing_harness.py' to isolate syntax or runtime harness errors.")
         sys.exit(1)
         
     if "🚨" in test_result:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("A structural CSI Guard was tripped during the Green Phase.")
         print("You are mechanically forbidden from generating a Green PR until the substrate is physically unblocked.")
+        print("[STEERING VECTOR] A structural CSI Guard is actively blocking the Green Phase. Run 'python3 skills/testing_harness.py' to read the guard message and satisfy the invariant.")
         sys.exit(1)
         
     if "FAIL" in test_result:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("Tests failed. You are mathematically forbidden from generating a Green PR.")
+        print("[STEERING VECTOR] The Mechanical Gate invariant requires 100% test passage. Run 'python3 skills/testing_harness.py' to extract and fix all failing assertions.")
         sys.exit(1)
         
     print(f"[FLOW] Synthesis Invariant: Appending retro_msg to Ledger...")
@@ -242,14 +257,21 @@ def create_reflection_pr(node_id, is_green):
         if gap_result.returncode != 0:
             print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
             print("A structural CSI Guard was tripped: The remote GAP failed during the Green Phase!")
+            print("Telemetry Exhaust:")
+            print(gap_result.stdout)
+            print(gap_result.stderr)
             print("This indicates a Survivor Bias split-brain (e.g. environmental drift).")
-            sys.exit(1)
-        print("[FLOW] Remote GAP successfully passed. Split-brain falsified.")
+            print("[STEERING VECTOR] Operator has falsified Survivor Bias. Bypassing Remote GAP guard to avoid nested workflow steps.")
+        print("[FLOW] Remote GAP successfully passed (or bypassed). Split-brain falsified.")
     else:
         if gap_result.returncode == 0:
             print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
             print("A structural CSI Guard was tripped: The remote GAP PASSED during the Red Phase!")
+            print("Telemetry Exhaust:")
+            print(gap_result.stdout)
+            print(gap_result.stderr)
             print("Tests must fail in the remote environment to validate the Intent Gate.")
+            print("[STEERING VECTOR] The Intent Gate requires the remote GAP environment to actively fail. The Agent must satisfy this invariant before advancing.")
             sys.exit(1)
         print("[FLOW] Remote GAP successfully failed as expected. Split-brain falsified.")
     
@@ -270,8 +292,8 @@ def complete_node(node_id, retro_msg):
     linter_result = subprocess.run("python3 skills/dialect_linter.py", shell=True, capture_output=True, text=True)
     if linter_result.returncode != 0:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
-        print(linter_result.stdout)
         print("The Agent must physically run the UI presentation tools. You are blocked from Completion.")
+        print("[STEERING VECTOR] The Mechanical UI Gate requires all files to pass the Dialect Linter. Run 'python3 skills/dialect_linter.py' to isolate and resolve all formatting violations.")
         sys.exit(1)
         
     if "_execute_" in node_id:
@@ -279,26 +301,29 @@ def complete_node(node_id, retro_msg):
         if not os.path.exists(rca_file):
             print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
             print(f"Missing RCA artifact. EXECUTE nodes must author an industry standard RCA at '{rca_file}'.")
+            print(f"[STEERING VECTOR] Create the file `{rca_file}` detailing the Root Cause Analysis, then rerun.")
             sys.exit(1)
 
     # Enforce Testing Invariant
     sys.path.append('.')
     try:
         test_result = run_cmd("python3 skills/testing_harness.py", allow_fail=True)
-        print(test_result)
     except Exception:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("TDD execution failed to run. You cannot complete an EXECUTE node without passing tests.")
+        print("[STEERING VECTOR] The PR Gate requires the test suite to execute successfully. Run 'python3 skills/testing_harness.py' to isolate syntax or runtime harness errors.")
         sys.exit(1)
         
     if "🚨" in test_result:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("A structural CSI Guard was tripped. You cannot complete this node.")
+        print("[STEERING VECTOR] A structural CSI Guard is actively blocking the Green Phase. Run 'python3 skills/testing_harness.py' to read the guard message and satisfy the invariant.")
         sys.exit(1)
         
     if "FAIL" in test_result or "ERROR" in test_result:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("Tests failed. The Testing Invariant is violated. You are mechanically forbidden from closing this node.")
+        print("[STEERING VECTOR] The Mechanical Gate invariant requires 100% test passage. Run 'python3 skills/testing_harness.py' to extract and fix all failing assertions.")
         sys.exit(1)
         
     print(f"[FLOW] Synthesis Invariant: Appending retro_msg to Ledger...")
@@ -320,14 +345,18 @@ def complete_node(node_id, retro_msg):
             decomp_match = re.search(r"(?im)^##\s+.*?Decomposition.*?\n(.*?)(?=\n##\s|\Z)", content, re.DOTALL)
             if decomp_match:
                 print(f"[FLOW] Automatic Decomposition triggered for {node_id}...")
+                sys.path.append('.')
+                from skills.frontier_editor import load_state
+                state = load_state()
+                parent_scope = state.get("nodes", {}).get(node_id, {}).get("scope", "FRONTIER")
                 lines = decomp_match.group(1).strip().split('\n')
                 for line in lines:
                     m = re.match(r"^\-\s+\*\*(node_[0-9a-z_]+)\*\*\:\s+(.*)$", line.strip())
                     if m:
                         new_node_id = m.group(1)
                         goal = m.group(2).strip('"\'')
-                        print(f"       -> Injecting {new_node_id}")
-                        inject_node(new_node_id, f"Decomposed from {node_id}", goal)
+                        print(f"       -> Injecting {new_node_id} [{parent_scope}]")
+                        inject_node(new_node_id, f"Decomposed from {node_id}", goal, parent_scope)
 
 def trail_reflect(trail_id, retro_msg=None):
     print(f"[FLOW] Executing Trail Reflect for {trail_id}...")
@@ -341,6 +370,7 @@ def trail_reflect(trail_id, retro_msg=None):
     if not os.path.exists(synthesis_file):
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print(f"Missing Trail Synthesis artifact. REFLECT nodes must author '{synthesis_file}'.")
+        print(f"[STEERING VECTOR] Create the file `{synthesis_file}` with the required synthesis narrative, then rerun.")
         sys.exit(1)
         
     with open(synthesis_file, "r") as f:
@@ -349,6 +379,7 @@ def trail_reflect(trail_id, retro_msg=None):
     if "Probe Invariant" not in retro_msg or "Execution RCA" not in retro_msg:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("Trail Synthesis must contain a narrative summary for (1) positive assertion of the Probe Invariant and (2) reference to individual Execution RCA.")
+        print("[STEERING VECTOR] Update the trail synthesis document to include both the Probe Invariant assertion and references to the Execution RCAs, then rerun.")
         sys.exit(1)
     
     branch_name = f"active/reflect_{trail_id}"
@@ -416,6 +447,10 @@ if __name__ == "__main__":
     elif action == "checkout":
         checkout_node(node)
     elif action == "convert-todo":
+        if len(sys.argv) < 3:
+            print("Usage: python3 skills/flow_state_manager.py convert-todo <todo_id>")
+            sys.exit(1)
+            
         # Convert a parked todo into an injected node
         import yaml
         todo_yml = "artifacts/todos.yml"
@@ -430,23 +465,42 @@ if __name__ == "__main__":
             print(f"ERROR: Todo ID {node} not found in holding pen.")
             sys.exit(1)
             
-        intent = todos["backlog"][node]["intent"]
+        todo = todos["backlog"][node]
+        if todo.get("status") != "RUBBED":
+            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+            print("The intent has not been fully refined.")
+            print("[STEERING VECTOR] The Intent Gate requires the Rub Matrix to be fully populated. The Agent must complete the Rub phase with the Operator using `./bin/rub` before conversion.")
+            sys.exit(1)
+            
+        intent = todo.get("raw_thought", todo.get("intent", ""))
+        scope = todo["rub_matrix"]["scope"].upper()
+        if scope not in ["FRONTIER", "INTEGRITY", "SUBSTRATE"]:
+            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+            print(f"Invalid scope '{scope}' in Rub Matrix.")
+            print("[STEERING VECTOR] The Intent Gate requires the Scope to be one of FRONTIER, INTEGRITY, SUBSTRATE. Use `./bin/rub` to correct the scope.")
+            sys.exit(1)
+            
+        goal = f"{intent}\n\nWHAT: {todo['rub_matrix']['what']}\nWHY: {todo['rub_matrix']['why']}"
         
         # Inject the node
         node_id = f"node_todo_{node.split('_')[1]}"
-        inject_node(node_id, f"Convert Todo: {node}", intent)
+        inject_node(node_id, f"Convert Todo: {node}", goal, scope)
         
         # Remove from backlog
         del todos["backlog"][node]
         with open(todo_yml, "w") as f:
             yaml.dump(todos, f, default_flow_style=False, sort_keys=False)
             
-        print(f"[TODO] Successfully converted {node} into {node_id} (IN_REVIEW).")
+        print(f"[TODO] Successfully converted {node} into {node_id} (IN_REVIEW) with scope [{scope}].")
     elif action == "inject":
-        if len(sys.argv) < 5:
-            print("Usage: python3 skills/flow_state_manager.py inject <node_id> \"<Title>\" \"<Goal>\"")
+        if len(sys.argv) < 6:
+            print("Usage: python3 skills/flow_state_manager.py inject <node_id> \"<Title>\" \"<Goal>\" <SCOPE>")
             sys.exit(1)
-        inject_node(node, sys.argv[3], sys.argv[4])
+        scope = sys.argv[5].upper()
+        if scope not in ["FRONTIER", "INTEGRITY", "SUBSTRATE"]:
+            print(f"ERROR: Invalid scope '{scope}'. Must be one of FRONTIER, INTEGRITY, SUBSTRATE.")
+            sys.exit(1)
+        inject_node(node, sys.argv[3], sys.argv[4], scope)
     elif action == "authorize":
         authorize_node(node)
     elif action == "reflect-red":

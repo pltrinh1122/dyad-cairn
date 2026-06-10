@@ -92,7 +92,8 @@ def build_tree(nodes):
             
         title = nodes[node_id].get('title', 'Unknown')
         node_type = f" [{nodes[node_id]['type'].upper()}]" if "type" in nodes[node_id] else ""
-        lines.append(f"{prefix}├── {node_id} [{status}]{node_type}: {title}")
+        node_scope = f" [{nodes[node_id]['scope'].upper()}]" if "scope" in nodes[node_id] else ""
+        lines.append(f"{prefix}├── {node_id} [{status}]{node_type}{node_scope}: {title}")
         
         node_children = children.get(node_id, [])
         for i, child in enumerate(node_children):
