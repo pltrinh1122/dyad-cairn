@@ -340,3 +340,5 @@
 {"timestamp": "2026-06-10T17:31:36.163886+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-10T17:32:05.249381+00:00Z", "action": "COMMONS_SYNC", "message": "Syncing commons to resolve drift"}
 {"timestamp": "2026-06-10T17:32:07.106833+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-10T17:32:53.897782+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-10T17:32:54.163103+00:00Z", "action": "NODE-RETRO", "message": "[node_taxonomy_1] Added explicit tests for scope taxonomy enforcement."}

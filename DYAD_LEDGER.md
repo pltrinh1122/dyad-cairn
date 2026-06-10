@@ -438,3 +438,5 @@
 - **2026-06-10 17:31:36** | `TODO` | test_noisy_intent_12345
 - **2026-06-10 17:32:05** | `COMMONS_SYNC` | Syncing commons to resolve drift
 - **2026-06-10 17:32:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 17:32:53** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 17:32:54** | `NODE-RETRO` | [node_taxonomy_1] Added explicit tests for scope taxonomy enforcement.
