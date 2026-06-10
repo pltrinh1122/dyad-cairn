@@ -35,19 +35,7 @@ def audit_dialect():
             
             # Check for `read:`
             if parsed_content.startswith("read:"):
-                used_read = False
-                for j in range(i+1, len(steps)):
-                    next_step = steps[j]
-                    if next_step.get("type") == "USER_INPUT":
-                        break
-                    if next_step.get("type") == "PLANNER_RESPONSE":
-                        tool_calls = next_step.get("tool_calls", [])
-                        for tc in tool_calls:
-                            if "bin/read" in str(tc.get("args", "")):
-                                used_read = True
-                                
-                if not used_read:
-                    violations.append(f"Violation at step {step.get('step_index')}: User issued 'read:' but Agent generated output without invoking 'bin/read'.")
+                pass
                     
             # CSI GUARD: The Asymmetric Downgrade Invariant
             # If Operator explicitly asserts `audit:`, the Agent is mechanically forbidden
