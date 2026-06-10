@@ -349,3 +349,5 @@
 {"timestamp": "2026-06-10T17:38:58.582597+00:00Z", "action": "TODO", "message": "`read:` or `read` or `read.` without qualifiers can default to `read: quarries` to reduce physical load for Operator."}
 {"timestamp": "2026-06-10T17:56:59.810917+00:00Z", "action": "TODO", "message": "narrow the Design-Review gate to bypass RUBBED todo conversions (straight to READY) and exclusively catch autonomous node injections (like probe decompositions)."}
 {"timestamp": "2026-06-10T18:07:53.332927+00:00Z", "action": "COMMONS_SYNC", "message": "Updated the Invisible Elicitor protocol to mandate ask_question UI lock."}
+{"timestamp": "2026-06-10T18:08:03.158587+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-10T18:08:03.417271+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781136061] Updated AGENT.md to mandate ask_question UI lock"}
