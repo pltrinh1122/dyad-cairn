@@ -399,3 +399,5 @@
 - **2026-06-09 21:55:17** | `TODO` | test_noisy_intent_12345
 - **2026-06-10 01:16:32** | `TODO` | test_noisy_intent_12345
 - **2026-06-10 01:16:56** | `COMMONS_SYNC` | Absorbing directory activity signal for recruitment liveness block.
+- **2026-06-10 01:17:19** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 01:17:19** | `NODE-RETRO` | [node_execute_csi_cta] CSI CTA Guard enforced
