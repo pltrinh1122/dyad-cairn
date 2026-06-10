@@ -397,3 +397,5 @@
 - **2026-06-09 15:50:33** | `NODE-RETRO` | [node_todo_1781044629] Implemented rub vs rub? disambiguation
 - **2026-06-09 21:51:06** | `TODO` | test_noisy_intent_12345
 - **2026-06-09 21:55:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 01:16:32** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 01:16:56** | `COMMONS_SYNC` | Absorbing directory activity signal for recruitment liveness block.
