@@ -451,3 +451,8 @@
 - **2026-06-10 18:08:03** | `NODE-RETRO` | [node_todo_1781136061] Updated AGENT.md to mandate ask_question UI lock
 - **2026-06-10 18:08:31** | `TODO` | test_noisy_intent_12345
 - **2026-06-10 18:08:32** | `NODE-RETRO` | [node_todo_1781136061] Completed.
+- **2026-06-10 18:29:01** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 18:29:11** | `COMMONS_SYNC` | Pulled latest upstream commons commits.
+- **2026-06-10 18:29:13** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 18:29:51** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 18:29:51** | `NODE-RETRO` | [node_todo_1781131693] Wired up remote GAP validation workflow and reinstated flow_state_manager invariant.
