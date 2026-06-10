@@ -3,9 +3,4 @@ config:
     design_review: true
     execution_review: false
     reflection_review: true
-nodes:
-  node_execute_csi_cta:
-    title: Ensure CSI steers Agent responses to Operator CTAs
-    goal: Modify dialect_linter to enforce Operator CTAs for raw commands
-    type: EXECUTE
-    status: AUTHORIZED
+nodes: {}
