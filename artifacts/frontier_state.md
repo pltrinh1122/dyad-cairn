@@ -6,7 +6,6 @@
 
 ```text
 ├── node_taxonomy_1 [READY] [PLAN] [SUBSTRATE]: Enforce Scope Taxonomy on Frontier Nodes
-├── node_todo_1781122314 [READY] [PLAN] [INTEGRITY]: Refactor CSI Guards to emit semantic steering
-├── node_todo_1781130713 [ACTIVE] [PLAN] [SUBSTRATE]: Convert Todo: todo_1781130713
-├── node_todo_1781131298 [IN_REVIEW] [PLAN] [SUBSTRATE]: Convert Todo: todo_1781131298
+├── node_todo_1781122314 [ACTIVE] [PLAN] [INTEGRITY]: Refactor CSI Guards to emit semantic steering
+├── node_todo_1781135464 [IN_REVIEW] [PLAN] [SUBSTRATE]: Convert Todo: todo_1781135464
 ```

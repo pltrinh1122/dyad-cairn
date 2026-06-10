@@ -21,20 +21,3 @@ nodes:
       can self-heal without Operator intervention.
     type: PLAN
     scope: INTEGRITY
-  node_todo_1781130713:
-    title: 'Convert Todo: todo_1781130713'
-    goal: 'we need to define the actual interview flow itself otherwise, Operator
-      driving is too much cognitive load and un-wuwei.
-
-
-      WHAT: Codify ''The Invisible Elicitor'' protocol into the Agent''s foundational
-      instructions. The protocol dictates that the Agent must always lead the Rub
-      phase by probing the WHY to prime the Operator, crystallizing final intent before
-      mechanically extracting the WHAT and SCOPE.
-
-      WHY: The Operator needs elicitation priming to derive the final intent from
-      the initial raw intent, and they should not have to manually drive or know the
-      elicitation methodology to achieve this.'
-    type: PLAN
-    scope: SUBSTRATE
-    status: AUTHORIZED

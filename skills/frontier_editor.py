@@ -59,6 +59,7 @@ def save_state(state):
                     print("🚨 SPAOR PLAN INJECTION GUARD FIRED 🚨")
                     print(f"You attempted to inject PLAN node '{node_id}' for unexecuted PROBE '{parent_prefix}'.")
                     print("PLAN can only be created while in a PROBE for itself, not for other PROBE.")
+                    print("[STEERING VECTOR] Complete the current PROBE execution and formally reflect it to the Ledger before injecting its downstream PLAN node. Rerun your creation once the substrate is unblocked.")
                     print("==========================================================================")
                     sys.exit(1)
 

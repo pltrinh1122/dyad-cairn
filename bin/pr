@@ -48,6 +48,7 @@ if [ "$COMMAND" = "create" ]; then
     # So we force the user to provide --title if using this wrapper for create.
     if [ $TITLE_FOUND -eq 0 ]; then
         echo "🚨 CSI GUARDRAIL BLOCK: You must explicitly provide a --title to create a PR."
+        echo "[STEERING VECTOR] Provide a clear, semantic title for your PR using the --title flag, then rerun."
         exit 1
     fi
 
