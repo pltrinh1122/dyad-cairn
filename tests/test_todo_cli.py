@@ -34,7 +34,7 @@ def test_todo_cli_execution():
         todo_id = None
         todos = yaml.safe_load(content)
         for tid, tdata in todos["backlog"].items():
-            if tdata["intent"] == intent:
+            if tdata.get("raw_thought", tdata.get("intent", "")) == intent:
                 todo_id = tid
                 break
         
@@ -58,6 +58,9 @@ def test_todo_cli_execution():
                 frontier_original = f.read()
                 
         try:
+            subprocess.run(["./bin/rub", todo_id, "what", "test"])
+            subprocess.run(["./bin/rub", todo_id, "why", "test"])
+            subprocess.run(["./bin/rub", todo_id, "scope", "SUBSTRATE"])
             conv_res = subprocess.run(["./bin/node", "convert-todo", todo_id], capture_output=True, text=True)
             assert conv_res.returncode == 0, f"convert-todo failed: {conv_res.stderr}"
             

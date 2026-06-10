@@ -29,8 +29,14 @@ def append_todo(intent):
         todos["backlog"] = {}
         
     todos["backlog"][todo_id] = {
-        "intent": intent,
-        "timestamp": timestamp
+        "raw_thought": intent,
+        "timestamp": timestamp,
+        "rub_matrix": {
+            "what": None,
+            "why": None,
+            "scope": None
+        },
+        "status": "UNRUBBED"
     }
     
     with open(todo_yml, "w") as f:
@@ -43,7 +49,21 @@ def append_todo(intent):
         f.write("> Use `./bin/node convert-todo <todo_id>` to ingest an item into the DAG.\n\n")
         
         for tid, data in todos["backlog"].items():
-            f.write(f"- **{tid}** ({data['timestamp']}): {data['intent']}\n")
+            intent_str = data.get('raw_thought', data.get('intent', ''))
+            status = data.get('status', 'LEGACY')
+            f.write(f"### {tid} [{status}]\n")
+            f.write(f"**Raw Thought:** {intent_str}\n\n")
+            
+            matrix = data.get('rub_matrix', {})
+            what_status = "[x]" if matrix.get("what") else "[ ]"
+            why_status = "[x]" if matrix.get("why") else "[ ]"
+            scope_status = "[x]" if matrix.get("scope") else "[ ]"
+            
+            f.write(f"**The Rub Matrix:**\n")
+            f.write(f"- {what_status} **WHAT:** {matrix.get('what') or 'Missing'}\n")
+            f.write(f"- {why_status} **WHY:** {matrix.get('why') or 'Missing'}\n")
+            f.write(f"- {scope_status} **SCOPE:** {matrix.get('scope') or 'Missing'}\n\n")
+            f.write("---\n")
             
     print(f"[TODO] Successfully parked todo in holding pen: {intent}")
     print(f"[TODO] ID: {tid}")

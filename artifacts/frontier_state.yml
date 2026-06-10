@@ -3,4 +3,38 @@ config:
     design_review: true
     execution_review: false
     reflection_review: true
-nodes: {}
+nodes:
+  node_taxonomy_1:
+    title: Enforce Scope Taxonomy on Frontier Nodes
+    type: PLAN
+    scope: SUBSTRATE
+    dependencies: []
+    intent: Update the Frontier DAG ontology to require a 'scope' field [FRONTIER,
+      INTEGRITY, SUBSTRATE]. Modify skills/frontier_reader.py to parse and print this
+      scope. Crucially, update the todo ingestion pipeline (bin/node convert-todo
+      and skills/flow_state_manager.py) to require and enforce scope assignment when
+      promoting a todo to the DAG.
+  node_todo_1781122314:
+    title: Refactor CSI Guards to emit semantic steering
+    goal: Audit physical CSI guards and refactor them from dumb blockers into semantic
+      steerers. They must emit actionable topological remediation steps so the Agent
+      can self-heal without Operator intervention.
+    type: PLAN
+    scope: INTEGRITY
+  node_todo_1781130713:
+    title: 'Convert Todo: todo_1781130713'
+    goal: 'we need to define the actual interview flow itself otherwise, Operator
+      driving is too much cognitive load and un-wuwei.
+
+
+      WHAT: Codify ''The Invisible Elicitor'' protocol into the Agent''s foundational
+      instructions. The protocol dictates that the Agent must always lead the Rub
+      phase by probing the WHY to prime the Operator, crystallizing final intent before
+      mechanically extracting the WHAT and SCOPE.
+
+      WHY: The Operator needs elicitation priming to derive the final intent from
+      the initial raw intent, and they should not have to manually drive or know the
+      elicitation methodology to achieve this.'
+    type: PLAN
+    scope: SUBSTRATE
+    status: AUTHORIZED
