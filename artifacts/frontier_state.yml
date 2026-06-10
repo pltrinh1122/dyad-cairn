@@ -14,10 +14,17 @@ nodes:
       scope. Crucially, update the todo ingestion pipeline (bin/node convert-todo
       and skills/flow_state_manager.py) to require and enforce scope assignment when
       promoting a todo to the DAG.
-  node_todo_1781122314:
-    title: Refactor CSI Guards to emit semantic steering
-    goal: Audit physical CSI guards and refactor them from dumb blockers into semantic
-      steerers. They must emit actionable topological remediation steps so the Agent
-      can self-heal without Operator intervention.
+  node_todo_1781136061:
+    title: 'Convert Todo: todo_1781136061'
+    goal: 'wire up the agy workflow to allow invocation of "/rub" to enter elicitation
+      mode.
+
+
+      WHAT: Update the Invisible Elicitor protocol to mandate the use of the ask_question
+      blocking UI tool during explicit Rub invocations.
+
+      WHY: Enforce physical UI containment during the Rub to prevent thread drift,
+      while maintaining Dyad control.'
     type: PLAN
     scope: INTEGRITY
+    status: IN_REVIEW

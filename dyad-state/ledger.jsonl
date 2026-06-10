@@ -329,3 +329,16 @@
 {"timestamp": "2026-06-10T16:51:04.570921+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-10T16:52:13.631182+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-10T16:52:13.806438+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781122314] Refactored CSI guards across the substrate to emit semantic steering vectors for self-healing."}
+{"timestamp": "2026-06-10T16:52:50.464598+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-10T16:52:50.635706+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781122314] Refactored CSI guards across the substrate to emit semantic steering vectors for self-healing."}
+{"timestamp": "2026-06-10T16:53:19.231558+00:00Z", "action": "TODO", "message": "investigate why \"/goal\" locks up the terminal and prevents concurrent interaction; i.e. my prompts are being queued."}
+{"timestamp": "2026-06-10T16:57:26.917287+00:00Z", "action": "TODO", "message": "figure out which guard is prompting you to drop me into \"/rub\" automatically."}
+{"timestamp": "2026-06-10T17:01:01.103720+00:00Z", "action": "TODO", "message": "wire up the agy workflow to allow invocation of \"/rub\" to enter elicitation mode."}
+{"timestamp": "2026-06-10T17:23:21.179843+00:00Z", "action": "TODO", "message": "Monitor and falsify whether sequential enforcement of the ask_question UI lock during the Rub phase is too constraining in practice."}
+{"timestamp": "2026-06-10T17:26:49.840052+00:00Z", "action": "TODO", "message": "ensure that the elicitation_mode and the guards for advancing a todo->frontier requires 'WHEN'. this means that the 'frontier' may need to be partitioned into a ready-now and ready-when partition."}
+{"timestamp": "2026-06-10T17:30:10.122852+00:00Z", "action": "TODO", "message": "automate conversion of todo to frontier DAG immediately upon completion of the Rub phase (reaching RUBBED state), eliminating manual convert-todo toil."}
+{"timestamp": "2026-06-10T17:31:36.163886+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-10T17:32:05.249381+00:00Z", "action": "COMMONS_SYNC", "message": "Syncing commons to resolve drift"}
+{"timestamp": "2026-06-10T17:32:07.106833+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-10T17:32:53.897782+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-10T17:32:54.163103+00:00Z", "action": "NODE-RETRO", "message": "[node_taxonomy_1] Added explicit tests for scope taxonomy enforcement."}

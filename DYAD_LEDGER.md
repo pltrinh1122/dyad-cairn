@@ -427,3 +427,16 @@
 - **2026-06-10 16:51:04** | `TODO` | test_noisy_intent_12345
 - **2026-06-10 16:52:13** | `TODO` | test_noisy_intent_12345
 - **2026-06-10 16:52:13** | `NODE-RETRO` | [node_todo_1781122314] Refactored CSI guards across the substrate to emit semantic steering vectors for self-healing.
+- **2026-06-10 16:52:50** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 16:52:50** | `NODE-RETRO` | [node_todo_1781122314] Refactored CSI guards across the substrate to emit semantic steering vectors for self-healing.
+- **2026-06-10 16:53:19** | `TODO` | investigate why "/goal" locks up the terminal and prevents concurrent interaction; i.e. my prompts are being queued.
+- **2026-06-10 16:57:26** | `TODO` | figure out which guard is prompting you to drop me into "/rub" automatically.
+- **2026-06-10 17:01:01** | `TODO` | wire up the agy workflow to allow invocation of "/rub" to enter elicitation mode.
+- **2026-06-10 17:23:21** | `TODO` | Monitor and falsify whether sequential enforcement of the ask_question UI lock during the Rub phase is too constraining in practice.
+- **2026-06-10 17:26:49** | `TODO` | ensure that the elicitation_mode and the guards for advancing a todo->frontier requires 'WHEN'. this means that the 'frontier' may need to be partitioned into a ready-now and ready-when partition.
+- **2026-06-10 17:30:10** | `TODO` | automate conversion of todo to frontier DAG immediately upon completion of the Rub phase (reaching RUBBED state), eliminating manual convert-todo toil.
+- **2026-06-10 17:31:36** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 17:32:05** | `COMMONS_SYNC` | Syncing commons to resolve drift
+- **2026-06-10 17:32:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 17:32:53** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 17:32:54** | `NODE-RETRO` | [node_taxonomy_1] Added explicit tests for scope taxonomy enforcement.
