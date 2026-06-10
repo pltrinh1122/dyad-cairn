@@ -261,8 +261,9 @@ def create_reflection_pr(node_id, is_green):
             print(gap_result.stdout)
             print(gap_result.stderr)
             print("This indicates a Survivor Bias split-brain (e.g. environmental drift).")
-            print("[STEERING VECTOR] Operator has falsified Survivor Bias. Bypassing Remote GAP guard to avoid nested workflow steps.")
-        print("[FLOW] Remote GAP successfully passed (or bypassed). Split-brain falsified.")
+            print("[STEERING VECTOR] The Intent Gate requires the remote GAP environment to actively pass. The Agent must satisfy this invariant before advancing.")
+            sys.exit(1)
+        print("[FLOW] Remote GAP successfully passed. Split-brain falsified.")
     else:
         if gap_result.returncode == 0:
             print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
