@@ -442,3 +442,10 @@
 - **2026-06-10 17:32:54** | `NODE-RETRO` | [node_taxonomy_1] Added explicit tests for scope taxonomy enforcement.
 - **2026-06-10 17:33:43** | `TODO` | test_noisy_intent_12345
 - **2026-06-10 17:33:43** | `NODE-RETRO` | [node_taxonomy_1] Done.
+- **2026-06-10 17:34:15** | `TODO` | have the 'check out' process automatically performed and prepped for '/goal' execution by operator.
+- **2026-06-10 17:36:29** | `TODO` | investigate an alternative to '/goal' for Executioner because our main terminal is locked up during execution, preventing concurrent interaction like rubbing other todos.
+- **2026-06-10 17:38:58** | `TODO` | `read:` or `read` or `read.` without qualifiers can default to `read: quarries` to reduce physical load for Operator.
+- **2026-06-10 17:56:59** | `TODO` | narrow the Design-Review gate to bypass RUBBED todo conversions (straight to READY) and exclusively catch autonomous node injections (like probe decompositions).
+- **2026-06-10 18:07:53** | `COMMONS_SYNC` | Updated the Invisible Elicitor protocol to mandate ask_question UI lock.
+- **2026-06-10 18:08:03** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 18:08:03** | `NODE-RETRO` | [node_todo_1781136061] Updated AGENT.md to mandate ask_question UI lock
