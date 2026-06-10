@@ -82,4 +82,4 @@ def test_node_authorize_requires_in_review(clean_dag):
     
     with open(TEST_YML, "r") as f:
         state = yaml.safe_load(f)
-    assert state["nodes"]["node_99_review"]["status"] == "READY"
+    assert state["nodes"]["node_99_review"]["status"] == "AUTHORIZED"

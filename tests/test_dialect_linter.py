@@ -75,3 +75,13 @@ def test_dialect_linter_with_mock_transcript(tmp_path):
         
     result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
     assert result.returncode == 0
+
+    # Scenario 6: User issues a pure command (no prefix), Agent executes a bash command.
+    with open(transcript_path, "w") as f:
+        f.write(json.dumps({"type": "USER_INPUT", "content": "git commit -m 'test'\n", "step_index": 8}) + "\n")
+        f.write(json.dumps({"type": "PLANNER_RESPONSE", "content": "Doing it.", "tool_calls": [{"args": '{"CommandLine": "git commit -m test"}'}]}) + "\n")
+        
+    result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
+    assert result.returncode == 1
+    assert "CSI GUARDRAIL BLOCK" in result.stdout
+    assert "Operator CTA" in result.stdout

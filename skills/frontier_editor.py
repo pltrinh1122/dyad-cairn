@@ -124,7 +124,7 @@ if __name__ == "__main__":
         node_id = sys.argv[1]
         new_status = sys.argv[2].upper()
         if node_id in state["nodes"]:
-            if new_status == "IN_REVIEW":
+            if new_status in ("IN_REVIEW", "AUTHORIZED"):
                 state["nodes"][node_id]["status"] = new_status
             else:
                 # For ACTIVE, READY, DONE, we delete the explicit status cache to let derive_status compute it
