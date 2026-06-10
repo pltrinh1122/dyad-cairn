@@ -14,3 +14,48 @@ backlog:
       why: null
       scope: null
     status: UNRUBBED
+  todo_1781135599:
+    raw_thought: investigate why "/goal" locks up the terminal and prevents concurrent
+      interaction; i.e. my prompts are being queued.
+    timestamp: '2026-06-10T16:53:19.232611Z'
+    rub_matrix:
+      what: null
+      why: null
+      scope: null
+    status: UNRUBBED
+  todo_1781135846:
+    raw_thought: figure out which guard is prompting you to drop me into "/rub" automatically.
+    timestamp: '2026-06-10T16:57:26.918569Z'
+    rub_matrix:
+      what: null
+      why: null
+      scope: null
+    status: UNRUBBED
+  todo_1781137401:
+    raw_thought: Monitor and falsify whether sequential enforcement of the ask_question
+      UI lock during the Rub phase is too constraining in practice.
+    timestamp: '2026-06-10T17:23:21.180915Z'
+    rub_matrix:
+      what: null
+      why: null
+      scope: null
+    status: UNRUBBED
+  todo_1781137609:
+    raw_thought: ensure that the elicitation_mode and the guards for advancing a todo->frontier
+      requires 'WHEN'. this means that the 'frontier' may need to be partitioned into
+      a ready-now and ready-when partition.
+    timestamp: '2026-06-10T17:26:49.841116Z'
+    rub_matrix:
+      what: null
+      why: null
+      scope: null
+    status: UNRUBBED
+  todo_1781137810:
+    raw_thought: automate conversion of todo to frontier DAG immediately upon completion
+      of the Rub phase (reaching RUBBED state), eliminating manual convert-todo toil.
+    timestamp: '2026-06-10T17:30:10.123903Z'
+    rub_matrix:
+      what: null
+      why: null
+      scope: null
+    status: UNRUBBED

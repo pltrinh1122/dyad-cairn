@@ -60,6 +60,17 @@ def test_todo_cli_execution():
         try:
             subprocess.run(["./bin/rub", todo_id, "what", "test"])
             subprocess.run(["./bin/rub", todo_id, "why", "test"])
+            
+            # 🚨 Intent Gate: Fails when scope is missing (meaning Matrix is not fully populated)
+            conv_fail = subprocess.run(["./bin/node", "convert-todo", todo_id], capture_output=True, text=True)
+            assert conv_fail.returncode != 0, "Intent Gate failed to block conversion with missing scope"
+            assert "fully populated" in conv_fail.stdout
+            
+            subprocess.run(["./bin/rub", todo_id, "scope", "INVALID_SCOPE"])
+            conv_fail2 = subprocess.run(["./bin/node", "convert-todo", todo_id], capture_output=True, text=True)
+            assert conv_fail2.returncode != 0, "Intent Gate failed to block conversion with invalid scope"
+            assert "FRONTIER, INTEGRITY, SUBSTRATE" in conv_fail2.stdout
+            
             subprocess.run(["./bin/rub", todo_id, "scope", "SUBSTRATE"])
             conv_res = subprocess.run(["./bin/node", "convert-todo", todo_id], capture_output=True, text=True)
             assert conv_res.returncode == 0, f"convert-todo failed: {conv_res.stderr}"
