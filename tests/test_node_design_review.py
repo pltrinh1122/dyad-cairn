@@ -76,3 +76,8 @@ def test_node_authorize_requires_in_review(clean_dag):
     
     state = load_state()
     assert state["nodes"]["node_99_review"]["status"] == "AUTHORIZED"
+    
+    # Assert git worktree was created
+    worktree_path = ".worktrees/active_node_99_review"
+    assert os.path.exists(worktree_path), f"Expected git worktree at {worktree_path}"
+    assert os.path.exists(os.path.join(worktree_path, ".git")), "Expected .git file in worktree"

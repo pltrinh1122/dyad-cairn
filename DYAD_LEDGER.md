@@ -507,3 +507,9 @@
 - **2026-06-11 04:16:10** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:16:19** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:16:20** | `NODE-RETRO` | [node_todo_1781138338] [TRIGGER: autonomous] Updated AGENT.md to document that a naked read: implicitly defaults to read: quarries, and added mechanical linter checks in skills/dialect_linter.py with corresponding unit tests to verify.
+- **2026-06-11 04:16:01** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:16:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:17:04** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:17:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:17:42** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:17:42** | `NODE-RETRO` | [node_todo_1781138055] [TRIGGER: autonomous] Upgraded authorize mechanism to automatically isolate workspaces using git worktrees.
