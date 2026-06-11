@@ -525,3 +525,6 @@
 - **2026-06-11 04:23:50** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:23:58** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:23:58** | `NODE-RETRO` | [node_todo_1781137810] [TRIGGER: autonomous] Automated DAG conversion when a parked todo enters the RUBBED state. Fixed commons module synchronization during test harness runs. Verified all tests passing.
+- **2026-06-11 04:25:58** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:26:51** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:26:51** | `NODE-RETRO` | [node_todo_1781176661] [TRIGGER: operator] Implemented /rub-all macro via Agent protocol in AGENT.md and enforced in dialect_linter.

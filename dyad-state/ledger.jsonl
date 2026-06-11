@@ -427,3 +427,6 @@
 {"timestamp": "2026-06-11T04:23:50.645407+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-11T04:23:58.422346+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-11T04:23:58.672856+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781137810] [TRIGGER: autonomous] Automated DAG conversion when a parked todo enters the RUBBED state. Fixed commons module synchronization during test harness runs. Verified all tests passing."}
+{"timestamp": "2026-06-11T04:25:58.251120+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T04:26:51.576624+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T04:26:51.852444+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781176661] [TRIGGER: operator] Implemented /rub-all macro via Agent protocol in AGENT.md and enforced in dialect_linter."}
