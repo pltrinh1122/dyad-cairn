@@ -69,6 +69,14 @@ def test_todo_cli_execution():
             assert conv_res.returncode == 0, f"convert-todo failed: {conv_res.stderr}"
             
             assert not os.path.exists(os.path.join(todo_dir, f"{todo_id}.yml"))
+            
+            node_internal_id = f"node_todo_{todo_id.split('_')[1]}"
+            import sys
+            if '.' not in sys.path:
+                sys.path.append('.')
+            from skills.frontier_editor import load_state
+            state = load_state()
+            assert state["nodes"][node_internal_id]["status"] == "AUTHORIZED", f"Expected AUTHORIZED, got {state['nodes'][node_internal_id].get('status')}"
         finally:
             pass
         

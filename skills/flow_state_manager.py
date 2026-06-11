@@ -90,8 +90,8 @@ def checkout_node(node_id):
     print(f"[FLOW] Checking out branch: {branch_name}")
     run_cmd(f"git checkout -b {branch_name}")
 
-def inject_node(node_id, title, goal, scope):
-    print(f"[FLOW] Injecting Node {node_id} (IN_REVIEW)...")
+def inject_node(node_id, title, goal, scope, bypass_review=False):
+    print(f"[FLOW] Injecting Node {node_id} ({'AUTHORIZED' if bypass_review else 'IN_REVIEW'})...")
     sys.path.append('.')
     from skills.frontier_editor import load_state, save_state
     state = load_state()
@@ -108,7 +108,9 @@ def inject_node(node_id, title, goal, scope):
     }
     
     gates = state.get("config", {}).get("gates", {})
-    if gates.get("design_review", True):
+    if bypass_review:
+        state["nodes"][node_id]["status"] = "AUTHORIZED"
+    elif gates.get("design_review", True):
         state["nodes"][node_id]["status"] = "IN_REVIEW"
     save_state(state)
     
@@ -118,7 +120,7 @@ def inject_node(node_id, title, goal, scope):
         from skills.design_review_ui import present_design_review
         present_design_review(node_id, state)
     else:
-        print(f"[FLOW] Node {node_id} successfully injected (Design-Review Gate disabled).")
+        print(f"[FLOW] Node {node_id} successfully injected (Design-Review Gate bypassed/disabled).")
 
 def authorize_node(node_id):
     print(f"[FLOW] Authorizing Node {node_id}...")
@@ -498,12 +500,12 @@ if __name__ == "__main__":
         
         # Inject the node
         node_id = f"node_todo_{node.split('_')[1]}"
-        inject_node(node_id, f"Convert Todo: {node}", goal, scope)
+        inject_node(node_id, f"Convert Todo: {node}", goal, scope, bypass_review=True)
         
         # Remove from backlog
         os.remove(todo_file)
             
-        print(f"[TODO] Successfully converted {node} into {node_id} (IN_REVIEW) with scope [{scope}].")
+        print(f"[TODO] Successfully converted {node} into {node_id} (AUTHORIZED) with scope [{scope}].")
     elif action == "inject":
         if len(sys.argv) < 6:
             print("Usage: python3 skills/flow_state_manager.py inject <node_id> \"<Title>\" \"<Goal>\" <SCOPE>")

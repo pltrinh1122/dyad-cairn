@@ -5,4 +5,5 @@
 > WIP-N=1 mechanically enforced by `skills/frontier_editor.py`.
 
 ```text
+├── node_99_test [IN_REVIEW] [PLAN] [SUBSTRATE]: Test Node
 ```
