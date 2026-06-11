@@ -84,3 +84,20 @@ def test_dialect_linter_with_mock_transcript(tmp_path):
     assert result.returncode == 1
     assert "CSI GUARDRAIL BLOCK" in result.stdout
     assert "Operator CTA" in result.stdout
+
+    # Scenario 7: User says naked `read:`, Agent fails to invoke `bin/read quarries`
+    with open(transcript_path, "w") as f:
+        f.write(json.dumps({"type": "USER_INPUT", "content": "read:\n", "step_index": 9}) + "\n")
+        f.write(json.dumps({"type": "PLANNER_RESPONSE", "tool_calls": [{"args": "{\"CommandLine\": \"./bin/read frontier\"}"}]}) + "\n")
+        
+    result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
+    assert result.returncode == 1
+    assert "failed to mechanically invoke './bin/read quarries'" in result.stdout
+
+    # Scenario 8: User says naked `read:`, Agent invokes `bin/read quarries` correctly
+    with open(transcript_path, "w") as f:
+        f.write(json.dumps({"type": "USER_INPUT", "content": "read:\n", "step_index": 10}) + "\n")
+        f.write(json.dumps({"type": "PLANNER_RESPONSE", "tool_calls": [{"args": "{\"CommandLine\": \"./bin/read quarries\"}"}]}) + "\n")
+        
+    result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
+    assert result.returncode == 0

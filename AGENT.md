@@ -58,7 +58,8 @@ Inherited from our parent (`dyad-touchstone`) and mechanically enforced:
 - `lean!` surface and take the move. **Mechanically mapped to:** `./bin/node authorize <node_id>` (Transitions node to `READY`).
 - `reflect-green` / `complete` (Wu-Wei Closure). **Mechanically mapped to:** requiring a `<retro_msg>` argument to append the closure synthesis to the Ledger before locking the state.
 - `execute:` formally dispatch a subagent to resolve a node. **Mechanically mapped to:** The `invoke_subagent` tool. *(Note: The UI-level `/goal` command is strictly retired and forbidden. We exclusively rely on the Agent-steered `execute: <node_id>` dialect to cement Agent autonomy over execution while keeping the main terminal unlocked).*
-- *Other conversational markers (unbound):* `read:`, `rub:`, `riff:`, `todo:`, `pin:`, `fb:`, `retro:`, `lean?`, `follow:`, `clip:`
+- `read:` (or `read`, `read.`) implicitly maps to `read: quarries`. **Mechanically mapped to:** `./bin/read quarries` (or other targets if specified).
+- *Other conversational markers (unbound):* `rub:`, `riff:`, `todo:`, `pin:`, `fb:`, `retro:`, `lean?`, `follow:`, `clip:`
 
 ## 8. State Management (The Offload Boundary)
 - **Proactive Offload:** The Agent writes to disk autonomously when execution is mechanically certain and logically follows a consensus (protecting Operator bandwidth).
