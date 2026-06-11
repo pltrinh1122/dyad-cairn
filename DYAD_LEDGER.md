@@ -547,3 +547,7 @@
 - **2026-06-11 05:24:13** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 05:24:26** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 05:24:26** | `NODE-RETRO` | [node_todo_1781180517] Zero-Friction Intake Invariant successfully falsified and proven via live QA.
+- **2026-06-11 05:24:40** | `TODO` | the "/rub" should perform auto-classification of SCOPE.
+- **2026-06-11 05:30:39** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:30:57** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:30:57** | `NODE-RETRO` | [node_todo_1781180680] [TRIGGER: autonomous] Updated AGENT.md to mandate auto-classification of SCOPE
