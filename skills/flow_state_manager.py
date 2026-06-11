@@ -69,6 +69,23 @@ def plan_node(node_id):
     print(f"[FLOW] Local DAG asserts planning. No remote issue required.")
 
 def checkout_node(node_id):
+    import os
+    import sys
+    sys.path.append('.')
+    from skills.frontier_editor import load_state
+    state = load_state()
+    node = state.get("nodes", {}).get(node_id, {})
+    requires = node.get("requires", [])
+    
+    if requires:
+        print(f"[FLOW] Asserting Materialized Dependency Guard for {node_id}...")
+        for req in requires:
+            if not os.path.exists(req):
+                print(f"🚨 CSI GUARD BLOCK: Pre-requisite '{req}' is missing from the physical substrate! 🚨")
+                print(f"[FLOW] The DAG topological clearance is overridden. Execution is safely stalled.")
+                sys.exit(1)
+        print("[FLOW] Materialized Dependency Guard PASSED.")
+
     branch_name = f"active/{node_id}"
     print(f"[FLOW] Checking out branch: {branch_name}")
     run_cmd(f"git checkout -b {branch_name}")
