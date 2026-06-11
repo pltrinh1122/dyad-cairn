@@ -1,0 +1,16 @@
+node_todo_1781144279:
+  title: 'Convert Todo: todo_1781144279'
+  goal: 'identify guards to allow disabling of design-review-gate.
+
+
+    WHAT: Execute a PROBE to formally define and propose a comprehensive set of structural
+    Consistency Guards that mechanically protect the architecture and validate execution
+    grounding when the design_review gate is deactivated.
+
+    WHY: HTIL during design_review serves two Operator intent - (1) are the pre-requisites
+    (including assumed invariants) for entering design_review grounded (2) have dependencies
+    of the current proposed solution been grounded - does it fit into the greater
+    system.'
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED
