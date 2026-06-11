@@ -23,7 +23,8 @@ def main():
     items = list(backlog.items())
     for i, (tid, data) in enumerate(items):
         prefix = "└──" if i == len(items) - 1 else "├──"
-        print(f"{prefix} {tid} ({data['timestamp']}): {data['intent']}")
+        intent = data.get('intent', data.get('raw_thought', ''))
+        print(f"{prefix} {tid} ({data.get('timestamp', '')}): {intent}")
 
 if __name__ == "__main__":
     main()
