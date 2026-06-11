@@ -10,11 +10,13 @@ def main():
     print("")
     
     print("--- [QUARRY] (Research & Development) ---")
-    print("1. [ACTIVE] The Execution DAG (artifacts/frontier_state.yml)")
+    print("1. [ACTIVE] The Execution DAG (artifacts/frontier/)")
     try:
         from skills.frontier_reader import build_tree, derive_status
-        with open("artifacts/frontier_state.yml", "r") as f:
-            frontier = yaml.safe_load(f) or {}
+        import sys
+        sys.path.append('.')
+        from skills.frontier_editor import load_state
+        frontier = load_state()
         frontier_nodes = frontier.get("nodes", {})
         
         ledger_content = ""
@@ -44,12 +46,15 @@ def main():
         
     print("")
 
-    print("2. [PRE-QUARRY] The Passive Backlog (artifacts/todos.yml)")
-    try:
-        with open("artifacts/todos.yml", "r") as f:
-            todos = yaml.safe_load(f) or {}
-    except Exception:
-        todos = {}
+    print("2. [PRE-QUARRY] The Passive Backlog (artifacts/todos/)")
+    todos = {"backlog": {}}
+    if os.path.exists("artifacts/todos"):
+        for fname in sorted(os.listdir("artifacts/todos")):
+            if fname.endswith(".yml"):
+                with open(os.path.join("artifacts/todos", fname), "r") as f:
+                    data = yaml.safe_load(f) or {}
+                    for k, v in data.items():
+                        todos["backlog"][k] = v
     backlog = todos.get("backlog", {})
     if not backlog:
         print("   └── (empty)")

@@ -1,0 +1,18 @@
+node_todo_1781168065:
+  title: 'Convert Todo: todo_1781168065'
+  goal: 'Decompose monolithic state files (todos, frontier) into directories and configure
+    union git merge strategy for append-only ledgers to safely support concurrent
+    subagent executions.
+
+
+    WHAT: Migrate artifacts/todos.yml and artifacts/frontier_state.yml into directory
+    structures (e.g. artifacts/todos/todo_<id>.yml). Refactor all bin scripts to read/write
+    state from these directories. Configure .gitattributes to enforce merge=union
+    on DYAD_LEDGER.md and ledger.jsonl for parallel appends.
+
+    WHY: To structurally eliminate Git merge conflicts on hot state files during simultaneous
+    Subagent executions, permanently removing the Main Agent as a sequential orchestration
+    bottleneck.'
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED

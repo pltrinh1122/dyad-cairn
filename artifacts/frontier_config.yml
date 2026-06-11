@@ -1,6 +1,5 @@
 config:
   gates:
-    design_review: false
+    design_review: true
     execution_review: false
     reflection_review: true
-nodes: {}

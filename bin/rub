@@ -17,19 +17,15 @@ def main():
         print(f"ERROR: Invalid field '{field}'. Must be what, why, or scope.")
         sys.exit(1)
         
-    todo_yml = "artifacts/todos.yml"
-    if not os.path.exists(todo_yml):
-        print("ERROR: No todos holding pen found.")
+    todo_file = f"artifacts/todos/{todo_id}.yml"
+    if not os.path.exists(todo_file):
+        print(f"ERROR: Todo ID {todo_id} not found.")
         sys.exit(1)
         
-    with open(todo_yml, "r") as f:
-        todos = yaml.safe_load(f) or {}
+    with open(todo_file, "r") as f:
+        data = yaml.safe_load(f) or {}
         
-    if "backlog" not in todos or todo_id not in todos["backlog"]:
-        print(f"ERROR: Todo ID {todo_id} not found in backlog.")
-        sys.exit(1)
-        
-    todo = todos["backlog"][todo_id]
+    todo = data.get(todo_id, {})
     
     # Handle old schema migration automatically
     if "rub_matrix" not in todo:
@@ -46,8 +42,8 @@ def main():
     if matrix["what"] and matrix["why"] and matrix["scope"]:
         todo["status"] = "RUBBED"
         
-    with open(todo_yml, "w") as f:
-        yaml.dump(todos, f, default_flow_style=False, sort_keys=False)
+    with open(todo_file, "w") as f:
+        yaml.dump({todo_id: todo}, f, default_flow_style=False, sort_keys=False)
         
     print(f"[RUB] Successfully updated {field.upper()} for {todo_id}. Status: {todo['status']}")
 

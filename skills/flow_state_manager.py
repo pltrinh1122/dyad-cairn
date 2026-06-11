@@ -454,19 +454,15 @@ if __name__ == "__main__":
             
         # Convert a parked todo into an injected node
         import yaml
-        todo_yml = "artifacts/todos.yml"
-        if not os.path.exists(todo_yml):
-            print("ERROR: No todos holding pen found.")
+        todo_file = f"artifacts/todos/{node}.yml"
+        if not os.path.exists(todo_file):
+            print(f"ERROR: Todo ID {node} not found.")
             sys.exit(1)
             
-        with open(todo_yml, "r") as f:
-            todos = yaml.safe_load(f) or {}
+        with open(todo_file, "r") as f:
+            data = yaml.safe_load(f) or {}
             
-        if "backlog" not in todos or node not in todos["backlog"]:
-            print(f"ERROR: Todo ID {node} not found in holding pen.")
-            sys.exit(1)
-            
-        todo = todos["backlog"][node]
+        todo = data.get(node, {})
         if todo.get("status") != "RUBBED":
             print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
             print("The intent has not been fully refined.")
@@ -488,9 +484,7 @@ if __name__ == "__main__":
         inject_node(node_id, f"Convert Todo: {node}", goal, scope)
         
         # Remove from backlog
-        del todos["backlog"][node]
-        with open(todo_yml, "w") as f:
-            yaml.dump(todos, f, default_flow_style=False, sort_keys=False)
+        os.remove(todo_file)
             
         print(f"[TODO] Successfully converted {node} into {node_id} (IN_REVIEW) with scope [{scope}].")
     elif action == "inject":

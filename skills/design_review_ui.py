@@ -7,12 +7,9 @@ import glob
 def present_design_review(node_id, state=None):
     state_file = os.environ.get("DYAD_DAG_STORE", "artifacts/frontier_state.yml")
     if state is None:
-        if not os.path.exists(state_file):
-            print(f"ERROR: {state_file} not found.")
-            sys.exit(1)
-            
-        with open(state_file, "r") as f:
-            state = yaml.safe_load(f) or {}
+        sys.path.append('.')
+        from skills.frontier_editor import load_state
+        state = load_state()
         
     nodes = state.get("nodes", {})
     if node_id not in nodes:

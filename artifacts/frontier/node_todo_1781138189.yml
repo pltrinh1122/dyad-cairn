@@ -1,0 +1,18 @@
+node_todo_1781138189:
+  title: 'Convert Todo: todo_1781138189'
+  goal: 'investigate an alternative to ''/goal'' for Executioner because our main
+    terminal is locked up during execution, preventing concurrent interaction like
+    rubbing other todos.
+
+
+    WHAT: Introduce an execute: <node_id> dialect. When issued, the Agent triggers
+    the invoke_subagent tool, spawning an autonomous subagent into an isolated git
+    worktree to execute the Node. The subagent runs completely asynchronously and
+    reports back upon completion.
+
+    WHY: To fully decouple the Steering interface from the Execution interface, allowing
+    the Operator to continuously interact in the main terminal while subagents execute
+    tasks asynchronously.'
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED

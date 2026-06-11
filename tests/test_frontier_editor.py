@@ -6,13 +6,13 @@ import tempfile
 def test_in_review_does_not_override_blocked(monkeypatch):
     from skills.frontier_editor import save_state
     
-    # Mock YML_FILE and MD_FILE
-    fd1, yml_path = tempfile.mkstemp(suffix=".yml")
-    os.close(fd1)
+    # Mock YML_DIR and MD_FILE
+    import shutil
+    yml_path = tempfile.mkdtemp()
     
-    md_path = yml_path.replace(".yml", ".md")
+    md_path = yml_path + "_md.md"
     
-    monkeypatch.setattr("skills.frontier_editor.YML_FILE", yml_path)
+    monkeypatch.setattr("skills.frontier_editor.YML_DIR", yml_path)
     monkeypatch.setattr("skills.frontier_editor.MD_FILE", md_path)
     
     # Mock ledger to be empty
@@ -58,6 +58,6 @@ def test_in_review_does_not_override_blocked(monkeypatch):
     # Actually, if we fix it, we should maybe strip the cached status if it's invalid?
     # Let's just assert the MD rendering has the right statuses for now.
     
-    os.remove(yml_path)
+    shutil.rmtree(yml_path)
     if os.path.exists(md_path):
         os.remove(md_path)

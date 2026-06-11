@@ -1,0 +1,15 @@
+todo_1781137609:
+  raw_thought: ensure that the elicitation_mode and the guards for advancing a todo->frontier
+    requires 'WHEN'. this means that the 'frontier' may need to be partitioned into
+    a ready-now and ready-when partition.
+  timestamp: '2026-06-10T17:26:49.841116Z'
+  rub_matrix:
+    what: Update the convert-todo mechanism to mandate a WHEN condition and partition
+      the Frontier into READY_NOW and READY_WHEN. Implement a semantic enforcement
+      guard that actively evaluates the WHEN condition against project telemetry or
+      structural state, automatically promoting nodes to READY_NOW only when their
+      specific triggers are demonstrably true.
+    why: To enforce Wu-Wei and act as a strict YAGNI safeguard, preventing the Operator
+      from prematurely building for a future that may not actually materialize.
+    scope: INTEGRITY
+  status: RUBBED

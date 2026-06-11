@@ -463,3 +463,11 @@
 - **2026-06-10 18:32:30** | `COMMONS_SYNC` | Pulled upstream commons commits.
 - **2026-06-10 18:32:32** | `TODO` | test_noisy_intent_12345
 - **2026-06-10 18:32:32** | `NODE-RETRO` | [node_todo_1781131693] Wired up remote GAP validation.
+- **2026-06-10 19:17:59** | `TODO` | identify guards to allow disabling of design-review-gate.
+- **2026-06-10 19:30:19** | `TODO` | put in place an overall goal for the upcoming troubleshooting to enable 'batch mode' of agent-execution of multiple executions
+- **2026-06-10 19:32:58** | `TODO` | UI of `read` doesn't provide sufficient context for Operator to understand the "what" of each todo-*
+- **2026-06-11 01:54:25** | `TODO` | Decompose monolithic state files (todos, frontier) into directories and configure union git merge strategy for append-only ledgers to safely support concurrent subagent executions.
+- **2026-06-11 02:13:27** | `TODO` | Test
+- **2026-06-11 02:13:40** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 02:14:32** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 02:16:44** | `TODO` | test_noisy_intent_12345

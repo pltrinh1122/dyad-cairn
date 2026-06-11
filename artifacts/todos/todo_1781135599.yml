@@ -1,0 +1,14 @@
+todo_1781135599:
+  raw_thought: investigate why "/goal" locks up the terminal and prevents concurrent
+    interaction; i.e. my prompts are being queued.
+  timestamp: '2026-06-10T16:53:19.232611Z'
+  rub_matrix:
+    what: Conduct deep research into the cognitive tax of context-switching within
+      the Dyad framework. Propose whether forcing sequential execution (the terminal
+      lockup) is an essential Wu-Wei constraint that protects Operator attention,
+      rather than a bug.
+    why: To determine if the cognitive tax of context-switching (multitasking) actually
+      overwhelms the productivity gain, thereby falsifying the need for a concurrent
+      execution architecture altogether.
+    scope: FRONTIER
+  status: RUBBED

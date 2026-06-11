@@ -4,42 +4,41 @@ import yaml
 import pytest
 import shutil
 
-TEST_YML = "artifacts/frontier_state.yml"
+TEST_DIR = "artifacts/frontier"
 
 @pytest.fixture
 def clean_dag(monkeypatch):
     monkeypatch.delenv("DYAD_DAG_STORE", raising=False)
+    # Setup
     os.makedirs("artifacts", exist_ok=True)
-    if os.path.exists(TEST_YML):
-        shutil.copy(TEST_YML, TEST_YML + ".bak")
+    if os.path.exists(TEST_DIR):
+        shutil.copytree(TEST_DIR, TEST_DIR + "_bak", dirs_exist_ok=True)
+        shutil.rmtree(TEST_DIR)
         
-    audit_yml = "artifacts/audit_state.yml"
-    if os.path.exists(audit_yml):
-        shutil.move(audit_yml, audit_yml + ".testbak")
+    audit_dir = "artifacts/audit"
+    if os.path.exists(audit_dir):
+        shutil.move(audit_dir, audit_dir + "_bak")
     
-    initial_state = {"nodes": {}}
-    with open(TEST_YML, "w") as f:
-        yaml.dump(initial_state, f)
+    os.makedirs(TEST_DIR, exist_ok=True)
         
     yield
     
-    if os.path.exists(TEST_YML + ".bak"):
-        shutil.move(TEST_YML + ".bak", TEST_YML)
+    if os.path.exists(TEST_DIR + "_bak"):
+        if os.path.exists(TEST_DIR):
+            shutil.rmtree(TEST_DIR)
+        shutil.move(TEST_DIR + "_bak", TEST_DIR)
         
-    if os.path.exists(audit_yml + ".testbak"):
-        shutil.move(audit_yml + ".testbak", audit_yml)
+    if os.path.exists(audit_dir + "_bak"):
+        if os.path.exists(audit_dir):
+            shutil.rmtree(audit_dir)
+        shutil.move(audit_dir + "_bak", audit_dir)
 
 def test_plan_injection_guard_fails_when_hallucinated(clean_dag, monkeypatch):
-    """
-    Test that directly saving a PLAN node without the parent PROBE being ACTIVE
-    or present in the ledger as DONE raises a CSI Guard exception.
-    """
     import sys
     sys.path.append('.')
     from skills.frontier_editor import load_state, save_state
     
     state = load_state()
-    # Attempt to hallucinate a PLAN node for a non-existent PROBE node 99
     state["nodes"]["node_99_plan_test"] = {
         "status": "READY",
         "title": "Hallucinated Plan",
@@ -47,21 +46,16 @@ def test_plan_injection_guard_fails_when_hallucinated(clean_dag, monkeypatch):
         "type": "PLAN"
     }
     
-    # We are not on the active/node_99_probe_... branch, so this should raise
     with pytest.raises(SystemExit) as excinfo:
         save_state(state)
     
     assert excinfo.value.code == 1
 
 def test_plan_injection_guard_passes_when_on_probe_branch(clean_dag, monkeypatch):
-    """
-    Test that saving a PLAN node is permitted if we are on the parent PROBE branch.
-    """
     import sys
     sys.path.append('.')
     from skills.frontier_editor import load_state, save_state
     
-    # Mock subprocess.run for git rev-parse to simulate being on the PROBE branch
     def mock_run(cmd, *args, **kwargs):
         class MockResult:
             returncode = 0
@@ -82,7 +76,6 @@ def test_plan_injection_guard_passes_when_on_probe_branch(clean_dag, monkeypatch
         "type": "PLAN"
     }
     
-    # Should not raise an exception
     save_state(state)
     
     saved = load_state()

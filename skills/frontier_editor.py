@@ -2,14 +2,27 @@ import sys
 import yaml
 import os
 
-YML_FILE = os.environ.get("DYAD_DAG_STORE", "artifacts/frontier_state.yml")
-MD_FILE = YML_FILE.replace(".yml", ".md")
+import glob
+
+YML_DIR = "artifacts/audit" if "audit" in os.environ.get("DYAD_DAG_STORE", "artifacts/frontier_state.yml") else "artifacts/frontier"
+CONFIG_FILE = "artifacts/audit_config.yml" if "audit" in YML_DIR else "artifacts/frontier_config.yml"
+MD_FILE = "artifacts/audit_state.md" if "audit" in YML_DIR else "artifacts/frontier_state.md"
 
 def load_state():
-    if not os.path.exists(YML_FILE):
-        return {"nodes": {}}
-    with open(YML_FILE, "r") as f:
-        return yaml.safe_load(f) or {"nodes": {}}
+    state = {"nodes": {}}
+    if os.path.exists(CONFIG_FILE):
+        with open(CONFIG_FILE, "r") as f:
+            c = yaml.safe_load(f) or {}
+            if "config" in c:
+                state["config"] = c["config"]
+    if os.path.exists(YML_DIR):
+        for fname in os.listdir(YML_DIR):
+            if fname.endswith(".yml"):
+                with open(os.path.join(YML_DIR, fname), "r") as f:
+                    node_data = yaml.safe_load(f) or {}
+                    for k, v in node_data.items():
+                        state["nodes"][k] = v
+    return state
 
 def save_state(state):
     sys.path.append('.')
@@ -80,6 +93,9 @@ def save_state(state):
         if derive_status(node_id, data, all_nodes) == "DONE":
             del state["nodes"][node_id]
             excised.append(node_id)
+            node_file = os.path.join(YML_DIR, f"{node_id}.yml")
+            if os.path.exists(node_file):
+                os.remove(node_file)
             
     # Clean up dependencies referencing excised nodes
     if excised:
@@ -87,14 +103,19 @@ def save_state(state):
             if "dependencies" in data:
                 data["dependencies"] = [d for d in data["dependencies"] if d not in excised]
                 
-    with open(YML_FILE, "w") as f:
-        yaml.dump(state, f, default_flow_style=False, sort_keys=False)
-        
+    os.makedirs(YML_DIR, exist_ok=True)
+    if "config" in state:
+        with open(CONFIG_FILE, "w") as f:
+            yaml.dump({"config": state["config"]}, f, default_flow_style=False, sort_keys=False)
+    for node_id, data in state["nodes"].items():
+        with open(os.path.join(YML_DIR, f"{node_id}.yml"), "w") as f:
+            yaml.dump({node_id: data}, f, default_flow_style=False, sort_keys=False)
+            
     # Generate MD projection (Materialized View)
     from skills.frontier_reader import build_tree
     
-    dag_name = "Audit State" if "audit" in YML_FILE else "Frontier State"
-    source_file = "artifacts/audit_state.yml" if "audit" in YML_FILE else "artifacts/frontier_state.yml"
+    dag_name = "Audit State" if "audit" in YML_DIR else "Frontier State"
+    source_file = "artifacts/audit" if "audit" in YML_DIR else "artifacts/frontier"
     
     md_lines = [
         f"# The {dag_name} (DAG)\n",

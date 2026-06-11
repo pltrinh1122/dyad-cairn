@@ -1,43 +1,49 @@
 import os
 import subprocess
 import yaml
+import shutil
 
 def test_todo_cli_execution():
-    todo_path = "artifacts/todos.yml"
-    original_content = ""
-    if os.path.exists(todo_path):
-        with open(todo_path, "r") as f:
-            original_content = f.read()
+    todo_dir = "artifacts/todos"
+    todo_bak = "artifacts/todos_bak"
+    if os.path.exists(todo_dir):
+        shutil.copytree(todo_dir, todo_bak, dirs_exist_ok=True)
+        shutil.rmtree(todo_dir)
+    os.makedirs(todo_dir, exist_ok=True)
             
     intent = "test_noisy_intent_12345"
     
     if "DYAD_DAG_STORE" in os.environ:
         del os.environ["DYAD_DAG_STORE"]
         
-    audit_path = "artifacts/audit_state.yml"
-    audit_bak = audit_path + ".testbak"
-    if os.path.exists(audit_path):
-        import shutil
-        shutil.move(audit_path, audit_bak)
+    audit_dir = "artifacts/audit"
+    audit_bak = "artifacts/audit_bak"
+    if os.path.exists(audit_dir):
+        shutil.move(audit_dir, audit_bak)
+        
+    frontier_dir = "artifacts/frontier"
+    frontier_bak = "artifacts/frontier_bak"
+    if os.path.exists(frontier_dir):
+        shutil.copytree(frontier_dir, frontier_bak, dirs_exist_ok=True)
+        shutil.rmtree(frontier_dir)
+    os.makedirs(frontier_dir, exist_ok=True)
         
     try:
         result = subprocess.run(["./bin/todo", intent], capture_output=True, text=True)
         assert result.returncode == 0, f"todo CLI failed: {result.stderr}"
         
-        assert os.path.exists(todo_path)
-        with open(todo_path, "r") as f:
-            content = f.read()
-        
-        assert intent in content, "Intent was not written to todos.yml"
-        
-        # Extract the todo_id
+        found = False
         todo_id = None
-        todos = yaml.safe_load(content)
-        for tid, tdata in todos["backlog"].items():
-            if tdata.get("raw_thought", tdata.get("intent", "")) == intent:
-                todo_id = tid
-                break
-        
+        for fname in os.listdir(todo_dir):
+            if fname.endswith(".yml"):
+                with open(os.path.join(todo_dir, fname), "r") as f:
+                    content = f.read()
+                    if intent in content:
+                        found = True
+                        data = yaml.safe_load(content)
+                        todo_id = list(data.keys())[0]
+                        break
+        assert found, "Intent was not written to todos dir"
         assert todo_id is not None
         
         # Verify it appended to the ledger
@@ -45,23 +51,10 @@ def test_todo_cli_execution():
             ledger_content = f.read()
             assert intent in ledger_content, "Intent was not logged to the ledger!"
             
-        # Test converting the todo
-        # The node_id will be node_todo_...
-        # We need to make sure we don't accidentally pollute the DAG if test fails, so we'll just check if it parses, but wait, convert-todo mutates frontier_state.yml!
-        # It's better to just ensure convert-todo successfully parses and runs without error, then we prune it from frontier_state.
-        
-        # Restore frontier_state.yml later
-        frontier_path = "artifacts/frontier_state.yml"
-        frontier_original = ""
-        if os.path.exists(frontier_path):
-            with open(frontier_path, "r") as f:
-                frontier_original = f.read()
-                
         try:
             subprocess.run(["./bin/rub", todo_id, "what", "test"])
             subprocess.run(["./bin/rub", todo_id, "why", "test"])
             
-            # 🚨 Intent Gate: Fails when scope is missing (meaning Matrix is not fully populated)
             conv_fail = subprocess.run(["./bin/node", "convert-todo", todo_id], capture_output=True, text=True)
             assert conv_fail.returncode != 0, "Intent Gate failed to block conversion with missing scope"
             assert "fully populated" in conv_fail.stdout
@@ -75,27 +68,23 @@ def test_todo_cli_execution():
             conv_res = subprocess.run(["./bin/node", "convert-todo", todo_id], capture_output=True, text=True)
             assert conv_res.returncode == 0, f"convert-todo failed: {conv_res.stderr}"
             
-            with open(todo_path, "r") as f:
-                new_todos = yaml.safe_load(f)
-            assert todo_id not in new_todos.get("backlog", {})
+            assert not os.path.exists(os.path.join(todo_dir, f"{todo_id}.yml"))
         finally:
-            if frontier_original:
-                with open(frontier_path, "w") as f:
-                    f.write(frontier_original)
+            pass
         
     finally:
-        # Restore original state
-        if original_content:
-            with open(todo_path, "w") as f:
-                f.write(original_content)
-        else:
-            if os.path.exists(todo_path):
-                os.remove(todo_path)
-                
-        # We also created a markdown file
+        if os.path.exists(todo_bak):
+            if os.path.exists(todo_dir):
+                shutil.rmtree(todo_dir)
+            shutil.move(todo_bak, todo_dir)
+            
+        if os.path.exists(frontier_bak):
+            if os.path.exists(frontier_dir):
+                shutil.rmtree(frontier_dir)
+            shutil.move(frontier_bak, frontier_dir)
+            
         if os.path.exists("artifacts/todos.md"):
             os.remove("artifacts/todos.md")
             
         if os.path.exists(audit_bak):
-            import shutil
-            shutil.move(audit_bak, audit_path)
+            shutil.move(audit_bak, audit_dir)

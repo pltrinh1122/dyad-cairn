@@ -1,0 +1,12 @@
+todo_1781138338:
+  raw_thought: '`read:` or `read` or `read.` without qualifiers can default to `read:
+    quarries` to reduce physical load for Operator.'
+  timestamp: '2026-06-10T17:38:58.583829Z'
+  rub_matrix:
+    what: 'Update AGENT.md (and interaction parsers) to semantically map a naked read:,
+      read, or read. implicitly to read: quarries. This instructs the Agent to automatically
+      execute the quarry readout without clarification.'
+    why: To reduce physical keystrokes and token expenditure, minimizing mechanical
+      toil to preserve Wu-Wei.
+    scope: SUBSTRATE
+  status: RUBBED

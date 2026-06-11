@@ -1,0 +1,13 @@
+todo_1781137401:
+  raw_thought: Monitor and falsify whether sequential enforcement of the ask_question
+    UI lock during the Rub phase is too constraining in practice.
+  timestamp: '2026-06-10T17:23:21.180915Z'
+  rub_matrix:
+    what: Establish an ongoing observation period where the Operator evaluates the
+      Agent's inferential hit-rate during the Rub phase. If the escape hatch is used
+      too frequently, the interaction model will be flagged for re-evaluation.
+    why: To ensure the rigid modal remains a high-leverage feature (via quick exits)
+      rather than annoying toil, which strictly requires calibrating the Agent's inferential
+      accuracy.
+    scope: INTEGRITY
+  status: RUBBED

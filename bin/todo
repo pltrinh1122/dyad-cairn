@@ -10,37 +10,38 @@ def append_todo(intent):
     from skills import ledger_manager
     ledger_manager.append_ledger("todo", intent)
 
-    todo_dir = "artifacts"
+    todo_dir = "artifacts/todos"
     os.makedirs(todo_dir, exist_ok=True)
-    todo_yml = os.path.join(todo_dir, "todos.yml")
-    todo_md = os.path.join(todo_dir, "todos.md")
+    todo_md = os.path.join("artifacts", "todos.md")
     
     timestamp = datetime.datetime.utcnow().isoformat() + "Z"
     todo_id = f"todo_{int(datetime.datetime.utcnow().timestamp())}"
     
     # Update YAML
-    if os.path.exists(todo_yml):
-        with open(todo_yml, "r") as f:
-            todos = yaml.safe_load(f) or {}
-    else:
-        todos = {}
-        
-    if "backlog" not in todos:
-        todos["backlog"] = {}
-        
-    todos["backlog"][todo_id] = {
-        "raw_thought": intent,
-        "timestamp": timestamp,
-        "rub_matrix": {
-            "what": None,
-            "why": None,
-            "scope": None
-        },
-        "status": "UNRUBBED"
+    todo_file = os.path.join(todo_dir, f"{todo_id}.yml")
+    data = {
+        todo_id: {
+            "raw_thought": intent,
+            "timestamp": timestamp,
+            "rub_matrix": {
+                "what": None,
+                "why": None,
+                "scope": None
+            },
+            "status": "UNRUBBED"
+        }
     }
-    
-    with open(todo_yml, "w") as f:
-        yaml.dump(todos, f, default_flow_style=False, sort_keys=False)
+    with open(todo_file, "w") as f:
+        yaml.dump(data, f, default_flow_style=False, sort_keys=False)
+        
+    todos = {"backlog": {}}
+    if os.path.exists(todo_dir):
+        for fname in sorted(os.listdir(todo_dir)):
+            if fname.endswith(".yml"):
+                with open(os.path.join(todo_dir, fname), "r") as file_obj:
+                    d = yaml.safe_load(file_obj) or {}
+                    for k, v in d.items():
+                        todos["backlog"][k] = v
         
     # Project Markdown View
     with open(todo_md, "w") as f:

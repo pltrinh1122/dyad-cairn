@@ -109,10 +109,11 @@ def build_tree(nodes):
 
 def main():
     try:
-        yml_file = os.environ.get("DYAD_DAG_STORE", "artifacts/frontier_state.yml")
-        with open(yml_file, "r") as f:
-            state = yaml.safe_load(f)
+        sys.path.append('.')
+        from skills.frontier_editor import load_state
+        state = load_state()
         nodes = state.get('nodes', {})
+        yml_file = os.environ.get("DYAD_DAG_STORE", "artifacts/frontier_state.yml")
         dag_name = "AUDIT DAG" if "audit" in yml_file else "FRONTIER DAG"
         print("================================================================================")
         print(f"📋 [MECHANICAL UI PRESENTATION: {dag_name}]")
