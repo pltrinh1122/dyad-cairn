@@ -531,3 +531,6 @@
 - **2026-06-11 04:29:45** | `TODO` | fix `read`-UI to update recently executed tod.
 - **2026-06-11 04:36:27** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:36:28** | `NODE-RETRO` | [node_todo_1781177385] [TRIGGER: operator] Patched complete_node to execute git rm on artifacts/ and commit the changes to synchronize state.
+- **2026-06-11 04:53:20** | `TODO` | fix "/rub all" - it should behave as a consecutive set of individual /rub.  currently, it's enforcing a strict series of prompts but instead of should have just recursively invoked the functioning "/rub"
+- **2026-06-11 04:55:36** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:55:36** | `NODE-RETRO` | [node_todo_1781178800] [TRIGGER: operator] Refined /rub-all to recursively invoke standard /rub sequence

@@ -433,3 +433,6 @@
 {"timestamp": "2026-06-11T04:29:45.834301+00:00Z", "action": "TODO", "message": "fix `read`-UI to update recently executed tod."}
 {"timestamp": "2026-06-11T04:36:27.884265+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-11T04:36:28.155747+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781177385] [TRIGGER: operator] Patched complete_node to execute git rm on artifacts/ and commit the changes to synchronize state."}
+{"timestamp": "2026-06-11T04:53:20.456082+00:00Z", "action": "TODO", "message": "fix \"/rub all\" - it should behave as a consecutive set of individual /rub.  currently, it's enforcing a strict series of prompts but instead of should have just recursively invoked the functioning \"/rub\""}
+{"timestamp": "2026-06-11T04:55:36.350289+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T04:55:36.620177+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781178800] [TRIGGER: operator] Refined /rub-all to recursively invoke standard /rub sequence"}

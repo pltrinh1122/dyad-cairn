@@ -5,4 +5,5 @@
 > WIP-N=1 mechanically enforced by `skills/frontier_editor.py`.
 
 ```text
+├── node_todo_1781144279 [AUTHORIZED] [PLAN] [SUBSTRATE]: Convert Todo: todo_1781144279
 ```
