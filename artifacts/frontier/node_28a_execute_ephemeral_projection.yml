@@ -1,7 +1,0 @@
-node_28a_execute_ephemeral_projection:
-  title: Decomposed from node_28_probe_ledger_projection_sync
-  goal: Execute the Ephemeral Projection strategy by untracking artifacts/frontier_state.md,
-    adding it to .gitignore, and ensuring bin/read generates it purely on-the-fly.
-  type: PLAN
-  scope: FRONTIER
-  status: IN_REVIEW
