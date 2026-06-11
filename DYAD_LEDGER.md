@@ -499,3 +499,7 @@
 - **2026-06-11 04:11:18** | `NODE-RETRO` | [node_todo_1781175915] Implemented Materialized Dependency Guard in flow_state_manager to block blind execution of missing prerequisites.
 - **2026-06-11 04:11:20** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:11:21** | `NODE-RETRO` | [node_todo_1781175668] Implemented bin/lean to orchestrate batch conversion and steering for parallel subagent execution.
+- **2026-06-11 04:15:09** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:15:27** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:15:41** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:15:41** | `NODE-RETRO` | [node_todo_1781139419] [TRIGGER: autonomous] Bypassed Design-Review gate for operator-rubbed nodes to drop directly into AUTHORIZED state.

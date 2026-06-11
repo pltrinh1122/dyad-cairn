@@ -401,3 +401,7 @@
 {"timestamp": "2026-06-11T04:11:18.645833+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781175915] Implemented Materialized Dependency Guard in flow_state_manager to block blind execution of missing prerequisites."}
 {"timestamp": "2026-06-11T04:11:20.838980+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-11T04:11:21.057054+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781175668] Implemented bin/lean to orchestrate batch conversion and steering for parallel subagent execution."}
+{"timestamp": "2026-06-11T04:15:09.134885+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T04:15:27.911734+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T04:15:41.472095+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T04:15:41.711355+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781139419] [TRIGGER: autonomous] Bypassed Design-Review gate for operator-rubbed nodes to drop directly into AUTHORIZED state."}
