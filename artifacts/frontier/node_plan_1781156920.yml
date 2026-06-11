@@ -1,0 +1,9 @@
+node_plan_1781156920:
+  title: Rename local AGENT.md to DYAD.md
+  goal: Rename the local AGENT.md to DYAD.md to resolve the ontological naming collision
+    with the Commons, and update skills/anchor_compiler.py to explicitly project the
+    rules from DYAD.md into the GEMINI.md platform shim. Update any local hardcoded
+    references.
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED
