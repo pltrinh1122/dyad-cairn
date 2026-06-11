@@ -24,7 +24,8 @@ def main():
     for i, (tid, data) in enumerate(items):
         prefix = "└──" if i == len(items) - 1 else "├──"
         intent = data.get('intent', data.get('raw_thought', ''))
-        print(f"{prefix} {tid} ({data.get('timestamp', '')}): {intent}")
+        status = data.get('status', 'UNRUBBED')
+        print(f"{prefix} [{status}] {tid} ({data.get('timestamp', '')}): {intent}")
 
 if __name__ == "__main__":
     main()
