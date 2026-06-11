@@ -64,9 +64,8 @@ def test_todo_cli_execution():
             assert conv_fail2.returncode != 0, "Intent Gate failed to block conversion with invalid scope"
             assert "FRONTIER, INTEGRITY, SUBSTRATE" in conv_fail2.stdout
             
-            subprocess.run(["./bin/rub", todo_id, "scope", "SUBSTRATE"])
-            conv_res = subprocess.run(["./bin/node", "convert-todo", todo_id], capture_output=True, text=True)
-            assert conv_res.returncode == 0, f"convert-todo failed: {conv_res.stderr}"
+            rub_res = subprocess.run(["./bin/rub", todo_id, "scope", "SUBSTRATE"], capture_output=True, text=True)
+            assert rub_res.returncode == 0, f"rub automatic convert failed: {rub_res.stderr}\nSTDOUT:\n{rub_res.stdout}"
             
             assert not os.path.exists(os.path.join(todo_dir, f"{todo_id}.yml"))
         finally:

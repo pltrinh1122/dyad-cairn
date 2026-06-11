@@ -10,8 +10,8 @@ echo "SYNCHRONIZING COMMONS SUBMODULE"
 echo "=========================================================================="
 
 cd commons || exit 1
-git checkout main
-git pull --rebase origin main
+git fetch origin main
+git checkout origin/main
 if [ $? -ne 0 ]; then
     echo "[ERROR] Failed to pull from commons upstream."
     exit 1
