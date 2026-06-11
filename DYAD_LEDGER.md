@@ -602,3 +602,7 @@
 - **2026-06-11 14:52:29** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 14:52:39** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 14:52:39** | `NODE-RETRO` | [node_28_probe_ledger_projection_sync] Conducted Design Review. Reached architectural consensus to abolish tracked frontier_state.md, establishing the Ephemeral Projection strategy and moving the materialized view to .gitignore.
+- **2026-06-11 14:59:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:59:38** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 15:00:44** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 15:00:44** | `NODE-RETRO` | [node_28a_execute_ephemeral_projection] Implemented Ephemeral Projection strategy: untracked materialized views, updated .gitignore, and modified flow_state_manager to inject DAG snapshots directly into PR bodies.
