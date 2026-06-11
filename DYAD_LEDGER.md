@@ -492,3 +492,8 @@
 - **2026-06-11 03:57:07** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 03:57:09** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 03:57:09** | `NODE-RETRO` | [node_todo_1781174502] Introduced report: executed dialect invoking bin/report to aggregate completed node executions categorized by trigger.
+- **2026-06-11 04:01:08** | `TODO` | ensure "batch" execution of rubbed node executes resiliently where execution dependencies are honored to prevent unintentional invariant violation and unecessarily difficult merge errors.  the trigger i want to use is "lean: todo1 todo2 ..." or "lean: rubbed".
+- **2026-06-11 04:05:15** | `TODO` | Enforce the Pre-requisite Verification Invariant: All nodes must physically verify their pre-requisite invariants before execution. Depending on DAG topology alone is fragile.
+- **2026-06-11 04:11:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:11:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:11:18** | `NODE-RETRO` | [node_todo_1781175915] Implemented Materialized Dependency Guard in flow_state_manager to block blind execution of missing prerequisites.
