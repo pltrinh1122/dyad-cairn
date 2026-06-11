@@ -436,3 +436,9 @@
 {"timestamp": "2026-06-11T04:53:20.456082+00:00Z", "action": "TODO", "message": "fix \"/rub all\" - it should behave as a consecutive set of individual /rub.  currently, it's enforcing a strict series of prompts but instead of should have just recursively invoked the functioning \"/rub\""}
 {"timestamp": "2026-06-11T04:55:36.350289+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-11T04:55:36.620177+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781178800] [TRIGGER: operator] Refined /rub-all to recursively invoke standard /rub sequence"}
+{"timestamp": "2026-06-11T05:08:17.708200+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T05:08:53.695582+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T05:09:12.011104+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T05:09:28.711553+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T05:09:42.600764+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T05:09:42.893638+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781179446] [TRIGGER: autonomous] Implemented bin/unrub to reverse nodes to UNRUBBED"}

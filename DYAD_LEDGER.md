@@ -534,3 +534,9 @@
 - **2026-06-11 04:53:20** | `TODO` | fix "/rub all" - it should behave as a consecutive set of individual /rub.  currently, it's enforcing a strict series of prompts but instead of should have just recursively invoked the functioning "/rub"
 - **2026-06-11 04:55:36** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:55:36** | `NODE-RETRO` | [node_todo_1781178800] [TRIGGER: operator] Refined /rub-all to recursively invoke standard /rub sequence
+- **2026-06-11 05:08:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:08:53** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:09:12** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:09:28** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:09:42** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:09:42** | `NODE-RETRO` | [node_todo_1781179446] [TRIGGER: autonomous] Implemented bin/unrub to reverse nodes to UNRUBBED

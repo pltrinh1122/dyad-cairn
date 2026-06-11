@@ -1,0 +1,71 @@
+#!/usr/bin/env python3
+import sys
+import os
+import yaml
+import datetime
+
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: ./bin/unrub <node_id>...")
+        sys.exit(1)
+
+    node_ids = sys.argv[1:]
+    
+    YML_DIR = "artifacts/audit" if "audit" in os.environ.get("DYAD_DAG_STORE", "artifacts/frontier_state.yml") else "artifacts/frontier"
+
+    success_count = 0
+    for node_id in node_ids:
+        node_file = os.path.join(YML_DIR, f"{node_id}.yml")
+        if not os.path.exists(node_file):
+            print(f"ERROR: Node {node_id} not found in {YML_DIR}.")
+            continue
+            
+        with open(node_file, "r") as f:
+            data = yaml.safe_load(f) or {}
+            
+        node = data.get(node_id, {})
+        
+        if node_id.startswith("node_todo_"):
+            todo_id = node_id.replace("node_", "")
+        else:
+            print(f"ERROR: Node {node_id} does not follow 'node_todo_*' naming convention. Cannot derive todo_id.")
+            continue
+            
+        goal = node.get("goal", "")
+        scope = node.get("scope", None)
+        
+        parts = goal.split("\n\nWHAT:", 1)
+        raw_thought = parts[0].strip() if parts else goal.strip()
+        
+        todo_file = f"artifacts/todos/{todo_id}.yml"
+        
+        todo_data = {
+            todo_id: {
+                "raw_thought": raw_thought,
+                "timestamp": datetime.datetime.utcnow().isoformat() + "Z",
+                "rub_matrix": {
+                    "what": None,
+                    "why": None,
+                    "scope": scope
+                },
+                "status": "UNRUBBED"
+            }
+        }
+        
+        os.makedirs("artifacts/todos", exist_ok=True)
+        with open(todo_file, "w") as f:
+            yaml.dump(todo_data, f, default_flow_style=False, sort_keys=False)
+            
+        os.remove(node_file)
+        print(f"[UNRUB] Successfully unrubbed {node_id} to {todo_id}.")
+        success_count += 1
+        
+    if success_count > 0:
+        print("[UNRUB] Regenerating Materialized View...")
+        res = __import__("subprocess").run(["python3", "skills/frontier_editor.py"])
+        if res.returncode != 0:
+            print(f"[UNRUB] ERROR: Materialized View regeneration failed with exit code {res.returncode}")
+            sys.exit(res.returncode)
+
+if __name__ == "__main__":
+    main()
