@@ -357,10 +357,15 @@ def complete_node(node_id, retro_msg):
     from skills import ledger_manager
     full_retro_msg = f"[{node_id}] {retro_msg}"
     ledger_manager.append_ledger("node-retro", full_retro_msg)
-    run_cmd('git add DYAD_LEDGER.md dyad-state/ledger.jsonl && git commit -m "chore(ledger): retro synthesis for completion"')
-        
     print(f"[FLOW] Tests passed mechanically. Transitioning Node {node_id} to DONE.")
     run_cmd(f"python3 skills/frontier_editor.py {node_id} DONE")
+    
+    if "node_todo_" in node_id:
+        todo_id = node_id.replace("node_", "")
+        todo_file = f"artifacts/todos/{todo_id}.yml"
+        if os.path.exists(todo_file):
+            os.remove(todo_file)
+            print(f"[FLOW] Cleaned up completed todo file: {todo_file}")
     
     # 4. Automatic Decomposition for PROBE nodes
     if "_probe_" in node_id or node_id.endswith("_probe"):
@@ -384,6 +389,9 @@ def complete_node(node_id, retro_msg):
                         goal = m.group(2).strip('"\'')
                         print(f"       -> Injecting {new_node_id} [{parent_scope}]")
                         inject_node(new_node_id, f"Decomposed from {node_id}", goal, parent_scope)
+    
+    # Finally, commit the ledger and any state file deletions (e.g. artifacts/)
+    run_cmd('git add -u artifacts/ && git add DYAD_LEDGER.md dyad-state/ledger.jsonl && git commit -m "chore(ledger): retro synthesis for completion"', allow_fail=True)
 
 def trail_reflect(trail_id, retro_msg=None):
     print(f"[FLOW] Executing Trail Reflect for {trail_id}...")
