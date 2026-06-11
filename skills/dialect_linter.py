@@ -94,6 +94,18 @@ def audit_dialect():
                                 except:
                                     pass
 
+            # CSI GUARD: Prevent Auto-Rub of Todos
+            if parsed_content.startswith("todo:"):
+                for j in range(i+1, len(steps)):
+                    next_step = steps[j]
+                    if next_step.get("type") == "USER_INPUT":
+                        break
+                    if next_step.get("type") == "PLANNER_RESPONSE":
+                        tool_calls = next_step.get("tool_calls", [])
+                        for tc in tool_calls:
+                            if tc.get("function", {}).get("name") == "default_api:ask_question":
+                                violations.append(f"Violation at step {step.get('step_index')}: Operator issued 'todo:', but Agent auto-invoked ask_question (Auto-Rub). Agent must quietly park the intent in the backlog without friction.")
+
             # Check for `retro:`
             if parsed_content.startswith("retro:"):
                 used_retro = False
