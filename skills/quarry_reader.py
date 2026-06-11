@@ -62,8 +62,11 @@ def main():
         items = list(backlog.items())
         for i, (tid, data) in enumerate(items):
             prefix = "   └──" if i == len(items) - 1 else "   ├──"
-            intent = data.get('intent', 'UNKNOWN')
-            print(f"{prefix} {tid}: {intent}")
+            status = data.get('status', 'UNRUBBED')
+            raw_thought = data.get('raw_thought', 'UNKNOWN')
+            if len(raw_thought) > 60:
+                raw_thought = raw_thought[:57] + "..."
+            print(f"{prefix} {tid} [{status}]: {raw_thought}")
             
     print("")
     print("--- [SUBSTRATE] (Monitoring & Remediation) ---")

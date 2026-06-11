@@ -33,8 +33,22 @@ def audit_dialect():
             # Remove <USER_REQUEST> wrappers for parsing
             parsed_content = content.replace("<USER_REQUEST>", "").replace("</USER_REQUEST>", "").strip()
             
-            # Check for `read:`
-            if parsed_content.startswith("read:"):
+            # Check for `read:` naked defaults
+            if parsed_content in ("read:", "read", "read."):
+                used_read = False
+                for j in range(i+1, len(steps)):
+                    next_step = steps[j]
+                    if next_step.get("type") == "USER_INPUT":
+                        break
+                    if next_step.get("type") == "PLANNER_RESPONSE":
+                        tool_calls = next_step.get("tool_calls", [])
+                        for tc in tool_calls:
+                            if "bin/read quarries" in str(tc.get("args", "")):
+                                used_read = True
+                
+                if not used_read:
+                    violations.append(f"Violation at step {step.get('step_index')}: Operator issued a naked '{parsed_content}', but Agent failed to mechanically invoke './bin/read quarries'.")
+            elif parsed_content.startswith("read:"):
                 pass
                     
             # CSI GUARD: The Asymmetric Downgrade Invariant
@@ -63,6 +77,35 @@ def audit_dialect():
                             if "bin/" in str(tc.get("args", "")):
                                 violations.append(f"Violation at step {step.get('step_index')}: Operator issued 'rub?' requesting a Conversational Rub-Back, but Agent executed a script. Agent must not execute scripts when 'rub?' is used.")
                         
+            # CSI GUARD: The Batch Elicitation (/rub-all)
+            if parsed_content.startswith("/rub all") or parsed_content.startswith("/rub-all"):
+                for j in range(i+1, len(steps)):
+                    next_step = steps[j]
+                    if next_step.get("type") == "USER_INPUT":
+                        break
+                    if next_step.get("type") == "PLANNER_RESPONSE":
+                        tool_calls = next_step.get("tool_calls", [])
+                        for tc in tool_calls:
+                            if tc.get("function", {}).get("name") == "default_api:ask_question":
+                                try:
+                                    args = json.loads(tc.get("function", {}).get("arguments", "{}"))
+                                    if len(args.get("questions", [])) > 1:
+                                        violations.append(f"Violation at step {step.get('step_index')}: Operator issued '/rub-all', but Agent batched multiple questions in ask_question. Agent must recursively invoke the individual /rub flow (WHY first) and not batch prompts.")
+                                except:
+                                    pass
+
+            # CSI GUARD: Prevent Auto-Rub of Todos
+            if parsed_content.startswith("todo:"):
+                for j in range(i+1, len(steps)):
+                    next_step = steps[j]
+                    if next_step.get("type") == "USER_INPUT":
+                        break
+                    if next_step.get("type") == "PLANNER_RESPONSE":
+                        tool_calls = next_step.get("tool_calls", [])
+                        for tc in tool_calls:
+                            if tc.get("function", {}).get("name") == "default_api:ask_question":
+                                violations.append(f"Violation at step {step.get('step_index')}: Operator issued 'todo:', but Agent auto-invoked ask_question (Auto-Rub). Agent must quietly park the intent in the backlog without friction.")
+
             # Check for `retro:`
             if parsed_content.startswith("retro:"):
                 used_retro = False
@@ -89,7 +132,7 @@ def audit_dialect():
             # CSI GUARD: Operator CTA for Pure Commands
             # If Operator uses a raw command without a dialect prefix, the Agent must NOT silently execute it.
             # It must convert it to an Operator CTA.
-            known_prefixes = ["read:", "audit:", "rub:", "rub?", "retro:", "lean:", "lean?", "lean", "lean.", "riff:", "execute:", "plan:", "probe:", "todo:", "report:", "/", "diff:", "fb:", "Y", "N", "yes", "no"]
+            known_prefixes = ["read:", "read", "read.", "clip:", "clip", "clip.", "audit:", "rub:", "rub?", "retro:", "lean:", "lean?", "lean", "lean.", "riff:", "execute:", "plan:", "probe:", "todo:", "report:", "/", "diff:", "fb:", "Y", "N", "yes", "no"]
             has_prefix = any(parsed_content.startswith(p) for p in known_prefixes)
             if not has_prefix and parsed_content:
                 for j in range(i+1, len(steps)):

@@ -47,5 +47,12 @@ def main():
         
     print(f"[RUB] Successfully updated {field.upper()} for {todo_id}. Status: {todo['status']}")
 
+    if todo.get("status") == "RUBBED":
+        print(f"[RUB] Automatically converting {todo_id} to DAG node...")
+        res = __import__("subprocess").run(["./bin/node", "convert-todo", todo_id])
+        if res.returncode != 0:
+            print(f"[RUB] ERROR: Auto-convert failed with exit code {res.returncode}")
+            sys.exit(res.returncode)
+
 if __name__ == "__main__":
     main()

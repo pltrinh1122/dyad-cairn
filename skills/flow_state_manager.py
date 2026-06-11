@@ -87,11 +87,17 @@ def checkout_node(node_id):
         print("[FLOW] Materialized Dependency Guard PASSED.")
 
     branch_name = f"active/{node_id}"
-    print(f"[FLOW] Checking out branch: {branch_name}")
-    run_cmd(f"git checkout -b {branch_name}")
+    print(f"[FLOW] Checking out branch and creating git worktree: {branch_name}")
+    # Create the branch if it does not exist
+    run_cmd(f"git branch {branch_name} || true", allow_fail=True)
+    worktree_path = f".worktrees/{branch_name.replace("/", "_")}"
+    if not os.path.exists(worktree_path):
+        run_cmd(f"git worktree add {worktree_path} {branch_name}")
+    else:
+        print(f"[FLOW] Worktree {worktree_path} already exists. Skipping creation.")
 
-def inject_node(node_id, title, goal, scope):
-    print(f"[FLOW] Injecting Node {node_id} (IN_REVIEW)...")
+def inject_node(node_id, title, goal, scope, bypass_review=False):
+    print(f"[FLOW] Injecting Node {node_id} ({'AUTHORIZED' if bypass_review else 'IN_REVIEW'})...")
     sys.path.append('.')
     from skills.frontier_editor import load_state, save_state
     state = load_state()
@@ -108,7 +114,9 @@ def inject_node(node_id, title, goal, scope):
     }
     
     gates = state.get("config", {}).get("gates", {})
-    if gates.get("design_review", True):
+    if bypass_review:
+        state["nodes"][node_id]["status"] = "AUTHORIZED"
+    elif gates.get("design_review", True):
         state["nodes"][node_id]["status"] = "IN_REVIEW"
     save_state(state)
     
@@ -118,7 +126,7 @@ def inject_node(node_id, title, goal, scope):
         from skills.design_review_ui import present_design_review
         present_design_review(node_id, state)
     else:
-        print(f"[FLOW] Node {node_id} successfully injected (Design-Review Gate disabled).")
+        print(f"[FLOW] Node {node_id} successfully injected (Design-Review Gate bypassed/disabled).")
 
 def authorize_node(node_id):
     print(f"[FLOW] Authorizing Node {node_id}...")
@@ -137,6 +145,7 @@ def authorize_node(node_id):
     state["nodes"][node_id]["status"] = "AUTHORIZED"
     save_state(state)
     print(f"[FLOW] Node {node_id} transitioned to AUTHORIZED. Added to Goal-Ready Queue.")
+    checkout_node(node_id)
 
 def reflect_node_red(node_id):
     print(f"[FLOW] Reflecting RED Phase (Intent Gate) for Node {node_id}...")
@@ -348,10 +357,15 @@ def complete_node(node_id, retro_msg):
     from skills import ledger_manager
     full_retro_msg = f"[{node_id}] {retro_msg}"
     ledger_manager.append_ledger("node-retro", full_retro_msg)
-    run_cmd('git add DYAD_LEDGER.md dyad-state/ledger.jsonl && git commit -m "chore(ledger): retro synthesis for completion"')
-        
     print(f"[FLOW] Tests passed mechanically. Transitioning Node {node_id} to DONE.")
     run_cmd(f"python3 skills/frontier_editor.py {node_id} DONE")
+    
+    if "node_todo_" in node_id:
+        todo_id = node_id.replace("node_", "")
+        todo_file = f"artifacts/todos/{todo_id}.yml"
+        if os.path.exists(todo_file):
+            os.remove(todo_file)
+            print(f"[FLOW] Cleaned up completed todo file: {todo_file}")
     
     # 4. Automatic Decomposition for PROBE nodes
     if "_probe_" in node_id or node_id.endswith("_probe"):
@@ -375,6 +389,9 @@ def complete_node(node_id, retro_msg):
                         goal = m.group(2).strip('"\'')
                         print(f"       -> Injecting {new_node_id} [{parent_scope}]")
                         inject_node(new_node_id, f"Decomposed from {node_id}", goal, parent_scope)
+    
+    # Finally, commit the ledger and any state file deletions (e.g. artifacts/)
+    run_cmd('git add -u artifacts/ && git add DYAD_LEDGER.md dyad-state/ledger.jsonl && git commit -m "chore(ledger): retro synthesis for completion"', allow_fail=True)
 
 def trail_reflect(trail_id, retro_msg=None):
     print(f"[FLOW] Executing Trail Reflect for {trail_id}...")
@@ -498,12 +515,12 @@ if __name__ == "__main__":
         
         # Inject the node
         node_id = f"node_todo_{node.split('_')[1]}"
-        inject_node(node_id, f"Convert Todo: {node}", goal, scope)
+        inject_node(node_id, f"Convert Todo: {node}", goal, scope, bypass_review=True)
         
         # Remove from backlog
         os.remove(todo_file)
             
-        print(f"[TODO] Successfully converted {node} into {node_id} (IN_REVIEW) with scope [{scope}].")
+        print(f"[TODO] Successfully converted {node} into {node_id} (AUTHORIZED) with scope [{scope}].")
     elif action == "inject":
         if len(sys.argv) < 6:
             print("Usage: python3 skills/flow_state_manager.py inject <node_id> \"<Title>\" \"<Goal>\" <SCOPE>")

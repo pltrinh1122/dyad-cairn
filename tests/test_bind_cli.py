@@ -12,7 +12,7 @@ def test_verify_and_bind_success():
          patch('subprocess.run') as mock_sub_run, \
          patch('skills.ledger_manager.append_ledger') as mock_append:
         
-        mock_run_cmd.return_value = "AGENT.md\nskills/flow_state_manager.py\n"
+        mock_run_cmd.return_value = "DYAD.md\nskills/flow_state_manager.py\n"
         
         mock_sub_run.return_value = MagicMock(returncode=0)
         
@@ -50,7 +50,7 @@ def test_verify_and_bind_missing_mechanics(capsys):
          patch('sys.exit') as mock_exit:
         mock_exit.side_effect = SystemExit
         
-        mock_run_cmd.return_value = "AGENT.md\n"
+        mock_run_cmd.return_value = "DYAD.md\n"
         
         try:
             ontological_binder.verify_and_bind("Testing bond")

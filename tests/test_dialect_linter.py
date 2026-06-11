@@ -84,3 +84,97 @@ def test_dialect_linter_with_mock_transcript(tmp_path):
     assert result.returncode == 1
     assert "CSI GUARDRAIL BLOCK" in result.stdout
     assert "Operator CTA" in result.stdout
+
+    # Scenario 7: User says naked `read:`, Agent fails to invoke `bin/read quarries`
+    with open(transcript_path, "w") as f:
+        f.write(json.dumps({"type": "USER_INPUT", "content": "read:\n", "step_index": 9}) + "\n")
+        f.write(json.dumps({"type": "PLANNER_RESPONSE", "tool_calls": [{"args": "{\"CommandLine\": \"./bin/read frontier\"}"}]}) + "\n")
+        
+    result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
+    assert result.returncode == 1
+    assert "failed to mechanically invoke './bin/read quarries'" in result.stdout
+
+    # Scenario 8: User says naked `read:`, Agent invokes `bin/read quarries` correctly
+    with open(transcript_path, "w") as f:
+        f.write(json.dumps({"type": "USER_INPUT", "content": "read:\n", "step_index": 10}) + "\n")
+        f.write(json.dumps({"type": "PLANNER_RESPONSE", "tool_calls": [{"args": "{\"CommandLine\": \"./bin/read quarries\"}"}]}) + "\n")
+        
+    result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
+    assert result.returncode == 0
+
+def test_rub_all_no_batching(tmp_path):
+    env = os.environ.copy()
+    conv_id = "test_conv_id_ruball"
+    env["ANTIGRAVITY_CONVERSATION_ID"] = conv_id
+
+    brain_dir = tmp_path / ".gemini" / "antigravity-cli" / "brain" / conv_id / ".system_generated" / "logs"
+    brain_dir.mkdir(parents=True, exist_ok=True)
+    transcript_path = brain_dir / "transcript.jsonl"
+
+    mock_script = tmp_path / "mock_linter.py"
+    with open("skills/dialect_linter.py", "r") as f:
+        content = f.read()
+        content = content.replace('~/.gemini', str(tmp_path / '.gemini'))
+
+    with open(mock_script, "w") as f:
+        f.write(content)
+
+    # Valid: single question
+    with open(transcript_path, "w") as f:
+        f.write(json.dumps({"type": "USER_INPUT", "content": "/rub-all"}) + "\n")
+        f.write(json.dumps({"type": "PLANNER_RESPONSE", "tool_calls": [
+            {"function": {"name": "default_api:ask_question", "arguments": "{\"questions\": [{\"question\": \"WHY?\"}]}"}}
+        ]}) + "\n")
+
+    result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
+    assert result.returncode == 0
+    assert "Violation" not in result.stdout
+
+    # Invalid: multiple questions
+    with open(transcript_path, "w") as f:
+        f.write(json.dumps({"type": "USER_INPUT", "content": "/rub all"}) + "\n")
+        f.write(json.dumps({"type": "PLANNER_RESPONSE", "tool_calls": [
+            {"function": {"name": "default_api:ask_question", "arguments": "{\"questions\": [{\"question\": \"WHAT?\"}, {\"question\": \"WHY?\"}]}"}}
+        ]}) + "\n")
+
+    result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
+    assert result.returncode == 1
+    assert "batched multiple questions" in result.stdout
+
+
+def test_prevent_auto_rub_todo(tmp_path):
+    env = os.environ.copy()
+    conv_id = "test_conv_id_todo_autorub"
+    env["ANTIGRAVITY_CONVERSATION_ID"] = conv_id
+
+    brain_dir = tmp_path / ".gemini" / "antigravity-cli" / "brain" / conv_id / ".system_generated" / "logs"
+    brain_dir.mkdir(parents=True, exist_ok=True)
+    transcript_path = brain_dir / "transcript.jsonl"
+
+    mock_script = tmp_path / "mock_linter.py"
+    with open("skills/dialect_linter.py", "r") as f:
+        content = f.read()
+        content = content.replace('~/.gemini', str(tmp_path / '.gemini'))
+
+    with open(mock_script, "w") as f:
+        f.write(content)
+
+    # Valid: no ask_question
+    with open(transcript_path, "w") as f:
+        f.write(json.dumps({"type": "USER_INPUT", "content": "todo: something"}) + "\n")
+        f.write(json.dumps({"type": "PLANNER_RESPONSE", "tool_calls": []}) + "\n")
+
+    result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
+    assert result.returncode == 0
+    assert "Violation" not in result.stdout
+
+    # Invalid: ask_question invoked
+    with open(transcript_path, "w") as f:
+        f.write(json.dumps({"type": "USER_INPUT", "content": "todo: something else"}) + "\n")
+        f.write(json.dumps({"type": "PLANNER_RESPONSE", "tool_calls": [
+            {"function": {"name": "default_api:ask_question", "arguments": "{\"questions\": [{\"question\": \"WHY?\"}]}"}}
+        ]}) + "\n")
+
+    result = subprocess.run(["python3", str(mock_script)], env=env, capture_output=True, text=True)
+    assert result.returncode == 1
+    assert "Auto-Rub" in result.stdout

@@ -1,8 +1,8 @@
 todo_1781144279:
   raw_thought: identify guards to allow disabling of design-review-gate.
-  timestamp: '2026-06-10T19:17:59.522501Z'
+  timestamp: '2026-06-11T05:10:40.185784Z'
   rub_matrix:
     what: null
     why: null
-    scope: null
+    scope: SUBSTRATE
   status: UNRUBBED
