@@ -528,3 +528,6 @@
 - **2026-06-11 04:25:58** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:26:51** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:26:51** | `NODE-RETRO` | [node_todo_1781176661] [TRIGGER: operator] Implemented /rub-all macro via Agent protocol in AGENT.md and enforced in dialect_linter.
+- **2026-06-11 04:29:45** | `TODO` | fix `read`-UI to update recently executed tod.
+- **2026-06-11 04:36:27** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:36:28** | `NODE-RETRO` | [node_todo_1781177385] [TRIGGER: operator] Patched complete_node to execute git rm on artifacts/ and commit the changes to synchronize state.
