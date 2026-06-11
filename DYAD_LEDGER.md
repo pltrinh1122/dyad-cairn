@@ -503,3 +503,7 @@
 - **2026-06-11 04:15:27** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:15:41** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:15:41** | `NODE-RETRO` | [node_todo_1781139419] [TRIGGER: autonomous] Bypassed Design-Review gate for operator-rubbed nodes to drop directly into AUTHORIZED state.
+- **2026-06-11 04:15:49** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:16:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:16:19** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:16:20** | `NODE-RETRO` | [node_todo_1781138338] [TRIGGER: autonomous] Updated AGENT.md to document that a naked read: implicitly defaults to read: quarries, and added mechanical linter checks in skills/dialect_linter.py with corresponding unit tests to verify.

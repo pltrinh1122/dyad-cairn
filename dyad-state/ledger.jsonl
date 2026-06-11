@@ -405,3 +405,7 @@
 {"timestamp": "2026-06-11T04:15:27.911734+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-11T04:15:41.472095+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-11T04:15:41.711355+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781139419] [TRIGGER: autonomous] Bypassed Design-Review gate for operator-rubbed nodes to drop directly into AUTHORIZED state."}
+{"timestamp": "2026-06-11T04:15:49.679817+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T04:16:10.990635+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T04:16:19.834082+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T04:16:20.050724+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781138338] [TRIGGER: autonomous] Updated AGENT.md to document that a naked read: implicitly defaults to read: quarries, and added mechanical linter checks in skills/dialect_linter.py with corresponding unit tests to verify."}
