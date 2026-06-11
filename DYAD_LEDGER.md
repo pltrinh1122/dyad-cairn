@@ -488,3 +488,7 @@
 - **2026-06-11 03:37:42** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 03:37:44** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 03:37:44** | `NODE-RETRO` | [node_todo_1781174057] Updated read: UI to prefix states [RUBBED]/[UNRUBBED]
+- **2026-06-11 03:41:42** | `TODO` | read: should provide a physical readout of last presented sub-agent in case i had missed it in the chat flow. once presented, it no longer needs to be presented again in the read:
+- **2026-06-11 03:57:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 03:57:09** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 03:57:09** | `NODE-RETRO` | [node_todo_1781174502] Introduced report: executed dialect invoking bin/report to aggregate completed node executions categorized by trigger.

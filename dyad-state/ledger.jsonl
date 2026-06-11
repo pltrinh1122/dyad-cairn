@@ -390,3 +390,7 @@
 {"timestamp": "2026-06-11T03:37:42.317865+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-11T03:37:44.677194+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-11T03:37:44.896720+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781174057] Updated read: UI to prefix states [RUBBED]/[UNRUBBED]"}
+{"timestamp": "2026-06-11T03:41:42.512832+00:00Z", "action": "TODO", "message": "read: should provide a physical readout of last presented sub-agent in case i had missed it in the chat flow. once presented, it no longer needs to be presented again in the read:"}
+{"timestamp": "2026-06-11T03:57:07.286248+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T03:57:09.644012+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T03:57:09.870421+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781174502] Introduced report: executed dialect invoking bin/report to aggregate completed node executions categorized by trigger."}
