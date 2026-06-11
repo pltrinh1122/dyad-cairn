@@ -26,7 +26,8 @@ def append_todo(intent):
             "rub_matrix": {
                 "what": None,
                 "why": None,
-                "scope": None
+                "scope": None,
+                "when": None
             },
             "status": "UNRUBBED"
         }
@@ -59,11 +60,13 @@ def append_todo(intent):
             what_status = "[x]" if matrix.get("what") else "[ ]"
             why_status = "[x]" if matrix.get("why") else "[ ]"
             scope_status = "[x]" if matrix.get("scope") else "[ ]"
+            when_status = "[x]" if matrix.get("when") else "[ ]"
             
             f.write(f"**The Rub Matrix:**\n")
             f.write(f"- {what_status} **WHAT:** {matrix.get('what') or 'Missing'}\n")
             f.write(f"- {why_status} **WHY:** {matrix.get('why') or 'Missing'}\n")
-            f.write(f"- {scope_status} **SCOPE:** {matrix.get('scope') or 'Missing'}\n\n")
+            f.write(f"- {scope_status} **SCOPE:** {matrix.get('scope') or 'Missing'}\n")
+            f.write(f"- {when_status} **WHEN:** {matrix.get('when') or 'Missing'}\n\n")
             f.write("---\n")
             
     print(f"[TODO] Successfully parked todo in holding pen: {intent}")

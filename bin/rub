@@ -13,7 +13,7 @@ def main():
     field = sys.argv[2].lower()
     content = sys.argv[3]
     
-    if field not in ["what", "why", "scope"]:
+    if field not in ["what", "why", "scope", "when"]:
         print(f"ERROR: Invalid field '{field}'. Must be what, why, or scope.")
         sys.exit(1)
         
@@ -30,7 +30,7 @@ def main():
     # Handle old schema migration automatically
     if "rub_matrix" not in todo:
         todo["raw_thought"] = todo.get("intent", "")
-        todo["rub_matrix"] = {"what": None, "why": None, "scope": None}
+        todo["rub_matrix"] = {"what": None, "why": None, "scope": None, "when": None}
         todo["status"] = "UNRUBBED"
         if "intent" in todo:
             del todo["intent"]
@@ -39,7 +39,7 @@ def main():
     
     # Check if fully populated
     matrix = todo["rub_matrix"]
-    if matrix["what"] and matrix["why"] and matrix["scope"]:
+    if matrix["what"] and matrix["why"] and matrix["scope"] and matrix.get("when"):
         todo["status"] = "RUBBED"
         
     with open(todo_file, "w") as f:

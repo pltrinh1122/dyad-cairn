@@ -22,7 +22,7 @@ def test_derive_status_ready():
         "node_3": {"dependencies": []}
     }
     status = derive_status("node_3", all_nodes["node_3"], all_nodes, ledger_content="", active_branches="")
-    assert status == "READY"
+    assert status == "READY_NOW"
 
 def test_derive_status_blocked_by_dependency():
     all_nodes = {
@@ -39,7 +39,7 @@ def test_derive_status_ready_with_done_dependency():
     }
     ledger = "node_1 completed."
     status = derive_status("node_2", all_nodes["node_2"], all_nodes, ledger_content=ledger, active_branches="")
-    assert status == "READY"
+    assert status == "READY_NOW"
 
 def test_build_tree_returns_list():
     from skills.frontier_reader import build_tree

@@ -90,7 +90,7 @@ def checkout_node(node_id):
     print(f"[FLOW] Checking out branch: {branch_name}")
     run_cmd(f"git checkout -b {branch_name}")
 
-def inject_node(node_id, title, goal, scope):
+def inject_node(node_id, title, goal, scope, when=None):
     print(f"[FLOW] Injecting Node {node_id} (IN_REVIEW)...")
     sys.path.append('.')
     from skills.frontier_editor import load_state, save_state
@@ -104,7 +104,8 @@ def inject_node(node_id, title, goal, scope):
         "title": title,
         "goal": goal,
         "type": node_type,
-        "scope": scope
+        "scope": scope,
+        "when": when
     }
     
     gates = state.get("config", {}).get("gates", {})
@@ -488,6 +489,13 @@ if __name__ == "__main__":
             
         intent = todo.get("raw_thought", todo.get("intent", ""))
         scope = todo["rub_matrix"]["scope"].upper()
+        when_cond = todo["rub_matrix"].get("when")
+        if not when_cond:
+            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+            print("The intent is missing a WHEN condition.")
+            print("[STEERING VECTOR] The Intent Gate requires a WHEN condition in the Rub Matrix. Use `./bin/rub <todo_id> when \"<condition>\"` to correct it.")
+            sys.exit(1)
+            
         if scope not in ["FRONTIER", "INTEGRITY", "SUBSTRATE"]:
             print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
             print(f"Invalid scope '{scope}' in Rub Matrix.")
@@ -498,7 +506,7 @@ if __name__ == "__main__":
         
         # Inject the node
         node_id = f"node_todo_{node.split('_')[1]}"
-        inject_node(node_id, f"Convert Todo: {node}", goal, scope)
+        inject_node(node_id, f"Convert Todo: {node}", goal, scope, when_cond)
         
         # Remove from backlog
         os.remove(todo_file)
