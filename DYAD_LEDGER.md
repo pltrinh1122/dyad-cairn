@@ -510,6 +510,7 @@
 - **2026-06-11 04:19:04** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:19:19** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:19:19** | `NODE-RETRO` | [node_todo_1781137401] [TRIGGER: autonomous] Established ongoing observation period for ask_question UI lock hit-rate via artifacts/rub_ask_question_observation.md.
+- **2026-06-11 04:15:09** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:15:27** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:15:41** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:15:41** | `NODE-RETRO` | [node_todo_1781139419] [TRIGGER: autonomous] Bypassed Design-Review gate for operator-rubbed nodes to drop directly into AUTHORIZED state.
@@ -586,3 +587,14 @@
   * **Sloppy Commit Execution:** I (or a subagent) carelessly committed `__pycache__` artifacts because we lacked a `.gitignore`. We must stop assuming implicit cleanliness and actively enforce physical git hygiene before merging execution subagents.
   
   </details>
+- **2026-06-11 14:00:35** | `TODO` | audit the true status of node_todo_1781137401 and determine why it's missing from the read-UI.
+- **2026-06-11 14:06:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:06:07** | `NODE-RETRO` | [node_todo_1781211635] Injected node_26_probe_read_ui_omission to execute the trace.
+- **2026-06-11 14:21:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:22:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:22:50** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:22:50** | `NODE-RETRO` | [node_27_execute_derive_status_hotfix] Hotfixed derive_status by strictly enforcing [node_id] bracket closure, completely resolving the mention-excise vulnerability.
+- **2026-06-11 14:25:55** | `COMMONS_SYNC` | Absorb dyad-bond falsification response regarding steward portfolio compounding
+- **2026-06-11 14:26:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:26:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:26:19** | `NODE-RETRO` | [node_27_execute_derive_status_hotfix] Hotfixed derive_status by strictly enforcing [node_id] bracket closure, completely resolving the mention-excise vulnerability.
