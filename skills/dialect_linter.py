@@ -89,7 +89,7 @@ def audit_dialect():
             # CSI GUARD: Operator CTA for Pure Commands
             # If Operator uses a raw command without a dialect prefix, the Agent must NOT silently execute it.
             # It must convert it to an Operator CTA.
-            known_prefixes = ["read:", "audit:", "rub:", "rub?", "retro:", "lean:", "lean?", "lean", "lean.", "riff:", "execute:", "plan:", "probe:", "todo:", "/", "diff:", "fb:", "Y", "N", "yes", "no"]
+            known_prefixes = ["read:", "audit:", "rub:", "rub?", "retro:", "lean:", "lean?", "lean", "lean.", "riff:", "execute:", "plan:", "probe:", "todo:", "report:", "/", "diff:", "fb:", "Y", "N", "yes", "no"]
             has_prefix = any(parsed_content.startswith(p) for p in known_prefixes)
             if not has_prefix and parsed_content:
                 for j in range(i+1, len(steps)):
