@@ -81,3 +81,7 @@ def test_node_authorize_requires_in_review(clean_dag):
     worktree_path = ".worktrees/active_node_99_review"
     assert os.path.exists(worktree_path), f"Expected git worktree at {worktree_path}"
     assert os.path.exists(os.path.join(worktree_path, ".git")), "Expected .git file in worktree"
+
+    # Cleanup
+    subprocess.run(["git", "worktree", "remove", "--force", worktree_path], check=False)
+    subprocess.run(["git", "branch", "-D", "active/node_99_review"], check=False)
