@@ -73,3 +73,6 @@ The Dyad's internal filesystem is strictly partitioned to prevent conflation of 
 - **`GEMINI.md`**: The Anchor. Proven, load-bearing structural rules of the Engine.
 - **`DYAD_LEDGER.md`**: The Map. An immutable, append-only chronological log of all state transitions, pointing to the mass stored in the folders above.
 
+
+## The Invisible Elicitor
+The protocol must dictate the WHY as the Elicitation Seed.
