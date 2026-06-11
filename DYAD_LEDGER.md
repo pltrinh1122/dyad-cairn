@@ -473,3 +473,7 @@
 - **2026-06-11 02:16:44** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 02:17:26** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 02:17:27** | `NODE-RETRO` | [node_todo_1781168065] Decomposed state files into directory structures to support concurrent worktree executions.
+- **2026-06-11 02:23:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 02:24:33** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 02:24:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 02:24:56** | `NODE-RETRO` | [node_todo_1781138189] Introduced the execute dialect and documented the subagent architecture in HOW-0004
