@@ -379,3 +379,6 @@
 {"timestamp": "2026-06-11T02:24:33.196823+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-11T02:24:55.924487+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-11T02:24:56.142728+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781138189] Introduced the execute dialect and documented the subagent architecture in HOW-0004"}
+{"timestamp": "2026-06-11T03:25:03.214525+00:00Z", "action": "TODO", "message": "so invoke_subagent is equivalent to /goal except for invocation method with the former being Agent and latter Operator respectively."}
+{"timestamp": "2026-06-11T03:31:17.194504+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-11T03:31:17.413176+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781135599] Falsified the sequential execution constraint in favor of asynchronous subagent decoupling"}
