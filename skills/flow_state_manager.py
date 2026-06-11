@@ -262,14 +262,25 @@ def create_reflection_pr(node_id, is_green):
     except Exception as e:
         test_spec_body += f"*Failed to extract test specs: {e}*\n"
         
+    try:
+        from skills.frontier_editor import load_state
+        from skills.frontier_reader import build_tree
+        state = load_state()
+        tree_lines = build_tree(state.get('nodes', {}))
+        dag_tree = "### Computed Frontier DAG (Ephemeral Snapshot)\n```text\n" + "\n".join(tree_lines) + "\n```\n"
+    except Exception as e:
+        dag_tree = f"*Failed to compute DAG snapshot: {e}*\n"
+        
     sys.path.append('.')
     from skills.github_client import create_pr
+    
+    body_appendix = f"\n{test_spec_body}\n{dag_tree}"
     if is_green:
         title = f"[GREEN Node] Complete {node_id}"
-        body = f"Automated PR update for Node {node_id} GREEN completion.\n\n{test_spec_body}"
+        body = f"Automated PR update for Node {node_id} GREEN completion.{body_appendix}"
     else:
         title = f"[RED Node] Intent Validation {node_id}"
-        body = f"Automated PR for Node {node_id} RED Intent Validation.\n\n{test_spec_body}"
+        body = f"Automated PR for Node {node_id} RED Intent Validation.{body_appendix}"
     
     pr_url = create_pr(title, body)
     print(f"[FLOW] PR successfully opened/updated at: {pr_url}")
