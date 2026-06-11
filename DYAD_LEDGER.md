@@ -499,3 +499,7 @@
 - **2026-06-11 04:11:18** | `NODE-RETRO` | [node_todo_1781175915] Implemented Materialized Dependency Guard in flow_state_manager to block blind execution of missing prerequisites.
 - **2026-06-11 04:11:20** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:11:21** | `NODE-RETRO` | [node_todo_1781175668] Implemented bin/lean to orchestrate batch conversion and steering for parallel subagent execution.
+- **2026-06-11 04:15:49** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:16:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:16:19** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:16:20** | `NODE-RETRO` | [node_todo_1781138338] [TRIGGER: autonomous] Updated AGENT.md to document that a naked read: implicitly defaults to read: quarries, and added mechanical linter checks in skills/dialect_linter.py with corresponding unit tests to verify.
