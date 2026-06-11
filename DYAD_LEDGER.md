@@ -499,3 +499,9 @@
 - **2026-06-11 04:11:18** | `NODE-RETRO` | [node_todo_1781175915] Implemented Materialized Dependency Guard in flow_state_manager to block blind execution of missing prerequisites.
 - **2026-06-11 04:11:20** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 04:11:21** | `NODE-RETRO` | [node_todo_1781175668] Implemented bin/lean to orchestrate batch conversion and steering for parallel subagent execution.
+- **2026-06-11 04:17:11** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:18:22** | `COMMONS_SYNC` | Synchronized latest commons playbooks
+- **2026-06-11 04:18:33** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:19:03** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:19:14** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:19:14** | `NODE-RETRO` | [node_todo_1781137609] [TRIGGER: autonomous] updated convert-todo to mandate WHEN and partitioned Frontier to READY_NOW/READY_WHEN
