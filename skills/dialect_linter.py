@@ -77,6 +77,23 @@ def audit_dialect():
                             if "bin/" in str(tc.get("args", "")):
                                 violations.append(f"Violation at step {step.get('step_index')}: Operator issued 'rub?' requesting a Conversational Rub-Back, but Agent executed a script. Agent must not execute scripts when 'rub?' is used.")
                         
+            # CSI GUARD: The Batch Elicitation (/rub-all)
+            if parsed_content.startswith("/rub all") or parsed_content.startswith("/rub-all"):
+                for j in range(i+1, len(steps)):
+                    next_step = steps[j]
+                    if next_step.get("type") == "USER_INPUT":
+                        break
+                    if next_step.get("type") == "PLANNER_RESPONSE":
+                        tool_calls = next_step.get("tool_calls", [])
+                        for tc in tool_calls:
+                            if tc.get("function", {}).get("name") == "default_api:ask_question":
+                                try:
+                                    args = json.loads(tc.get("function", {}).get("arguments", "{}"))
+                                    if len(args.get("questions", [])) > 1:
+                                        violations.append(f"Violation at step {step.get('step_index')}: Operator issued '/rub-all', but Agent batched multiple questions in ask_question. Agent must recursively invoke the individual /rub flow (WHY first) and not batch prompts.")
+                                except:
+                                    pass
+
             # Check for `retro:`
             if parsed_content.startswith("retro:"):
                 used_retro = False
