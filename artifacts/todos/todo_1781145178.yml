@@ -1,9 +1,0 @@
-todo_1781145178:
-  raw_thought: UI of `read` doesn't provide sufficient context for Operator to understand
-    the "what" of each todo-*
-  timestamp: '2026-06-10T19:32:58.551822Z'
-  rub_matrix:
-    what: null
-    why: null
-    scope: null
-  status: UNRUBBED

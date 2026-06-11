@@ -611,3 +611,4 @@
 - **2026-06-11 15:02:25** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 15:02:33** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 15:03:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 15:24:01** | `CLIP` | Disposed todo_1781145178 with no action: The lack of context for 'read todo' is no longer true under the current UI format.
