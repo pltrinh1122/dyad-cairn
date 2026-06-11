@@ -33,8 +33,22 @@ def audit_dialect():
             # Remove <USER_REQUEST> wrappers for parsing
             parsed_content = content.replace("<USER_REQUEST>", "").replace("</USER_REQUEST>", "").strip()
             
-            # Check for `read:`
-            if parsed_content.startswith("read:"):
+            # Check for `read:` naked defaults
+            if parsed_content in ("read:", "read", "read."):
+                used_read = False
+                for j in range(i+1, len(steps)):
+                    next_step = steps[j]
+                    if next_step.get("type") == "USER_INPUT":
+                        break
+                    if next_step.get("type") == "PLANNER_RESPONSE":
+                        tool_calls = next_step.get("tool_calls", [])
+                        for tc in tool_calls:
+                            if "bin/read quarries" in str(tc.get("args", "")):
+                                used_read = True
+                
+                if not used_read:
+                    violations.append(f"Violation at step {step.get('step_index')}: Operator issued a naked '{parsed_content}', but Agent failed to mechanically invoke './bin/read quarries'.")
+            elif parsed_content.startswith("read:"):
                 pass
                     
             # CSI GUARD: The Asymmetric Downgrade Invariant
