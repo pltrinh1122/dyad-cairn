@@ -1,4 +1,4 @@
-# dyad-cairn — AGENT.md
+# dyad-cairn — DYAD.md
 
 > Universal instruction layer for the dyad. Load at session start via the
 > platform shim (CLAUDE.md or GEMINI.md). The form lives at
