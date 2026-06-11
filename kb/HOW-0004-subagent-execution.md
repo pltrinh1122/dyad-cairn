@@ -11,7 +11,7 @@ When the Operator issues the conversational moniker `execute: <node_id>` in the 
 - **Workspace**: `share` (this maps to an isolated git worktree sharing the same underlying repository, ensuring no state collisions with the main thread).
 - **Prompt**: "Checkout the branch `active/<node_id>`. Implement the required code, execute TDD (running `python3 skills/testing_harness.py`), and upon success, invoke the flow state manager to transition the node to completed (`./bin/node complete <node_id>`)."
 
-By dispatching a subagent, the Architect remains completely free to engage with the Operator, handle design reviews, parse `todo:` statements, or plan the next `PROBE` node.
+By dispatching a subagent via the `execute:` dialect, the Architect cements its autonomy over execution while keeping the main terminal unlocked. As such, the UI-level `/goal` command is strictly retired and forbidden. This approach ensures the Architect remains completely free to engage with the Operator, handle design reviews, parse `todo:` statements, or plan the next `PROBE` node without being bottlenecked.
 
 ## Hand-off & Completion
 1. The Architect uses `invoke_subagent`.
