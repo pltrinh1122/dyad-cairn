@@ -484,3 +484,7 @@
 - **2026-06-11 03:32:05** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 03:32:19** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 03:32:20** | `NODE-RETRO` | [node_todo_1781173503] Retired /goal and cemented execute: dialect
+- **2026-06-11 03:34:17** | `TODO` | update read: UI to show the different states of the pre-DAG, e.g. RUBBED, etc.
+- **2026-06-11 03:37:42** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 03:37:44** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 03:37:44** | `NODE-RETRO` | [node_todo_1781174057] Updated read: UI to prefix states [RUBBED]/[UNRUBBED]
