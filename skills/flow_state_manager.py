@@ -87,8 +87,14 @@ def checkout_node(node_id):
         print("[FLOW] Materialized Dependency Guard PASSED.")
 
     branch_name = f"active/{node_id}"
-    print(f"[FLOW] Checking out branch: {branch_name}")
-    run_cmd(f"git checkout -b {branch_name}")
+    print(f"[FLOW] Checking out branch and creating git worktree: {branch_name}")
+    # Create the branch if it does not exist
+    run_cmd(f"git branch {branch_name} || true", allow_fail=True)
+    worktree_path = f".worktrees/{branch_name.replace("/", "_")}"
+    if not os.path.exists(worktree_path):
+        run_cmd(f"git worktree add {worktree_path} {branch_name}")
+    else:
+        print(f"[FLOW] Worktree {worktree_path} already exists. Skipping creation.")
 
 def inject_node(node_id, title, goal, scope):
     print(f"[FLOW] Injecting Node {node_id} (IN_REVIEW)...")
@@ -137,6 +143,7 @@ def authorize_node(node_id):
     state["nodes"][node_id]["status"] = "AUTHORIZED"
     save_state(state)
     print(f"[FLOW] Node {node_id} transitioned to AUTHORIZED. Added to Goal-Ready Queue.")
+    checkout_node(node_id)
 
 def reflect_node_red(node_id):
     print(f"[FLOW] Reflecting RED Phase (Intent Gate) for Node {node_id}...")
