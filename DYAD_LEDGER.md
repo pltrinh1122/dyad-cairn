@@ -598,3 +598,7 @@
 - **2026-06-11 14:26:10** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 14:26:18** | `TODO` | test_noisy_intent_12345
 - **2026-06-11 14:26:19** | `NODE-RETRO` | [node_27_execute_derive_status_hotfix] Hotfixed derive_status by strictly enforcing [node_id] bracket closure, completely resolving the mention-excise vulnerability.
+- **2026-06-11 14:51:33** | `CLIP` | Architectural Consensus: Abolish tracked frontier_state.md. Materialized DAG is a post-hoc projection, not a PR-gated artifact. Moving to .gitignore to eliminate Git-tracked drift and decouple ledger appends from view re-renders.
+- **2026-06-11 14:52:29** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:52:39** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:52:39** | `NODE-RETRO` | [node_28_probe_ledger_projection_sync] Conducted Design Review. Reached architectural consensus to abolish tracked frontier_state.md, establishing the Ephemeral Projection strategy and moving the materialized view to .gitignore.
