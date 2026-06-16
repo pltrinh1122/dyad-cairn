@@ -31,11 +31,16 @@ def main():
     for tid in targets:
         print(f"--- Processing {tid} ---")
         node_id = tid.replace("todo", "node_todo")
-        # Run convert-todo
-        subprocess.run(["./bin/node", "convert-todo", tid])
-        # Run authorize
-        subprocess.run(["./bin/node", "authorize", node_id])
-        nodes_to_execute.append(node_id)
+        try:
+            # Run convert-todo
+            subprocess.run(["./bin/node", "convert-todo", tid], check=True)
+            # Run authorize
+            subprocess.run(["./bin/node", "authorize", node_id], check=True)
+            nodes_to_execute.append(node_id)
+        except subprocess.CalledProcessError as e:
+            print(f"🚨 CSI GUARD: Trapped failure for node {tid}. Isolating failure and proceeding. 🚨")
+            print(f"   [Error: {e}]")
+            continue
         
     print("================================================================================")
     print("📋 [MECHANICAL UI PRESENTATION: BATCH DISPATCHER]")
