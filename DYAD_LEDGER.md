@@ -651,3 +651,5 @@
 - **2026-06-16 13:39:47** | `TODO` | test_noisy_intent_12345
 - **2026-06-16 13:40:00** | `TODO` | test_noisy_intent_12345
 - **2026-06-16 13:40:01** | `NODE-RETRO` | [node_todo_1781329968] Implemented narrowing of WIP-N=1 invariant to Substrate State.
+- **2026-06-16 13:41:15** | `COMMONS_SYNC` | Absorbed weekly refresh of the Commons activity signal.
+- **2026-06-16 13:41:58** | `COMMONS_SYNC` | Absorbed weekly refresh of the Commons activity signal.
