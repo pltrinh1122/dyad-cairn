@@ -632,3 +632,7 @@
   Executing raw `git worktree remove` or `gh pr merge` shell commands to force node completion. If the CI/GAP synchronization takes time, the engine should patiently yield rather than manually overriding the internal pruning tools (like `./bin/node complete` or `skills/frontier_editor.py DONE`). Manual overrides risk fracturing the topological DAG if the ledger state and physical git state drift.
   
   </details>
+- **2026-06-12 21:46:06** | `TODO` | test_noisy_intent_12345
+- **2026-06-12 21:46:24** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:34:49** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:34:49** | `NODE-RETRO` | [node_todo_1781145019] Implemented a CSI guard in the lean dispatcher to trap and isolate subagent failure modes, ensuring partial failures do not halt orthogonal nodes.
