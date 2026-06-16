@@ -645,3 +645,5 @@
 - **2026-06-16 13:43:01** | `NODE-RETRO` | [node_todo_1781145019] Implemented a CSI guard in the lean dispatcher to trap and isolate subagent failure modes, ensuring partial failures do not halt orthogonal nodes.
 - **2026-06-16 13:44:06** | `TODO` | test_noisy_intent_12345
 - **2026-06-16 13:44:06** | `NODE-RETRO` | [node_todo_1781145019] Implemented a CSI guard in the lean dispatcher to trap and isolate subagent failure modes, ensuring partial failures do not halt orthogonal nodes.
+- **2026-06-16 13:36:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:36:55** | `TODO` | test_noisy_intent_12345
