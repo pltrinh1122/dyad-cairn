@@ -605,10 +605,11 @@ if __name__ == "__main__":
     elif action == "dispose":
         trail_dispose(node)
     elif action == "retro":
-        if len(sys.argv) < 5:
+        # retro doesn't use node_id, so sys.argv[2] is summary and sys.argv[3] is path
+        if len(sys.argv) < 4:
             print("Usage: python3 skills/flow_state_manager.py retro <summary> <path/to/retro.md>")
             sys.exit(1)
-        process_retro(sys.argv[3], sys.argv[4])
+        process_retro(sys.argv[2], sys.argv[3])
     else:
         print(f"Unknown action: {action}")
         sys.exit(1)
