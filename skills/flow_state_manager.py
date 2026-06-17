@@ -365,6 +365,34 @@ def process_retro(summary, css_path=None):
 def complete_node(node_id, retro_msg):
     print(f"[FLOW] Executing CSI Guard (Test Suite) for Node {node_id} completion...")
     
+    print("[FLOW] Asserting Physical Merge Invariant...")
+    branch = run_cmd("git rev-parse --abbrev-ref HEAD", allow_fail=True).strip()
+    if branch != "main":
+        import json
+        pr_view = run_cmd("gh pr view --json state", allow_fail=True)
+        if "no pull requests found" in pr_view.lower():
+            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+            print("You cannot complete a node without an active Pull Request.")
+            sys.exit(1)
+        
+        try:
+            pr_view_clean = pr_view[pr_view.find("{"):] if "{" in pr_view else pr_view
+            pr_data = json.loads(pr_view_clean)
+            if pr_data.get("state") != "MERGED":
+                print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+                print(f"PR is not MERGED (current state: {pr_data.get('state')}).")
+                print("[STEERING VECTOR] Resolve merge conflicts or wait for CI to pass, then merge the PR before completing the node.")
+                sys.exit(1)
+        except Exception as e:
+            print(f"🚨 CONSISTENCY GUARDRAIL FIRED 🚨\nFailed to parse PR state: {e}\nOutput was: {pr_view}")
+            sys.exit(1)
+            
+        checks_output = run_cmd("gh pr checks", allow_fail=True)
+        if "fail" in checks_output.lower():
+            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+            print("PR CI checks have failed. The state cannot advance.")
+            sys.exit(1)
+    
     print("[FLOW] Asserting Mechanical UI Gate (Dialect Linter)...")
     linter_result = subprocess.run("python3 skills/dialect_linter.py", shell=True, capture_output=True, text=True)
     if linter_result.returncode != 0:

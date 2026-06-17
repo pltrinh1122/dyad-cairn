@@ -944,3 +944,7 @@
 - **2026-06-17 18:37:28** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 18:38:00** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 18:38:01** | `NODE-RETRO` | [node_todo_1781746292] Migrated substrate scripts to read from decomposed artifacts/audit/ directory and patched GAP race condition.
+- **2026-06-17 21:47:22** | `TODO` | [BUG] the pr-fsm should not allow the state to advance for failed CI due to 'Merge conflicts'. right now, PR #64 is not ready for disposition.
+- **2026-06-17 21:53:27** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 21:53:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 21:54:17** | `TODO` | test_noisy_intent_12345
