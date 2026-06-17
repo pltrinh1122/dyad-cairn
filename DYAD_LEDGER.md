@@ -781,3 +781,5 @@
 - **2026-06-17 15:30:30** | `NODE-RETRO` | [node_todo_fsm_cli_retro] Wired FSM into bin/retro. Substrate execution unified via flow_state_manager.
 - **2026-06-17 15:35:56** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:35:56** | `NODE-RETRO` | [node_todo_fsm_cli_start] Reflect green
+- **2026-06-17 15:36:54** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:36:54** | `NODE-RETRO` | [node_todo_fsm_cli_start] Reflect green passes
