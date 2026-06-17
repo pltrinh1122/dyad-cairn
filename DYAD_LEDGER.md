@@ -728,3 +728,10 @@
 - **2026-06-17 15:25:52** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:28:08** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:28:15** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:54** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:36** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:37** | `NODE-RETRO` | [node_todo_fsm_state_arc_start] Defined and validated the state_arc_start.md anchor for SUBSTRATE level operations.
+- **2026-06-17 15:28:49** | `COMMONS_SYNC` | Absorbed new upstream playbook for fsm_state_arc_start anchor template and integration.
