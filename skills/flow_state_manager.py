@@ -586,3 +586,10 @@ if __name__ == "__main__":
     else:
         print(f"Unknown action: {action}")
         sys.exit(1)
+
+def set_active_anchor(state_name, anchor_path="dyad-state/active_anchor"):
+    import os
+    if os.path.lexists(anchor_path):
+        os.remove(anchor_path)
+    with open(anchor_path, "w") as f:
+        f.write(state_name)
