@@ -76,15 +76,17 @@ def save_state(state):
                     print("==========================================================================")
                     sys.exit(1)
 
-    # Enforce rules: WIP-N=1 at the execution level
+    # Enforce rules: WIP-N=1 at the execution level (QUARRY scope only)
     active_count = 0
     all_nodes = state["nodes"]
     for node_id, data in all_nodes.items():
+        if data.get("scope", "").upper() == "SUBSTRATE":
+            continue
         if derive_status(node_id, data, all_nodes) == "ACTIVE":
             active_count += 1
             
     if active_count > 1:
-        print("ERROR: WIP-N=1 Violation. Cannot save state with multiple ACTIVE nodes.")
+        print("ERROR: WIP-N=1 Violation. Cannot save state with multiple ACTIVE QUARRY nodes.")
         sys.exit(1)
         
     # Physically excise DONE nodes to prevent dead mass accumulation
