@@ -666,3 +666,7 @@
 - **2026-06-16 13:45:51** | `TODO` | test_noisy_intent_12345
 - **2026-06-16 13:45:52** | `NODE-RETRO` | [node_todo_1781329968] Implemented narrowing of WIP-N=1 invariant to Substrate State.
 - **2026-06-16 13:36:03** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:36:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 02:11:04** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 02:12:04** | `COMMONS_SYNC` | Incorporated upstream CSI guard for batch failure isolation and lean dispatcher failure isolation tests.
+- **2026-06-17 02:12:14** | `TODO` | test_noisy_intent_12345
