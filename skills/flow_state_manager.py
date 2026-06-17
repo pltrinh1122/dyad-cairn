@@ -467,8 +467,8 @@ def trail_dispose(trail_id):
     print(f"[FLOW] Trail {trail_id} successfully disposed, merged, and pruned.")
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("Usage: python3 skills/flow_state_manager.py <plan|checkout|reflect-red|reflect-green|complete|trail-reflect> <node_id> [retro_msg]")
+    if len(sys.argv) < 2:
+        print("Usage: python3 skills/flow_state_manager.py <plan|checkout|reflect-red|reflect-green|complete|trail-reflect|session-end> <node_id> [retro_msg]")
         sys.exit(1)
     
     check_retro_lock()
@@ -486,6 +486,19 @@ if __name__ == "__main__":
         pass
 
     action = sys.argv[1].lower()
+    
+    if action == "session-end":
+        print("[FLOW] Pushing FSM into session-end state...")
+        import yaml
+        os.makedirs("dyad-state", exist_ok=True)
+        with open("dyad-state/fsm_state.yml", "w") as f:
+            yaml.dump({"state": "session-end"}, f)
+        sys.exit(0)
+        
+    if len(sys.argv) < 3:
+        print("Usage: python3 skills/flow_state_manager.py <plan|checkout|reflect-red|reflect-green|complete|trail-reflect> <node_id> [retro_msg]")
+        sys.exit(1)
+        
     node = sys.argv[2]
     
     if action == "plan":
