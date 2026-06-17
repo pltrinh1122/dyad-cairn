@@ -49,14 +49,24 @@ def check_audit_lock():
     if current_store != "artifacts/frontier_state.yml":
         return
 
-    audit_file = "artifacts/audit_state.yml"
-    if os.path.exists(audit_file):
-        with open(audit_file, "r") as f:
-            state = yaml.safe_load(f) or {"nodes": {}}
+    audit_dir = "artifacts/audit"
+    if os.path.exists(audit_dir):
         failing_nodes = []
-        for node_id, data in state.get("nodes", {}).items():
-            if data.get("status") != "DONE":
-                failing_nodes.append(node_id)
+        for fname in sorted(os.listdir(audit_dir)):
+            if fname.endswith(".yml"):
+                try:
+                    with open(os.path.join(audit_dir, fname), "r") as f:
+                        data = yaml.safe_load(f) or {}
+                        if "nodes" in data:
+                            for node_id, node_data in data.get("nodes", {}).items():
+                                if node_data.get("status") != "DONE":
+                                    failing_nodes.append(node_id)
+                        else:
+                            for node_id, node_data in data.items():
+                                if node_data.get("status") != "DONE":
+                                    failing_nodes.append(node_id)
+                except Exception:
+                    pass
         if failing_nodes:
             print("==========================================================================")
             print("🚨 GOVERNANCE DEBT GUARDRAIL FIRED 🚨")
@@ -295,8 +305,15 @@ def create_reflection_pr(node_id, is_green):
     
     print("[FLOW] Synchronizing with remote GitHub Actions Pipeline (GAP)...")
     import time
-    time.sleep(5) # Allow GitHub to register the PR and start workflows
-    gap_result = subprocess.run("gh pr checks --watch", shell=True, capture_output=True, text=True)
+    time.sleep(15) # Allow GitHub to register the PR and start workflows
+    
+    for _ in range(6):
+        gap_result = subprocess.run("gh pr checks --watch", shell=True, capture_output=True, text=True)
+        if gap_result.returncode != 0 and "no checks reported" in (gap_result.stdout + gap_result.stderr):
+            print("[FLOW] GAP not yet registered by GitHub. Retrying in 10s...")
+            time.sleep(10)
+        else:
+            break
     
     if is_green:
         if gap_result.returncode != 0:

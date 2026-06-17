@@ -1,0 +1,6 @@
+node_hook_wrapper:
+  title: Implement CLI Wrapper
+  goal: Add bash alias wrapper to ~/.zshrc or ~/.bashrc to intercept /exit
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED

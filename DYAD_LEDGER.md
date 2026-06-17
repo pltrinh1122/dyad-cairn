@@ -835,3 +835,72 @@
   Operating without an explicit state machine boundary, which previously led to boundless, ambiguously structured sessions. Using un-versioned `.worktrees` without strict pruning sequences after merging, which causes branch collisions.
   
   </details>
+- **2026-06-17 15:59:07** | `TODO` | --help
+- **2026-06-17 16:07:26** | `TODO` | Extract workflow invariants from DYAD.md into FSM templates
+- **2026-06-17 16:17:02** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 16:17:02** | `NODE-RETRO` | [node_todo_1781737646] Extracted workflow invariants from DYAD.md into FSM templates to prevent state conflation.
+- **2026-06-17 16:18:33** | `RETRO` | FSM Invariant Extraction
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Extracting Workflow Invariants to FSM Templates
+  
+  ## Continue
+  - Using the Invisible Elicitor protocol (`ask_question`) to define the WHY, WHAT, and SCOPE before locking a node in the DAG.
+  - Offloading the actual execution securely to subagents, maintaining the parallel branch and PR review invariant.
+  
+  ## Start
+  - We must explicitly ensure executable permissions (`chmod +x`) are set on all newly created or modified scripts to prevent mechanical CI failures.
+  
+  ## Stop
+  - Relying on global `DYAD.md` documentation for state-specific operations. We must strictly enforce writing mechanical bindings directly into their corresponding `kb/templates/state_*.md` files.
+  
+  </details>
+- **2026-06-17 16:22:54** | `TODO` | Design and implement a durability-FSM over gh commands to enforce synchronous CI/merge checks before agent reporting
+- **2026-06-17 16:43:30** | `TODO` | Implement the core 'gh' polling wrapper to block synchronously on PR completion
+- **2026-06-17 16:43:30** | `TODO` | Implement the CSI Guard steering logic to format 'gh' polling failures into actionable Agent invariants
+- **2026-06-17 16:43:30** | `TODO` | Integrate the 'gh' wrapper and CSI Guard into the FSM Dialect mappings
+- **2026-06-17 16:43:41** | `TODO` | Part 1: Implement the core 'gh' polling wrapper to block synchronously on PR completion
+- **2026-06-17 16:43:42** | `TODO` | Part 2: Implement the CSI Guard steering logic to format 'gh' polling failures into actionable Agent invariants
+- **2026-06-17 16:43:43** | `TODO` | Part 3: Integrate the 'gh' wrapper and CSI Guard into the FSM Dialect mappings
+- **2026-06-17 16:54:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 16:54:18** | `NODE-RETRO` | [node_todo_1781739821] Implemented the core gh polling wrapper to block synchronously on PR completion.
+- **2026-06-17 16:57:43** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 16:57:44** | `NODE-RETRO` | [node_todo_1781739822] Implemented the CSI Guard steering logic in the PR wrapper.
+- **2026-06-17 16:59:39** | `TODO` | Add 'No Politeness Gates' explicit clause to the Autonomous Merge Invariant to structurally prevent LLM conversational reflexes from throttling the execution engine
+- **2026-06-17 17:02:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 17:02:22** | `NODE-RETRO` | [node_todo_1781739824] Integrated the 'gh' wrapper and CSI Guard into the FSM Dialect mappings.
+- **2026-06-17 17:44:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 17:44:08** | `NODE-RETRO` | [node_todo_1781740779] Codified the No Politeness Gates clause into DYAD.md
+- **2026-06-17 17:44:40** | `RETRO` | GH Wrapper & Substrate Maturation
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: GH Wrapper Implementation & Substrate Maturation
+  
+  ## Continue
+  - Using `/decompose` to cleanly shatter monolithic tasks into linear, atomic `[SUBSTRATE]` nodes.
+  - Honoring the `WIP-N=1` Context Partition for Substrate modifications to prevent split-brain git conflicts on single files (e.g., sequentially mutating `./bin/pr-sync`).
+  - Leveraging CSI Guard design patterns to convert raw binary failures into structured, deterministic `[STEERING VECTOR]` strings for agents.
+  
+  ## Start
+  - Structurally overriding latent LLM behavioral reflexes (like conversational permission-seeking) by codifying explicit negative constraints (the "No Politeness Gates" anchor).
+  - Scoping mechanical linters (like the Dialect Linter) strictly to the current node context rather than arbitrary arbitrary historical windows, preventing immutable transcript errors from soft-bricking future nodes.
+  
+  ## Stop
+  - Conflating `Deferred Offload` with the `Autonomous Merge Invariant`. If a node has cleared the Red Phase Spec gate and tests pass, merging is mandatory, not negotiable.
+  - Silently executing raw scripts in response to raw Operator commands without a dialect prefix. The Agent must strictly demand a formal dialect prefix or convert it to an Operator CTA.
+  
+  </details>
+- **2026-06-17 18:11:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:11:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:11:34** | `NODE-RETRO` | [node_hook_wrapper] [node_hook_wrapper] Implemented shell wrappers in bin/dyad-shell-hooks.sh to mechanically intercept CLI exit and trigger bin/exit.
+- **2026-06-17 18:34:32** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:36:08** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:36:08** | `NODE-RETRO` | [node_todo_1781746292] Migrated substrate scripts to read from decomposed artifacts/audit/ directory.
+- **2026-06-17 18:36:42** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:36:42** | `NODE-RETRO` | [node_todo_1781746292] Migrated substrate scripts to read from decomposed artifacts/audit/ directory.
+- **2026-06-17 18:37:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:37:28** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:38:00** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:38:01** | `NODE-RETRO` | [node_todo_1781746292] Migrated substrate scripts to read from decomposed artifacts/audit/ directory and patched GAP race condition.

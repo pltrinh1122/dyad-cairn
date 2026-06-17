@@ -13,3 +13,7 @@
 
 ## Transition Conditions
 <What must be true for this state arc to be considered complete?>
+
+
+## Invariants
+- **PR Constraint:** The Agent must never use raw `gh pr create` or `gh pr merge`. All PR actions must be mapped to `./bin/pr-sync`.
