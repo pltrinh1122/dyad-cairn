@@ -817,3 +817,5 @@
 - **2026-06-17 15:41:18** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:42:10** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:42:10** | `NODE-RETRO` | [node_todo_fsm_manager_enforce] Implemented fsm_manager.enforce_guard to throw hard CSI errors on invalid transitions, blocking multiversal drift.
+- **2026-06-17 15:51:37** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:51:38** | `NODE-RETRO` | [node_plan_fsm_wiring] Wired FSM State Guard into DYAD.md to establish Ontological Bond.
