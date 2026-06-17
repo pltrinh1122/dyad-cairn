@@ -1,4 +1,4 @@
 #!/bin/bash
 # Orchestrator CLI for the SPAO loop lifecycle explicitly on the Audit DAG
-export DYAD_DAG_STORE="artifacts/audit_state.yml"
+export DYAD_DAG_STORE="artifacts/audit"
 python3 skills/flow_state_manager.py "$@"

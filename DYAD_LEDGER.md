@@ -935,3 +935,12 @@
 - **2026-06-17 18:58:00** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 18:58:21** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 18:58:22** | `NODE-RETRO` | [node_todo_1781747152] Built the deterministic extractor engine, passing all F-set constraints and TDD RED/GREEN validation without modifying the proposed tag-grammar.
+- **2026-06-17 18:34:32** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:36:08** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:36:08** | `NODE-RETRO` | [node_todo_1781746292] Migrated substrate scripts to read from decomposed artifacts/audit/ directory.
+- **2026-06-17 18:36:42** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:36:42** | `NODE-RETRO` | [node_todo_1781746292] Migrated substrate scripts to read from decomposed artifacts/audit/ directory.
+- **2026-06-17 18:37:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:37:28** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:38:00** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:38:01** | `NODE-RETRO` | [node_todo_1781746292] Migrated substrate scripts to read from decomposed artifacts/audit/ directory and patched GAP race condition.
