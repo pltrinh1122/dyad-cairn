@@ -685,3 +685,5 @@
 - **2026-06-17 15:28:30** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:29:12** | `COMMONS_SYNC` | Absorb state_arc_start anchor updates from commons
 - **2026-06-17 15:29:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:47** | `NODE-RETRO` | [node_todo_fsm_state_session_start] Defined state_session_start.md anchor
