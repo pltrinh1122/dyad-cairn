@@ -762,3 +762,6 @@
 - **2026-06-17 15:29:04** | `COMMONS_SYNC` | Absorbed state_arc_start anchor template and associated tooling updates from the commons.
 - **2026-06-17 15:29:12** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:30:23** | `COMMONS_SYNC` | Absorbed state_arc_start anchor template and associated tooling updates from the commons.
+- **2026-06-17 15:30:39** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:47** | `NODE-RETRO` | [node_todo_fsm_state_arc_end] Implemented state_arc_end.md anchor template with strict invariants and transitions for the retro/synthesis phase.
