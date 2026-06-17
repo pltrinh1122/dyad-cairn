@@ -688,3 +688,34 @@
 - **2026-06-17 15:30:04** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:30:31** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:30:31** | `NODE-RETRO` | [node_todo_fsm_manager_get_anchor] Implemented get_active_anchor returning GEMINI.md
+- **2026-06-17 15:24:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:25:39** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:25** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:25** | `NODE-RETRO` | [node_todo_fsm_state_session_start] Defined state_session_start.md anchor
+- **2026-06-17 15:28:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:12** | `COMMONS_SYNC` | Absorb state_arc_start anchor updates from commons
+- **2026-06-17 15:29:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:47** | `NODE-RETRO` | [node_todo_fsm_state_session_start] Defined state_session_start.md anchor
+- **2026-06-17 15:26:12** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:25** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:24** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:44** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:45** | `NODE-RETRO` | [node_todo_fsm_state_session_end] Created state_session_end template
+- **2026-06-17 15:28:13** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:14** | `NODE-RETRO` | [node_todo_fsm_state_session_end] Created state_session_end template
+- **2026-06-17 15:24:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:54** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:36** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:37** | `NODE-RETRO` | [node_todo_fsm_state_arc_start] Defined and validated the state_arc_start.md anchor for SUBSTRATE level operations.
+- **2026-06-17 15:29:04** | `COMMONS_SYNC` | Sync upstream changes
+- **2026-06-17 15:28:12** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:46** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:57** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:57** | `NODE-RETRO` | [node_todo_fsm_manager_validate] Implemented generic fsm_manager.validate_transition with basic dict-based rules
