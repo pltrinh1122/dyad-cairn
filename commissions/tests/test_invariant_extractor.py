@@ -3,15 +3,15 @@ import os
 import sys
 from unittest.mock import patch
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from skills import invariant_extractor
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+from commissions import invariant_extractor
 
 def test_f1_determinism():
     """F-1: Two consecutive runs over identical sources differ by >=1 byte => REFUTED."""
     md_content = "<!-- INV bond:123 | test invariant -->\n"
     sidecar_content = "bond:123:\n  root_kind: constraint\n"
     
-    with patch("skills.invariant_extractor.get_git_sha", return_value="fake_sha"):
+    with patch("commissions.invariant_extractor.get_git_sha", return_value="fake_sha"):
         out1 = invariant_extractor.run_extraction([md_content], sidecar_content)
         out2 = invariant_extractor.run_extraction([md_content], sidecar_content)
         assert out1 == out2
@@ -48,7 +48,7 @@ def test_f8_merge_id_integrity_orphan_sidecar():
 
 def test_a1_dirty_tree():
     """A-1: Dirty tree run => HALT."""
-    with patch("skills.invariant_extractor.is_git_clean", return_value=False):
+    with patch("commissions.invariant_extractor.is_git_clean", return_value=False):
         with pytest.raises(SystemExit) as exc_info:
             invariant_extractor.validate_preconditions()
         assert exc_info.value.code == invariant_extractor.HALT_DIRTY_TREE
