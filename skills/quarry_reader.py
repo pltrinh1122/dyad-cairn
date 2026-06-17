@@ -70,13 +70,22 @@ def main():
             
     print("")
     print("--- [SUBSTRATE] (Monitoring & Remediation) ---")
-    print("3. [FROZEN] The Integrity Audits (artifacts/audit_state.yml)")
-    try:
-        with open("artifacts/audit_state.yml", "r") as f:
-            audit = yaml.safe_load(f) or {}
-    except Exception:
-        audit = {}
-    audit_nodes = audit.get("nodes", {})
+    print("3. [FROZEN] The Integrity Audits (artifacts/audit/)")
+    audit_nodes = {}
+    if os.path.exists("artifacts/audit"):
+        for fname in sorted(os.listdir("artifacts/audit")):
+            if fname.endswith(".yml"):
+                try:
+                    with open(os.path.join("artifacts/audit", fname), "r") as f:
+                        data = yaml.safe_load(f) or {}
+                        if "nodes" in data:
+                            for k, v in data["nodes"].items():
+                                audit_nodes[k] = v
+                        else:
+                            for k, v in data.items():
+                                audit_nodes[k] = v
+                except Exception:
+                    pass
     
     total_audits = len(audit_nodes)
     failing_audits = {k: v for k, v in audit_nodes.items() if str(v.get("status", "")).upper() == "FAILING"}
