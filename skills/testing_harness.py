@@ -12,6 +12,8 @@ def run_tests(args):
     cmd = ["python3", "-m", "pytest", "tests/"]
     if os.path.exists("commons"):
         cmd.append("commons/")
+    if os.path.exists("commissions"):
+        cmd.append("commissions/")
     cmd.extend(args)
     print(f"[TEST HARNESS] Executing: {' '.join(cmd)}")
     
