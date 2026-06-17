@@ -528,7 +528,8 @@ if __name__ == "__main__":
         print("Usage: python3 skills/flow_state_manager.py <action> <node_id> [args]")
         sys.exit(1)
     
-    check_retro_lock()
+    if action != "retro":
+        check_retro_lock()
     check_sovereignty_trigger()
     check_audit_lock()
     
