@@ -813,3 +813,7 @@
 - **2026-06-17 15:35:56** | `NODE-RETRO` | [node_todo_fsm_cli_start] Reflect green
 - **2026-06-17 15:36:54** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:36:54** | `NODE-RETRO` | [node_todo_fsm_cli_start] Reflect green passes
+- **2026-06-17 15:41:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:41:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:42:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:42:10** | `NODE-RETRO` | [node_todo_fsm_manager_enforce] Implemented fsm_manager.enforce_guard to throw hard CSI errors on invalid transitions, blocking multiversal drift.
