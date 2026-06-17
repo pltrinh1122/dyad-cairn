@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# A script to poll GitHub Actions for a PR and block synchronously until completion.
+# Exits with 0 if checks pass, or >0 if checks fail.
+
+if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
+    echo "Usage: ./bin/pr-sync [PR number, url, or branch]"
+    echo "Blocks synchronously until the PR checks reach a definitive PASS or FAIL state."
+    exit 0
+fi
+
+echo "Synchronizing PR checks..."
+
+# We use the built-in --watch flag of 'gh pr checks' which handles the polling loop
+# natively. It blocks until the PR checks finish, exiting 0 on success and >0 on failure.
+gh pr checks "$@" --watch
+EXIT_CODE=$?
+
+if [ $EXIT_CODE -eq 0 ]; then
+    echo "✅ PR checks PASSED."
+else
+    echo "❌ PR checks FAILED."
+fi
+
+exit $EXIT_CODE
