@@ -835,3 +835,7 @@
   Operating without an explicit state machine boundary, which previously led to boundless, ambiguously structured sessions. Using un-versioned `.worktrees` without strict pruning sequences after merging, which causes branch collisions.
   
   </details>
+- **2026-06-17 15:59:07** | `TODO` | --help
+- **2026-06-17 16:07:26** | `TODO` | Extract workflow invariants from DYAD.md into FSM templates
+- **2026-06-17 16:17:02** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 16:17:02** | `NODE-RETRO` | [node_todo_1781737646] Extracted workflow invariants from DYAD.md into FSM templates to prevent state conflation.
