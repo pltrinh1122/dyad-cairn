@@ -644,3 +644,5 @@
 {"timestamp": "2026-06-17T15:29:16.091441+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-17T15:29:47.501442+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-17T15:29:47.837417+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_cli_retro] Wired FSM into bin/retro. Substrate execution unified via flow_state_manager."}
+{"timestamp": "2026-06-17T15:30:29.852691+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:30:30.145669+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_cli_retro] Wired FSM into bin/retro. Substrate execution unified via flow_state_manager."}
