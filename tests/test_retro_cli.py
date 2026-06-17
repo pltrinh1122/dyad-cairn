@@ -17,10 +17,10 @@ def test_fsm_process_retro_success():
         fsm.process_retro("test summary", "fake_path.md")
         
         # Assert Linter is called
-        mock_sub_run.assert_any_call("python3 skills/retro_linter.py \"fake_path.md\"", shell=True, capture_output=True, text=True)
+        mock_sub_run.assert_any_call("python3 skills/retro_linter.py \"fake_path.md\"", shell=True, capture_output=False, text=False)
         
         # Assert Ledger Manager is called
-        mock_sub_run.assert_any_call("python3 skills/ledger_manager.py retro \"test summary\" \"fake_path.md\"", shell=True, capture_output=True, text=True)
+        mock_sub_run.assert_any_call("python3 skills/ledger_manager.py retro \"test summary\" \"fake_path.md\"", shell=True, capture_output=False, text=False)
 
 def test_fsm_process_retro_linter_failure():
     with patch('subprocess.run') as mock_sub_run, patch('sys.exit') as mock_exit, patch('builtins.print') as mock_print:
@@ -30,7 +30,7 @@ def test_fsm_process_retro_linter_failure():
         fsm.process_retro("test summary", "fake_path.md")
         
         # Linter is called
-        mock_sub_run.assert_any_call("python3 skills/retro_linter.py \"fake_path.md\"", shell=True, capture_output=True, text=True)
+        mock_sub_run.assert_any_call("python3 skills/retro_linter.py \"fake_path.md\"", shell=True, capture_output=False, text=False)
         
         # Print failure and exit
         mock_print.assert_any_call("🚨 CSI GUARDRAIL BLOCK: Retro does not match CSS template.")

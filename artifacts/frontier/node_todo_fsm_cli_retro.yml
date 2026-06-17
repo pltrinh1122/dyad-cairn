@@ -1,0 +1,8 @@
+node_todo_fsm_cli_retro:
+  title: Wire FSM into bin/retro
+  goal: 'WHAT: Modify bin/retro to push the FSM into the arc-end state.
+
+    WHY: To intercept Operator dialect.'
+  type: PLAN
+  scope: SUBSTRATE
+  status: IN_REVIEW

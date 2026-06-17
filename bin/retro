@@ -10,11 +10,4 @@ if [ -z "$2" ]; then
     exit 1
 fi
 
-python3 skills/retro_linter.py "$2"
-if [ $? -ne 0 ]; then
-    echo "🚨 CSI GUARDRAIL BLOCK: Retro does not match CSS template."
-    echo "[STEERING VECTOR] Format the retro message to exactly match the mechanical UI presentation template, then rerun."
-    exit 1
-fi
-
-python3 skills/ledger_manager.py retro "$1" "$2"
+python3 skills/flow_state_manager.py retro "$1" "$2"
