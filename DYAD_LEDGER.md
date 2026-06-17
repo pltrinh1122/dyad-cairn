@@ -693,3 +693,6 @@
 - **2026-06-17 15:29:04** | `COMMONS_SYNC` | Sync upstream changes
 - **2026-06-17 15:28:12** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:28:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:46** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:57** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:57** | `NODE-RETRO` | [node_todo_fsm_manager_validate] Implemented generic fsm_manager.validate_transition with basic dict-based rules
