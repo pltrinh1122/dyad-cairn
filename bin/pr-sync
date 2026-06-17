@@ -20,6 +20,24 @@ if [ $EXIT_CODE -eq 0 ]; then
     echo "✅ PR checks PASSED."
 else
     echo "❌ PR checks FAILED."
+    
+    # CSI Guard: capture final output state to analyze failure type
+    OUTPUT=$(gh pr checks "$@" 2>&1 || true)
+    
+    if echo "$OUTPUT" | grep -qi -e "conflict in" -e "merge conflict"; then
+        CONFLICT_FILES=$(echo "$OUTPUT" | grep -ioP "(?<=conflict in )\S+" || true)
+        if [ -n "$CONFLICT_FILES" ]; then
+            for file in $CONFLICT_FILES; do
+                echo "[STEERING VECTOR] Resolve conflict in $file"
+            done
+        else
+            echo "[STEERING VECTOR] Resolve merge conflict in PR branch"
+        fi
+    elif echo "$OUTPUT" | grep -qi "fail"; then
+        echo "[STEERING VECTOR] Fix failing test cases in the PR"
+    else
+        echo "[STEERING VECTOR] Investigate failed PR checks"
+    fi
 fi
 
 exit $EXIT_CODE
