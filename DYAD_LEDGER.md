@@ -892,3 +892,6 @@
   - Silently executing raw scripts in response to raw Operator commands without a dialect prefix. The Agent must strictly demand a formal dialect prefix or convert it to an Operator CTA.
   
   </details>
+- **2026-06-17 18:11:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:11:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:11:34** | `NODE-RETRO` | [node_hook_wrapper] [node_hook_wrapper] Implemented shell wrappers in bin/dyad-shell-hooks.sh to mechanically intercept CLI exit and trigger bin/exit.
