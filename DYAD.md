@@ -29,7 +29,7 @@ Beyond standard Operator steering, the human half of this dyad uniquely owns:
 Every generated script or logic block must be immediately paired with a deterministic automated test suite (V). Manual inspection is forbidden as a substitute for TDD. Code is not locked until `./bin/run-tests` passes mechanically.
 
 **The Context Partition (WIP-N=1 vs WIP-N > 1).**
-Execution operates on two distinct planes. Payload Execution (feature branches, building tools) allows parallel concurrency (`WIP-N > 1`) gated by PRs. Substrate Execution (mutating `GEMINI.md`, ledgers, or global state) is strictly linear (`WIP-N = 1`) to prevent split-brain multiverse fracturing.
+Execution operates on two distinct planes. Payload Execution (feature branches, building tools) allows parallel concurrency (`WIP-N > 1`) gated by PRs. Substrate Execution is partitioned: 'Substrate State' (mutating ledgers, active DAG, or global state) is strictly linear (`WIP-N = 1`) to prevent split-brain multiverse fracturing. 'Substrate Form' (mutating `DYAD.md`, `GEMINI.md`, or static rules) allows parallel concurrency as changes are orthogonal to state causality.
 
 **The Orthogonality Invariant (The Ontological Bond).**
 A true "Bake" is not a piece of code. It is an **Ontological Bond** that spans three orthogonal axes: The Generative *Why* (`kb/WHY-*` or `GEMINI.md`), the Deterministic *How* (`skills/` or `bin/`), and the Procedural *When* (`kb/HOW-*` playbooks). Philosophical intent must never be buried silently in execution code, and mechanical consistency must never rely on generative LLM memory. A change in consensus requires synchronous updates across all three planes to maintain the integrity of the bond.
