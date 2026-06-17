@@ -867,3 +867,6 @@
 - **2026-06-17 16:54:18** | `NODE-RETRO` | [node_todo_1781739821] Implemented the core gh polling wrapper to block synchronously on PR completion.
 - **2026-06-17 16:57:43** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 16:57:44** | `NODE-RETRO` | [node_todo_1781739822] Implemented the CSI Guard steering logic in the PR wrapper.
+- **2026-06-17 16:59:39** | `TODO` | Add 'No Politeness Gates' explicit clause to the Autonomous Merge Invariant to structurally prevent LLM conversational reflexes from throttling the execution engine
+- **2026-06-17 17:02:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 17:02:22** | `NODE-RETRO` | [node_todo_1781739824] Integrated the 'gh' wrapper and CSI Guard into the FSM Dialect mappings.
