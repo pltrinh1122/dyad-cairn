@@ -710,3 +710,6 @@
 {"timestamp": "2026-06-17T17:02:22.885819+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781739824] Integrated the 'gh' wrapper and CSI Guard into the FSM Dialect mappings."}
 {"timestamp": "2026-06-17T17:44:07.901604+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-17T17:44:08.209676+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781740779] Codified the No Politeness Gates clause into DYAD.md"}
+{"timestamp": "2026-06-17T18:11:22.418548+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T18:11:34.013987+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T18:11:34.313205+00:00Z", "action": "NODE-RETRO", "message": "[node_hook_wrapper] [node_hook_wrapper] Implemented shell wrappers in bin/dyad-shell-hooks.sh to mechanically intercept CLI exit and trigger bin/exit."}

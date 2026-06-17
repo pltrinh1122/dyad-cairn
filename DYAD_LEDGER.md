@@ -872,3 +872,6 @@
 - **2026-06-17 17:02:22** | `NODE-RETRO` | [node_todo_1781739824] Integrated the 'gh' wrapper and CSI Guard into the FSM Dialect mappings.
 - **2026-06-17 17:44:07** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 17:44:08** | `NODE-RETRO` | [node_todo_1781740779] Codified the No Politeness Gates clause into DYAD.md
+- **2026-06-17 18:11:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:11:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:11:34** | `NODE-RETRO` | [node_hook_wrapper] [node_hook_wrapper] Implemented shell wrappers in bin/dyad-shell-hooks.sh to mechanically intercept CLI exit and trigger bin/exit.
