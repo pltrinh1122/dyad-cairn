@@ -1,0 +1,6 @@
+node_todo_fsm_state_arc_start:
+  goal: Define state_arc_start.md anchor
+  scope: SUBSTRATE
+  status: IN_REVIEW
+  title: Define state_arc_start.md anchor
+  type: PLAN
