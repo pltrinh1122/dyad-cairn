@@ -562,3 +562,5 @@
 {"timestamp": "2026-06-17T15:29:47.419957+00:00Z", "action": "COMMONS_SYNC", "message": "Incorporating upstream commits for commons"}
 {"timestamp": "2026-06-17T15:29:55.247938+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-17T15:31:59.367329+00:00Z", "action": "COMMONS_SYNC", "message": "Syncing commons"}
+{"timestamp": "2026-06-17T15:32:07.197546+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:32:07.521143+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_cli_exit] Implemented bin/exit wrapper to invoke flow_state_manager session-end"}
