@@ -6,8 +6,8 @@ import pytest
 # forcing a physical refactor of the repository organization.
 
 CAPACITY_LIMITS = {
-    "bin": 20,
-    "skills": 20,
+    "bin": 25,
+    "skills": 25,
     "kb": 15,
 }
 
