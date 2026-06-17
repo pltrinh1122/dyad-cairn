@@ -870,3 +870,5 @@
 - **2026-06-17 16:59:39** | `TODO` | Add 'No Politeness Gates' explicit clause to the Autonomous Merge Invariant to structurally prevent LLM conversational reflexes from throttling the execution engine
 - **2026-06-17 17:02:22** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 17:02:22** | `NODE-RETRO` | [node_todo_1781739824] Integrated the 'gh' wrapper and CSI Guard into the FSM Dialect mappings.
+- **2026-06-17 17:44:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 17:44:08** | `NODE-RETRO` | [node_todo_1781740779] Codified the No Politeness Gates clause into DYAD.md
