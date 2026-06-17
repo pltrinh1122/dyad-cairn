@@ -771,3 +771,5 @@
 - **2026-06-17 15:24:16** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:26:15** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:28:38** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:08** | `COMMONS_SYNC` | Absorbed state_arc_start anchor template and corresponding failing test from upstream
+- **2026-06-17 15:29:16** | `TODO` | test_noisy_intent_12345
