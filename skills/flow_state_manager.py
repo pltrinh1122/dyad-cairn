@@ -295,8 +295,15 @@ def create_reflection_pr(node_id, is_green):
     
     print("[FLOW] Synchronizing with remote GitHub Actions Pipeline (GAP)...")
     import time
-    time.sleep(5) # Allow GitHub to register the PR and start workflows
-    gap_result = subprocess.run("gh pr checks --watch", shell=True, capture_output=True, text=True)
+    time.sleep(15) # Allow GitHub to register the PR and start workflows
+    
+    for _ in range(6):
+        gap_result = subprocess.run("gh pr checks --watch", shell=True, capture_output=True, text=True)
+        if gap_result.returncode != 0 and "no checks reported" in (gap_result.stdout + gap_result.stderr):
+            print("[FLOW] GAP not yet registered by GitHub. Retrying in 10s...")
+            time.sleep(10)
+        else:
+            break
     
     if is_green:
         if gap_result.returncode != 0:
@@ -511,7 +518,8 @@ if __name__ == "__main__":
         print("Usage: python3 skills/flow_state_manager.py <action> <node_id> [args]")
         sys.exit(1)
     
-    check_retro_lock()
+    if action != "retro":
+        check_retro_lock()
     check_sovereignty_trigger()
     check_audit_lock()
     
