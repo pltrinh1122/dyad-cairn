@@ -895,3 +895,43 @@
 - **2026-06-17 18:11:22** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 18:11:34** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 18:11:34** | `NODE-RETRO` | [node_hook_wrapper] [node_hook_wrapper] Implemented shell wrappers in bin/dyad-shell-hooks.sh to mechanically intercept CLI exit and trigger bin/exit.
+- **2026-06-17 18:31:32** | `TODO` | Fix the HEALTH invariants display in quarry_reader.py
+- **2026-06-17 18:42:13** | `RETRO` | GAP Polling Race Condition & Subagent Overwrite
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: GAP Polling Race Condition & Flow Manager State Overrides
+  
+  ## Continue
+  - Relying on the deterministic test suite to falsify implementations before proceeding to the Green Phase merge.
+  - Using mechanical validation (Dialect Linter, Testing Harness) to rigorously enforce the Consistency Guardrails and prevent broken state transitions.
+  
+  ## Start
+  - Before modifying shared orchestrator scripts (`skills/flow_state_manager.py`), we must strictly verify the active branch context or commit fixes locally within the subagent worktree to prevent unintentionally overwriting active parallel work.
+  - We must anticipate structural race conditions in distributed systems (such as GitHub Actions pipeline polling) and proactively implement deterministic retry loops rather than relying on brittle, hardcoded sleep intervals.
+  
+  ## Stop
+  - Blindly copying files from the `main` directory into active parallel worktrees, which effectively deletes subagent context and triggers regression failures.
+  
+  </details>
+- **2026-06-17 18:44:17** | `RETRO` | Extracting Workflow Invariants to FSM Templates
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Extracting Workflow Invariants to FSM Templates
+  
+  ## Continue
+  - Using the Invisible Elicitor protocol (`ask_question`) to define the WHY, WHAT, and SCOPE before locking a node in the DAG.
+  - Offloading the actual execution securely to subagents, maintaining the parallel branch and PR review invariant.
+  
+  ## Start
+  - We must explicitly ensure executable permissions (`chmod +x`) are set on all newly created or modified scripts to prevent mechanical CI failures.
+  
+  ## Stop
+  - Relying on global `DYAD.md` documentation for state-specific operations. We must strictly enforce writing mechanical bindings directly into their corresponding `kb/templates/state_*.md` files.
+  
+  </details>
+- **2026-06-17 18:45:52** | `TODO` | take on the commissioned work to build an invariant extraction engine from dyad-bonds
+- **2026-06-17 18:58:00** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:58:21** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:58:22** | `NODE-RETRO` | [node_todo_1781747152] Built the deterministic extractor engine, passing all F-set constraints and TDD RED/GREEN validation without modifying the proposed tag-grammar.
