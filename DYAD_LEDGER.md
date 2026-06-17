@@ -865,3 +865,5 @@
 - **2026-06-17 16:43:43** | `TODO` | Part 3: Integrate the 'gh' wrapper and CSI Guard into the FSM Dialect mappings
 - **2026-06-17 16:54:18** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 16:54:18** | `NODE-RETRO` | [node_todo_1781739821] Implemented the core gh polling wrapper to block synchronously on PR completion.
+- **2026-06-17 16:57:43** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 16:57:44** | `NODE-RETRO` | [node_todo_1781739822] Implemented the CSI Guard steering logic in the PR wrapper.
