@@ -676,6 +676,33 @@
 - **2026-06-17 02:13:22** | `NODE-RETRO` | [node_todo_1781297795] Implemented assert_batch_semantic_alignment LLM check placeholder in preflight_grounding to enforce semantic consistency within batch nodes before authorization.
 - **2026-06-17 02:16:25** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 02:16:25** | `NODE-RETRO` | [node_todo_1781297795] Implemented assert_batch_semantic_alignment LLM check placeholder in preflight_grounding to enforce semantic consistency within batch nodes before authorization.
+- **2026-06-17 15:23:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:23:43** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:03** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:01** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:01** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:31** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:41** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:53** | `COMMONS_SYNC` | Exempt SUBSTRATE form from mechanical WIP-N=1 check
+- **2026-06-17 15:27:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:09** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:57** | `COMMONS_SYNC` | Sync all new upstream commits
+- **2026-06-17 15:30:04** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:31** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:31** | `NODE-RETRO` | [node_todo_fsm_manager_get_anchor] Implemented get_active_anchor returning GEMINI.md
+- **2026-06-17 15:24:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:25:39** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:25** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:25** | `NODE-RETRO` | [node_todo_fsm_state_session_start] Defined state_session_start.md anchor
+- **2026-06-17 15:28:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:12** | `COMMONS_SYNC` | Absorb state_arc_start anchor updates from commons
+- **2026-06-17 15:29:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:47** | `NODE-RETRO` | [node_todo_fsm_state_session_start] Defined state_session_start.md anchor
 - **2026-06-17 15:26:12** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:26:25** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:26:47** | `TODO` | test_noisy_intent_12345
@@ -699,3 +726,82 @@
 - **2026-06-17 15:32:31** | `NODE-RETRO` | [node_todo_fsm_cli_exit] Implemented bin/exit wrapper to invoke flow_state_manager session-end
 - **2026-06-17 15:32:51** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:32:52** | `NODE-RETRO` | [node_todo_fsm_cli_exit] Implemented bin/exit wrapper to invoke flow_state_manager session-end
+- **2026-06-17 15:29:46** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:07** | `NODE-RETRO` | [node_todo_fsm_manager_enforce] Implemented fsm_manager.enforce_guard to throw hard CSI errors on invalid transitions, blocking multiversal drift.
+- **2026-06-17 15:30:58** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:31:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:31:52** | `COMMONS_SYNC` | Synthesizing latest concurrent playbook merges
+- **2026-06-17 15:32:05** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:32:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:32:17** | `NODE-RETRO` | [node_todo_fsm_manager_enforce] Implemented fsm_manager.enforce_guard to throw hard CSI errors on invalid transitions, blocking multiversal drift.
+- **2026-06-17 15:29:04** | `COMMONS_SYNC` | Sync upstream changes
+- **2026-06-17 15:28:12** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:46** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:57** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:57** | `NODE-RETRO` | [node_todo_fsm_manager_validate] Implemented generic fsm_manager.validate_transition with basic dict-based rules
+- **2026-06-17 15:31:21** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:31:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:31:30** | `NODE-RETRO` | [node_todo_fsm_cli_start] Implemented session_start in FSM and wired bin/start
+- **2026-06-17 15:32:33** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:32:33** | `NODE-RETRO` | [node_todo_fsm_cli_start] Implemented session_start in FSM and wired bin/start
+- **2026-06-17 15:34:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:34:47** | `NODE-RETRO` | [node_todo_fsm_cli_start] Implemented session_start in FSM and wired bin/start
+- **2026-06-17 15:25:33** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:25:52** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:08** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:15** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:54** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:36** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:37** | `NODE-RETRO` | [node_todo_fsm_state_arc_start] Defined and validated the state_arc_start.md anchor for SUBSTRATE level operations.
+- **2026-06-17 15:28:49** | `COMMONS_SYNC` | Absorbed new upstream playbook for fsm_state_arc_start anchor template and integration.
+- **2026-06-17 15:29:36** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:58** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:06** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:06** | `NODE-RETRO` | [node_todo_fsm_manager_set_anchor] Implemented fsm_manager.set_active_anchor to securely overwrite the dyad-state/active_anchor physical file, allowing FSM context transitions.
+- **2026-06-17 15:31:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:31:22** | `NODE-RETRO` | [node_todo_fsm_manager_set_anchor] Implemented fsm_manager.set_active_anchor to securely overwrite the dyad-state/active_anchor physical file, allowing FSM context transitions.
+- **2026-06-17 15:24:06** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:37** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:29** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:12** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:25** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:24** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:44** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:45** | `NODE-RETRO` | [node_todo_fsm_state_session_end] Created state_session_end template
+- **2026-06-17 15:28:13** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:14** | `NODE-RETRO` | [node_todo_fsm_state_session_end] Created state_session_end template
+- **2026-06-17 15:24:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:54** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:36** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:37** | `NODE-RETRO` | [node_todo_fsm_state_arc_start] Defined and validated the state_arc_start.md anchor for SUBSTRATE level operations.
+- **2026-06-17 15:29:04** | `COMMONS_SYNC` | Absorbed state_arc_start anchor template and associated tooling updates from the commons.
+- **2026-06-17 15:29:12** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:23** | `COMMONS_SYNC` | Absorbed state_arc_start anchor template and associated tooling updates from the commons.
+- **2026-06-17 15:30:39** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:47** | `NODE-RETRO` | [node_todo_fsm_state_arc_end] Implemented state_arc_end.md anchor template with strict invariants and transitions for the retro/synthesis phase.
+- **2026-06-17 15:31:14** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:31:14** | `NODE-RETRO` | [node_todo_fsm_state_arc_end] Implemented state_arc_end.md anchor template with strict invariants and transitions for the retro/synthesis phase.
+- **2026-06-17 15:23:56** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:15** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:38** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:08** | `COMMONS_SYNC` | Absorbed state_arc_start anchor template and corresponding failing test from upstream
+- **2026-06-17 15:29:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:47** | `NODE-RETRO` | [node_todo_fsm_cli_retro] Wired FSM into bin/retro. Substrate execution unified via flow_state_manager.
+- **2026-06-17 15:30:29** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:30** | `NODE-RETRO` | [node_todo_fsm_cli_retro] Wired FSM into bin/retro. Substrate execution unified via flow_state_manager.
+- **2026-06-17 15:35:56** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:35:56** | `NODE-RETRO` | [node_todo_fsm_cli_start] Reflect green
+- **2026-06-17 15:36:54** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:36:54** | `NODE-RETRO` | [node_todo_fsm_cli_start] Reflect green passes

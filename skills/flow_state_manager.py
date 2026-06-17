@@ -2,6 +2,10 @@ import sys
 import subprocess
 import os
 
+def get_active_anchor():
+    """Returns the name of the active platform anchor."""
+    return "GEMINI.md"
+
 def run_cmd(cmd, allow_fail=False):
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     if result.returncode != 0 and not allow_fail:
@@ -64,6 +68,10 @@ def check_audit_lock():
             print("[STEERING VECTOR] The Audit DAG must be physically cleared (all nodes evaluated to DONE) before Frontier Execution can resume. The Agent must satisfy this invariant.")
             print("==========================================================================")
             sys.exit(1)
+
+def session_start():
+    print("[FLOW] Executing Session Start...")
+
 def plan_node(node_id):
     print(f"[FLOW] Planning Node {node_id}...")
     print(f"[FLOW] Local DAG asserts planning. No remote issue required.")
@@ -323,6 +331,20 @@ def create_reflection_pr(node_id, is_green):
         run_cmd(f"python3 skills/frontier_editor.py {node_id} IN_REVIEW")
         print(f"[FLOW] Node {node_id} status transitioned to IN_REVIEW. Execution halted pending Operator Approval.")
 
+def process_retro(summary, css_path=None):
+    if not css_path:
+        print("Usage: ./bin/retro <summary> <path/to/retro.md>")
+        print("ERROR: CSS Template (path/to/retro.md) is strictly mandatory to fulfill the Cognitive State Synchronization invariant.")
+        sys.exit(1)
+        
+    linter_result = subprocess.run(f"python3 skills/retro_linter.py \"{css_path}\"", shell=True, capture_output=False, text=False)
+    if linter_result.returncode != 0:
+        print("🚨 CSI GUARDRAIL BLOCK: Retro does not match CSS template.")
+        print("[STEERING VECTOR] Format the retro message to exactly match the mechanical UI presentation template, then rerun.")
+        sys.exit(1)
+        
+    subprocess.run(f"python3 skills/ledger_manager.py retro \"{summary}\" \"{css_path}\"", shell=True, capture_output=False, text=False)
+
 def complete_node(node_id, retro_msg):
     print(f"[FLOW] Executing CSI Guard (Test Suite) for Node {node_id} completion...")
     
@@ -468,7 +490,25 @@ def trail_dispose(trail_id):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python3 skills/flow_state_manager.py <plan|checkout|reflect-red|reflect-green|complete|trail-reflect|session-end> <node_id> [retro_msg]")
+        print("Usage: python3 skills/flow_state_manager.py <action> ...")
+        sys.exit(1)
+        
+    action = sys.argv[1].lower()
+    
+    if action == "session-start":
+        session_start()
+        sys.exit(0)
+
+    if action == "session-end":
+        print("[FLOW] Pushing FSM into session-end state...")
+        import yaml
+        os.makedirs("dyad-state", exist_ok=True)
+        with open("dyad-state/fsm_state.yml", "w") as f:
+            yaml.dump({"state": "session-end"}, f)
+        sys.exit(0)
+
+    if len(sys.argv) < 3:
+        print("Usage: python3 skills/flow_state_manager.py <action> <node_id> [args]")
         sys.exit(1)
     
     check_retro_lock()
@@ -484,21 +524,6 @@ if __name__ == "__main__":
         if isinstance(e, SystemExit):
             sys.exit(e.code)
         pass
-
-    action = sys.argv[1].lower()
-    
-    if action == "session-end":
-        print("[FLOW] Pushing FSM into session-end state...")
-        import yaml
-        os.makedirs("dyad-state", exist_ok=True)
-        with open("dyad-state/fsm_state.yml", "w") as f:
-            yaml.dump({"state": "session-end"}, f)
-        sys.exit(0)
-        
-    if len(sys.argv) < 3:
-        print("Usage: python3 skills/flow_state_manager.py <plan|checkout|reflect-red|reflect-green|complete|trail-reflect> <node_id> [retro_msg]")
-        sys.exit(1)
-        
     node = sys.argv[2]
     
     if action == "plan":
@@ -579,6 +604,18 @@ if __name__ == "__main__":
         present_design_review(node, state)
     elif action == "dispose":
         trail_dispose(node)
+    elif action == "retro":
+        if len(sys.argv) < 5:
+            print("Usage: python3 skills/flow_state_manager.py retro <summary> <path/to/retro.md>")
+            sys.exit(1)
+        process_retro(sys.argv[3], sys.argv[4])
     else:
         print(f"Unknown action: {action}")
         sys.exit(1)
+
+def set_active_anchor(state_name, anchor_path="dyad-state/active_anchor"):
+    import os
+    if os.path.lexists(anchor_path):
+        os.remove(anchor_path)
+    with open(anchor_path, "w") as f:
+        f.write(state_name)

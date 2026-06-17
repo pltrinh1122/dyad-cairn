@@ -1,0 +1,6 @@
+node_todo_fsm_cli_start:
+  title: Wire FSM CLI Start
+  goal: Wire FSM into bin/start
+  type: PLAN
+  scope: SUBSTRATE
+  status: IN_REVIEW

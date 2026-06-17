@@ -545,6 +545,33 @@
 {"timestamp": "2026-06-17T02:13:22.780036+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781297795] Implemented assert_batch_semantic_alignment LLM check placeholder in preflight_grounding to enforce semantic consistency within batch nodes before authorization."}
 {"timestamp": "2026-06-17T02:16:25.616873+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-17T02:16:25.928758+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781297795] Implemented assert_batch_semantic_alignment LLM check placeholder in preflight_grounding to enforce semantic consistency within batch nodes before authorization."}
+{"timestamp": "2026-06-17T15:23:16.889991+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:23:43.478499+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:24:03.450570+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:28:01.574238+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:26:01.472403+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:26:16.235139+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:26:31.534346+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:26:41.428898+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:26:53.865775+00:00Z", "action": "COMMONS_SYNC", "message": "Exempt SUBSTRATE form from mechanical WIP-N=1 check"}
+{"timestamp": "2026-06-17T15:27:34.807726+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:28:09.370141+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:29:22.606705+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:29:57.486377+00:00Z", "action": "COMMONS_SYNC", "message": "Sync all new upstream commits"}
+{"timestamp": "2026-06-17T15:30:04.718807+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:30:31.432841+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:30:31.773821+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_manager_get_anchor] Implemented get_active_anchor returning GEMINI.md"}
+{"timestamp": "2026-06-17T15:24:55.368777+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:25:39.758883+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:26:07.390665+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:27:25.358187+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:27:25.657280+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_state_session_start] Defined state_session_start.md anchor"}
+{"timestamp": "2026-06-17T15:28:23.116478+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:28:30.176047+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:29:12.412774+00:00Z", "action": "COMMONS_SYNC", "message": "Absorb state_arc_start anchor updates from commons"}
+{"timestamp": "2026-06-17T15:29:20.195418+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:29:47.594691+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:29:47.947942+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_state_session_start] Defined state_session_start.md anchor"}
 {"timestamp": "2026-06-17T15:26:12.202774+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-17T15:26:25.679401+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-17T15:26:47.098674+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
@@ -568,3 +595,82 @@
 {"timestamp": "2026-06-17T15:32:31.239648+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_cli_exit] Implemented bin/exit wrapper to invoke flow_state_manager session-end"}
 {"timestamp": "2026-06-17T15:32:51.822925+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-17T15:32:52.130398+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_cli_exit] Implemented bin/exit wrapper to invoke flow_state_manager session-end"}
+{"timestamp": "2026-06-17T15:29:46.597852+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:30:07.402319+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:30:07.697631+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_manager_enforce] Implemented fsm_manager.enforce_guard to throw hard CSI errors on invalid transitions, blocking multiversal drift."}
+{"timestamp": "2026-06-17T15:30:58.216731+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:31:10.509131+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:31:52.972978+00:00Z", "action": "COMMONS_SYNC", "message": "Synthesizing latest concurrent playbook merges"}
+{"timestamp": "2026-06-17T15:32:05.817365+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:32:16.741571+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:32:17.046976+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_manager_enforce] Implemented fsm_manager.enforce_guard to throw hard CSI errors on invalid transitions, blocking multiversal drift."}
+{"timestamp": "2026-06-17T15:29:04.780341+00:00Z", "action": "COMMONS_SYNC", "message": "Sync upstream changes"}
+{"timestamp": "2026-06-17T15:28:12.493576+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:28:23.766883+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:29:46.181295+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:29:57.278374+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:29:57.605244+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_manager_validate] Implemented generic fsm_manager.validate_transition with basic dict-based rules"}
+{"timestamp": "2026-06-17T15:31:21.014336+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:31:30.491319+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:31:30.789537+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_cli_start] Implemented session_start in FSM and wired bin/start"}
+{"timestamp": "2026-06-17T15:32:33.055006+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:32:33.358600+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_cli_start] Implemented session_start in FSM and wired bin/start"}
+{"timestamp": "2026-06-17T15:34:47.166223+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:34:47.461314+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_cli_start] Implemented session_start in FSM and wired bin/start"}
+{"timestamp": "2026-06-17T15:25:33.005149+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:25:52.569659+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:28:08.067666+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:28:15.950515+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:24:34.265565+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:24:54.062550+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:26:18.584765+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:27:17.308804+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:27:36.791791+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:27:37.081990+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_state_arc_start] Defined and validated the state_arc_start.md anchor for SUBSTRATE level operations."}
+{"timestamp": "2026-06-17T15:28:49.198278+00:00Z", "action": "COMMONS_SYNC", "message": "Absorbed new upstream playbook for fsm_state_arc_start anchor template and integration."}
+{"timestamp": "2026-06-17T15:29:36.789984+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:29:58.350366+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:30:06.654220+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:30:06.965385+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_manager_set_anchor] Implemented fsm_manager.set_active_anchor to securely overwrite the dyad-state/active_anchor physical file, allowing FSM context transitions."}
+{"timestamp": "2026-06-17T15:31:22.364503+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:31:22.686099+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_manager_set_anchor] Implemented fsm_manager.set_active_anchor to securely overwrite the dyad-state/active_anchor physical file, allowing FSM context transitions."}
+{"timestamp": "2026-06-17T15:24:06.686053+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:24:18.350767+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:24:37.209555+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:28:29.153711+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:26:12.202774+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:26:25.679401+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:26:47.098674+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:27:24.623230+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:27:44.803541+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:27:45.115002+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_state_session_end] Created state_session_end template"}
+{"timestamp": "2026-06-17T15:28:13.813992+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:28:14.121693+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_state_session_end] Created state_session_end template"}
+{"timestamp": "2026-06-17T15:24:34.265565+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:24:54.062550+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:26:18.584765+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:27:17.308804+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:27:36.791791+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:27:37.081990+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_state_arc_start] Defined and validated the state_arc_start.md anchor for SUBSTRATE level operations."}
+{"timestamp": "2026-06-17T15:29:04.619240+00:00Z", "action": "COMMONS_SYNC", "message": "Absorbed state_arc_start anchor template and associated tooling updates from the commons."}
+{"timestamp": "2026-06-17T15:29:12.778976+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:30:23.414842+00:00Z", "action": "COMMONS_SYNC", "message": "Absorbed state_arc_start anchor template and associated tooling updates from the commons."}
+{"timestamp": "2026-06-17T15:30:39.005991+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:30:47.115674+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:30:47.437309+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_state_arc_end] Implemented state_arc_end.md anchor template with strict invariants and transitions for the retro/synthesis phase."}
+{"timestamp": "2026-06-17T15:31:14.408296+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:31:14.715676+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_state_arc_end] Implemented state_arc_end.md anchor template with strict invariants and transitions for the retro/synthesis phase."}
+{"timestamp": "2026-06-17T15:23:56.205191+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:24:16.413019+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:26:15.552414+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:28:38.322238+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:29:08.053648+00:00Z", "action": "COMMONS_SYNC", "message": "Absorbed state_arc_start anchor template and corresponding failing test from upstream"}
+{"timestamp": "2026-06-17T15:29:16.091441+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:29:47.501442+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:29:47.837417+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_cli_retro] Wired FSM into bin/retro. Substrate execution unified via flow_state_manager."}
+{"timestamp": "2026-06-17T15:30:29.852691+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:30:30.145669+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_cli_retro] Wired FSM into bin/retro. Substrate execution unified via flow_state_manager."}
+{"timestamp": "2026-06-17T15:35:56.480887+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:35:56.789919+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_cli_start] Reflect green"}
+{"timestamp": "2026-06-17T15:36:54.492607+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:36:54.795132+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_cli_start] Reflect green passes"}
