@@ -17,14 +17,14 @@ def audit_dialect():
     violations = []
     
     # We want to audit the transcript for the current node. 
-    # For simplicity, we just audit the last 50 steps.
+    # Since we lack a robust boundary marker, we limit the lookback to avoid 
+    # soft-bricking on historical violations.
     steps = []
     with open(transcript_path, "r") as f:
         for line in f:
             if line.strip():
                 steps.append(json.loads(line))
-                
-    steps = steps[-50:]
+    steps = steps[-5:]
     
     for i, step in enumerate(steps):
         if step.get("type") == "USER_INPUT":

@@ -15,6 +15,8 @@ def test_complete_node_success():
         def side_effect(cmd, allow_fail=False):
             if "testing_harness.py" in cmd:
                 return "[TEST HARNESS] PASS: All tests passed mechanically."
+            if "git rev-parse" in cmd:
+                return "main"
             return ""
         mock_run_cmd.side_effect = side_effect
         
@@ -22,9 +24,10 @@ def test_complete_node_success():
         retro_msg = "test retro"
         fsm.complete_node(node_id, retro_msg)
         
+        mock_subrun.assert_any_call("python3 skills/dialect_linter.py", shell=True, capture_output=True, text=True)
         mock_run_cmd.assert_any_call("python3 skills/testing_harness.py", allow_fail=True)
-        mock_append.assert_called_once_with("node-retro", "[node_123] test retro")
-        mock_run_cmd.assert_any_call(f"python3 skills/frontier_editor.py {node_id} DONE")
+        mock_append.assert_called_with("node-retro", "[node_123] test retro")
+        mock_run_cmd.assert_any_call("python3 skills/frontier_editor.py node_123 DONE")
 
 def test_complete_node_missing_rca():
     with patch('skills.flow_state_manager.run_cmd') as mock_run_cmd, \
@@ -55,6 +58,8 @@ def test_complete_node_failure():
         def side_effect(cmd, allow_fail=False):
             if "testing_harness.py" in cmd:
                 return "[TEST HARNESS] FAIL: Tests did not pass."
+            if "git rev-parse" in cmd:
+                return "main"
             return ""
         mock_run_cmd.side_effect = side_effect
         

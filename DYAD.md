@@ -15,6 +15,7 @@ Our durable-record root is the `dyad-cairn/` repository itself. We use our own l
 ## 3. Form-Grounding
 - **Faithfully Inherited:** The Tenet (1+1=3), the SPAOR execution scaffold, and the Validate mechanisms (Falsification, Triangulation, Grounding) from the Commons.
 - **Locally Evolved:** Our primary Generate mechanism is **Synthesis / Condensation** (extracting signal across multiple disparate dyads to form a single structure).
+- **CSI Guard / PR Constraint:** Pull Request actions are mathematically forced to use `./bin/pr-sync`. The use of raw `gh pr create` or `gh pr merge` is explicitly forbidden.
 
 ## 4. Channel Discipline (The Operator's Hats)
 Beyond standard Operator steering, the human half of this dyad uniquely owns:
@@ -35,7 +36,7 @@ Execution operates on two distinct planes. Payload Execution (feature branches, 
 A true "Bake" is not a piece of code. It is an **Ontological Bond** that spans three orthogonal axes: The Generative *Why* (`kb/WHY-*` or `GEMINI.md`), the Deterministic *How* (`skills/` or `bin/`), and the Procedural *When* (`kb/HOW-*` playbooks). Philosophical intent must never be buried silently in execution code, and mechanical consistency must never rely on generative LLM memory. A change in consensus requires synchronous updates across all three planes to maintain the integrity of the bond.
 
 **The Autonomous Merge Invariant (Parallel WIP Unlocked).**
-The Agent must never commit directly to `main`. Execution happens strictly on a branch, culminating in a Pull Request. The Agent may operate multiple concurrent branches (WIP-N > 1) to prevent velocity throttling. The HTIL Gate exclusively occurs at the architecture and test invariant review (the Red Phase Spec). Once the Operator approves the Red Spec, the Agent is fully authorized to autonomously merge the Green Phase PR if all mechanical CI tests pass. This prevents bottlenecking the engine.
+The Agent must never commit directly to `main`. Execution happens strictly on a branch, culminating in a Pull Request. The Agent may operate multiple concurrent branches (WIP-N > 1) to prevent velocity throttling. The HTIL Gate exclusively occurs at the architecture and test invariant review (the Red Phase Spec). Once the Operator approves the Red Spec, the Agent is fully authorized to autonomously merge the Green Phase PR if all mechanical CI tests pass. This prevents bottlenecking the engine. No Politeness Gates: structurally prevents LLM conversational reflexes from throttling the execution engine. The Operator rewards non-destructive initiative and penalizes indecision.
 
 **The Builder vs Enforcer Invariant.**
 The Mason is a materialization engine, not a sandbox warden. Substrate sandboxing and invariant policing must strictly belong to dedicated Enforcer scripts (CI Guards, physical wrappers), NEVER embedded inside the materialization tools themselves. Conflating the two destroys the strict abstraction.

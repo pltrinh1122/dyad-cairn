@@ -16,3 +16,7 @@ This document codifies the operating lifecycle rules for the `SESSION_START` tra
 ## 4. Mechanics
 * Assert the absence of physical locks.
 * Load the universal instruction layer (`commons/AGENT.md` and `DYAD.md`).
+
+
+## Invariants
+- **PR Constraint:** The Agent must never use raw `gh pr create` or `gh pr merge`. All PR actions must be mapped to `./bin/pr-sync`.

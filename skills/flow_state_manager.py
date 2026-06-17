@@ -49,14 +49,24 @@ def check_audit_lock():
     if current_store != "artifacts/frontier_state.yml":
         return
 
-    audit_file = "artifacts/audit_state.yml"
-    if os.path.exists(audit_file):
-        with open(audit_file, "r") as f:
-            state = yaml.safe_load(f) or {"nodes": {}}
+    audit_dir = "artifacts/audit"
+    if os.path.exists(audit_dir):
         failing_nodes = []
-        for node_id, data in state.get("nodes", {}).items():
-            if data.get("status") != "DONE":
-                failing_nodes.append(node_id)
+        for fname in sorted(os.listdir(audit_dir)):
+            if fname.endswith(".yml"):
+                try:
+                    with open(os.path.join(audit_dir, fname), "r") as f:
+                        data = yaml.safe_load(f) or {}
+                        if "nodes" in data:
+                            for node_id, node_data in data.get("nodes", {}).items():
+                                if node_data.get("status") != "DONE":
+                                    failing_nodes.append(node_id)
+                        else:
+                            for node_id, node_data in data.items():
+                                if node_data.get("status") != "DONE":
+                                    failing_nodes.append(node_id)
+                except Exception:
+                    pass
         if failing_nodes:
             print("==========================================================================")
             print("🚨 GOVERNANCE DEBT GUARDRAIL FIRED 🚨")
@@ -295,8 +305,15 @@ def create_reflection_pr(node_id, is_green):
     
     print("[FLOW] Synchronizing with remote GitHub Actions Pipeline (GAP)...")
     import time
-    time.sleep(5) # Allow GitHub to register the PR and start workflows
-    gap_result = subprocess.run("gh pr checks --watch", shell=True, capture_output=True, text=True)
+    time.sleep(15) # Allow GitHub to register the PR and start workflows
+    
+    for _ in range(6):
+        gap_result = subprocess.run("gh pr checks --watch", shell=True, capture_output=True, text=True)
+        if gap_result.returncode != 0 and "no checks reported" in (gap_result.stdout + gap_result.stderr):
+            print("[FLOW] GAP not yet registered by GitHub. Retrying in 10s...")
+            time.sleep(10)
+        else:
+            break
     
     if is_green:
         if gap_result.returncode != 0:
@@ -347,6 +364,34 @@ def process_retro(summary, css_path=None):
 
 def complete_node(node_id, retro_msg):
     print(f"[FLOW] Executing CSI Guard (Test Suite) for Node {node_id} completion...")
+    
+    print("[FLOW] Asserting Physical Merge Invariant...")
+    branch = run_cmd("git rev-parse --abbrev-ref HEAD", allow_fail=True).strip()
+    if branch != "main":
+        import json
+        pr_view = run_cmd("gh pr view --json state", allow_fail=True)
+        if "no pull requests found" in pr_view.lower():
+            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+            print("You cannot complete a node without an active Pull Request.")
+            sys.exit(1)
+        
+        try:
+            pr_view_clean = pr_view[pr_view.find("{"):] if "{" in pr_view else pr_view
+            pr_data = json.loads(pr_view_clean)
+            if pr_data.get("state") != "MERGED":
+                print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+                print(f"PR is not MERGED (current state: {pr_data.get('state')}).")
+                print("[STEERING VECTOR] Resolve merge conflicts or wait for CI to pass, then merge the PR before completing the node.")
+                sys.exit(1)
+        except Exception as e:
+            print(f"🚨 CONSISTENCY GUARDRAIL FIRED 🚨\nFailed to parse PR state: {e}\nOutput was: {pr_view}")
+            sys.exit(1)
+            
+        checks_output = run_cmd("gh pr checks", allow_fail=True)
+        if "fail" in checks_output.lower():
+            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+            print("PR CI checks have failed. The state cannot advance.")
+            sys.exit(1)
     
     print("[FLOW] Asserting Mechanical UI Gate (Dialect Linter)...")
     linter_result = subprocess.run("python3 skills/dialect_linter.py", shell=True, capture_output=True, text=True)
@@ -511,7 +556,8 @@ if __name__ == "__main__":
         print("Usage: python3 skills/flow_state_manager.py <action> <node_id> [args]")
         sys.exit(1)
     
-    check_retro_lock()
+    if action != "retro":
+        check_retro_lock()
     check_sovereignty_trigger()
     check_audit_lock()
     
