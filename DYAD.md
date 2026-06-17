@@ -15,6 +15,7 @@ Our durable-record root is the `dyad-cairn/` repository itself. We use our own l
 ## 3. Form-Grounding
 - **Faithfully Inherited:** The Tenet (1+1=3), the SPAOR execution scaffold, and the Validate mechanisms (Falsification, Triangulation, Grounding) from the Commons.
 - **Locally Evolved:** Our primary Generate mechanism is **Synthesis / Condensation** (extracting signal across multiple disparate dyads to form a single structure).
+- **CSI Guard / PR Constraint:** Pull Request actions are mathematically forced to use `./bin/pr-sync`. The use of raw `gh pr create` or `gh pr merge` is explicitly forbidden.
 
 ## 4. Channel Discipline (The Operator's Hats)
 Beyond standard Operator steering, the human half of this dyad uniquely owns:
@@ -62,6 +63,7 @@ Inherited from our parent (`dyad-touchstone`) and mechanically enforced:
 - `reflect-green` / `complete` (Wu-Wei Closure). **Mechanically mapped to:** requiring a `<retro_msg>` argument to append the closure synthesis to the Ledger before locking the state.
 - `execute:` formally dispatch a subagent to resolve a node. **Mechanically mapped to:** The `invoke_subagent` tool. *(Note: The UI-level `/goal` command is strictly retired and forbidden. We exclusively rely on the Agent-steered `execute: <node_id>` dialect to cement Agent autonomy over execution while keeping the main terminal unlocked).*
 - `read:` (or `read`, `read.`) implicitly maps to `read: quarries`. **Mechanically mapped to:** `./bin/read quarries` (or other targets if specified).
+- `pr:` pull request actions. **Mechanically mapped to:** `./bin/pr-sync`. *(Note: Explicitly forbid the use of raw `gh pr create` or `gh pr merge` to ensure CSI Guard telemetry is captured).*
 - *Other conversational markers (unbound):* `rub:`, `riff:`, `todo:`, `pin:`, `fb:`, `retro:`, `lean?`, `follow:`, `clip:`
 
 ## 8. State Management (The Offload Boundary)
