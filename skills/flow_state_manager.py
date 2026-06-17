@@ -331,6 +331,20 @@ def create_reflection_pr(node_id, is_green):
         run_cmd(f"python3 skills/frontier_editor.py {node_id} IN_REVIEW")
         print(f"[FLOW] Node {node_id} status transitioned to IN_REVIEW. Execution halted pending Operator Approval.")
 
+def process_retro(summary, css_path=None):
+    if not css_path:
+        print("Usage: ./bin/retro <summary> <path/to/retro.md>")
+        print("ERROR: CSS Template (path/to/retro.md) is strictly mandatory to fulfill the Cognitive State Synchronization invariant.")
+        sys.exit(1)
+        
+    linter_result = subprocess.run(f"python3 skills/retro_linter.py \"{css_path}\"", shell=True, capture_output=False, text=False)
+    if linter_result.returncode != 0:
+        print("🚨 CSI GUARDRAIL BLOCK: Retro does not match CSS template.")
+        print("[STEERING VECTOR] Format the retro message to exactly match the mechanical UI presentation template, then rerun.")
+        sys.exit(1)
+        
+    subprocess.run(f"python3 skills/ledger_manager.py retro \"{summary}\" \"{css_path}\"", shell=True, capture_output=False, text=False)
+
 def complete_node(node_id, retro_msg):
     print(f"[FLOW] Executing CSI Guard (Test Suite) for Node {node_id} completion...")
     
@@ -583,6 +597,11 @@ if __name__ == "__main__":
         present_design_review(node, state)
     elif action == "dispose":
         trail_dispose(node)
+    elif action == "retro":
+        if len(sys.argv) < 5:
+            print("Usage: python3 skills/flow_state_manager.py retro <summary> <path/to/retro.md>")
+            sys.exit(1)
+        process_retro(sys.argv[3], sys.argv[4])
     else:
         print(f"Unknown action: {action}")
         sys.exit(1)
