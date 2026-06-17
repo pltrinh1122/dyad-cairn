@@ -686,3 +686,5 @@
 - **2026-06-17 15:29:22** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:29:57** | `COMMONS_SYNC` | Sync all new upstream commits
 - **2026-06-17 15:30:04** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:31** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:31** | `NODE-RETRO` | [node_todo_fsm_manager_get_anchor] Implemented get_active_anchor returning GEMINI.md
