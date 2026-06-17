@@ -717,6 +717,15 @@
 - **2026-06-17 15:27:17** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:27:36** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:27:37** | `NODE-RETRO` | [node_todo_fsm_state_arc_start] Defined and validated the state_arc_start.md anchor for SUBSTRATE level operations.
+- **2026-06-17 15:29:47** | `COMMONS_SYNC` | Incorporating upstream commits for commons
+- **2026-06-17 15:29:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:31:59** | `COMMONS_SYNC` | Syncing commons
+- **2026-06-17 15:32:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:32:07** | `NODE-RETRO` | [node_todo_fsm_cli_exit] Implemented bin/exit wrapper to invoke flow_state_manager session-end
+- **2026-06-17 15:32:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:32:31** | `NODE-RETRO` | [node_todo_fsm_cli_exit] Implemented bin/exit wrapper to invoke flow_state_manager session-end
+- **2026-06-17 15:32:51** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:32:52** | `NODE-RETRO` | [node_todo_fsm_cli_exit] Implemented bin/exit wrapper to invoke flow_state_manager session-end
 - **2026-06-17 15:29:46** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:30:07** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:30:07** | `NODE-RETRO` | [node_todo_fsm_manager_enforce] Implemented fsm_manager.enforce_guard to throw hard CSI errors on invalid transitions, blocking multiversal drift.

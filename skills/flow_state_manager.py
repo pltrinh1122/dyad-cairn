@@ -499,8 +499,16 @@ if __name__ == "__main__":
         session_start()
         sys.exit(0)
 
+    if action == "session-end":
+        print("[FLOW] Pushing FSM into session-end state...")
+        import yaml
+        os.makedirs("dyad-state", exist_ok=True)
+        with open("dyad-state/fsm_state.yml", "w") as f:
+            yaml.dump({"state": "session-end"}, f)
+        sys.exit(0)
+
     if len(sys.argv) < 3:
-        print("Usage: python3 skills/flow_state_manager.py <plan|checkout|reflect-red|reflect-green|complete|trail-reflect> <node_id> [retro_msg]")
+        print("Usage: python3 skills/flow_state_manager.py <action> <node_id> [args]")
         sys.exit(1)
     
     check_retro_lock()
@@ -516,7 +524,6 @@ if __name__ == "__main__":
         if isinstance(e, SystemExit):
             sys.exit(e.code)
         pass
-
     node = sys.argv[2]
     
     if action == "plan":
