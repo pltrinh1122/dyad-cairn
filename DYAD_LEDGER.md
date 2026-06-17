@@ -898,3 +898,5 @@
 - **2026-06-17 18:34:32** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 18:36:08** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 18:36:08** | `NODE-RETRO` | [node_todo_1781746292] Migrated substrate scripts to read from decomposed artifacts/audit/ directory.
+- **2026-06-17 18:36:42** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:36:42** | `NODE-RETRO` | [node_todo_1781746292] Migrated substrate scripts to read from decomposed artifacts/audit/ directory.
