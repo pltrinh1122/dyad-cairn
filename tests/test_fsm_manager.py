@@ -2,7 +2,7 @@ import os
 import yaml
 import pytest
 
-from skills.fsm_manager import FSMManager
+from skills.fsm_manager import FSMManager, validate_transition
 
 def test_fsm_manager_init_creates_default_state():
     test_file = "artifacts/test_fsm_init.yml"
@@ -32,3 +32,19 @@ def test_fsm_manager_init_loads_existing_state():
     
     if os.path.exists(test_file):
         os.remove(test_file)
+
+def test_validate_transition_allowed():
+    # Assume a simple valid transition dictionary for the test
+    transitions = {
+        "PLANNED": ["IN_REVIEW"],
+        "IN_REVIEW": ["AUTHORIZED", "RED"]
+    }
+    assert validate_transition("PLANNED", "IN_REVIEW", transitions) is True
+
+def test_validate_transition_denied():
+    transitions = {
+        "PLANNED": ["IN_REVIEW"]
+    }
+    with pytest.raises(ValueError, match="Invalid transition from PLANNED to AUTHORIZED"):
+        validate_transition("PLANNED", "AUTHORIZED", transitions)
+
