@@ -839,3 +839,29 @@
 - **2026-06-17 16:07:26** | `TODO` | Extract workflow invariants from DYAD.md into FSM templates
 - **2026-06-17 16:17:02** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 16:17:02** | `NODE-RETRO` | [node_todo_1781737646] Extracted workflow invariants from DYAD.md into FSM templates to prevent state conflation.
+- **2026-06-17 16:18:33** | `RETRO` | FSM Invariant Extraction
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Extracting Workflow Invariants to FSM Templates
+  
+  ## Continue
+  - Using the Invisible Elicitor protocol (`ask_question`) to define the WHY, WHAT, and SCOPE before locking a node in the DAG.
+  - Offloading the actual execution securely to subagents, maintaining the parallel branch and PR review invariant.
+  
+  ## Start
+  - We must explicitly ensure executable permissions (`chmod +x`) are set on all newly created or modified scripts to prevent mechanical CI failures.
+  
+  ## Stop
+  - Relying on global `DYAD.md` documentation for state-specific operations. We must strictly enforce writing mechanical bindings directly into their corresponding `kb/templates/state_*.md` files.
+  
+  </details>
+- **2026-06-17 16:22:54** | `TODO` | Design and implement a durability-FSM over gh commands to enforce synchronous CI/merge checks before agent reporting
+- **2026-06-17 16:43:30** | `TODO` | Implement the core 'gh' polling wrapper to block synchronously on PR completion
+- **2026-06-17 16:43:30** | `TODO` | Implement the CSI Guard steering logic to format 'gh' polling failures into actionable Agent invariants
+- **2026-06-17 16:43:30** | `TODO` | Integrate the 'gh' wrapper and CSI Guard into the FSM Dialect mappings
+- **2026-06-17 16:43:41** | `TODO` | Part 1: Implement the core 'gh' polling wrapper to block synchronously on PR completion
+- **2026-06-17 16:43:42** | `TODO` | Part 2: Implement the CSI Guard steering logic to format 'gh' polling failures into actionable Agent invariants
+- **2026-06-17 16:43:43** | `TODO` | Part 3: Integrate the 'gh' wrapper and CSI Guard into the FSM Dialect mappings
+- **2026-06-17 16:54:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 16:54:18** | `NODE-RETRO` | [node_todo_1781739821] Implemented the core gh polling wrapper to block synchronously on PR completion.
