@@ -790,3 +790,5 @@
 - **2026-06-17 15:29:47** | `NODE-RETRO` | [node_todo_fsm_cli_retro] Wired FSM into bin/retro. Substrate execution unified via flow_state_manager.
 - **2026-06-17 15:30:29** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:30:30** | `NODE-RETRO` | [node_todo_fsm_cli_retro] Wired FSM into bin/retro. Substrate execution unified via flow_state_manager.
+- **2026-06-17 15:38:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:38:30** | `NODE-RETRO` | [node_todo_fsm_manager_enforce] Implemented fsm_manager.enforce_guard to throw hard CSI errors on invalid transitions, blocking multiversal drift.
