@@ -694,3 +694,6 @@
 - **2026-06-17 15:27:17** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:27:36** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 15:27:37** | `NODE-RETRO` | [node_todo_fsm_state_arc_start] Defined and validated the state_arc_start.md anchor for SUBSTRATE level operations.
+- **2026-06-17 15:29:46** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:07** | `NODE-RETRO` | [node_todo_fsm_manager_enforce] Implemented fsm_manager.enforce_guard to throw hard CSI errors on invalid transitions, blocking multiversal drift.

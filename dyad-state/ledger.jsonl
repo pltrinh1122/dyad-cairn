@@ -563,3 +563,6 @@
 {"timestamp": "2026-06-17T15:27:17.308804+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-17T15:27:36.791791+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-17T15:27:37.081990+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_state_arc_start] Defined and validated the state_arc_start.md anchor for SUBSTRATE level operations."}
+{"timestamp": "2026-06-17T15:29:46.597852+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:30:07.402319+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T15:30:07.697631+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_fsm_manager_enforce] Implemented fsm_manager.enforce_guard to throw hard CSI errors on invalid transitions, blocking multiversal drift."}
