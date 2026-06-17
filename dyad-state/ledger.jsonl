@@ -714,3 +714,6 @@
 {"timestamp": "2026-06-17T18:11:22.418548+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-17T18:11:34.013987+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-06-17T18:11:34.313205+00:00Z", "action": "NODE-RETRO", "message": "[node_hook_wrapper] [node_hook_wrapper] Implemented shell wrappers in bin/dyad-shell-hooks.sh to mechanically intercept CLI exit and trigger bin/exit."}
+{"timestamp": "2026-06-17T18:34:32.193423+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T18:36:08.249448+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
+{"timestamp": "2026-06-17T18:36:08.523347+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1781746292] Migrated substrate scripts to read from decomposed artifacts/audit/ directory."}
