@@ -676,3 +676,13 @@
 - **2026-06-17 02:13:22** | `NODE-RETRO` | [node_todo_1781297795] Implemented assert_batch_semantic_alignment LLM check placeholder in preflight_grounding to enforce semantic consistency within batch nodes before authorization.
 - **2026-06-17 02:16:25** | `TODO` | test_noisy_intent_12345
 - **2026-06-17 02:16:25** | `NODE-RETRO` | [node_todo_1781297795] Implemented assert_batch_semantic_alignment LLM check placeholder in preflight_grounding to enforce semantic consistency within batch nodes before authorization.
+- **2026-06-17 15:26:01** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:31** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:41** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:53** | `COMMONS_SYNC` | Exempt SUBSTRATE form from mechanical WIP-N=1 check
+- **2026-06-17 15:27:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:09** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:57** | `COMMONS_SYNC` | Sync all new upstream commits
+- **2026-06-17 15:30:04** | `TODO` | test_noisy_intent_12345
