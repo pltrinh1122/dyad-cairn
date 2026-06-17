@@ -2,6 +2,10 @@ import sys
 import subprocess
 import os
 
+def get_active_anchor():
+    """Returns the name of the active platform anchor."""
+    return "GEMINI.md"
+
 def run_cmd(cmd, allow_fail=False):
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     if result.returncode != 0 and not allow_fail:
