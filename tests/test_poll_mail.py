@@ -16,10 +16,9 @@ locator: github.com/pltrinh1122/dyad-touchstone
         
     @patch('subprocess.run')
     def test_poll_mail_extraction(self, mock_run):
-        # Setup a dummy directory and inbox
+        # Setup a dummy directory
         with tempfile.TemporaryDirectory() as test_dir:
             directory_path = os.path.join(test_dir, "directory")
-            inbox_path = os.path.join(test_dir, "inbox")
             os.makedirs(directory_path)
             
             # Create a mock yaml
@@ -28,26 +27,37 @@ locator: github.com/pltrinh1122/dyad-touchstone
                 
             # Mock subprocess.run to create expected files in clone_dir
             def side_effect(args, **kwargs):
-                clone_dir = args[5]
-                mail_dir = os.path.join(clone_dir, "dm", "dyad-cairn")
-                os.makedirs(mail_dir)
-                with open(os.path.join(mail_dir, "message.md"), "w") as f:
-                    f.write("Hello from mock")
-                class DummyResult:
-                    returncode = 0
-                    stderr = ""
-                return DummyResult()
+                if args[0] == "git" and args[1] == "clone":
+                    clone_dir = args[5]
+                    mail_dir = os.path.join(clone_dir, "dm", "dyad-cairn")
+                    os.makedirs(mail_dir)
+                    with open(os.path.join(mail_dir, "message.md"), "w") as f:
+                        f.write("Hello from mock")
+                    class DummyResult:
+                        returncode = 0
+                        stderr = ""
+                    return DummyResult()
+                elif args[0] == "git" and args[1] == "rev-parse":
+                    class DummyResult:
+                        returncode = 0
+                        stdout = "dummy_hash\n"
+                    return DummyResult()
+                elif args[0] == "./bin/todo":
+                    class DummyResult:
+                        returncode = 0
+                    return DummyResult()
+                return None
                 
             mock_run.side_effect = side_effect
             
             # Execute
-            poll_mail(directory_path, inbox_path, target_dyad="dyad-cairn")
+            poll_mail(directory_path, target_dyad="dyad-cairn")
             
-            # Verify inbox
-            expected_file = os.path.join(inbox_path, "dyad-mock_message.md")
-            self.assertTrue(os.path.exists(expected_file))
-            with open(expected_file, "r") as f:
-                self.assertEqual(f.read(), "Hello from mock")
+            # Verify todo was called
+            todo_calls = [call_args for call_args in mock_run.call_args_list if call_args[0][0][0] == "./bin/todo"]
+            self.assertEqual(len(todo_calls), 1)
+            expected_intent = "Process inbound mail from https://github.com/mock/dyad-mock at commit dummy_hash (file: dm/dyad-cairn/message.md)"
+            self.assertEqual(todo_calls[0][0][0][1], expected_intent)
 
 if __name__ == '__main__':
     unittest.main()

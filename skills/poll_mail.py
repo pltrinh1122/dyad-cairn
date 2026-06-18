@@ -1,5 +1,4 @@
 import os
-import shutil
 import subprocess
 import tempfile
 import re
@@ -12,9 +11,7 @@ def parse_locator(yaml_content):
         return name_match.group(1).strip().strip('"\''), locator_match.group(1).strip().strip('"\'')
     return None, None
 
-def poll_mail(directory_path, inbox_path, target_dyad="dyad-cairn"):
-    os.makedirs(inbox_path, exist_ok=True)
-    
+def poll_mail(directory_path, target_dyad="dyad-cairn"):
     if not os.path.exists(directory_path):
         print(f"Directory {directory_path} does not exist.")
         return
@@ -54,19 +51,26 @@ def poll_mail(directory_path, inbox_path, target_dyad="dyad-cairn"):
             # Check for mail addressed to us
             mail_dir = os.path.join(clone_dir, "dm", target_dyad)
             if os.path.exists(mail_dir) and os.path.isdir(mail_dir):
+                # Get the commit hash
+                hash_result = subprocess.run(
+                    ["git", "rev-parse", "HEAD"],
+                    cwd=clone_dir,
+                    capture_output=True,
+                    text=True
+                )
+                commit_hash = hash_result.stdout.strip()
+
                 for mail_file in os.listdir(mail_dir):
                     if mail_file.endswith(".md"):
-                        src_path = os.path.join(mail_dir, mail_file)
-                        dst_path = os.path.join(inbox_path, f"{name}_{mail_file}")
-                        shutil.copy2(src_path, dst_path)
-                        print(f"Pulled mail from {name}: {mail_file}")
+                        intent = f"Process inbound mail from {locator} at commit {commit_hash} (file: dm/{target_dyad}/{mail_file})"
+                        subprocess.run(["./bin/todo", intent])
+                        print(f"Added todo for mail from {name}: {mail_file}")
 
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--directory", default="commons/directory")
-    parser.add_argument("--inbox", default="dyad-state/inbox")
     parser.add_argument("--target", default="dyad-cairn")
     args = parser.parse_args()
     
-    poll_mail(args.directory, args.inbox, args.target)
+    poll_mail(args.directory, args.target)
