@@ -2,21 +2,22 @@
 import sys
 import os
 import yaml
+import argparse
+import subprocess
 
 def main():
-    if len(sys.argv) < 4:
-        print("Usage: ./bin/rub <todo_id> <field> \"<content>\"")
-        print("Fields: what, why, scope")
-        sys.exit(1)
-        
-    todo_id = sys.argv[1]
-    field = sys.argv[2].lower()
-    content = sys.argv[3]
+    parser = argparse.ArgumentParser(description="Rub a todo node with WHAT, WHY, SCOPE")
+    parser.add_argument("todo_id", help="The Todo ID")
+    parser.add_argument("field", nargs="?", help="Legacy positional field")
+    parser.add_argument("content", nargs="?", help="Legacy positional content")
+    parser.add_argument("--what", help="The WHAT field content")
+    parser.add_argument("--why", help="The WHY field content")
+    parser.add_argument("--scope", help="The SCOPE field content")
     
-    if field not in ["what", "why", "scope"]:
-        print(f"ERROR: Invalid field '{field}'. Must be what, why, or scope.")
-        sys.exit(1)
-        
+    # Parse known args so that if --what etc are not provided, we can still parse legacy
+    args, _ = parser.parse_known_args()
+    
+    todo_id = args.todo_id
     todo_file = f"artifacts/todos/{todo_id}.yml"
     if not os.path.exists(todo_file):
         print(f"ERROR: Todo ID {todo_id} not found.")
@@ -34,10 +35,30 @@ def main():
         todo["status"] = "UNRUBBED"
         if "intent" in todo:
             del todo["intent"]
+
+    updates = {}
+    if args.field and args.content:
+        # Avoid treating flags like --what as positional field
+        if not args.field.startswith("--"):
+            field = args.field.lower()
+            if field not in ["what", "why", "scope"]:
+                print(f"ERROR: Invalid field '{field}'. Must be what, why, or scope.")
+                sys.exit(1)
+            updates[field] = args.content
+        else:
+            print(f"ERROR: Invalid field '{args.field}'. Must be what, why, or scope.")
+            sys.exit(1)
             
-    todo["rub_matrix"][field] = content
-    
-    # Check if fully populated
+    if args.what:
+        updates["what"] = args.what
+    if args.why:
+        updates["why"] = args.why
+    if args.scope:
+        updates["scope"] = args.scope
+        
+    for k, v in updates.items():
+        todo["rub_matrix"][k] = v
+        
     matrix = todo["rub_matrix"]
     if matrix["what"] and matrix["why"] and matrix["scope"]:
         todo["status"] = "RUBBED"
@@ -45,11 +66,13 @@ def main():
     with open(todo_file, "w") as f:
         yaml.dump({todo_id: todo}, f, default_flow_style=False, sort_keys=False)
         
-    print(f"[RUB] Successfully updated {field.upper()} for {todo_id}. Status: {todo['status']}")
+    if updates:
+        keys_updated = ", ".join(k.upper() for k in updates.keys())
+        print(f"[RUB] Successfully updated {keys_updated} for {todo_id}. Status: {todo['status']}")
 
     if todo.get("status") == "RUBBED":
         print(f"[RUB] Automatically converting {todo_id} to DAG node...")
-        res = __import__("subprocess").run(["./bin/node", "convert-todo", todo_id])
+        res = subprocess.run(["./bin/node", "convert-todo", todo_id])
         if res.returncode != 0:
             print(f"[RUB] ERROR: Auto-convert failed with exit code {res.returncode}")
             sys.exit(res.returncode)
