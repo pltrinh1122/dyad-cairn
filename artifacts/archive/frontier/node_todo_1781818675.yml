@@ -1,0 +1,14 @@
+node_todo_1781818675:
+  title: 'Convert Todo: todo_1781818675'
+  goal: 'add
+
+
+    WHAT: Update the node lifecycle mechanism to physically move [DONE] nodes out
+    of the active frontier DAG (artifacts/frontier_state.yml) into a separate archive
+    state. The presentation layer will only parse the active DAG.
+
+    WHY: To reduce token (software) and attention (wetware) expenditure, maintaining
+    a strict separation between active WIP and accumulated history.'
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED

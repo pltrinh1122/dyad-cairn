@@ -955,3 +955,7 @@
 - **2026-06-18 14:49:36** | `TODO` | test_noisy_intent_12345
 - **2026-06-18 14:50:10** | `TODO` | test_noisy_intent_12345
 - **2026-06-18 14:50:10** | `NODE-RETRO` | [1781819214] Added Silent Execution Invariant to DYAD.md
+- **2026-06-18 15:05:53** | `TODO` | test_noisy_intent_12345
+- **2026-06-18 15:06:49** | `TODO` | test_noisy_intent_12345
+- **2026-06-18 15:07:05** | `TODO` | test_noisy_intent_12345
+- **2026-06-18 15:07:06** | `NODE-RETRO` | [node_todo_1781818675] Update the node lifecycle mechanism to physically move DONE nodes out of the active frontier DAG into an archive state to save compute and tokens while retaining history.

@@ -61,3 +61,52 @@ def test_in_review_does_not_override_blocked(monkeypatch):
     shutil.rmtree(yml_path)
     if os.path.exists(md_path):
         os.remove(md_path)
+
+def test_archive_done_nodes(monkeypatch):
+    from skills.frontier_editor import save_state
+    import shutil
+    import os
+    yml_path = tempfile.mkdtemp()
+    md_path = yml_path + "_md.md"
+    
+    monkeypatch.setattr("skills.frontier_editor.YML_DIR", yml_path)
+    monkeypatch.setattr("skills.frontier_editor.MD_FILE", md_path)
+    
+    # Mock derive_status to return DONE
+    def mock_derive(*args, **kwargs):
+        return "DONE"
+    monkeypatch.setattr("skills.frontier_reader.derive_status", mock_derive)
+    
+    node_file = os.path.join(yml_path, "node_fake_123.yml")
+    with open(node_file, "w") as f:
+        yaml.dump({"node_fake_123": {"status": "DONE", "type": "PROBE", "title": "Node 1"}}, f)
+        
+    state = {
+        "nodes": {
+            "node_fake_123": {"status": "DONE", "dependencies": [], "type": "PROBE", "title": "Node 1"}
+        }
+    }
+    
+    import subprocess
+    def mock_run(*args, **kwargs):
+        class MockResult:
+            returncode = 0
+            stdout = "main\n"
+            stderr = ""
+        return MockResult()
+    monkeypatch.setattr(subprocess, "run", mock_run)
+    
+    save_state(state)
+    
+    archive_dir = os.path.join("artifacts", "archive", os.path.basename(yml_path))
+    archived_file = os.path.join(archive_dir, "node_fake_123.yml")
+    
+    assert not os.path.exists(node_file)
+    assert os.path.exists(archived_file)
+    
+    # Clean up
+    shutil.rmtree(yml_path)
+    if os.path.exists(md_path):
+        os.remove(md_path)
+    if os.path.exists(archive_dir):
+        shutil.rmtree(archive_dir)
