@@ -89,15 +89,18 @@ def save_state(state):
         print("ERROR: WIP-N=1 Violation. Cannot save state with multiple ACTIVE QUARRY nodes.")
         sys.exit(1)
         
-    # Physically excise DONE nodes to prevent dead mass accumulation
+    # Physically archive DONE nodes to prevent dead mass accumulation while retaining history
     excised = []
+    import shutil
+    archive_dir = os.path.join("artifacts", "archive", os.path.basename(YML_DIR))
     for node_id, data in list(state["nodes"].items()):
         if derive_status(node_id, data, all_nodes) == "DONE":
             del state["nodes"][node_id]
             excised.append(node_id)
             node_file = os.path.join(YML_DIR, f"{node_id}.yml")
             if os.path.exists(node_file):
-                os.remove(node_file)
+                os.makedirs(archive_dir, exist_ok=True)
+                shutil.move(node_file, os.path.join(archive_dir, f"{node_id}.yml"))
             
     # Clean up dependencies referencing excised nodes
     if excised:
