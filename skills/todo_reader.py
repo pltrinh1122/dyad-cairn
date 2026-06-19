@@ -14,18 +14,27 @@ def main():
                         todos["backlog"][k] = v
         
     backlog = todos.get("backlog", {})
-    print("TODO RACK (Pre-DAG Holding Pen):")
-    
-    if not backlog:
-        print("└── (empty)")
-        return
-        
     items = list(backlog.items())
-    for i, (tid, data) in enumerate(items):
-        prefix = "└──" if i == len(items) - 1 else "├──"
-        intent = data.get('intent', data.get('raw_thought', ''))
-        status = data.get('status', 'UNRUBBED')
-        print(f"{prefix} [{status}] {tid} ({data.get('timestamp', '')}): {intent}")
+    strategic_items = [(tid, data) for tid, data in items if data.get('status', 'UNRUBBED') != 'AUTO-REPLY']
+    auto_reply_items = [(tid, data) for tid, data in items if data.get('status', 'UNRUBBED') == 'AUTO-REPLY']
+
+    print("TODO RACK (Pre-DAG Holding Pen):")
+    if not strategic_items:
+        print("└── (empty)")
+    else:
+        for i, (tid, data) in enumerate(strategic_items):
+            prefix = "└──" if i == len(strategic_items) - 1 else "├──"
+            intent = data.get('intent', data.get('raw_thought', ''))
+            status = data.get('status', 'UNRUBBED')
+            print(f"{prefix} [{status}] {tid} ({data.get('timestamp', '')}): {intent}")
+
+    if auto_reply_items:
+        print("\nAUTO-REPLY RACK (Non-Strategic Traffic):")
+        for i, (tid, data) in enumerate(auto_reply_items):
+            prefix = "└──" if i == len(auto_reply_items) - 1 else "├──"
+            intent = data.get('intent', data.get('raw_thought', ''))
+            status = data.get('status', 'UNRUBBED')
+            print(f"{prefix} [{status}] {tid} ({data.get('timestamp', '')}): {intent}")
 
 if __name__ == "__main__":
     main()

@@ -4,7 +4,7 @@ import os
 import yaml
 import datetime
 
-def append_todo(intent):
+def append_todo(intent, status="UNRUBBED"):
     # Log to the Ledger
     sys.path.append('.')
     from skills import ledger_manager
@@ -28,7 +28,7 @@ def append_todo(intent):
                 "why": None,
                 "scope": None
             },
-            "status": "UNRUBBED"
+            "status": status
         }
     }
     with open(todo_file, "w") as f:
@@ -70,12 +70,13 @@ def append_todo(intent):
     print(f"[TODO] ID: {tid}")
 
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: ./bin/todo <intent>")
-        sys.exit(1)
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("intent", help="The intent for the todo")
+    parser.add_argument("--status", default="UNRUBBED", help="The status of the todo")
+    args = parser.parse_args()
         
-    intent = sys.argv[1]
-    append_todo(intent)
+    append_todo(args.intent, args.status)
 
 if __name__ == "__main__":
     main()
