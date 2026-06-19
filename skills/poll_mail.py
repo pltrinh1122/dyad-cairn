@@ -63,7 +63,11 @@ def poll_mail(directory_path, target_dyad="dyad-cairn"):
                 for mail_file in os.listdir(mail_dir):
                     if mail_file.endswith(".md"):
                         intent = f"Process inbound mail from {locator} at commit {commit_hash} (file: dm/{target_dyad}/{mail_file})"
-                        subprocess.run(["./bin/todo", intent])
+                        is_auto_reply = any(kw in mail_file.lower() for kw in ["retro", "sync", "audit", "ping"])
+                        cmd = ["./bin/todo", intent]
+                        if is_auto_reply:
+                            cmd.extend(["--status", "AUTO-REPLY"])
+                        subprocess.run(cmd)
                         print(f"Added todo for mail from {name}: {mail_file}")
 
 if __name__ == "__main__":
