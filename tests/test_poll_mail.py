@@ -56,7 +56,7 @@ locator: github.com/pltrinh1122/dyad-touchstone
             # Verify todo was called
             todo_calls = [call_args for call_args in mock_run.call_args_list if call_args[0][0][0] == "./bin/todo"]
             self.assertEqual(len(todo_calls), 1)
-            expected_intent = "Process inbound mail from https://github.com/mock/dyad-mock at commit dummy_hash (file: dm/dyad-cairn/message.md)"
+            expected_intent = "Process inbound mail from https://raw.githubusercontent.com/mock/dyad-mock/dummy_hash/dm/dyad-cairn/message.md"
             self.assertEqual(todo_calls[0][0][0][1], expected_intent)
 
 if __name__ == '__main__':
