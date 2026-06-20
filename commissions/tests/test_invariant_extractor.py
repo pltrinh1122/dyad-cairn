@@ -141,3 +141,12 @@ def test_f6_trust_boundary():
     sidecar_content = b"bond:123: {}\n"
     out = invariant_extractor.run_extraction([md_content], {}, sidecar_content, "bond")
     assert "_class_b_assumptions" in out
+
+def test_f5_portability():
+    """F-5: portability (dyad-agnosticism)."""
+    # The dyad should not be hardcoded to 'bond'.
+    md_content = "<!-- INV@v1 cairn:456 | hello from cairn -->\n"
+    sidecar_content = b"cairn:456: {}\n"
+    out = invariant_extractor.run_extraction([md_content], {}, sidecar_content, "cairn")
+    assert "cairn:456" in out
+    assert "hello from cairn" in out
