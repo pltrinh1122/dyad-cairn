@@ -1,0 +1,6 @@
+node_99_test:
+  title: Test Node
+  goal: Test Goal
+  type: PLAN
+  scope: SUBSTRATE
+  status: IN_REVIEW

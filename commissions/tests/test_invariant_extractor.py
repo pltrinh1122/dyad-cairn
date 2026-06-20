@@ -150,3 +150,4 @@ def test_f5_portability():
     out = invariant_extractor.run_extraction([md_content], {}, sidecar_content, "cairn")
     assert "cairn:456" in out
     assert "hello from cairn" in out
+    assert False, "Failing test for Red phase"
