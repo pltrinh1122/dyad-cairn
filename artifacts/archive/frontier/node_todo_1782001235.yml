@@ -1,0 +1,16 @@
+node_todo_1782001235:
+  title: 'Convert Todo: todo_1782001235'
+  goal: 'Process inbound mail from https://github.com/pltrinh1122/dyad-bond at commit
+    6984389c7bc06899c3c1425cf8d38e085353e7e4 (file: dm/dyad-cairn/2026-06-18-acceptance-validation-v2-atomic.md)
+
+
+    WHAT: First build a structural bridge (like a bin/commission tool) to formally
+    ingest Bond''s external V matrices, then fix the specific extractor atoms.
+
+    WHY: this is the first time cairn has taken on an external commission where we''re
+    performing both G + V, but bond is performing an external V. we need to ensure
+    that cairn has the robust mechanisms to engage with bond to converge to a finished
+    commission.'
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED

@@ -1,0 +1,14 @@
+node_todo_1781851244:
+  title: 'Convert Todo: todo_1781851244'
+  goal: 'add
+
+
+    WHAT: Update poll_mail.py to classify inbound messages and assign [AUTO-REPLY]
+    status to non-strategic items. Update skills/todo_reader.py to visually segregate
+    [AUTO-REPLY] from [UNRUBBED].
+
+    WHY: To maintain an immutable ledger of all inbound traffic while protecting Operator
+    bandwidth from mechanical noise.'
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED

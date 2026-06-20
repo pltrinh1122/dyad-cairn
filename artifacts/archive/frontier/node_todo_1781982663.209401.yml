@@ -1,0 +1,12 @@
+node_todo_1781982663.209401:
+  title: Prune stale mail.
+  goal: 'Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone
+    at commit c2f98b293ee21cde4971413531575b7b03a3827f (file: dm/dyad-cairn/2026-06-05-re-hello.md)
+
+
+    WHAT: Prune stale mail.
+
+    WHY: Functionally obsolete.'
+  type: PLAN
+  scope: FRONTIER
+  status: AUTHORIZED

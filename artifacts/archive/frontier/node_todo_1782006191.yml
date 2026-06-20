@@ -1,0 +1,18 @@
+node_todo_1782006191:
+  title: Implement the mechanical code updates specified in the v0.5 v2-atomic spec
+    (commissions/2026-06-18-acceptance-validation-v2-atomic.md) into our local invariant-extraction
+    engine.
+  goal: 'Implement the mechanical code updates specified in the newly ingested v0.5
+    commission spec (commissions/2026-06-18-acceptance-validation-v2-atomic.md) to
+    bring our codebase into full alignment with Bond''s feedback.
+
+
+    WHAT: Implement the mechanical code updates specified in the v0.5 v2-atomic spec
+    (commissions/2026-06-18-acceptance-validation-v2-atomic.md) into our local invariant-extraction
+    engine.
+
+    WHY: To physically align our invariant-extraction engine with Bond''s latest accepted
+    validation matrices and fulfill the core contractual DM requirement.'
+  type: PLAN
+  scope: FRONTIER
+  status: AUTHORIZED

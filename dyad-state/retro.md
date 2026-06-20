@@ -1,0 +1,13 @@
+# Retro: Pure G Execution Leak & V-Gate Failure
+
+## Continue
+- Using external validation matrices (like Bond's v0.4 contract) to mechanically test our execution bridges.
+- Isolating Substrate orchestration tools into dedicated feature branches via the `Executioner` subagent to protect the main DAG.
+
+## Start
+- Mechanically enforcing TDD for ALL generated tools, including internal orchestrator binaries like `bin/commission`. 
+- Building a deterministic CI gate or HTIL Red-Phase constraint that physically blocks PR generation if a `bin/` script lacks a matching `tests/test_*.py` file.
+
+## Stop
+- Trusting subagents (even `self` clones) to autonomously obey the "No Pure G Execution" invariant.
+- Blurring the line between Payload and Substrate; a substrate orchestration tool needs just as much deterministic V-anchoring as functional payload code.

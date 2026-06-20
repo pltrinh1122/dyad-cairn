@@ -1,0 +1,17 @@
+node_todo_1782002612:
+  title: Run bin/commission to formally ingest the v0.5 updates from Part B of Bond's
+    validation response, and mechanically map those new requirements into our local
+    commission specification.
+  goal: 'review bond''s response for mechanical updates and then update the commissioned
+    work to match the new commission.
+
+
+    WHAT: Run bin/commission to formally ingest the v0.5 updates from Part B of Bond''s
+    validation response, and mechanically map those new requirements into our local
+    commission specification.
+
+    WHY: To exercise the newly built bin/commission tool and validate that our structural
+    bridge works as intended on real payload.'
+  type: PLAN
+  scope: FRONTIER
+  status: AUTHORIZED

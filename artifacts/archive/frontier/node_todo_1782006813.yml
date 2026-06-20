@@ -1,0 +1,17 @@
+node_todo_1782006813:
+  title: Fix ID collision bug in bin/todo by replacing integer timestamps with high-precision
+    float timestamps (or UUIDs) to ensure absolute uniqueness.
+  goal: 'Fix ID collision bug in bin/todo by replacing integer timestamps with high-precision
+    timestamps (e.g. including microseconds) to prevent state overwriting during rapid
+    asynchronous ingestion loops.
+
+
+    WHAT: Fix ID collision bug in bin/todo by replacing integer timestamps with high-precision
+    float timestamps (or UUIDs) to ensure absolute uniqueness.
+
+    WHY: Because the current integer-based timestamp ID generation truncates milliseconds,
+    causing silent ID collisions and data loss when rapid pipelines process multiple
+    items within the same second.'
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED

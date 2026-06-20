@@ -1,0 +1,19 @@
+node_todo_1781983785.112362:
+  title: Architect a deduplication watermark in skills/poll_mail.py that parses the
+    immutable Ledger (dyad-state/ledger.jsonl) to reject previously ingested mail
+    payloads based on their signature (repo locator, commit hash, and filepath).
+  goal: 'Architect a deduplication watermark in skills/poll_mail.py that cross-references
+    the immutable Ledger (dyad-state/ledger.jsonl) to reject previously ingested mail
+    signatures (Repo + Commit Hash + Filepath) and prevent infinite re-ingestion.
+
+
+    WHAT: Architect a deduplication watermark in skills/poll_mail.py that parses the
+    immutable Ledger (dyad-state/ledger.jsonl) to reject previously ingested mail
+    payloads based on their signature (repo locator, commit hash, and filepath).
+
+    WHY: Because the current mail ingestion script lacks a stateful watermark, causing
+    it to blindly queue all outbox files on every run and resulting in infinite stale
+    payload ingestion.'
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED
