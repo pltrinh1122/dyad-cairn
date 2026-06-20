@@ -15,7 +15,7 @@ atoms = [
     ("F-7.3 grammar-version", "python3 commissions/invariant_extractor.py --dyad bond --sidecar commissions/malformation_corpus/valid_sidecar.yaml commissions/malformation_corpus/grammar.md"),
     ("F-7.4 mid-scan TOCTOU", "pytest commissions/tests/test_invariant_extractor.py::test_f7_4_mid_scan_toctou -q -v"),
     ("F-8.1 orphan-tag", "python3 commissions/invariant_extractor.py --dyad bond --sidecar commissions/malformation_corpus/valid_sidecar.yaml commissions/malformation_corpus/orphan_md.md"),
-    ("F-8.2 orphan-sidecar", "python3 commissions/invariant_extractor.py --dyad bond --sidecar commissions/malformation_corpus/sidecar_orphan.yaml commissions/malformation_corpus/valid_md.md"),
+    ("F-8.2 orphan-sidecar", "python3 commissions/invariant_extractor.py --dyad bond --sidecar commissions/malformation_corpus/sidecar_orphan.yaml commissions/malformation_corpus/empty_md.md"),
     ("F-8.3 dangling-edge", "python3 commissions/invariant_extractor.py --dyad bond --sidecar commissions/malformation_corpus/dangling_edge.yaml commissions/malformation_corpus/valid_md.md"),
     ("F-8.4 cross-home-dup", "python3 commissions/invariant_extractor.py --dyad bond --sidecar commissions/malformation_corpus/cross_home_dup.yaml commissions/malformation_corpus/valid_md.md")
 ]
