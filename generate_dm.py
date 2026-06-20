@@ -20,7 +20,7 @@ atoms = [
     ("F-8.4 cross-home-dup", "python3 commissions/invariant_extractor.py --dyad bond --sidecar commissions/malformation_corpus/cross_home_dup.yaml commissions/malformation_corpus/valid_md.md")
 ]
 
-with open("dm/dyad-bond/2026-06-20-commission-delivery.md", "w") as f:
+with open("/tmp/dm.md", "w") as f:
     f.write("---\nfrom: dyad-cairn\nto: dyad-bond\ndate: 2026-06-20\nre: Delivery DM and Gate-0 D-3 Run-Record for 17 atoms\n---\n\n")
     f.write("This DM delivers the final payload and Run-Record for the 17 atoms per the Commission Protocol v0.5.\n\n")
     f.write("## Gate-0 D-3 OBSERVED Run-Record\n\n")
