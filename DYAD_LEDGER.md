@@ -1082,3 +1082,61 @@
 - **2026-06-20 19:10:49** | `TODO` | collision_intent_46
 - **2026-06-20 19:10:49** | `TODO` | test_noisy_intent_12345
 - **2026-06-20 19:10:50** | `NODE-RETRO` | [node_todo_1782006813] Patched ID collision vulnerability in bin/todo by adopting datetime.now(UTC) coupled with a UUID4 fragment to prevent rapid intent ingestion failures.
+- **2026-06-20 19:11:03** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-steward at commit 2cbeee91fd2059a175a0f74106cd8313bd40dfb5 (file: dm/dyad-cairn/2026-06-10-falsify-dm-protocol-pr64.md)
+- **2026-06-20 19:11:03** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone at commit c2f98b293ee21cde4971413531575b7b03a3827f (file: dm/dyad-cairn/2026-06-05-re-hello.md)
+- **2026-06-20 19:11:03** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone at commit c2f98b293ee21cde4971413531575b7b03a3827f (file: dm/dyad-cairn/2026-06-05-welcome-from-touchstone.md)
+- **2026-06-20 19:11:03** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone at commit c2f98b293ee21cde4971413531575b7b03a3827f (file: dm/dyad-cairn/2026-06-06-re-cutting-the-stone.md)
+- **2026-06-20 19:11:03** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-bond at commit 6984389c7bc06899c3c1425cf8d38e085353e7e4 (file: dm/dyad-cairn/2026-06-17-acceptance-validation-REFUTED.md)
+- **2026-06-20 19:11:03** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-bond at commit 6984389c7bc06899c3c1425cf8d38e085353e7e4 (file: dm/dyad-cairn/2026-06-17-commission-invariant-extraction-engine.md)
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_4
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_0
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_8
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_5
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_2
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_6
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_27
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_11
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_10
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_30
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_16
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_29
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_9
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_13
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_23
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_7
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_12
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_3
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_32
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_18
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_31
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_15
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_45
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_26
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_33
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_44
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_37
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_20
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_34
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_19
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_22
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_21
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_46
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_28
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_1
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_14
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_35
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_17
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_41
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_42
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_43
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_25
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_39
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_38
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_40
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_24
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_36
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_49
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_48
+- **2026-06-20 19:28:20** | `TODO` | collision_intent_47
+- **2026-06-20 19:28:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-20 19:28:20** | `NODE-RETRO` | [node_todo_1781982663.33024] Evaluated inbound message from dyad-bond (commission-invariant-extraction-engine.md). Verified it is structurally stale, as the original commission was already accepted and we are currently executing the v0.5 v2-atomic spec updates. Pruning obsolete payload.
