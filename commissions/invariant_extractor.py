@@ -2,8 +2,11 @@ import sys
 import yaml
 import re
 import subprocess
+import os
 
 HALT_MALFORMED_TAG = 2
+HALT_DUPLICATE_ID = 3
+HALT_MISSING_SOURCE = 4
 HALT_ORPHAN_TAG = 81
 HALT_ORPHAN_SIDECAR = 82
 HALT_DIRTY_TREE = 11
@@ -25,6 +28,15 @@ def get_git_sha():
 def validate_preconditions():
     if not is_git_clean():
         sys.exit(HALT_DIRTY_TREE)
+
+def read_sources(file_paths):
+    contents = []
+    for path in file_paths:
+        if not os.path.exists(path):
+            sys.exit(HALT_MISSING_SOURCE)
+        with open(path, "r", encoding="utf-8") as f:
+            contents.append(f.read())
+    return contents
 
 def run_extraction(md_contents, sidecar_content):
     try:
@@ -50,12 +62,15 @@ def run_extraction(md_contents, sidecar_content):
                 sys.exit(HALT_MALFORMED_TAG)
                 
             tag_id = m.group(1)
+            if tag_id in tags:
+                sys.exit(HALT_DUPLICATE_ID)
+                
             one_liner = m.group(2)
             tags[tag_id] = one_liner
             idx = end_idx + 3
 
     md_ids = set(tags.keys())
-    sidecar_ids = set(sidecar.keys())
+    sidecar_ids = set([k for k in sidecar.keys() if k != "_staleness_guard"])
     
     orphan_md = md_ids - sidecar_ids
     if orphan_md:
@@ -66,10 +81,13 @@ def run_extraction(md_contents, sidecar_content):
         sys.exit(HALT_ORPHAN_SIDECAR)
         
     output = {}
+    output["_staleness_guard"] = {"pinned_sha": get_git_sha()}
+    
     for tag_id in sorted(md_ids):
         item = dict(sidecar[tag_id])
         item["one_liner"] = tags[tag_id]
-        output[tag_id] = item
+        sorted_item = {k: item[k] for k in sorted(item.keys())}
+        output[tag_id] = sorted_item
         
     return yaml.dump(output, default_flow_style=False, sort_keys=False)
 

@@ -52,3 +52,34 @@ def test_a1_dirty_tree():
         with pytest.raises(SystemExit) as exc_info:
             invariant_extractor.validate_preconditions()
         assert exc_info.value.code == invariant_extractor.HALT_DIRTY_TREE
+
+def test_f1_2_determinism_sort():
+    """F-1.2: Deterministic sort of dictionary keys."""
+    md_content = "<!-- INV bond:123 | test -->\n"
+    sidecar_content = "bond:123:\n  z: 1\n  a: 2\n"
+    out = invariant_extractor.run_extraction([md_content], sidecar_content)
+    # a should appear before z in the output
+    assert out.find("a: 2") < out.find("z: 1")
+
+def test_f2_2_fail_closed_dup_id():
+    """F-2.2: Duplicate ID => HALT."""
+    md_content = "<!-- INV bond:123 | test -->\n<!-- INV bond:123 | test2 -->\n"
+    sidecar_content = "bond:123:\n  root_kind: constraint\n"
+    with pytest.raises(SystemExit) as exc_info:
+        invariant_extractor.run_extraction([md_content], sidecar_content)
+    assert exc_info.value.code == invariant_extractor.HALT_DUPLICATE_ID
+
+def test_f2_3_fail_closed_missing_source():
+    """F-2.3: Missing source => HALT."""
+    with pytest.raises(SystemExit) as exc_info:
+        invariant_extractor.read_sources(["nonexistent_file.md"])
+    assert exc_info.value.code == invariant_extractor.HALT_MISSING_SOURCE
+
+def test_f3_staleness_guard():
+    """F-3: Staleness guard exists in output."""
+    md_content = "<!-- INV bond:123 | test -->\n"
+    sidecar_content = "bond:123:\n  root_kind: constraint\n"
+    with patch("commissions.invariant_extractor.get_git_sha", return_value="fake_sha"):
+        out = invariant_extractor.run_extraction([md_content], sidecar_content)
+    assert "_staleness_guard" in out
+    assert "fake_sha" in out
