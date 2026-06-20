@@ -18,6 +18,21 @@ def poll_mail(directory_path, target_dyad="dyad-cairn"):
         print(f"Directory {directory_path} does not exist.")
         return
 
+    ledger_file = "dyad-state/ledger.jsonl"
+    ledgered_intents = set()
+    if os.path.exists(ledger_file):
+        with open(ledger_file, "r") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    entry = json.loads(line)
+                    if "intent" in entry:
+                        ledgered_intents.add(entry["intent"])
+                except json.JSONDecodeError:
+                    pass
+
     for filename in os.listdir(directory_path):
         if not filename.endswith('.yaml'):
             continue
@@ -65,6 +80,10 @@ def poll_mail(directory_path, target_dyad="dyad-cairn"):
                 for mail_file in os.listdir(mail_dir):
                     if mail_file.endswith(".md"):
                         intent = f"Process inbound mail from {locator} at commit {commit_hash} (file: dm/{target_dyad}/{mail_file})"
+                        if intent in ledgered_intents:
+                            print(f"Skipping already ledgered intent: {intent}")
+                            continue
+
                         is_auto_reply = any(kw in mail_file.lower() for kw in ["retro", "sync", "audit", "ping"])
                         
                         queue_payload = {
