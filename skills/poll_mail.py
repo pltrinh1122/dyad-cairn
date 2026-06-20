@@ -2,6 +2,8 @@ import os
 import subprocess
 import tempfile
 import re
+import json
+import fcntl
 
 def parse_locator(yaml_content):
     name_match = re.search(r'^name:\s*(.+)$', yaml_content, re.MULTILINE)
@@ -64,11 +66,21 @@ def poll_mail(directory_path, target_dyad="dyad-cairn"):
                     if mail_file.endswith(".md"):
                         intent = f"Process inbound mail from {locator} at commit {commit_hash} (file: dm/{target_dyad}/{mail_file})"
                         is_auto_reply = any(kw in mail_file.lower() for kw in ["retro", "sync", "audit", "ping"])
-                        cmd = ["./bin/todo", intent]
-                        if is_auto_reply:
-                            cmd.extend(["--status", "AUTO-REPLY"])
-                        subprocess.run(cmd)
-                        print(f"Added todo for mail from {name}: {mail_file}")
+                        
+                        queue_payload = {
+                            "intent": intent,
+                            "status": "AUTO-REPLY" if is_auto_reply else "UNRUBBED",
+                            "source": name,
+                            "file": mail_file
+                        }
+                        queue_file = "dyad-state/sync_queue.jsonl"
+                        os.makedirs(os.path.dirname(queue_file), exist_ok=True)
+                        with open(queue_file, "a") as f:
+                            fcntl.flock(f, fcntl.LOCK_EX)
+                            f.write(json.dumps(queue_payload) + "\n")
+                            fcntl.flock(f, fcntl.LOCK_UN)
+                            
+                        print(f"Queued todo for mail from {name}: {mail_file}")
 
 if __name__ == "__main__":
     import argparse

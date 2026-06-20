@@ -42,22 +42,28 @@ locator: github.com/pltrinh1122/dyad-touchstone
                         returncode = 0
                         stdout = "dummy_hash\n"
                     return DummyResult()
-                elif args[0] == "./bin/todo":
-                    class DummyResult:
-                        returncode = 0
-                    return DummyResult()
                 return None
                 
             mock_run.side_effect = side_effect
             
+            queue_file = "dyad-state/sync_queue.jsonl"
+            if os.path.exists(queue_file):
+                os.remove(queue_file)
+            
             # Execute
             poll_mail(directory_path, target_dyad="dyad-cairn")
             
-            # Verify todo was called
-            todo_calls = [call_args for call_args in mock_run.call_args_list if call_args[0][0][0] == "./bin/todo"]
-            self.assertEqual(len(todo_calls), 1)
+            # Verify todo was queued
+            self.assertTrue(os.path.exists(queue_file))
+            with open(queue_file, "r") as f:
+                queue_content = f.read()
+                
+            import json
+            queue_items = [json.loads(line) for line in queue_content.strip().split("\n")]
+            self.assertEqual(len(queue_items), 1)
+            
             expected_intent = "Process inbound mail from https://github.com/mock/dyad-mock at commit dummy_hash (file: dm/dyad-cairn/message.md)"
-            self.assertEqual(todo_calls[0][0][0][1], expected_intent)
+            self.assertEqual(queue_items[0]["intent"], expected_intent)
 
 if __name__ == '__main__':
     unittest.main()
