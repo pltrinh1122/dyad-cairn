@@ -23,7 +23,10 @@ def audit_dialect():
     with open(transcript_path, "r") as f:
         for line in f:
             if line.strip():
-                steps.append(json.loads(line))
+                try:
+                    steps.append(json.loads(line))
+                except json.JSONDecodeError:
+                    pass
     steps = steps[-5:]
     
     for i, step in enumerate(steps):
