@@ -1026,3 +1026,6 @@
 - **2026-06-20 18:35:05** | `TODO` | test_noisy_intent_12345
 - **2026-06-20 18:37:06** | `TODO` | test_noisy_intent_12345
 - **2026-06-20 18:37:06** | `NODE-RETRO` | [node_todo_1782005068] Architected a synchronization layer (bin/sync-state, dyad-state/sync_queue.jsonl) to queue asynchronous events and provide a transactional interface for the linear SPAOR loop to consume them atomically.
+- **2026-06-20 18:43:11** | `TODO` | Implement the mechanical code updates specified in the newly ingested v0.5 commission spec (commissions/2026-06-18-acceptance-validation-v2-atomic.md) to bring our codebase into full alignment with Bond's feedback.
+- **2026-06-20 18:44:38** | `TODO` | test_noisy_intent_12345
+- **2026-06-20 18:44:38** | `NODE-RETRO` | [node_todo_1782003992] Refactored skills/flow_state_manager.py to add allow_fail=True to PR merge hooks, ensuring stale unbranched DAG nodes are successfully PRUNEd.
