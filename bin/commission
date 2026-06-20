@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# bin/commission - Structural bridge to formally ingest external V matrices
+set -euo pipefail
+
+if [ "$#" -lt 3 ]; then
+    echo "Usage: $0 <repo> <commit_sha> <file_path>"
+    exit 1
+fi
+
+REPO=$1
+COMMIT=$2
+FILE_PATH=$3
+
+URL="https://raw.githubusercontent.com/${REPO}/${COMMIT}/${FILE_PATH}"
+DEST_DIR=$(dirname "${FILE_PATH}")
+mkdir -p "${DEST_DIR}"
+
+curl -sL "${URL}" -o "${FILE_PATH}"
+
+echo "[MECHANICAL UI PRESENTATION] Successfully ingested ${FILE_PATH} from ${REPO}@${COMMIT}"
