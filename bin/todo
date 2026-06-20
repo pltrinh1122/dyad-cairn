@@ -3,6 +3,7 @@ import sys
 import os
 import yaml
 import datetime
+import uuid
 
 def append_todo(intent, status="UNRUBBED"):
     # Log to the Ledger
@@ -14,8 +15,14 @@ def append_todo(intent, status="UNRUBBED"):
     os.makedirs(todo_dir, exist_ok=True)
     todo_md = os.path.join("artifacts", "todos.md")
     
-    timestamp = datetime.datetime.utcnow().isoformat() + "Z"
-    todo_id = f"todo_{int(datetime.datetime.utcnow().timestamp())}"
+    now = datetime.datetime.now(datetime.timezone.utc)
+    timestamp = now.isoformat()
+    if timestamp.endswith('+00:00'):
+        timestamp = timestamp[:-6] + "Z"
+    if not timestamp.endswith('Z'):
+        timestamp += 'Z'
+    uuid_segment = uuid.uuid4().hex[:8]
+    todo_id = f"todo_{now.timestamp()}_{uuid_segment}"
     
     # Update YAML
     todo_file = os.path.join(todo_dir, f"{todo_id}.yml")

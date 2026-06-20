@@ -1,0 +1,12 @@
+node_todo_1782005068:
+  title: Architect a synchronization layer for atomic DAG updates from asynchronous events.
+  goal: >
+    WHAT: Architect a synchronization layer that queues asynchronous events (like incoming mail)
+    and provides a transactional interface for the linear SPAOR loop to atomically consume
+    and sync DAG state, avoiding multiple concurrent update vectors.
+
+    WHY: Because a concurrent background daemon creates multiple vectors for updating the DAG,
+    introducing race conditions and violating our strict single-threaded state coherency.
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED

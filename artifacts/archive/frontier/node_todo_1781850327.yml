@@ -1,0 +1,14 @@
+node_todo_1781850327:
+  title: Refactor poll_mail.py to eliminate dyad-state/inbox and use the remote Git
+    URL.
+  goal: 'add
+
+
+    WHAT: Refactor poll_mail.py to eliminate dyad-state/inbox. Extract the commit
+    hash of inbound messages and invoke ./bin/todo add with the remote Git URL.
+
+    WHY: To eliminate redundant state copying and use the remote git commit hash as
+    the sole source of truth.'
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED

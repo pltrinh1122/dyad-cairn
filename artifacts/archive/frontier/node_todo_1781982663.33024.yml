@@ -1,0 +1,17 @@
+node_todo_1781982663.33024:
+  title: Fetch and evaluate the inbound message (commission-invariant-extraction-engine.md)
+    from dyad-bond to determine if its payload requires structural adoption or if
+    it is stale and should be pruned.
+  goal: 'Process inbound mail from https://github.com/pltrinh1122/dyad-bond at commit
+    6984389c7bc06899c3c1425cf8d38e085353e7e4 (file: dm/dyad-cairn/2026-06-17-commission-invariant-extraction-engine.md)
+
+
+    WHAT: Fetch and evaluate the inbound message (commission-invariant-extraction-engine.md)
+    from dyad-bond to determine if its payload requires structural adoption or if
+    it is stale and should be pruned.
+
+    WHY: To synchronize our local substrate with upstream peer inputs while actively
+    maintaining architectural hygiene.'
+  type: PLAN
+  scope: FRONTIER
+  status: AUTHORIZED

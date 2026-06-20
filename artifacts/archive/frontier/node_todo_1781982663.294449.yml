@@ -1,0 +1,12 @@
+node_todo_1781982663.294449:
+  title: Evaluate and prune the REFUTED commission message from dyad-bond.
+  goal: 'Process inbound mail from https://github.com/pltrinh1122/dyad-bond at commit
+    6984389c7bc06899c3c1425cf8d38e085353e7e4 (file: dm/dyad-cairn/2026-06-17-acceptance-validation-REFUTED.md)
+
+
+    WHAT: Evaluate and prune the REFUTED commission message from dyad-bond.
+
+    WHY: The message is functionally stale and obsolete.'
+  type: PLAN
+  scope: FRONTIER
+  status: AUTHORIZED

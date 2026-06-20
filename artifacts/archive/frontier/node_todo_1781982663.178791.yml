@@ -1,0 +1,12 @@
+node_todo_1781982663.178791:
+  title: Evaluate and prune legacy mail.
+  goal: 'Process inbound mail from https://github.com/pltrinh1122/dyad-steward at
+    commit 2cbeee91fd2059a175a0f74106cd8313bd40dfb5 (file: dm/dyad-cairn/2026-06-10-falsify-dm-protocol-pr64.md)
+
+
+    WHAT: Evaluate and prune legacy mail.
+
+    WHY: Message is functionally obsolete.'
+  type: PLAN
+  scope: FRONTIER
+  status: AUTHORIZED

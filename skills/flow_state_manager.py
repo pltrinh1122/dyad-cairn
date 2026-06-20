@@ -341,7 +341,7 @@ def create_reflection_pr(node_id, is_green):
     # 3. Transition DAG Status and Merge (if Green)
     if is_green:
         print(f"[FLOW] Executing Autonomous Merge for Green Phase...")
-        run_cmd("gh pr merge --merge --delete-branch")
+        run_cmd("gh pr merge --merge --delete-branch", allow_fail=True)
         run_cmd(f"python3 skills/frontier_editor.py {node_id} DONE")
         print(f"[FLOW] Node {node_id} status transitioned to DONE. Execution completed.")
     else:
@@ -520,13 +520,12 @@ def trail_dispose(trail_id):
     print(f"[FLOW] Executing Trail Dispose for {trail_id}...")
     
     # 1. Merge PR
-    run_cmd("gh pr merge --merge --delete-branch")
+    run_cmd("gh pr merge --merge --delete-branch", allow_fail=True)
     
     # 2. Issue Closure Invariant
     # This may fail if the node is a PROBE and was never synced to a GitHub issue.
     # We suppress the error to ensure the DAG is pruned correctly.
-    import subprocess
-    subprocess.run(f"gh issue close {trail_id}", shell=True, capture_output=True)
+    run_cmd(f"gh issue close {trail_id}", allow_fail=True)
     
     # 3. Trail Pruning Invariant
     run_cmd(f"python3 skills/frontier_editor.py {trail_id} PRUNE")
@@ -610,7 +609,8 @@ if __name__ == "__main__":
         
         # Inject the node
         node_id = f"node_todo_{node.split('_')[1]}"
-        inject_node(node_id, f"Convert Todo: {node}", goal, scope, bypass_review=True)
+        node_title = todo['rub_matrix'].get('what') or intent
+        inject_node(node_id, node_title, goal, scope, bypass_review=True)
         
         # Remove from backlog
         os.remove(todo_file)

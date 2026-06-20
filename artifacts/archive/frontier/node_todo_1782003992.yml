@@ -1,0 +1,15 @@
+node_todo_1782003992:
+  title: Audit the DAG lifecycle mechanics (skills/flow_state_manager.py) to map exactly
+    why the orchestrator failed to prune the stale node automatically or handle manual
+    disposal cleanly.
+  goal: 'figure out why node_todo_1781760731 wasn''t previously disposed.
+
+
+    WHAT: Audit the DAG lifecycle mechanics (skills/flow_state_manager.py) to map
+    exactly why the orchestrator failed to prune the stale node automatically or handle
+    manual disposal cleanly.
+
+    WHY: these "noise" amplifies the distortion during G.'
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED
