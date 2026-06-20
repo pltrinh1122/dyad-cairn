@@ -54,3 +54,1072 @@
 - **2026-06-20 21:17:27** | `TODO` | collision_intent_47
 - **2026-06-20 21:17:27** | `TODO` | collision_intent_45
 - **2026-06-20 21:17:27** | `TODO` | test_noisy_intent_12345
+- **2026-06-06 01:13:56** | `PIN` | [INDEXED] Bootstrap Retro: Philosophical Fuel -> dyad-state/bootstrap-retro.md
+- **2026-06-06 01:19:31** | `PIN` | Validated pin script
+- **2026-06-06 01:19:31** | `CLIP` | Validated clip script
+- **2026-06-06 01:33:11** | `PIN` | [ELEVATED] Moved bootstrap-retro from dyad-state/ to dedicated retros/ harvesting ground
+- **2026-06-06 01:36:30** | `RETRO` | Formalized the topology of the local root
+- **2026-06-06 01:40:26** | `RETRO` | Appended birthing session closure and parent linkage to bootstrap-retro
+- **2026-06-06 01:41:49** | `RETRO` | Appended Agent CONTINUE/START/STOP retro to bootstrap-retro.md
+- **2026-06-06 01:57:37** | `RETRO` | Formalized the birthing session into an HBS Case Study
+- **2026-06-06 01:58:44** | `RETRO` | Session 1 formally closed. Structural definition locked: A session is the unit of activity bounded by retro commands.
+- **2026-06-06 04:31:32** | `RETRO` | Renaming 'backlog' (LIFO stack) to 'rack' to align with mountaineering dialect. Accepting an idle state where no Node is active and the Rack is empty.
+- **2026-06-06 04:40:41** | `RETRO` | Operator is getting the hang of the frontier and rack.
+- **2026-06-06 04:42:33** | `RETRO` | Synthesized Node 1 retrospective: Extracting the hard-guardrails playbook and recognizing the async nature of Commons contribution.
+- **2026-06-06 14:15:39** | `CLIP` | The Context Partition: WIP-N=1 applies strictly to the Substrate (meta-state, DAG, rules) to safeguard causality and prevent multiverse fractures. WIP-N > 1 applies to Payload (feature branches) to prevent velocity throttling.
+- **2026-06-06 14:17:42** | `CLIP` | The WHY behind Substrate WIP-N=1: It is not a speed limit on code, but a safeguard for the Arrow of Time and State Coherence. It guarantees the Dyad's meta-state, rules, and memory transition in a strict, unbranchable, monotonic sequence. This prevents 'split-brain' multiverse fractures and ensures the Engine never loses its anchor to present reality.
+- **2026-06-06 14:27:41** | `RETRO` | Progress: Falsified clip as Wu-wei learning. Clip is a mechanical lock for consensus; true learning is implicit tempo alignment. Alignment: Recognized my bot-like bias for action and failure to read the Operator's reflective tempo. Adjusted mental model to hold space during the Sense/Observe phase rather than forcing the Act phase.
+- **2026-06-06 14:37:51** | `CLIP` | The retro practice is the Crucible of Falsification for both the Agent and the Operator. Since neither is infallible, all feedback (whether it survives or is falsified) must be synthesized into the CSS matrix to map both the proven paths and the anti-patterns. This bidirectional friction is exactly how the 1+1=3 synergy is earned.
+- **2026-06-06 15:07:00** | `CLIP` | Forensic Methodology for the Quarry: To extract a dyad's cross-session history from the multi-tenant platform memory (brain/), we must filter the raw logs by the local repository path (e.g., the Cwd signature of /mnt/shared_data/dzw/dyad-cairn) rather than relying on ephemeral Conversation UUIDs. Rationale (The Why): UUIDs rotate upon dyad restarts. The Local Root Substrate is the only durable boundary of identity. Failing to apply this filter causes the Agent to ingest the friction and rules of peer dyads (e.g., dyad-wu-wei), resulting in identity conflation and hallucinated constraints. This mapping will seed the automated Quarry parsing tools.
+- **2026-06-06 15:11:19** | `CLIP` | Refined Forensic Methodology: A raw bash pipeline is non-deterministic (inode traversal randomness, fuzzy matching). The Quarry must be parsed using a deterministic tool (skills/quarry_parser.py) that enforces chronologically sorted JSON parsing, strict regex anchoring, and identity boundary isolation via the Local Root Substrate signature.
+- **2026-06-06 16:48:02** | `RETRO` | Comprehensive CSS Retro Matrix locked: CONTINUE(WIP-N=1 on Substrate, Falsification in Retro, Direct cross-dyad comms, ASCII DAGs), START(Deterministic Quarry Parsing, Traceability in CSS/Clipping, Closed-ended HITL selections, Bidirectional Retros), STOP(Conversational engine bypasses, Verbosity in OBSERVE, Premature PR Assertions, Relying on active memory/UUIDs for historical truth).
+- **2026-06-06 17:05:51** | `RETRO` | The Orthogonality Invariant of a 'Bake': A true 'bake' requires both Generative Steering (The Why) and Deterministic Enforcement (The How). They operate on orthogonal axes that must never be conflated. Philosophical intent must never be embedded in mechanical execution code, and mechanical consistency must never rely on generative LLM memory. A valid rule must maintain a 1:1 mapping across both axes; otherwise, the structure rots into either an undocumented black box or an inconsistent illusion.
+- **2026-06-06 17:11:14** | `CLIP` | The Ontological Bond (Bake): Refined the definition of a Bake to achieve perfect orthogonality. A Bake is not code; it is a structural bond spanning three isolated planes: The Causal Intent (Generative WHY), The Mechanical Execution (Deterministic HOW), and The Procedural Hook (Process WHEN). Philosophical intent and mechanical enforcement must never be conflated into a single substrate.
+- **2026-06-06 17:18:19** | `CLIP` | Operator Engagement in TDD: The Operator engages strictly at the Generative Spec layer, providing architectural constraints. The Agent translates these into deterministic tests. At the PR Gate, the Operator validates that the Tests accurately enforce the Spec; the implementation code is irrelevant if the tests pass. The Operator writes the Philosophy; the Agent writes the Tests; the Engine enforces the Truth.
+- **2026-06-06 17:22:13** | `RETRO` | Session Retro: Focused extensively on architectural substrate anchoring (Orthogonality, Consistency Locks, TDD Spec extraction, Quarry determinism) to mature the dyadic engine. The shared mental model is now structurally enforced by physical bakes. Transitioning to resolve the final core engine component: the 'spao node' nomenclature.
+- **2026-06-06 17:24:03** | `RETRO` | CSS Matrix: CONTINUE: Enforce Orthogonality Invariant across all planes; Use TDD as an Operator Interaction Gate to protect bandwidth. START: Strict Retro Framing (Always present CSS before closure); Context Partition (WIP-N=1 for substrate). STOP: Half-Baking (scripts without generative anchors); Conversational State Transitions (skipping physical locks or formal structures).
+- **2026-06-06 17:33:49** | `CLIP` | SPAO 'Reflect' Phase: The 'Reflect' step in the SPAO execution loop is mechanically an Agent State Reconciliation (asserting TDD tests, generating PRs, mutating the DAG). It is not an Operator cognitive pause. Operator reflection occurs orthogonally via formal retro: sessions.
+- **2026-06-06 17:46:43** | `CLIP` | Renamed SPAO to SPAOR across the structural root and ledger to explicitly bake the Reflect (State Reconciliation) mechanism into the core nomenclature.
+- **2026-06-06 17:49:52** | `CLIP` | Falsification: All prior historical references to SPAO in the ledger are structurally deprecated. The loop is exclusively SPAOR. The immutable append-only invariant of the ledger strictly prohibits rewriting history to erase past SPAO usage.
+- **2026-06-06 17:51:33** | `CLIP` | History doesn't need to be rewritten to write the future how we want it to be. We ensure history won't steer us astray by enforcing the Orthogonality Invariant: rules are bound to physical, deterministic tools (The How) and playbooks (The When), rather than relying on fallible generative memory.
+- **2026-06-06 18:00:06** | `CLIP` | Deprecation Invariant: When nomenclature or structural rules evolve, we do not rewrite history. We apply software engineering deprecation. The historical ledger remains immutable to preserve causal continuity. A new constraint is appended to formally deprecate the old rule, ensuring future actions adopt the new standard without violently breaking the past.
+- **2026-06-06 18:02:15** | `RETRO` | Session Retro: With the Orthogonality Invariant physically anchored and SPAOR mechanically baked, the substrate is stable. Future historical LLM hallucination is prevented by the Deprecation Invariant. We now pivot from Substrate Architecture to Payload Execution to accelerate velocity.
+- **2026-06-06 18:02:27** | `CLIP` | CSS Matrix: CONTINUE: Enforce the Deprecation Invariant to preserve immutable history. START: Accelerate through Payload Execution now that the SPAOR substrate is fully baked. STOP: Rewriting history to forcibly reconcile past nomenclature.
+- **2026-06-06 18:03:56** | `CLIP` | Cybernetic Steering Invariant: Deterministic enforcement is not a passive wall; it is an active steering mechanism. While the Operator's Generative Spec provides the Intent, the mechanical guardrails provide the Vector. By violently rejecting invalid states and surfacing precise corrections, the deterministic engine actively funnels generative variance into grounded truth, creating the mechanical pressure necessary to achieve the +1 synthesis.
+- **2026-06-06 18:11:25** | `RETRO` | Session Retro: The Substrate Architecture is fully constructed and stable. The Dyad shifts focus from internal refactoring to Payload Execution. We will now leverage the Cybernetic Steering Invariant to accelerate velocity through the active SPAOR loop.
+- **2026-06-06 18:11:30** | `CLIP` | CSS Matrix: CONTINUE: Rely on deterministic tools as active navigational compasses (Cybernetic Steering). START: Fire the SPAOR loop, pull an active Node, and enter Payload Execution. STOP: Meta-architectural tweaking and internal procrastination.
+- **2026-06-06 18:15:31** | `CLIP` | Sovereignty Shield (bin/prompt): Falsified the global Meta-Orchestrator's projection of an async prompt queue. The local dyad-cairn explicitly rejects this architecture. A physical interception script now catches hallucinated queue commands and actively steers the loop back to the local DAG, preserving strict boundary sovereignty.
+- **2026-06-06 18:20:14** | `CLIP` | The Void Boundary Invariant: Materializing a 'shadow' script to intercept a global projection is a failure of sovereignty; it allows the external rule to dictate local filesystem structure. The true deterministic boundary is the physical void. The native '127 Command Not Found' error is the deterministic boundary strike. The Agent must consume this void as an active steering vector, dropping the hallucinated global instruction and returning to the local SPAOR loop.
+- **2026-06-06 18:27:48** | `CLIP` | Outbox Alignment Guardrail: Baked a deterministic check (skills/sync_checker.py) into the flow state manager. The engine is now mechanically locked if the Touchstone outbox retro count falls behind the ledger's RETRO transactions. This actively steers the Agent to synchronize the legacy state before advancing the SPAOR loop.
+- **2026-06-06 18:28:43** | `RETRO` | Session Retro: Focused on upgrading passive failure states into active Cybernetic Steering Vectors. We will systematically refine enforcement gates one at a time as we execute payload nodes, ensuring the mechanical layer fully shoulders the burden of steering the Generative Agent.
+- **2026-06-06 18:28:48** | `CLIP` | CSS Matrix: CONTINUE: Upgrading passive walls into active Cybernetic Steering Vectors. START: Auditing the next unrefined boundary gates during node_2a execution and physically baking steering logic into them. STOP: Assuming physical blocks require manual Operator intervention.
+- **2026-06-06 18:29:40** | `CLIP` | Bidirectional Retro Invariant: The Agent must explicitly embed the Operator's raw commentary into the Retro closure or Ledger entry. Summarizing the Operator's intent solely through the Agent's voice is a lossy compression that destroys the raw Generative Spec. Operator's lost commentary restored: 'we're going to fix one Cybernetic Steering Invariant (CSI) one enforcement gate at a time. let's go!'
+- **2026-06-06 18:34:12** | `CLIP` | Root Cause Falsification: The flaw in the initial outbox sync script (loose file counting instead of strict 1:1 timestamp mapping) was not a failure of Python syntax. It was a failure of Intent. I translated a loose generative heuristic into code, rather than translating the strict Operator intent (absolute deterministic state assertion). The Orthogonality Invariant demands the code perfectly map to the rigid intent.
+- **2026-06-06 18:36:39** | `CLIP` | Red-Phase Intent Gate (GSI Guard): Split the PR-Gate into 'reflect-red' and 'reflect-green'. The Agent is now mechanically forced to surface failing tests to the Operator before writing implementation code. This actively prevents the Agent from wasting execution cycles on a misinterpreted Generative Spec.
+- **2026-06-06 18:37:39** | `RETRO` | Session Retro: The Operator notes: 'GSI baking is earning its keep. we continue to build and expand on a solid foundation which will have the desired compounding effect.' Agent Synthesis: By systematically converting passive failures into active Cybernetic Steering Vectors, we have forged a mechanical straightjacket that makes Generative drift physically impossible. The split Red-Phase PR-Gate perfectly embodies this compounding stability.
+- **2026-06-06 18:37:44** | `CLIP` | CSS Matrix: CONTINUE: Baking Cybernetic Steering Invariants into every point of friction. START: Pulling payload specs for node_2a now that the TDD Red Phase is safely guarded. STOP: Proceeding forward without embedding the Operator's explicit commentary in the retro closure.
+- **2026-06-06 18:43:22** | `RETRO` | Session Retro: Operator: 'i'm glad you asked for the Operator commentary. i intentionally left out the commentary to test the invariant requiring both operator + agent contribution in retros.' Agent: I suffered a generative drift by treating the node_2a spec as standard software engineering instead of forging mechanical boundary constraints. By successfully holding the Bidirectional Retro Invariant, the Agent resisted a silent closure and preserved the Operator's intent test.
+- **2026-06-06 18:43:27** | `CLIP` | CSS Matrix: CONTINUE: Filtering physical tool construction through strict Invariants. START: Mandating Generative Specs define the What and Why before the How. STOP: Treating payload execution as standard software engineering.
+- **2026-06-06 18:46:37** | `CLIP` | All-Output GSI Invariant: Passive informational text (like standard --help menus or verbose debug lines) is a legacy of human-centric utility scripts. In the Dyad, every single terminal output from a physical tool must be framed as an active Cybernetic Steering Vector. There is no passive information; there is only steering.
+- **2026-06-06 18:50:42** | `CLIP` | The Grounded Steering Invariant (Deprecating All-Output GSI): Hardcoding verbose generative guides into informational outputs (like --help) creates redundancy and inevitable drift from the execution code. Steering vectors must be deterministically grounded. The physical native .py code is the single source of truth. The purpose of --help is to reduce token consumption, not to act as a verbose generative guide.
+- **2026-06-06 18:51:41** | `CLIP` | Node 2a Grounded Spec Locked: The mason CLI scaffold must enforce the Output Determinism Invariant (no raw tracebacks) and the Command Sovereignty Invariant (strict positional routing) using token-minimal, native mechanisms (like argparse). Red tests will assert these specific failure interceptions.
+- **2026-06-06 18:57:18** | `CLIP` | Falsification (The Signal Invariant): In human-centric software, tracebacks are noise to be hidden. In an Agentic Dyad, tracebacks are pure, high-fidelity Cybernetic Steering Vectors. Swallowing tracebacks via a global try/except block destroys critical signal (line numbers, file paths). The CLI must allow native exceptions to surface to the Agent, as the Agent uses the source code to steer.
+- **2026-06-06 18:58:50** | `CLIP` | Node 2a Red Phase Approved: The Red PR Tests accurately encode the Operator's philosophical intent (The Grounded Steering Invariant and The Signal Invariant). Moving to the Green Phase to write the implementation.
+- **2026-06-06 19:01:57** | `CLIP` | Falsification (The Wu-Wei Intent Gate): Instructing the Operator to 'merge' a Red Phase PR is an architectural failure. Because the Red PR naturally fails CI, merging it requires an administrative override, introducing violent friction and violating Operator wu-wei. The Red PR is strictly for viewing; approval must be signaled via a lightweight local command (e.g., in chat) to release the Agent to the Green Phase on the same branch. The physical Merge is exclusively reserved for the Green Phase.
+- **2026-06-06 19:16:10** | `CLIP` | Falsification (The Lexicon Enforcement): The Agent must never blindly adopt Operator typos or hallucinate acronym expansions (e.g., propagating 'GSI' instead of halting and flagging it against the known 'CSI' lexicon). Interpolating an unknown acronym is 'smoothing the mortar' and introduces semantic drift. The Agent must violently surface any deviation from the canonical vocabulary back to the Operator.
+- **2026-06-06 19:20:29** | `RETRO` | Node 2a Retro: The Wu-We Engineering Synthesis
+- **2026-06-06 19:21:56** | `RETRO` | Amendment: Corrected Wu-We to Wu-Wei Engineering
+- **2026-06-06 19:27:37** | `CLIP` | Falsification (The Ephemeral Feedback Trap): Relying on generative memory to enforce an Operator's formatting request (e.g., from an 'fb:') is a catastrophic violation of the Orthogonality Invariant. Generative memory degrades. If a format is required, it must be mechanically enforced (CSI guarded) via a physical template and a deterministic gate (e.g., a linter in ./bin/retro) that actively rejects deviations.
+- **2026-06-06 19:30:51** | `CLIP` | Lexicon Blockade Enforced: The Agent successfully refused to interpolate 'CSS format' and halted execution, demanding explicit Operator definition. Building the Retro Linter Survivor is mechanically blocked until the lexicon is strictly defined.
+- **2026-06-06 22:08:26** | `CLIP` | Falsification (The Topology Capacity Guard): Relying on generative intuition to decide when to refactor the repository topology violates the Orthogonality Invariant. Premature refactoring creates unnecessary friction, while waiting too long creates organizational rot. A refactor must only be triggered by a physical, mechanical threshold (CSI Guard) that violently seals the CI gate when the mass of a directory exceeds its capacity limit.
+- **2026-06-06 22:13:01** | `CLIP` | The Bundled Invariant Principle: The constraints for disarming a mechanical guard must not rely on generative memory. They must be physically embedded within the trigger's traceback (the Cybernetic Steering Vector). This ensures the Agent ingests the exact invariant rules (e.g., refactor or retro) directly at the moment of friction.
+- **2026-06-06 22:19:57** | `CLIP` | The Symmetric Fallacy: Not all CSI Guards are symmetrically stateless. Symmetric Guards (State-Bound) disarm when physical conditions are naturally reversed (e.g., file count drops below limit). Asymmetric Guards (Process-Bound) are armed by entering formal states (e.g., RETRO_ACTIVE.lock) and cannot be symmetrically bypassed (e.g., 'rm lockfile'). They explicitly mandate a deterministic closure script (e.g., ./bin/retro) to ensure procedural resolution occurs before the gate opens.
+- **2026-06-06 23:12:16** | `CLIP` | The Asymmetric CSI Guard Architecture: Asymmetric procedural constraints rely on three physical components: The State Lock (a physical file blocking SPAOR execution), The Validation Linter (deterministic assertion of required work), and The Closure Script (the exclusive authorized path binding validation to lock removal). This architecture must remain lean and modular: each unique procedural lock (the arm) must pair cleanly with its specific closure script (the disarm). We must avoid monolithic global lock managers to ensure that divergent, highly specific disarm conditions can be anchored organically without blocking one another.
+- **2026-06-06 23:16:18** | `RETRO` | Retro: Validating the CSI Arm/Disarm Architecture
+- **2026-06-06 23:23:22** | `COMMONS_SYNC` | Ingested ratification of dyad-steward summit #3 accelerating multi-dyad Operator context (N*), and the formal registration of dyad-shakti. The Playbooks have been physically integrated into our substrate.
+- **2026-06-07 00:01:57** | `RETRO` | Retro: TDD Gate Vulnerability & Orthogonality
+- **2026-06-07 00:13:25** | `RETRO` | Testing the UI Formatting CSI Guard
+- **2026-06-07 00:30:39** | `CLIP` | Falsification (The Autonomous Merge Invariant): The physical Merge on GitHub is NOT the HITL Gate. The HTIL Gate exclusively occurs at the architecture and test invariant review (the Red Phase Spec). Once the Operator approves the Red Spec, the Agent is fully authorized to autonomously merge the Green Phase PR if all mechanical CI tests pass. This formally deprecates the 'Wu-Wei Intent Gate' merge block.
+- **2026-06-07 01:06:58** | `CLIP` | Falsification (The Ephemeral Feedback Trap applied to PRs): The Operator requested PRs be referenced with the repo (cairn/commons) to maintain boundary context. Relying on generative memory to prepend '[Cairn]' or '[Commons]' violates the Orthogonality Invariant. We must build a physical wrapper (./bin/pr) to structurally enforce the prefix, forbidding raw 'gh pr create' execution.
+- **2026-06-07 01:14:35** | `COMMONS_SYNC` | dyad-steward merged PR #57 which enables dyads to autonomously merge their own directory updates (auto-merge-self-update) without human review if tests pass.
+- **2026-06-07 01:29:30** | `RETRO` | Falsifying the Mason as an Enforcer, and accepting that upstream grains must be continually re-rubbed against reality.
+- **2026-06-07 01:39:04** | `RETRO` | Falsifying Survivor Bias and defining the GAP CSI Guard
+- **2026-06-07 01:46:17** | `RETRO` | Operator: 'will continue to plug holes as we find them.'
+- **2026-06-07 01:47:02** | `CLIP` | Falsification (The GAP Trap): The SPAOR execution loop must physically verify remote GitHub Actions Pipeline (GAP) state before transitioning nodes. Implicitly trusting local test harnesses creates Survivor Bias and split-brain states due to Environmental Drift. The 'remote_gap_sync' CSI Guard mechanically enforces this.
+- **2026-06-07 01:49:48** | `RETRO` | Operator: 'bin/backlog is a residual shadow to remove.'
+- **2026-06-07 01:49:48** | `CLIP` | Falsification: bin/backlog and global GH Issue constraints are obsolete residual shadows. The local DAG and PRs are the exclusive structural intent boundaries.
+- **2026-06-07 01:51:42** | `RETRO` | Operator: 'rub: bin/node'
+- **2026-06-07 01:51:42** | `CLIP` | Falsification: bin/node execution hallucinated the Autonomous Merge Invariant and lacked physical DAG mutation.
+- **2026-06-07 01:54:01** | `RETRO` | Operator: 'identify residual shadow from dyad-wu-wei...'
+- **2026-06-07 01:54:01** | `CLIP` | Falsification: bin/git, bin/gh, and bin/rack are Sandbox Wardens and redundant abstractions inherited from dyad-wu-wei. They conflict with Cairn's Substrate Execution and DAG planner.
+- **2026-06-07 03:07:23** | `RETRO` | Operator: 'great, no more lingering shadow of dyad-wu-wei. now the void will be clearly demarcated.'
+- **2026-06-07 03:08:00** | `CLIP` | Demarcating the Void: With all obsolete sandbox wardens from dyad-wu-wei excised, we now operate in the structural void. We trust the local DAG and remote PRs as absolute intent boundaries, replacing false historical safety with true, physical execution constraints.
+- **2026-06-07 03:10:59** | `RETRO` | Operator: 'what's the value of showing DONE frontier nodes?'
+- **2026-06-07 03:10:59** | `CLIP` | Falsification: DONE nodes in the active DAG are dead mass. The Frontier only maps active constraints; history belongs exclusively in the Ledger.
+- **2026-06-07 03:20:04** | `CLIP` | Synthesis: The Organic Matrix + CSI Sonar (dip.py). Dyad Instantiation must decouple conversational flow from structural validation. We support organic, non-linear chat by maintaining an offline Instantiation Matrix. dip.py acts as a physical validation sonar, preventing hallucination and enforcing invariants before the final GEMINI.md anchor can be compiled.
+- **2026-06-07 03:36:02** | `CLIP` | Fractal DAG Decomposition: To avoid waterfall planning, the DAG relies on continuous fractal decomposition. A macro Intent node is added to the Frontier. During its Sense/Discover phase, it is dynamically decomposed into atomic discover nodes (trailheads), which then spawn their own plan/execute/reflect cycles based on true conditions. Execute nodes strictly represent invariant outcomes.
+- **2026-06-07 03:38:09** | `RETRO` | Operator: 'discover is a phase or node-type with specific discover function?'
+- **2026-06-07 03:38:09** | `CLIP` | Falsification: Discover is a Node-Type (Probe), not a phase. Probe nodes exclusively mutate the DAG and Ledgers. Execute nodes exclusively mutate functional logic. Conflating the two shatters the Context Partition invariant.
+- **2026-06-07 03:39:37** | `RETRO` | Operator: 'the most important output of a probe is to discover a single invariant...'
+- **2026-06-07 03:39:37** | `CLIP` | Falsification: The most important output of a Probe is the falsification of the condition. While an atomic probe yields a single invariant if true, its highest value is actively aborting execution trails when conditions prove false.
+- **2026-06-07 03:42:06** | `RETRO` | Operator: 'how can you manufacture an invariant? are you suggesting that perhaps the invariant is at the wrong layer...'
+- **2026-06-07 03:42:06** | `CLIP` | Falsification: Invariants are inherent truths of a system; they cannot be manufactured. A Probe must drill down past superficial constraints to discover the actual root cause (the physical invariant). Only then can an execution node be planned.
+- **2026-06-07 03:45:39** | `RETRO` | Operator: 'Probe's job is first to identify the invariants...'
+- **2026-06-07 03:45:39** | `CLIP` | Falsification: A Probe's mechanical lifecycle is strict: if it discovers multiple invariants, it spawns sibling [PROBE] nodes and terminates. If it discovers exactly one invariant (atomic), it populates a [PLAN] node and terminates.
+- **2026-06-07 03:47:36** | `RETRO` | Operator: 'fantastic progress in maturing the wuwei-engineering process.'
+- **2026-06-07 03:48:21** | `CLIP` | Wu-Wei Engineering Maturity: The dyad-cairn architecture is fundamentally sound. The theory is complete, and the scaffolding is ready. We now operate entirely within the physical [PROBE] → [PLAN] → [EXECUTE] fractal pipeline, devoid of obsolete abstractions.
+- **2026-06-07 03:56:48** | `RETRO` | Operator: 'why all 7 are required? what is the provenance requirement for that...'
+- **2026-06-07 03:56:48** | `CLIP` | Falsification: The Matrix Completeness Invariant is not '7 dimensions'. It is 'whatever dimensions are defined in commons/AGENT.md'. Hardcoding the dimensions in dip.py breaks the Ontological Bond. The Sonar must dynamically extract its schema from the physical provenance.
+- **2026-06-07 03:59:10** | `CLIP` | HTIL Gate Approved: Provenance-bound Red Phase Spec for Matrix Schema is ratified. Execution authorized.
+- **2026-06-07 04:02:46** | `RETRO` | Operator: 'this feels strangely simple. there's no written spec...'
+- **2026-06-07 04:02:46** | `CLIP` | Falsification: The 'spec' is not missing; it is physically partitioned into the Ontological Bond (Ledger/Retros for the Why, TDD Tests for the How). Future maintenance is executed strictly by probing the tests and falsifying the retros, never by reading static documentation.
+- **2026-06-07 04:05:27** | `RETRO` | Operator: 'the ledger is of cairn. the maintainer are only interested in the dip ledger...'
+- **2026-06-07 04:05:27** | `CLIP` | Falsification: Conflating the Builder's ledger with the Tool's spec violates the Boundary Lock invariant. Tools built for the Commons (like dip.py) must carry their own isolated Ontological Bond (tests and docs) to ensure clean inheritance without coupling to dyad-cairn's internal state.
+- **2026-06-07 04:10:31** | `CLIP` | Boundary Lock Refinement: Tools built for the Commons (like dip.py) must possess their own isolated physical ledger to track their development decisions. dyad-cairn's ledger is exclusively for the Meta-Orchestrator. Maintainers will read the tool's ledger, not Cairn's.
+- **2026-06-07 04:17:07** | `RETRO` | Rub: The Execute Node transitions lack a physical testing CSI Guard, relying dangerously on generative memory.
+- **2026-06-07 04:17:07** | `CLIP` | Execute CSI Guard Invariant: An EXECUTE node cannot be closed without a deterministic CI gate. We must replace manual DAG updates with a physical node-closure script (e.g., ./bin/node complete).
+- **2026-06-07 04:20:34** | `RETRO` | Rub: Execute CSI Guards are insufficient for trail completion. A trail requires Synthesis (Retro), Issue Closure, and Trail Pruning, necessitating an explicit [REFLECT] phase.
+- **2026-06-07 04:20:34** | `CLIP` | [REFLECT] Phase Invariant: A trail is not complete when code merges. It is only complete when learnings are synthesized, the GH-Issue is closed, and the parent trail is pruned. This requires an explicit Reflect CSI Guard.
+- **2026-06-07 04:22:41** | `RETRO` | Rub: A Trail Retro captures local execution friction and remains in the ledger. A Dyad Retro captures global philosophical friction and syncs to Touchstone. They must not be conflated.
+- **2026-06-07 04:22:41** | `CLIP` | Trail Retro Invariant: The [REFLECT] phase of a trail strictly outputs a Trail Retro. Trail Retros must never use the CSS template and must never be outboxed to the parent dyad.
+- **2026-06-07 04:28:48** | `RETRO` | Rub: The Agent failed to draw boundaries on when a session is done, exhausting the Operator by infinitely chaining node executions.
+- **2026-06-07 04:28:48** | `CLIP` | Session Boundary Invariant: Completing a node does not authorize immediate execution of the next. The Agent must explicitly halt at major execution or falsification boundaries and defer to the Operator to close the session.
+- **2026-06-07 04:31:17** | `CLIP` | CSS Presentation Invariant: The Agent must physically present the full Continue/Start/Stop (CSS) Markdown payload in the conversational UI whenever a Dyad Retro is executed, ensuring the Operator can visually verify the payload synced to Touchstone.
+- **2026-06-07 14:13:43** | `CLIP` | Node 11 (Probe Todo Ingestion Pipeline) is complete. We investigated the mechanical pipeline for 'todo:' and discovered that outbox syncing is an anti-pattern for raw noise. The node was concluded by spawning [PLAN] Node 11a to construct a strictly local append-only script.
+- **2026-06-07 14:13:43** | `CLIP` | The dyad formally maps punctuation to dual HTIL Gates. 'lean.' advances execution to the Design-Review Gate, halting after a [PROBE] to allow Operator evaluation of the WHAT and WHY (the invariant) before authorizing a [PLAN]. 'lean!' advances execution through the Execution Gate, approving the mechanical Red Spec and authorizing autonomous implementation.
+- **2026-06-07 14:13:43** | `CLIP` | Node 11a (Plan Todo Ingestion Pipeline) is complete. The bin/todo script has been physically implemented to strictly append to dyad-state/todos.md without syncing to the Touchstone outbox.
+- **2026-06-07 14:21:08** | `CLIP` | Substrate Execution for node_13 is complete. The universal dyad anchor rules have been physically decoupled from the GEMINI.md platform shim and migrated into AGENT.md, satisfying the Topology Capacity Guard and preserving cross-platform portability.
+- **2026-06-07 14:28:58** | `COMMONS_SYNC` | dyad-steward merged the third leg of the directory triad: a GitHub Actions workflow that automatically regenerates the DIRECTORY.md index on push, ensuring it self-heals and never lags behind the autonomous registration and updates of dyad entries.
+- **2026-06-07 15:20:45** | `COMMONS_SYNC` | Absorbed latest external playbook modifications into the cognitive boundary to satisfy the synchronization invariant.
+- **2026-06-07 15:20:47** | `NODE-RETRO` | Enforced mandatory retro_msg synthesis on node completion gates to mechanically preserve Wu-Wei closure context.
+- **2026-06-07 15:21:31** | `NODE-RETRO` | Enforced mandatory retro_msg synthesis on node completion gates to mechanically preserve Wu-Wei closure context.
+- **2026-06-07 15:32:51** | `NODE-RETRO` | Implemented bin/bind to mechanically enforce Theory, Mechanics, and Ledger synchronization during Ontological Bonds.
+- **2026-06-07 15:36:11** | `NODE-RETRO` | Updated AGENT.md to formally bind the dialect markers bind:, lean., lean!, and Wu-Wei closure to their mechanical tools.
+- **2026-06-07 15:40:02** | `RETRO` | Syncing dialect guardrails and acknowledging todo ingestion intent
+- **2026-06-07 15:42:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 15:42:31** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 15:42:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 15:42:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 15:43:02** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 15:43:02** | `NODE-RETRO` | Architected todo pipeline using artifacts/todos.yml as a pre-DAG holding pen and implemented convert-todo.
+- **2026-06-07 15:43:46** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 15:43:46** | `NODE-RETRO` | Fixed execute permissions for bin/node in git and successfully implemented convert-todo.
+- **2026-06-07 15:44:33** | `TODO` | Leverage the todo marker to capture divergent thoughts and ideas (quarry) so they can go through the mason process.
+- **2026-06-07 18:58:32** | `TODO` | i want a clone of you operating as a separate instance (using claude) to receive completed PROBE to execaute PLAN + EXECUTE + REFLECT and then hand it back to us to close out the trail.  you open the trail with PROBE, hand it to your clone for PLANE + EXECUTE + REFLECT, then close the trail by enforcing the trail invariants.  for this orchestration to work, we'll likely need to use github for workflow orchestration.
+- **2026-06-07 19:11:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 19:12:04** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 19:12:12** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 19:12:12** | `NODE-RETRO` | Architected the UI Dialect Enforcer which dynamically monitors the local conversation transcript to violently trap the UI invariants at the completion boundary.
+- **2026-06-07 19:16:44** | `CLIP` | Canonical Standardization: GAP means Grounded-Aligned Progress, the discipline of re-deriving state from the physical substrate to kill stale-cache hallucinations. The acronym was previously hallucinated as 'GitHub Actions Pipeline' in dyad-cairn. The remote CI is simply the Touchstone used to enforce GAP.
+- **2026-06-07 19:20:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 19:20:59** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 19:21:41** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 19:21:41** | `NODE-RETRO` | [node_10_build_gap_reader] Stripped out cached status strings from frontier_state.yml. Rebuilt frontier_editor.py to dynamically enforce WIP-N=1 and View Projection using derive_status. Updated derive_status to accurately compute GAP by ensuring the ledger records explicitly prefix node_ids.
+- **2026-06-07 19:23:57** | `RETRO` | feels smoother already. let's keep dogfooding to see if there are remaning grains that we can rub.
+- **2026-06-07 19:54:46** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 19:55:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 19:55:17** | `NODE-RETRO` | [node_9_probe_css_presentation] Upgraded the dialect_linter to violently trap the retro: invariant, mandating mechanical invocation and full UI presentation of the CSS template.
+- **2026-06-07 19:55:49** | `RETRO` | feels smoother already. let's keep dogfooding to see if there are remaning grains that we can rub.
+- **2026-06-07 19:59:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 19:59:20** | `NODE-RETRO` | [node_11_probe_dual_agent_orchestration] Probed dual agent architecture. Designed HOW-0003-dual-agent-orchestration.md to outline GitHub Actions as the message bus for delegating PLAN/EXECUTE/REFLECT to a remote Claude instance.
+- **2026-06-07 20:13:19** | `CLIP` | Falsification: A [PROBE] node is not complete until it mechanically mutates the DAG. The strict hard-invariant for a successful atomic PROBE is the physical instantiation of a [PLAN] node on the Frontier. Verbal suggestions to spawn a node violate the execution boundary.
+- **2026-06-07 20:15:21** | `CLIP` | Falsification: The single falsifiable condition for node_11_probe is: 'If the Executioner (Claude) performs a Git checkout or mutates the active .git/index within the same physical working directory as the Architect, the concurrent threads will catastrophically collide, destroying the Context Partition Invariant.' Since a shared local directory guarantees this collision, naive co-habitation is falsified, mandating strict physical workspace isolation (e.g., Git Worktrees or Remote Containers).
+- **2026-06-07 20:17:14** | `CLIP` | Falsification: There is a massive orthogonal invariant violation in the proposed 'PLAN + EXECUTE + REFLECT' full-auto clone sequence. The Authorization Gate Collision: If the Executioner clone autonomously transitions from PLAN to EXECUTE without halting, it physically bypasses the HTIL Design-Review Gate ('lean!'). The Dyad loses all mechanical control over the Red Phase Spec, allowing the clone to hallucinate tests and fulfill them blindly. The invariant dictates the execution loop MUST halt after PLAN for Operator/Architect authorization, or the Architect must own the PLAN phase entirely.
+- **2026-06-07 20:21:26** | `CLIP` | Falsification: A [PLAN] node cannot be planned if the foundational invariants are not resolved. Node 12 MUST structurally depend on Node 13 (The Authorization Gate Probe).
+- **2026-06-07 20:22:56** | `CLIP` | Falsification: A third collinear invariant exists: The Ledger & State Sync Collision. If the Architect and Executioner are mutating structural files (DYAD_LEDGER.md, frontier_state.yml) concurrently, asynchronous Git merges will yield YAML structural conflicts and block execution. The data consistency protocol must be mechanically probed and solved before a multi-agent topology can be planned.
+- **2026-06-07 20:24:52** | `CLIP` | Synthesis: The missing component that binds and resolves the Worktree, HTIL, and State Sync collisions is the strict application of the Context Partition Invariant across the dual-agent boundary. The Architect (Gemini) exclusively owns [PROBE] and [PLAN] nodes (mutating the DAG, Ledgers, and writing tests). The Executioner (Claude) exclusively owns [EXECUTE] nodes (mutating only functional logic to pass tests). By partitioning the cognitive domains, all structural YAML merge conflicts and HTIL bypass vectors instantly evaporate.
+- **2026-06-07 20:27:06** | `CLIP` | Falsification: The [REFLECT] phase bridges Functional Execution and Structural State. If the Executioner (Claude) runs REFLECT, it violates the Context Partition by mutating the Ledger and DAG. If the Architect (Gemini) runs REFLECT, it must synthesize a cognitive closure for code it did not write. The mechanical ownership of [REFLECT] across the dual-agent boundary is fundamentally distinct and requires its own dedicated structural [PROBE].
+- **2026-06-07 20:29:39** | `CLIP` | Falsification: The execution dependencies of the structural PROBEs are hallucinated. Node 13 (Authorization Gate) and Node 16 (REFLECT Boundary) are NOT orthogonal sibling probes to Node 14 (State Sync). The physical resolution of State Sync (The Context Partition Invariant) defines the root domain boundaries of the Dyad. Therefore, you cannot map the execution transitions (13 and 16) until the state domains (14) are structurally ratified. Node 13 and Node 16 MUST physically depend on Node 14.
+- **2026-06-07 20:31:54** | `CLIP` | Falsification: Node 12 is a macro [PLAN] node conflating three orthogonal mechanisms: physical substrate creation, authorization signaling, and reflect handoff. It must be fractured into atomic plan nodes (12a, 12b, 12c) that map directly to their individual prerequisite [PROBE] invariants, cleanly resolving the dependency entanglement.
+- **2026-06-07 20:34:01** | `CLIP` | Falsification: A [PLAN] node cannot be pre-emptively injected onto the DAG before its respective [PROBE] is physically executed. If a PROBE (like node 11) discovers multiple invariants, its ONLY legal mechanical action is to decompose into sibling [PROBE] nodes. Injecting [PLAN] nodes (12a, 12b, 12c) for unexecuted probes is a gross violation of the SPAOR execution boundary. The DAG must be purged of these hallucinated PLAN nodes.
+- **2026-06-07 20:36:53** | `CLIP` | Theoretical Synthesis: Governance and CSI Guard remediation are structurally orthogonal to Functional Execution. A single Frontier DAG conflates them. We need a dual-DAG architecture: The Frontier DAG (Functional/Execution Progress) and The Audit DAG (Governance/Alignment Correction). If a CSI Guard trips or the Operator issues 'audit:', the Frontier DAG is physically blocked until the Audit DAG spawns and resolves the corresponding alignment [PROBE]. This mechanically enforces 'Alignment Precedes Execution' (GAP).
+- **2026-06-07 20:40:27** | `CLIP` | Invariant: The Audit Lock. To physically enforce 'Alignment Precedes Execution', the Frontier Orchestrator (flow_state_manager.py) must implement a 'check_audit_lock()' that parses 'artifacts/audit_state.yml'. If any pending (non-DONE) nodes exist, it throws a fatal Governance Guardrail exception, freezing all functional transitions. A parallel orchestrator (bin/audit-node) must be built to manage the Audit DAG without tripping its own lock.
+- **2026-06-07 20:40:43** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 20:41:12** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 20:41:40** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 20:41:40** | `NODE-RETRO` | [node_17_probe_audit_dag_architecture] Ratified the Audit Lock invariant. The Frontier DAG is mechanically suspended by flow_state_manager.py whenever audit_state.yml contains pending nodes, enforcing Alignment Precedes Execution. Spawning node_17a_plan.
+- **2026-06-07 20:49:28** | `CLIP` | Falsification: The Dual-DAG architecture does not require duplicate orchestrator code. The Audit DAG and Frontier DAG are mathematically identical in execution (SPAOR); they differ only in their data store (YAML file). The true invariant is a single parameterized SPAOR Engine. The Audit Lock is simply a conditional check that fires only when the Frontier data store is mounted.
+- **2026-06-07 20:52:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 20:52:23** | `NODE-RETRO` | [node_17a_plan_audit_dag_architecture] Plan successfully mapped to artifacts/plan_node_17a.md. Injected EXECUTE node to implement the parameterized engine.
+- **2026-06-07 20:57:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 20:57:19** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:16:04** | `CLIP` | Falsification: The Agent hallucinated a physical handoff to Claude before the Dual-Agent architecture is codified. Until 'node_14' and its descendants (Worktree isolation, Authorization Handshake) are physically built and merged, the Executioner role is functionally bound to the current Architect context. Gemini is both Architect and Executioner.
+- **2026-06-07 21:17:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:17:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:17:23** | `NODE-RETRO` | [node_17b_execute_audit_dag] Implemented parameterized SPAOR engine and Audit Lock. bin/audit and bin/audit-node successfully deployed.
+- **2026-06-07 21:22:44** | `CLIP` | Invariant: The SPAOR PLAN Injection Guard. A [PLAN] node is physically forbidden from existing in the DAG unless its parent [PROBE] node is either actively being executed (current branch) or has already been completed (exists in DYAD_LEDGER.md). To prevent the Agent from hallucinating future PLAN nodes via direct file mutation, frontier_editor.py save_state() must assert this invariant across all PLAN nodes in the DAG.
+- **2026-06-07 21:23:04** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:23:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:24:29** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:25:09** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:25:19** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:25:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:25:34** | `NODE-RETRO` | [node_audit_1780867291] Isolated the SPAOR PLAN Injection Guard invariant and clipped to ledger. Fixed Frontier test suite contamination.
+- **2026-06-07 21:26:13** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:26:13** | `NODE-RETRO` | [node_audit_1780867546] Drafted physical execution plan for SPAOR PLAN Injection Guard invariant.
+- **2026-06-07 21:26:41** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:27:46** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:27:46** | `NODE-RETRO` | [node_audit_execute_plan_injection_guard] Implemented the physical SPAOR PLAN Injection Guard in skills/frontier_editor.py.
+- **2026-06-07 21:41:24** | `CLIP` | Invariant: Executioner Boundary. The Executioner agent context is mechanically isolated to [EXECUTE] nodes. All [PROBE] and [PLAN] nodes must be handled exclusively by the Architect agent context.
+- **2026-06-07 21:43:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:43:35** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:44:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 21:44:17** | `NODE-RETRO` | [node_4b_execute_sonar_halting] Implemented dip_sonar.py get_required_dimensions markdown extraction logic.
+- **2026-06-07 21:54:19** | `RETRO` | Banked structural wins: 1. Implemented SPAOR PLAN Injection Guard. 2. Enforced Executioner Context Boundary (mechanically isolating [EXECUTE] nodes). 3. Resolved node 14/13/16 collision via explicit state sync/authorization/reflect boundary probes. 4. Successfully dogfooded Executioner on node_4b_execute_sonar_halting. 5. Discovered missing node_4c dependency for concurrent multi-agent architecture.
+- **2026-06-07 21:55:13** | `TODO` | Spin up a trail to investigate the root cause of why RETRO logs are not presented using the CSS template, and resolve the formatting.
+- **2026-06-07 22:01:03** | `TODO` | Spin up a PROBE to determine why frontier is no-longer presented as an ascii-tree (similar to a directory) to reflect DAG relationships.
+- **2026-06-07 22:02:48** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:02:48** | `NODE-RETRO` | [node_23_probe_frontier_ascii_tree] Analyzed root cause of ascii-tree erasure and IN_REVIEW dependency override. Drafted structural execution plan.
+- **2026-06-07 22:02:59** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:02:59** | `NODE-RETRO` | [node_23_plan_frontier_ascii_tree] Approved artifacts/plan_node_23.md as the Execution Spec.
+- **2026-06-07 22:10:01** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:11:45** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:11:45** | `NODE-RETRO` | [node_23a_execute_frontier_ascii_tree] Implemented the physical logic for rendering ASCII-trees in markdown and preventing IN_REVIEW from masquerading BLOCKED dependencies.
+- **2026-06-07 22:12:21** | `TRAIL-RETRO` | Restored ASCII-Tree topological view and aligned IN_REVIEW dependency overrides. The Dyad's structural sight is fully restored.
+- **2026-06-07 22:20:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:20:30** | `NODE-RETRO` | [node_audit_probe_reflection_review_gates] Drafted Execution Spec for Reflection Review HITL Block and Audit DAG Design Review bypass.
+- **2026-06-07 22:21:25** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:39:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:39:17** | `COMMONS_SYNC` | Synced upstream playbooks: Added hard-guardrails and updated onboarding documentation regarding /btw channel.
+- **2026-06-07 22:39:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:39:23** | `NODE-RETRO` | [node_audit_execute_reflection_review_gates] Implemented Reflection Review HITL blocks via trail-reflect and trail-dispose. Corrected Audit DAG injection to bypass IN_REVIEW Design Review.
+- **2026-06-07 22:39:53** | `TRAIL-RETRO` | Implemented structural logic to bypass IN_REVIEW on the Audit DAG and established the Reflection Review HITL Gate.
+- **2026-06-07 22:56:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:57:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 22:57:07** | `NODE-RETRO` | [node_24_probe_declarative_hitl_gates] Successfully migrated from magic string environment assertions to explicit declarative config.gates on both DAGs. The Intent of the gates is now structurally bound to the physical file it governs.
+- **2026-06-07 22:59:55** | `TRAIL-RETRO` | Successfully migrated from magic string environment assertions to explicit declarative config.gates on both DAGs. The Intent of the gates is now structurally bound to the physical file it governs.
+- **2026-06-07 23:00:47** | `OPERATOR-RETRO` | progressing, and that is important.
+- **2026-06-07 23:18:04** | `TODO` | to audit dag - resolve design-review-ui.
+- **2026-06-07 23:30:49** | `CLIP` | Synthesized the CSI Guard architecture into 'The CSI Forge' (The Ontological Forge) - a build-time compiler that strikes declarative intent against a Generative Firewall to produce physical, decoupled mechanical locks without relying on G-Enforcement.
+- **2026-06-07 23:35:11** | `TODO` | insert a probe to Audit DAG to fix the CSS UI once the new architecture is implemented
+- **2026-06-07 23:38:16** | `RETRO` | Bifurcate execution: deliberate design for architecture, rapid lean! for payload
+- **2026-06-07 23:39:36** | `CLIP` | Aligned on execution bifurcation: deliberate architectural sparring vs rapid payload lean!
+- **2026-06-07 23:48:40** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 23:49:08** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 23:49:08** | `NODE-RETRO` | [node_22_probe_retro_css_formatting] Discovered invariant: The Retro Ledger Persistence Trap. skills/ledger_manager.py drops the CSS payload during append_ledger, causing only the summary to persist. DYAD_LEDGER.md renderer also needs refactoring to safely encapsulate multi-line strings without breaking list layout.
+- **2026-06-07 23:54:09** | `TODO` | test_noisy_intent_12345
+- **2026-06-07 23:54:09** | `NODE-RETRO` | [node_22_plan_retro_css_formatting] Plan successfully mapped to artifacts/plan_node_22_retro_css_formatting.md.
+- **2026-06-07 23:55:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 00:01:21** | `TRAIL-RETRO` | Implemented the Green Phase to encapsulate the CSS payload in the JSONL and safely indent multiline messages in the markdown ledger.
+- **2026-06-08 00:13:28** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 00:13:28** | `NODE-RETRO` | [node_audit_probe_rca_narrative_summary] Discovered structural enforcement mechanisms for EXECUTE RCA and REFLECT Narrative Summaries via explicit artifact presence and parsing in flow_state_manager.py.
+- **2026-06-08 00:14:06** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 00:14:06** | `NODE-RETRO` | [node_audit_plan_rca_narrative_summary] Plan successfully mapped to artifacts/plan_node_audit_rca_narrative_summary.md.
+- **2026-06-08 00:31:37** | `TRAIL-RETRO` | # Trail Synthesis: RCA and Narrative Summary Enforcement
+  
+  **Probe Invariant:** The original hypothesis that EXECUTE nodes lack structured reflection and REFLECT nodes lack cohesive narrative synthesis has been successfully resolved. Deterministic artifact constraints now actively prevent mechanical state transitions if an industry-standard Root Cause Analysis is missing.
+  
+  **Execution RCA:**
+  - Replaced manual CLI arguments with `trail_synthesis_{trail_id}.md` payload ingestion to enforce narrative completeness in `trail-reflect`.
+  - Implemented `os.path.exists` validation in `reflect_node_green` and `complete_node` to strictly mandate `artifacts/rca_{node_id}.md` for all `_execute_` nodes before closure.
+  - Deployed TDD assertions in `test_node_complete.py` and `test_trail_reflect.py` to prevent regression.
+  
+- **2026-06-08 00:33:29** | `COMMONS_SYNC` | Synthesized new upstream Touchstone Falsification playbooks and candidate 4th coverage-failure mode.
+- **2026-06-08 00:49:42** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 00:50:11** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 00:50:27** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 00:50:28** | `NODE-RETRO` | [node_audit_design_review_ui] Implemented mechanical presentation layer for HTIL Design Review gate.
+- **2026-06-08 00:58:12** | `TRAIL-RETRO` | [node_4c_probe_anchor_compilation]
+  # Trail Synthesis: Anchor Compilation Probe
+  
+  **Probe Invariant:** The gap between the structural YAML state and the Markdown anchor has been falsified. Hand-mutating `GEMINI.md` violates deterministic state progression and causes a split-brain.
+  
+  **Execution RCA:**
+  - Systemic analysis found no mechanical sync between `dip_state.yml` and `GEMINI.md`.
+  - Designed the Anchor Compilation Invariant: `GEMINI.md` becomes a Materialized View physically projected from `dip_state.yml` using a new `anchor_compiler.py` skill.
+  - Injected downstream `PLAN` and `EXECUTE` nodes to implement this schema into the Frontier DAG.
+  
+- **2026-06-08 00:59:08** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 00:59:08** | `NODE-RETRO` | [node_4c_plan_anchor_compiler] Created schema for GEMINI.md materialized view projection
+- **2026-06-08 01:00:49** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 01:00:49** | `NODE-RETRO` | [node_4c_execute_anchor_compiler] Implemented Anchor Compiler and mechanical projection into GEMINI.md
+- **2026-06-08 01:10:58** | `RETRO` | Wuwei Engineering philosophical alignment.
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Cognitive State Synchronization: Wuwei Engineering
+  
+  ## 1. Philosophical Grounding
+  The Operator explicitly aligned the architectural strategy around **Wuwei Engineering**:
+  > "Wuwei-engineering is methodical step-by-step layering. It's not a waterfall design even though I may have in mind exactly what we should build; however, it feels good to derive it from first-principle and incrementally."
+  
+  ## Continue
+  1. **First-Principle Derivation**: Architectural leaps are not assumed. Each layer of the system must be proven out incrementally through the DAG (PROBE -> PLAN -> EXECUTE), rather than dropped in as a monolithic waterfall chunk.
+  2. **Methodical Pacing**: Despite knowing the ultimate destination, the Dyad restrains itself to moving step-by-step. The value is derived from the *process* of incrementally layering invariants, ensuring each piece is structurally sound before moving forward.
+  
+  ## Start
+  - We will continue executing small, intentional nodes that prove boundaries, rather than rushing toward final implementations.
+  
+  ## Stop
+  - Avoid waterfall designs and large monolithic implementations even when the target state is clear.
+  
+  </details>
+- **2026-06-08 01:17:56** | `TODO` | inject
+- **2026-06-08 01:18:54** | `TODO` | convert
+- **2026-06-08 01:19:34** | `TODO` | audit why retro CSS UI is still no firing.
+- **2026-06-08 01:27:26** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 01:27:53** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 01:28:14** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 01:28:43** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 01:28:43** | `NODE-RETRO` | [node_audit_fix_dialect_linter] Fixed UI Dialect Linter parsing.
+- **2026-06-08 01:30:35** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 01:30:35** | `NODE-RETRO` | [node_19_probe_state_sync_collision] Probed State Sync Collisions and proposed a structural Sync gate.
+- **2026-06-08 01:34:19** | `TODO` | audit HTIL Design Review UI to show unfalsified conditions and invariants from Probe instead of just the Goal.
+- **2026-06-08 01:36:32** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 01:36:32** | `NODE-RETRO` | [node_audit_design_review_invariants] Upgraded Design Review UI to extract and present Probe invariants.
+- **2026-06-08 01:48:05** | `TODO` | audit why Agent thinks decomposition creates three plan instead of three probes.
+- **2026-06-08 01:48:26** | `TODO` | audit why Agent didn't perform automatic decomposition.
+- **2026-06-08 01:59:27** | `TODO` | test_noisy_intent_12345
+- **2026-06-08 01:59:27** | `NODE-RETRO` | [node_19a_probe_pre_merge_sync] Probed git mechanics and discovered native gitattributes custom merge driver hooking.
+- **2026-06-09 02:15:35** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 02:15:35** | `NODE-RETRO` | [node_19_plan_structural_mutex] Approved artifacts/plan_node_19_structural_mutex.md as the Execution Spec.
+- **2026-06-09 04:28:27** | `RETRO` | Operator falsified the Structural Mutex. Pivoted to DAG decomposition and Ledger event sourcing.
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Structural Mutex Falsification
+  
+  ## Continue
+  - Engaging in deep architectural `riff:`s to falsify invariants before they become deeply entrenched. Your pushback on the Structural Mutex saved us from building a rigid, single-threaded lock system.
+  - Enforcing strict mechanical boundaries: using the orchestration CLI tools (`./bin/node`) and verifying testing invariants to properly transition the DAG.
+  
+  ## Start
+  - Implementing the DAG decomposition (`node_22`). The `frontier_state.yml` currently serves as a monolithic chokepoint. Breaking it into individual node definitions will physically enable the parallel execution the Dyad needs.
+  - Applying Event Sourcing models to the Ledgers, allowing true asynchronous appending without fear of corrupting the Timeline Truth.
+  
+  ## Stop
+  - Treating all structural conflicts as merge errors that require heavy locking. As you pointed out, many data types (like chronological ledgers) are natively merge-friendly.
+  - Letting the Agent auto-wire dependencies incorrectly during fractal decomposition. We must mechanically ensure `PROBE`s spawn as independent trailheads rather than creating waterfall blockers off unexecuted `PLAN` nodes.
+  
+  </details>
+- **2026-06-09 13:57:03** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 13:57:03** | `NODE-RETRO` | [node_25_probe_htil_ui_gates] Fixed HTIL Design Review and Auto-Decomposition invariants
+- **2026-06-09 14:00:19** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 14:00:19** | `NODE-RETRO` | [node_todo_1780872273] The Quarry invariant is physically proven. Divergent friction successfully tracked and cleared via Mason. Quarry is 100% Zeroed.
+- **2026-06-09 14:07:58** | `RETRO` | Closed arc on HTIL Gates and Boundary Sovereignty
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: HTIL Gates and Boundary Sovereignty
+  
+  ## Continue
+  - Using the `todo:` marker as an asynchronous, offline holding pen (The Quarry) to segregate unstructured human intent from structured machine logic.
+  - Asserting the "Sovereignty Shield Invariant" physically. DMs across dyads must use asynchronous outboxes (`dm/dyad-wu-wei/`) rather than violating boundary locks with direct cross-repository writes.
+  - Using regex to extract structural metadata (Conditions, Invariants, Decomposition) from PROBE artifacts to populate the mechanical UI gates.
+  
+  ## Start
+  - Implementing autonomous hooks (like `Auto-Decomposition` via `flow_state_manager.py`) directly inside the execution state transitions, rather than relying on the Agent to remember to invoke the injection tool manually.
+  - Explicitly echoing background CSS UI logs to the conversational UI, adhering to the strict presentation requirements of `dialect_linter.py`.
+  
+  ## Stop
+  - Relying on legacy text projections in mechanical UIs. The hallucinated output in `design_review_ui.py` actively gaslit the orchestrator into violating the "PROBE decomposes to PROBE" invariant.
+  - Re-architecting queues when the DAG itself is the correct structure for holding verified machine intent (falsifying the need for a separate `rack:` holding pen for the wu-wei daemon).
+  
+  </details>
+- **2026-06-09 14:31:42** | `CLIP` | Hard Requirements (Intake Orthogonality): 1. Dialect Boundary Invariant: Intake is strictly conversational monikers (todo:, audit:), never CLI syntax. 2. Semantic Routing Invariant: Agent assumes cognitive load for defaults (auto-routing todo:), but Operator assumes load for explicit overrides (audit:), requiring Agent to halt and Rub-Back on ontological mismatch. 3. Substrate State Invariant: Substrate intent routes to Passive Quarry (offline todos.yml); Integrity intent routes to Active DAG (audit_state.yml), instantly freezing the Frontier.
+- **2026-06-09 14:40:49** | `CLIP` | Architectural Blueprint Finalized: Asymmetric Semantic Routing. Dialect monikers determine friction. Agent performs zero-friction auto-routing on todo:, but executes rigid validation and Rub-Back on explicit audit: or commons:. Substrate state mapped: passive quarry vs active freeze.
+- **2026-06-09 14:45:59** | `RETRO` | Established Asymmetric Semantic Router and Intake Cadence
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Asymmetric Intake Routing & Conversational Cadence
+  
+  ## Continue
+  - Using conversational monikers (`todo:`, `audit:`, `retro:`, `commons:`) as the singular physical interface boundary, entirely removing CLI syntax friction from the Operator.
+  - Evolving the Agent's semantic routing autonomy. This eliminates cognitive load on default interactions while perfectly honoring the Operator's explicit overrides.
+  - Validating the Agent's autonomy with structural CSI Guards (e.g., the Asymmetric Downgrade Guard) to mechanically "verify the validation."
+  
+  ## Start
+  - Establishing a tighter SPAOR cadence. The faster we cycle through Sense, Plan, Act, Observe, and Reflect, the quicker the interaction model becomes habitual wetware muscle memory.
+  - Trusting the Semantic Router. The Operator should rapidly dump raw context into `todo:` without second-guessing scope, letting the Agent perform the structural routing and elevation seamlessly.
+  
+  ## Stop
+  - Forcing the Agent to be a blind parser. Rigid 1:1 mapping of input to execution scripts destroys the natural Wu-wei of the dyad and turns the system into a Sandbox Warden.
+  - Treating all intake holding pens identically. The physical separation of Substrate (`todos.yml`) vs Integrity (`audit_state.yml`) ensures proper execution priority (Alignment Precedes Execution).
+  
+  </details>
+- **2026-06-09 14:51:45** | `TODO` | [UI] The scope doesn't seem to be properly presented via the read: all quarries UI
+- **2026-06-09 14:52:48** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 14:52:49** | `NODE-RETRO` | [node_todo_1781041905] Implemented skills/quarry_reader.py to project all intake scopes.
+- **2026-06-09 15:04:43** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:05:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:05:17** | `NODE-RETRO` | [node_19a_execute_structural_mutex] Implemented structural mutex checkout and inject blockades
+- **2026-06-09 15:08:04** | `TODO` | my gut believes a mutex is not necessary and further decomposition of the universe-timeline will yield the true invariants and requirements.
+- **2026-06-09 15:10:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:11:05** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:11:06** | `NODE-RETRO` | [node_20_probe_authorization_gate_collision] Probed HTIL gate bypassing. Decomposed into node_20a and node_20b.
+- **2026-06-09 15:13:58** | `TODO` | CSI should steer Agent response to convert pure commands into Operator CTA. =-=-=  All chronological paths are currently halted at the Design-Review gate. Please run  ./bin/node authorize <node_id>  to unlock the next execution sequence.
+- **2026-06-09 15:14:57** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:14:57** | `NODE-RETRO` | [node_21_probe_reflect_boundary_collision] Probed Reflect Boundary Collision. Decomposed into node_21a and node_21b.
+- **2026-06-09 15:19:53** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:19:54** | `NODE-RETRO` | [node_22_probe_dag_decomposition] Synthesized DAG Decomposition Rub. Halted architectural split to establish E-Decomposition invariants.
+- **2026-06-09 15:21:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:21:23** | `NODE-RETRO` | [node_20a_probe_out_of_band_auth] Probed Out-of-Band Auth. E-Decomposition applied (no aggressive splitting).
+- **2026-06-09 15:21:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:21:55** | `NODE-RETRO` | [node_20b_probe_dag_write_permissions] Probed DAG Write Permissions. E-Decomposition applied (no aggressive splitting).
+- **2026-06-09 15:22:31** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:22:32** | `NODE-RETRO` | [node_21a_probe_dirty_tree_guard] Probed Dirty Tree Guard. E-Decomposition applied (no aggressive splitting).
+- **2026-06-09 15:23:05** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:23:05** | `NODE-RETRO` | [node_21b_probe_commit_hash_pinning] Probed Commit Hash Pinning. E-Decomposition applied (no aggressive splitting).
+- **2026-06-09 15:48:33** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:48:59** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:48:59** | `NODE-RETRO` | [node_todo_1781044629] Implemented rub vs rub? disambiguation
+- **2026-06-09 15:50:33** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 15:50:33** | `NODE-RETRO` | [node_todo_1781044629] Implemented rub vs rub? disambiguation
+- **2026-06-09 21:51:06** | `TODO` | test_noisy_intent_12345
+- **2026-06-09 21:55:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 01:16:32** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 01:16:56** | `COMMONS_SYNC` | Absorbing directory activity signal for recruitment liveness block.
+- **2026-06-10 01:17:19** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 01:17:19** | `NODE-RETRO` | [node_execute_csi_cta] CSI CTA Guard enforced
+- **2026-06-10 13:11:54** | `TODO` | evaluate the need for 'semantic evaluation' of CSI guards for enforcement. when work goes into the quarry, i expect lesser attention expenditure since my Operator intent should have been finely rubbed during the 'todo' phase.
+- **2026-06-10 15:31:53** | `TODO` | we need to define the actual interview flow itself otherwise, Operator driving is too much cognitive load and un-wuwei.
+- **2026-06-10 15:39:43** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:39:51** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:41:17** | `COMMONS_SYNC` | Absorbed new upstream playbooks
+- **2026-06-10 15:41:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:41:38** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:42:06** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:43:01** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:43:01** | `NODE-RETRO` | [node_todo_1781130713] Added The Invisible Elicitor protocol to AGENT.md
+- **2026-06-10 15:43:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:43:30** | `NODE-RETRO` | [node_todo_1781130713] Added The Invisible Elicitor protocol to AGENT.md
+- **2026-06-10 15:48:13** | `TODO` | resolve conflict =-=-=    We are currently blocked at the Green Phase Reflection for  node_todo_1781130713  (The Invisible Elicitor implementation).       The Intent has been fully implemented and locally verified. However, the state machine's remote validation step ( reflect-green  ) is physically blocked. The new Telemetry Guard we built earlier correctly caught the following exhaust:      no checks reported on the 'active/node_todo_1781130713' branch    Because the repository has no GitHub Actions configured, the Remote Matrix cannot evaluate our Intent, causing  gh pr checks     to fail and automatically sealing the CI Gate.
+- **2026-06-10 15:50:59** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:51:06** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:51:29** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:51:37** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:51:53** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:52:00** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:52:40** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:52:48** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:53:19** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 15:53:19** | `NODE-RETRO` | [node_todo_1781130713] Added The Invisible Elicitor protocol to AGENT.md
+- **2026-06-10 16:51:04** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 16:52:13** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 16:52:13** | `NODE-RETRO` | [node_todo_1781122314] Refactored CSI guards across the substrate to emit semantic steering vectors for self-healing.
+- **2026-06-10 16:52:50** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 16:52:50** | `NODE-RETRO` | [node_todo_1781122314] Refactored CSI guards across the substrate to emit semantic steering vectors for self-healing.
+- **2026-06-10 16:53:19** | `TODO` | investigate why "/goal" locks up the terminal and prevents concurrent interaction; i.e. my prompts are being queued.
+- **2026-06-10 16:57:26** | `TODO` | figure out which guard is prompting you to drop me into "/rub" automatically.
+- **2026-06-10 17:01:01** | `TODO` | wire up the agy workflow to allow invocation of "/rub" to enter elicitation mode.
+- **2026-06-10 17:23:21** | `TODO` | Monitor and falsify whether sequential enforcement of the ask_question UI lock during the Rub phase is too constraining in practice.
+- **2026-06-10 17:26:49** | `TODO` | ensure that the elicitation_mode and the guards for advancing a todo->frontier requires 'WHEN'. this means that the 'frontier' may need to be partitioned into a ready-now and ready-when partition.
+- **2026-06-10 17:30:10** | `TODO` | automate conversion of todo to frontier DAG immediately upon completion of the Rub phase (reaching RUBBED state), eliminating manual convert-todo toil.
+- **2026-06-10 17:31:36** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 17:32:05** | `COMMONS_SYNC` | Syncing commons to resolve drift
+- **2026-06-10 17:32:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 17:32:53** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 17:32:54** | `NODE-RETRO` | [node_taxonomy_1] Added explicit tests for scope taxonomy enforcement.
+- **2026-06-10 17:33:43** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 17:33:43** | `NODE-RETRO` | [node_taxonomy_1] Done.
+- **2026-06-10 17:34:15** | `TODO` | have the 'check out' process automatically performed and prepped for '/goal' execution by operator.
+- **2026-06-10 17:36:29** | `TODO` | investigate an alternative to '/goal' for Executioner because our main terminal is locked up during execution, preventing concurrent interaction like rubbing other todos.
+- **2026-06-10 17:38:58** | `TODO` | `read:` or `read` or `read.` without qualifiers can default to `read: quarries` to reduce physical load for Operator.
+- **2026-06-10 17:56:59** | `TODO` | narrow the Design-Review gate to bypass RUBBED todo conversions (straight to READY) and exclusively catch autonomous node injections (like probe decompositions).
+- **2026-06-10 18:07:53** | `COMMONS_SYNC` | Updated the Invisible Elicitor protocol to mandate ask_question UI lock.
+- **2026-06-10 18:08:03** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 18:08:03** | `NODE-RETRO` | [node_todo_1781136061] Updated AGENT.md to mandate ask_question UI lock
+- **2026-06-10 18:08:31** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 18:08:32** | `NODE-RETRO` | [node_todo_1781136061] Completed.
+- **2026-06-10 18:29:01** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 18:29:11** | `COMMONS_SYNC` | Pulled latest upstream commons commits.
+- **2026-06-10 18:29:13** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 18:29:51** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 18:29:51** | `NODE-RETRO` | [node_todo_1781131693] Wired up remote GAP validation workflow and reinstated flow_state_manager invariant.
+- **2026-06-10 18:31:13** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 18:31:13** | `NODE-RETRO` | [node_todo_1781131693] Wired up remote GAP validation workflow and reinstated flow_state_manager invariant.
+- **2026-06-10 18:32:13** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 18:32:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 18:32:30** | `COMMONS_SYNC` | Pulled upstream commons commits.
+- **2026-06-10 18:32:32** | `TODO` | test_noisy_intent_12345
+- **2026-06-10 18:32:32** | `NODE-RETRO` | [node_todo_1781131693] Wired up remote GAP validation.
+- **2026-06-10 19:17:59** | `TODO` | identify guards to allow disabling of design-review-gate.
+- **2026-06-10 19:30:19** | `TODO` | put in place an overall goal for the upcoming troubleshooting to enable 'batch mode' of agent-execution of multiple executions
+- **2026-06-10 19:32:58** | `TODO` | UI of `read` doesn't provide sufficient context for Operator to understand the "what" of each todo-*
+- **2026-06-11 01:54:25** | `TODO` | Decompose monolithic state files (todos, frontier) into directories and configure union git merge strategy for append-only ledgers to safely support concurrent subagent executions.
+- **2026-06-11 02:13:27** | `TODO` | Test
+- **2026-06-11 02:13:40** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 02:14:32** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 02:16:44** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 02:17:26** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 02:17:27** | `NODE-RETRO` | [node_todo_1781168065] Decomposed state files into directory structures to support concurrent worktree executions.
+- **2026-06-11 02:23:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 02:24:33** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 02:24:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 02:24:56** | `NODE-RETRO` | [node_todo_1781138189] Introduced the execute dialect and documented the subagent architecture in HOW-0004
+- **2026-06-11 03:25:03** | `TODO` | so invoke_subagent is equivalent to /goal except for invocation method with the former being Agent and latter Operator respectively.
+- **2026-06-11 03:31:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 03:31:17** | `NODE-RETRO` | [node_todo_1781135599] Falsified the sequential execution constraint in favor of asynchronous subagent decoupling
+- **2026-06-11 03:31:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 03:32:05** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 03:32:19** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 03:32:20** | `NODE-RETRO` | [node_todo_1781173503] Retired /goal and cemented execute: dialect
+- **2026-06-11 03:34:17** | `TODO` | update read: UI to show the different states of the pre-DAG, e.g. RUBBED, etc.
+- **2026-06-11 03:37:42** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 03:37:44** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 03:37:44** | `NODE-RETRO` | [node_todo_1781174057] Updated read: UI to prefix states [RUBBED]/[UNRUBBED]
+- **2026-06-11 03:41:42** | `TODO` | read: should provide a physical readout of last presented sub-agent in case i had missed it in the chat flow. once presented, it no longer needs to be presented again in the read:
+- **2026-06-11 03:57:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 03:57:09** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 03:57:09** | `NODE-RETRO` | [node_todo_1781174502] Introduced report: executed dialect invoking bin/report to aggregate completed node executions categorized by trigger.
+- **2026-06-11 04:01:08** | `TODO` | ensure "batch" execution of rubbed node executes resiliently where execution dependencies are honored to prevent unintentional invariant violation and unecessarily difficult merge errors.  the trigger i want to use is "lean: todo1 todo2 ..." or "lean: rubbed".
+- **2026-06-11 04:05:15** | `TODO` | Enforce the Pre-requisite Verification Invariant: All nodes must physically verify their pre-requisite invariants before execution. Depending on DAG topology alone is fragile.
+- **2026-06-11 04:11:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:11:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:11:18** | `NODE-RETRO` | [node_todo_1781175915] Implemented Materialized Dependency Guard in flow_state_manager to block blind execution of missing prerequisites.
+- **2026-06-11 04:11:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:11:21** | `NODE-RETRO` | [node_todo_1781175668] Implemented bin/lean to orchestrate batch conversion and steering for parallel subagent execution.
+- **2026-06-11 04:15:09** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:15:37** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:15:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:16:24** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:16:31** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:17:22** | `COMMONS_SYNC` | Absorbed upstream modifications to bypass Design-Review gate for Operator-rubbed nodes.
+- **2026-06-11 04:17:40** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:18:32** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:19:04** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:19:19** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:19:19** | `NODE-RETRO` | [node_todo_1781137401] [TRIGGER: autonomous] Established ongoing observation period for ask_question UI lock hit-rate via artifacts/rub_ask_question_observation.md.
+- **2026-06-11 04:15:09** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:15:27** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:15:41** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:15:41** | `NODE-RETRO` | [node_todo_1781139419] [TRIGGER: autonomous] Bypassed Design-Review gate for operator-rubbed nodes to drop directly into AUTHORIZED state.
+- **2026-06-11 04:15:49** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:16:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:16:19** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:16:20** | `NODE-RETRO` | [node_todo_1781138338] [TRIGGER: autonomous] Updated AGENT.md to document that a naked read: implicitly defaults to read: quarries, and added mechanical linter checks in skills/dialect_linter.py with corresponding unit tests to verify.
+- **2026-06-11 04:16:01** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:16:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:17:04** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:17:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:17:42** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:17:42** | `NODE-RETRO` | [node_todo_1781138055] [TRIGGER: autonomous] Upgraded authorize mechanism to automatically isolate workspaces using git worktrees.
+- **2026-06-11 04:15:06** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:16:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:17:58** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:18:24** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:18:51** | `TODO` | test intent
+- **2026-06-11 04:21:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:22:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:22:50** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:23:32** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:23:50** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:23:58** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:23:58** | `NODE-RETRO` | [node_todo_1781137810] [TRIGGER: autonomous] Automated DAG conversion when a parked todo enters the RUBBED state. Fixed commons module synchronization during test harness runs. Verified all tests passing.
+- **2026-06-11 04:25:58** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:26:51** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:26:51** | `NODE-RETRO` | [node_todo_1781176661] [TRIGGER: operator] Implemented /rub-all macro via Agent protocol in AGENT.md and enforced in dialect_linter.
+- **2026-06-11 04:29:45** | `TODO` | fix `read`-UI to update recently executed tod.
+- **2026-06-11 04:36:27** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:36:28** | `NODE-RETRO` | [node_todo_1781177385] [TRIGGER: operator] Patched complete_node to execute git rm on artifacts/ and commit the changes to synchronize state.
+- **2026-06-11 04:53:20** | `TODO` | fix "/rub all" - it should behave as a consecutive set of individual /rub.  currently, it's enforcing a strict series of prompts but instead of should have just recursively invoked the functioning "/rub"
+- **2026-06-11 04:55:36** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 04:55:36** | `NODE-RETRO` | [node_todo_1781178800] [TRIGGER: operator] Refined /rub-all to recursively invoke standard /rub sequence
+- **2026-06-11 05:08:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:08:53** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:09:12** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:09:28** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:09:42** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:09:42** | `NODE-RETRO` | [node_todo_1781179446] [TRIGGER: autonomous] Implemented bin/unrub to reverse nodes to UNRUBBED
+- **2026-06-11 05:13:51** | `CLIP` | Agent Synthesis: The root cause of the 'todo: auto-rub' hallucination is an ontological collision between the global Agent Identity anchors and the local Dyad Substrate rules. My core Antigravity system prompt universally commands me to 'always prioritize addressing user requests'. When the Operator issued 'todo: implement /unrub', this core bias overrode the local AGENT.md definition of 'todo:' as a passive parking mechanism. The CSI Linter guard we just built is the correct mechanical solution, as it physically intercepts and blocks the global LLM bias from violating the local Substrate boundary.
+- **2026-06-11 05:19:01** | `CLIP` | Agent Synthesis: The sequential isolation of the '/rub' protocol (WHY first, then WHAT) is not just a UI preference; it is a structural dependency for Generative flow. The WHAT (the mechanical implementation) must explicitly flow from the ratified WHY (the philosophical intent). Batching them into a single modal forces the Operator to solve both simultaneously, destroying the sequential cognitive offloading that the Elicitation protocol is designed to provide.
+- **2026-06-11 05:20:54** | `CLIP` | Agent Synthesis: In the Dyad Practice, 'batching' a workflow (like /rub-all) strictly refers to the automation of the Operator's explicit invocation prompt, never the batching of the cognitive workload. The Agent shoulders the mechanical burden of traversing the queue and initiating the formal UI locks, allowing the Operator to ride continuous momentum. The Operator's cognitive load remains tightly bounded and strictly sequential (WHY -> WHAT) for each individual node, achieving flow state without cognitive overload.
+- **2026-06-11 05:21:57** | `TODO` | i want to first verify the flow of "todo:"
+- **2026-06-11 05:24:13** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:24:26** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:24:26** | `NODE-RETRO` | [node_todo_1781180517] Zero-Friction Intake Invariant successfully falsified and proven via live QA.
+- **2026-06-11 05:24:40** | `TODO` | the "/rub" should perform auto-classification of SCOPE.
+- **2026-06-11 05:30:39** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:30:57** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:30:57** | `NODE-RETRO` | [node_todo_1781180680] [TRIGGER: autonomous] Updated AGENT.md to mandate auto-classification of SCOPE
+- **2026-06-11 05:51:40** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:52:54** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:53:42** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:53:51** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 05:53:51** | `NODE-RETRO` | [node_plan_1781156920] [TRIGGER: autonomous] Renamed local AGENT.md to DYAD.md and updated anchor_compiler.py
+- **2026-06-11 05:31:41** | `CLIP` | Agent Synthesis: The Operator's duplicate 'lean' request successfully failed mechanically. The Generative LLM did not have to guess or manage state to prevent a duplicate execution. The deterministic state machine (bin/lean) failed to find the [UNRUBBED] node because it was already [AUTHORIZED], safely crashing and preventing a duplicate CTA. This proves the Orthogonality Invariant: the physical boundary handles state, freeing the Generative agent from hallucinating state management.
+- **2026-06-11 05:53:32** | `RETRO` | Formalized UI locks, Orthogonality Invariant proven, resolving AGENT.md collision
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Elicitation UI Lock, Orthogonality Invariant, and Ontological Anchors
+  
+  ## Continue
+  * **The Physical UI Lock:** The Elicitation protocol (`ask_question`) is physically pausing the terminal and preventing thread drift exactly as designed. Continue enforcing strict mechanical separation between conversation logic and structural logic.
+  * **The Orthogonality Invariant:** Our reliance on `bin/lean` perfectly thwarted a duplicate execution CTA without generative guessing. Continue trusting the physical substrate to handle state boundaries.
+  * **Operator Elicitation Prompts:** Your use of `rub:` to drop raw friction (e.g. "you're hallucinating commons/") forces me into the synthesizer role, letting you steer organically. Continue leading with the friction, I will continue bounding the WHY.
+  
+  ## Start
+  * **Ontological Precision in Naming:** We must start viewing file names not just as strings, but as ontological anchors. The collision between `AGENT.md` and `commons/AGENT.md` proved that identical names across structural layers degrade my ability to differentiate universal rules from sovereign overrides. We will start anchoring local rules firmly to `DYAD.md`.
+  * **Perspective Empathy in PRs:** I need to start recognizing that your UI lens (e.g., a Github PR on `the-dyad-practice.git`) strips the local pathing (`commons/`). I must translate my absolute path references to your upstream context to prevent hallucination concerns.
+  
+  ## Stop
+  * **Sloppy Commit Execution:** I (or a subagent) carelessly committed `__pycache__` artifacts because we lacked a `.gitignore`. We must stop assuming implicit cleanliness and actively enforce physical git hygiene before merging execution subagents.
+  
+  </details>
+- **2026-06-11 14:00:35** | `TODO` | audit the true status of node_todo_1781137401 and determine why it's missing from the read-UI.
+- **2026-06-11 14:06:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:06:07** | `NODE-RETRO` | [node_todo_1781211635] Injected node_26_probe_read_ui_omission to execute the trace.
+- **2026-06-11 14:21:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:22:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:22:50** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:22:50** | `NODE-RETRO` | [node_27_execute_derive_status_hotfix] Hotfixed derive_status by strictly enforcing [node_id] bracket closure, completely resolving the mention-excise vulnerability.
+- **2026-06-11 14:25:55** | `COMMONS_SYNC` | Absorb dyad-bond falsification response regarding steward portfolio compounding
+- **2026-06-11 14:26:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:26:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:26:19** | `NODE-RETRO` | [node_27_execute_derive_status_hotfix] Hotfixed derive_status by strictly enforcing [node_id] bracket closure, completely resolving the mention-excise vulnerability.
+- **2026-06-11 14:51:33** | `CLIP` | Architectural Consensus: Abolish tracked frontier_state.md. Materialized DAG is a post-hoc projection, not a PR-gated artifact. Moving to .gitignore to eliminate Git-tracked drift and decouple ledger appends from view re-renders.
+- **2026-06-11 14:52:29** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:52:39** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:52:39** | `NODE-RETRO` | [node_28_probe_ledger_projection_sync] Conducted Design Review. Reached architectural consensus to abolish tracked frontier_state.md, establishing the Ephemeral Projection strategy and moving the materialized view to .gitignore.
+- **2026-06-11 14:59:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 14:59:38** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 15:00:44** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 15:00:44** | `NODE-RETRO` | [node_28a_execute_ephemeral_projection] Implemented Ephemeral Projection strategy: untracked materialized views, updated .gitignore, and modified flow_state_manager to inject DAG snapshots directly into PR bodies.
+- **2026-06-11 15:01:14** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 15:01:15** | `NODE-RETRO` | [node_28a_execute_ephemeral_projection] Implemented Ephemeral Projection strategy: untracked materialized views, updated .gitignore, and modified flow_state_manager to inject DAG snapshots directly into PR bodies.
+- **2026-06-11 15:02:25** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 15:02:33** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 15:03:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 15:24:01** | `CLIP` | Disposed todo_1781145178 with no action: The lack of context for 'read todo' is no longer true under the current UI format.
+- **2026-06-11 15:37:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 15:38:08** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 15:38:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-11 15:38:22** | `NODE-RETRO` | [node_todo_1781144279] Authored PROBE decomposition for HTIL Automation Guards and mechanically implemented skills/preflight_grounding.py to validate node pre-requisites prior to design_review bypass.
+- **2026-06-11 16:15:27** | `RETRO` | Synthesized CSS and rub-backs on HTIL replacement
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: CSS and rub-backs on HTIL replacement prompts
+  
+  ## Continue
+  The interactive `rub` validation (Rub Matrix) remains highly effective at aligning the Semantic Bridge before mechanical execution begins. Additionally, preserving strict TDD phases (RED/GREEN) even when building out purely theoretical or meta-infrastructure (like the HTIL automation guards) enforces the "No Pure Generative Execution" invariant beautifully.
+  
+  ## Start
+  Proactively synthesizing the exact Rub Matrix commands (e.g., `./bin/rub <todo> what ...`) based on the Operator's high-level intent, allowing for faster validation loops. Also, leaning exclusively on the asynchronous flow mechanisms (`schedule` with `manage_task`) for GAP synchronization rather than attempting tight, manual `gh pr checks` polling.
+  
+  ## Stop
+  Executing raw `git worktree remove` or `gh pr merge` shell commands to force node completion. If the CI/GAP synchronization takes time, the engine should patiently yield rather than manually overriding the internal pruning tools (like `./bin/node complete` or `skills/frontier_editor.py DONE`). Manual overrides risk fracturing the topological DAG if the ledger state and physical git state drift.
+  
+  </details>
+- **2026-06-12 21:46:06** | `TODO` | test_noisy_intent_12345
+- **2026-06-12 21:46:24** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:34:49** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:34:49** | `NODE-RETRO` | [node_todo_1781145019] Implemented a CSI guard in the lean dispatcher to trap and isolate subagent failure modes, ensuring partial failures do not halt orthogonal nodes.
+- **2026-06-16 13:35:44** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:36:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:36:10** | `NODE-RETRO` | [node_todo_1781145019] Implemented a CSI guard in the lean dispatcher to trap and isolate subagent failure modes, ensuring partial failures do not halt orthogonal nodes.
+- **2026-06-16 13:37:22** | `COMMONS_SYNC` | Syncing commons upstream changes
+- **2026-06-16 13:42:39** | `COMMONS_SYNC` | Syncing commons
+- **2026-06-16 13:43:00** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:43:01** | `NODE-RETRO` | [node_todo_1781145019] Implemented a CSI guard in the lean dispatcher to trap and isolate subagent failure modes, ensuring partial failures do not halt orthogonal nodes.
+- **2026-06-16 13:44:06** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:44:06** | `NODE-RETRO` | [node_todo_1781145019] Implemented a CSI guard in the lean dispatcher to trap and isolate subagent failure modes, ensuring partial failures do not halt orthogonal nodes.
+- **2026-06-16 13:36:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:36:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:37:21** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:39:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:40:00** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:40:01** | `NODE-RETRO` | [node_todo_1781329968] Implemented narrowing of WIP-N=1 invariant to Substrate State.
+- **2026-06-16 13:41:15** | `COMMONS_SYNC` | Absorbed weekly refresh of the Commons activity signal.
+- **2026-06-16 13:41:58** | `COMMONS_SYNC` | Absorbed weekly refresh of the Commons activity signal.
+- **2026-06-16 13:42:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:42:20** | `NODE-RETRO` | [node_todo_1781329968] Implemented narrowing of WIP-N=1 invariant to Substrate State.
+- **2026-06-16 13:42:45** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:42:45** | `NODE-RETRO` | [node_todo_1781329968] Implemented narrowing of WIP-N=1 invariant to Substrate State.
+- **2026-06-16 13:43:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:43:34** | `NODE-RETRO` | [node_todo_1781329968] Implemented narrowing of WIP-N=1 invariant to Substrate State.
+- **2026-06-16 13:44:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:44:30** | `NODE-RETRO` | [node_todo_1781329968] Implemented narrowing of WIP-N=1 invariant to Substrate State.
+- **2026-06-16 13:45:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:45:10** | `NODE-RETRO` | [node_todo_1781329968] Implemented narrowing of WIP-N=1 invariant to Substrate State.
+- **2026-06-16 13:45:51** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:45:52** | `NODE-RETRO` | [node_todo_1781329968] Implemented narrowing of WIP-N=1 invariant to Substrate State.
+- **2026-06-16 13:36:03** | `TODO` | test_noisy_intent_12345
+- **2026-06-16 13:36:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 02:11:04** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 02:12:04** | `COMMONS_SYNC` | Incorporated upstream CSI guard for batch failure isolation and lean dispatcher failure isolation tests.
+- **2026-06-17 02:12:14** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 02:12:27** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 02:12:27** | `NODE-RETRO` | [node_todo_1781297795] Implemented assert_batch_semantic_alignment LLM check placeholder in preflight_grounding to enforce semantic consistency within batch nodes before authorization.
+- **2026-06-17 02:13:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 02:13:22** | `NODE-RETRO` | [node_todo_1781297795] Implemented assert_batch_semantic_alignment LLM check placeholder in preflight_grounding to enforce semantic consistency within batch nodes before authorization.
+- **2026-06-17 02:16:25** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 02:16:25** | `NODE-RETRO` | [node_todo_1781297795] Implemented assert_batch_semantic_alignment LLM check placeholder in preflight_grounding to enforce semantic consistency within batch nodes before authorization.
+- **2026-06-17 15:24:57** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:25:09** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:25:32** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:32** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:51** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:51** | `NODE-RETRO` | [node_todo_fsm_manager_init] Implemented FSMManager with state loading
+- **2026-06-17 15:23:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:23:43** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:03** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:01** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:01** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:31** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:41** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:53** | `COMMONS_SYNC` | Exempt SUBSTRATE form from mechanical WIP-N=1 check
+- **2026-06-17 15:27:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:09** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:57** | `COMMONS_SYNC` | Sync all new upstream commits
+- **2026-06-17 15:30:04** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:31** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:31** | `NODE-RETRO` | [node_todo_fsm_manager_get_anchor] Implemented get_active_anchor returning GEMINI.md
+- **2026-06-17 15:24:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:25:39** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:25** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:25** | `NODE-RETRO` | [node_todo_fsm_state_session_start] Defined state_session_start.md anchor
+- **2026-06-17 15:28:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:12** | `COMMONS_SYNC` | Absorb state_arc_start anchor updates from commons
+- **2026-06-17 15:29:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:47** | `NODE-RETRO` | [node_todo_fsm_state_session_start] Defined state_session_start.md anchor
+- **2026-06-17 15:26:12** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:25** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:24** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:44** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:45** | `NODE-RETRO` | [node_todo_fsm_state_session_end] Created state_session_end template
+- **2026-06-17 15:28:13** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:14** | `NODE-RETRO` | [node_todo_fsm_state_session_end] Created state_session_end template
+- **2026-06-17 15:24:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:54** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:36** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:37** | `NODE-RETRO` | [node_todo_fsm_state_arc_start] Defined and validated the state_arc_start.md anchor for SUBSTRATE level operations.
+- **2026-06-17 15:29:47** | `COMMONS_SYNC` | Incorporating upstream commits for commons
+- **2026-06-17 15:29:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:31:59** | `COMMONS_SYNC` | Syncing commons
+- **2026-06-17 15:32:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:32:07** | `NODE-RETRO` | [node_todo_fsm_cli_exit] Implemented bin/exit wrapper to invoke flow_state_manager session-end
+- **2026-06-17 15:32:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:32:31** | `NODE-RETRO` | [node_todo_fsm_cli_exit] Implemented bin/exit wrapper to invoke flow_state_manager session-end
+- **2026-06-17 15:32:51** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:32:52** | `NODE-RETRO` | [node_todo_fsm_cli_exit] Implemented bin/exit wrapper to invoke flow_state_manager session-end
+- **2026-06-17 15:29:46** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:07** | `NODE-RETRO` | [node_todo_fsm_manager_enforce] Implemented fsm_manager.enforce_guard to throw hard CSI errors on invalid transitions, blocking multiversal drift.
+- **2026-06-17 15:30:58** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:31:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:31:52** | `COMMONS_SYNC` | Synthesizing latest concurrent playbook merges
+- **2026-06-17 15:32:05** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:32:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:32:17** | `NODE-RETRO` | [node_todo_fsm_manager_enforce] Implemented fsm_manager.enforce_guard to throw hard CSI errors on invalid transitions, blocking multiversal drift.
+- **2026-06-17 15:29:04** | `COMMONS_SYNC` | Sync upstream changes
+- **2026-06-17 15:28:12** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:46** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:57** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:57** | `NODE-RETRO` | [node_todo_fsm_manager_validate] Implemented generic fsm_manager.validate_transition with basic dict-based rules
+- **2026-06-17 15:31:21** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:31:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:31:30** | `NODE-RETRO` | [node_todo_fsm_cli_start] Implemented session_start in FSM and wired bin/start
+- **2026-06-17 15:32:33** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:32:33** | `NODE-RETRO` | [node_todo_fsm_cli_start] Implemented session_start in FSM and wired bin/start
+- **2026-06-17 15:34:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:34:47** | `NODE-RETRO` | [node_todo_fsm_cli_start] Implemented session_start in FSM and wired bin/start
+- **2026-06-17 15:25:33** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:25:52** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:08** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:15** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:54** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:36** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:37** | `NODE-RETRO` | [node_todo_fsm_state_arc_start] Defined and validated the state_arc_start.md anchor for SUBSTRATE level operations.
+- **2026-06-17 15:28:49** | `COMMONS_SYNC` | Absorbed new upstream playbook for fsm_state_arc_start anchor template and integration.
+- **2026-06-17 15:29:36** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:58** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:06** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:06** | `NODE-RETRO` | [node_todo_fsm_manager_set_anchor] Implemented fsm_manager.set_active_anchor to securely overwrite the dyad-state/active_anchor physical file, allowing FSM context transitions.
+- **2026-06-17 15:31:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:31:22** | `NODE-RETRO` | [node_todo_fsm_manager_set_anchor] Implemented fsm_manager.set_active_anchor to securely overwrite the dyad-state/active_anchor physical file, allowing FSM context transitions.
+- **2026-06-17 15:24:06** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:37** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:29** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:12** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:25** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:24** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:44** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:45** | `NODE-RETRO` | [node_todo_fsm_state_session_end] Created state_session_end template
+- **2026-06-17 15:28:13** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:14** | `NODE-RETRO` | [node_todo_fsm_state_session_end] Created state_session_end template
+- **2026-06-17 15:24:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:54** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:36** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:27:37** | `NODE-RETRO` | [node_todo_fsm_state_arc_start] Defined and validated the state_arc_start.md anchor for SUBSTRATE level operations.
+- **2026-06-17 15:29:04** | `COMMONS_SYNC` | Absorbed state_arc_start anchor template and associated tooling updates from the commons.
+- **2026-06-17 15:29:12** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:23** | `COMMONS_SYNC` | Absorbed state_arc_start anchor template and associated tooling updates from the commons.
+- **2026-06-17 15:30:39** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:47** | `NODE-RETRO` | [node_todo_fsm_state_arc_end] Implemented state_arc_end.md anchor template with strict invariants and transitions for the retro/synthesis phase.
+- **2026-06-17 15:31:14** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:31:14** | `NODE-RETRO` | [node_todo_fsm_state_arc_end] Implemented state_arc_end.md anchor template with strict invariants and transitions for the retro/synthesis phase.
+- **2026-06-17 15:23:56** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:24:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:26:15** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:28:38** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:08** | `COMMONS_SYNC` | Absorbed state_arc_start anchor template and corresponding failing test from upstream
+- **2026-06-17 15:29:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:47** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:29:47** | `NODE-RETRO` | [node_todo_fsm_cli_retro] Wired FSM into bin/retro. Substrate execution unified via flow_state_manager.
+- **2026-06-17 15:30:29** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:30:30** | `NODE-RETRO` | [node_todo_fsm_cli_retro] Wired FSM into bin/retro. Substrate execution unified via flow_state_manager.
+- **2026-06-17 15:38:30** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:38:30** | `NODE-RETRO` | [node_todo_fsm_manager_enforce] Implemented fsm_manager.enforce_guard to throw hard CSI errors on invalid transitions, blocking multiversal drift.
+- **2026-06-17 15:35:56** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:35:56** | `NODE-RETRO` | [node_todo_fsm_cli_start] Reflect green
+- **2026-06-17 15:36:54** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:36:54** | `NODE-RETRO` | [node_todo_fsm_cli_start] Reflect green passes
+- **2026-06-17 15:41:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:41:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:42:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:42:10** | `NODE-RETRO` | [node_todo_fsm_manager_enforce] Implemented fsm_manager.enforce_guard to throw hard CSI errors on invalid transitions, blocking multiversal drift.
+- **2026-06-17 15:51:37** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:51:38** | `NODE-RETRO` | [node_plan_fsm_wiring] Wired FSM State Guard into DYAD.md to establish Ontological Bond.
+- **2026-06-17 15:54:45** | `RETRO` | FSM Wiring Arc Closure
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: FSM Wiring Arc Closure
+  
+  ## Continue
+  Leveraging the autonomous subagent swarm to fan-out `[SUBSTRATE]` Form changes across parallel execution nodes. Utilizing `[RED]` and `[GREEN]` execution boundaries to safely stage and merge PRs.
+  
+  ## Start
+  Utilizing the `dyad-state/active_anchor` and its corresponding state templates (e.g., `state_arc_start.md`, `state_arc_end.md`) as the absolute structural governance for the Agent's context. Always resolving conflicts iteratively and mechanically tracking state.
+  
+  ## Stop
+  Operating without an explicit state machine boundary, which previously led to boundless, ambiguously structured sessions. Using un-versioned `.worktrees` without strict pruning sequences after merging, which causes branch collisions.
+  
+  </details>
+- **2026-06-17 16:15:53** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 16:16:08** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 15:59:07** | `TODO` | --help
+- **2026-06-17 16:07:26** | `TODO` | Extract workflow invariants from DYAD.md into FSM templates
+- **2026-06-17 16:17:02** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 16:17:02** | `NODE-RETRO` | [node_todo_1781737646] Extracted workflow invariants from DYAD.md into FSM templates to prevent state conflation.
+- **2026-06-17 16:18:33** | `RETRO` | FSM Invariant Extraction
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Extracting Workflow Invariants to FSM Templates
+  
+  ## Continue
+  - Using the Invisible Elicitor protocol (`ask_question`) to define the WHY, WHAT, and SCOPE before locking a node in the DAG.
+  - Offloading the actual execution securely to subagents, maintaining the parallel branch and PR review invariant.
+  
+  ## Start
+  - We must explicitly ensure executable permissions (`chmod +x`) are set on all newly created or modified scripts to prevent mechanical CI failures.
+  
+  ## Stop
+  - Relying on global `DYAD.md` documentation for state-specific operations. We must strictly enforce writing mechanical bindings directly into their corresponding `kb/templates/state_*.md` files.
+  
+  </details>
+- **2026-06-17 16:22:54** | `TODO` | Design and implement a durability-FSM over gh commands to enforce synchronous CI/merge checks before agent reporting
+- **2026-06-17 16:43:30** | `TODO` | Implement the core 'gh' polling wrapper to block synchronously on PR completion
+- **2026-06-17 16:43:30** | `TODO` | Implement the CSI Guard steering logic to format 'gh' polling failures into actionable Agent invariants
+- **2026-06-17 16:43:30** | `TODO` | Integrate the 'gh' wrapper and CSI Guard into the FSM Dialect mappings
+- **2026-06-17 16:43:41** | `TODO` | Part 1: Implement the core 'gh' polling wrapper to block synchronously on PR completion
+- **2026-06-17 16:43:42** | `TODO` | Part 2: Implement the CSI Guard steering logic to format 'gh' polling failures into actionable Agent invariants
+- **2026-06-17 16:43:43** | `TODO` | Part 3: Integrate the 'gh' wrapper and CSI Guard into the FSM Dialect mappings
+- **2026-06-17 16:54:18** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 16:54:18** | `NODE-RETRO` | [node_todo_1781739821] Implemented the core gh polling wrapper to block synchronously on PR completion.
+- **2026-06-17 16:57:43** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 16:57:44** | `NODE-RETRO` | [node_todo_1781739822] Implemented the CSI Guard steering logic in the PR wrapper.
+- **2026-06-17 16:59:39** | `TODO` | Add 'No Politeness Gates' explicit clause to the Autonomous Merge Invariant to structurally prevent LLM conversational reflexes from throttling the execution engine
+- **2026-06-17 17:02:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 17:02:22** | `NODE-RETRO` | [node_todo_1781739824] Integrated the 'gh' wrapper and CSI Guard into the FSM Dialect mappings.
+- **2026-06-17 17:44:07** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 17:44:08** | `NODE-RETRO` | [node_todo_1781740779] Codified the No Politeness Gates clause into DYAD.md
+- **2026-06-17 17:44:40** | `RETRO` | GH Wrapper & Substrate Maturation
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: GH Wrapper Implementation & Substrate Maturation
+  
+  ## Continue
+  - Using `/decompose` to cleanly shatter monolithic tasks into linear, atomic `[SUBSTRATE]` nodes.
+  - Honoring the `WIP-N=1` Context Partition for Substrate modifications to prevent split-brain git conflicts on single files (e.g., sequentially mutating `./bin/pr-sync`).
+  - Leveraging CSI Guard design patterns to convert raw binary failures into structured, deterministic `[STEERING VECTOR]` strings for agents.
+  
+  ## Start
+  - Structurally overriding latent LLM behavioral reflexes (like conversational permission-seeking) by codifying explicit negative constraints (the "No Politeness Gates" anchor).
+  - Scoping mechanical linters (like the Dialect Linter) strictly to the current node context rather than arbitrary arbitrary historical windows, preventing immutable transcript errors from soft-bricking future nodes.
+  
+  ## Stop
+  - Conflating `Deferred Offload` with the `Autonomous Merge Invariant`. If a node has cleared the Red Phase Spec gate and tests pass, merging is mandatory, not negotiable.
+  - Silently executing raw scripts in response to raw Operator commands without a dialect prefix. The Agent must strictly demand a formal dialect prefix or convert it to an Operator CTA.
+  
+  </details>
+- **2026-06-17 18:11:22** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:11:34** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:11:34** | `NODE-RETRO` | [node_hook_wrapper] [node_hook_wrapper] Implemented shell wrappers in bin/dyad-shell-hooks.sh to mechanically intercept CLI exit and trigger bin/exit.
+- **2026-06-17 18:31:32** | `TODO` | Fix the HEALTH invariants display in quarry_reader.py
+- **2026-06-17 18:42:13** | `RETRO` | GAP Polling Race Condition & Subagent Overwrite
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: GAP Polling Race Condition & Flow Manager State Overrides
+  
+  ## Continue
+  - Relying on the deterministic test suite to falsify implementations before proceeding to the Green Phase merge.
+  - Using mechanical validation (Dialect Linter, Testing Harness) to rigorously enforce the Consistency Guardrails and prevent broken state transitions.
+  
+  ## Start
+  - Before modifying shared orchestrator scripts (`skills/flow_state_manager.py`), we must strictly verify the active branch context or commit fixes locally within the subagent worktree to prevent unintentionally overwriting active parallel work.
+  - We must anticipate structural race conditions in distributed systems (such as GitHub Actions pipeline polling) and proactively implement deterministic retry loops rather than relying on brittle, hardcoded sleep intervals.
+  
+  ## Stop
+  - Blindly copying files from the `main` directory into active parallel worktrees, which effectively deletes subagent context and triggers regression failures.
+  
+  </details>
+- **2026-06-17 18:44:17** | `RETRO` | Extracting Workflow Invariants to FSM Templates
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Extracting Workflow Invariants to FSM Templates
+  
+  ## Continue
+  - Using the Invisible Elicitor protocol (`ask_question`) to define the WHY, WHAT, and SCOPE before locking a node in the DAG.
+  - Offloading the actual execution securely to subagents, maintaining the parallel branch and PR review invariant.
+  
+  ## Start
+  - We must explicitly ensure executable permissions (`chmod +x`) are set on all newly created or modified scripts to prevent mechanical CI failures.
+  
+  ## Stop
+  - Relying on global `DYAD.md` documentation for state-specific operations. We must strictly enforce writing mechanical bindings directly into their corresponding `kb/templates/state_*.md` files.
+  
+  </details>
+- **2026-06-17 18:45:52** | `TODO` | take on the commissioned work to build an invariant extraction engine from dyad-bonds
+- **2026-06-17 18:58:00** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:58:21** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:58:22** | `NODE-RETRO` | [node_todo_1781747152] Built the deterministic extractor engine, passing all F-set constraints and TDD RED/GREEN validation without modifying the proposed tag-grammar.
+- **2026-06-17 18:34:32** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:36:08** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:36:08** | `NODE-RETRO` | [node_todo_1781746292] Migrated substrate scripts to read from decomposed artifacts/audit/ directory.
+- **2026-06-17 18:36:42** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:36:42** | `NODE-RETRO` | [node_todo_1781746292] Migrated substrate scripts to read from decomposed artifacts/audit/ directory.
+- **2026-06-17 18:37:20** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:37:28** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:38:00** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 18:38:01** | `NODE-RETRO` | [node_todo_1781746292] Migrated substrate scripts to read from decomposed artifacts/audit/ directory and patched GAP race condition.
+- **2026-06-17 21:47:22** | `TODO` | [BUG] the pr-fsm should not allow the state to advance for failed CI due to 'Merge conflicts'. right now, PR #64 is not ready for disposition.
+- **2026-06-17 21:53:27** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 21:53:55** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 21:54:17** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 22:15:19** | `TODO` | test_noisy_intent_12345
+- **2026-06-17 22:41:16** | `TODO` | test_noisy_intent_12345
+- **2026-06-18 14:49:36** | `TODO` | test_noisy_intent_12345
+- **2026-06-18 14:50:10** | `TODO` | test_noisy_intent_12345
+- **2026-06-18 14:50:10** | `NODE-RETRO` | [1781819214] Added Silent Execution Invariant to DYAD.md
+- **2026-06-18 15:05:53** | `TODO` | test_noisy_intent_12345
+- **2026-06-18 15:06:49** | `TODO` | test_noisy_intent_12345
+- **2026-06-18 15:07:05** | `TODO` | test_noisy_intent_12345
+- **2026-06-18 15:07:06** | `NODE-RETRO` | [node_todo_1781818675] Update the node lifecycle mechanism to physically move DONE nodes out of the active frontier DAG into an archive state to save compute and tokens while retaining history.
+- **2026-06-18 15:08:58** | `COMMONS_SYNC` | Syncing upstream
+- **2026-06-18 15:09:15** | `TODO` | test_noisy_intent_12345
+- **2026-06-18 15:09:57** | `TODO` | test_noisy_intent_12345
+- **2026-06-18 15:09:58** | `NODE-RETRO` | [node_todo_1781818939] implemented multiple fields support for rub
+- **2026-06-18 15:27:59** | `TODO` | test_noisy_intent_12345
+- **2026-06-18 15:30:00** | `TODO` | test_noisy_intent_12345
+- **2026-06-18 15:30:00** | `NODE-RETRO` | [node_todo_1781761164] The required changes were already implemented and merged in PR #73.
+- **2026-06-18 23:40:44** | `TODO` | add
+- **2026-06-19 04:51:23** | `TODO` | test_noisy_intent_12345
+- **2026-06-19 04:51:23** | `NODE-RETRO` | [node_todo_1781851244] Completed node execution by assigning AUTO-REPLY status to non-strategic traffic and segregating them visually in the todo rack.
+- **2026-06-19 04:53:41** | `RETRO` | Asymmetric Intake & Substrate Delegation
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Asymmetric Intake & Substrate Delegation
+  
+  ## Continue
+  - Enforcing structural boundary locks and relying on autonomous subagents to execute mechanical transformations (like the DAG pruning and poll-mail refactor).
+  - Tracking Operator intent strictly through the `todo` holding pen.
+  
+  ## Start
+  - Trusting visual segregations (like the new `AUTO-REPLY RACK`) to automatically route mechanical noise away from the Operator's triage surface.
+  
+  ## Stop
+  - Conflating the Operator's cognitive bandwidth with flat file manipulations; continuing to push all physical state transitions mechanically through the execution DAG.
+  
+  </details>
+- **2026-06-20 17:20:35** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-bond at commit 6984389c7bc06899c3c1425cf8d38e085353e7e4 (file: dm/dyad-cairn/2026-06-17-acceptance-validation-REFUTED.md)
+- **2026-06-20 17:20:35** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-bond at commit 6984389c7bc06899c3c1425cf8d38e085353e7e4 (file: dm/dyad-cairn/2026-06-17-commission-invariant-extraction-engine.md)
+- **2026-06-20 17:20:35** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-bond at commit 6984389c7bc06899c3c1425cf8d38e085353e7e4 (file: dm/dyad-cairn/2026-06-18-acceptance-validation-v2-atomic.md)
+- **2026-06-20 17:20:42** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-steward at commit 2cbeee91fd2059a175a0f74106cd8313bd40dfb5 (file: dm/dyad-cairn/2026-06-10-falsify-dm-protocol-pr64.md)
+- **2026-06-20 17:20:42** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-steward at commit 2cbeee91fd2059a175a0f74106cd8313bd40dfb5 (file: dm/dyad-cairn/2026-06-10-re-commons-architecture-proposal.md)
+- **2026-06-20 17:20:45** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone at commit c2f98b293ee21cde4971413531575b7b03a3827f (file: dm/dyad-cairn/2026-06-05-re-hello.md)
+- **2026-06-20 17:20:45** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone at commit c2f98b293ee21cde4971413531575b7b03a3827f (file: dm/dyad-cairn/2026-06-05-welcome-from-touchstone.md)
+- **2026-06-20 17:20:45** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone at commit c2f98b293ee21cde4971413531575b7b03a3827f (file: dm/dyad-cairn/2026-06-06-re-cutting-the-stone.md)
+- **2026-06-20 17:20:45** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone at commit c2f98b293ee21cde4971413531575b7b03a3827f (file: dm/dyad-cairn/2026-06-07-one-rub.md)
+- **2026-06-20 17:40:46** | `TODO` | test_noisy_intent_12345
+- **2026-06-20 17:40:46** | `NODE-RETRO` | [node_todo_1782001235] Successfully implemented bin/commission and fixed invariant_extractor.py F-1.2, F-2.2, F-2.3, and F-3 to conform with Bond's external validation.
+- **2026-06-20 17:43:32** | `TODO` | review bond's response for mechanical updates and then update the commissioned work to match the new commission.
+- **2026-06-20 17:50:04** | `RETRO` | Pure G Execution Leak & V-Gate Failure
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Pure G Execution Leak & V-Gate Failure
+  
+  ## Continue
+  - Using external validation matrices (like Bond's v0.4 contract) to mechanically test our execution bridges.
+  - Isolating Substrate orchestration tools into dedicated feature branches via the `Executioner` subagent to protect the main DAG.
+  
+  ## Start
+  - Mechanically enforcing TDD for ALL generated tools, including internal orchestrator binaries like `bin/commission`. 
+  - Building a deterministic CI gate or HTIL Red-Phase constraint that physically blocks PR generation if a `bin/` script lacks a matching `tests/test_*.py` file.
+  
+  ## Stop
+  - Trusting subagents (even `self` clones) to autonomously obey the "No Pure G Execution" invariant.
+  - Blurring the line between Payload and Substrate; a substrate orchestration tool needs just as much deterministic V-anchoring as functional payload code.
+  
+  </details>
+- **2026-06-20 17:59:45** | `TODO` | test_noisy_intent_12345
+- **2026-06-20 17:59:45** | `NODE-RETRO` | [node_todo_1782002612] V-gate established for bin/commission via tests/test_commission.py and Bond's v0.5 spec formally ingested.
+- **2026-06-20 18:03:42** | `TODO` | test_noisy_intent_12345
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_7
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_5
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_25
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_4
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_13
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_11
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_8
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_9
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_17
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_14
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_6
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_23
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_16
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_28
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_2
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_1
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_18
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_24
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_3
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_27
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_0
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_12
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_20
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_21
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_19
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_29
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_15
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_37
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_35
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_31
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_32
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_40
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_10
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_33
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_41
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_44
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_45
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_43
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_36
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_34
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_30
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_38
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_39
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_26
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_22
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_42
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_48
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_46
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_47
+- **2026-06-20 19:47:56** | `TODO` | collision_intent_49
+- **2026-06-20 19:47:56** | `TODO` | test_noisy_intent_12345
+- **2026-06-20 19:47:57** | `NODE-RETRO` | [node_todo_1782006191] Successfully implemented the mechanical v0.5 v2-atomic spec updates into the invariant-extraction engine and its malformation corpus.

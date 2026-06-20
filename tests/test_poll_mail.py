@@ -62,7 +62,7 @@ locator: github.com/pltrinh1122/dyad-touchstone
             queue_items = [json.loads(line) for line in queue_content.strip().split("\n")]
             self.assertEqual(len(queue_items), 1)
             
-            expected_intent = "Process inbound mail from https://github.com/mock/dyad-mock at commit dummy_hash (file: dm/dyad-cairn/message.md)"
+            expected_intent = "Process inbound mail from https://raw.githubusercontent.com/mock/dyad-mock/dummy_hash/dm/dyad-cairn/message.md"
             self.assertEqual(queue_items[0]["intent"], expected_intent)
 
     @patch('subprocess.run')
@@ -104,7 +104,7 @@ locator: github.com/pltrinh1122/dyad-touchstone
                 os.remove(queue_file)
             
             os.makedirs(os.path.dirname(ledger_file), exist_ok=True)
-            expected_intent = "Process inbound mail from https://github.com/mock/dyad-mock at commit dummy_hash (file: dm/dyad-cairn/message.md)"
+            expected_intent = "Process inbound mail from https://raw.githubusercontent.com/mock/dyad-mock/dummy_hash/dm/dyad-cairn/message.md"
             with open(ledger_file, "w") as f:
                 import json
                 f.write(json.dumps({"intent": expected_intent, "status": "DONE"}) + "\n")

@@ -79,7 +79,15 @@ def poll_mail(directory_path, target_dyad="dyad-cairn"):
 
                 for mail_file in os.listdir(mail_dir):
                     if mail_file.endswith(".md"):
-                        intent = f"Process inbound mail from {locator} at commit {commit_hash} (file: dm/{target_dyad}/{mail_file})"
+                        # Build remote raw URL
+                        if "github.com" in locator:
+                            repo_path = locator.split("github.com/")[-1]
+                            raw_url = f"https://raw.githubusercontent.com/{repo_path}/{commit_hash}/dm/{target_dyad}/{mail_file}"
+                        else:
+                            # Fallback
+                            raw_url = f"{locator}/raw/{commit_hash}/dm/{target_dyad}/{mail_file}"
+                            
+                        intent = f"Process inbound mail from {raw_url}"
                         if intent in ledgered_intents:
                             print(f"Skipping already ledgered intent: {intent}")
                             continue
@@ -99,7 +107,7 @@ def poll_mail(directory_path, target_dyad="dyad-cairn"):
                             f.write(json.dumps(queue_payload) + "\n")
                             fcntl.flock(f, fcntl.LOCK_UN)
                             
-                        print(f"Queued todo for mail from {name}: {mail_file}")
+                        print(f"Queued todo for mail from {name}: {raw_url}")
 
 if __name__ == "__main__":
     import argparse
