@@ -1024,3 +1024,5 @@
 - **2026-06-20 18:06:32** | `TODO` | figure out why node_todo_1781760731 wasn't previously disposed.
 - **2026-06-20 18:24:28** | `TODO` | the architecture doesn't seem robust for handling asynchronous events like incoming messages.
 - **2026-06-20 18:35:05** | `TODO` | test_noisy_intent_12345
+- **2026-06-20 18:37:06** | `TODO` | test_noisy_intent_12345
+- **2026-06-20 18:37:06** | `NODE-RETRO` | [node_todo_1782005068] Architected a synchronization layer (bin/sync-state, dyad-state/sync_queue.jsonl) to queue asynchronous events and provide a transactional interface for the linear SPAOR loop to consume them atomically.
