@@ -84,7 +84,7 @@ class TestSyncLayer(unittest.TestCase):
                 self.assertEqual(mock_sync_run.call_count, 1)
                 cmd_called = mock_sync_run.call_args[0][0]
                 self.assertEqual(cmd_called[0], "./bin/todo")
-                expected_intent = "Process inbound mail from https://github.com/mock/dyad-mock at commit dummy_hash (file: dm/dyad-cairn/message.md)"
+                expected_intent = "Process inbound mail from https://raw.githubusercontent.com/mock/dyad-mock/dummy_hash/dm/dyad-cairn/message.md"
                 self.assertEqual(cmd_called[1], expected_intent)
                 
             sys.argv = original_argv
