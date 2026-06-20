@@ -7,7 +7,13 @@ elif [ "$1" == "todo" ] || [ "$1" == "rack" ]; then
     PYTHONPATH=. python3 skills/todo_reader.py
 elif [ "$1" == "quarries" ]; then
     PYTHONPATH=. python3 skills/quarry_reader.py
+elif [ -z "$1" ] || [ "$1" == "all" ]; then
+    PYTHONPATH=. python3 skills/frontier_reader.py
+    echo ""
+    PYTHONPATH=. python3 skills/todo_reader.py
+    echo ""
+    PYTHONPATH=. python3 skills/guards_reader.py
 else
-    echo "Usage: ./bin/read <frontier|guards|todo|quarries>"
+    echo "Usage: ./bin/read [all|frontier|guards|todo|quarries]"
     exit 1
 fi

@@ -610,7 +610,8 @@ if __name__ == "__main__":
         
         # Inject the node
         node_id = f"node_todo_{node.split('_')[1]}"
-        inject_node(node_id, f"Convert Todo: {node}", goal, scope, bypass_review=True)
+        node_title = todo['rub_matrix'].get('what') or intent
+        inject_node(node_id, node_title, goal, scope, bypass_review=True)
         
         # Remove from backlog
         os.remove(todo_file)
