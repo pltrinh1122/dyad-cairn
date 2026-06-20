@@ -172,11 +172,11 @@ commissions/tests/test_invariant_extractor.py .                          [100%]
 **Exit Code:** 81
 
 ### F-8.2 orphan-sidecar
-**Command:** `python3 commissions/invariant_extractor.py --dyad bond --sidecar commissions/malformation_corpus/sidecar_orphan.yaml commissions/malformation_corpus/valid_md.md`
+**Command:** `python3 commissions/invariant_extractor.py --dyad bond --sidecar commissions/malformation_corpus/sidecar_orphan.yaml commissions/malformation_corpus/empty_md.md`
 
 ```
 ```
-**Exit Code:** 81
+**Exit Code:** 82
 
 ### F-8.3 dangling-edge
 **Command:** `python3 commissions/invariant_extractor.py --dyad bond --sidecar commissions/malformation_corpus/dangling_edge.yaml commissions/malformation_corpus/valid_md.md`
