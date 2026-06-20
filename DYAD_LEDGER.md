@@ -1019,3 +1019,5 @@
   </details>
 - **2026-06-20 17:59:45** | `TODO` | test_noisy_intent_12345
 - **2026-06-20 17:59:45** | `NODE-RETRO` | [node_todo_1782002612] V-gate established for bin/commission via tests/test_commission.py and Bond's v0.5 spec formally ingested.
+- **2026-06-20 18:05:32** | `TODO` | test_noisy_intent_12345
+- **2026-06-20 18:05:33** | `NODE-RETRO` | [node_todo_1781850327] Refactored poll_mail.py to eliminate local inbox and use remote Git URLs. V-Gate tests updated.

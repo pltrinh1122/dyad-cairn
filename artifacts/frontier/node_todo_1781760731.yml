@@ -1,5 +1,5 @@
 node_todo_1781760731:
-  title: 'Convert Todo: todo_1781760731'
+  title: 'Formulate a markdown message to dyad-bond declaring the PR #70 merge.'
   goal: 'Dispatch final notification to dyad-bond that the invariant-extraction engine
     (PR #70) is merged and ready for F-set validation.
 
@@ -12,4 +12,3 @@ node_todo_1781760731:
     to execute their independent F-set acceptance validations.'
   type: PLAN
   scope: FRONTIER
-  status: AUTHORIZED
