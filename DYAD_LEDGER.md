@@ -997,3 +997,25 @@
 - **2026-06-20 17:20:45** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone at commit c2f98b293ee21cde4971413531575b7b03a3827f (file: dm/dyad-cairn/2026-06-07-one-rub.md)
 - **2026-06-20 17:40:46** | `TODO` | test_noisy_intent_12345
 - **2026-06-20 17:40:46** | `NODE-RETRO` | [node_todo_1782001235] Successfully implemented bin/commission and fixed invariant_extractor.py F-1.2, F-2.2, F-2.3, and F-3 to conform with Bond's external validation.
+- **2026-06-20 17:43:32** | `TODO` | review bond's response for mechanical updates and then update the commissioned work to match the new commission.
+- **2026-06-20 17:50:04** | `RETRO` | Pure G Execution Leak & V-Gate Failure
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Pure G Execution Leak & V-Gate Failure
+  
+  ## Continue
+  - Using external validation matrices (like Bond's v0.4 contract) to mechanically test our execution bridges.
+  - Isolating Substrate orchestration tools into dedicated feature branches via the `Executioner` subagent to protect the main DAG.
+  
+  ## Start
+  - Mechanically enforcing TDD for ALL generated tools, including internal orchestrator binaries like `bin/commission`. 
+  - Building a deterministic CI gate or HTIL Red-Phase constraint that physically blocks PR generation if a `bin/` script lacks a matching `tests/test_*.py` file.
+  
+  ## Stop
+  - Trusting subagents (even `self` clones) to autonomously obey the "No Pure G Execution" invariant.
+  - Blurring the line between Payload and Substrate; a substrate orchestration tool needs just as much deterministic V-anchoring as functional payload code.
+  
+  </details>
+- **2026-06-20 17:59:45** | `TODO` | test_noisy_intent_12345
+- **2026-06-20 17:59:45** | `NODE-RETRO` | [node_todo_1782002612] V-gate established for bin/commission via tests/test_commission.py and Bond's v0.5 spec formally ingested.
