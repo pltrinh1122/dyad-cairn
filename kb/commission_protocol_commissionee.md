@@ -52,8 +52,9 @@ The final payload format of the **Commission-Delivery** is just as critical as t
 When a **Commission-Delivery** is rejected by the upstream dyad (returning `[REFUTED]`, `[UNVERIFIED-blocked]`, or exposing edge cases), the Commissionee enters an iterative feedback loop. 
 
 
-### Methodologies for Driving Convergence
-To prevent infinite loops of misaligned deliveries, the Commissionee must enforce strict methodologies during the iteration phase:
-* **Isolate the Delta:** A rejection cannot be generalized. The upstream dyad must explicitly pinpoint *which* topological Atom ID or structural invariant failed in the previous **Commission-Delivery**. 
-* **TDD Falsification on Rejection:** Any rejection from the upstream issuer must be translated into a *failing test case* (a mechanical falsification) in the Commissionee's substrate *before* any implementation code is altered. This physical Red Phase constraint prevents regressions and guarantees that the next iteration explicitly resolves the upstream delta.
-* **Class-B Renegotiation:** If a Class-B constraint repeatedly fails convergence after multiple iterations, it is a structural symptom of a misaligned specification. The Commissionee must pause execution and rely on the HTIL Operator to renegotiate or amend the actual **Commission-Request** with the upstream dyad.
+### Invariants of Iterative Convergence
+To prevent infinite loops, circular regressions, or misaligned deliveries across iterations, the Commissionee must enforce strict operational invariants during the feedback loop:
+* **Delta Monotonicity (No Backsliding):** An iteration must exclusively target the topological atoms that were explicitly rejected in the previous payload. The Commissionee is physically forbidden from modifying atoms that already achieved `[MET]` status, guaranteeing forward convergence without regression.
+* **TDD Falsification (The Red Phase Precondition):** Any rejection from the upstream issuer must be structurally translated into a *failing test case* (a mechanical falsification) in the Commissionee's substrate *before* any implementation code is altered. This mathematically proves that the iteration is addressing a physical defect rather than a hallucinated misalignment.
+* **Class-A Superiority:** All structural, mechanical Gate-0 constraints must be fully resolved (`[MET]`) before any Class-B cognitive disagreements or tagging discrepancies are negotiated. The foundation must compile before the semantics are debated.
+* **Scope Freeze (No Ghost Atoms):** The upstream dyad is forbidden from appending new constraints to a rejected delivery payload. If new atoms are introduced, they represent a forward formalization (a version bump, e.g., v0.4 to v0.5). The Commissionee isolates the iteration by strictly pinning against the original **Commission-Request** SHA.
