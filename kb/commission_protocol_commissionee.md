@@ -3,6 +3,7 @@
 
 ## 1. The Commissionee Mandate
 * **Structural Determinism:** The Commissionee assumes the upstream Dyad evaluates deliveries via strict structural determinism. The **Commission-Delivery** MUST map topologically to the **Commission-Request**.
+* **Intent Verification (The "WHY"):** Spec hardening requires semantic clarity. If the upstream **Commission-Request** lacks explicit intent or relies on ambiguous assumptions, the Commissionee MUST challenge the upstream issuer to clarify the "WHY" before implementation.
 * **Spec Hardening (+1 Value):** The Commissionee MUST NOT act as a blind executor. The Commissionee MUST actively strengthen, expand, and harden the **Commission-Request** during implementation. Discovered edge cases, systemic risks, or logical gaps MUST be codified into new falsifiable constraints and pushed upstream.
 
 ---
