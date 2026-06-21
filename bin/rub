@@ -88,7 +88,11 @@ def main():
                 print(f"[RUB] ERROR: Auto-convert failed with exit code {res.returncode}")
                 sys.exit(res.returncode)
         elif args.type == "commission":
-            print(f"[RUB] Commission {target_id} is now RUBBED and structurally valid for implementation.")
+            print(f"[RUB] Commission {target_id} is now syntactically RUBBED.")
+            print("\n🚨 CSI GUARD: INTENT VERIFICATION 🚨")
+            print("[STEERING VECTOR] The syntactic Rub Matrix is populated, but the Commissionee Mandate requires SEMANTIC evaluation.")
+            print("The Agent MUST now cognitively load the Commission Protocol invariants (`kb/commission_protocol_commissionee.md`) and pressure-test the 'WHY'.")
+            print("If the intent is ambiguous or weak, the Agent MUST challenge the upstream issuer. Do NOT proceed to implementation until semantic fidelity is proven.")
 
 if __name__ == "__main__":
     main()
