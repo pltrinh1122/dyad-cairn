@@ -33,8 +33,14 @@ When the implementation is verified internally, the Commissionee must format and
 
 ### Topological Convergence in the Commission-Delivery
 The final payload format of the **Commission-Delivery** is just as critical as the code itself.
-* **Semantic Exit Code Mapping:** Raw exit codes (e.g., `Exit Code 0`, `Exit Code 11`) are meaningless without context. The **Commission-Delivery** must internally parse these codes into standardized `[MET]` or `[REFUTED]` assertions.
+* **Semantic Exit Code Mapping:** Raw exit codes (e.g., `Exit Code 0`, `Exit Code 11`) are meaningless without context. The **Commission-Delivery** must internally parse these codes into a standardized semantic vocabulary:
+  - `[MET]`: The structural constraint passed mechanically.
+  - `[REFUTED]`: The structural constraint mechanically failed.
+  - `[UNVERIFIED]`: The constraint could not be tested due to missing Gate-0 prerequisites (e.g., absent corpora).
+  - `[ACCEPTED]`: The constraint failed, but the delta was traced to an ambiguity in the upstream **Commission-Request**, meaning the upstream dyad absorbs the failure.
+* **Total Atomic Coverage:** The **Commission-Delivery** must map *every single atom* defined in the **Commission-Request**. The Commissionee cannot sub-scope or cherry-pick falsifications. 
 * **Structural Mirroring:** The **Commission-Delivery** tables, lists, and headings must perfectly mirror the topographical layout of the original **Commission-Request**. The upstream Dyad must be able to perform a 1:1 bijection between requested IDs and delivered assertions.
+* **Contract Version Pinning:** The **Commission-Delivery** must explicitly pin the exact Git SHA of the **Commission-Request** it was evaluated against. This isolates the delivery from undocumented goalpost-moving or forward formalizations in subsequent iterations.
 * **Telemetry Containment:** Raw terminal dumps (`pytest` logs, stack traces) should not obscure the semantic assertions. Isolate raw telemetry in collapsed appendices (e.g., `<details>` blocks).
 * **OBSERVED Run-Record:** The **Commission-Delivery** must provide a verifiable execution record mapping every single commissioned atom to an explicit command, raw telemetry (stdout/stderr), and the resulting exit code.
 * **Resolved Pinned Provenance:** The **Commission-Delivery** must point to the exact Git SHA, branch, and live file paths. Broken references or 404s instantly fail validation.
