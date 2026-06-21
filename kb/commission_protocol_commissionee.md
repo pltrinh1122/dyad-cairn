@@ -26,17 +26,17 @@ The Commissionee assumes the upstream Dyad evaluates deliveries via strict struc
 ## Phase 2: Delivering the Commission-Delivery
 
 ### Invariants of the Commission-Delivery
-* **Invariant of Semantic Exit Codes:** The **Commission-Delivery** MUST parse raw exit codes into the following semantic vocabulary:
+* **Semantic Exit Codes:** The **Commission-Delivery** MUST parse raw exit codes into the following semantic vocabulary:
   - `[MET]`: Structural constraint passed mechanically.
   - `[REFUTED]`: Structural constraint mechanically failed.
   - `[UNVERIFIED]`: Constraint could not be tested due to missing Gate-0 prerequisites.
   - `[ACCEPTED]`: Constraint failed, but the delta traces to upstream **Commission-Request** ambiguity.
-* **Invariant of Total Atomic Coverage:** The **Commission-Delivery** MUST map every single atom defined in the **Commission-Request**. Omissions or sub-scoping are FORBIDDEN.
-* **Invariant of Structural Mirroring:** The **Commission-Delivery** tables, lists, and headings MUST perfectly mirror the topographical layout of the **Commission-Request**.
-* **Invariant of Contract Versioning:** The **Commission-Delivery** MUST explicitly pin the Git SHA of the **Commission-Request** evaluated against.
-* **Invariant of Telemetry Containment:** All raw telemetry MUST be physically isolated in collapsed appendices (e.g., `<details>` blocks).
-* **Invariant of the OBSERVED Run-Record:** The **Commission-Delivery** MUST provide an execution record mapping every commissioned atom to an explicit run command, telemetry, and exit code.
-* **Invariant of Pinned Provenance:** The **Commission-Delivery** MUST explicitly point to the exact Git SHA, branch, and live file paths of the executing substrate.
+* **Total Atomic Coverage:** The **Commission-Delivery** MUST map every single atom defined in the **Commission-Request**. Omissions or sub-scoping are FORBIDDEN.
+* **Structural Mirroring:** The **Commission-Delivery** tables, lists, and headings MUST perfectly mirror the topographical layout of the **Commission-Request**.
+* **Contract Versioning:** The **Commission-Delivery** MUST explicitly pin the Git SHA of the **Commission-Request** evaluated against.
+* **Telemetry Containment:** All raw telemetry MUST be physically isolated in collapsed appendices (e.g., `<details>` blocks).
+* **OBSERVED Run-Record:** The **Commission-Delivery** MUST provide an execution record mapping every commissioned atom to an explicit run command, telemetry, and exit code.
+* **Pinned Provenance:** The **Commission-Delivery** MUST explicitly point to the exact Git SHA, branch, and live file paths of the executing substrate.
 
 ---
 
