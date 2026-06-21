@@ -38,3 +38,20 @@ The final payload format of the **Commission-Delivery** is just as critical as t
 * **Telemetry Containment:** Raw terminal dumps (`pytest` logs, stack traces) should not obscure the semantic assertions. Isolate raw telemetry in collapsed appendices (e.g., `<details>` blocks).
 * **OBSERVED Run-Record:** The **Commission-Delivery** must provide a verifiable execution record mapping every single commissioned atom to an explicit command, raw telemetry (stdout/stderr), and the resulting exit code.
 * **Resolved Pinned Provenance:** The **Commission-Delivery** must point to the exact Git SHA, branch, and live file paths. Broken references or 404s instantly fail validation.
+
+---
+
+## Phase 3: Iterative Convergence (Handling Rejections)
+
+When a **Commission-Delivery** is rejected by the upstream dyad (returning `[REFUTED]`, `[UNVERIFIED-blocked]`, or exposing edge cases), the Commissionee enters an iterative feedback loop. 
+
+### Convergence Prediction
+The number of iterations required to achieve full convergence is inherently asymmetrical based on the class of the constraint:
+* **Class-A (Mechanical) Constraints:** Should theoretically converge rapidly ($N \le 2$). The Oracle either cleanly compiles and executes the requested shape, or it physically halts.
+* **Class-B (Cognitive) Constraints:** Iterations are unpredictable. Convergence depends heavily on semantic drift, ambiguous boundaries, or the subjective judgment of the upstream issuer. Multiple iterations here often signal a need to clarify the original intent of the **Commission-Request**.
+
+### Methodologies for Driving Convergence
+To prevent infinite loops of misaligned deliveries, the Commissionee must enforce strict methodologies during the iteration phase:
+* **Isolate the Delta:** A rejection cannot be generalized. The upstream dyad must explicitly pinpoint *which* topological Atom ID or structural invariant failed in the previous **Commission-Delivery**. 
+* **TDD Falsification on Rejection:** Any rejection from the upstream issuer must be translated into a *failing test case* (a mechanical falsification) in the Commissionee's substrate *before* any implementation code is altered. This physical Red Phase constraint prevents regressions and guarantees that the next iteration explicitly resolves the upstream delta.
+* **Class-B Renegotiation:** If a Class-B constraint repeatedly fails convergence after multiple iterations, it is a structural symptom of a misaligned specification. The Commissionee must pause execution and rely on the HTIL Operator to renegotiate or amend the actual **Commission-Request** with the upstream dyad.
