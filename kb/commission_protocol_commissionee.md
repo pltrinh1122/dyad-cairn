@@ -51,10 +51,6 @@ The final payload format of the **Commission-Delivery** is just as critical as t
 
 When a **Commission-Delivery** is rejected by the upstream dyad (returning `[REFUTED]`, `[UNVERIFIED-blocked]`, or exposing edge cases), the Commissionee enters an iterative feedback loop. 
 
-### Convergence Prediction
-The number of iterations required to achieve full convergence is inherently asymmetrical based on the class of the constraint:
-* **Class-A (Mechanical) Constraints:** Should theoretically converge rapidly ($N \le 2$). The Oracle either cleanly compiles and executes the requested shape, or it physically halts.
-* **Class-B (Cognitive) Constraints:** Iterations are unpredictable. Convergence depends heavily on semantic drift, ambiguous boundaries, or the subjective judgment of the upstream issuer. Multiple iterations here often signal a need to clarify the original intent of the **Commission-Request**.
 
 ### Methodologies for Driving Convergence
 To prevent infinite loops of misaligned deliveries, the Commissionee must enforce strict methodologies during the iteration phase:
