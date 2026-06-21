@@ -5,11 +5,11 @@
 To achieve frictionless cross-dyad orchestration, the Commissionee must operate under the assumption that the upstream Dyad relies on **structural determinism**. A commission is not simply a list of features; it is a rigid topological contract. The Commissionee’s execution and delivery artifacts must mathematically converge with the original commission structure to prevent semantic opacity.
 
 ## 2. Gate-0 Preconditions (The Mechanical Baseline)
-Before any individual behavioral atom is evaluated, the delivery must clear the structural Gate-0 constraints. A failure here blocks validation entirely (returning `UNVERIFIED-blocked`).
-* **D-1 Runnable CLI:** The delivered artifact must provide a run-to-completion entry point that can be mechanically invoked over a corpus. A script with no CLI or purely unit-test functions represents a Gate-0 breach.
-* **D-2 Seeded Verification Corpus:** The specific malformation corpus, data sets, or mock inputs used to prove the implementation must be shipped in the repository alongside the engine.
-* **D-3 OBSERVED Run-Record:** The Delivery Direct Message (DM) must provide a verifiable execution record mapping every single commissioned atom to an explicit command, raw stdout/stderr telemetry, and an exit code.
-* **D-4 Resolved Pinned Provenance:** The Delivery DM must point to the exact Git SHA, branch, and live file path. Broken references (404s) instantly fail Gate-0.
+Before any individual behavioral atom is evaluated, the delivery must strictly clear the structural baseline constraints defined by the upstream commission. A failure here blocks validation entirely (returning `UNVERIFIED-blocked`). Gate-0 ensures the delivery is mechanically parsable before any semantic review occurs. While these vary by commission, standard preconditions often include:
+* **Runnable Delivery Interfaces:** The delivered artifact must expose the exact execution interfaces specified by the commission (e.g., a run-to-completion CLI tool, a specific API endpoint, or an executable test suite). Failing to provide the requested mechanical interface represents a Gate-0 breach.
+* **Seeded Verification Corpora:** Any malformation corpus, data sets, or mock inputs used to mathematically prove the implementation must be shipped directly in the repository alongside the delivered payload.
+* **OBSERVED Run-Record:** The Delivery Direct Message (DM) must provide a verifiable execution record mapping every single commissioned atom to an explicit command, raw telemetry (stdout/stderr), and the resulting exit code.
+* **Resolved Pinned Provenance:** The Delivery DM must point to the exact Git SHA, branch, and live file paths. Broken references or 404s instantly fail Gate-0.
 
 ## 3. Topological Convergence in Delivery DMs
 The final payload format is just as critical as the code itself.
