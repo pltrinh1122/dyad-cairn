@@ -1,8 +1,9 @@
 # Commission Protocol: The Commissionee
 **Role:** The downstream implementer (e.g., `dyad-cairn`) accepting a **Commission-Request** from an upstream issuer (e.g., `dyad-bond`), and returning a **Commission-Delivery**.
 
-## 1. Operating Assumption
-The Commissionee assumes the upstream Dyad evaluates deliveries via strict structural determinism. The **Commission-Delivery** MUST map topologically to the **Commission-Request**.
+## 1. The Commissionee Mandate
+* **Structural Determinism:** The Commissionee assumes the upstream Dyad evaluates deliveries via strict structural determinism. The **Commission-Delivery** MUST map topologically to the **Commission-Request**.
+* **Spec Hardening (+1 Value):** The Commissionee MUST NOT act as a blind executor. The Commissionee MUST actively strengthen, expand, and harden the **Commission-Request** during implementation. Discovered edge cases, systemic risks, or logical gaps MUST be codified into new falsifiable constraints and pushed upstream.
 
 ---
 
