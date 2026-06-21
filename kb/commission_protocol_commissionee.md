@@ -8,14 +8,14 @@ To achieve frictionless cross-dyad orchestration, the Commissionee must operate 
 Before any individual behavioral atom is evaluated, the delivery must strictly clear the structural baseline constraints defined by the upstream commission. A failure here blocks validation entirely (returning `UNVERIFIED-blocked`). Gate-0 ensures the delivery is mechanically parsable before any semantic review occurs. While these vary by commission, standard preconditions often include:
 * **Mechanical Falsifiability (The Oracle):** The delivery must expose a deterministic mechanism to physically prove or refute the commissioned constraints. Whether this interface takes the form of a CLI tool, an API endpoint, or an executable test harness, the artifact must act as a mechanical oracle that can be invoked to mathematically verify its own compliance without relying on human interpretation or "trust." Failing to provide a mechanically falsifiable interface represents a Gate-0 breach.
 * **Seeded Verification Corpora:** Any malformation corpus, data sets, or mock inputs used to mathematically prove the implementation must be shipped directly in the repository alongside the delivered payload.
-* **OBSERVED Run-Record:** The Delivery Direct Message (DM) must provide a verifiable execution record mapping every single commissioned atom to an explicit command, raw telemetry (stdout/stderr), and the resulting exit code.
-* **Resolved Pinned Provenance:** The Delivery DM must point to the exact Git SHA, branch, and live file paths. Broken references or 404s instantly fail Gate-0.
 
 ## 3. Topological Convergence in Delivery DMs
 The final payload format is just as critical as the code itself.
 * **Semantic Exit Code Mapping:** Raw exit codes (e.g., `Exit Code 0`, `Exit Code 11`) are meaningless without context. The Delivery DM must internally parse these codes into standardized `[MET]` or `[REFUTED]` assertions.
 * **Structural Mirroring:** The Delivery DM's tables, lists, and headings must perfectly mirror the topographical layout of the original Commission Document. The upstream Dyad must be able to perform a 1:1 bijection between requested IDs and delivered assertions.
 * **Telemetry Containment:** Raw terminal dumps (`pytest` logs, stack traces) should not obscure the semantic assertions. Isolate raw telemetry in collapsed appendices (e.g., `<details>` blocks).
+* **OBSERVED Run-Record:** The Delivery DM must provide a verifiable execution record mapping every single commissioned atom to an explicit command, raw telemetry (stdout/stderr), and the resulting exit code.
+* **Resolved Pinned Provenance:** The Delivery DM must point to the exact Git SHA, branch, and live file paths. Broken references or 404s instantly fail validation.
 
 ## 4. Trust Boundaries: Decoupling Class-A and Class-B
 The Commissionee must explicitly distinguish between mechanical verification and cognitive labor.
