@@ -6,10 +6,11 @@ import argparse
 import subprocess
 
 def main():
-    parser = argparse.ArgumentParser(description="Rub a todo node with WHAT, WHY, SCOPE")
-    parser.add_argument("todo_id", help="The Todo ID")
+    parser = argparse.ArgumentParser(description="Rub an artifact with WHAT, WHY, SCOPE")
+    parser.add_argument("target_id", help="The Target ID")
     parser.add_argument("field", nargs="?", help="Legacy positional field")
     parser.add_argument("content", nargs="?", help="Legacy positional content")
+    parser.add_argument("--type", choices=["todo", "commission"], default="todo", help="The type of artifact being rubbed")
     parser.add_argument("--what", help="The WHAT field content")
     parser.add_argument("--why", help="The WHY field content")
     parser.add_argument("--scope", help="The SCOPE field content")
@@ -17,24 +18,33 @@ def main():
     # Parse known args so that if --what etc are not provided, we can still parse legacy
     args, _ = parser.parse_known_args()
     
-    todo_id = args.todo_id
-    todo_file = f"artifacts/todos/{todo_id}.yml"
-    if not os.path.exists(todo_file):
-        print(f"ERROR: Todo ID {todo_id} not found.")
-        sys.exit(1)
-        
-    with open(todo_file, "r") as f:
-        data = yaml.safe_load(f) or {}
-        
-    todo = data.get(todo_id, {})
+    target_id = args.target_id
+    artifact_type = args.type + "s" # e.g. todos, commissions
+    artifact_dir = f"artifacts/{artifact_type}"
+    target_file = f"{artifact_dir}/{target_id}.yml"
+    
+    os.makedirs(artifact_dir, exist_ok=True)
+    
+    if not os.path.exists(target_file):
+        if args.type == "todo":
+            print(f"ERROR: Todo ID {target_id} not found.")
+            sys.exit(1)
+        else:
+            # Commissions may not have an initial artifact state file yet, auto-init
+            data = {target_id: {"status": "UNRUBBED", "rub_matrix": {"what": None, "why": None, "scope": None}}}
+    else:
+        with open(target_file, "r") as f:
+            data = yaml.safe_load(f) or {}
+            
+    target = data.get(target_id, {})
     
     # Handle old schema migration automatically
-    if "rub_matrix" not in todo:
-        todo["raw_thought"] = todo.get("intent", "")
-        todo["rub_matrix"] = {"what": None, "why": None, "scope": None}
-        todo["status"] = "UNRUBBED"
-        if "intent" in todo:
-            del todo["intent"]
+    if "rub_matrix" not in target:
+        target["raw_thought"] = target.get("intent", "")
+        target["rub_matrix"] = {"what": None, "why": None, "scope": None}
+        target["status"] = "UNRUBBED"
+        if "intent" in target:
+            del target["intent"]
 
     updates = {}
     if args.field and args.content:
@@ -57,25 +67,28 @@ def main():
         updates["scope"] = args.scope
         
     for k, v in updates.items():
-        todo["rub_matrix"][k] = v
+        target["rub_matrix"][k] = v
         
-    matrix = todo["rub_matrix"]
+    matrix = target["rub_matrix"]
     if matrix["what"] and matrix["why"] and matrix["scope"]:
-        todo["status"] = "RUBBED"
+        target["status"] = "RUBBED"
         
-    with open(todo_file, "w") as f:
-        yaml.dump({todo_id: todo}, f, default_flow_style=False, sort_keys=False)
+    with open(target_file, "w") as f:
+        yaml.dump({target_id: target}, f, default_flow_style=False, sort_keys=False)
         
     if updates:
         keys_updated = ", ".join(k.upper() for k in updates.keys())
-        print(f"[RUB] Successfully updated {keys_updated} for {todo_id}. Status: {todo['status']}")
+        print(f"[RUB] Successfully updated {keys_updated} for {target_id}. Status: {target['status']}")
 
-    if todo.get("status") == "RUBBED":
-        print(f"[RUB] Automatically converting {todo_id} to DAG node...")
-        res = subprocess.run(["./bin/node", "convert-todo", todo_id])
-        if res.returncode != 0:
-            print(f"[RUB] ERROR: Auto-convert failed with exit code {res.returncode}")
-            sys.exit(res.returncode)
+    if target.get("status") == "RUBBED":
+        if args.type == "todo":
+            print(f"[RUB] Automatically converting {target_id} to DAG node...")
+            res = subprocess.run(["./bin/node", "convert-todo", target_id])
+            if res.returncode != 0:
+                print(f"[RUB] ERROR: Auto-convert failed with exit code {res.returncode}")
+                sys.exit(res.returncode)
+        elif args.type == "commission":
+            print(f"[RUB] Commission {target_id} is now RUBBED and structurally valid for implementation.")
 
 if __name__ == "__main__":
     main()
