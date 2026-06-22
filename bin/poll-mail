@@ -1,3 +1,46 @@
-#!/bin/bash
-export PYTHONPATH="${PYTHONPATH}:$(pwd)"
-python3 skills/poll_mail.py "$@"
+#!/usr/bin/env python3
+import subprocess
+import os
+import json
+import re
+import fcntl
+
+print("[POLL] Delegating inbox polling to commons/scripts/falsify.py...")
+result = subprocess.run(
+    ["python3", "commons/scripts/falsify.py", "dm", "--me", "dyad-cairn", "--unread"],
+    capture_output=True, text=True
+)
+
+if result.stdout:
+    print(result.stdout)
+
+queue_file = "dyad-state/sync_queue.jsonl"
+os.makedirs(os.path.dirname(queue_file), exist_ok=True)
+
+added = 0
+for line in result.stdout.splitlines():
+    # Matches: • from <sender>: <filename>  <url>
+    m = re.search(r'• from (.*?): (.*?)\s+(https?://\S+)', line)
+    if m:
+        sender = m.group(1).strip()
+        filename = m.group(2).strip()
+        url = m.group(3).strip()
+        
+        is_auto_reply = any(kw in filename.lower() for kw in ["retro", "sync", "audit", "ping"])
+        intent = f"Process inbound mail from {url}"
+        
+        payload = {
+            "intent": intent,
+            "status": "AUTO-REPLY" if is_auto_reply else "UNRUBBED",
+            "source": sender,
+            "file": filename
+        }
+        
+        with open(queue_file, "a") as f:
+            fcntl.flock(f, fcntl.LOCK_EX)
+            f.write(json.dumps(payload) + "\n")
+            fcntl.flock(f, fcntl.LOCK_UN)
+        added += 1
+
+if added > 0:
+    print(f"[POLL] Queued {added} new mail items into sync_queue. Run ./bin/sync-state to integrate.")
