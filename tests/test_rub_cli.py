@@ -60,3 +60,35 @@ def test_rub_multiple_fields():
             if os.path.exists(frontier_dir):
                 shutil.rmtree(frontier_dir)
             shutil.move(frontier_bak, frontier_dir)
+
+def test_rub_commission_semantic_csi_guard():
+    commission_dir = "artifacts/commissions"
+    commission_bak = "artifacts/commissions_bak"
+    if os.path.exists(commission_dir):
+        shutil.copytree(commission_dir, commission_bak, dirs_exist_ok=True)
+        shutil.rmtree(commission_dir)
+    os.makedirs(commission_dir, exist_ok=True)
+    
+    try:
+        target_id = "commission_99999"
+        
+        # Execute rub with --type commission
+        result = subprocess.run([
+            "./bin/rub", target_id, "--type", "commission", 
+            "--what", "test what", "--why", "test why", "--scope", "INTEGRITY"
+        ], capture_output=True, text=True)
+        
+        assert result.returncode == 0, f"rub failed: {result.stderr}\nSTDOUT: {result.stdout}"
+        
+        # Verify the CSI Guard is emitted
+        stdout = result.stdout
+        assert "INTENT VERIFICATION" in stdout
+        assert "kb/commission_protocol_commissionee.md" in stdout
+        assert "SEMANTIC evaluation" in stdout
+        assert "pressure-test the 'WHY'" in stdout
+        
+    finally:
+        if os.path.exists(commission_bak):
+            if os.path.exists(commission_dir):
+                shutil.rmtree(commission_dir)
+            shutil.move(commission_bak, commission_dir)
