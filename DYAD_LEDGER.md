@@ -187,3 +187,23 @@
 - **2026-06-23 14:48:37** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone/blob/main/dm/dyad-cairn/2026-06-05-welcome-from-touchstone.md
 - **2026-06-23 14:48:37** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone/blob/main/dm/dyad-cairn/2026-06-06-re-cutting-the-stone.md
 - **2026-06-23 14:48:37** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone/blob/main/dm/dyad-cairn/2026-06-07-one-rub.md
+- **2026-06-23 16:12:57** | `RETRO` | Cleared backlog
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Inbox Processing and Backlog Clearance
+  
+  ## Summary
+  Inbound mail has been fully processed via `falsify.py` integration and `rub-all` execution. All unrubbed intents from dyad-bond, dyad-steward, and dyad-touchstone have been injected into the Frontier DAG under `INTEGRITY`, `SUBSTRATE`, and `FRONTIER` scopes.
+  
+  ## Continue
+  - Using the Asymmetric Guard (`commons_drift`) correctly by executing `./bin/sync-commons`.
+  - Relying on `commons/scripts/falsify.py` for inbox polling.
+  
+  ## Start
+  - Implementing the parsed commission invariants.
+  
+  ## Stop
+  - Conflating UI presentation with underlying file state mutations (use `rub-all` mechanically).
+  
+  </details>
