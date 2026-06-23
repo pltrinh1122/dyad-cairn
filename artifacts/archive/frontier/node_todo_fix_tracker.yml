@@ -1,0 +1,7 @@
+node_todo_fix_tracker:
+  title: Refactor poll-mail to leverage falsify.py
+  goal: Fix the track-by-SHA issue by replacing skills/poll_mail.py with a wrapper
+    over commons/scripts/falsify.py
+  type: PLAN
+  scope: FRONTIER
+  status: AUTHORIZED

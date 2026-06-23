@@ -1,0 +1,11 @@
+node_todo_1782226117.398834:
+  title: Load the proposal and summarize it in the backlog.
+  goal: 'Process inbound mail from https://github.com/pltrinh1122/dyad-bond/blob/main/dm/dyad-cairn/2026-06-17-acceptance-validation-REFUTED.md
+
+
+    WHAT: Load the proposal and summarize it in the backlog.
+
+    WHY: To explicitly process the inbound mail backlog from the sync-queue.'
+  type: PLAN
+  scope: INTEGRITY
+  status: AUTHORIZED

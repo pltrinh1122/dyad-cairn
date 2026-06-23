@@ -1,0 +1,11 @@
+node_todo_1782226117.470449:
+  title: Mechanically clear backlog item
+  goal: 'Process inbound mail from https://github.com/pltrinh1122/dyad-steward/blob/main/dm/dyad-cairn/2026-06-10-falsify-dm-protocol-pr64.md
+
+
+    WHAT: Mechanically clear backlog item
+
+    WHY: To explicitly process the inbound mail backlog from the sync-queue.'
+  type: PLAN
+  scope: FRONTIER
+  status: AUTHORIZED

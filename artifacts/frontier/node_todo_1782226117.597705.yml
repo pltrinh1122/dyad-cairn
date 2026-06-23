@@ -1,0 +1,11 @@
+node_todo_1782226117.597705:
+  title: Mechanically clear backlog item
+  goal: 'Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone/blob/main/dm/dyad-cairn/2026-06-07-one-rub.md
+
+
+    WHAT: Mechanically clear backlog item
+
+    WHY: To explicitly process the inbound mail backlog from the sync-queue.'
+  type: PLAN
+  scope: FRONTIER
+  status: AUTHORIZED

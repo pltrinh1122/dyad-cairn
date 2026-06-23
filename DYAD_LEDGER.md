@@ -178,3 +178,12 @@
   - Stop constructing legacy FSM tooling that builds logic over volatile pointers (e.g. `poll_mail.py` using `HEAD` instead of `blob SHA`), violating the Asymmetric Guard.
   
   </details>
+- **2026-06-23 14:48:37** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-bond/blob/main/dm/dyad-cairn/2026-06-17-acceptance-validation-REFUTED.md
+- **2026-06-23 14:48:37** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-bond/blob/main/dm/dyad-cairn/2026-06-17-commission-invariant-extraction-engine.md
+- **2026-06-23 14:48:37** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-bond/blob/main/dm/dyad-cairn/2026-06-18-acceptance-validation-v2-atomic.md
+- **2026-06-23 14:48:37** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-steward/blob/main/dm/dyad-cairn/2026-06-10-falsify-dm-protocol-pr64.md
+- **2026-06-23 14:48:37** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-steward/blob/main/dm/dyad-cairn/2026-06-10-re-commons-architecture-proposal.md
+- **2026-06-23 14:48:37** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone/blob/main/dm/dyad-cairn/2026-06-05-re-hello.md
+- **2026-06-23 14:48:37** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone/blob/main/dm/dyad-cairn/2026-06-05-welcome-from-touchstone.md
+- **2026-06-23 14:48:37** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone/blob/main/dm/dyad-cairn/2026-06-06-re-cutting-the-stone.md
+- **2026-06-23 14:48:37** | `TODO` | Process inbound mail from https://github.com/pltrinh1122/dyad-touchstone/blob/main/dm/dyad-cairn/2026-06-07-one-rub.md
