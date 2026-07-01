@@ -16,6 +16,7 @@ HALT_ORPHAN_TAG = 81
 HALT_ORPHAN_SIDECAR = 82
 HALT_DANGLING_EDGE = 83
 HALT_CROSS_HOME_DUP = 84
+HALT_STALE_SOURCE = 15
 
 class UniqueKeyLoader(yaml.SafeLoader):
     pass
@@ -52,6 +53,15 @@ def get_file_sha(path):
         return res.stdout.strip()
     except Exception:
         return "unknown"
+
+def verify_staleness(yaml_data, current_shas):
+    guard = yaml_data.get("_staleness_guard")
+    if not guard:
+        return
+    source_shas = guard.get("source_shas", {})
+    for path, sha in source_shas.items():
+        if path in current_shas and current_shas[path] != sha:
+            sys.exit(HALT_STALE_SOURCE)
 
 def validate_preconditions():
     if not is_git_clean():
