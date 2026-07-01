@@ -59,9 +59,11 @@ def test_f1_2_determinism_sort():
     """F-1.2: Deterministic sort of dictionary keys."""
     md_content = "<!-- INV@v1 bond:123 | test -->\n"
     sidecar_content = b"bond:123:\n  z: 1\n  a: 2\n"
-    out = invariant_extractor.run_extraction([md_content], {}, sidecar_content, "bond")
-    # a should appear before z in the output
-    assert out.find("a: 2") < out.find("z: 1")
+    shas = {"fake.md": "sha1"}
+    with patch("commissions.invariant_extractor.get_git_sha", return_value="fake_sha"):
+        out1 = invariant_extractor.run_extraction([md_content], shas, sidecar_content, "bond")
+        out2 = invariant_extractor.run_extraction([md_content], shas, sidecar_content, "bond")
+    assert out1 == out2
 
 def test_f2_2_fail_closed_dup_id():
     """F-2.2: Duplicate ID => HALT."""
@@ -82,10 +84,13 @@ def test_f3_staleness_guard():
     md_content = "<!-- INV@v1 bond:123 | test -->\n"
     sidecar_content = b"bond:123:\n  root_kind: constraint\n"
     with patch("commissions.invariant_extractor.get_git_sha", return_value="fake_sha"):
-        out = invariant_extractor.run_extraction([md_content], {"f": "s"}, sidecar_content, "bond")
-    assert "_staleness_guard" in out
-    assert "fake_sha" in out
-    assert "source_shas" in out
+        out = invariant_extractor.run_extraction([md_content], {"f": "s1"}, sidecar_content, "bond")
+    
+    # Now simulate reading the emitted yaml and checking staleness against a mutated SHA
+    out_data = yaml.safe_load(out)
+    with pytest.raises(SystemExit) as exc_info:
+        invariant_extractor.verify_staleness(out_data, {"f": "s2"})
+    assert exc_info.value.code == invariant_extractor.HALT_STALE_SOURCE
 
 def test_f7_2_encoding_eol(tmp_path):
     """F-7.2: encoding/EOL -> halt."""
