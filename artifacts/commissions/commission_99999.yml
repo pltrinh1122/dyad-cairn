@@ -1,0 +1,6 @@
+commission_99999:
+  status: RUBBED
+  rub_matrix:
+    what: test what
+    why: test why
+    scope: INTEGRITY
