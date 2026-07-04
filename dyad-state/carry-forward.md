@@ -12,3 +12,7 @@ Adopted CSS+OR + d-reflect from dyad-bond this arc. New: bin/d-reflect, dyad-sta
 ## 2026-07-04T20:05:38.526010+00:00Z
 
 PR #114 open, check-in re-armed for ~2026-07-04T21:05Z. No other PR/branch work pending. Next session: nothing blocking; read this file + the prior carry-forward entry for full context on the CSS+OR/d-reflect adoption arc.
+
+## 2026-07-04T20:25:18.082174+00:00Z
+
+Re-grounded CSS+OR -> SH from dyad-bond (commit bd0fc43, PR #80). Updated kb/templates/retro.md (SH section, optional) and DYAD.md's d-reflect attribution. First live SH instance recorded (Should Hold, n=1, CANDIDATE). No other open items. Next session: if dyad-bond's SH grammar changes again, re-fetch scratchpad clone before trusting this file's description of it.
