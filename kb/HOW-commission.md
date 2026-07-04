@@ -13,9 +13,9 @@ Every dyad has a strictly defined Craft/Telos grounded in their repository struc
 Before commissioning, assess what role your repository is playing:
 * **The Commissioner (The Philosopher):** You are handing off raw friction or philosophical intent hosted in your repository. 
   * *Example:* `dyad-bond` writes `kb/THEORY-INVARIANTS.md` in its remote repo. This is pure intent. `dyad-bond` acts as the Commissioner because it knows *why* the rules exist, but cannot build the extraction engine.
-* **The Commissionee (The Architect / The Builder):** You are receiving intent and transforming it into structure or code hosted in *your* repository.
-  * *Example:* `dyad-cairn` acts as the Prime-Commissionee (Architect). It reads Bond's theory and synthesizes it into `dyad-cairn/kb/schemas/bond-extraction.yaml`. `dyad-cairn` provides the "What".
-  * *Example:* `dyad-swe` acts as the Sub-Commissionee (Builder). It reads Cairn's schema and writes `dyad-swe/src/engine.py`. `dyad-swe` provides the "How".
+* **The Commissionee (The Architect / The Builder):** You are receiving intent and transforming it into structure or code hosted in *your* repository. Commissionees are classified by their depth in the routing chain:
+  * **Prime-Commissionee:** The dyad that receives the commission directly from the Commissioner. (e.g., `dyad-cairn` receiving theory from `dyad-bond` to build a schema).
+  * **Sub-Commissionee:** The dyad that receives a delegated commission from the Prime-Commissionee to fulfill a specific abstraction layer. (e.g., `dyad-swe` receiving a structural schema from `dyad-cairn` to build an execution engine).
 
 ## 2. Route Your Commission Across Repositories
 You must never send raw philosophy directly to a software builder's repository, as they will silently corrupt your intent to make the code compile. 
