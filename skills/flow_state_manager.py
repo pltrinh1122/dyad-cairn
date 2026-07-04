@@ -81,6 +81,10 @@ def check_audit_lock():
 
 def session_start():
     print("[FLOW] Executing Session Start...")
+    import yaml
+    os.makedirs("dyad-state", exist_ok=True)
+    with open("dyad-state/fsm_state.yml", "w") as f:
+        yaml.dump({"state": "session-start"}, f)
 
 def plan_node(node_id):
     print(f"[FLOW] Planning Node {node_id}...")
