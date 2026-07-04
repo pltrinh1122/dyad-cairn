@@ -34,6 +34,8 @@ Execution operates on two distinct topologies separated by Authority and Scope:
 1. **The Outer-FSM (Independent):** Manages the Synchronous Global Consensus and ontological boundary of the dyad. Governed directly by Operator/Agent dialog. Substrate State mutations (ledgers, DAG) are strictly linear (`WIP-N = 1`) to prevent split-brain multiverses.
 2. **The Inner-FSMs (Dependent):** Manages Asynchronous Local Contexts (payload execution, subagents). Their existence and constraints are bounded by the Outer-FSM, but they execute mechanically. They operate in parallel concurrency (`WIP-N > 1`) via isolated branches.
 
+**Substrate Execution is partitioned** along the same Authority/Scope line into **Substrate State** and **Substrate Form**. Substrate State (ledgers, DAG) is the linear `WIP-N = 1` mutation above. **'Substrate Form' (mutating `DYAD.md`, `GEMINI.md`, or static rules) allows parallel concurrency** (`WIP-N > 1`), since orthogonal form edits carry none of the append-only ordering hazard that State mutations do.
+
 **The Orthogonality Invariant (The Ontological Bond).**
 A true "Bake" is not a piece of code. It is an **Ontological Bond** that spans three orthogonal axes: The Generative *Why* (`kb/WHY-*` or `GEMINI.md`), the Deterministic *How* (`skills/` or `bin/`), and the Procedural *When* (`kb/HOW-*` playbooks). Philosophical intent must never be buried silently in execution code, and mechanical consistency must never rely on generative LLM memory. A change in consensus requires synchronous updates across all three planes to maintain the integrity of the bond.
 
