@@ -354,6 +354,26 @@ def process_retro(summary, css_path=None):
         
     subprocess.run(f"python3 skills/ledger_manager.py retro \"{summary}\" \"{css_path}\"", shell=True, capture_output=False, text=False)
 
+def process_d_start():
+    print("[FLOW] Executing Start-Session Discipline (d-start)...")
+    import os
+    import yaml
+    
+    cf_path = "dyad-state/carry-forward.md"
+    if os.path.exists(cf_path):
+        print("==========================================================================")
+        print("📦 CARRY-FORWARD STATE DETECTED")
+        with open(cf_path, "r") as f:
+            print(f.read().strip())
+        print("==========================================================================")
+    else:
+        print("[FLOW] No carry-forward state detected.")
+
+    print("[FLOW] Pushing FSM into session-start state...")
+    os.makedirs("dyad-state", exist_ok=True)
+    with open("dyad-state/fsm_state.yml", "w") as f:
+        yaml.dump({"state": "session-start"}, f)
+
 def process_d_reflect(summary, css_path, carry_forward_note):
     """`d-reflect` — adopted from dyad-bond's CSS+OR discipline (github.com/pltrinh1122/dyad-bond,
     kb/reflection-discipline.md). One token doing two jobs, same reasoning bond collapsed
@@ -550,6 +570,10 @@ if __name__ == "__main__":
         os.makedirs("dyad-state", exist_ok=True)
         with open("dyad-state/fsm_state.yml", "w") as f:
             yaml.dump({"state": "session-end"}, f)
+        sys.exit(0)
+
+    if action == "d-start":
+        process_d_start()
         sys.exit(0)
 
     if action == "d-reflect":
