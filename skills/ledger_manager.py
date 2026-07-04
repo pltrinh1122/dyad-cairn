@@ -12,6 +12,9 @@ def get_jsonl_file(tool=None):
 def get_md_file(tool=None):
     return f"{tool.upper()}_LEDGER.md" if tool else "DYAD_LEDGER.md"
 
+def get_carry_forward_file():
+    return os.path.join(get_state_dir(), "carry-forward.md")
+
 def append_ledger(action: str, message: str, tool_name: str = None):
     state_dir = get_state_dir(tool_name)
     jsonl_file = get_jsonl_file(tool_name)
@@ -57,6 +60,32 @@ def append_ledger(action: str, message: str, tool_name: str = None):
         pass
         
     print(f"[{action.upper()}] Successfully locked to ledger: {message}")
+
+def append_carry_forward(note: str):
+    """Single-home resume ledger, adopted from dyad-bond's carry-forward discipline
+    (github.com/pltrinh1122/dyad-bond, dialectic/carry-forward.md). Read at SESSION_START;
+    written by ./bin/d-reflect so the next session's resume has live in-flight state to read,
+    since the Operator restarts fresh (SESSION_START) rather than resuming this conversation."""
+    path = get_carry_forward_file()
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+
+    if not os.path.exists(path):
+        header = (
+            "# dyad-cairn — Carry-Forward Ledger\n\n"
+            "> Live in-flight state. Read this right after the anchor (`DYAD.md`, booted via the\n"
+            "> `CLAUDE.md`/`GEMINI.md` shim) at SESSION_START to resume. Single home for open items;\n"
+            "> close them here as they clear. Adopted from dyad-bond's carry-forward discipline\n"
+            "> (`github.com/pltrinh1122/dyad-bond`), written by `./bin/d-reflect`.\n"
+        )
+        with open(path, "w") as f:
+            f.write(header)
+
+    ts = datetime.datetime.now(datetime.timezone.utc).isoformat() + "Z"
+    with open(path, "a") as f:
+        f.write(f"\n## {ts}\n\n{note}\n")
+
+    print(f"[CARRY-FORWARD] Resume note appended to {path}.")
+
 
 def process_retro(summary: str, file_path: str):
     os.makedirs("dyad-state", exist_ok=True)
@@ -110,5 +139,7 @@ if __name__ == "__main__":
     
     if args.action.lower() == "retro":
         process_retro(args.message, args.file_path)
+    elif args.action.lower() == "carry-forward":
+        append_carry_forward(args.message)
     else:
         append_ledger(args.action, args.message, tool_name=args.tool_name)

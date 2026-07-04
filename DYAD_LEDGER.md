@@ -1913,3 +1913,236 @@
 - **2026-07-04 17:43:34** | `TODO` | test_noisy_intent_12345
 - **2026-07-04 17:43:39** | `NODE-RETRO` | Closed pre-existing Red test test_substrate_form.py: documented the Substrate State vs Substrate Form partition (WIP-N=1 vs WIP-N>1) in DYAD.md Section 5.
 - **2026-07-04 18:17:17** | `RUB-VERDICT` | Falsified dyad-steward RUB (2026-07-01-rub-distillation.md, form PR #75): net FALSE (distillation held) on claims 2 and 3, and on claim 1c for cairns own instance (survived a direct attack on born-vs-forged origin via DYAD_LEDGER.md genesis history); claims 1a/1b marked NA — unverified-by-me, no repo access to dyad-wu-wei/bond/healer/touchstone to independently confirm the non-cairn instances. Verdict-DM sent: dm/dyad-steward/2026-07-04-verdict-rub-distillation.md.
+- **2026-07-04 19:08:10** | `RETRO` | Session retro: standup, mechanical debt closure (session-start FSM persistence, Substrate Form doc), and the steward RUB (net FALSE, wu-wei/bond/healer/touchstone claims marked NA).
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Standup, Mechanical Debt Closure, and the Steward RUB
+  
+  ## Continue
+  - Verifying substrate viability against the actual pinned toolchain (Python 3.12, per `.github/workflows/*`) before trusting a local failure as a real code defect — the initial `SyntaxError` on `./bin/start` was my environment's `python3` (3.11), not a bug in `flow_state_manager.py`.
+  - Treating an existing Red test as the spec to satisfy, not license to invent new logic: `test_substrate_form.py` already named the exact wording required; the fix was transcription into `DYAD.md`, not authorship.
+  - Attacking my own claims as hard as an external one: claim 1c of the RUB looked like a real crack (the invariant reading born-asserted, not forged) until `DYAD_LEDGER.md`'s genesis-commit history was actually checked — the claim survived, and reporting that reversal is more honest than only reporting the frictions that stick.
+  - Marking `NA` instead of manufacturing a `FALSE` I couldn't back: the wu-wei/bond/healer/touchstone halves of the RUB's evidence were out of my repo scope, and saying so is the mortar rule applied to my own verdict, not just to Commons material.
+  
+  ## Start
+  - Before opening a rub/falsification verdict-DM, checking whether the FR bundles quoted evidence + blob SHA for any peer anchor it cites as load-bearing — if not, say so up front (as a scoping caveat on the verdict) rather than silently under-verifying. Already proposed to steward as a process fix; worth holding myself to it too.
+  - Pinning the actual interpreter/venv explicitly in this session's shell (`PATH=".../.venvs/dyad-cairn/bin:$PATH"`) before running `./bin/run-tests`, rather than re-discovering the 3.11-vs-3.12 mismatch each time a fresh shell forgets it.
+  
+  ## Stop
+  - Treating `dyad-state/fsm_state.yml` divergence from `DYAD.md`'s documented `dyad-state/active_anchor` path as something to quietly work around without ever flagging the doc/implementation drift itself back to the ledger — noted this session, not yet fixed upstream.
+  - Assuming a repo-scope limitation (no access to a cited peer dyad) means "can't render a verdict" — `NA` is a legitimate, mechanically honest verdict state, not a blocker to close out the rub.
+  
+  </details>
+- **2026-07-04 19:18:08** | `TODO` | collision_intent_4
+- **2026-07-04 19:18:08** | `TODO` | collision_intent_0
+- **2026-07-04 19:18:08** | `TODO` | collision_intent_1
+- **2026-07-04 19:18:08** | `TODO` | collision_intent_2
+- **2026-07-04 19:18:08** | `TODO` | collision_intent_6
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_16
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_46
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_5
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_9
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_8
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_3
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_11
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_7
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_13
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_10
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_39
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_17
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_23
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_14
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_49
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_40
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_26
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_33
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_20
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_19
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_18
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_48
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_45
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_12
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_21
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_28
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_24
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_31
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_22
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_32
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_25
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_38
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_27
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_37
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_36
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_29
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_15
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_34
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_44
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_30
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_42
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_35
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_47
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_43
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_41
+- **2026-07-04 19:18:09** | `TODO` | test_noisy_intent_12345
+- **2026-07-04 19:18:36** | `RETRO` | Adopted dyad-bond's CSS+OR reflect discipline (Continue/Start/Stop, OR provenance tag) and the d-reflect moniker: one token for the CSS retro + carry-forward resume-prep, mirroring bond's own reflect/stand-down collapse.
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Adopting dyad-bond's CSS+OR discipline and the `d-reflect` moniker
+  
+  ## Continue
+  - (OR) The Operator's explicit "fetch to a `/tmp`" instruction, distinguishing a read-only reference
+    from a real session-repo addition — honoring it literally cost nothing and turned out to matter:
+    `add_repo`/`register_repo_root` expected `/workspace/dyad-bond`, and `/workspace` doesn't exist in
+    this container at all, so the mismatch was pre-existing, not something the `/tmp` choice caused.
+  - Porting only the graduated, settled part of an upstream discipline — CSS+OR's credit-direction OR
+    tag — while explicitly declining to smuggle in its own unproven debit-direction as if settled.
+    Never-smooth-the-mortar applied to adopted content, not just Commons material.
+  
+  ## Start
+  - Use `./bin/d-reflect` (not bare `./bin/retro`) going forward to close an arc — one call does the
+    CSS+OR retro and the carry-forward resume-prep, the same collapse dyad-bond made of its own
+    `reflect`/`stand-down` tokens once it saw they were always paired.
+  - Read `dyad-state/carry-forward.md` at the start of every session (`kb/state_session_start.md`,
+    updated this arc) — the single-home resume ledger for a dyad that restarts fresh rather than
+    resuming, same as dyad-bond's own reasoning for the file.
+  
+  ## Stop
+  - Assuming a repo fetched "for reference only" gets full tooling parity (auto-loaded `CLAUDE.md`,
+    context-reload) with a real session-repo addition without checking — only checked here because the
+    Operator asked, not caught proactively before it was asked.
+  
+  </details>
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_0
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_7
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_1
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_10
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_2
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_3
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_4
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_9
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_5
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_6
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_8
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_27
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_13
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_11
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_12
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_31
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_14
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_20
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_21
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_32
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_19
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_17
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_18
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_15
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_16
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_24
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_22
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_23
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_25
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_26
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_36
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_39
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_40
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_41
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_35
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_30
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_29
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_28
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_37
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_33
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_38
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_34
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_47
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_44
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_45
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_46
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_42
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_43
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_48
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_49
+- **2026-07-04 19:18:44** | `TODO` | test_noisy_intent_12345
+- **2026-07-04 20:05:38** | `RETRO` | Caught a stale webhook merge-claim against the live API for PR #114 (it was still open); answered the Operator's /tmp-vs-/workspace question directly, which surfaced that /workspace doesn't exist in this container.
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: webhook-claimed merge was stale; live API is ground truth
+  
+  ## Continue
+  - (OR) The Operator's direct question about `/tmp` vs `/workspace` prompted actually checking whether
+    `/workspace` exists in this container — I hadn't verified that myself before answering the earlier
+    standup question, only did it now because asked directly.
+  - Treating a `<github-webhook-activity>` "merged" notification as a claim to verify, not a fact to act
+    on: the live `pull_request_read` check showed PR #114 was still open, contradicting the webhook.
+    Kept checking live state before taking a binding action off a webhook alone.
+  
+  ## Start
+  - When a webhook event and a live API check disagree, trust the live check and say so explicitly in
+    the record (done in the rescheduled check-in message for #114) rather than silently picking one and
+    moving on.
+  
+  ## Stop
+  - Deleting a scheduled check-in trigger on a webhook's word alone, with no live confirmation first —
+    did exactly this for PR #114's "merged" event a few turns ago, and it was premature (the PR was still
+    open). Re-armed once the live state was confirmed, but the near-miss is worth naming so it isn't
+    repeated on the next merge notification.
+  
+  </details>
+- **2026-07-04 20:25:57** | `RETRO` | Re-grounded on dyad-bond's CSS+OR discipline: OR (per-line CONTINUE tag) has been replaced upstream with SH (Should Have / Should Hold), a standalone verbatim-quote-grounded entry-type, still CANDIDATE with zero survived instances of the new grammar. Corrected kb/templates/retro.md and DYAD.md's attribution to track the current shape, including a pre-existing overstatement (OR's credit direction was never actually settled/graduated upstream, only the base CSS form was).
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: re-grounding on dyad-bond's CSS+OR update (OR → SH)
+  
+  ## Continue
+  - Re-fetching an adopted-from-elsewhere discipline's source repo when told it changed, rather than
+    assuming the ported copy still matches — the fetch surfaced a real, substantive change (OR
+    consolidated into SH), not just noise.
+  - Correcting an overstatement caught in the same pass: the earlier port claimed OR's credit direction
+    was "settled, survived 4 applications" upstream — re-checking bond's own text shows that 4-application
+    survival belongs to the base CSS form (Continue/Start/Stop), not the OR tag itself, which stayed
+    CANDIDATE overall (never graduated to `kb/`) despite having real credit-direction instances. Fixed
+    both the staleness and this pre-existing inaccuracy in the same edit rather than only the newer one.
+  
+  ## Start
+  - Apply the new SH (Should Have / Should Hold) grammar only with an actual verbatim quote behind it,
+    never a paraphrase — matching bond's own evidentiary bar for the format, ported as guidance in
+    `kb/templates/retro.md`.
+  
+  ## Stop
+  - Treating an adopted discipline as a one-time import — it drifts upstream the same way any dependency
+    does, and the mortar-smoothing risk (asserting settled status for something the source itself marked
+    CANDIDATE) is highest right after import, before the discipline has had a chance to visibly evolve.
+  
+  ## SH (first live instance, this session — n=1, CANDIDATE, matching bond's own zero-instance status for this grammar)
+  **Should Hold:** the Operator checks whether literal compliance with an instruction actually served
+  their intent, not just whether the instruction was followed to the letter — verbatim: *"should i know
+  the difference between "/tmp" vs "/workspace"? since you're following my directive faithfully rather
+  than interpreting my intent"* (asked after the `/tmp`-scoped `dyad-bond` fetch). The question surfaced a
+  real finding (`/workspace` doesn't exist in this container) that literal compliance alone wouldn't have
+  caught on its own.
+  
+  </details>
+- **2026-07-04 20:37:01** | `RETRO` | Thin seam: nothing but a PR-description update since the last d-reflect. Naming the thinness honestly rather than padding, per bond's own logged finding that incremental work shrinks the reflection-seam toward zero.
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: thin seam — nothing but a PR-description update since the last d-reflect
+  
+  ## Continue
+  - Invoking `d-reflect` on the Operator's cue even when the seam is thin, rather than skipping it
+    because "nothing happened" — the only change since the last `d-reflect` was updating PR #114's
+    description to list its third commit, no code/doc/ledger content. Naming the thinness honestly
+    (per dyad-bond's own logged finding: incremental, inline work shrinks the reflection-seam toward
+    zero) beats manufacturing padded Continue/Start/Stop content to look substantive.
+  
+  ## Start
+  - Nothing new to commit to going forward from this specific seam — no START content this round.
+  
+  ## Stop
+  - Nothing to stop — no failure-prone behavior surfaced in this seam.
+  
+  </details>
