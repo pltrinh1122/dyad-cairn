@@ -319,28 +319,16 @@ def create_reflection_pr(node_id, is_green):
         else:
             break
     
-    if is_green:
-        if gap_result.returncode != 0:
-            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
-            print("A structural CSI Guard was tripped: The remote GAP failed during the Green Phase!")
-            print("Telemetry Exhaust:")
-            print(gap_result.stdout)
-            print(gap_result.stderr)
-            print("This indicates a Survivor Bias split-brain (e.g. environmental drift).")
-            print("[STEERING VECTOR] The Intent Gate requires the remote GAP environment to actively pass. The Agent must satisfy this invariant before advancing.")
-            sys.exit(1)
-        print("[FLOW] Remote GAP successfully passed. Split-brain falsified.")
-    else:
-        if gap_result.returncode == 0:
-            print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
-            print("A structural CSI Guard was tripped: The remote GAP PASSED during the Red Phase!")
-            print("Telemetry Exhaust:")
-            print(gap_result.stdout)
-            print(gap_result.stderr)
-            print("Tests must fail in the remote environment to validate the Intent Gate.")
-            print("[STEERING VECTOR] The Intent Gate requires the remote GAP environment to actively fail. The Agent must satisfy this invariant before advancing.")
-            sys.exit(1)
-        print("[FLOW] Remote GAP successfully failed as expected. Split-brain falsified.")
+    if gap_result.returncode != 0:
+        print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
+        print(f"A structural CSI Guard was tripped: The remote GAP failed during the {'Green' if is_green else 'Red'} Phase!")
+        print("Telemetry Exhaust:")
+        print(gap_result.stdout)
+        print(gap_result.stderr)
+        print("This indicates a Survivor Bias split-brain (e.g. environmental drift).")
+        print("[STEERING VECTOR] The Intent Gate requires the remote GAP environment to actively pass. The Agent must satisfy this invariant before advancing.")
+        sys.exit(1)
+    print("[FLOW] Remote GAP successfully passed. Split-brain falsified.")
     
     # 3. Transition DAG Status and Merge (if Green)
     if is_green:
