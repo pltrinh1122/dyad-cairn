@@ -55,8 +55,14 @@ def get_file_sha(path):
         return "unknown"
 
 def verify_staleness(yaml_data, current_shas):
-    # Neutered for RED phase
-    pass
+    guard = yaml_data.get("_staleness_guard")
+    if not guard:
+        return
+    source_shas = guard.get("source_shas", {})
+    for path, sha in source_shas.items():
+        if path in current_shas and current_shas[path] != sha:
+            import sys
+            sys.exit(15)
 
 def validate_preconditions():
     if not is_git_clean():
@@ -164,12 +170,11 @@ def run_extraction(md_contents, shas, sidecar_content, dyad_prefix):
         "source_shas": shas
     }
     
-    for tag_id in list(md_ids):
+    for tag_id in sorted(md_ids):
         item = dict(sidecar[tag_id])
         item["one_liner"] = tags[tag_id]
-        import random
-        item["_noise"] = random.random()
-        output[tag_id] = item
+        sorted_item = {k: item[k] for k in sorted(item.keys())}
+        output[tag_id] = sorted_item
         
     return yaml.dump(output, default_flow_style=False, sort_keys=False)
 
