@@ -33,3 +33,9 @@ When the deployed system fails, the triage path strictly follows the repository 
 * **Philosopher (`dyad-bond`):** Accountable for the Truth. If the engine perfectly executes Cairn's schema, but the result is philosophically wrong, Bond must update its theory in its repo. Bond reports *all* issues to Cairn.
 * **Architect (`dyad-cairn`):** Accountable for the Map. If Cairn's schema fails to capture Bond's intent, Cairn owns the Semantic Defect and must update the `dyad-cairn` repo. Cairn acts as the triage shield, filtering philosophical bugs from mechanical bugs.
 * **Builder (`dyad-swe`):** Accountable for the Vehicle. If the engine physically crashes or drops data, `dyad-swe` owns the Mechanical Defect and must patch the `dyad-swe` repo. They never debate philosophy.
+
+## 4. The Glue Code Boundary (Preserving Orthogonality)
+To protect the Orthogonality Invariant, the "glue code" that connects the Schema to the Engine must be strictly policed:
+* **The Builder Role** writes the robust, agnostic Engine/Primitives. They publish a generic interface. They must not write bespoke glue code for specific schemas, or they become dependent on the Architect's semantic shifts.
+* **The Architect Role** writes the declarative Schema (The "What") AND the thin Glue Code (The structural wiring) to invoke the Builder's engine (e.g., a simple bash script like `./bin/engine --schema my_rules.yaml`). 
+* **The Complexity Threshold:** If the glue code requires state manipulation, error catching, or complex logical parsing, it is no longer "glue"—it has become an engine. The Architect must halt immediately and commission the Builder to write a new primitive, preserving the physical orthogonality between Schema and Code.
