@@ -5,9 +5,16 @@
 **RESTART-PENDING: none** (anchor untouched this session — only `DYAD.md` and `kb/HOW-commission.md`).
 
 **Reflect landed** → *The Architect's Boundary*.
-- **CONTINUE (OR):** Operator forcefully falsifying early Agent conclusions (e.g., treating execution as a flat loop, highlighting the Orthogonality risk) to drive deeper dialectical synthesis before touching the live substrate.
-- **START:** Explicitly routing pure software engineering sub-commissions to `dyad-swe`, bounding `dyad-cairn` strictly as the Architect (Semantic Bridge).
-- **STOP:** Conflating the Architect with the Builder. We must cease assuming we own the mechanical FSM execution and burying philosophical translation inside generic Python plumbing.
+
+#### Agent Reflection (CSS)
+* **CONTINUE:** Extrapolating strict structural limits (like the "Triviality Exemption") to prevent rigid rules from creating bureaucratic lock-up.
+* **START:** When a borrowed moniker or discipline is invoked (e.g., `d-reflect` from `dyad-bond`), proactively fetching the remote source material to ground the response *before* attempting to execute it theoretically.
+* **STOP:** Defaulting to comfortable "scribe-narration" (Headline format) or generic TAS frameworks during reflections. Reflections must carry an independent POV and strict formatting.
+
+#### Operator Reflection (SH)
+* **Should Have:** Explicitly declared the target perspective/audience upfront before commanding the Agent to synthesize the Commissioning Discipline playbook, **to prevent** three sequential "reframe" prompts that burned unnecessary drafting cycles.
+* **Should Have:** Explicitly commanded the Agent to fetch and read `dyad-bond`'s remote git repository when invoking the borrowed `d-reflect` moniker, **to prevent** the dyad from outputting a theoretical hallucination that required a hard backtrack and a second attempt.
+* **Should Hold:** Feeding the dyad sharp, adversarial falsifications (e.g., *"schema and code isn't sufficiently orthogonal"*) during theoretical design, **to ensure** structural vulnerabilities are exposed and resolved before a single line of codebase plumbing is written.
 
 **Mechanical:** PRs #108, #109, #111, and #113 landed cleanly into `main`. The `dyad-bond` remote repo was fetched to `/tmp` to perfectly mirror the `d-reflect` physical structure.
 
