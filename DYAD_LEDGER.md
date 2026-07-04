@@ -1906,3 +1906,134 @@
   - Assuming a repo-scope limitation (no access to a cited peer dyad) means "can't render a verdict" — `NA` is a legitimate, mechanically honest verdict state, not a blocker to close out the rub.
   
   </details>
+- **2026-07-04 19:18:08** | `TODO` | collision_intent_4
+- **2026-07-04 19:18:08** | `TODO` | collision_intent_0
+- **2026-07-04 19:18:08** | `TODO` | collision_intent_1
+- **2026-07-04 19:18:08** | `TODO` | collision_intent_2
+- **2026-07-04 19:18:08** | `TODO` | collision_intent_6
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_16
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_46
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_5
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_9
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_8
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_3
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_11
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_7
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_13
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_10
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_39
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_17
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_23
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_14
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_49
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_40
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_26
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_33
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_20
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_19
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_18
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_48
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_45
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_12
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_21
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_28
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_24
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_31
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_22
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_32
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_25
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_38
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_27
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_37
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_36
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_29
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_15
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_34
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_44
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_30
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_42
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_35
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_47
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_43
+- **2026-07-04 19:18:09** | `TODO` | collision_intent_41
+- **2026-07-04 19:18:09** | `TODO` | test_noisy_intent_12345
+- **2026-07-04 19:18:36** | `RETRO` | Adopted dyad-bond's CSS+OR reflect discipline (Continue/Start/Stop, OR provenance tag) and the d-reflect moniker: one token for the CSS retro + carry-forward resume-prep, mirroring bond's own reflect/stand-down collapse.
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Adopting dyad-bond's CSS+OR discipline and the `d-reflect` moniker
+  
+  ## Continue
+  - (OR) The Operator's explicit "fetch to a `/tmp`" instruction, distinguishing a read-only reference
+    from a real session-repo addition — honoring it literally cost nothing and turned out to matter:
+    `add_repo`/`register_repo_root` expected `/workspace/dyad-bond`, and `/workspace` doesn't exist in
+    this container at all, so the mismatch was pre-existing, not something the `/tmp` choice caused.
+  - Porting only the graduated, settled part of an upstream discipline — CSS+OR's credit-direction OR
+    tag — while explicitly declining to smuggle in its own unproven debit-direction as if settled.
+    Never-smooth-the-mortar applied to adopted content, not just Commons material.
+  
+  ## Start
+  - Use `./bin/d-reflect` (not bare `./bin/retro`) going forward to close an arc — one call does the
+    CSS+OR retro and the carry-forward resume-prep, the same collapse dyad-bond made of its own
+    `reflect`/`stand-down` tokens once it saw they were always paired.
+  - Read `dyad-state/carry-forward.md` at the start of every session (`kb/state_session_start.md`,
+    updated this arc) — the single-home resume ledger for a dyad that restarts fresh rather than
+    resuming, same as dyad-bond's own reasoning for the file.
+  
+  ## Stop
+  - Assuming a repo fetched "for reference only" gets full tooling parity (auto-loaded `CLAUDE.md`,
+    context-reload) with a real session-repo addition without checking — only checked here because the
+    Operator asked, not caught proactively before it was asked.
+  
+  </details>
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_0
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_7
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_1
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_10
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_2
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_3
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_4
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_9
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_5
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_6
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_8
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_27
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_13
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_11
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_12
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_31
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_14
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_20
+- **2026-07-04 19:18:43** | `TODO` | collision_intent_21
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_32
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_19
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_17
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_18
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_15
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_16
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_24
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_22
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_23
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_25
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_26
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_36
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_39
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_40
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_41
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_35
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_30
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_29
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_28
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_37
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_33
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_38
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_34
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_47
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_44
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_45
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_46
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_42
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_43
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_48
+- **2026-07-04 19:18:44** | `TODO` | collision_intent_49
+- **2026-07-04 19:18:44** | `TODO` | test_noisy_intent_12345

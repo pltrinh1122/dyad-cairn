@@ -16,6 +16,9 @@ This document codifies the operating lifecycle rules for the `SESSION_START` tra
 ## 4. Mechanics
 * Assert the absence of physical locks.
 * Load the universal instruction layer (`commons/AGENT.md` and `DYAD.md`).
+* Read `dyad-state/carry-forward.md` right after the anchor, if present, for live in-flight state
+  from the prior session (adopted from dyad-bond's carry-forward discipline; written by
+  `./bin/d-reflect`).
 
 
 ## Invariants

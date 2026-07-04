@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]; then
+    echo "Usage: ./bin/d-reflect <summary> <path/to/retro.md> <carry-forward note>"
+    echo "Adopted from dyad-bond's CSS+OR discipline (github.com/pltrinh1122/dyad-bond):"
+    echo "fires the CSS+OR retro (./bin/retro) AND prepares dyad-state/carry-forward.md"
+    echo "for the next session's resume, in one token."
+    exit 1
+fi
+
+python3 skills/flow_state_manager.py d-reflect "$1" "$2" "$3"

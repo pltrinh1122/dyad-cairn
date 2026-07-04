@@ -366,6 +366,15 @@ def process_retro(summary, css_path=None):
         
     subprocess.run(f"python3 skills/ledger_manager.py retro \"{summary}\" \"{css_path}\"", shell=True, capture_output=False, text=False)
 
+def process_d_reflect(summary, css_path, carry_forward_note):
+    """`d-reflect` — adopted from dyad-bond's CSS+OR discipline (github.com/pltrinh1122/dyad-bond,
+    kb/reflection-discipline.md). One token doing two jobs, same reasoning bond collapsed
+    `reflect`/`stand-down` into: every CSS retro here was already paired with a resume-prep note,
+    so it's one job, not two. Fires the existing CSS retro flow, then updates
+    dyad-state/carry-forward.md so the next SESSION_START has live in-flight state to read."""
+    process_retro(summary, css_path)
+    subprocess.run(f"python3 skills/ledger_manager.py carry-forward \"{carry_forward_note}\"", shell=True, capture_output=False, text=False)
+
 def complete_node(node_id, retro_msg):
     print(f"[FLOW] Executing CSI Guard (Test Suite) for Node {node_id} completion...")
     
@@ -555,10 +564,17 @@ if __name__ == "__main__":
             yaml.dump({"state": "session-end"}, f)
         sys.exit(0)
 
+    if action == "d-reflect":
+        if len(sys.argv) < 5:
+            print("Usage: python3 skills/flow_state_manager.py d-reflect <summary> <path/to/retro.md> <carry-forward-note>")
+            sys.exit(1)
+        process_d_reflect(sys.argv[2], sys.argv[3], sys.argv[4])
+        sys.exit(0)
+
     if len(sys.argv) < 3:
         print("Usage: python3 skills/flow_state_manager.py <action> <node_id> [args]")
         sys.exit(1)
-    
+
     if action != "retro":
         check_retro_lock()
     check_sovereignty_trigger()
