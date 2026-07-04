@@ -55,14 +55,15 @@ def test_a1_dirty_tree():
             invariant_extractor.validate_preconditions()
         assert exc_info.value.code == invariant_extractor.HALT_DIRTY_TREE
 
-def test_f1_2_determinism_sort():
-    """F-1.2: Deterministic sort of dictionary keys."""
+def test_f1_2_sha_determinism():
+    """F-1.2: Two runs over identical source shas differ >=1 byte => REFUTED."""
     md_content = "<!-- INV@v1 bond:123 | test -->\n"
     sidecar_content = b"bond:123:\n  z: 1\n  a: 2\n"
-    shas = {"fake.md": "sha1"}
+    shas1 = {"fake.md": "sha1"}
+    shas2 = {"fake.md": "sha1"} # Exact same content but a different dictionary object
     with patch("commissions.invariant_extractor.get_git_sha", return_value="fake_sha"):
-        out1 = invariant_extractor.run_extraction([md_content], shas, sidecar_content, "bond")
-        out2 = invariant_extractor.run_extraction([md_content], shas, sidecar_content, "bond")
+        out1 = invariant_extractor.run_extraction([md_content], shas1, sidecar_content, "bond")
+        out2 = invariant_extractor.run_extraction([md_content], shas2, sidecar_content, "bond")
     assert out1 == out2
 
 def test_f2_2_fail_closed_dup_id():
@@ -80,13 +81,12 @@ def test_f2_3_fail_closed_missing_source():
     assert exc_info.value.code == invariant_extractor.HALT_MISSING_SOURCE
 
 def test_f3_staleness_guard():
-    """F-3: Staleness guard exists in output."""
+    """F-3: Staleness guard arms on mutated sha."""
     md_content = "<!-- INV@v1 bond:123 | test -->\n"
     sidecar_content = b"bond:123:\n  root_kind: constraint\n"
     with patch("commissions.invariant_extractor.get_git_sha", return_value="fake_sha"):
         out = invariant_extractor.run_extraction([md_content], {"f": "s1"}, sidecar_content, "bond")
     
-    # Now simulate reading the emitted yaml and checking staleness against a mutated SHA
     out_data = yaml.safe_load(out)
     with pytest.raises(SystemExit) as exc_info:
         invariant_extractor.verify_staleness(out_data, {"f": "s2"})

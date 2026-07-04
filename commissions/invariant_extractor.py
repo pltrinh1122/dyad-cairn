@@ -61,7 +61,8 @@ def verify_staleness(yaml_data, current_shas):
     source_shas = guard.get("source_shas", {})
     for path, sha in source_shas.items():
         if path in current_shas and current_shas[path] != sha:
-            sys.exit(HALT_STALE_SOURCE)
+            import sys
+            sys.exit(15)
 
 def validate_preconditions():
     if not is_git_clean():
