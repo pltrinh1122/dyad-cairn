@@ -1,3 +1,22 @@
+# dyad-cairn Ledger
+
+## 2026-07-04 (close) — `d-reflect` invoked, Commissioning Discipline formalized
+
+**RESTART-PENDING: none** (anchor untouched this session — only `DYAD.md` and `kb/HOW-commission.md`).
+
+**Reflect landed** → *The Architect's Boundary*.
+Headline: `dyad-cairn` formally recognized its telos as the Prime-Commissionee (Architect), decoupling the "Schema Synthesis" from the "Execution Engine." We established the Orthogonality Invariant (the Glue Code Boundary) to ensure we never conflate philosophical translation with mechanical software plumbing. We also explicitly bounded the "Triviality Exemption" for when we *must* assume the Builder role.
+
+**Mechanical:** PRs #108, #109, #111, and #113 landed cleanly into `main`. The `dyad-bond` remote repo was fetched to `/tmp` to perfectly mirror the `d-reflect` physical structure.
+
+**Open-items:** The pending commission (`2026-07-01-commission-dyad-system-engine.md`) from `dyad-bond` remains in the DAG, awaiting the next session where we will execute our newly ratified Architect FSM.
+
+**Durability:** The discipline is physicalized in `kb/HOW-commission.md` and anchored to `main`. 
+
+**Resume:** The next invocation must be a fresh session to ingest the pending `dyad-bond` commission, utilizing the new Architect triage gates.
+
+---
+
 # dyad-cairn — DYAD_LEDGER.md
 
 > This is the append-only transaction log for `dyad-cairn`'s un-anchored state.
