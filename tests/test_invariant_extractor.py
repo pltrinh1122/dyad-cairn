@@ -25,25 +25,25 @@ spec = importlib.util.spec_from_file_location("invariant_extractor", SCRIPT_PATH
 extractor = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(extractor)
 
-def test_fn_determinism(tmp_path):
+def test_f1_2_sha_determinism(tmp_path):
     md = tmp_path / "source.md"
     md.write_text("<!-- INV@v1 bond:123 | hello -->\n", encoding="utf-8")
     sidecar = tmp_path / "sidecar.yaml"
     sidecar.write_text("bond:123: { status: ratified }\n", encoding="utf-8")
     
-    # Mock git so it passes dirty tree check when run via subprocess
-    # Or just test the function directly
-    contents, shas = extractor.read_sources([str(md)])
-    shas[str(sidecar)] = "fake"
+    contents, shas1 = extractor.read_sources([str(md)])
+    shas2 = dict(shas1)
+    shas1[str(sidecar)] = "fake"
+    shas2[str(sidecar)] = "fake"
     
     with open(sidecar, "rb") as f:
         sidecar_content = f.read()
         
-    out1 = extractor.run_extraction(contents, shas, sidecar_content, "bond")
-    out2 = extractor.run_extraction(contents, shas, sidecar_content, "bond")
+    out1 = extractor.run_extraction(contents, shas1, sidecar_content, "bond")
+    out2 = extractor.run_extraction(contents, shas2, sidecar_content, "bond")
     assert out1 == out2
-    
-def test_sha_determinism(tmp_path):
+
+def test_f3_staleness_guard(tmp_path):
     md = tmp_path / "source.md"
     md.write_text("<!-- INV@v1 bond:123 | hello -->\n", encoding="utf-8")
     sidecar = tmp_path / "sidecar.yaml"
@@ -57,8 +57,15 @@ def test_sha_determinism(tmp_path):
     
     out = extractor.run_extraction(contents, shas, sidecar_content, "bond")
     parsed = yaml.safe_load(out)
-    assert "_staleness_guard" in parsed
-    assert "source_shas" in parsed["_staleness_guard"]
+    
+    mutated_shas = dict(shas)
+    mutated_shas[str(md)] = "changed_sha"
+    
+    import pytest
+    with pytest.raises(SystemExit) as e:
+        extractor.verify_staleness(parsed, mutated_shas)
+    
+    assert e.value.code == extractor.HALT_STALE_SOURCE
 
 def test_unclosed_tag(tmp_path):
     md = tmp_path / "source.md"
