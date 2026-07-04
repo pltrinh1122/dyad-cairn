@@ -23,5 +23,36 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Testing Harness
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
+          set +e
           PYTHONPATH=. python3 skills/testing_harness.py
+          EXIT_CODE=$?
+          set -e
+          
+          if [[ "$PR_TITLE" == "[RED Node]"* ]]; then
+            if [ $EXIT_CODE -eq 0 ]; then
+              echo "Error: Expected tests to fail for RED phase, but they passed."
+              exit 1
+            else
+              echo "Success: Tests failed as expected for RED phase."
+              exit 0
+            fi
+          elif [[ "$PR_TITLE" == "[GREEN Node]"* ]]; then
+            if [ $EXIT_CODE -ne 0 ]; then
+              echo "Error: Expected tests to pass for GREEN phase, but they failed."
+              exit 1
+            else
+              echo "Success: Tests passed as expected for GREEN phase."
+              exit 0
+            fi
+          else
+            if [ $EXIT_CODE -ne 0 ]; then
+              echo "Error: Tests failed."
+              exit 1
+            else
+              echo "Success: Tests passed."
+              exit 0
+            fi
+          fi
