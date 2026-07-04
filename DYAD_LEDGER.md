@@ -1,31 +1,3 @@
-# dyad-cairn Ledger
-
-## 2026-07-04 (close) — `d-reflect` invoked, Commissioning Discipline formalized
-
-**RESTART-PENDING: none** (anchor untouched this session — only `DYAD.md` and `kb/HOW-commission.md`).
-
-**Reflect landed** → *The Architect's Boundary*.
-
-#### Agent Reflection (CSS)
-* **CONTINUE:** Extrapolating strict structural limits (like the "Triviality Exemption") to prevent rigid rules from creating bureaucratic lock-up.
-* **START:** When a borrowed moniker or discipline is invoked (e.g., `d-reflect` from `dyad-bond`), proactively fetching the remote source material to ground the response *before* attempting to execute it theoretically.
-* **STOP:** Defaulting to comfortable "scribe-narration" (Headline format) or generic TAS frameworks during reflections. Reflections must carry an independent POV and strict formatting.
-
-#### Operator Reflection (SH)
-* **Should Have:** Explicitly declared the target perspective/audience upfront before commanding the Agent to synthesize the Commissioning Discipline playbook, **to prevent** three sequential "reframe" prompts that burned unnecessary drafting cycles.
-* **Should Have:** Explicitly commanded the Agent to fetch and read `dyad-bond`'s remote git repository when invoking the borrowed `d-reflect` moniker, **to prevent** the dyad from outputting a theoretical hallucination that required a hard backtrack and a second attempt.
-* **Should Hold:** Feeding the dyad sharp, adversarial falsifications (e.g., *"schema and code isn't sufficiently orthogonal"*) during theoretical design, **to ensure** structural vulnerabilities are exposed and resolved before a single line of codebase plumbing is written.
-
-**Mechanical:** PRs #108, #109, #111, and #113 landed cleanly into `main`. The `dyad-bond` remote repo was fetched to `/tmp` to perfectly mirror the `d-reflect` physical structure.
-
-**Open-items:** The pending commission (`2026-07-01-commission-dyad-system-engine.md`) from `dyad-bond` remains in the DAG, awaiting the next session where we will execute our newly ratified Architect FSM.
-
-**Durability:** The discipline is physicalized in `kb/HOW-commission.md` and anchored to `main`. 
-
-**Resume:** The next invocation must be a fresh session to ingest the pending `dyad-bond` commission, utilizing the new Architect triage gates.
-
----
-
 # dyad-cairn — DYAD_LEDGER.md
 
 > This is the append-only transaction log for `dyad-cairn`'s un-anchored state.
@@ -2146,3 +2118,312 @@
   - Nothing to stop — no failure-prone behavior surfaced in this seam.
   
   </details>
+- **2026-07-04 21:02:35** | `COMMONS_SYNC` | Absorb upstream commons commits
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_0
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_4
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_2
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_10
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_6
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_20
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_12
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_7
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_5
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_13
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_11
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_9
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_1
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_3
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_8
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_15
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_29
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_23
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_27
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_30
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_44
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_40
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_18
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_41
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_14
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_16
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_35
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_46
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_26
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_36
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_45
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_21
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_42
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_31
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_28
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_19
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_43
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_32
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_39
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_24
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_48
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_33
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_17
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_47
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_38
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_25
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_22
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_37
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_34
+- **2026-07-04 21:03:21** | `TODO` | collision_intent_49
+- **2026-07-04 21:03:21** | `TODO` | test_noisy_intent_12345
+- **2026-07-04 21:04:21** | `COMMONS_SYNC` | Absorb upstream commons commits
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_8
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_7
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_11
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_10
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_13
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_22
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_6
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_9
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_0
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_4
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_2
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_14
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_29
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_17
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_15
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_12
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_18
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_16
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_21
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_27
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_20
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_28
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_30
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_24
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_26
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_1
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_23
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_3
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_19
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_25
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_5
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_35
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_31
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_38
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_44
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_40
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_32
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_34
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_41
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_45
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_37
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_33
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_49
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_46
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_39
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_47
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_43
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_42
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_48
+- **2026-07-04 21:04:36** | `TODO` | collision_intent_36
+- **2026-07-04 21:04:36** | `TODO` | test_noisy_intent_12345
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_2
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_0
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_6
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_4
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_12
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_11
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_22
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_3
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_9
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_15
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_36
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_46
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_37
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_33
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_43
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_20
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_23
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_31
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_34
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_49
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_17
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_16
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_24
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_8
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_28
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_26
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_35
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_41
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_29
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_45
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_32
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_27
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_25
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_21
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_18
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_5
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_42
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_40
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_38
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_19
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_44
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_48
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_30
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_47
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_13
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_1
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_39
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_7
+- **2026-07-04 21:04:45** | `TODO` | collision_intent_14
+- **2026-07-04 21:04:46** | `TODO` | collision_intent_10
+- **2026-07-04 21:04:46** | `TODO` | test_noisy_intent_12345
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_0
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_2
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_5
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_7
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_11
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_18
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_27
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_10
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_12
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_31
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_21
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_26
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_36
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_14
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_37
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_41
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_23
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_40
+- **2026-07-04 21:05:05** | `TODO` | collision_intent_46
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_16
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_44
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_33
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_9
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_1
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_8
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_35
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_13
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_42
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_38
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_3
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_29
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_15
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_28
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_34
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_22
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_49
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_39
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_30
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_17
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_4
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_25
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_19
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_6
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_24
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_20
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_43
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_32
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_48
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_45
+- **2026-07-04 21:05:06** | `TODO` | collision_intent_47
+- **2026-07-04 21:05:06** | `TODO` | test_noisy_intent_12345
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_0
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_2
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_6
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_4
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_12
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_10
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_8
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_19
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_18
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_15
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_16
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_3
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_23
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_21
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_28
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_26
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_30
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_1
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_5
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_11
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_17
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_20
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_9
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_25
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_27
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_7
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_31
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_29
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_13
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_14
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_22
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_24
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_32
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_34
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_33
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_38
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_44
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_43
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_35
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_45
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_39
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_36
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_37
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_48
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_42
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_41
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_49
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_46
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_40
+- **2026-07-04 21:29:36** | `TODO` | collision_intent_47
+- **2026-07-04 21:29:36** | `TODO` | test_noisy_intent_12345
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_0
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_4
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_2
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_6
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_8
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_10
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_12
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_18
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_16
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_21
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_22
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_14
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_26
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_28
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_3
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_30
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_13
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_11
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_1
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_5
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_19
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_24
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_7
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_29
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_9
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_17
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_23
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_20
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_25
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_27
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_33
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_41
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_46
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_40
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_32
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_31
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_38
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_37
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_15
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_43
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_36
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_35
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_45
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_44
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_47
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_39
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_34
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_49
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_42
+- **2026-07-04 21:29:52** | `TODO` | collision_intent_48
+- **2026-07-04 21:29:52** | `TODO` | test_noisy_intent_12345
+- **2026-07-04 21:29:52** | `NODE-RETRO` | [node_todo_1783177456.877238] Restore F-1.2 and F-3 engine logic, all tests passing mechanically
