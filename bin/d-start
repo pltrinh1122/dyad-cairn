@@ -1,2 +1,2 @@
 #!/bin/bash
-exit 1
+python3 skills/flow_state_manager.py d-start "$@"
