@@ -16,3 +16,7 @@ PR #114 open, check-in re-armed for ~2026-07-04T21:05Z. No other PR/branch work 
 ## 2026-07-04T20:25:18.082174+00:00Z
 
 Re-grounded CSS+OR -> SH from dyad-bond (commit bd0fc43, PR #80). Updated kb/templates/retro.md (SH section, optional) and DYAD.md's d-reflect attribution. First live SH instance recorded (Should Hold, n=1, CANDIDATE). No other open items. Next session: if dyad-bond's SH grammar changes again, re-fetch scratchpad clone before trusting this file's description of it.
+
+## 2026-07-04T20:37:01.440238+00:00Z
+
+No open items beyond PR #114 (open, 4 commits, mergeable, check-in scheduled ~21:23 UTC). Nothing pending locally.
