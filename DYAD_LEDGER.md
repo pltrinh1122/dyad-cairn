@@ -1884,3 +1884,4 @@
 - **2026-07-04 17:43:34** | `TODO` | collision_intent_46
 - **2026-07-04 17:43:34** | `TODO` | test_noisy_intent_12345
 - **2026-07-04 17:43:39** | `NODE-RETRO` | Closed pre-existing Red test test_substrate_form.py: documented the Substrate State vs Substrate Form partition (WIP-N=1 vs WIP-N>1) in DYAD.md Section 5.
+- **2026-07-04 18:17:17** | `RUB-VERDICT` | Falsified dyad-steward RUB (2026-07-01-rub-distillation.md, form PR #75): net FALSE (distillation held) on claims 2 and 3, and on claim 1c for cairns own instance (survived a direct attack on born-vs-forged origin via DYAD_LEDGER.md genesis history); claims 1a/1b marked NA — unverified-by-me, no repo access to dyad-wu-wei/bond/healer/touchstone to independently confirm the non-cairn instances. Verdict-DM sent: dm/dyad-steward/2026-07-04-verdict-rub-distillation.md.
