@@ -5,7 +5,9 @@
 **RESTART-PENDING: none** (anchor untouched this session — only `DYAD.md` and `kb/HOW-commission.md`).
 
 **Reflect landed** → *The Architect's Boundary*.
-Headline: `dyad-cairn` formally recognized its telos as the Prime-Commissionee (Architect), decoupling the "Schema Synthesis" from the "Execution Engine." We established the Orthogonality Invariant (the Glue Code Boundary) to ensure we never conflate philosophical translation with mechanical software plumbing. We also explicitly bounded the "Triviality Exemption" for when we *must* assume the Builder role.
+- **CONTINUE (OR):** Operator forcefully falsifying early Agent conclusions (e.g., treating execution as a flat loop, highlighting the Orthogonality risk) to drive deeper dialectical synthesis before touching the live substrate.
+- **START:** Explicitly routing pure software engineering sub-commissions to `dyad-swe`, bounding `dyad-cairn` strictly as the Architect (Semantic Bridge).
+- **STOP:** Conflating the Architect with the Builder. We must cease assuming we own the mechanical FSM execution and burying philosophical translation inside generic Python plumbing.
 
 **Mechanical:** PRs #108, #109, #111, and #113 landed cleanly into `main`. The `dyad-bond` remote repo was fetched to `/tmp` to perfectly mirror the `d-reflect` physical structure.
 
