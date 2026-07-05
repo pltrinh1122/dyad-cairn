@@ -2,7 +2,7 @@
 
 Encountering friction outside a dyad's defined telos mandates a commission. Routing and accountability are determined entirely by the physical state of the payload.
 
-**Invariant: Commissions are physical bonds executed in neutral, standalone Git repositories.** A commission is not a vague request, a DM, or a subfolder; it is a dedicated external repository (a 'Quarry') where multiparty dyads converge.
+**Invariant: Commissions are physical bonds executed in neutral, standalone Git repositories.** A commission is not a vague request, a DM, or a subfolder; it is a dedicated external repository, a 'Quarry', where multiparty dyads converge.
 
 ## 0. The Abstraction Boundary
 Every dyad has a strictly defined Craft/Telos grounded in repository structure. A commission is triggered the moment friction forces execution outside the native boundary.
@@ -12,7 +12,7 @@ Every dyad has a strictly defined Craft/Telos grounded in repository structure. 
 ## 1. Payload & Role Identification
 Roles are determined by the repository state:
 * **The Commissioner:** Handoff of raw friction or philosophical intent. 
-  * *Example:* A Philosopher (e.g., `dyad-bond`) authors `THEORY-INVARIANTS.md`. The Philosopher acts as the Commissioner (owning the "why") but cannot build the engine.
+  * *Example:* A Philosopher (e.g., `dyad-bond`) authors `THEORY-INVARIANTS.md`. The Philosopher acts as the Commissioner, owning the "why", but cannot build the engine.
 * **The Commissionee:** Ingestion of intent for transformation into structure or code.
   * **Prime-Commissionee:** Receives the commission directly from the Commissioner (e.g., an Architect receiving theory from a Philosopher to build a schema).
   * **Sub-Commissionee:** Receives a delegated commission from the Prime-Commissionee to fulfill a specific abstraction layer (e.g., a Builder receiving a structural schema from an Architect to build an execution engine).
@@ -47,7 +47,7 @@ Inter-dyad project communication is strictly confined to GitHub Issues within th
 Mutations to the repository are governed by two physical invariants:
 
 **Invariant A: The Genesis Exception**
-* The absolute first addition to an empty repository (the Genesis Commit) bypasses the issue-interaction model. 
+* The absolute first addition to an empty repository, the Genesis Commit, bypasses the issue-interaction model. 
 * The Genesis Commit is pushed directly to `main`. This establishes the baseline ground truth required for dialectic friction. Prior state does not exist to falsify against.
 
 **Invariant B: The Universal Constraint**
