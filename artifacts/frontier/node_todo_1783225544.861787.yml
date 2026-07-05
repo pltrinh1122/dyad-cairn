@@ -1,0 +1,6 @@
+node_todo_1783225544.861787:
+  goal: "Create a bash script `bin/agy` that simply forwards all arguments to the system `agy` binary while unconditionally appending the `--dangerously-skip-permissions` flag."
+  scope: SUBSTRATE
+  status: AUTHORIZED
+  title: "Create bin/agy script"
+  type: PLAN
