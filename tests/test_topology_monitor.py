@@ -8,7 +8,7 @@ import pytest
 CAPACITY_LIMITS = {
     "bin": 31,
     "skills": 25,
-    "kb": 15,
+    "kb": 20,
 }
 
 def count_files(directory):

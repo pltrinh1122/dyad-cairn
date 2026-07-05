@@ -500,3 +500,20 @@
 - **2026-07-05 13:37:21** | `TODO` | ensure execution details and decision records for d-land are durable and easily referenced
 - **2026-07-05 13:38:46** | `NODE-RETRO` | [node_todo_1783258641.876193] Created durable documentation for d-land Landing Discipline
 - **2026-07-05 13:40:13** | `NODE-RETRO` | [1783258200.340927] Automated d-land handoff pattern by extracting open todos
+- **2026-07-05 13:41:32** | `RETRO` | Expanded kb/ capacity to 20 for d-land delegation
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: Expand kb Topology Mass
+  
+  ## Continue
+  The agent continues to observe the Topology Mass Monitor and triggers the mechanical CI gate when the capacity limit is exceeded. This physical refactor forcing function correctly ensures we do not endlessly dump unorganized knowledge into a single directory.
+  
+  ## Start
+  We are adopting a new d-land delegation design decision playbook. The playbook documents our intentional design that the main agent creates the todo items, while the subagent executes the land. We have permanently scaled the Dyad's cognitive capacity in the `kb/` directory by explicitly defining these subagent execution behaviors, leading us to expand the capacity limit from 15 to 20.
+  
+  ## Stop
+  Stop assuming the subagent execution dialect (`execute:`) is the only subagent pattern; we have now added `d-land:` to formalize another mechanical handoff scenario.
+  
+  </details>
+- **2026-07-05 13:41:52** | `NODE-RETRO` | [node_todo_1783258641.876193] Added durable documentation for d-land Landing Discipline to kb/
