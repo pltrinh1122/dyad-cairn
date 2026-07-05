@@ -1,0 +1,9 @@
+node_phase_aware_gap:
+  title: Implement Phase-Aware GAP wrapper for CI checks
+  goal: Modify the GitHub Actions workflow to check the PR title. If it is a [RED
+    Node], expect pytest to fail (exit 0 on fail, exit 1 on pass). If it is a [GREEN
+    Node], expect pytest to pass. Update flow_state_manager.py to expect successful
+    GAP runs for both Red and Green phases.
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED

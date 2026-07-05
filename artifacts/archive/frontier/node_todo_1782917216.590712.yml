@@ -1,0 +1,14 @@
+node_todo_1782917216.590712:
+  title: Modify anchor_compiler.py to symmetrically materialize CLAUDE.md alongside
+    GEMINI.md during the compilation step.
+  goal: 'ensure that i can ''boot'' with claude in the same way i''m doing with agy
+
+
+    WHAT: Modify anchor_compiler.py to symmetrically materialize CLAUDE.md alongside
+    GEMINI.md during the compilation step.
+
+    WHY: i need for equivalence independent of LLM system so that (1) redundancy and
+    (2) cross-model validation'
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED

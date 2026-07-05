@@ -1,0 +1,14 @@
+node_todo_1782916205.615242:
+  title: Rewrite the tests for the 2 UNVERIFIED atoms (e.g., F-1.2 sha-determinism)
+    to correctly assert the expected breach conditions rather than just output formatting.
+  goal: 'Process inbound mail from https://github.com/pltrinh1122/dyad-bond/blob/main/dm/dyad-cairn/2026-06-21-acceptance-validation-v3-mapping.md
+
+
+    WHAT: Rewrite the tests for the 2 UNVERIFIED atoms (e.g., F-1.2 sha-determinism)
+    to correctly assert the expected breach conditions rather than just output formatting.
+
+    WHY: To honor the commission and the Ontological Bond by revising our tests so
+    they mechanically map to the expected breach conditions for the 2 UNVERIFIED atoms.'
+  type: PLAN
+  scope: INTEGRITY
+  status: AUTHORIZED

@@ -1,8 +1,0 @@
-#!/bin/bash
-if [ -z "$1" ]; then
-    echo "Usage: ./bin/d-land <carry-forward note>"
-    echo "Serializes arc state to carry-forward without a full session retro."
-    exit 1
-fi
-
-python3 skills/flow_state_manager.py d-land "$1"

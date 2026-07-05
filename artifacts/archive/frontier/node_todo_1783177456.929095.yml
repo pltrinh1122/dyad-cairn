@@ -1,0 +1,14 @@
+node_todo_1783177456.929095:
+  title: 'Synthesize a verification report cross-referencing the PR #75 DIP restructure
+    with our own logs to expose any hallucinated mortar.'
+  goal: 'Process inbound mail from https://github.com/pltrinh1122/dyad-steward/blob/main/dm/dyad-cairn/2026-07-01-rub-distillation.md
+
+
+    WHAT: Synthesize a verification report cross-referencing the PR #75 DIP restructure
+    with our own logs to expose any hallucinated mortar.
+
+    WHY: To validate the DIP restructure (Contract/Operating-policy/Craft) against
+    our ''never smooth the mortar'' invariant.'
+  type: PLAN
+  scope: FRONTIER
+  status: AUTHORIZED

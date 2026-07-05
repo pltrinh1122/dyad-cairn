@@ -1,0 +1,15 @@
+node_todo_1783206203.719955:
+  title: the d-start is Operator activated via prompt. the Start-Session Discipline
+    should follow the same pattern as Landing Discpline and Reflecting Discipline.
+  goal: 'implement a d-start (Start-Session Discipline) to replace existing hooks
+    to ensure portability across agy and claude.
+
+
+    WHAT: the d-start is Operator activated via prompt. the Start-Session Discipline
+    should follow the same pattern as Landing Discpline and Reflecting Discipline.
+
+    WHY: To eliminate the reliance on substrate-specific hooks (like .bashrc or agy
+    profiles) so the dyad''s lifecycle is universally portable across AI runtime substrates.'
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED
