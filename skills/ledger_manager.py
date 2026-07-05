@@ -28,8 +28,11 @@ def append_ledger(action: str, message: str, tool_name: str = None):
         "action": action.upper(),
         "message": message
     }
+    import fcntl
     with open(jsonl_file, "a") as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
         f.write(json.dumps(entry) + "\n")
+        fcntl.flock(f, fcntl.LOCK_UN)
         
     # 2. Regenerate the human-readable markdown ledger
     lines = []

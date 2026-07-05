@@ -2,6 +2,8 @@ import sys
 import subprocess
 import os
 
+os.environ["PATH"] = os.path.abspath("bin") + os.pathsep + os.environ.get("PATH", "")
+
 def get_active_anchor():
     """Returns the name of the active platform anchor."""
     return "GEMINI.md"
@@ -82,9 +84,12 @@ def check_audit_lock():
 def session_start():
     print("[FLOW] Executing Session Start...")
     import yaml
+    import fcntl
     os.makedirs("dyad-state", exist_ok=True)
     with open("dyad-state/fsm_state.yml", "w") as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
         yaml.dump({"state": "session-start"}, f)
+        fcntl.flock(f, fcntl.LOCK_UN)
 
 def plan_node(node_id):
     print(f"[FLOW] Planning Node {node_id}...")
