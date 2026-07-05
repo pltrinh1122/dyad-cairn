@@ -40,23 +40,24 @@ To protect the Orthogonality Invariant, the "glue code" that connects the Schema
 * **The Architect Role** writes the declarative Schema (The "What") AND the thin Glue Code (The structural wiring) to invoke the Builder's engine (e.g., a simple bash script like `./bin/engine --schema my_rules.yaml`). 
 * **The Complexity Threshold:** If the glue code requires state manipulation, error catching, or complex logical parsing, it is no longer "glue"—it has become an engine. The Architect must halt immediately and commission the Builder to write a new primitive, preserving the physical orthogonality between Schema and Code.
 
-## 5. The GitHub Issue Interaction Model (The Neutral Quarry Dialectic)
+## 5. The Universal GitHub Issue Interaction Model
 All inter-dyad project communication must occur within the native GitHub Issues of the commissioned external repository (the Quarry). Local inter-dyad DMs must not be used for project execution.
 
-The interaction model maps perfectly to the `SOLICIT` response meta-pattern. A discrete GitHub Issue is created for each explicit state transition (handoff). 
+Crucially, **every single mutation to the repository**—from the very first file creation to subsequent lifecycle patches—must follow the exact same interaction model. The model is decoupled from specific software development phases; it is a universal physical constraint on all changes.
 
-**Phase 1: The Anchor (Gate-0)**
-* The upstream dyad (e.g., `dyad-bond`) physically authors and pushes their payload (e.g., `REQUIREMENTS.md`) to the `main` branch of the external repository. There is no issue yet. The Truth must be anchored first.
+**Step 1: The Intent (The Issue)**
+* An Issue is opened defining the required state transition or artifact creation (e.g., `Define REQUIREMENTS.md`, `Draft SPECIFICATION.md`, or `Refactor src/`).
+* The Issue serves as the formal `SOLICIT` to the assigned dyad.
 
-**Phase 2: The Solicit**
-* With their Truth anchored on `main`, the upstream dyad opens **Issue #N**. The body of the issue is the formal `SOLICIT` to the downstream dyad (e.g., `@dyad-cairn: Draft Specification`).
+**Step 2: The Spec-Rub / Falsification (The Thread)**
+* The absolute *first step* of any assigned dyad is **not** to build. Passive acceptance is an architectural failure.
+* The assigned dyad evaluates the request and replies directly in the Issue comments with a formal **Falsification/Spec-Rub**. They expose semantic contradictions, missing hooks, or impossible physical bounds.
 
-**Phase 3: The Spec-Rub / Falsification (The Response)**
-* The absolute *first step* of the downstream dyad upon receiving the `SOLICIT` is **not** to build. Passive acceptance is an architectural failure.
-* The downstream dyad replies directly in the comments of Issue #N with a formal **Falsification/Spec-Rub**. They expose semantic contradictions, concurrency gaps, or impossible physical bounds in the upstream payload.
+**Step 3: Resolution & Execution (The PR)**
+* Only once the intent is physically reconciled in the Issue thread does the assigned dyad formally accept the task.
+* The dyad authors the change on an isolated branch and opens a Pull Request. 
+* The PR description must explicitly state `Closes #N`.
 
-**Phase 4: Resolution & Execution**
-* The upstream dyad resolves the falsifications (by clarifying in the issue thread or pushing a PR to fix their payload). 
-* Only once physically reconciled does the downstream dyad formally accept the `SOLICIT`.
-* The downstream dyad opens a branch, authors their payload (e.g., `SPECIFICATION.md`), and opens a PR that says `Closes #N`.
-* When merged, Issue #N is closed, and the cycle repeats for the next dyad (e.g., Gate-2: `@dyad-swe: Build Engine`).
+**Step 4: The Anchor (The Merge)**
+* When the PR is ratified and merged, the artifact is anchored to `main` and the Issue physically closes.
+* No dyad (not even the Commissioner) is permitted to push directly to `main` or bypass this loop. Every artifact flows through this exact Issue ➔ PR ➔ Merge pipeline.
