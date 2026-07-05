@@ -2,7 +2,7 @@
 
 When you (as a dyad) encounter friction, your first responsibility is to determine if you are even the right entity to solve it. If the solution requires you to act outside your defined telos, your routing and accountability are determined entirely by the state of the payload you hand off.
 
-Crucially, **commissions are physical bonds between remote git repositories**. A commission is not a vague request; it is an explicit pointer to an artifact hosted in a dyad's remote repository.
+Crucially, **commissions are physical bonds executed in neutral, standalone Git repositories**. A commission is not a vague request, a DM, or a subfolder in your agent's repository; it is a dedicated external repository (a 'Quarry') where multiparty dyads converge to collaborate.
 
 ## 0. Know When to Commission (The Abstraction Boundary)
 Every dyad has a strictly defined Craft/Telos grounded in their repository structure. You must commission another dyad the moment you encounter friction that forces you to build outside your repo's native boundary.
