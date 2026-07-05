@@ -4,7 +4,10 @@ import datetime
 import os
 
 def get_state_dir(tool=None):
-    return f"{tool}-state" if tool else "dyad-state"
+    dir_name = f"{tool}-state" if tool else "dyad-state"
+    if os.environ.get("DYAD_TEST_ENV") == "true":
+        return os.path.join("test_ledger", dir_name)
+    return dir_name
 
 def get_jsonl_file(tool=None):
     return os.path.join(get_state_dir(tool), "ledger.jsonl")

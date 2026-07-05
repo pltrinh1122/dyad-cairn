@@ -388,6 +388,42 @@ def process_d_reflect(summary, css_path, carry_forward_note):
     process_retro(summary, css_path)
     subprocess.run(f"python3 skills/ledger_manager.py carry-forward \"{carry_forward_note}\"", shell=True, capture_output=False, text=False)
 
+def process_d_land(carry_forward_note):
+    """`d-land` — serializes arc state without a full session retro.
+    Used for intra-session state captures or transitions where a formal 
+    retro isn't necessary, but state needs to be persisted to carry-forward."""
+    print("[FLOW] Executing Arc Land Discipline (d-land)...")
+    
+    import os
+    import yaml
+    import subprocess
+    
+    todo_dir = "artifacts/todos"
+    todo_list = ""
+    if os.path.exists(todo_dir):
+        todos = [f for f in sorted(os.listdir(todo_dir)) if f.endswith('.yml')]
+        if todos:
+            todo_list = "\n\n**Pending Todos (Handoff):**\n"
+            for t in todos:
+                try:
+                    with open(os.path.join(todo_dir, t), "r") as f_todo:
+                        data = yaml.safe_load(f_todo) or {}
+                        todo_id = t.replace('.yml', '')
+                        intent = data.get(todo_id, {}).get("raw_thought", data.get(todo_id, {}).get("intent", ""))
+                        todo_list += f"- **{todo_id}**: {intent}\n"
+                except Exception as e:
+                    print(f"[FLOW] Warning: failed to parse todo {t}: {e}")
+                    
+    final_note = carry_forward_note + todo_list
+    
+    # Use list format to safely pass multiline/quoted strings
+    subprocess.run(["python3", "skills/ledger_manager.py", "carry-forward", final_note], check=False)
+    
+    os.makedirs("dyad-state", exist_ok=True)
+    with open("dyad-state/fsm_state.yml", "w") as f:
+        yaml.dump({"state": "arc-land"}, f)
+    print("[FLOW] Pushed FSM into 'arc-land' state.")
+
 def complete_node(node_id, retro_msg):
     print(f"[FLOW] Executing CSI Guard (Test Suite) for Node {node_id} completion...")
     
@@ -586,6 +622,13 @@ if __name__ == "__main__":
             print("Usage: python3 skills/flow_state_manager.py d-reflect <summary> <path/to/retro.md> <carry-forward-note>")
             sys.exit(1)
         process_d_reflect(sys.argv[2], sys.argv[3], sys.argv[4])
+        sys.exit(0)
+
+    if action == "d-land":
+        if len(sys.argv) < 3:
+            print("Usage: python3 skills/flow_state_manager.py d-land <carry-forward-note>")
+            sys.exit(1)
+        process_d_land(sys.argv[2])
         sys.exit(0)
 
     if len(sys.argv) < 3:

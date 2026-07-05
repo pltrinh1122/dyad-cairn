@@ -1,0 +1,14 @@
+node_todo_1783258641.876193:
+  title: ensure execution details and decision records for d-land are durable and
+    easily referenced
+  goal: 'ensure execution details and decision records for d-land are durable and
+    easily referenced
+
+
+    WHAT: ensure execution details and decision records for d-land are durable and
+    easily referenced
+
+    WHY: Inherited from d-land intent: frequent usage requires durable reference'
+  type: PLAN
+  scope: FRONTIER
+  status: AUTHORIZED

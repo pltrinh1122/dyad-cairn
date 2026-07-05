@@ -5,6 +5,6 @@
 > Any manual changes here will be overwritten.
 
 > **This is the platform shim for Gemini.**
-> You must load `commons/AGENT.md` and `DYAD.md` as the universal instruction layer for the dyad.
+> You must load `DYAD.md` as the universal instruction layer for the dyad.
 
-**CRITICAL INSTRUCTION:** Read `commons/AGENT.md` and `DYAD.md` before proceeding.
+**CRITICAL INSTRUCTION:** Read `DYAD.md` before proceeding.

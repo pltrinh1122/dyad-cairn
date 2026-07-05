@@ -1,0 +1,14 @@
+node_todo_1783258329.939671:
+  title: document d-land delegation design decision (main agent creates todos, subagent
+    executes land)
+  goal: 'document d-land delegation design decision (main agent creates todos, subagent
+    executes land)
+
+
+    WHAT: document d-land delegation design decision (main agent creates todos, subagent
+    executes land)
+
+    WHY: Inherited from d-land intent: permission granted up front'
+  type: PLAN
+  scope: FRONTIER
+  status: AUTHORIZED

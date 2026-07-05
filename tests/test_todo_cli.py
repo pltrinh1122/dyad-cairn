@@ -47,7 +47,11 @@ def test_todo_cli_execution():
         assert todo_id is not None
         
         # Verify it appended to the ledger
-        with open("dyad-state/ledger.jsonl", "r") as f:
+        import sys
+        if '.' not in sys.path:
+            sys.path.append('.')
+        from skills.ledger_manager import get_jsonl_file
+        with open(get_jsonl_file(), "r") as f:
             ledger_content = f.read()
             assert intent in ledger_content, "Intent was not logged to the ledger!"
             
