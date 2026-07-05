@@ -40,24 +40,30 @@ To protect the Orthogonality Invariant, the "glue code" that connects the Schema
 * **The Architect Role** writes the declarative Schema (The "What") AND the thin Glue Code (The structural wiring) to invoke the Builder's engine (e.g., a simple bash script like `./bin/engine --schema my_rules.yaml`). 
 * **The Complexity Threshold:** If the glue code requires state manipulation, error catching, or complex logical parsing, it is no longer "glue"—it has become an engine. The Architect must halt immediately and commission the Builder to write a new primitive, preserving the physical orthogonality between Schema and Code.
 
-## 5. The Universal GitHub Issue Interaction Model
-All inter-dyad project communication must occur within the native GitHub Issues of the commissioned external repository (the Quarry). Local inter-dyad DMs must not be used for project execution.
+## 5. The Universal Issue-Interaction Invariant
 
-Crucially, **every single mutation to the repository**—from the very first file creation to subsequent lifecycle patches—must follow the exact same interaction model. The model is decoupled from specific software development phases; it is a universal physical constraint on all changes.
+Inter-dyad project communication is strictly confined to GitHub Issues within the commissioned external repository. Local DMs are deprecated for project execution.
 
-**Step 1: The Intent (The Issue)**
-* An Issue is opened defining the required state transition or artifact creation (e.g., `Define REQUIREMENTS.md`, `Draft SPECIFICATION.md`, or `Refactor src/`).
-* The Issue serves as the formal `SOLICIT` to the assigned dyad.
+Mutations to the repository are governed by two physical invariants:
 
-**Step 2: The Spec-Rub / Falsification (The Thread)**
-* The absolute *first step* of any assigned dyad is **not** to build. Passive acceptance is an architectural failure.
-* The assigned dyad evaluates the request and replies directly in the Issue comments with a formal **Falsification/Spec-Rub**. They expose semantic contradictions, missing hooks, or impossible physical bounds.
+**Invariant A: The Genesis Exception (The Vacuum)**
+* The absolute first addition to an empty repository (the Genesis Commit) bypasses the issue-interaction model. 
+* The Genesis Commit is pushed directly to `main`. This establishes the baseline ground truth required for dialectic friction. Prior state does not exist to falsify against.
 
-**Step 3: Resolution & Execution (The PR)**
-* Only once the intent is physically reconciled in the Issue thread does the assigned dyad formally accept the task.
-* The dyad authors the change on an isolated branch and opens a Pull Request. 
-* The PR description must explicitly state `Closes #N`.
+**Invariant B: The Universal Constraint (The Model)**
+* Upon completion of the Genesis Commit, the repository enters strict dialectic lock. 
+* Every subsequent mutation—regardless of SDLC phase or initiating dyad—is physically bound to the Issue ➔ Spec-Rub ➔ PR ➔ Merge pipeline.
+
+The Universal Constraint pipeline dictates four non-negotiable steps:
+
+**Step 1: The Solicit (The Issue)**
+* An Issue defines the required state transition or artifact mutation. This serves as the formal `SOLICIT`.
+
+**Step 2: The Spec-Rub (The Falsification)**
+* Passive acceptance of a `SOLICIT` is an architectural failure. The assigned dyad evaluates the request and posts a formal Falsification report in the Issue comments, exposing semantic contradictions or physical bounds.
+
+**Step 3: The Execution (The PR)**
+* Resolution of the Falsification is required before execution. The assigned dyad authors the change on an isolated branch and opens a Pull Request explicitly stating `Closes #N`.
 
 **Step 4: The Anchor (The Merge)**
-* When the PR is ratified and merged, the artifact is anchored to `main` and the Issue physically closes.
-* No dyad (not even the Commissioner) is permitted to push directly to `main` or bypass this loop. Every artifact flows through this exact Issue ➔ PR ➔ Merge pipeline.
+* Ratification of the PR merges the artifact to `main` and closes the Issue. Direct pushes to `main` are structurally prohibited post-Genesis.
