@@ -15,10 +15,10 @@ def test_trail_dispose_csi_guard():
         fsm.trail_dispose(trail_id)
         
         # Assert 1: PR is merged
-        mock_run_cmd.assert_any_call("gh pr merge --merge --delete-branch", allow_fail=True)
+        mock_run_cmd.assert_any_call("bin/gh pr merge --merge --delete-branch", allow_fail=True)
         
         # Assert 2: Issue Closure
-        mock_run_cmd.assert_any_call(f"gh issue close {trail_id}", allow_fail=True)
+        mock_run_cmd.assert_any_call(f"bin/gh issue close {trail_id}", allow_fail=True)
         
         # Assert 3: Trail Pruning
         mock_run_cmd.assert_any_call(f"python3 skills/frontier_editor.py {trail_id} PRUNE")

@@ -14,7 +14,7 @@ class TestGithubClient(unittest.TestCase):
         result = create_repo("test-repo", public=True, push=False)
         self.assertTrue(result)
         mock_run.assert_called_once_with(
-            ["gh", "repo", "create", "test-repo", "--public", "--source=.", "--remote=origin"],
+            ["bin/gh", "repo", "create", "test-repo", "--public", "--source=.", "--remote=origin"],
             capture_output=True,
             text=True
         )

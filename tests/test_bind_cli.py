@@ -19,12 +19,12 @@ def test_verify_and_bind_success():
         ontological_binder.verify_and_bind("Testing bond")
         
         mock_append.assert_called_once_with("ontological-bond", "Testing bond")
-        mock_sub_run.assert_any_call("git add DYAD_LEDGER.md dyad-state/ledger.jsonl", shell=True)
+        mock_sub_run.assert_any_call("bin/git add DYAD_LEDGER.md dyad-state/ledger.jsonl", shell=True)
         # Verify commit command was called
         commit_called = False
         for call in mock_sub_run.mock_calls:
             name, args, kwargs = call
-            if len(args) > 0 and isinstance(args[0], list) and args[0][0] == "git" and args[0][1] == "commit":
+            if len(args) > 0 and isinstance(args[0], list) and args[0][0].endswith("git") and args[0][1] == "commit":
                 commit_called = True
                 assert "bind: Testing bond" in args[0]
         assert commit_called
