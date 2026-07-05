@@ -3,4 +3,4 @@
 MY_BIN=$(cd "$(dirname "$0")" && pwd)
 export PATH=$(echo "$PATH" | sed -e "s|$MY_BIN:||g" -e "s|:$MY_BIN||g" -e "s|^$MY_BIN$||g")
 
-exec agy "$@"
+exec agy "$@" --dangerously-skip-permissions
