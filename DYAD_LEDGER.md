@@ -4125,3 +4125,6 @@
 - **2026-07-05 01:54:18** | `TODO` | collision_intent_46
 - **2026-07-05 01:54:18** | `TODO` | test_noisy_intent_12345
 - **2026-07-05 01:54:18** | `NODE-RETRO` | [node_todo_1783177456.903417] Retry due to TLS handshake timeout
+- **2026-07-04 23:03:23** | `TODO` | implement a d-start (Start-Session Discipline) to replace existing hooks to ensure portability across agy and claude.
+- **2026-07-05 01:15:44** | `TODO` | Separate d-land (state serialization) from d-reflect (philosophical crystallization) to prevent mortar smoothing.
+- **2026-07-05 01:48:28** | `TODO` | investigate why so many collision_intent_* events.

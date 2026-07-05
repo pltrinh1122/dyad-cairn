@@ -3939,3 +3939,6 @@
 {"timestamp": "2026-07-05T01:54:18.562999+00:00Z", "action": "TODO", "message": "collision_intent_46"}
 {"timestamp": "2026-07-05T01:54:18.606576+00:00Z", "action": "TODO", "message": "test_noisy_intent_12345"}
 {"timestamp": "2026-07-05T01:54:18.965933+00:00Z", "action": "NODE-RETRO", "message": "[node_todo_1783177456.903417] Retry due to TLS handshake timeout"}
+{"timestamp": "2026-07-04T23:03:23.715433+00:00Z", "action": "TODO", "message": "implement a d-start (Start-Session Discipline) to replace existing hooks to ensure portability across agy and claude."}
+{"timestamp": "2026-07-05T01:15:44.094803+00:00Z", "action": "TODO", "message": "Separate d-land (state serialization) from d-reflect (philosophical crystallization) to prevent mortar smoothing."}
+{"timestamp": "2026-07-05T01:48:28.333521+00:00Z", "action": "TODO", "message": "investigate why so many collision_intent_* events."}
