@@ -3,7 +3,7 @@ import subprocess
 import json
 
 def run_gh_cmd(args):
-    cmd = ["gh"] + args
+    cmd = ["bin/gh"] + args
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
         print(f"ERROR: GitHub API failed: {result.stderr}")
@@ -23,7 +23,7 @@ def view_issue(issue_id):
     return out
 
 def create_pr(title, body):
-    cmd = ["gh", "pr", "create", "--title", title, "--body", body]
+    cmd = ["bin/gh", "pr", "create", "--title", title, "--body", body]
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
         if "already exists" in result.stderr:
@@ -35,7 +35,7 @@ def create_pr(title, body):
     return result.stdout.strip()
 
 def create_repo(repo_name, public=True, push=True):
-    cmd = ["gh", "repo", "create", repo_name]
+    cmd = ["bin/gh", "repo", "create", repo_name]
     if public:
         cmd.append("--public")
     else:

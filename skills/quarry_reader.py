@@ -24,7 +24,7 @@ def main():
             with open("DYAD_LEDGER.md", "r", encoding="utf-8") as lf:
                 ledger_content = lf.read()
         try:
-            res = subprocess.run(["git", "branch"], capture_output=True, text=True)
+            res = subprocess.run(["bin/git", "branch"], capture_output=True, text=True)
             active_branches = res.stdout if res.returncode == 0 else ""
         except Exception:
             active_branches = ""

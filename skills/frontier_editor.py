@@ -35,7 +35,7 @@ def save_state(state):
     # Get current branch safely
     try:
         branch_result = subprocess.run(
-            ["git", "rev-parse", "--abbrev-ref", "HEAD"], 
+            ["bin/git", "rev-parse", "--abbrev-ref", "HEAD"], 
             capture_output=True, text=True, check=True
         )
         current_branch = branch_result.stdout.strip()

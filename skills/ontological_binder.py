@@ -8,7 +8,7 @@ def run_cmd(cmd):
     return result.stdout.strip()
 
 def verify_and_bind(message):
-    staged_files = run_cmd("git diff --cached --name-only").splitlines()
+    staged_files = run_cmd("bin/git diff --cached --name-only").splitlines()
     
     theory_files = [f for f in staged_files if f in ["DYAD.md", "GEMINI.md"] or f.startswith("kb/WHY-")]
     mechanics_files = [f for f in staged_files if f.startswith("skills/") or f.startswith("bin/") or f.startswith("tests/") or f.startswith("commons/")]
@@ -31,10 +31,10 @@ def verify_and_bind(message):
     sys.path.append('.')
     from skills import ledger_manager
     ledger_manager.append_ledger("ontological-bond", message)
-    subprocess.run("git add DYAD_LEDGER.md dyad-state/ledger.jsonl", shell=True)
+    subprocess.run("bin/git add DYAD_LEDGER.md dyad-state/ledger.jsonl", shell=True)
     
     # Execute the bind commit
-    commit_cmd = ["git", "commit", "-m", f"bind: {message}"]
+    commit_cmd = ["bin/git", "commit", "-m", f"bind: {message}"]
     result = subprocess.run(commit_cmd, capture_output=True, text=True)
     if result.returncode != 0:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")

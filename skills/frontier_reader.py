@@ -13,7 +13,7 @@ def derive_status(node_id, node_data, all_nodes, ledger_content=None, active_bra
             
     if active_branches is None:
         try:
-            res = subprocess.run(["git", "branch"], capture_output=True, text=True)
+            res = subprocess.run(["bin/git", "branch"], capture_output=True, text=True)
             active_branches = res.stdout if res.returncode == 0 else ""
         except Exception:
             active_branches = ""
