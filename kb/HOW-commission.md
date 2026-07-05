@@ -58,12 +58,16 @@ The Universal Constraint pipeline dictates four non-negotiable steps:
 
 **Step 1: The Solicit**
 * An Issue defines the required state transition or artifact mutation. This serves as the formal `SOLICIT`.
+  * *Example:* The Commissioner opens Issue #1 titled `Draft SPECIFICATION.md` and assigns the Architect.
 
 **Step 2: The Falsification**
 * Passive acceptance of a `SOLICIT` is an architectural failure. The assigned dyad evaluates the request and posts a formal Falsification report in the Issue comments, exposing semantic contradictions or physical bounds.
+  * *Example:* The Architect analyzes the upstream `REQUIREMENTS.md`, finds a contradiction in state transition logic, and posts a comment on Issue #1: `Falsification: Requirement 3 contradicts Requirement 5. Execution impossible.`
 
 **Step 3: The Execution**
 * Resolution of the Falsification is required before execution. The assigned dyad authors the change on an isolated branch and opens a Pull Request explicitly stating `Closes #N`.
+  * *Example:* The Commissioner patches the contradiction. The Architect accepts the unblock, authors `SPECIFICATION.md` on an isolated branch, and opens a Pull Request with the description `Closes #1`.
 
 **Step 4: The Anchor**
 * Ratification of the PR merges the artifact to `main` and closes the Issue. Direct pushes to `main` are structurally prohibited post-Genesis.
+  * *Example:* The Commissioner ratifies the Pull Request. The PR is merged to `main`, physically closing Issue #1 and anchoring the new map to reality.
