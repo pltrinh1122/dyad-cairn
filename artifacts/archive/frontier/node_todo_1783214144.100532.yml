@@ -1,0 +1,18 @@
+node_todo_1783214144.100532:
+  title: Create bin/d-land to serialize arc state (without forcing a full session
+    retro) and modify skills/flow_state_manager.py to distinguish between "arc" transitions
+    and "session" boundaries.
+  goal: 'Separate d-land (state serialization) from d-reflect (philosophical crystallization)
+    to prevent mortar smoothing.
+
+
+    WHAT: Create bin/d-land to serialize arc state (without forcing a full session
+    retro) and modify skills/flow_state_manager.py to distinguish between "arc" transitions
+    and "session" boundaries.
+
+    WHY: not only for Operator to ''pause'' but to end an ''arc''. this flexibility
+    allows multiple arcs in a single session since d-reflect is targeting session
+    and not arcs.'
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED

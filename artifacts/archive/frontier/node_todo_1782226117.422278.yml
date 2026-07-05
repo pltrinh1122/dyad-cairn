@@ -1,0 +1,11 @@
+node_todo_1782226117.422278:
+  title: Parse the commission invariant proposal and add it to our tracking.
+  goal: 'Process inbound mail from https://github.com/pltrinh1122/dyad-bond/blob/main/dm/dyad-cairn/2026-06-17-commission-invariant-extraction-engine.md
+
+
+    WHAT: Parse the commission invariant proposal and add it to our tracking.
+
+    WHY: To explicitly process the inbound mail backlog from the sync-queue.'
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED
