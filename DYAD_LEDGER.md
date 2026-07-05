@@ -574,46 +574,5 @@
   - (Should Hold): Any modifications to the `commons/` dyad registration schema must be held and deferred to `dyad-steward`.
   
   </details>
-
-- **2026-07-05 14:57:41** | `RETRO` | Formalized the SOLICIT response meta-pattern and landed the dry, sterile dialectic format.
-
-  <details><summary>View Retro Payload</summary>
-
-  # Retro: The SOLICIT Meta-Pattern (Architectural Spec-Rub)
-
-  ## Continue
-  - Grounding all claims in anchored intent (The WHY) and structural invariants (The HOW) rather than opining.
-  - Falsifying semantic contradictions in fixed requirements before asserting mechanical execution boundaries.
-  - Sterilizing dialectic documents by removing all pronouns, hedging (parentheticals), and emotional friction, producing a dry, mathematical architectural validation.
-
-  ## Start
-  - Aggressively surfacing systemic architectural omissions (e.g., parallelism, state recovery, orchestration) that the Philosopher’s semantic spec inherently misses.
-
-  ## Stop
-  - Assuming all commissions are Conformance (build-now) orders; always verify the explicit DM dialect form (`SOLICIT` vs `DIRECTIVE`).
-
-  ## SH
-  - (Should Hold): Execution and plumbing commitments (G-set, sub-commissions) must be held hostage until the semantic contradictions from the Commissioner are structurally resolved.
-
-  </details>
-
-- **2026-07-05 10:36:12** | `RETRO` | `d-land`: Established the "Neutral Quarry" topology for multiparty commissions.
-
-  <details><summary>View Retro Payload</summary>
-
-  # Retro: The Neutral Quarry Commission Topology
-
-  ## Continue
-  - Decoupling Agent State (dyad repos) from Project State (commission repos).
-  - Mapping structural boundaries directly to the file system (e.g., separating the Architect's `SPECIFICATION.md` from the Philosopher's `REQUIREMENTS.md` and the Builder's `src/`).
-
-  ## Start
-  - Scaffolding external, standalone Git repositories for all multi-dyad commissions to prevent `dyad-cairn` from becoming a PR bottleneck/middle-agent.
-
-  ## Stop
-  - Hosting downstream execution plumbing or incoming commission specs inside the `dyad-cairn` repository. Our repo must remain purely for internal substrate, memory, and Ledger.
-
-  ## SH
-  - (Should Hold): Dyad-bond must populate the `REQUIREMENTS.md` in the external quarry before the execution engine build can formally commence.
-
-  </details>
+- **2026-07-05 17:53:22** | `TODO` | Update d-land implementation in skills/flow_state_manager.py to mechanically push the active branch and open a Pull Request (via gh) against main as the final completion criteria, matching dyad-bond's baseline.
+- **2026-07-05 17:53:22** | `TODO` | Open a Pull Request for the current active branch (active/node_todo_1783260198.009732) against main to formally land the Neutral Quarry architecture arc.

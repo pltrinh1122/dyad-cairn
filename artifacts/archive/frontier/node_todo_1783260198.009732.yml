@@ -1,0 +1,11 @@
+node_todo_1783260198.009732:
+  title: recover DYAD.md d-land anchor commit and merge to main
+  goal: 'recover DYAD.md d-land anchor commit and merge to main
+
+
+    WHAT: recover DYAD.md d-land anchor commit and merge to main
+
+    WHY: Manual commit was orphaned due to subagent race condition'
+  type: PLAN
+  scope: FRONTIER
+  status: AUTHORIZED

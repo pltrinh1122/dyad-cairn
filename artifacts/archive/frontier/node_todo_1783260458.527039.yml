@@ -1,0 +1,14 @@
+node_todo_1783260458.527039:
+  title: update d-reflect so Continue/Start/Stop apply to Agent behaviors, and Should
+    Have/Should Hold (SH) apply to Operator behaviors
+  goal: 'update d-reflect so Continue/Start/Stop apply to Agent behaviors, and Should
+    Have/Should Hold (SH) apply to Operator behaviors
+
+
+    WHAT: update d-reflect so Continue/Start/Stop apply to Agent behaviors, and Should
+    Have/Should Hold (SH) apply to Operator behaviors
+
+    WHY: Inherited from d-land intent: clarify accountability vectors in retros'
+  type: PLAN
+  scope: SUBSTRATE
+  status: AUTHORIZED
