@@ -554,3 +554,45 @@
 - **2026-07-05 14:07:38** | `TODO` | update d-reflect so Continue/Start/Stop apply to Agent behaviors, and Should Have/Should Hold (SH) apply to Operator behaviors
 - **2026-07-05 14:08:32** | `NODE-RETRO` | [node_todo_1783260458.527039] Updated d-reflect accountability vectors in retro.md and DYAD.md
 - **2026-07-05 14:09:12** | `NODE-RETRO` | [node_todo_1783260458.527039] Completed node by updating d-reflect accountability vectors
+- **2026-07-05 14:09:48** | `RETRO` | CORRECTION: Re-mapped accountability vectors for previous retro
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: d-land Implementation (Corrected Accountability Vectors)
+  
+  ## Continue
+  - Proactively offloading mechanical work to background execution subagents via the newly instantiated `d-land` delegation playbook.
+  - Recognizing abstraction boundaries (Philosopher vs. Architect vs. Builder) and drafting rigid declarative schemas instead of raw execution code.
+  
+  ## Start
+  - Strictly applying the Orthogonality Invariant whenever adopting a new "Discipline" to ensure that the token is formally anchored in `DYAD.md`.
+  
+  ## Stop
+  - (None)
+  
+  ## SH
+  - (Should Hold): Any modifications to the `commons/` dyad registration schema must be held and deferred to `dyad-steward`.
+  
+  </details>
+
+- **2026-07-05 14:57:41** | `RETRO` | Formalized the SOLICIT response meta-pattern and landed the dry, sterile dialectic format.
+
+  <details><summary>View Retro Payload</summary>
+
+  # Retro: The SOLICIT Meta-Pattern (Architectural Spec-Rub)
+
+  ## Continue
+  - Grounding all claims in anchored intent (The WHY) and structural invariants (The HOW) rather than opining.
+  - Falsifying semantic contradictions in fixed requirements before asserting mechanical execution boundaries.
+  - Sterilizing dialectic documents by removing all pronouns, hedging (parentheticals), and emotional friction, producing a dry, mathematical architectural validation.
+
+  ## Start
+  - Aggressively surfacing systemic architectural omissions (e.g., parallelism, state recovery, orchestration) that the Philosopher’s semantic spec inherently misses.
+
+  ## Stop
+  - Assuming all commissions are Conformance (build-now) orders; always verify the explicit DM dialect form (`SOLICIT` vs `DIRECTIVE`).
+
+  ## SH
+  - (Should Hold): Execution and plumbing commitments (G-set, sub-commissions) must be held hostage until the semantic contradictions from the Commissioner are structurally resolved.
+
+  </details>
