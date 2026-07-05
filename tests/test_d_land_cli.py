@@ -22,6 +22,3 @@ def test_d_land_cli_wired_to_fsm():
     assert data.get("state") == "arc-land"
 
 
-def test_red_phase_intent():
-    # Generate failing tests for Intent Validation PR
-    assert False, 'Failing test for RED Phase Intent Validation'
