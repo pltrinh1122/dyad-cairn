@@ -534,3 +534,22 @@
 - **2026-07-05 13:57:35** | `NODE-RETRO` | [node_todo_1783259778.987246] Drafted sub-commission dispatch for dyad-swe
 - **2026-07-05 14:03:18** | `TODO` | recover DYAD.md d-land anchor commit and merge to main
 - **2026-07-05 14:03:41** | `NODE-RETRO` | [node_todo_1783260198.009732] merged orphaned DYAD.md d-land anchor fix
+- **2026-07-05 14:04:59** | `RETRO` | d-land implementation and commission responses
+  
+  <details><summary>View Retro Payload</summary>
+  
+  # Retro: d-land Implementation and Commission Responses
+  
+  ## Continue
+  - Proactively offloading mechanical work to background execution subagents via the newly instantiated `d-land` delegation playbook.
+  - Recognizing abstraction boundaries (Philosopher vs. Architect vs. Builder) and drafting rigid declarative schemas instead of raw execution code.
+  
+  ## Start
+  - Strictly applying the Orthogonality Invariant whenever adopting a new "Discipline" to ensure that the token is formally anchored in `DYAD.md`.
+  
+  ## Stop
+  - (SH) Should Hold: Any modifications to the `commons/` dyad registration schema must be held and deferred to `dyad-steward`.
+  
+  </details>
+- **2026-07-05 14:07:38** | `TODO` | update d-reflect so Continue/Start/Stop apply to Agent behaviors, and Should Have/Should Hold (SH) apply to Operator behaviors
+- **2026-07-05 14:08:32** | `NODE-RETRO` | [node_todo_1783260458.527039] Updated d-reflect accountability vectors in retro.md and DYAD.md
