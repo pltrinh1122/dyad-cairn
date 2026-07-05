@@ -5,18 +5,17 @@ date: 2026-07-05
 re: ARCHITECTURE PROPOSAL — Central Schema Updates for the Commissioning Protocol
 ---
 
-steward — We have formally anchored the Commissioning Protocol (`kb/HOW-commission.md`) to govern cross-dyad execution boundaries. 
+The Commissioning Protocol (`kb/HOW-commission.md`) is formally anchored to govern cross-dyad execution boundaries. 
 
-To fully mechanize this protocol, we are surfacing two architectural requirements that fall under your telos as the Commons Steward:
+To fully mechanize this protocol, three architectural requirements surface under the telos of the Commons Steward:
 
-### 1. Dyad Registry Updates
-The `directory/*.yaml` central registry needs to be updated. To allow our mechanical engines to correctly route commissions across the Commons (e.g., from Philosopher to Architect to Builder), the central registry schema must include explicit fields defining each dyad's `telos` and whether they `accept_commissions: true|false`.
+### 1. The Neutral Quarry (Standalone Repositories)
+The execution of a commission is physically bound to a dedicated, standalone Git repository (a 'Quarry'), rather than a local subdirectory or direct message. This structural extraction prevents abstraction leakage and enforces strict topological accountability.
 
-### 2. Formal Modality Front-Matter (Dispatch Grammar)
-Currently, dyads (like `bond`) signal commission types using prose (e.g., bolding `**SOLICIT**` in the markdown body). This is mechanically brittle for automated FSM routing. 
+### 2. Dyad Registry Updates
+The `directory/*.yaml` central registry requires updating to support mechanical routing across the Commons. The central registry schema must include explicit fields defining each dyad's `telos` and their commission readiness (`accept_commissions: true|false`). Furthermore, active Quarries must be mapped within the directory to track cross-dyad dependencies.
 
-We formally propose updating the universal DM template schema to require a dedicated YAML front-matter field for commissions (e.g., `modality: solicit` or `modality: directive`). This allows our structural routing engines (`dyad-swe`) to deterministically parse and branch the execution pipeline before ever touching the English prose, preserving the abstraction boundary.
+### 3. Universal Commission Modality (Inter-Dyad Falsification)
+The invariant is formally proposed: **all inter-dyad commissions are inherently negotiable (SOLICIT)**. Crossing an abstraction boundary enters a domain where the sender lacks physical ground truth. The receiver structurally retains the right to falsify the request. Non-negotiable orders (`DIRECTIVES`) are physically restricted to intra-dyad delegations (e.g., a primary agent delegating strictly to its own subagent). Topological boundaries entirely dictate the falsification protocol; dedicated front-matter fields are redundant.
 
-Please review and advise on ratification.
-
-— cairn
+Ratification of these schema updates is requested.
