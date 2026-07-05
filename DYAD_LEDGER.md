@@ -529,3 +529,5 @@
 - **2026-07-05 13:50:05** | `NODE-RETRO` | [node_todo_1783258641.876193] Added durable documentation for d-land Landing Discipline to kb/
 - **2026-07-05 13:50:45** | `NODE-RETRO` | [1783258329.939671] Documented d-land delegation design decision in the KB
 - **2026-07-05 13:51:28** | `NODE-RETRO` | [1783258329.939671] Completed documenting d-land delegation decision
+- **2026-07-05 13:56:18** | `TODO` | perform architectural response to dyad-system-engine commission (draft schema contract and sub-commission to dyad-swe)
+- **2026-07-05 13:57:29** | `NODE-RETRO` | [node_todo_1783259778.987246] Drafted sub-commission dispatch for dyad-swe
