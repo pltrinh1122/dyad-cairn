@@ -12,27 +12,27 @@ Every dyad has a strictly defined Craft/Telos grounded in repository structure. 
 ## 1. Payload & Role Identification
 Roles are determined by the repository state:
 * **The Commissioner (The Philosopher):** Handoff of raw friction or philosophical intent. 
-  * *Example:* `dyad-bond` authors `THEORY-INVARIANTS.md`. `dyad-bond` acts as the Commissioner (owning the "why") but cannot build the engine.
+  * *Example:* A Philosopher (e.g., `dyad-bond`) authors `THEORY-INVARIANTS.md`. The Philosopher acts as the Commissioner (owning the "why") but cannot build the engine.
 * **The Commissionee (The Architect / The Builder):** Ingestion of intent for transformation into structure or code.
-  * **Prime-Commissionee:** Receives the commission directly from the Commissioner (e.g., `dyad-cairn` receiving theory from `dyad-bond` to build a schema).
-  * **Sub-Commissionee:** Receives a delegated commission from the Prime-Commissionee to fulfill a specific abstraction layer (e.g., `dyad-swe` receiving a structural schema from `dyad-cairn` to build an execution engine).
+  * **Prime-Commissionee:** Receives the commission directly from the Commissioner (e.g., an Architect receiving theory from a Philosopher to build a schema).
+  * **Sub-Commissionee:** Receives a delegated commission from the Prime-Commissionee to fulfill a specific abstraction layer (e.g., a Builder receiving a structural schema from an Architect to build an execution engine).
 
 ## 2. Cross-Repository Routing
 Raw philosophy is never sent directly to a software builder's repository; code compilation will silently corrupt theoretical intent. 
 *Note: The Commons dyad registry strictly dictates Telos and commission-acceptance status.*
 
 * **Philosopher ➔ Architect Dyad**
-  * *Topology:* Commissioner (`dyad-bond`) ➔ Prime-Commissionee (`dyad-cairn`) ➔ Sub-Commissionee (`dyad-swe`).
-  * *Action:* `dyad-bond` anchors pure theory. `dyad-cairn` ingests the theory, commits the rigid structural spec, and sub-commissions `dyad-swe` to write the execution code. 
+  * *Topology:* Commissioner (e.g., Philosopher) ➔ Prime-Commissionee (e.g., Architect) ➔ Sub-Commissionee (e.g., Builder).
+  * *Action:* The Philosopher anchors pure theory. The Architect ingests the theory, commits the rigid structural spec, and sub-commissions the Builder to write the execution code. 
 * **Architect ➔ Builder Dyad**
-  * *Topology:* Commissioner/Architect (`dyad-cairn`) ➔ Prime-Commissionee (`dyad-swe`).
-  * *Action:* When the structural schema already exists, `dyad-cairn` directly commissions `dyad-swe` to build the plumbing.
+  * *Topology:* Commissioner/Architect (e.g., `dyad-cairn`) ➔ Prime-Commissionee (e.g., Builder).
+  * *Action:* When the structural schema already exists, the Architect directly commissions the Builder to build the plumbing.
 
 ## 3. Accountability & Triage
 Triage paths strictly follow repository boundaries:
-* **Philosopher (`dyad-bond`):** Accountable for the Truth. If the engine executes the schema perfectly but the result is philosophically incorrect, the theory requires updating. The Philosopher reports semantic failures to the Architect.
-* **Architect (`dyad-cairn`):** Accountable for the Map. If the schema fails to capture the philosophical intent, the Architect owns the Semantic Defect. The Architect acts as the triage shield, isolating philosophical bugs from mechanical bugs.
-* **Builder (`dyad-swe`):** Accountable for the Vehicle. If the engine physically crashes or drops data, the Builder owns the Mechanical Defect. The Builder is isolated from philosophical debate.
+* **Philosopher:** Accountable for the Truth. If the engine executes the schema perfectly but the result is philosophically incorrect, the theory requires updating. The Philosopher reports semantic failures to the Architect.
+* **Architect:** Accountable for the Map. If the schema fails to capture the philosophical intent, the Architect owns the Semantic Defect. The Architect acts as the triage shield, isolating philosophical bugs from mechanical bugs.
+* **Builder:** Accountable for the Vehicle. If the engine physically crashes or drops data, the Builder owns the Mechanical Defect. The Builder is isolated from philosophical debate.
 
 ## 4. The Glue Code Boundary (Orthogonality)
 To protect the Orthogonality Invariant, the "glue code" connecting the Schema to the Engine is strictly policed:
