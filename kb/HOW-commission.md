@@ -11,9 +11,9 @@ Every dyad has a strictly defined Craft/Telos grounded in repository structure. 
 
 ## 1. Payload & Role Identification
 Roles are determined by the repository state:
-* **The Commissioner (The Philosopher):** Handoff of raw friction or philosophical intent. 
+* **The Commissioner:** Handoff of raw friction or philosophical intent. 
   * *Example:* A Philosopher (e.g., `dyad-bond`) authors `THEORY-INVARIANTS.md`. The Philosopher acts as the Commissioner (owning the "why") but cannot build the engine.
-* **The Commissionee (The Architect / The Builder):** Ingestion of intent for transformation into structure or code.
+* **The Commissionee:** Ingestion of intent for transformation into structure or code.
   * **Prime-Commissionee:** Receives the commission directly from the Commissioner (e.g., an Architect receiving theory from a Philosopher to build a schema).
   * **Sub-Commissionee:** Receives a delegated commission from the Prime-Commissionee to fulfill a specific abstraction layer (e.g., a Builder receiving a structural schema from an Architect to build an execution engine).
 
@@ -37,7 +37,7 @@ Triage paths strictly follow repository boundaries:
 ## 4. The Glue Code Boundary (Orthogonality)
 To protect the Orthogonality Invariant, the "glue code" connecting the Schema to the Engine is strictly policed:
 * **The Builder Role:** Authors robust, agnostic Engine/Primitives and publishes a generic interface. Bespoke glue code for specific schemas is prohibited to prevent dependency on semantic shifts.
-* **The Architect Role:** Authors the declarative Schema (The "What") and the thin Glue Code (the structural wiring) to invoke the Builder's engine. 
+* **The Architect Role:** Authors the declarative Schema and the thin Glue Code to invoke the Builder's engine. 
 * **The Complexity Threshold:** If the glue code requires state manipulation, error catching, or complex logical parsing, it becomes an engine. The Architect must halt and commission the Builder to author a new primitive, preserving the strict physical orthogonality between Schema and Code.
 
 ## 5. The Universal Issue-Interaction Invariant
@@ -46,24 +46,24 @@ Inter-dyad project communication is strictly confined to GitHub Issues within th
 
 Mutations to the repository are governed by two physical invariants:
 
-**Invariant A: The Genesis Exception (The Vacuum)**
+**Invariant A: The Genesis Exception**
 * The absolute first addition to an empty repository (the Genesis Commit) bypasses the issue-interaction model. 
 * The Genesis Commit is pushed directly to `main`. This establishes the baseline ground truth required for dialectic friction. Prior state does not exist to falsify against.
 
-**Invariant B: The Universal Constraint (The Model)**
+**Invariant B: The Universal Constraint**
 * Upon completion of the Genesis Commit, the repository enters strict dialectic lock. 
 * Every subsequent mutation—regardless of SDLC phase or initiating dyad—is physically bound to the Issue ➔ Spec-Rub ➔ PR ➔ Merge pipeline.
 
 The Universal Constraint pipeline dictates four non-negotiable steps:
 
-**Step 1: The Solicit (The Issue)**
+**Step 1: The Solicit**
 * An Issue defines the required state transition or artifact mutation. This serves as the formal `SOLICIT`.
 
-**Step 2: The Spec-Rub (The Falsification)**
+**Step 2: The Falsification**
 * Passive acceptance of a `SOLICIT` is an architectural failure. The assigned dyad evaluates the request and posts a formal Falsification report in the Issue comments, exposing semantic contradictions or physical bounds.
 
-**Step 3: The Execution (The PR)**
+**Step 3: The Execution**
 * Resolution of the Falsification is required before execution. The assigned dyad authors the change on an isolated branch and opens a Pull Request explicitly stating `Closes #N`.
 
-**Step 4: The Anchor (The Merge)**
+**Step 4: The Anchor**
 * Ratification of the PR merges the artifact to `main` and closes the Issue. Direct pushes to `main` are structurally prohibited post-Genesis.
