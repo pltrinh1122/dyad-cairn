@@ -499,3 +499,4 @@
 - **2026-07-05 13:32:09** | `TODO` | document d-land delegation design decision (main agent creates todos, subagent executes land)
 - **2026-07-05 13:37:21** | `TODO` | ensure execution details and decision records for d-land are durable and easily referenced
 - **2026-07-05 13:38:46** | `NODE-RETRO` | [node_todo_1783258641.876193] Created durable documentation for d-land Landing Discipline
+- **2026-07-05 13:40:13** | `NODE-RETRO` | [1783258200.340927] Automated d-land handoff pattern by extracting open todos
