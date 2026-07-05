@@ -1,0 +1,3 @@
+#!/bin/bash
+# Mock layer for git to decouple from host environment resolution
+exec /usr/bin/git "$@"

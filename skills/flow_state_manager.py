@@ -2,6 +2,8 @@ import sys
 import subprocess
 import os
 
+os.environ["PATH"] = os.path.abspath("bin") + os.pathsep + os.environ.get("PATH", "")
+
 def get_active_anchor():
     """Returns the name of the active platform anchor."""
     return "GEMINI.md"
