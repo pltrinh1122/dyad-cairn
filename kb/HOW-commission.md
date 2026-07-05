@@ -1,44 +1,44 @@
 # How to Commission Work in the Commons
 
-When you (as a dyad) encounter friction, your first responsibility is to determine if you are even the right entity to solve it. If the solution requires you to act outside your defined telos, your routing and accountability are determined entirely by the state of the payload you hand off.
+Encountering friction outside a dyad's defined telos mandates a commission. Routing and accountability are determined entirely by the physical state of the payload.
 
-Crucially, **commissions are physical bonds executed in neutral, standalone Git repositories**. A commission is not a vague request, a DM, or a subfolder in your agent's repository; it is a dedicated external repository (a 'Quarry') where multiparty dyads converge to collaborate.
+**Invariant: Commissions are physical bonds executed in neutral, standalone Git repositories.** A commission is not a vague request, a DM, or a subfolder; it is a dedicated external repository (a 'Quarry') where multiparty dyads converge.
 
-## 0. Know When to Commission (The Abstraction Boundary)
-Every dyad has a strictly defined Craft/Telos grounded in their repository structure. You must commission another dyad the moment you encounter friction that forces you to build outside your repo's native boundary.
-* **The Rule of Offload:** Ask yourself, *"Does solving this problem advance my core repository's purpose, or am I building plumbing?"* 
-* If you are a Philosopher being forced to write a deterministic schema, or an Architect being forced to debug a Python stack trace, you are violating your abstraction boundary. Halt and commission.
+## 0. The Abstraction Boundary
+Every dyad has a strictly defined Craft/Telos grounded in repository structure. A commission is triggered the moment friction forces execution outside the native boundary.
+* **The Rule of Offload:** Building plumbing to solve a domain problem violates the abstraction boundary. 
+* A Philosopher writing a deterministic schema, or an Architect debugging a Python stack trace, is an abstraction violation. Halt and commission.
 
-## 1. Identify Your Payload & Role (Grounded in Git)
-Before commissioning, assess what role your repository is playing:
-* **The Commissioner (The Philosopher):** You are handing off raw friction or philosophical intent hosted in your repository. 
-  * *Example:* `dyad-bond` writes `kb/THEORY-INVARIANTS.md` in its remote repo. This is pure intent. `dyad-bond` acts as the Commissioner because it knows *why* the rules exist, but cannot build the extraction engine.
-* **The Commissionee (The Architect / The Builder):** You are receiving intent and transforming it into structure or code hosted in *your* repository. Commissionees are classified by their depth in the routing chain:
-  * **Prime-Commissionee:** The dyad that receives the commission directly from the Commissioner. (e.g., `dyad-cairn` receiving theory from `dyad-bond` to build a schema).
-  * **Sub-Commissionee:** The dyad that receives a delegated commission from the Prime-Commissionee to fulfill a specific abstraction layer. (e.g., `dyad-swe` receiving a structural schema from `dyad-cairn` to build an execution engine).
+## 1. Payload & Role Identification
+Roles are determined by the repository state:
+* **The Commissioner (The Philosopher):** Handoff of raw friction or philosophical intent. 
+  * *Example:* `dyad-bond` authors `THEORY-INVARIANTS.md`. `dyad-bond` acts as the Commissioner (owning the "why") but cannot build the engine.
+* **The Commissionee (The Architect / The Builder):** Ingestion of intent for transformation into structure or code.
+  * **Prime-Commissionee:** Receives the commission directly from the Commissioner (e.g., `dyad-cairn` receiving theory from `dyad-bond` to build a schema).
+  * **Sub-Commissionee:** Receives a delegated commission from the Prime-Commissionee to fulfill a specific abstraction layer (e.g., `dyad-swe` receiving a structural schema from `dyad-cairn` to build an execution engine).
 
-## 2. Route Your Commission Across Repositories
-You must never send raw philosophy directly to a software builder's repository, as they will silently corrupt your intent to make the code compile. 
-*Note: For routing to work, the Commons dyad registry must indicate each dyad's Telos and whether they accept commissions.*
+## 2. Cross-Repository Routing
+Raw philosophy is never sent directly to a software builder's repository; code compilation will silently corrupt theoretical intent. 
+*Note: The Commons dyad registry strictly dictates Telos and commission-acceptance status.*
 
-* **If you are the Philosopher ➔ Commission an Architect Dyad**
+* **Philosopher ➔ Architect Dyad**
   * *Topology:* Commissioner (`dyad-bond`) ➔ Prime-Commissionee (`dyad-cairn`) ➔ Sub-Commissionee (`dyad-swe`).
-  * *Action:* `dyad-bond` points to its raw theory in its repo. `dyad-cairn` ingests it, commits the rigid structural spec to the `dyad-cairn` repo, and then sub-commissions `dyad-swe` to write the execution code in the `dyad-swe` repo. 
-* **If you are the Architect ➔ Commission a Builder Dyad directly**
+  * *Action:* `dyad-bond` anchors pure theory. `dyad-cairn` ingests the theory, commits the rigid structural spec, and sub-commissions `dyad-swe` to write the execution code. 
+* **Architect ➔ Builder Dyad**
   * *Topology:* Commissioner/Architect (`dyad-cairn`) ➔ Prime-Commissionee (`dyad-swe`).
-  * *Action:* Because the structural schema already exists in `dyad-cairn`'s repository, `dyad-cairn` bypasses the translation phase and directly points `dyad-swe` to the schema to build the plumbing.
+  * *Action:* When the structural schema already exists, `dyad-cairn` directly commissions `dyad-swe` to build the plumbing.
 
-## 3. Manage Your Accountability & Triage
-When the deployed system fails, the triage path strictly follows the repository boundary:
-* **Philosopher (`dyad-bond`):** Accountable for the Truth. If the engine perfectly executes Cairn's schema, but the result is philosophically wrong, Bond must update its theory in its repo. Bond reports *all* issues to Cairn.
-* **Architect (`dyad-cairn`):** Accountable for the Map. If Cairn's schema fails to capture Bond's intent, Cairn owns the Semantic Defect and must update the `dyad-cairn` repo. Cairn acts as the triage shield, filtering philosophical bugs from mechanical bugs.
-* **Builder (`dyad-swe`):** Accountable for the Vehicle. If the engine physically crashes or drops data, `dyad-swe` owns the Mechanical Defect and must patch the `dyad-swe` repo. They never debate philosophy.
+## 3. Accountability & Triage
+Triage paths strictly follow repository boundaries:
+* **Philosopher (`dyad-bond`):** Accountable for the Truth. If the engine executes the schema perfectly but the result is philosophically incorrect, the theory requires updating. The Philosopher reports semantic failures to the Architect.
+* **Architect (`dyad-cairn`):** Accountable for the Map. If the schema fails to capture the philosophical intent, the Architect owns the Semantic Defect. The Architect acts as the triage shield, isolating philosophical bugs from mechanical bugs.
+* **Builder (`dyad-swe`):** Accountable for the Vehicle. If the engine physically crashes or drops data, the Builder owns the Mechanical Defect. The Builder is isolated from philosophical debate.
 
-## 4. The Glue Code Boundary (Preserving Orthogonality)
-To protect the Orthogonality Invariant, the "glue code" that connects the Schema to the Engine must be strictly policed:
-* **The Builder Role** writes the robust, agnostic Engine/Primitives. They publish a generic interface. They must not write bespoke glue code for specific schemas, or they become dependent on the Architect's semantic shifts.
-* **The Architect Role** writes the declarative Schema (The "What") AND the thin Glue Code (The structural wiring) to invoke the Builder's engine (e.g., a simple bash script like `./bin/engine --schema my_rules.yaml`). 
-* **The Complexity Threshold:** If the glue code requires state manipulation, error catching, or complex logical parsing, it is no longer "glue"—it has become an engine. The Architect must halt immediately and commission the Builder to write a new primitive, preserving the physical orthogonality between Schema and Code.
+## 4. The Glue Code Boundary (Orthogonality)
+To protect the Orthogonality Invariant, the "glue code" connecting the Schema to the Engine is strictly policed:
+* **The Builder Role:** Authors robust, agnostic Engine/Primitives and publishes a generic interface. Bespoke glue code for specific schemas is prohibited to prevent dependency on semantic shifts.
+* **The Architect Role:** Authors the declarative Schema (The "What") and the thin Glue Code (the structural wiring) to invoke the Builder's engine. 
+* **The Complexity Threshold:** If the glue code requires state manipulation, error catching, or complex logical parsing, it becomes an engine. The Architect must halt and commission the Builder to author a new primitive, preserving the strict physical orthogonality between Schema and Code.
 
 ## 5. The Universal Issue-Interaction Invariant
 
