@@ -60,9 +60,9 @@ def compile_anchor():
         out.append("> Any manual changes here will be overwritten.")
         out.append("")
         out.append(f"> **This is the platform shim for {ai_name}.**")
-        out.append("> You must load `commons/AGENT.md` and `DYAD.md` as the universal instruction layer for the dyad.")
+        out.append("> You must load `DYAD.md` as the universal instruction layer for the dyad.")
         out.append("")
-        out.append("**CRITICAL INSTRUCTION:** Read `commons/AGENT.md` and `DYAD.md` before proceeding.")
+        out.append("**CRITICAL INSTRUCTION:** Read `DYAD.md` before proceeding.")
         out.append("")
         
         if approved_dimensions:
