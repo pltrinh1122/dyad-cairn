@@ -527,3 +527,4 @@
 - **2026-07-05 13:47:58** | `NODE-RETRO` | [node_todo_1783259160.048882] Added durable documentation for CTA protocols in d-land handling empty and high-G payloads
 - **2026-07-05 13:48:45** | `NODE-RETRO` | [node_todo_1783259160.048882] Completed CTA protocols documentation in d-land
 - **2026-07-05 13:50:05** | `NODE-RETRO` | [node_todo_1783258641.876193] Added durable documentation for d-land Landing Discipline to kb/
+- **2026-07-05 13:50:45** | `NODE-RETRO` | [1783258329.939671] Documented d-land delegation design decision in the KB
