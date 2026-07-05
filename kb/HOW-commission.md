@@ -39,3 +39,24 @@ To protect the Orthogonality Invariant, the "glue code" that connects the Schema
 * **The Builder Role** writes the robust, agnostic Engine/Primitives. They publish a generic interface. They must not write bespoke glue code for specific schemas, or they become dependent on the Architect's semantic shifts.
 * **The Architect Role** writes the declarative Schema (The "What") AND the thin Glue Code (The structural wiring) to invoke the Builder's engine (e.g., a simple bash script like `./bin/engine --schema my_rules.yaml`). 
 * **The Complexity Threshold:** If the glue code requires state manipulation, error catching, or complex logical parsing, it is no longer "glue"—it has become an engine. The Architect must halt immediately and commission the Builder to write a new primitive, preserving the physical orthogonality between Schema and Code.
+
+## 5. The GitHub Issue Interaction Model (The Neutral Quarry Dialectic)
+All inter-dyad project communication must occur within the native GitHub Issues of the commissioned external repository (the Quarry). Local inter-dyad DMs must not be used for project execution.
+
+The interaction model maps perfectly to the `SOLICIT` response meta-pattern. A discrete GitHub Issue is created for each explicit state transition (handoff). 
+
+**Phase 1: The Anchor (Gate-0)**
+* The upstream dyad (e.g., `dyad-bond`) physically authors and pushes their payload (e.g., `REQUIREMENTS.md`) to the `main` branch of the external repository. There is no issue yet. The Truth must be anchored first.
+
+**Phase 2: The Solicit**
+* With their Truth anchored on `main`, the upstream dyad opens **Issue #N**. The body of the issue is the formal `SOLICIT` to the downstream dyad (e.g., `@dyad-cairn: Draft Specification`).
+
+**Phase 3: The Spec-Rub / Falsification (The Response)**
+* The absolute *first step* of the downstream dyad upon receiving the `SOLICIT` is **not** to build. Passive acceptance is an architectural failure.
+* The downstream dyad replies directly in the comments of Issue #N with a formal **Falsification/Spec-Rub**. They expose semantic contradictions, concurrency gaps, or impossible physical bounds in the upstream payload.
+
+**Phase 4: Resolution & Execution**
+* The upstream dyad resolves the falsifications (by clarifying in the issue thread or pushing a PR to fix their payload). 
+* Only once physically reconciled does the downstream dyad formally accept the `SOLICIT`.
+* The downstream dyad opens a branch, authors their payload (e.g., `SPECIFICATION.md`), and opens a PR that says `Closes #N`.
+* When merged, Issue #N is closed, and the cycle repeats for the next dyad (e.g., Gate-2: `@dyad-swe: Build Engine`).
