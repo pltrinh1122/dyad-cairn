@@ -596,3 +596,24 @@
   - (Should Hold): Execution and plumbing commitments (G-set, sub-commissions) must be held hostage until the semantic contradictions from the Commissioner are structurally resolved.
 
   </details>
+
+- **2026-07-05 10:36:12** | `RETRO` | `d-land`: Established the "Neutral Quarry" topology for multiparty commissions.
+
+  <details><summary>View Retro Payload</summary>
+
+  # Retro: The Neutral Quarry Commission Topology
+
+  ## Continue
+  - Decoupling Agent State (dyad repos) from Project State (commission repos).
+  - Mapping structural boundaries directly to the file system (e.g., separating the Architect's `SPECIFICATION.md` from the Philosopher's `REQUIREMENTS.md` and the Builder's `src/`).
+
+  ## Start
+  - Scaffolding external, standalone Git repositories for all multi-dyad commissions to prevent `dyad-cairn` from becoming a PR bottleneck/middle-agent.
+
+  ## Stop
+  - Hosting downstream execution plumbing or incoming commission specs inside the `dyad-cairn` repository. Our repo must remain purely for internal substrate, memory, and Ledger.
+
+  ## SH
+  - (Should Hold): Dyad-bond must populate the `REQUIREMENTS.md` in the external quarry before the execution engine build can formally commence.
+
+  </details>
