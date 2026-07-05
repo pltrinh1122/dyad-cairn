@@ -393,10 +393,32 @@ def process_d_land(carry_forward_note):
     Used for intra-session state captures or transitions where a formal 
     retro isn't necessary, but state needs to be persisted to carry-forward."""
     print("[FLOW] Executing Arc Land Discipline (d-land)...")
-    subprocess.run(f"python3 skills/ledger_manager.py carry-forward \"{carry_forward_note}\"", shell=True, capture_output=False, text=False)
     
     import os
     import yaml
+    import subprocess
+    
+    todo_dir = "artifacts/todos"
+    todo_list = ""
+    if os.path.exists(todo_dir):
+        todos = [f for f in sorted(os.listdir(todo_dir)) if f.endswith('.yml')]
+        if todos:
+            todo_list = "\n\n**Pending Todos (Handoff):**\n"
+            for t in todos:
+                try:
+                    with open(os.path.join(todo_dir, t), "r") as f_todo:
+                        data = yaml.safe_load(f_todo) or {}
+                        todo_id = t.replace('.yml', '')
+                        intent = data.get(todo_id, {}).get("raw_thought", data.get(todo_id, {}).get("intent", ""))
+                        todo_list += f"- **{todo_id}**: {intent}\n"
+                except Exception as e:
+                    print(f"[FLOW] Warning: failed to parse todo {t}: {e}")
+                    
+    final_note = carry_forward_note + todo_list
+    
+    # Use list format to safely pass multiline/quoted strings
+    subprocess.run(["python3", "skills/ledger_manager.py", "carry-forward", final_note], check=False)
+    
     os.makedirs("dyad-state", exist_ok=True)
     with open("dyad-state/fsm_state.yml", "w") as f:
         yaml.dump({"state": "arc-land"}, f)
