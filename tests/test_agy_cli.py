@@ -26,5 +26,5 @@ def test_agy_wrapper_appends_flag():
         result = subprocess.run([bin_agy, "arg1", "--flag2"], env=env, capture_output=True, text=True)
         
         assert result.returncode == 0, f"bin/agy failed: {result.stderr}"
-        expected_substring = "AGY CALLED WITH: arg1 --flag2 --dangerously-bypass-permission"
+        expected_substring = "AGY CALLED WITH: arg1 --flag2 --dangerously-skip-permissions"
         assert expected_substring in result.stdout, f"Missing flag. Output was: {result.stdout}"

@@ -24,8 +24,8 @@ def test_fsm_process_d_reflect_delegates_to_retro_then_carry_forward():
 def test_bin_d_reflect_delegates_to_fsm():
     with open("bin/d-reflect", "r") as f:
         content = f.read()
-        assert "python3 skills/flow_state_manager.py d-reflect" in content, \
-            "bin/d-reflect must delegate to flow_state_manager.py"
+        assert "python3 skills/flow_state_manager.py session-end" in content, \
+            "bin/d-reflect must delegate to flow_state_manager.py session-end"
 
 
 def test_ledger_manager_cli_dispatches_carry_forward():
