@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+    echo "Usage: ./bin/d-rub <target_id> [--what ...] [--why ...] [--scope ...]"
+    echo "Executes the Rub Discipline to formalize an artifact's intent."
+    exit 1
+fi
+
+python3 skills/flow_state_manager.py d-rub "$@"
