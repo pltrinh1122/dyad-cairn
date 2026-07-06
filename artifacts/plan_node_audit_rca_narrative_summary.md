@@ -5,7 +5,7 @@ Enforce deterministic structural artifacts for EXECUTE and REFLECT nodes to sati
 
 ## Strategy
 1. **EXECUTE RCA:** Any node containing `_execute_` transitioning to DONE (via `complete` or `reflect-green`) MUST physically possess an RCA artifact at `artifacts/rca_<node_id>.md`.
-2. **REFLECT Narrative Synthesis:** `trail-reflect` MUST physically ingest its retro message from `artifacts/trail_synthesis_<trail_id>.md` instead of CLI arguments. The artifact MUST contain specific sub-headings asserting the "Probe Invariant" and "Execution RCA".
+2. **REFLECT Narrative Synthesis:** `trail-reflect` MUST physically ingest its reflect message from `artifacts/trail_synthesis_<trail_id>.md` instead of CLI arguments. The artifact MUST contain specific sub-headings asserting the "Probe Invariant" and "Execution RCA".
 
 ## Red Phase (TDD)
 **`tests/test_node_complete.py` & `tests/test_trail_reflect.py`**
@@ -33,14 +33,14 @@ Enforce deterministic structural artifacts for EXECUTE and REFLECT nodes to sati
         sys.exit(1)
         
     with open(synthesis_file, "r") as f:
-        retro_msg = f.read()
+        reflect_msg = f.read()
         
-    if "Probe Invariant" not in retro_msg or "Execution RCA" not in retro_msg:
+    if "Probe Invariant" not in reflect_msg or "Execution RCA" not in reflect_msg:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("Trail Synthesis must explicitly contain 'Probe Invariant' and 'Execution RCA'.")
         sys.exit(1)
 ```
-3. Update `sys.argv` parsing for `trail-reflect` so `retro_msg` is no longer a mandatory CLI positional argument.
+3. Update `sys.argv` parsing for `trail-reflect` so `reflect_msg` is no longer a mandatory CLI positional argument.
 
 ## Closure
 Once tests fail (Red) and pass (Green), transition to DONE.

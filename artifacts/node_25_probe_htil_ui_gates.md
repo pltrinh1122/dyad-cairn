@@ -3,7 +3,7 @@
 ## 1. The Missing UIs Problem
 The Operator highlighted multiple mechanical steering failures:
 - Design-Review UI wasn't accessible manually.
-- Retro CSS UI wasn't firing in the conversational chat.
+- Reflect CSS UI wasn't firing in the conversational chat.
 - Invariants weren't being presented.
 - Agent failed to perform automatic DAG decomposition, instead hallucinating that decomposition spawns multiple `PLAN` nodes.
 
@@ -11,7 +11,7 @@ The Operator highlighted multiple mechanical steering failures:
 1. **Design Review Access:** The `design_review_ui.py` script existed and correctly parsed invariants via regex, but it had no CLI entrypoint for the Operator to manually invoke it during checkout.
 2. **Decomposition Hallucination:** `design_review_ui.py` contained hardcoded legacy text asserting that decomposition creates multiple `PLAN` nodes. This output was actively gaslighting the Agent into violating the "PROBE decomposes into PROBE" invariant.
 3. **Missing Auto-Decomposition:** The orchestrator lacked the mechanical implementation to parse a PROBE artifact and physically inject its child nodes into the DAG.
-4. **CSS UI Presentation:** `bin/retro` prints the CSS UI correctly to its standard output. The failure is conversational: the `dialect_linter.py` strictly requires the Agent to explicitly echo this presentation back to the Operator in the chat UI. If the Agent forgets, the Operator doesn't see it.
+4. **CSS UI Presentation:** `bin/reflect` prints the CSS UI correctly to its standard output. The failure is conversational: the `dialect_linter.py` strictly requires the Agent to explicitly echo this presentation back to the Operator in the chat UI. If the Agent forgets, the Operator doesn't see it.
 
 ## 3. Recommended Implementation Path (PLAN)
 Because the required mechanical fixes were isolated to orchestrator scripts, we physically pushed them during this Probe. This node requires no further Execution (Atomic). 

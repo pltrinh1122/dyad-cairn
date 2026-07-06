@@ -1,4 +1,4 @@
-# Retro: webhook-claimed merge was stale; live API is ground truth
+# Reflect: webhook-claimed merge was stale; live API is ground truth
 
 ## Continue
 - (OR) The Operator's direct question about `/tmp` vs `/workspace` prompted actually checking whether

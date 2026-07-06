@@ -1,4 +1,4 @@
-# Retro: Falsifying Survivor Bias (The GAP Trap)
+# Reflect: Falsifying Survivor Bias (The GAP Trap)
 
 ## Continue
 We must continue falsifying our assumptions by looking at the discrepancies between local test execution and remote GitHub Actions Pipeline (GAP) states.

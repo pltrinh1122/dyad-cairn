@@ -1,4 +1,4 @@
-# Retro: Eradicating Sandbox Wardens (Residual Shadows)
+# Reflect: Eradicating Sandbox Wardens (Residual Shadows)
 
 ## Continue
 We must continue stripping away restrictive wrappers that do not provide structural ontological value. Our identity is the **Mason**: we build materialization engines, not sandbox prisons.

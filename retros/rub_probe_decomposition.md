@@ -1,4 +1,4 @@
-# Retro: Mechanical Lifecycle of a Probe
+# Reflect: Mechanical Lifecycle of a Probe
 
 ## Continue
 We must continue physicalizing abstract phases into concrete, deterministic state-machine transitions. 

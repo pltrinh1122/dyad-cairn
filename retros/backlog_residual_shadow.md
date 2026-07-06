@@ -1,4 +1,4 @@
-# Retro: Falsifying the Backlog (Residual Shadow)
+# Reflect: Falsifying the Backlog (Residual Shadow)
 
 ## Continue
 We must continue to aggressively prune obsolete architectural appendages ("dead mass"). The Operator's mandate to identify and eliminate "residual shadows" from our parent dyad (`dyad-wu-wei`) is essential to maintaining a lean, high-velocity Engine.

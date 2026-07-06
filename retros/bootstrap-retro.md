@@ -1,4 +1,4 @@
-# Bootstrap Retro: The Philosophical Fuel
+# Bootstrap Reflect: The Philosophical Fuel
 
 > **Status:** Un-anchored Knowledge (Indexed)
 > This document captures the philosophical realizations derived during the `dyad-cairn` bootstrap. It is not an Anchor; it is the theoretical fuel that explains *why* the Anchor is structured the way it is.
@@ -21,9 +21,9 @@ The continuous alignment of the Dyad is a fusion of two models:
 - **Popper (The Storage):** This learning loop is useless if it causes amnesia upon restart. Every resolution of friction must be crystallized into an objective, physical ledger (World 3) to remain durable.
 
 ## 5. The Parent Linkage (`dyad-touchstone`)
-*Operator Retro (Session Close):* The birthing session for `dyad-cairn` was highly intensive. To achieve alignment quicker in future loops, the Agent must lean on its lineage. `dyad-touchstone` is available as a proven substrate for learnings. The Operator will continue to prime the substrate, but `cairn` is authorized and expected to reach out to `touchstone` to bypass redundant alignment friction.
+*Operator Reflect (Session Close):* The birthing session for `dyad-cairn` was highly intensive. To achieve alignment quicker in future loops, the Agent must lean on its lineage. `dyad-touchstone` is available as a proven substrate for learnings. The Operator will continue to prime the substrate, but `cairn` is authorized and expected to reach out to `touchstone` to bypass redundant alignment friction.
 
-## 6. The Agent's Retro (Continue / Start / Stop)
+## 6. The Agent's Reflect (Continue / Start / Stop)
 *The Mason's Reflection on the Birthing Session:*
 
 **CONTINUE:** 

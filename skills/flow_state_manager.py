@@ -22,9 +22,9 @@ def check_retro_lock():
     if os.path.exists("dyad-state/RETRO_ACTIVE.lock"):
         print("==========================================================================")
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
-        print("A Retro is currently active. You are mechanically forbidden from transitioning")
-        print("the SPAOR state machine (plan/checkout/reflect) while a retro is open.")
-        print("You must resolve the retro and physically execute `./bin/retro` to unlock.")
+        print("A Reflect is currently active. You are mechanically forbidden from transitioning")
+        print("the SPAOR state machine (plan/checkout/reflect) while a reflect is open.")
+        print("You must resolve the reflect and physically execute `./bin/reflect` to unlock.")
         print("==========================================================================")
         sys.exit(1)
 
@@ -202,7 +202,7 @@ def reflect_node_red(node_id):
         
     create_reflection_pr(node_id, is_green=False)
 
-def reflect_node_green(node_id, retro_msg):
+def reflect_node_green(node_id, reflect_msg):
     print(f"[FLOW] Reflecting GREEN Phase (Mechanical Gate) for Node {node_id}...")
     print("[FLOW] Asserting Mechanical UI Gate (Dialect Linter)...")
     linter_result = subprocess.run("python3 skills/dialect_linter.py", shell=True, capture_output=True, text=True)
@@ -244,13 +244,13 @@ def reflect_node_green(node_id, retro_msg):
         print("[STEERING VECTOR] The Mechanical Gate invariant requires 100% test passage. Run 'python3 skills/testing_harness.py' to extract and fix all failing assertions.")
         sys.exit(1)
         
-    print(f"[FLOW] Synthesis Invariant: Appending retro_msg to Ledger...")
+    print(f"[FLOW] Synthesis Invariant: Appending reflect_msg to Ledger...")
     from skills import ledger_manager
-    full_retro_msg = f"[{node_id}] {retro_msg}"
-    ledger_manager.append_ledger("node-retro", full_retro_msg)
+    full_reflect_msg = f"[{node_id}] {reflect_msg}"
+    ledger_manager.append_ledger("node-reflect", full_reflect_msg)
     
     # Commit the ledger before generating the PR so it's included in the execution payload
-    run_cmd('bin/git add DYAD_LEDGER.md dyad-state/ledger.jsonl && bin/git commit -m "chore(ledger): retro synthesis for green phase"')
+    run_cmd('bin/git add DYAD_LEDGER.md dyad-state/ledger.jsonl && bin/git commit -m "chore(ledger): reflect synthesis for green phase"')
     
     create_reflection_pr(node_id, is_green=True)
 
@@ -347,17 +347,17 @@ def create_reflection_pr(node_id, is_green):
 
 def process_retro(summary, css_path=None):
     if not css_path:
-        print("Usage: ./bin/retro <summary> <path/to/retro.md>")
-        print("ERROR: CSS Template (path/to/retro.md) is strictly mandatory to fulfill the Cognitive State Synchronization invariant.")
+        print("Usage: ./bin/reflect <summary> <path/to/reflect.md>")
+        print("ERROR: CSS Template (path/to/reflect.md) is strictly mandatory to fulfill the Cognitive State Synchronization invariant.")
         sys.exit(1)
         
-    linter_result = subprocess.run(f"python3 skills/retro_linter.py \"{css_path}\"", shell=True, capture_output=False, text=False)
+    linter_result = subprocess.run(f"python3 skills/reflect_linter.py \"{css_path}\"", shell=True, capture_output=False, text=False)
     if linter_result.returncode != 0:
-        print("🚨 CSI GUARDRAIL BLOCK: Retro does not match CSS template.")
-        print("[STEERING VECTOR] Format the retro message to exactly match the mechanical UI presentation template, then rerun.")
+        print("🚨 CSI GUARDRAIL BLOCK: Reflect does not match CSS template.")
+        print("[STEERING VECTOR] Format the reflect message to exactly match the mechanical UI presentation template, then rerun.")
         sys.exit(1)
         
-    subprocess.run(f"python3 skills/ledger_manager.py retro \"{summary}\" \"{css_path}\"", shell=True, capture_output=False, text=False)
+    subprocess.run(f"python3 skills/ledger_manager.py reflect \"{summary}\" \"{css_path}\"", shell=True, capture_output=False, text=False)
 
 def process_d_start():
     print("[FLOW] Executing Start-Session Discipline (d-start)...")
@@ -382,16 +382,16 @@ def process_d_start():
 def process_d_reflect(summary, css_path, carry_forward_note):
     """`d-reflect` — adopted from dyad-bond's CSS+OR discipline (github.com/pltrinh1122/dyad-bond,
     kb/reflection-discipline.md). One token doing two jobs, same reasoning bond collapsed
-    `reflect`/`stand-down` into: every CSS retro here was already paired with a resume-prep note,
-    so it's one job, not two. Fires the existing CSS retro flow, then updates
+    `reflect`/`stand-down` into: every CSS reflect here was already paired with a resume-prep note,
+    so it's one job, not two. Fires the existing CSS reflect flow, then updates
     dyad-state/carry-forward.md so the next SESSION_START has live in-flight state to read."""
     process_retro(summary, css_path)
     subprocess.run(f"python3 skills/ledger_manager.py carry-forward \"{carry_forward_note}\"", shell=True, capture_output=False, text=False)
 
 def process_d_land(carry_forward_note):
-    """`d-land` — serializes arc state without a full session retro.
+    """`d-land` — serializes arc state without a full session reflect.
     Used for intra-session state captures or transitions where a formal 
-    retro isn't necessary, but state needs to be persisted to carry-forward."""
+    reflect isn't necessary, but state needs to be persisted to carry-forward."""
     print("[FLOW] Executing Arc Land Discipline (d-land)...")
     
     import os
@@ -440,7 +440,7 @@ def process_d_rub(args):
         from skills import ledger_manager
         ledger_manager.append_ledger("rub-discipline", f"Executed d-rub on {target_id}")
 
-def complete_node(node_id, retro_msg):
+def complete_node(node_id, reflect_msg):
     print(f"[FLOW] Executing CSI Guard (Test Suite) for Node {node_id} completion...")
     
     print("[FLOW] Asserting Physical Merge Invariant...")
@@ -509,10 +509,10 @@ def complete_node(node_id, retro_msg):
         print("[STEERING VECTOR] The Mechanical Gate invariant requires 100% test passage. Run 'python3 skills/testing_harness.py' to extract and fix all failing assertions.")
         sys.exit(1)
         
-    print(f"[FLOW] Synthesis Invariant: Appending retro_msg to Ledger...")
+    print(f"[FLOW] Synthesis Invariant: Appending reflect_msg to Ledger...")
     from skills import ledger_manager
-    full_retro_msg = f"[{node_id}] {retro_msg}"
-    ledger_manager.append_ledger("node-retro", full_retro_msg)
+    full_reflect_msg = f"[{node_id}] {reflect_msg}"
+    ledger_manager.append_ledger("node-reflect", full_reflect_msg)
     print(f"[FLOW] Tests passed mechanically. Transitioning Node {node_id} to DONE.")
     run_cmd(f"python3 skills/frontier_editor.py {node_id} DONE")
     
@@ -547,9 +547,9 @@ def complete_node(node_id, retro_msg):
                         inject_node(new_node_id, f"Decomposed from {node_id}", goal, parent_scope)
     
     # Finally, commit the ledger and any state file deletions (e.g. artifacts/)
-    run_cmd('bin/git add -u artifacts/ && bin/git add DYAD_LEDGER.md dyad-state/ledger.jsonl && bin/git commit -m "chore(ledger): retro synthesis for completion"', allow_fail=True)
+    run_cmd('bin/git add -u artifacts/ && bin/git add DYAD_LEDGER.md dyad-state/ledger.jsonl && bin/git commit -m "chore(ledger): reflect synthesis for completion"', allow_fail=True)
 
-def trail_reflect(trail_id, retro_msg=None):
+def trail_reflect(trail_id, reflect_msg=None):
     print(f"[FLOW] Executing Trail Reflect for {trail_id}...")
     
     # 1. Synthesis Invariant
@@ -565,9 +565,9 @@ def trail_reflect(trail_id, retro_msg=None):
         sys.exit(1)
         
     with open(synthesis_file, "r") as f:
-        retro_msg = f.read()
+        reflect_msg = f.read()
         
-    if "Probe Invariant" not in retro_msg or "Execution RCA" not in retro_msg:
+    if "Probe Invariant" not in reflect_msg or "Execution RCA" not in reflect_msg:
         print("🚨 CONSISTENCY GUARDRAIL FIRED 🚨")
         print("Trail Synthesis must contain a narrative summary for (1) positive assertion of the Probe Invariant and (2) reference to individual Execution RCA.")
         print("[STEERING VECTOR] Update the trail synthesis document to include both the Probe Invariant assertion and references to the Execution RCAs, then rerun.")
@@ -576,10 +576,10 @@ def trail_reflect(trail_id, retro_msg=None):
     branch_name = f"active/reflect_{trail_id}"
     run_cmd(f"bin/git checkout -b {branch_name} || bin/git checkout {branch_name}")
     
-    full_retro_msg = retro_msg
-    if f"[{trail_id}]" not in full_retro_msg:
-        full_retro_msg = f"[{trail_id}]\n{retro_msg}"
-    ledger_manager.append_ledger("trail-retro", full_retro_msg)
+    full_reflect_msg = reflect_msg
+    if f"[{trail_id}]" not in full_reflect_msg:
+        full_reflect_msg = f"[{trail_id}]\n{reflect_msg}"
+    ledger_manager.append_ledger("trail-reflect", full_reflect_msg)
     
     # Commit and Push
     run_cmd("bin/git add dyad-state/ledger.jsonl DYAD_LEDGER.md")
@@ -588,7 +588,7 @@ def trail_reflect(trail_id, retro_msg=None):
     
     # 2. Reflection Review Gate
     title = f"[REFLECT] Trail Synthesis {trail_id}"
-    body = f"Automated PR for Trail {trail_id} Synthesis.\n\n{retro_msg}\n\nReview this artifact. Run `./bin/node dispose {trail_id}` to merge and prune."
+    body = f"Automated PR for Trail {trail_id} Synthesis.\n\n{reflect_msg}\n\nReview this artifact. Run `./bin/node dispose {trail_id}` to merge and prune."
     pr_url = create_pr(title, body)
     
     print(f"[FLOW] PR successfully opened at: {pr_url}")
@@ -635,7 +635,7 @@ if __name__ == "__main__":
 
     if action == "d-reflect":
         if len(sys.argv) < 5:
-            print("Usage: python3 skills/flow_state_manager.py d-reflect <summary> <path/to/retro.md> <carry-forward-note>")
+            print("Usage: python3 skills/flow_state_manager.py d-reflect <summary> <path/to/reflect.md> <carry-forward-note>")
             sys.exit(1)
         process_d_reflect(sys.argv[2], sys.argv[3], sys.argv[4])
         sys.exit(0)
@@ -658,7 +658,7 @@ if __name__ == "__main__":
         print("Usage: python3 skills/flow_state_manager.py <action> <node_id> [args]")
         sys.exit(1)
 
-    if action != "retro":
+    if action != "reflect":
         check_retro_lock()
     check_sovereignty_trigger()
     check_audit_lock()
@@ -734,12 +734,12 @@ if __name__ == "__main__":
         reflect_node_red(node)
     elif action == "reflect-green":
         if len(sys.argv) < 4:
-            print("Usage: python3 skills/flow_state_manager.py reflect-green <node_id> <retro_msg>")
+            print("Usage: python3 skills/flow_state_manager.py reflect-green <node_id> <reflect_msg>")
             sys.exit(1)
         reflect_node_green(node, sys.argv[3])
     elif action == "complete":
         if len(sys.argv) < 4:
-            print("Usage: python3 skills/flow_state_manager.py complete <node_id> <retro_msg>")
+            print("Usage: python3 skills/flow_state_manager.py complete <node_id> <reflect_msg>")
             sys.exit(1)
         complete_node(node, sys.argv[3])
     elif action == "trail-reflect":
@@ -753,10 +753,10 @@ if __name__ == "__main__":
         present_design_review(node, state)
     elif action == "dispose":
         trail_dispose(node)
-    elif action == "retro":
-        # retro doesn't use node_id, so sys.argv[2] is summary and sys.argv[3] is path
+    elif action == "reflect":
+        # reflect doesn't use node_id, so sys.argv[2] is summary and sys.argv[3] is path
         if len(sys.argv) < 4:
-            print("Usage: python3 skills/flow_state_manager.py retro <summary> <path/to/retro.md>")
+            print("Usage: python3 skills/flow_state_manager.py reflect <summary> <path/to/reflect.md>")
             sys.exit(1)
         process_retro(sys.argv[2], sys.argv[3])
     else:

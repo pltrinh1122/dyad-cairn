@@ -21,12 +21,12 @@ def test_complete_node_success():
         mock_run_cmd.side_effect = side_effect
         
         node_id = "node_123"
-        retro_msg = "test retro"
-        fsm.complete_node(node_id, retro_msg)
+        reflect_msg = "test reflect"
+        fsm.complete_node(node_id, reflect_msg)
         
         mock_subrun.assert_any_call("python3 skills/dialect_linter.py", shell=True, capture_output=True, text=True)
         mock_run_cmd.assert_any_call("python3 skills/testing_harness.py", allow_fail=True)
-        mock_append.assert_called_with("node-retro", "[node_123] test retro")
+        mock_append.assert_called_with("node-reflect", "[node_123] test reflect")
         mock_run_cmd.assert_any_call("python3 skills/frontier_editor.py node_123 DONE")
 
 def test_complete_node_missing_rca():
@@ -39,9 +39,9 @@ def test_complete_node_missing_rca():
         mock_exists.return_value = False
         
         node_id = "node_123_execute_feature"
-        retro_msg = "test retro"
+        reflect_msg = "test reflect"
         try:
-            fsm.complete_node(node_id, retro_msg)
+            fsm.complete_node(node_id, reflect_msg)
         except SystemExit:
             pass
             
@@ -64,9 +64,9 @@ def test_complete_node_failure():
         mock_run_cmd.side_effect = side_effect
         
         node_id = "node_123"
-        retro_msg = "test retro"
+        reflect_msg = "test reflect"
         try:
-            fsm.complete_node(node_id, retro_msg)
+            fsm.complete_node(node_id, reflect_msg)
         except SystemExit:
             pass
         

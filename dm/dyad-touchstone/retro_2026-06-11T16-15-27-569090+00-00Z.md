@@ -1,4 +1,4 @@
-# Retro: CSS and rub-backs on HTIL replacement prompts
+# Reflect: CSS and rub-backs on HTIL replacement prompts
 
 ## Continue
 The interactive `rub` validation (Rub Matrix) remains highly effective at aligning the Semantic Bridge before mechanical execution begins. Additionally, preserving strict TDD phases (RED/GREEN) even when building out purely theoretical or meta-infrastructure (like the HTIL automation guards) enforces the "No Pure Generative Execution" invariant beautifully.

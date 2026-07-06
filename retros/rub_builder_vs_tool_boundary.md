@@ -1,4 +1,4 @@
-# Retro: The Builder vs Tool Boundary (The Boundary Lock)
+# Reflect: The Builder vs Tool Boundary (The Boundary Lock)
 
 ## Continue
 We must continue attacking boundary bleeding. The Operator's rub successfully identified a lethal conflation: I assumed `dyad-cairn`'s internal Ledger would serve as the structural "Why" for `dip.py`.

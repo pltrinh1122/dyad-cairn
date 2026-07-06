@@ -109,8 +109,8 @@ def audit_dialect():
                             if tc.get("function", {}).get("name") == "default_api:ask_question":
                                 violations.append(f"Violation at step {step.get('step_index')}: Operator issued 'todo:', but Agent auto-invoked ask_question (Auto-Rub). Agent must quietly park the intent in the backlog without friction.")
 
-            # Check for `retro:`
-            if parsed_content.startswith("retro:"):
+            # Check for `reflect:`
+            if parsed_content.startswith("reflect:"):
                 used_retro = False
                 ui_presented = False
                 for j in range(i+1, len(steps)):
@@ -120,22 +120,22 @@ def audit_dialect():
                     if next_step.get("type") == "PLANNER_RESPONSE":
                         tool_calls = next_step.get("tool_calls", [])
                         for tc in tool_calls:
-                            if "bin/retro" in str(tc.get("args", "")):
+                            if "bin/reflect" in str(tc.get("args", "")):
                                 used_retro = True
                                 
                         response_text = next_step.get("content", "")
-                        if "📋 [MECHANICAL UI PRESENTATION: RETRO SUMMARY]" in response_text:
+                        if "📋 [MECHANICAL UI PRESENTATION: REFLECT SUMMARY]" in response_text:
                             ui_presented = True
                             
                 if not used_retro:
-                    violations.append(f"Violation at step {step.get('step_index')}: User issued 'retro:' but Agent failed to mechanically invoke 'bin/retro'.")
+                    violations.append(f"Violation at step {step.get('step_index')}: User issued 'reflect:' but Agent failed to mechanically invoke 'bin/reflect'.")
                 if not ui_presented:
-                    violations.append(f"Violation at step {step.get('step_index')}: Agent invoked 'bin/retro' but failed to explicitly present the CSS template in the chat UI.")
+                    violations.append(f"Violation at step {step.get('step_index')}: Agent invoked 'bin/reflect' but failed to explicitly present the CSS template in the chat UI.")
                     
             # CSI GUARD: Operator CTA for Pure Commands
             # If Operator uses a raw command without a dialect prefix, the Agent must NOT silently execute it.
             # It must convert it to an Operator CTA.
-            known_prefixes = ["read:", "read", "read.", "clip:", "clip", "clip.", "audit:", "rub:", "rub?", "retro:", "lean:", "lean?", "lean", "lean.", "riff:", "execute:", "plan:", "probe:", "todo:", "report:", "/", "diff:", "fb:", "Y", "N", "yes", "no"]
+            known_prefixes = ["read:", "read", "read.", "clip:", "clip", "clip.", "audit:", "rub:", "rub?", "reflect:", "lean:", "lean?", "lean", "lean.", "riff:", "execute:", "plan:", "probe:", "todo:", "report:", "/", "diff:", "fb:", "Y", "N", "yes", "no"]
             has_prefix = any(parsed_content.startswith(p) for p in known_prefixes)
             if not has_prefix and parsed_content:
                 for j in range(i+1, len(steps)):

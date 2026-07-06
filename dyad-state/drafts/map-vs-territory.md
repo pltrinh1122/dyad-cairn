@@ -13,5 +13,5 @@ mechanism: "falsify + spatial-isolation"
 ## The Move:
 1. Create a `retros/` directory for heavy, deep context files.
 2. Create `DYAD_LEDGER.md` as an append-only, chronological list of state changes.
-3. When a retro is created, use a deterministic script (`./bin/retro`) to drop a lightweight pointer into the Ledger.
+3. When a reflect is created, use a deterministic script (`./bin/reflect`) to drop a lightweight pointer into the Ledger.
 4. On restart, the Agent reads only the Map (Ledger) to wake up, parsing the Territory (retros) only when specifically needed.

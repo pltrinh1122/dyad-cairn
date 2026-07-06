@@ -1,4 +1,4 @@
-# Retro: Expand kb Topology Mass
+# Reflect: Expand kb Topology Mass
 
 ## Continue
 The agent continues to observe the Topology Mass Monitor and triggers the mechanical CI gate when the capacity limit is exceeded. This physical refactor forcing function correctly ensures we do not endlessly dump unorganized knowledge into a single directory.

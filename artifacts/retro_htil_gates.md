@@ -1,4 +1,4 @@
-# Retro: HTIL Gates and Boundary Sovereignty
+# Reflect: HTIL Gates and Boundary Sovereignty
 
 ## Continue
 - Using the `todo:` marker as an asynchronous, offline holding pen (The Quarry) to segregate unstructured human intent from structured machine logic.

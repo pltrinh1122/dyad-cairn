@@ -1,4 +1,4 @@
-# Retro: Validating the CSI Arm/Disarm Architecture
+# Reflect: Validating the CSI Arm/Disarm Architecture
 
 ## Continue
 We must continue anchoring all philosophical friction directly into physical mechanics. The design and implementation of both the Symmetric Topology Mass Monitor and the Asymmetric Lock/Linter mechanism proves that pushing rules down to the physical substrate eliminates Generative memory anxiety. The engine acts as its own enforcement vector.

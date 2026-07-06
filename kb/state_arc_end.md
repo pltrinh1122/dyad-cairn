@@ -1,6 +1,6 @@
 # STATE: ARC-END
 
-## Phase: Retro & Synthesis
+## Phase: Reflect & Synthesis
 The arc-end state is the physical marker that the current execution arc has concluded its active implementation phase and must now undergo retrospective and synthesis.
 
 ## Invariants

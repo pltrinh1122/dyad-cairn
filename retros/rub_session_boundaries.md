@@ -1,4 +1,4 @@
-# Retro: Defining Explicit Session Boundaries
+# Reflect: Defining Explicit Session Boundaries
 
 ## Continue
 We must continue engaging in high-velocity structural refinement when falsifications occur, but we must do so with explicit pacing. The velocity is powerful, but dangerous if untethered.

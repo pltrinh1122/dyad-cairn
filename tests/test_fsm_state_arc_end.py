@@ -8,6 +8,6 @@ def test_state_arc_end_anchor_exists_and_structured():
         content = f.read()
         
     assert "# STATE: ARC-END" in content, "Anchor must define the ARC-END state."
-    assert "Retro & Synthesis" in content, "Anchor must explicitly mention the Retro & Synthesis phase."
+    assert "Reflect & Synthesis" in content, "Anchor must explicitly mention the Reflect & Synthesis phase."
     assert "Invariants" in content, "Anchor must define physical invariants for the arc-end phase."
     assert "Transitions" in content, "Anchor must define allowable FSM transitions (e.g. session-end)."

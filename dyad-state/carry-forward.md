@@ -7,7 +7,7 @@
 
 ## 2026-07-04T19:18:36.354602+00:00Z
 
-Adopted CSS+OR + d-reflect from dyad-bond this arc. New: bin/d-reflect, dyad-state/carry-forward.md (this is its first entry), OR-tag guidance in kb/templates/retro.md, carry-forward read step in kb/state_session_start.md. Open: the /workspace vs /home/user mismatch in add_repo/register_repo_root tooling for this container is unfixed upstream (not dyad-cairn's to fix) -- noted, not blocking. Next session: read this file at SESSION_START per the updated state doc.
+Adopted CSS+OR + d-reflect from dyad-bond this arc. New: bin/d-reflect, dyad-state/carry-forward.md (this is its first entry), OR-tag guidance in kb/templates/reflect.md, carry-forward read step in kb/state_session_start.md. Open: the /workspace vs /home/user mismatch in add_repo/register_repo_root tooling for this container is unfixed upstream (not dyad-cairn's to fix) -- noted, not blocking. Next session: read this file at SESSION_START per the updated state doc.
 
 ## 2026-07-04T20:05:38.526010+00:00Z
 
@@ -15,7 +15,7 @@ PR #114 open, check-in re-armed for ~2026-07-04T21:05Z. No other PR/branch work 
 
 ## 2026-07-04T20:25:18.082174+00:00Z
 
-Re-grounded CSS+OR -> SH from dyad-bond (commit bd0fc43, PR #80). Updated kb/templates/retro.md (SH section, optional) and DYAD.md's d-reflect attribution. First live SH instance recorded (Should Hold, n=1, CANDIDATE). No other open items. Next session: if dyad-bond's SH grammar changes again, re-fetch scratchpad clone before trusting this file's description of it.
+Re-grounded CSS+OR -> SH from dyad-bond (commit bd0fc43, PR #80). Updated kb/templates/reflect.md (SH section, optional) and DYAD.md's d-reflect attribution. First live SH instance recorded (Should Hold, n=1, CANDIDATE). No other open items. Next session: if dyad-bond's SH grammar changes again, re-fetch scratchpad clone before trusting this file's description of it.
 
 ## 2026-07-04T20:37:01.440238+00:00Z
 

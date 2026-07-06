@@ -1,4 +1,4 @@
-# Retro: <Title>
+# Reflect: <Title>
 
 <!-- CSS(+SH) form, adopted from dyad-bond (github.com/pltrinh1122/dyad-bond,
      kb/reflection-discipline.md). Base CSS = Continue/Start/Stop, required, linted.
@@ -19,7 +19,7 @@
 <What behaviors/invariants are working and must be maintained? (Agent-observed.)>
 
 ## Start
-<What new mechanical guardrails or behaviors must we adopt based on this retro? (Agent, from live
+<What new mechanical guardrails or behaviors must we adopt based on this reflect? (Agent, from live
 feedback.)>
 
 ## Stop

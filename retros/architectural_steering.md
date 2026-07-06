@@ -1,4 +1,4 @@
-# Retro: Architectural Steering vs. Lean Execution
+# Reflect: Architectural Steering vs. Lean Execution
 
 ## Continue
 We must continue engaging in deep, dialogic architectural sparring (`rub:`, `riff:`) for critical structural rebuilds. Synthesizing conceptual designs together ensures that new physical invariants (like the CSI Forge) are philosophically aligned before they are physically executed.

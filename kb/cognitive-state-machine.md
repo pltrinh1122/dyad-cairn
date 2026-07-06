@@ -16,7 +16,7 @@ This document codifies the operating lifecycle of `dyad-cairn`. It defines the s
 * **Characteristics:** The node now possesses a Scope and an Execution Phase (`PROBE`, `PLAN`, `EXECUTE`, `REFLECT`). The dyad mines this quarry through iterative coding and TDD until the node is `DONE`.
 
 ## 4. TRANSITION: `[SYNTHESIS]` (Crystallization)
-* **The Bridge:** `bin/node complete` / `retro`
+* **The Bridge:** `bin/node complete` / `reflect`
 * **Mechanics:** The completed work is stripped from the Active plate. It undergoes one final transition to become permanent.
 
 ## 5. STATE: `[FROZEN]` (The Invariants & Exhaust)

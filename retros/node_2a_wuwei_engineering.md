@@ -1,4 +1,4 @@
-# Retro: Node 2a - The Wu-Wei Engineering Synthesis
+# Reflect: Node 2a - The Wu-Wei Engineering Synthesis
 
 ## 1. Context
 The `node_2a` (Mason CLI Scaffold) iteration began with writing the Red Phase tests. During this PR intent validation, the Operator triggered falsifications against the Agent's legacy software engineering biases.

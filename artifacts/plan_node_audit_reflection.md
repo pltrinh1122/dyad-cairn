@@ -2,7 +2,7 @@
 
 ## Context
 1. **Design Review Gate:** Nodes injected into the Frontier DAG halt at `IN_REVIEW` pending Operator `lean!`. The Audit DAG currently suffers from this as well. It should skip it and be evaluated topologically immediately (straight to `READY` or `BLOCKED`).
-2. **Reflection Review Gate:** Both DAGs must feature a HITL block before trail synthesis (`TRAIL-RETRO`) is durably merged and the trail is pruned.
+2. **Reflection Review Gate:** Both DAGs must feature a HITL block before trail synthesis (`TRAIL-REFLECT`) is durably merged and the trail is pruned.
 
 ## Implementation Plan
 
@@ -14,9 +14,9 @@ In `skills/flow_state_manager.py` within `inject_node()`:
 
 ### 2. Both DAGs: Reflection Review Gate (`trail-reflect` & `trail-dispose`)
 The trail closure sequence is currently a synchronous monolithic action (`trail_reflect`). It must be fractured into two mechanical steps:
-- **`trail_reflect(trail_id, retro_msg)`**:
+- **`trail_reflect(trail_id, reflect_msg)`**:
   - Branches to `active/reflect_{trail_id}`.
-  - Appends `retro_msg` to the Ledger.
+  - Appends `reflect_msg` to the Ledger.
   - Commits, pushes to remote.
   - Generates a Pull Request titled `[REFLECT] Trail Synthesis {trail_id}`.
   - **HALTS** (Transitions the state in the Dyad to await Operator Review).

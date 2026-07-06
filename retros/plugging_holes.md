@@ -1,4 +1,4 @@
-# Retro: Plugging Holes and Incremental Hardening
+# Reflect: Plugging Holes and Incremental Hardening
 
 ## Continue
 We must continue treating failures and misalignments as physical holes in the substrate. We must continue to surface the raw falsification logic rather than smoothing over the gaps with generative assumptions. The Operator's directive ("will continue to plug holes as we find them") is the core ethos of our Mason identity: we build the scaffolding one physical lock at a time.

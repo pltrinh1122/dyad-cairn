@@ -1,4 +1,4 @@
-# Retro: d-land implementation and subagent delegation
+# Reflect: d-land implementation and subagent delegation
 
 ## Continue
 - Successfully invoking subagents and delegating execution implementation workflows to them (e.g., executing the `d-rub` node), while relying on system boundaries and invariants to safely constrain their autonomous capabilities.

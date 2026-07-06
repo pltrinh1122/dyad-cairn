@@ -1,4 +1,4 @@
-# Retro: CSI Guards for Execute Node Transitions
+# Reflect: CSI Guards for Execute Node Transitions
 
 ## Continue
 We must continue auditing our reliance on generative memory. The Operator's rub exposed a critical missing guardrail: the transition of an `[EXECUTE]` node to `DONE` currently relies entirely on the Agent remembering to run `./bin/run-tests` and manually checking the output.

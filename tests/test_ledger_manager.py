@@ -63,15 +63,15 @@ class TestLedgerManager(unittest.TestCase):
             self.assertEqual(data["action"], "CLIP")
             self.assertEqual(data["message"], "Another test")
             
-        # Third append (RETRO)
-        ledger_manager.append_ledger("retro", "Harvesting retro")
+        # Third append (REFLECT)
+        ledger_manager.append_ledger("reflect", "Harvesting reflect")
         
         with open(self.jsonl_path, "r") as f:
             lines = f.readlines()
             self.assertEqual(len(lines), 3)
             data = json.loads(lines[2])
-            self.assertEqual(data["action"], "RETRO")
-            self.assertEqual(data["message"], "Harvesting retro")
+            self.assertEqual(data["action"], "REFLECT")
+            self.assertEqual(data["message"], "Harvesting reflect")
 
     @patch("skills.ledger_manager.append_ledger")
     def test_process_retro_persists_payload(self, mock_append):
@@ -85,12 +85,12 @@ class TestLedgerManager(unittest.TestCase):
             with patch("builtins.open", m_open):
                 ledger_manager.process_retro("Summary", "dummy.md")
             
-        expected_message = "Summary\n\n<details><summary>View Retro Payload</summary>\n\nCSS\nPayload\n</details>"
-        mock_append.assert_called_with("retro", expected_message)
+        expected_message = "Summary\n\n<details><summary>View Reflect Payload</summary>\n\nCSS\nPayload\n</details>"
+        mock_append.assert_called_with("reflect", expected_message)
 
     def test_append_ledger_multiline_formatting(self):
         multiline_msg = "Line 1\nLine 2\nLine 3"
-        ledger_manager.append_ledger("retro", multiline_msg)
+        ledger_manager.append_ledger("reflect", multiline_msg)
         
         with open(self.md_path, "r") as f:
             md_content = f.read()

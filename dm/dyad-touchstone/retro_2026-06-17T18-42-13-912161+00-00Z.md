@@ -1,4 +1,4 @@
-# Retro: GAP Polling Race Condition & Flow Manager State Overrides
+# Reflect: GAP Polling Race Condition & Flow Manager State Overrides
 
 ## Continue
 - Relying on the deterministic test suite to falsify implementations before proceeding to the Green Phase merge.

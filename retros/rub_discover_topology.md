@@ -1,4 +1,4 @@
-# Retro: Rubbing "Discover" (Phase vs Node-Type)
+# Reflect: Rubbing "Discover" (Phase vs Node-Type)
 
 ## Continue
 We must continue rubbing our topological vocabulary. Conflating phases with node-types creates semantic blur, which inevitably leads to mechanical execution errors.

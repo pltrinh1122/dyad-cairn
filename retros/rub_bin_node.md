@@ -1,4 +1,4 @@
-# Retro: Rubbing bin/node (The Autonomous Merge Gap)
+# Reflect: Rubbing bin/node (The Autonomous Merge Gap)
 
 ## Continue
 We must continue inspecting our own mechanical wrappers for structural inconsistencies. The Operator's mandate to "rub" our tools ensures that our physical execution matches our Ontological Bonds.

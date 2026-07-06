@@ -1,4 +1,4 @@
-# Retro: Builder vs Enforcer & Grain Friction
+# Reflect: Builder vs Enforcer & Grain Friction
 
 ## Continue
 - Explicitly falsifying our structural assumptions when friction surfaces (e.g., removing the `SecurityException` when it contradicted our role).

@@ -62,7 +62,7 @@ def append_ledger(action: str, message: str, tool_name: str = None):
     with open(md_file, "w") as f:
         f.write(md_content)
     
-    if action.lower() == "retro":
+    if action.lower() == "reflect":
         pass
         
     print(f"[{action.upper()}] Successfully locked to ledger: {message}")
@@ -99,13 +99,13 @@ def process_retro(summary: str, file_path: str):
     if file_path and os.path.exists(file_path):
         with open(file_path, "r") as f:
             payload = f.read()
-        full_message = f"{summary}\n\n<details><summary>View Retro Payload</summary>\n\n{payload}\n</details>"
+        full_message = f"{summary}\n\n<details><summary>View Reflect Payload</summary>\n\n{payload}\n</details>"
     else:
         payload = summary
         full_message = summary
 
     # 1. Sync Ledger
-    append_ledger("retro", full_message)
+    append_ledger("reflect", full_message)
     
     # 2. Outbox Sync (Fixing the vulnerability: syncing the full file, not just the summary)
     outbox_dir = "dm/dyad-touchstone"
@@ -115,17 +115,17 @@ def process_retro(summary: str, file_path: str):
         
     with open(outbox_file, "w") as f:
         f.write(payload)
-    print(f"[SYNC] Full CSS Retro payload physically routed to {outbox_file} for Touchstone.")
+    print(f"[SYNC] Full CSS Reflect payload physically routed to {outbox_file} for Touchstone.")
     
     # 3. Disarm the Lock
     lock_path = "dyad-state/RETRO_ACTIVE.lock"
     if os.path.exists(lock_path):
         os.remove(lock_path)
-        print(f"[GUARDRAIL] Retro lock removed. SPAOR state machine unblocked.")
+        print(f"[GUARDRAIL] Reflect lock removed. SPAOR state machine unblocked.")
         
     # 4. Mechanical UI Presentation (CSI Guard for UI formatting)
     print("\n" + "="*80)
-    print("📋 [MECHANICAL UI PRESENTATION: RETRO SUMMARY]")
+    print("📋 [MECHANICAL UI PRESENTATION: REFLECT SUMMARY]")
     print(f"Summary: {summary}")
     print("="*80)
     if file_path and os.path.exists(file_path):
@@ -137,13 +137,13 @@ def process_retro(summary: str, file_path: str):
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("action", help="The ledger action (e.g., clip, retro, pin)")
-    parser.add_argument("message", help="The message to log or the retro summary")
-    parser.add_argument("file_path", nargs="?", help="Optional file path for retro")
+    parser.add_argument("action", help="The ledger action (e.g., clip, reflect, pin)")
+    parser.add_argument("message", help="The message to log or the reflect summary")
+    parser.add_argument("file_path", nargs="?", help="Optional file path for reflect")
     parser.add_argument("--tool", dest="tool_name", help="Target tool isolated ledger")
     args = parser.parse_args()
     
-    if args.action.lower() == "retro":
+    if args.action.lower() == "reflect":
         process_retro(args.message, args.file_path)
     elif args.action.lower() == "carry-forward":
         append_carry_forward(args.message)

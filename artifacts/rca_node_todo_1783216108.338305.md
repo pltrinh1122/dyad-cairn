@@ -1,4 +1,4 @@
-# Architectural Retro: Substrate Concurrency & Ledger Collisions
+# Architectural Reflect: Substrate Concurrency & Ledger Collisions
 
 ## 1. Symptom & Evidence
 During concurrent subagent execution, the `dyad-state/ledger.jsonl` and `DYAD_LEDGER.md` manifest massive bursts of `collision_intent_*` items with identical/near-identical timestamps (e.g., `2026-06-22 18:21:49.538...`).

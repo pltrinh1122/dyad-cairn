@@ -1,4 +1,4 @@
-# Retro: Standup, Mechanical Debt Closure, and the Steward RUB
+# Reflect: Standup, Mechanical Debt Closure, and the Steward RUB
 
 ## Continue
 - Verifying substrate viability against the actual pinned toolchain (Python 3.12, per `.github/workflows/*`) before trusting a local failure as a real code defect — the initial `SyntaxError` on `./bin/start` was my environment's `python3` (3.11), not a bug in `flow_state_manager.py`.

@@ -9,10 +9,10 @@ When designing CSI (Consistency) Guards, the steering provided to the Agent must
 * **Example:** `[STEERING VECTOR] The Intent Gate requires the remote GAP environment to actively fail. The Agent must satisfy this invariant before advancing.`
 
 ## 2. Imperative Steering (The "How to fix it")
-* **Failure Mode:** Strict Mechanical or Tooling bottlenecks (e.g., Linter formatting, missing RCA artifact file, locked Retro).
+* **Failure Mode:** Strict Mechanical or Tooling bottlenecks (e.g., Linter formatting, missing RCA artifact file, locked Reflect).
 * **Rule:** Provide the exact tool or mathematical path required to unblock the state.
-* **Why:** There is literally only one physical way to resolve the blockage. Declarative steering (e.g., "The lockfile must not exist") risks the Agent bypassing tooling (e.g., `rm lockfile`) rather than executing the required process (`./bin/retro`). Imperative commands act as the required paved road.
-* **Example:** `[STEERING VECTOR] You must resolve the retro and physically execute \`./bin/retro\` to unlock.`
+* **Why:** There is literally only one physical way to resolve the blockage. Declarative steering (e.g., "The lockfile must not exist") risks the Agent bypassing tooling (e.g., `rm lockfile`) rather than executing the required process (`./bin/reflect`). Imperative commands act as the required paved road.
+* **Example:** `[STEERING VECTOR] You must resolve the reflect and physically execute \`./bin/reflect\` to unlock.`
 
 ## 3. The Telemetry Invariant
 **Autonomy without telemetry is just guessing.** 

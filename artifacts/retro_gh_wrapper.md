@@ -1,4 +1,4 @@
-# Retro: GH Wrapper Implementation & Substrate Maturation
+# Reflect: GH Wrapper Implementation & Substrate Maturation
 
 ## Continue
 - Using `/decompose` to cleanly shatter monolithic tasks into linear, atomic `[SUBSTRATE]` nodes.

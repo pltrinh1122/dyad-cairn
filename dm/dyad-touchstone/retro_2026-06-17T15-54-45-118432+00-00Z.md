@@ -1,4 +1,4 @@
-# Retro: FSM Wiring Arc Closure
+# Reflect: FSM Wiring Arc Closure
 
 ## Continue
 Leveraging the autonomous subagent swarm to fan-out `[SUBSTRATE]` Form changes across parallel execution nodes. Utilizing `[RED]` and `[GREEN]` execution boundaries to safely stage and merge PRs.

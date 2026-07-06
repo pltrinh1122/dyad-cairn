@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+    echo "Usage: ./bin/reflect <summary> [path/to/reflect.md]"
+    exit 1
+fi
+
+if [ -z "$2" ]; then
+    echo "Usage: ./bin/reflect <summary> <path/to/reflect.md>"
+    echo "ERROR: CSS Template (path/to/reflect.md) is strictly mandatory to fulfill the Cognitive State Synchronization invariant."
+    exit 1
+fi
+
+python3 skills/flow_state_manager.py reflect "$1" "$2"

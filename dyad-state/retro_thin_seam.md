@@ -1,4 +1,4 @@
-# Retro: thin seam — nothing but a PR-description update since the last d-reflect
+# Reflect: thin seam — nothing but a PR-description update since the last d-reflect
 
 ## Continue
 - Invoking `d-reflect` on the Operator's cue even when the seam is thin, rather than skipping it

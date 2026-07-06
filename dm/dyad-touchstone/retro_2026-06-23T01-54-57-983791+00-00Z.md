@@ -1,4 +1,4 @@
-# Retro: Session Completion and Protocol Merging
+# Reflect: Session Completion and Protocol Merging
 
 ## Continue
 - Resolving local-upstream submodule drift mechanically via `sync-commons` before invoking `testing_harness.py`.

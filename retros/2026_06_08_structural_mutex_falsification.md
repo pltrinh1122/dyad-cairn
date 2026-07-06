@@ -1,4 +1,4 @@
-# Retro: Structural Mutex Falsification
+# Reflect: Structural Mutex Falsification
 
 ## Continue
 - Engaging in deep architectural `riff:`s to falsify invariants before they become deeply entrenched. Your pushback on the Structural Mutex saved us from building a rigid, single-threaded lock system.

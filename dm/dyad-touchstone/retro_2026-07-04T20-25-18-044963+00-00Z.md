@@ -1,4 +1,4 @@
-# Retro: re-grounding on dyad-bond's CSS+OR update (OR → SH)
+# Reflect: re-grounding on dyad-bond's CSS+OR update (OR → SH)
 
 ## Continue
 - Re-fetching an adopted-from-elsewhere discipline's source repo when told it changed, rather than
@@ -13,7 +13,7 @@
 ## Start
 - Apply the new SH (Should Have / Should Hold) grammar only with an actual verbatim quote behind it,
   never a paraphrase — matching bond's own evidentiary bar for the format, ported as guidance in
-  `kb/templates/retro.md`.
+  `kb/templates/reflect.md`.
 
 ## Stop
 - Treating an adopted discipline as a one-time import — it drifts upstream the same way any dependency

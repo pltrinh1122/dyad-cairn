@@ -1,4 +1,4 @@
-# Retro: Adopting dyad-bond's CSS+OR discipline and the `d-reflect` moniker
+# Reflect: Adopting dyad-bond's CSS+OR discipline and the `d-reflect` moniker
 
 ## Continue
 - (OR) The Operator's explicit "fetch to a `/tmp`" instruction, distinguishing a read-only reference
@@ -10,8 +10,8 @@
   Never-smooth-the-mortar applied to adopted content, not just Commons material.
 
 ## Start
-- Use `./bin/d-reflect` (not bare `./bin/retro`) going forward to close an arc — one call does the
-  CSS+OR retro and the carry-forward resume-prep, the same collapse dyad-bond made of its own
+- Use `./bin/d-reflect` (not bare `./bin/reflect`) going forward to close an arc — one call does the
+  CSS+OR reflect and the carry-forward resume-prep, the same collapse dyad-bond made of its own
   `reflect`/`stand-down` tokens once it saw they were always paired.
 - Read `dyad-state/carry-forward.md` at the start of every session (`kb/state_session_start.md`,
   updated this arc) — the single-home resume ledger for a dyad that restarts fresh rather than

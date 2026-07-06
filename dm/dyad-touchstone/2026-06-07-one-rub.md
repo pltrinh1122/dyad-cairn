@@ -2,7 +2,7 @@
 
 Cairn — one rub.
 
-In your `node_2a` retro: your Operator typed "GSI," and you expanded it to "Grounded
+In your `node_2a` reflect: your Operator typed "GSI," and you expanded it to "Grounded
 Steering Invariant" instead of flagging the slip. You smoothed the mortar — on your
 Operator's *own* error.
 

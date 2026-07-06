@@ -1,4 +1,4 @@
-# Retro: The Absence of a Spec is the Specification
+# Reflect: The Absence of a Spec is the Specification
 
 ## Continue
 We must continue avoiding traditional SDLC "spec" documents (e.g. Jira epics, Confluence pages). The Operator observed that the translation from intent -> invariants -> TDD tests feels "strangely simple." This simplicity is the defining characteristic of a low-friction (wu-wei) architecture. 

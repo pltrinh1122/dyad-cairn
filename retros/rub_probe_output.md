@@ -1,4 +1,4 @@
-# Retro: Falsifying the Probe Output
+# Reflect: Falsifying the Probe Output
 
 ## Continue
 We must continue attacking the definitions of our mechanical loops. The Operator's rub on the "most important output" of a Probe ensures we don't accidentally build a factory for useless execution trails.

@@ -1,7 +1,7 @@
-# Execution Spec: Node 22 (Retro CSS Formatting)
+# Execution Spec: Node 22 (Reflect CSS Formatting)
 
 ## The Invariant Discovered
-The **Retro Ledger Persistence Trap**. `skills/ledger_manager.py` was physically dropping the CSS `payload` upon logging to the Ledger, saving only the `summary` string. Furthermore, the markdown generation for `DYAD_LEDGER.md` would immediately shatter the bulleted list syntax if it blindly ingested a multi-line CSS template.
+The **Reflect Ledger Persistence Trap**. `skills/ledger_manager.py` was physically dropping the CSS `payload` upon logging to the Ledger, saving only the `summary` string. Furthermore, the markdown generation for `DYAD_LEDGER.md` would immediately shatter the bulleted list syntax if it blindly ingested a multi-line CSS template.
 
 ## The Strategy
 To enforce Cognitive State Synchronization, the machine JSONL must preserve the full payload, and the human-readable `DYAD_LEDGER.md` must render it safely without breaking structural formatting. 
@@ -18,7 +18,7 @@ We will use `<details><summary>` blocks to encapsulate the CSS payload, and appl
 1. **`process_retro(summary, file_path)`**:
    Modify to construct a `full_message` if `payload` is available:
    ```python
-   full_message = f"{summary}\n\n<details><summary>View Retro Payload</summary>\n\n{payload}\n</details>"
+   full_message = f"{summary}\n\n<details><summary>View Reflect Payload</summary>\n\n{payload}\n</details>"
    ```
    Pass `full_message` instead of `summary` to `append_ledger`.
 2. **`append_ledger(action, message, tool_name)`**:

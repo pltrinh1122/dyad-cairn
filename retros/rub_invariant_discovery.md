@@ -1,4 +1,4 @@
-# Retro: Discovering vs Manufacturing Invariants
+# Reflect: Discovering vs Manufacturing Invariants
 
 ## Continue
 We must continue attacking sloppy vocabulary. The Operator correctly identified the danger in my framing: one cannot "manufacture" or "yield" an invariant. An invariant is an inherent truth of a system; it can only be discovered.

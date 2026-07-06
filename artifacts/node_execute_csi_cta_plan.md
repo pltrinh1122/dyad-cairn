@@ -10,7 +10,7 @@ Modify `skills/dialect_linter.py` to assert this CSI Guard:
 - The Linter must raise a violation.
 
 ## Implementation Steps
-1. In `skills/dialect_linter.py`, compile a list of recognized prefixes: `["read:", "audit:", "rub:", "rub?", "retro:", "lean:", "lean?", "riff:", "execute:", "plan:", "probe:", "todo:"]`.
+1. In `skills/dialect_linter.py`, compile a list of recognized prefixes: `["read:", "audit:", "rub:", "rub?", "reflect:", "lean:", "lean?", "riff:", "execute:", "plan:", "probe:", "todo:"]`.
 2. For each `USER_INPUT`, check if it starts with any of these prefixes.
 3. If it does not, scan the `PLANNER_RESPONSE` for any tool calls that execute a script or raw command (`CommandLine`).
 4. If found, append a violation: "Violation at step X: Operator issued a pure command without a dialect prefix. Agent executed a raw command. Agent must convert this into an Operator CTA."

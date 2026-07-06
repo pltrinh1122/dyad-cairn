@@ -1,4 +1,4 @@
-# Retro: Unblocking Gate 18 Cross-Repository Mutations
+# Reflect: Unblocking Gate 18 Cross-Repository Mutations
 
 ## Continue
 - Proactively diagnosing false positive boundary violations (Sandbox Enforcer vs. Antigravity Sandbox) by digging deep into the execution chain to understand the physical reality.

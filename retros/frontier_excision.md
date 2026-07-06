@@ -1,4 +1,4 @@
-# Retro: Excising Dead Mass (The Frontier Pruning)
+# Reflect: Excising Dead Mass (The Frontier Pruning)
 
 ## Continue
 We must continue aggressively shrinking our operational surface area. The Operator's mandate to question the value of `DONE` frontier nodes highlights our commitment to radical parsimony.

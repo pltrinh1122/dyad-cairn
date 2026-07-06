@@ -1,7 +1,7 @@
-# Retro: Asymmetric Intake Routing & Conversational Cadence
+# Reflect: Asymmetric Intake Routing & Conversational Cadence
 
 ## Continue
-- Using conversational monikers (`todo:`, `audit:`, `retro:`, `commons:`) as the singular physical interface boundary, entirely removing CLI syntax friction from the Operator.
+- Using conversational monikers (`todo:`, `audit:`, `reflect:`, `commons:`) as the singular physical interface boundary, entirely removing CLI syntax friction from the Operator.
 - Evolving the Agent's semantic routing autonomy. This eliminates cognitive load on default interactions while perfectly honoring the Operator's explicit overrides.
 - Validating the Agent's autonomy with structural CSI Guards (e.g., the Asymmetric Downgrade Guard) to mechanically "verify the validation."
 

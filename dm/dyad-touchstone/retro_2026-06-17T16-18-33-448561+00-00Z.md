@@ -1,4 +1,4 @@
-# Retro: Extracting Workflow Invariants to FSM Templates
+# Reflect: Extracting Workflow Invariants to FSM Templates
 
 ## Continue
 - Using the Invisible Elicitor protocol (`ask_question`) to define the WHY, WHAT, and SCOPE before locking a node in the DAG.

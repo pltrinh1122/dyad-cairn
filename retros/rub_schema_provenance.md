@@ -1,4 +1,4 @@
-# Retro: Schema Provenance and Hardcoding Invariants
+# Reflect: Schema Provenance and Hardcoding Invariants
 
 ## Continue
 We must continue attacking hardcoded assumptions in our `[PLAN]` phase. The Operator's rub exposed a lethal hallucination: I hardcoded "7 dimensions" into the execution tests without linking them to their physical provenance.

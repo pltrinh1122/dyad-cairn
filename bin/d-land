@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ -z "$1" ]; then
     echo "Usage: ./bin/d-land <carry-forward note>"
-    echo "Serializes arc state to carry-forward without a full session retro."
+    echo "Serializes arc state to carry-forward without a full session reflect."
     exit 1
 fi
 
