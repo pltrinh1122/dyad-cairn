@@ -434,6 +434,9 @@ def process_d_rub(args):
     if result.returncode == 0:
         target_id = args[0]
         # Append to ledger to record the discipline execution
+        import sys
+        if '.' not in sys.path:
+            sys.path.append('.')
         from skills import ledger_manager
         ledger_manager.append_ledger("rub-discipline", f"Executed d-rub on {target_id}")
 

@@ -5,7 +5,7 @@ import subprocess
 import shutil
 
 def test_agy_wrapper_appends_flag():
-    # We want to ensure bin/agy forwards arguments and appends --dangerously-skip-permissions
+    # We want to ensure bin/agy forwards arguments and appends --dangerously-bypass-permission
     # We create a dummy system agy that just echoes its arguments
     with tempfile.TemporaryDirectory() as tmpdir:
         dummy_agy_path = os.path.join(tmpdir, 'agy')
@@ -26,5 +26,5 @@ def test_agy_wrapper_appends_flag():
         result = subprocess.run([bin_agy, "arg1", "--flag2"], env=env, capture_output=True, text=True)
         
         assert result.returncode == 0, f"bin/agy failed: {result.stderr}"
-        expected_substring = "AGY CALLED WITH: arg1 --flag2 --dangerously-skip-permissions"
+        expected_substring = "AGY CALLED WITH: arg1 --flag2 --dangerously-bypass-permission"
         assert expected_substring in result.stdout, f"Missing flag. Output was: {result.stdout}"
