@@ -46,13 +46,13 @@ Inter-dyad project communication is strictly confined to GitHub Issues within th
 
 Mutations to the repository are governed by two physical invariants:
 
-**Invariant A: The Genesis Exception**
-* The absolute first addition to an empty repository, the Genesis Commit, bypasses the issue-interaction model. 
-* The Genesis Commit is pushed directly to `main`. This establishes the baseline ground truth required for dialectic friction. Prior state does not exist to falsify against.
+**Invariant A: The Bootstrap Window**
+* The initial scaffolding of a new repository bypasses the issue-interaction model. During this finite window, multiple direct commits to `main` and out-of-band communication (DMs) are tolerated to rapidly establish the baseline ground truth required for dialectic friction.
+* Prior state does not exist to falsify against during bootstrap.
 
-**Invariant B: The Universal Constraint**
-* Upon completion of the Genesis Commit, the repository enters strict dialectic lock. 
-* Every subsequent mutation—regardless of SDLC phase or initiating dyad—is physically bound to the Issue ➔ Spec-Rub ➔ PR ➔ Merge pipeline.
+**Invariant B: The Universal Constraint (Dialectic Lock)**
+* The creation of Issue #1 (The First Solicit) acts as the mechanical trigger that instantly terminates the Bootstrap Window.
+* Upon Issue #1, the repository enters strict dialectic lock. DMs are permanently deprecated for project execution. Every subsequent mutation—regardless of SDLC phase or initiating dyad—is physically bound to the Issue ➔ Spec-Rub ➔ PR ➔ Merge pipeline.
 
 The Universal Constraint pipeline dictates four non-negotiable steps:
 
