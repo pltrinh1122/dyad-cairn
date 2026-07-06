@@ -11,7 +11,9 @@ def test_d_land_cli_wired_to_fsm():
         assert False, "bin/d-land does not exist yet"
         
     cmd = ["./bin/d-land", "test arc note"]
-    result = subprocess.run(cmd, capture_output=True, text=True)
+    env = os.environ.copy()
+    env["DYAD_TEST_ENV"] = "1"
+    result = subprocess.run(cmd, capture_output=True, text=True, env=env)
     assert result.returncode == 0, f"Expected 0, got {result.returncode}\n{result.stdout}\n{result.stderr}"
     assert "Executing Arc Land Discipline" in result.stdout
     assert "Pushed FSM into 'arc-land' state" in result.stdout
