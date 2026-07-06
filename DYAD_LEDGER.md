@@ -562,3 +562,4 @@
 - **2026-07-06 16:29:53** | `COMMONS_SYNC` | Absorb upstream changes for d-rub implementation.
 - **2026-07-06 16:33:07** | `NODE-RETRO` | [node_todo_1783355216.578284] Implemented d-rub discipline to handle semantic intent rubric completion.
 - **2026-07-06 16:45:36** | `NODE-RETRO` | [node_todo_1783355935.321368] Implemented Transient Script Invariant
+- **2026-07-06 20:54:53** | `NODE-RETRO` | [node_todo_1783370394.887328] gh guardrails formally relaxed for issue and comment commands
