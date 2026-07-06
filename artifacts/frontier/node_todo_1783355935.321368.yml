@@ -1,0 +1,6 @@
+node_todo_1783355935.321368:
+  title: "Implement Transient Script Invariant"
+  goal: "Modify DYAD.md to add the Transient Script Invariant"
+  type: PLAN
+  scope: SUBSTRATE
+  status: ACTIVE
