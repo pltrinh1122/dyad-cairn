@@ -165,6 +165,22 @@ def enforce_git_action(args):
 
     return True
 
+def enforce_gh_action(args):
+    if not args:
+        return True
+
+    command = args[0]
+    allowed_commands = ["issue", "comment", "pr", "auth"]
+    
+    if command in allowed_commands:
+        print(f"[FLOW] Sandbox Guard: gh {command} formally allowed across repositories.")
+        return True
+        
+    print(f"🚨 DYAD SANDBOX GUARD (Context Deny):")
+    print(f"You are attempting to execute an unauthorized gh command '{command}'.")
+    print("[STEERING VECTOR] Only gh-issue and gh-comment mutations are formally allowed across repository boundaries.")
+    return False
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         sys.exit(0)
@@ -173,6 +189,11 @@ if __name__ == "__main__":
     
     if action_type == "git":
         allowed = enforce_git_action(sys.argv[2:])
+        if not allowed:
+            sys.exit(1)
+            
+    if action_type == "gh":
+        allowed = enforce_gh_action(sys.argv[2:])
         if not allowed:
             sys.exit(1)
     
