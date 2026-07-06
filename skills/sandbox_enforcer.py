@@ -5,7 +5,7 @@ import subprocess
 import re
 
 def get_current_branch():
-    dyad_cairn_path = os.environ.get("DYAD_ROOT", "/mnt/shared_data/dzw/dyad-cairn")
+    dyad_cairn_path = os.environ.get("DYAD_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     try:
         res = subprocess.run(["/usr/bin/git", "-C", dyad_cairn_path, "rev-parse", "--abbrev-ref", "HEAD"], capture_output=True, text=True)
         return res.stdout.strip()
@@ -14,7 +14,8 @@ def get_current_branch():
 
 def load_frontier_state():
     # Attempt to load frontier state if it exists
-    path = os.path.join(os.environ.get("DYAD_ROOT", "/mnt/shared_data/dzw/dyad-cairn"), "artifacts", "frontier_state.yml")
+    dyad_cairn_path = os.environ.get("DYAD_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    path = os.path.join(dyad_cairn_path, "artifacts", "frontier_state.yml")
     if os.path.exists(path):
         try:
             with open(path, "r") as f:
@@ -35,7 +36,7 @@ def enforce_git_action(args):
 
     # Level 2 Context by State Injection
     # We read dyad-state/fsm_state.yml and active node to determine context.
-    dyad_cairn_path = os.environ.get("DYAD_ROOT", "/mnt/shared_data/dzw/dyad-cairn")
+    dyad_cairn_path = os.environ.get("DYAD_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     fsm_state_path = os.path.join(dyad_cairn_path, "dyad-state", "fsm_state.yml")
     active_state = "unknown"
     if os.path.exists(fsm_state_path):

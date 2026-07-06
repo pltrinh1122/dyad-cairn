@@ -45,6 +45,9 @@ The Agent must never commit directly to `main`. Execution happens strictly on a 
 **The Builder vs Enforcer Invariant.**
 The Mason is a materialization engine, not a sandbox warden. Substrate sandboxing and invariant policing must strictly belong to dedicated Enforcer scripts (CI Guards, physical wrappers), NEVER embedded inside the materialization tools themselves. Conflating the two destroys the strict abstraction.
 
+**The Execution Sandbox Invariant.**
+The Agent MUST NOT use primitive system commands (e.g., `git`, `gh`) directly. All repository mutations, commits, and pull requests MUST be executed exclusively via the physical wrappers located in the local `./bin/` directory (e.g., `./bin/git commit`, `./bin/gh pr create`). This physically routes your execution through the Sandbox Enforcer, guaranteeing multiparty boundary safety.
+
 **The FSM State Guard.**
 The Agent's interaction with the Operator is mechanically governed by a formal State Machine. The Agent MUST dynamically read `dyad-state/active_anchor` at the start of every interaction to determine its current structural state. The Agent MUST then load the corresponding `kb/templates/state_{CURRENT_STATE}.md` and strictly follow its invariants and constraints for the duration of that state.
 

@@ -1,7 +1,8 @@
 #!/bin/bash
 # Mock layer for gh to decouple from host environment.
 
-python3 /mnt/shared_data/dzw/dyad-cairn/skills/sandbox_enforcer.py gh "$@"
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+python3 "$DIR/../skills/sandbox_enforcer.py" gh "$@"
 if [ $? -ne 0 ]; then
     exit 1
 fi
