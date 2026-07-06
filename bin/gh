@@ -1,6 +1,11 @@
 #!/bin/bash
 # Mock layer for gh to decouple from host environment.
 
+python3 /mnt/shared_data/dzw/dyad-cairn/skills/sandbox_enforcer.py gh "$@"
+if [ $? -ne 0 ]; then
+    exit 1
+fi
+
 if [ "$1" == "pr" ] && [ "$2" == "merge" ]; then
     shift 2
     exec python3 -c '

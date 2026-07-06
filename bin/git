@@ -1,3 +1,10 @@
 #!/bin/bash
 # Mock layer for git to decouple from host environment resolution
+# and enforce Dyad ABAC Sandbox permissions dynamically.
+
+python3 /mnt/shared_data/dzw/dyad-cairn/skills/sandbox_enforcer.py git "$@"
+if [ $? -ne 0 ]; then
+    exit 1
+fi
+
 exec /usr/bin/git "$@"
