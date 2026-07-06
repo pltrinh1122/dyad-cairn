@@ -6,3 +6,4 @@ __pycache__/
 .worktrees/
 artifacts/frontier_state.md
 artifacts/audit_state.md
+scratch/
