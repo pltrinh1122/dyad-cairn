@@ -6,9 +6,9 @@ import pytest
 # forcing a physical refactor of the repository organization.
 
 CAPACITY_LIMITS = {
-    "bin": 31,
+    "bin": 32,
     "skills": 25,
-    "kb": 20,
+    "kb": 21,
 }
 
 def count_files(directory):

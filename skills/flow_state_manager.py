@@ -424,6 +424,19 @@ def process_d_land(carry_forward_note):
         yaml.dump({"state": "arc-land"}, f)
     print("[FLOW] Pushed FSM into 'arc-land' state.")
 
+def process_d_rub(args):
+    """`d-rub` — encapsulating the semantic rubbing discipline.
+    Delegates to `./bin/rub` and logs the completion of the discipline."""
+    print(f"[FLOW] Executing Rub Discipline (d-rub)...")
+    import subprocess
+    cmd = ["./bin/rub"] + args
+    result = subprocess.run(cmd, check=False)
+    if result.returncode == 0:
+        target_id = args[0]
+        # Append to ledger to record the discipline execution
+        from skills import ledger_manager
+        ledger_manager.append_ledger("rub-discipline", f"Executed d-rub on {target_id}")
+
 def complete_node(node_id, retro_msg):
     print(f"[FLOW] Executing CSI Guard (Test Suite) for Node {node_id} completion...")
     
@@ -629,6 +642,13 @@ if __name__ == "__main__":
             print("Usage: python3 skills/flow_state_manager.py d-land <carry-forward-note>")
             sys.exit(1)
         process_d_land(sys.argv[2])
+        sys.exit(0)
+
+    if action == "d-rub":
+        if len(sys.argv) < 3:
+            print("Usage: python3 skills/flow_state_manager.py d-rub <target_id> ...")
+            sys.exit(1)
+        process_d_rub(sys.argv[2:])
         sys.exit(0)
 
     if len(sys.argv) < 3:
