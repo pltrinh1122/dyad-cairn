@@ -554,25 +554,8 @@
 - **2026-07-05 14:07:38** | `TODO` | update d-reflect so Continue/Start/Stop apply to Agent behaviors, and Should Have/Should Hold (SH) apply to Operator behaviors
 - **2026-07-05 14:08:32** | `NODE-RETRO` | [node_todo_1783260458.527039] Updated d-reflect accountability vectors in retro.md and DYAD.md
 - **2026-07-05 14:09:12** | `NODE-RETRO` | [node_todo_1783260458.527039] Completed node by updating d-reflect accountability vectors
-- **2026-07-05 14:09:48** | `RETRO` | CORRECTION: Re-mapped accountability vectors for previous retro
-  
-  <details><summary>View Retro Payload</summary>
-  
-  # Retro: d-land Implementation (Corrected Accountability Vectors)
-  
-  ## Continue
-  - Proactively offloading mechanical work to background execution subagents via the newly instantiated `d-land` delegation playbook.
-  - Recognizing abstraction boundaries (Philosopher vs. Architect vs. Builder) and drafting rigid declarative schemas instead of raw execution code.
-  
-  ## Start
-  - Strictly applying the Orthogonality Invariant whenever adopting a new "Discipline" to ensure that the token is formally anchored in `DYAD.md`.
-  
-  ## Stop
-  - (None)
-  
-  ## SH
-  - (Should Hold): Any modifications to the `commons/` dyad registration schema must be held and deferred to `dyad-steward`.
-  
-  </details>
-- **2026-07-05 17:53:22** | `TODO` | Update d-land implementation in skills/flow_state_manager.py to mechanically push the active branch and open a Pull Request (via gh) against main as the final completion criteria, matching dyad-bond's baseline.
-- **2026-07-05 17:53:22** | `TODO` | Open a Pull Request for the current active branch (active/node_todo_1783260198.009732) against main to formally land the Neutral Quarry architecture arc.
+- **2026-07-06 16:10:24** | `COMMONS_SYNC` | Absorbed schema updates from steward and refined Invariant A/B to establish the Bootstrap Window and Issue #1 lock.
+- **2026-07-06 16:10:46** | `NODE-RETRO` | [node_todo_1783354040.282202] Cemented the physical execution boundary in DYAD.md
+- **2026-07-06 16:11:27** | `NODE-RETRO` | [node_todo_1783354040.282202] Cemented the physical execution boundary in DYAD.md
+- **2026-07-06 16:14:06** | `NODE-RETRO` | [node_todo_1783354040.282202] Cemented the physical execution boundary in DYAD.md
+- **2026-07-06 16:20:52** | `NODE-RETRO` | [node_todo_1783354040.282202] Cemented the physical execution boundary in DYAD.md
