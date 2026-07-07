@@ -1,0 +1,14 @@
+node_todo_1783381938.049884:
+  title: Fix CI validate.yml and test_commons_sync to handle submodules and remove
+    tamper
+  goal: 'Falsify CI pipeline and test_commons_sync mechanism to properly handle submodules
+    and remove harness tamper
+
+
+    WHAT: Fix CI validate.yml and test_commons_sync to handle submodules and remove
+    tamper
+
+    WHY: To unblock CI mechanically and structurally'
+  type: PLAN
+  scope: FRONTIER
+  status: AUTHORIZED
