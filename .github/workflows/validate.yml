@@ -8,6 +8,8 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -64,3 +66,13 @@ jobs:
         with:
           name: test-logs
           path: test_output.log
+
+      - name: Comment Test Logs
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo '```text' > comment.txt
+          cat test_output.log >> comment.txt
+          echo '```' >> comment.txt
+          gh pr comment ${{ github.event.pull_request.number }} -F comment.txt

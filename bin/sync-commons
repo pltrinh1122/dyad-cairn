@@ -9,6 +9,7 @@ echo "==========================================================================
 echo "SYNCHRONIZING COMMONS SUBMODULE"
 echo "=========================================================================="
 
+git submodule update --init commons
 cd commons || exit 1
 git fetch origin main
 git checkout origin/main

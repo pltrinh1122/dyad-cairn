@@ -4,7 +4,7 @@ import pytest
 
 def test_commons_sync():
     commons_dir = "commons"
-    if not os.path.exists(commons_dir):
+    if not os.path.exists(os.path.join(commons_dir, ".git")):
         return
         
     # Fetch latest upstream to ensure we know about drift
