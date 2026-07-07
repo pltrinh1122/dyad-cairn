@@ -499,7 +499,7 @@
 - **2026-07-05 13:32:09** | `TODO` | document d-land delegation design decision (main agent creates todos, subagent executes land)
 - **2026-07-05 13:37:21** | `TODO` | ensure execution details and decision records for d-land are durable and easily referenced
 - **2026-07-05 13:38:46** | `NODE-REFLECT` | [node_todo_1783258641.876193] Created durable documentation for d-land Landing Discipline
-- **2026-07-05 13:40:13** | `NODE-REFLECT` | [1783258200.340927] Automated d-land handoff pattern by extracting open todos
+- **2026-07-05 13:40:13** | `NODE-REFLECT` | [node_todo_1783258200.340927] Automated d-land handoff pattern by extracting open todos
 - **2026-07-05 13:41:32** | `REFLECT` | Expanded kb/ capacity to 20 for d-land delegation
   
   <details><summary>View Reflect Payload</summary>
@@ -517,18 +517,18 @@
   
   </details>
 - **2026-07-05 13:41:52** | `NODE-REFLECT` | [node_todo_1783258641.876193] Added durable documentation for d-land Landing Discipline to kb/
-- **2026-07-05 13:43:04** | `NODE-REFLECT` | [1783258200.340927] Automated d-land handoff pattern by extracting open todos
-- **2026-07-05 13:44:24** | `NODE-REFLECT` | [1783258200.340927] Automated d-land handoff pattern by extracting open todos
+- **2026-07-05 13:43:04** | `NODE-REFLECT` | [node_todo_1783258200.340927] Automated d-land handoff pattern by extracting open todos
+- **2026-07-05 13:44:24** | `NODE-REFLECT` | [node_todo_1783258200.340927] Automated d-land handoff pattern by extracting open todos
 - **2026-07-05 13:44:55** | `NODE-REFLECT` | [node_todo_1783258641.876193] Added durable documentation for d-land Landing Discipline to kb/
-- **2026-07-05 13:45:56** | `NODE-REFLECT` | [1783258200.340927] Automated d-land handoff pattern by extracting open todos
+- **2026-07-05 13:45:56** | `NODE-REFLECT` | [node_todo_1783258200.340927] Automated d-land handoff pattern by extracting open todos
 - **2026-07-05 13:46:00** | `TODO` | document converged protocol for handling no/minimum context in d-land (empty payload vs high-G payload)
-- **2026-07-05 13:46:44** | `NODE-REFLECT` | [1783258200.340927] Automated d-land handoff pattern by extracting open todos
-- **2026-07-05 13:47:30** | `NODE-REFLECT` | [1783258200.340927] Automated d-land handoff pattern by extracting open todos
+- **2026-07-05 13:46:44** | `NODE-REFLECT` | [node_todo_1783258200.340927] Automated d-land handoff pattern by extracting open todos
+- **2026-07-05 13:47:30** | `NODE-REFLECT` | [node_todo_1783258200.340927] Automated d-land handoff pattern by extracting open todos
 - **2026-07-05 13:47:58** | `NODE-REFLECT` | [node_todo_1783259160.048882] Added durable documentation for CTA protocols in d-land handling empty and high-G payloads
 - **2026-07-05 13:48:45** | `NODE-REFLECT` | [node_todo_1783259160.048882] Completed CTA protocols documentation in d-land
 - **2026-07-05 13:50:05** | `NODE-REFLECT` | [node_todo_1783258641.876193] Added durable documentation for d-land Landing Discipline to kb/
-- **2026-07-05 13:50:45** | `NODE-REFLECT` | [1783258329.939671] Documented d-land delegation design decision in the KB
-- **2026-07-05 13:51:28** | `NODE-REFLECT` | [1783258329.939671] Completed documenting d-land delegation decision
+- **2026-07-05 13:50:45** | `NODE-REFLECT` | [node_todo_1783258329.939671] Documented d-land delegation design decision in the KB
+- **2026-07-05 13:51:28** | `NODE-REFLECT` | [node_todo_1783258329.939671] Completed documenting d-land delegation decision
 - **2026-07-05 13:56:18** | `TODO` | perform architectural response to dyad-system-engine commission (draft schema contract and sub-commission to dyad-swe)
 - **2026-07-05 13:57:29** | `NODE-REFLECT` | [node_todo_1783259778.987246] Drafted sub-commission dispatch for dyad-swe
 - **2026-07-05 13:57:35** | `NODE-REFLECT` | [node_todo_1783259778.987246] Drafted sub-commission dispatch for dyad-swe
