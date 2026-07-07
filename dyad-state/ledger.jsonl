@@ -341,3 +341,4 @@
 {"timestamp": "2026-07-06T23:57:47.919297+00:00Z", "action": "NODE-REFLECT", "message": "[node_todo_1783381938.049884] Purge remaining orphaned gitlinks"}
 {"timestamp": "2026-07-07T00:00:10.428230+00:00Z", "action": "COMMONS_SYNC", "message": "Absorbing dyad-aule registry addition and DIRECTORY.md regeneration"}
 {"timestamp": "2026-07-07T00:00:35.272485+00:00Z", "action": "NODE-REFLECT", "message": "[node_todo_1783381938.049884] Absorb drift and complete fixes"}
+{"timestamp": "2026-07-07T00:05:29.742164+00:00Z", "action": "NODE-REFLECT", "message": "[node_todo_1783381938.049884] Fix bin/d-rub file permissions"}

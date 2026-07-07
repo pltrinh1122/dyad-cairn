@@ -613,3 +613,4 @@
 - **2026-07-06 23:57:47** | `NODE-REFLECT` | [node_todo_1783381938.049884] Purge remaining orphaned gitlinks
 - **2026-07-07 00:00:10** | `COMMONS_SYNC` | Absorbing dyad-aule registry addition and DIRECTORY.md regeneration
 - **2026-07-07 00:00:35** | `NODE-REFLECT` | [node_todo_1783381938.049884] Absorb drift and complete fixes
+- **2026-07-07 00:05:29** | `NODE-REFLECT` | [node_todo_1783381938.049884] Fix bin/d-rub file permissions
