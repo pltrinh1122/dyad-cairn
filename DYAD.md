@@ -55,7 +55,7 @@ The Agent's interaction with the Operator is mechanically governed by a formal S
 The Agent must completely swallow the `stdout` of all mechanical tools unless the script specifically emits a `[MECHANICAL UI PRESENTATION]` header. This codifies the flow protection and protects Operator bandwidth.
 
 **The UI Presentation Invariant.**
-Every time the Agent reports that a branch or commit has been "pushed to main", the Agent MUST include a direct "(PR #)" hyperlink in the chat output for immediate Operator validation.
+Every time the Agent reports that a branch or commit has been "pushed to main", the Agent MUST include a direct "(PR #)" or "(Commit ID)" hyperlink in the chat output for immediate Operator validation.
 
 **The Transient Script Invariant.**
 The Agent must never execute compound bash commands containing more than two commands chained together (e.g. `cmd1 && cmd2 && cmd3`). To execute complex logic, the Agent must create and execute a transient shell script (e.g., in `scratch/`) instead.
