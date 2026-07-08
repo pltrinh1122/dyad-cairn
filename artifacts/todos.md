@@ -48,3 +48,21 @@
 - [ ] **SCOPE:** Missing
 
 ---
+### todo_1783550122.991821_cc2215e0 [UNRUBBED]
+**Raw Thought:** Append to todo_1783548045.536934_cd799b7f (gap 6, found while authoring HOW-0006): kb/HOW-0005-d-land-delegation.md is referenced by DYAD.md:80 ('Grounded by the kb/HOW-0005-d-land-delegation.md playbook') but does not exist in kb/ — either materialize the playbook from the d-land implementation (skills/flow_state_manager.py + bin/d-land) or correct the DYAD.md pointer. Same class as gaps 1-2: canonical text naming a missing artifact.
+
+**The Rub Matrix:**
+- [ ] **WHAT:** Missing
+- [ ] **WHY:** Missing
+- [ ] **SCOPE:** Missing
+
+---
+### todo_1783553143.465903_144429c6 [UNRUBBED]
+**Raw Thought:** CRAFT-CAPABILITY (Operator seed, 2026-07-08; re-captured after the original ledger pin was lost to a gap-5 ledger-restore): 'Converting mortar to stone is essentially converting fragile unfalsifiable statements into solid falsifiable statements.' Semantic bridge unifying DYAD.md Ontology (Cutting = 'falsify the claims to find the truth'; Mortar = hallucinated logic w/ no falsifier = unfalsifiable-in-practice), the README falsifiable-manifesto spine, and the HOW-0006 imperatives->falsifiable-conditions recast. PRECISION (never smooth): falsifiability is the necessary CUT (mortar->candidate stone); grounding + survival under attack (Validate: Falsification/Triangulation/Grounding) makes a falsifiable claim load-bearing STONE -- hence 'survives', never 'settled'. Lived proof-of-origin this arc (n>=4): README claims+falsifiers; audit wf_8918028a-253 catching 4 falsifier-drifts; inference!=invention; HOW-0006 C1-C19. NEXT: d-rub to scope WHAT/WHY/SCOPE; candidate deepening of DYAD.md Craft (mechanism = falsification-engineering) baked across Why/How/When; candidate generalized How = a mortar-detector lint flagging unfalsifiable statements in any artifact.
+
+**The Rub Matrix:**
+- [ ] **WHAT:** Missing
+- [ ] **WHY:** Missing
+- [ ] **SCOPE:** Missing
+
+---
