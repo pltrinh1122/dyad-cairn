@@ -69,7 +69,11 @@ $mech
 **Reflect checklist:**
 1. **ROM (above):** If the anchor moved, set \`RESTART-PENDING\` in \`$LEDGER\` + refresh the ROM-baseline line; else leave 'none'. Record a one-line Stand-Down note (date · what changed · baseline).
 2. **Open-items / Item-K queue:** Update statuses; drop what closed; add only queue-worthy in-flight.
-3. **Intermission reflection:** What was authored/learned, what is now the live front, what carries. Single-home the prose in the ledger or artifacts; **render the summary directly in the chat**.
+3. **Intermission reflection & Retrospective:** What was authored/learned, what is now the live front, what carries. 
+   - **CSS+SH Retrospective:** You MUST evaluate your performance using the CSS+SH framework (Continue, Start, Stop, Should Have/Hold) defined in \`kb/templates/reflect.md\`.
+   - Single-home the CSS+SH prose into a durable artifact file (e.g., \`dyad-state/retros/retro_DATE.md\`).
+   - Execute \`./bin/reflect "<summary>" <path_to_css_file>\` to formally lock the reflection into the FSM.
+   - **Render both the summary and the CSS+SH retrospective directly in the chat** for the Operator.
 4. **Theory-pipeline:** Advance \`exec_phase\` / \`next_probe\` for any candidate touched this session.
 5. **Durability (above):** Commit + push before stepping away — unpushed history is ungrounded memory.
 TEMPLATE
