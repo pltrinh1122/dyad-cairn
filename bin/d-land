@@ -1,8 +1,75 @@
-#!/bin/bash
-if [ -z "$1" ]; then
-    echo "Usage: ./bin/d-land <carry-forward note>"
-    echo "Serializes arc state to carry-forward without a full session reflect."
-    exit 1
+#!/usr/bin/env bash
+# bin/d-land — dyad-cairn d-land spine (discipline-scoped landing mechanics)
+# Ported from dyad-bond's bin/land.sh
+
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+
+PROTECTED_BRANCHES=(main)
+BOOT_SET=(DYAD.md GEMINI.md)
+
+branch="$(./bin/git rev-parse --abbrev-ref HEAD 2>/dev/null || echo '?')"
+
+lines=(); add() { lines+=("$1"); }
+
+dirty="$(./bin/git status --porcelain 2>/dev/null || true)"
+unbacked="$(./bin/git rev-list --count HEAD --not --remotes 2>/dev/null || echo '?')"
+if [[ -n "$dirty" ]]; then
+  add "Durability: ⚠ DIRTY on \`$branch\` ($(printf '%s\n' "$dirty" | wc -l | tr -d ' ') paths) — commit via ./bin/git before landing."
+elif [[ "$unbacked" != "0" ]]; then
+  add "Durability: ⚠ $unbacked commit(s) not backed up on any remote — push via ./bin/git push."
+else
+  add "Durability: ✓ clean + backed up on \`$branch\`."
 fi
 
-python3 skills/flow_state_manager.py d-land "$1"
+# Green-gate
+changed="$(./bin/git diff --name-only origin/main...HEAD 2>/dev/null || true; ./bin/git diff --name-only 2>/dev/null || true; ./bin/git diff --cached --name-only 2>/dev/null || true)"
+gate_fail=0
+run_gate() {
+  local label="$1"; shift
+  if "$@" >/tmp/land-gate.out 2>&1; then add "Green-gate: ✓ $label"; else
+    add "Green-gate: ✗ $label FAILED — landing BLOCKED:"; add "  $(tail -3 /tmp/land-gate.out | tr '\n' '§' | sed 's/§/ | /g')"; gate_fail=1; fi
+}
+if [ -f "./bin/run-tests" ]; then
+  run_gate "run-tests" ./bin/run-tests
+fi
+
+# Arc scope
+mapfile -t arc < <(./bin/git log --oneline origin/main..HEAD 2>/dev/null || true)
+if ((${#arc[@]})); then
+  add "Arc scope (origin/main..HEAD): ${#arc[@]} commit(s)"
+  for c in "${arc[@]}"; do add "  $c"; done
+else
+  add "Arc scope: 0 commits ahead of main."
+fi
+
+# PR state
+pr_json="$(./bin/gh pr list --head "$branch" --state open --json number,title 2>/dev/null | grep -oE '"number":[0-9]+' | head -1 || true)"
+if [[ -n "$pr_json" ]]; then
+  add "PR state: OPEN PR exists (${pr_json}) → route = commit + push, done."
+else
+  add "PR state: NO open PR for \`$branch\` → route = open ONE via ./bin/gh pr create."
+fi
+
+touched_boot=()
+for f in "${BOOT_SET[@]}"; do grep -qx "$f" <<<"$changed" && touched_boot+=("$f"); done
+if ((${#touched_boot[@]})); then
+  add "RESTART-PENDING: ⚠ boot-set touched (${touched_boot[*]})."
+else
+  add "RESTART-PENDING: none."
+fi
+
+printf '%s\n' "dyad-cairn d-land — mechanical checks."
+printf '  %s\n' "${lines[@]}"
+
+cat <<'TEMPLATE'
+
+d-land — JUDGMENT (Agent action required):
+  1. Commit dirty files with a judgment-bearing message using `./bin/git commit`.
+  2. Push to remote.
+  3. If opening a new PR, write the body and open via `./bin/gh pr create`.
+  4. The Operator will merge to main.
+TEMPLATE
+
+[[ "$gate_fail" == "0" ]] || exit 1
