@@ -47,9 +47,9 @@ dur_line="clean + in sync on \`$branch\`."
 [[ -z "$dirty" && "$unpushed" != "0" ]] && dur_line="⚠ $unpushed unpushed commit(s) on \`$branch\` — push (bin/git)."
 
 mech="$(printf '%s\n' \
-  "dyad-cairn d-reflect — mechanical:" \
-  "  ROM: $rom_line" \
-  "  Durability: $dur_line")"
+  "### 🪞 dyad-cairn d-reflect — mechanical:" \
+  "- **ROM:** $rom_line" \
+  "- **Durability:** $dur_line")"
 
 if [[ "${1:-}" == "--log" ]]; then
   printf '%s\n' "$mech"
@@ -59,20 +59,19 @@ fi
 cat <<TEMPLATE
 $mech
 
-dyad-cairn d-reflect — JUDGMENT (the agent fills in chat; auto-trigger ≠ auto-judgment):
-  Queue-worthy filter — record an item ONLY if it is (a) in-flight (a live front, not closed),
-    (b) not already single-homed elsewhere (no restating kb/ — point to it), and
-    (c) load-bearing for resume (the next session needs it to recover-forward). Else DROP it.
-  Bloat-guard — the ledger is the memory, not the journal. Prefer one line + a pointer to prose.
+### 🧠 dyad-cairn d-reflect — JUDGMENT
+*(The agent fills in chat; auto-trigger ≠ auto-judgment)*
 
-  Reflect checklist:
-   1. ROM (above): if the anchor moved, set RESTART-PENDING in $LEDGER + refresh the ROM-baseline
-      line; else leave 'none'. Record a one-line Stand-Down note (date · what changed · baseline).
-   2. Open-items / Item-K queue: update statuses; drop what closed; add only queue-worthy in-flight.
-   3. Intermission reflection: what was authored/learned, what is now the live front, what carries. 
-      Single-home the prose in the ledger or artifacts; the chat holds the summary.
-   4. Theory-pipeline: advance exec_phase / next_probe for any candidate touched this session.
-   5. Durability (above): commit + push before stepping away — unpushed history is ungrounded memory.
+**Guards:**
+- **Queue-worthy filter:** Record an item ONLY if it is (a) in-flight (a live front, not closed), (b) not already single-homed elsewhere (no restating \`kb/\` — point to it), and (c) load-bearing for resume (the next session needs it to recover-forward). Else DROP it.
+- **Bloat-guard:** The ledger is the memory, not the journal. Prefer one line + a pointer to prose.
+
+**Reflect checklist:**
+1. **ROM (above):** If the anchor moved, set \`RESTART-PENDING\` in \`$LEDGER\` + refresh the ROM-baseline line; else leave 'none'. Record a one-line Stand-Down note (date · what changed · baseline).
+2. **Open-items / Item-K queue:** Update statuses; drop what closed; add only queue-worthy in-flight.
+3. **Intermission reflection:** What was authored/learned, what is now the live front, what carries. Single-home the prose in the ledger or artifacts; **render the summary directly in the chat**.
+4. **Theory-pipeline:** Advance \`exec_phase\` / \`next_probe\` for any candidate touched this session.
+5. **Durability (above):** Commit + push before stepping away — unpushed history is ungrounded memory.
 TEMPLATE
 
 python3 skills/flow_state_manager.py session-end
