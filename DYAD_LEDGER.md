@@ -616,3 +616,43 @@
 - **2026-07-07 00:05:29** | `NODE-REFLECT` | [node_todo_1783381938.049884] Fix bin/d-rub file permissions
 - **2026-07-07 00:33:28** | `TODO` | list
 - **2026-07-07 14:08:49** | `TODO` | help
+- **2026-07-08 15:20:47** | `REFLECT` | Updated d-reflect discipline with CSS+SH rendering
+  
+  <details><summary>View Reflect Payload</summary>
+  
+  # Reflect: d-reflect discipline update (2026-07-08)
+  
+  ## Continue
+  - Accurately adapting and adopting `dyad-bond` routines (like `standdown.sh`) structurally into `dyad-cairn` rather than inventing new routines.
+  - Strictly following the explicit invariants for UI rendering and system interaction (acting directly on files while rendering summaries to the Operator).
+  
+  ## Start
+  - Validating the exact script text format and mechanical check edge cases during modifications (e.g., handling detached HEAD states when running upstream git checks) to ensure clean mechanical readouts.
+  
+  ## Stop
+  - Relying on silent file updates when the prompt implies or explicitly requests rendering in chat.
+  
+  ## SH (optional — Should Have / Should Hold, CANDIDATE upstream, verbatim-quote-grounded only)
+  - Should Have: Explicitly verified the retrospective dependency earlier. "dyad-bond's d-reflect also triggers a 'retrospective' in the form of CSS+SH". I corrected the adaptation gap in this session by formalizing the CSS+SH requirement natively into `bin/d-reflect`.
+  
+  </details>
+- **2026-07-08 15:24:39** | `REFLECT` | Formalized idempotency requirements for d-reflect
+  
+  <details><summary>View Reflect Payload</summary>
+  
+  # Reflect: d-reflect idempotency implementation (2026-07-08)
+  
+  ## Continue
+  - Using JSON parsing to safely evaluate programmatic payloads (`ledger.jsonl`) instead of relying on fragile text-based grep checks.
+  - Iteratively refining the durability logic so that the mechanical transactions of `cairn` don't clutter the underlying architecture.
+  
+  ## Start
+  - Preemptively addressing idempotency during system adaptation. I initially adopted the routines without structurally assessing if their mechanical side-effects (like appending to a file) were safe to repeat continuously in an automated agent loop.
+  
+  ## Stop
+  - Treating script adaptations as purely cosmetic text replacements; always evaluate their runtime execution constraints and potential for duplication.
+  
+  ## SH (optional — Should Have / Should Hold, CANDIDATE upstream, verbatim-quote-grounded only)
+  - Should Have: Anticipated the idempotency requirement when building the `d-reflect` automation. "ensure that d-reflect is idempotent" - I only addressed this after the gap was explicitly pointed out, resulting in a duplicate-prone initial implementation.
+  
+  </details>
