@@ -86,6 +86,19 @@ def append_carry_forward(note: str):
         with open(path, "w") as f:
             f.write(header)
 
+    if os.path.exists(path):
+        with open(path, "r") as f:
+            content = f.read()
+            # Find the last note by splitting on '## ' and getting the part after the first newline
+            blocks = content.split("\n## ")
+            if len(blocks) > 1:
+                last_block = blocks[-1]
+                if "\n\n" in last_block:
+                    last_note = last_block.split("\n\n", 1)[1].strip()
+                    if last_note == note.strip():
+                        print(f"[CARRY-FORWARD] Idempotency check: Note already appended to {path}. Skipping.")
+                        return
+
     ts = datetime.datetime.now(datetime.timezone.utc).isoformat() + "Z"
     with open(path, "a") as f:
         f.write(f"\n## {ts}\n\n{note}\n")
@@ -104,10 +117,24 @@ def process_retro(summary: str, file_path: str):
         payload = summary
         full_message = summary
 
-    # 1. Sync Ledger
+    # 1. Idempotency Check
+    jsonl_file = get_jsonl_file()
+    if os.path.exists(jsonl_file):
+        with open(jsonl_file, "r") as f:
+            lines = [line.strip() for line in f if line.strip()]
+            if lines:
+                try:
+                    last_entry = json.loads(lines[-1])
+                    if last_entry.get("action") == "REFLECT" and last_entry.get("message") == full_message:
+                        print("[REFLECT] Idempotency check: Reflection payload already synced. Skipping.")
+                        return
+                except Exception:
+                    pass
+
+    # 2. Sync Ledger
     append_ledger("reflect", full_message)
     
-    # 2. Outbox Sync (Fixing the vulnerability: syncing the full file, not just the summary)
+    # 3. Outbox Sync (Fixing the vulnerability: syncing the full file, not just the summary)
     outbox_dir = "dm/dyad-touchstone"
     os.makedirs(outbox_dir, exist_ok=True)
     ts_clean = datetime.datetime.now(datetime.timezone.utc).isoformat().replace(":", "-").replace(".", "-") + "Z"
