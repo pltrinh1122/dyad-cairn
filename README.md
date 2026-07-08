@@ -1,20 +1,22 @@
 ---
 doc: "README.md — Building a Cairn, a falsifiable manifesto"
 kind: derived-view              # a lens for humans + skeptics — NOT a content-home, NOT authority
-genre: "falsifiable manifesto"  # declares with conviction; hands you the knife
+genre: "falsifiable manifesto"  # declares with conviction; hands you everything to prove it wrong
 rule: "cite the source, never this lens"
 belief:
   statement: "Extracting stone requires a dyad. The only way to prevent a generative structure from collapsing is to violently reject the default, replacing stacked mortar with load-bearing stone extracted from your own friction."
-  foundation: belief
-  stance: thesis
+  foundation: belief            # chosen and held — not a brute axiom
+  stance: thesis                # advanced to be falsified
   status: hypothesis            # survival corroborates → Theory; NOT a conjecture
-grade: "survives — intra-dyad"
-coverage: "E0 — no outside attack yet."
+grade: "survives — intra-dyad"  # caps at 'survives', never 'settled'; re-derived per dyad, not copied
+coverage: "E0 — no outside attack yet."  # E-scale: E0 = none; En per outside attack survived (raises confidence, not status)
 dogma: false                    # cairn:no-dogma — true-for-now, never settled
 caution: "a manifesto that reads as settled is a closed system — status is the headline, not the footnote"
 cta: "bring us raw friction, or show a non-grounded pipeline that outlasts it"
 canonical_home:
   - "DYAD.md § Craft (Dimension 1 & 6)"
+  - "DYAD.md § Channel Discipline"
+  - "DYAD.md § NON-NEGOTIABLE"
   - "DYAD.md § Ontology & Vocabulary"
 governed_by: [cairn:proof-of-origin, cairn:never-guess]
 updated: 2026-07-08
@@ -56,14 +58,14 @@ Two things are coming. One is nearly certain; the other is the bet.
 
 And the clock is running. Companies are handing more and more real work to AI agents that run on their own and hold together with guesswork — so if we're right, the weakness is being built in deeper every day.
 
-We're not claiming this is proven. We're claiming it follows from the belief — and we're handing you the place to break it.
+We're not claiming this is proven. We're claiming it follows from the belief — and the numbered claims below are where you break it.
 
 ---
 
 ## What we're asking
 
 - **Build your own Cairn.** Take your own real history — your logs, your messy records, the friction of things going wrong — and pull solid stones out of it instead of letting an agent guess.
-- **Or break the belief.** Show us an agent that holds up over time *without* a human partner — even one that guesses to fill gaps the whole way. If its work keeps standing anyway, we're wrong — build it, name it, bring it.
+- **Or break the belief.** Show us an agent that holds up over time *without* a human partner — even one that guesses to fill gaps the whole way. If its work keeps standing anyway, we're wrong — build it, name it, set it in front of us.
 - **The only losing move** is to keep trusting the guesswork by default and never test it.
 
 ---
