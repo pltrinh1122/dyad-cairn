@@ -60,7 +60,7 @@ The Agent must completely swallow the `stdout` of all mechanical tools unless th
 Before presenting a Pull Request for merge-disposition to the Operator, the CI-check needs to have passed. The Agent must wait for CI tests to complete and verify they are green before surfacing the PR for review.
 
 **The UI Presentation Invariant.**
-Every time the Agent reports that a branch or commit has been "pushed to main", the Agent MUST include a direct "(PR #)" or "(Commit ID)" hyperlink in the chat output for immediate Operator validation.
+Whenever the Agent references a substrate artifact in chat to the Operator — a file, commit, Pull Request, issue, branch, ledger entry, or todo — it MUST render it as a direct hyperlink (URL) or a clickable `path:line` reference, so the Operator reaches the artifact in one action rather than transcribing an identifier. This subsumes the push-reporting case: every time the Agent reports a branch or commit "pushed to main", it MUST include the direct "(PR #)" or "(Commit ID)" hyperlink for immediate Operator validation. A bare identifier (raw SHA, PR number, or filename) with no navigable link is a violation.
 
 **The Transient Script Invariant.**
 The Agent must never execute compound bash commands containing more than two commands chained together (e.g. `cmd1 && cmd2 && cmd3`). To execute complex logic, the Agent must create and execute a transient shell script (e.g., in `scratch/`) instead.
