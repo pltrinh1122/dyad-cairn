@@ -1,0 +1,15 @@
+todo_1783548461.503489_1ad107ed:
+  raw_thought: "Append to todo_1783548045.536934_cd799b7f (README audit gaps, wf_8918028a-253\
+    \ confirmed): (3) The Ontological Bond's Why axis is physically vacant \u2014\
+    \ zero kb/WHY-* files exist, and the disjunct's other home (GEMINI.md) is now\
+    \ a 398-byte shim redirecting to DYAD.md; DYAD.md:42 needs a real Why-home decision.\
+    \ (4) Leaked test fixtures committed as real artifacts: bin/hard-guardrails is\
+    \ an 'echo test' stub and kb/HOW-0002-hard-guardrails.md is '# Dummy KB' \u2014\
+    \ fixtures from tests/test_mason_install_stone.py leaked into the repo; remove\
+    \ or replace with real implementations."
+  timestamp: '2026-07-08T22:07:41.503489Z'
+  rub_matrix:
+    what: null
+    why: null
+    scope: null
+  status: UNRUBBED
