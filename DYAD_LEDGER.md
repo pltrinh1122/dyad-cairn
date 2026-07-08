@@ -697,3 +697,25 @@
   Should Have: When the CI initially hung, the Operator stated: "github is a separate and asynchronous system so you can't assert it's state immediately." This was an assumption that the CI was failing simply due to standard network latency/asynchrony, when in reality the local CI script was physically hanging due to an unexpected `gh` interactive authentication prompt in the test suite execution. We should have isolated the failure mode at the test harness level rather than exclusively attributing it to remote pipeline latency.
   
   </details>
+- **2026-07-08 21:07:16** | `REFLECT` | Formalized the Cairn Manifesto metaphor purge and explicitly tested the Dyadic extraction boundary.
+  
+  <details><summary>View Reflect Payload</summary>
+  
+  # Reflect: Cairn Manifesto Metaphor Purge and Dyadic Spine (2026-07-08)
+  
+  ## Continue
+  - Using the `d-rub` elicitation discipline to extract the "Spine before Form". 
+  - Enforcing strict physical metaphor boundaries (Masonry: Stones vs Mortar) and refusing to drift into biological or mechanical domains.
+  
+  ## Start
+  - Proactively invoking the 4 Elicitation Questions (Falsifier, Target, Asymmetry, Metaphor) *before* generating a large draft, preventing turn-sinks and line-by-line fine-tuning.
+  
+  ## Stop
+  - Proposing form ahead of the spine. Relying on generative interpolation to guess the normative ground, which forces the Operator into the role of a line-editor.
+  - Accidentally carrying over upstream mixed metaphors ("pipeline", "engine", "at your tier") from exemplars like `dyad-bond` without translating them into the current dyad's strict ontological domain.
+  
+  ## SH (Should Hold)
+  - **Should Hold:** The Operator demonstrated exceptional discipline in enforcing metaphor constraints, stating: *"too many mixed metaphor: smoothing = rot is a large gap. tighten up the metaphor to one at most two."* and *"you don't 'mine' mortar"*. This strict curation prevented the manifesto from devolving into incoherent prose.
+  - **Should Hold:** The Operator actively course-corrected the agent away from a turn-sink, stating: *"what is the best approach to achieve convergence with my expectation quicker? provide elicitation questions so that you're 90% aligned with the next draft rather than this line-by-line editing."* This forced the re-adoption of the `wu-wei` (Spine before Form) discipline.
+  
+  </details>
