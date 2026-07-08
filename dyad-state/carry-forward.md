@@ -125,3 +125,12 @@ Delivered PR #5 revisions against the CAS-conformant REQUIREMENTS.md on commissi
 ## 2026-07-08T14:24:29.000000+00:00Z
 
 Stand-Down. Delivered and landed extractor-integration on `commission-dyad-system` PR #5. Bond merged it, closing Gate #11. Trail `node_issue11` was successfully disposed and pruned. Added index to issue #11 for downstream token efficiency. No outstanding tasks. Await next directive.
+
+## 2026-07-08T23:29:53.000000+00:00Z
+
+Stand-Down. Landed the Cairn manifesto refresh + README-Writing Discipline arc (PRs #154, #155, #157, #156, #158 all merged to main). New in main: root `README.md` layman falsifiable-manifesto; the README-Writing Discipline bond (`kb/WHY-0001`, `kb/HOW-0006` as 19 falsifiable conditions C1–C19 incl. content invariants C5–C7, `skills/readme_lint.py` + tests); generalized `DYAD.md` UI Presentation Invariant (all artifact refs → hyperlinks); commons repinned to 8085ff2. Retro single-homed at `dyad-state/retros/retro_20260708_manifesto_discipline.md`.
+
+**Live fronts / Item-K queue:**
+- **Craft-capability seed** (todo `144429c6`): mortar→stone = unfalsifiable→falsifiable. NEXT: `d-rub` to scope WHAT/WHY/SCOPE toward a `DYAD.md § Craft` deepening (falsification-engineering); candidate generalized How = a mortar-detector lint.
+- **Substrate gaps** (todos `cd799b7f`, `1ad107ed`, `0fa5ec7f`, `cc2215e0`): missing `dip_state.yml`; stale `DYAD.md:89/:42` GEMINI-as-Anchor refs; leaked test fixtures (`bin/hard-guardrails`, `kb/HOW-0002`); **gap-5 ELEVATED** — tests write the real ledger, and the noise-strip reflex it forces destroyed a real pin this arc; missing `kb/HOW-0005-d-land-delegation.md`. Gap-3 (vacant `kb/WHY-*` axis) now partially resolved by `WHY-0001`.
+- Merged local branches (craft-refresh, ui-invariant-hyperlinks, commons-sync, readme-writing-discipline, arc-close-craft-seed) can be pruned next session.
