@@ -9,6 +9,3 @@
 
 ## Stop
 - Treating script adaptations as purely cosmetic text replacements; always evaluate their runtime execution constraints and potential for duplication.
-
-## SH (optional — Should Have / Should Hold, CANDIDATE upstream, verbatim-quote-grounded only)
-- Should Have: Anticipated the idempotency requirement when building the `d-reflect` automation. "ensure that d-reflect is idempotent" - I only addressed this after the gap was explicitly pointed out, resulting in a duplicate-prone initial implementation.
