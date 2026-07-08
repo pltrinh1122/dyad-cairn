@@ -20,7 +20,7 @@ Two failure modes were actually lived, and each cost real turns:
    of the normative ground, forcing the Operator into the role of a line-editor. The
    Operator's correction — *"provide elicitation questions so that you're 90% aligned
    with the next draft rather than this line-by-line editing"* — is the direct origin
-   of the discipline's spine-before-form condition (HOW-0006 C8). This failure mode attacks `craft_telos`
+   of the discipline's spine-before-form condition (HOW-0006 C11). This failure mode attacks `craft_telos`
    head-on (dyad-cairn's charter metric, `DYAD.md § Craft`: minimize the discovery +
    structuring turns to turn a messy challenge into a proven skill): it maximizes
    structuring turns instead of minimizing them.
