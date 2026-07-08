@@ -3,8 +3,8 @@
 > Ideas parked here have not formally entered the SPAOR execution loop.
 > Use `./bin/node convert-todo <todo_id>` to ingest an item into the DAG.
 
-### todo_1783384408.258065_b3e04654 [UNRUBBED]
-**Raw Thought:** list
+### todo_1783433329.473695_088d8946 [UNRUBBED]
+**Raw Thought:** help
 
 **The Rub Matrix:**
 - [ ] **WHAT:** Missing

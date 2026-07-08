@@ -615,3 +615,4 @@
 - **2026-07-07 00:00:35** | `NODE-REFLECT` | [node_todo_1783381938.049884] Absorb drift and complete fixes
 - **2026-07-07 00:05:29** | `NODE-REFLECT` | [node_todo_1783381938.049884] Fix bin/d-rub file permissions
 - **2026-07-07 00:33:28** | `TODO` | list
+- **2026-07-07 14:08:49** | `TODO` | help
