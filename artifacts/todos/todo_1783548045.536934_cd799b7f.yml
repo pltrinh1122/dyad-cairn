@@ -1,0 +1,16 @@
+todo_1783548045.536934_cd799b7f:
+  raw_thought: "Fix substrate gaps identified during README grounding audit (2026-07-08):\
+    \ (1) dip_state.yml missing \u2014 CLAUDE.md/GEMINI.md shims declare projection\
+    \ from it and skills/anchor_compiler.py:12 expects artifacts/dip_state.yml, but\
+    \ the file exists nowhere and has no git history; materialize it or correct the\
+    \ provenance claim. (2) DYAD.md:89 (\xA79 Topology) still calls GEMINI.md 'The\
+    \ Anchor' and DYAD.md:42 names it a Why-home \u2014 stale since the AGENT.md\u2192\
+    DYAD.md rename (b8add89); GEMINI.md is now a thin shim. Substrate Form mutation\
+    \ \u2014 needs Operator consensus on the fix shape. Append further gaps confirmed\
+    \ by workflow wf_8918028a-253 before closing."
+  timestamp: '2026-07-08T22:00:45.536934Z'
+  rub_matrix:
+    what: null
+    why: null
+    scope: null
+  status: UNRUBBED

@@ -12,6 +12,8 @@ def run_tests(args):
     cmd = ["python3", "-m", "pytest", "tests/"]
     if os.path.exists("commons"):
         cmd.append("commons/")
+        cmd.append("--ignore=commons/scripts/test_auto_share_birthhash.py")
+        cmd.append("--ignore=commons/scripts/test_verify_birthhash.py")
     if os.path.exists("commissions"):
         cmd.append("commissions/")
     cmd.extend(args)

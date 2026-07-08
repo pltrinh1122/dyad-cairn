@@ -697,3 +697,49 @@
   Should Have: When the CI initially hung, the Operator stated: "github is a separate and asynchronous system so you can't assert it's state immediately." This was an assumption that the CI was failing simply due to standard network latency/asynchrony, when in reality the local CI script was physically hanging due to an unexpected `gh` interactive authentication prompt in the test suite execution. We should have isolated the failure mode at the test harness level rather than exclusively attributing it to remote pipeline latency.
   
   </details>
+- **2026-07-08 21:07:16** | `REFLECT` | Formalized the Cairn Manifesto metaphor purge and explicitly tested the Dyadic extraction boundary.
+  
+  <details><summary>View Reflect Payload</summary>
+  
+  # Reflect: Cairn Manifesto Metaphor Purge and Dyadic Spine (2026-07-08)
+  
+  ## Continue
+  - Using the `d-rub` elicitation discipline to extract the "Spine before Form". 
+  - Enforcing strict physical metaphor boundaries (Masonry: Stones vs Mortar) and refusing to drift into biological or mechanical domains.
+  
+  ## Start
+  - Proactively invoking the 4 Elicitation Questions (Falsifier, Target, Asymmetry, Metaphor) *before* generating a large draft, preventing turn-sinks and line-by-line fine-tuning.
+  
+  ## Stop
+  - Proposing form ahead of the spine. Relying on generative interpolation to guess the normative ground, which forces the Operator into the role of a line-editor.
+  - Accidentally carrying over upstream mixed metaphors ("pipeline", "engine", "at your tier") from exemplars like `dyad-bond` without translating them into the current dyad's strict ontological domain.
+  
+  ## SH (Should Hold)
+  - **Should Hold:** The Operator demonstrated exceptional discipline in enforcing metaphor constraints, stating: *"too many mixed metaphor: smoothing = rot is a large gap. tighten up the metaphor to one at most two."* and *"you don't 'mine' mortar"*. This strict curation prevented the manifesto from devolving into incoherent prose.
+  - **Should Hold:** The Operator actively course-corrected the agent away from a turn-sink, stating: *"what is the best approach to achieve convergence with my expectation quicker? provide elicitation questions so that you're 90% aligned with the next draft rather than this line-by-line editing."* This forced the re-adoption of the `wu-wei` (Spine before Form) discipline.
+  
+  </details>
+- **2026-07-08 21:14:25** | `COMMONS_SYNC` | Synced upstream commits for birth_hash guard and steward regressions
+- **2026-07-08 21:14:58** | `REFLECT` | Expanded bin topology mass to 33 to accommodate bin/claude launcher script per substrate abstraction invariant.
+  
+  <details><summary>View Reflect Payload</summary>
+  
+  # Reflect: Expand Topology Mass
+  
+  ## Continue
+  - Using deterministic test gates to enforce topology mass invariants.
+  
+  ## Start
+  - Expanding `bin/` capacity to 33 to support `bin/claude`, ensuring symmetrical substrate abstraction alongside `bin/agy`.
+  
+  ## Stop
+  - Assuming substrate hooks are singular. A portable dyad requires equivalent launcher logic for both platforms.
+  
+  ## Should Have / Should Hold
+  - Should Hold: The `bin/claude` script maintains the `--dangerously-skip-permissions` invariant to prevent headless deadlocks.
+  
+  </details>
+- **2026-07-08 21:20:03** | `TODO` | add/edit interaction-invariant - SH should be framed as Agent's observation of Should Have (debt) and Should Hold (credit) for Operator's prompting, intent clarity and intent coherence.
+- **2026-07-08 22:00:45** | `TODO` | Fix substrate gaps identified during README grounding audit (2026-07-08): (1) dip_state.yml missing — CLAUDE.md/GEMINI.md shims declare projection from it and skills/anchor_compiler.py:12 expects artifacts/dip_state.yml, but the file exists nowhere and has no git history; materialize it or correct the provenance claim. (2) DYAD.md:89 (§9 Topology) still calls GEMINI.md 'The Anchor' and DYAD.md:42 names it a Why-home — stale since the AGENT.md→DYAD.md rename (b8add89); GEMINI.md is now a thin shim. Substrate Form mutation — needs Operator consensus on the fix shape. Append further gaps confirmed by workflow wf_8918028a-253 before closing.
+- **2026-07-08 22:07:41** | `TODO` | Append to todo_1783548045.536934_cd799b7f (README audit gaps, wf_8918028a-253 confirmed): (3) The Ontological Bond's Why axis is physically vacant — zero kb/WHY-* files exist, and the disjunct's other home (GEMINI.md) is now a 398-byte shim redirecting to DYAD.md; DYAD.md:42 needs a real Why-home decision. (4) Leaked test fixtures committed as real artifacts: bin/hard-guardrails is an 'echo test' stub and kb/HOW-0002-hard-guardrails.md is '# Dummy KB' — fixtures from tests/test_mason_install_stone.py leaked into the repo; remove or replace with real implementations.
+- **2026-07-08 22:17:48** | `TODO` | Append to todo_1783548045.536934_cd799b7f (gap 5, found during d-land of PR #154): the test suite mutates the real DYAD_LEDGER.md — tests/test_todo.py:17 spawns the real ./bin/todo with collision_intent_* fixtures and tests/test_substrate_concurrency_lock.py:24 calls ledger_manager.append_ledger directly; every ./bin/run-tests re-stamps 50 noise lines in the append-only ledger, violating the Ledger invariant and permanently re-dirtying the tree (d-land Durability check can never stay green). Fix: sandbox the ledger path in tests (tmpdir), then purge the 50 committed collision_intent_* lines from DYAD_LEDGER.md in a consensus commit.
