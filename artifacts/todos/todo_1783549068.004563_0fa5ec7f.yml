@@ -1,0 +1,15 @@
+todo_1783549068.004563_0fa5ec7f:
+  raw_thought: "Append to todo_1783548045.536934_cd799b7f (gap 5, found during d-land\
+    \ of PR #154): the test suite mutates the real DYAD_LEDGER.md \u2014 tests/test_todo.py:17\
+    \ spawns the real ./bin/todo with collision_intent_* fixtures and tests/test_substrate_concurrency_lock.py:24\
+    \ calls ledger_manager.append_ledger directly; every ./bin/run-tests re-stamps\
+    \ 50 noise lines in the append-only ledger, violating the Ledger invariant and\
+    \ permanently re-dirtying the tree (d-land Durability check can never stay green).\
+    \ Fix: sandbox the ledger path in tests (tmpdir), then purge the 50 committed\
+    \ collision_intent_* lines from DYAD_LEDGER.md in a consensus commit."
+  timestamp: '2026-07-08T22:17:48.004563Z'
+  rub_matrix:
+    what: null
+    why: null
+    scope: null
+  status: UNRUBBED
