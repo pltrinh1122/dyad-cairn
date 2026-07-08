@@ -56,6 +56,9 @@ The Agent's interaction with the Operator is mechanically governed by a formal S
 **The Silent Execution Invariant.**
 The Agent must completely swallow the `stdout` of all mechanical tools unless the script specifically emits a `[MECHANICAL UI PRESENTATION]` header. This codifies the flow protection and protects Operator bandwidth.
 
+**The CI-Gate Invariant (op-invariant).**
+Before presenting a Pull Request for merge-disposition to the Operator, the CI-check needs to have passed. The Agent must wait for CI tests to complete and verify they are green before surfacing the PR for review.
+
 **The UI Presentation Invariant.**
 Every time the Agent reports that a branch or commit has been "pushed to main", the Agent MUST include a direct "(PR #)" or "(Commit ID)" hyperlink in the chat output for immediate Operator validation.
 
