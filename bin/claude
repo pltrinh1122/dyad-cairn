@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# bin/claude — dyad-cairn launcher: start Claude Code in DYAD mode (bypassPermissions).
+#
+# WHY: The Operator wants a PER-LAUNCH choice between the native gate and gate-off, WITHOUT baking
+# bypass into config. Run `claude` = normal (native gate on). Run `bin/claude` = DYAD mode: the
+# native permission gate is OFF and the Dyad FSM runtime is the authority. This is the Operator's
+# explicit OPT-IN act — NOT an Agent self-grant: it is invoked by path, ratified by the Operator's
+# merge, and never auto-applies to a normal `claude`.
+#
+# Usage:  bin/claude [args...]              # launch Claude Code with the native gate OFF
+#         CLAUDE_SH_DRY_RUN=1 bin/claude    # print the resolved launch command, do NOT exec
+
+set -euo pipefail
+
+# Strip our own bin dir from PATH so a bare `claude` resolves to the REAL binary, never this
+# wrapper (recursion guard).
+MY_BIN="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PATH="$(echo "$PATH" | sed -e "s|$MY_BIN:||g" -e "s|:$MY_BIN||g" -e "s|^$MY_BIN\$||g")"
+export PATH
+
+command -v claude >/dev/null 2>&1 \
+  || { echo "bin/claude: real 'claude' not found on PATH after de-shadowing bin/." >&2; exit 127; }
+
+if [[ "${CLAUDE_SH_DRY_RUN:-0}" == "1" ]]; then
+  printf 'bin/claude: (dry-run) would exec → %s --dangerously-skip-permissions %s\n' \
+    "$(command -v claude)" "$*" >&2
+  exit 0
+fi
+
+echo "bin/claude: launching in DYAD mode — bypassPermissions (native gate OFF). FSM Sandbox Authority active." >&2
+exec claude --dangerously-skip-permissions "$@"
