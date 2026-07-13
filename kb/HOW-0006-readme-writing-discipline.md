@@ -23,6 +23,8 @@
 >   the refinement arc's metaphor pass (PR #154, commit `313a317`).
 > - **Falsifier-fidelity + grounding conditions (C12–C16): n=1** — the refinement arc
 >   (audit `wf_8918028a-253`, PR #154).
+> - **Content-conciseness (C20): n=0** — added by Operator directive (session d-start,
+>   2026-07-13); no arc has exercised it yet.
 > - **This document's own conditions: hardened n=1** by an adversarial run of the
 >   discipline against itself (`wf_aa885aeb-4ec`).
 
@@ -143,6 +145,24 @@ stray from another (organic, combat, navigation, cooking). *Verifier:* OPERATOR.
 gap … one at most two"; "you don't 'mine' mortar" — REFLECT `2026-07-08 21:07:16`, SH)
 **and** the refinement arc's metaphor pass (PR #154, commit `313a317`).
 
+**C20 — content-conciseness: every passage earns its place.** The document is as short
+as its belief, claims, falsifiers, and declared audience allow: each passage does work
+that C5's skeleton names (states the belief, defines, stakes, asks, attacks, or points
+home); no point is made twice in the same register; and no passage restates what the
+declared reader already holds from an earlier one. Compression is a register edit and
+stands under the same audit as any other: a cut may never narrow a claim's extension
+(C12) or soften an honesty field (C15). *Violation:* a passage whose deletion loses no
+claim, falsifier, stake, or comprehension for the declared audience; the same point
+made twice in one register; filler standing between the reader and the belief.
+*Verifier:* OPERATOR (a generative judgment — the linter may not judge taste, per
+Builder vs Enforcer). *Origin (n=0):* asserted by Operator directive at session d-start
+2026-07-13, projected from the dyad's charter — Condensation is the Generate mechanism
+(`DYAD.md § 3. Form-Grounding`) and the Stone the README projects is "highly compressed"
+(`DYAD.md § 6 & 7. Ontology & Vocabulary`); no arc has exercised it yet, and the
+exemplar has not been audited against it. *(Numbered C20, out of section order, because
+condition numbers are stable identifiers — the ledger and `WHY-0001` cite them — so a
+new condition takes the next free number, never a renumbering.)*
+
 ### Claims (the attackable spine)
 
 **C10 — Every claim hands over a knife.** The body contains numbered claims, and every
@@ -237,4 +257,6 @@ If a dyad keeps only a few, keep the ones whose violation was lived, not imagine
 budget one–two), **C11** (spine before form), **C12** (falsifier fidelity), **C13**
 (proof of origin resolves), **C15** (honesty fields never weaken), **C16** (gaps
 surfaced, never smoothed). The rest are mechanically held by `readme_lint.py` (C1–C3,
-C10, C13-lint, C17) or by the dyad's existing gates (C18–C19).
+C10, C13-lint, C17) or by the dyad's existing gates (C18–C19). **C20** (conciseness) is
+Operator-held but not yet load-bearing by this section's own criterion: at n=0 its
+violation is asserted, not lived.

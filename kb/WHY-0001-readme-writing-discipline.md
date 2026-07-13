@@ -34,6 +34,18 @@ Two failure modes were actually lived, and each cost real turns:
    audit against the canonical anchors caught it. Hence the discipline's rule: the
    grounding audit is a **gate**, not a courtesy pass.
 
+## Why conciseness is a condition (added 2026-07-13)
+
+Unlike the two failure modes above, conciseness did not enter through a lived failure;
+it entered by Operator directive (session d-start, 2026-07-13) and is graded n=0 in
+HOW-0006 (C20) accordingly. Its grounding is the charter, not an arc: Condensation is
+this dyad's Generate mechanism (`DYAD.md § 3. Form-Grounding`), and the Stone — the
+form the README projects — is by definition "highly compressed" (`DYAD.md § 6 & 7.
+Ontology & Vocabulary`). A projection that bloats what its source compresses is
+unfaithful in the same family as one that drifts a falsifier: the stranger and the
+skeptic the README exists for pay attention for every sentence, and prose that does no
+work dilutes the claims that do.
+
 ## Why a discipline and not a checklist
 
 The failure modes split cleanly along the Builder-vs-Enforcer line:
