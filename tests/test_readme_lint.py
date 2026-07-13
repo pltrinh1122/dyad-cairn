@@ -8,7 +8,7 @@ any substrate file (ledger-isolation lesson, DYAD_LEDGER.md REFLECT
 
 from pathlib import Path
 
-from skills.readme_lint import lint
+from skills.readme_lint import claim_parity, knife_diff, lint
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
@@ -118,3 +118,65 @@ def test_missing_frontmatter_block_fails(tmp_path):
     readme.write_text("# Just a plain readme\n")
     errors = lint(readme)
     assert any("frontmatter" in e for e in errors)
+
+
+# --- Concision modes (HOW-0006 C22/C24, adopted from dyad-bond, falsified 2026-07-13) ---
+
+KNIFE_A = "**Claim 1.** Thing. → *Break it:* show one counterexample.\n"
+KNIFE_B = "**Falsifier** (formal): a generative edit lands unpaired.\n"
+
+
+def write_pair(tmp_path, a_text, b_text):
+    a, b = tmp_path / "before.md", tmp_path / "after.md"
+    a.write_text(a_text)
+    b.write_text(b_text)
+    return a, b
+
+
+def test_knife_diff_stable_prose_change_passes(tmp_path):
+    """C22: cutting prose while knives stay byte-identical is a clean pass."""
+    a, b = write_pair(tmp_path,
+                      "long narrative prose\n" + KNIFE_A + KNIFE_B,
+                      "short\n" + KNIFE_A + KNIFE_B)
+    assert knife_diff(a, b) == []
+
+
+def test_knife_diff_relocation_passes(tmp_path):
+    """C22: relocation (reordering) is permitted; only rewording fails."""
+    a, b = write_pair(tmp_path, KNIFE_A + KNIFE_B, KNIFE_B + KNIFE_A)
+    assert knife_diff(a, b) == []
+
+
+def test_knife_diff_reworded_knife_fails(tmp_path):
+    reworded = KNIFE_A.replace("one counterexample", "counterexamples")
+    a, b = write_pair(tmp_path, KNIFE_A + KNIFE_B, reworded + KNIFE_B)
+    errors = knife_diff(a, b)
+    assert any("lost or reworded" in e for e in errors)
+    assert any("added or reworded" in e for e in errors)
+
+
+def test_knife_diff_lost_knife_fails(tmp_path):
+    a, b = write_pair(tmp_path, KNIFE_A + KNIFE_B, KNIFE_A)
+    errors = knife_diff(a, b)
+    assert any("lost or reworded" in e for e in errors)
+
+
+def test_knife_diff_missing_file_fails(tmp_path):
+    a, _ = write_pair(tmp_path, KNIFE_A, KNIFE_A)
+    assert any("not found" in e for e in knife_diff(a, tmp_path / "ghost.md"))
+
+
+def test_claim_parity_equal_sets_pass(tmp_path):
+    a, b = write_pair(tmp_path,
+                      "**Claim 1** x **Claim 2** y\n",
+                      "**Claim 2** formal y\n\n**Claim 1** formal x\n")
+    assert claim_parity(a, b) == []
+
+
+def test_claim_parity_mismatch_fails(tmp_path):
+    a, b = write_pair(tmp_path,
+                      "**Claim 1** x **Claim 2** y **Claim 3** z\n",
+                      "**Claim 1** x **Claim 4** w\n")
+    errors = claim_parity(a, b)
+    assert any("[2, 3]" in e for e in errors)
+    assert any("[4]" in e for e in errors)

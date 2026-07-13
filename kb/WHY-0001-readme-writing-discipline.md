@@ -46,6 +46,22 @@ unfaithful in the same family as one that drifts a falsifier: the stranger and t
 skeptic the README exists for pay attention for every sentence, and prose that does no
 work dilutes the claims that do.
 
+The same week, independently, the failure *was* lived — by `dyad-bond`, the first dyad
+to run this discipline end-to-end. Bond's conforming draft grew to 4× the exemplar's
+mass while passing every gate; its diagnosis names the gap exactly: *"C6 catches
+inaccessible register; nothing catches inaccessible mass — a novice who abandons page
+three was not served by plain sentences."* Bond contributed the repair it lived as
+candidate conditions by DM; cairn falsified the DM against bond's physical substrate
+(sizes, yields, and knife byte-stability re-derived from bond's commits; two details
+refuted — see `dyad-state/retros/falsification_20260713_bond_concision_dm.md`) and
+adopted the survivors as HOW-0006 C21–C24. Two independent origins converging on one
+gap in one week is triangulation, not coincidence to smooth over: the charter-derived
+demand (C20) and the lived mechanics of cutting safely (C21–C24) now ground each other.
+Bond's arc also supplies the sharpest reason conciseness needs *discipline* rather than
+appetite: a concision pass is a register pass, and register passes are where falsifier
+drift ships (this document's §2) — so the same arc that demands cutting also demands
+the knife-freeze and the post-cut audit.
+
 ## Why a discipline and not a checklist
 
 The failure modes split cleanly along the Builder-vs-Enforcer line:

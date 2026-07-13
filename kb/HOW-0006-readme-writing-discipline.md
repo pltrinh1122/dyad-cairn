@@ -12,9 +12,17 @@
 > dyad satisfies the discipline by making every condition true — by whatever route fits
 > its own substrate — not by replaying `dyad-cairn`'s keystrokes.
 >
-> **Grade: `survives — intra-dyad`, CANDIDATE for cross-dyad use.** No dyad other than
-> `dyad-cairn` has run it. Per the no-dogma rule this document is true-for-now,
-> re-rubbable. Component survival differs and is graded honestly:
+> **Grade: `survives — cross-dyad (n=1)`.** `dyad-bond` ran the discipline end-to-end
+> (2026-07-13, its README-revision arc, bond PR #96) — the first dyad other than
+> `dyad-cairn` to do so. The discipline held: its conditions caught real defects in
+> bond's draft (C6 taxonomy drift, C13 danglers, a C12-class widening), and its audit
+> gate caught what six careful passes could not (bond DM, vendored:
+> `dyad-state/inbox/dyad-bond_2026-07-11-concision-discipline-contribution.md`;
+> falsified by cairn against bond's substrate:
+> `dyad-state/retros/falsification_20260713_bond_concision_dm.md`). One clause was
+> refuted in the contact: C19's layout requirement (see C19). Per the no-dogma rule this
+> document is true-for-now, re-rubbable. Component survival differs and is graded
+> honestly:
 > - **Form, style, spine, claims (C1–C4, C7, C10–C11): n=1** — established by the
 >   2026-07-08 materialization arc (`DYAD_LEDGER.md` REFLECT `2026-07-08 21:07:16`).
 > - **Content-form and content-tone (C5, C6): n=1** — the refinement arc's layman
@@ -25,6 +33,9 @@
 >   (audit `wf_8918028a-253`, PR #154).
 > - **Content-conciseness (C20): n=0** — added by Operator directive (session d-start,
 >   2026-07-13); no arc has exercised it yet.
+> - **Concision conditions (C21–C24): n=1, cross-dyad** — lived by bond's 2026-07-13
+>   arc (bond PR #96), contributed by DM, adopted after cairn's falsification run.
+>   Not yet exercised by cairn itself.
 > - **This document's own conditions: hardened n=1** by an adversarial run of the
 >   discipline against itself (`wf_aa885aeb-4ec`).
 
@@ -215,6 +226,65 @@ a claim quietly reworded to stop presupposing a missing artifact. *Verifier:* AU
 OPERATOR. *Origin:* the exemplar audit surfaced four gaps as todos (`cd799b7f`,
 `1ad107ed`); a fifth (`0fa5ec7f`) surfaced at PR #154's d-land — none smoothed.
 
+### Concision (cutting without disarming — adopted from dyad-bond)
+
+These four conditions are bond's contribution, sent by DM after bond ran the discipline
+end-to-end and fell into the gap C20 names — a conforming draft at 4× the exemplar's
+mass, passing every gate ("C6 catches inaccessible *register*; nothing catches
+inaccessible *mass*"). Cairn falsified the DM's claims against bond's physical substrate
+before adopting; the record, including the two refuted details, is
+`dyad-state/retros/falsification_20260713_bond_concision_dm.md`. Bond proposed them as
+C20–C23 with "renumber freely"; they enter as C21–C24 because cairn's C20 was minted
+the same week, independently.
+
+**C21 — The lens is economical.** The README carries no content its canonical home
+already holds: process provenance (consensus records, rejection rationales, sharpening
+annotations) appears only as a pointer to its dialectic home, never restated.
+*Violation:* a consensus-date or decision-record narrated in a footnote; a footnote
+that outweighs its claim; a lens outgrowing the canonical sections it projects.
+*Verifier:* AUDIT. *Origin (n=1, cross-dyad):* bond's residue cut (bond commit
+`8ca9d98`), yield verified at 3.2% — carrying bond's lesson that residue is thinner
+than it looks: a concision pass claiming big yield from residue is almost certainly
+cutting armament silently.
+
+**C22 — Knives survive concision byte-stable (the knife-freeze).** Any
+brevity/register/concision pass is bracketed by a falsifier snapshot and a post-pass
+byte-diff: the multiset of falsifier lines (`Break it:` / `**Falsifier**`) is identical
+before and after. Relocation is permitted; rewording, loss, or unpinned addition is
+not. *Violation:* a falsifier line that changed during a pass whose purpose was not to
+change it. *Verifier:* LINT — `python3 skills/readme_lint.py --knife-diff BASELINE
+CURRENT`. *Origin (n=1, cross-dyad):* bond's residue and brevity passes (bond commits
+`8ca9d98`, `a157577`); byte-stability independently re-derived by cairn's own diff
+during the falsification run, not taken on report. This condition targets exactly the
+WHY-0001 §2 failure mode: drift ships through careful register passes, and a concision
+pass is a register pass.
+
+**C23 — Compression preserves qualifiers.** A brevity pass targets *definitions and
+claims*: narrative elaboration is cut, but every extension-pinned qualifier (scope
+words, modals like "reliably", conjunctive falsifier structure) survives in sense — and
+the pass is followed by a grounding audit, not merely a re-read. *Violation:* a
+compressed claim whose refutation-set widened or narrowed. *Verifier:* AUDIT (the
+Grounding Audit is mandatory *after* any concision pass, not only before landing).
+*Origin (n=1, cross-dyad):* bond's second audit caught an *inherited* widening ("true
+intent" → "intents") invisible to the first audit and every manual pass — DM-attested
+and triangulated against bond's own arc reflect (bond commit `278fcac`), not
+byte-verifiable from artifacts.
+
+**C24 — When armament outweighs the audience, split registers — don't disarm.** If the
+formal layer's *necessary* mass (pre-answered attacks, formal extensions, evidence
+apparatus) exceeds what the declared audience can carry, the resolution is sibling
+documents: a plain lens whose claims are one-liner compressions, and a formal surface
+that is the extension baseline — each declaring its register and pointing to the other,
+both passing the mechanical gate, the compressions governed by C22/C23. *Violation:*
+armament deleted to meet a length target (disarming disguised as concision); OR sibling
+documents whose claim sets disagree in number or extension. *Verifier:* LINT
+(`--claim-parity LENS FORMAL`; both documents individually gated) + OPERATOR (the split
+decision itself) + AUDIT (extension agreement). *Origin (n=1, cross-dyad):* bond's
+`README.md`/`FALSIFICATION.md` split — verified landed (bond PR #96 merged, claim
+parity 9 = 9, mutual pointers present). The sibling form is the newest component here;
+bond offered it for falsification, not as settled, and cairn's verification covers its
+mechanics, not its longevity.
+
 ### Close and adoption
 
 **C17 — The mechanical gate is green.** `python3 skills/readme_lint.py README.md` exits
@@ -224,17 +294,23 @@ OPERATOR. *Origin:* the exemplar audit surfaced four gaps as todos (`cd799b7f`,
 branch → CI green → PR → Operator merge, never a direct mutation. *Violation:* a
 direct-to-main change. *Verifier:* the dyad's own guards.
 
-**C19 — The tool was vendored whole.** An adopting dyad holds `skills/readme_lint.py`
-**and** `tests/test_readme_lint.py` together (No-Pure-G), in the `skills/` + root-`README.md`
-layout the test imports assume, with the source commit recorded; runtime dep PyYAML.
-*Violation:* the linter vendored without its test suite. *Verifier:* the adopting dyad's gate.
+**C19 — The tool travels with its tests.** An adopting dyad holds the linter **and**
+its paired deterministic test suite together (No-Pure-G), with the source commit
+recorded; runtime dep PyYAML. The two-file `skills/` + `tests/` split in the root-`README.md`
+layout is cairn's *local form*, not the condition's kernel: bond falsified the layout
+clause against its own substrate and survived with a single `bin/readme-lint.py`
+carrying the suite embedded as `--selftest` (extend-never-redefine; verified passing,
+11 cases, in cairn's falsification run). *Violation:* the linter vendored without its
+paired tests — in whatever layout. *Verifier:* the adopting dyad's gate.
 
 ---
 
 ## The Grounding Audit (the verifier for the AUDIT conditions)
 
-C4, C12, C13, C14, C15, C16 are decided here. Register passes silently drift claim
-semantics — proven, not hypothetical — so before a README lands, each claim is audited
+C4, C12, C13, C14, C15, C16, C21, and C23 are decided here. Register passes silently
+drift claim semantics — proven, not hypothetical, and twice: cairn's four drifts through
+six careful passes, then bond's inherited widening caught only by its second audit — so
+before a README lands, **and after any concision pass (C23)**, each claim is audited
 against three anchor classes, and each finding is adversarially verified before it is
 applied:
 
@@ -256,7 +332,10 @@ If a dyad keeps only a few, keep the ones whose violation was lived, not imagine
 **C7** (manifesto stance — conviction without dogma), **C8/C9** (metaphors are yours,
 budget one–two), **C11** (spine before form), **C12** (falsifier fidelity), **C13**
 (proof of origin resolves), **C15** (honesty fields never weaken), **C16** (gaps
-surfaced, never smoothed). The rest are mechanically held by `readme_lint.py` (C1–C3,
-C10, C13-lint, C17) or by the dyad's existing gates (C18–C19). **C20** (conciseness) is
+surfaced, never smoothed), and **C22** (the knife-freeze — its failure mode is the
+lived one twice over, and the check is mechanically cheap; the component bond stakes
+most). The rest are mechanically held by `readme_lint.py` (C1–C3, C10, C13-lint, C17,
+C22/C24-lint) or by the dyad's existing gates (C18–C19). **C20** (conciseness) is
 Operator-held but not yet load-bearing by this section's own criterion: at n=0 its
-violation is asserted, not lived.
+violation is asserted, not lived; C21/C23/C24 are bond-lived (n=1) and unexercised by
+cairn.
