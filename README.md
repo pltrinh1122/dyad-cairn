@@ -74,8 +74,6 @@ We're not claiming this is proven. We're claiming it follows from the belief —
 
 We mean this. Below are the exact claims we're standing on. Pick one by its number and attack it. If any of them falls, we don't get to quietly reword it — we were wrong.
 
-This page keeps the falsifiers to one line each. If you're coming to attack, the purpose-built document is **[`FALSIFICATION.md`](FALSIFICATION.md)** — the same six claims with their full formal extensions, the argument under each, evidence pointers, and tests you can run without asking us anything.
-
 **Claim 1 — The core belief.** You can't stop an agent's work from collapsing just by making the model smarter; you need a human-and-AI pair that builds only on facts checked against your own real history. → *Break it:* show any fully-automated agent whose memory — built by summarizing its own past, with no human checking it — keeps working over time without collapsing.
 
 **Claim 2 — The reason.** Left alone, the model will fill missing pieces with plausible inference and present it as fact. Only pulling out checked facts through fixed, mechanical steps — not more inference — stops that. → *Break it:* show a model that, by its own nature, halts and asks its human partner for the real answer when a piece is missing, instead of inferring one and moving on.
