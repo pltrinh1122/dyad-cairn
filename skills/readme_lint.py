@@ -18,6 +18,9 @@ and emphasis judgments live in the playbook, never here):
      relative to the README and contains the heading text.
   7. The body contains numbered claims ("**Claim N"), and every claim block
      carries a falsifier marker ("Break it:").
+  8. Every body-prose reference to an in-repo document (an existing .md file)
+     is a navigable markdown link, never a bare mention (HOW-0006 C25).
+     Frontmatter is exempt: canonical_home is machine schema, not prose.
 
 Concision modes (HOW-0006 C22/C24, adopted from dyad-bond's contribution DM,
 falsified 2026-07-13):
@@ -136,6 +139,27 @@ def lint_claims(body):
     return errors
 
 
+MD_LINK_RE = re.compile(r"\[[^\]]*\]\([^)]*\)")
+MD_FILE_RE = re.compile(r"[A-Za-z0-9_./-]*[A-Za-z0-9_-]\.md\b")
+
+
+def lint_reference_links(body, doc_dir):
+    """C25: an in-repo document named in body prose must be a markdown link.
+
+    Only files that actually exist (relative to the document) are flagged —
+    a mention of a nonexistent file is a grounding problem (C14), not a
+    linking one. Bare mentions inside markdown links are fine: links are
+    stripped before scanning.
+    """
+    errors = []
+    stripped = MD_LINK_RE.sub("", body)
+    for name in sorted({m.group(0).lstrip("./") for m in MD_FILE_RE.finditer(stripped)}):
+        if (doc_dir / name).is_file():
+            errors.append(
+                f"reference to {name!r} is not a hyperlink (C25: link what you cite)")
+    return errors
+
+
 def extract_knives(text):
     """Every line carrying a falsifier marker, verbatim (the knife snapshot)."""
     return [line for line in text.splitlines()
@@ -191,6 +215,7 @@ def lint(path):
         return ["no YAML frontmatter block found"]
     errors = lint_frontmatter(fm_text, readme.resolve().parent)
     errors.extend(lint_claims(body))
+    errors.extend(lint_reference_links(body, readme.resolve().parent))
     return errors
 
 
