@@ -31,8 +31,10 @@
 >   the refinement arc's metaphor pass (PR #154, commit `313a317`).
 > - **Falsifier-fidelity + grounding conditions (C12–C16): n=1** — the refinement arc
 >   (audit `wf_8918028a-253`, PR #154).
-> - **Content-conciseness (C20): n=0** — added by Operator directive (session d-start,
->   2026-07-13); no arc has exercised it yet.
+> - **Content-conciseness (C20): n=1** — added by Operator directive (session d-start,
+>   2026-07-13); first lived instance 2026-07-14, the two-register arc: the Operator
+>   caught a redundant sibling-pointer paragraph in the exemplar ("README.md 77-78 is
+>   unnecessary") — the same point made twice in one register, C20's named violation.
 > - **Concision conditions (C21–C24): n=1 cross-dyad (bond)** — lived by bond's
 >   2026-07-13 arc (bond PR #96), contributed by DM, adopted after cairn's
 >   falsification run. **C22/C23/C24 subsequently n=2** — exercised by cairn's own
@@ -172,8 +174,9 @@ made twice in one register; filler standing between the reader and the belief.
 Builder vs Enforcer). *Origin (n=0):* asserted by Operator directive at session d-start
 2026-07-13, projected from the dyad's charter — Condensation is the Generate mechanism
 (`DYAD.md § 3. Form-Grounding`) and the Stone the README projects is "highly compressed"
-(`DYAD.md § 6 & 7. Ontology & Vocabulary`); no arc has exercised it yet, and the
-exemplar has not been audited against it. *(Numbered C20, out of section order, because
+(`DYAD.md § 6 & 7. Ontology & Vocabulary`). First lived instance (n=1): the Operator
+caught a twice-made point in the exemplar during the two-register arc (2026-07-14) —
+the violation class this condition names. *(Numbered C20, out of section order, because
 condition numbers are stable identifiers — the ledger and `WHY-0001` cite them — so a
 new condition takes the next free number, never a renumbering.)*
 
