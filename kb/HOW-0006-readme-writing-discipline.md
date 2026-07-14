@@ -40,6 +40,9 @@
 >   falsification run. **C22/C23/C24 subsequently n=2** — exercised by cairn's own
 >   two-register materialization arc, 2026-07-14 (knife-freeze empty-diff, post-pass
 >   grounding audit, sibling split with parity 6=6); C21 still n=1.
+> - **Reference links (C25): n=1** — Operator directive 2026-07-14; violation lived in
+>   the exemplar and its sibling, repaired the same arc, mechanically held by
+>   `readme_lint` thereafter.
 > - **This document's own conditions: hardened n=1** by an adversarial run of the
 >   discipline against itself (`wf_aa885aeb-4ec`).
 
@@ -179,6 +182,21 @@ caught a twice-made point in the exemplar during the two-register arc (2026-07-1
 the violation class this condition names. *(Numbered C20, out of section order, because
 condition numbers are stable identifiers — the ledger and `WHY-0001` cite them — so a
 new condition takes the next free number, never a renumbering.)*
+
+**C25 — Link what you cite.** Every body-prose reference to an in-repo document is a
+navigable relative markdown link — the reader reaches the cited artifact in one action,
+never by transcribing a filename. The frontmatter is exempt (`canonical_home` is
+machine schema, not prose), and file-level links suffice — heading anchors are not
+required (GitHub slugs for `§`-style headings are fragile; the file link is robust).
+*Violation:* an existing in-repo document named bare in body prose. *Verifier:* LINT
+(part of the standard `readme_lint` pass). *Origin (n=1):* Operator directive,
+2026-07-14 — the violation was lived in the exemplar itself (the closing line's two
+bare references) and throughout the formal sibling (8 bare references), and is *not*
+inherited practice (bond's plain lens carries ~12 bare references against 1 link).
+Charter precedent: the UI Presentation Invariant (`DYAD.md § 5. NON-NEGOTIABLE`)
+asserts the same one-action right for the Operator in chat; C25 extends it to the
+README's reader. Falsification record:
+`dyad-state/retros/falsification_20260714_reference_link_invariant.md`.
 
 ### Claims (the attackable spine)
 
@@ -347,7 +365,7 @@ budget one–two), **C11** (spine before form), **C12** (falsifier fidelity), **
 surfaced, never smoothed), and **C22** (the knife-freeze — its failure mode is the
 lived one twice over, and the check is mechanically cheap; the component bond stakes
 most). The rest are mechanically held by `readme_lint.py` (C1–C3, C10, C13-lint, C17,
-C22/C24-lint) or by the dyad's existing gates (C18–C19). **C20** (conciseness) is
+C22/C24-lint, C25) or by the dyad's existing gates (C18–C19). **C20** (conciseness) is
 Operator-held but not yet load-bearing by this section's own criterion: at n=0 its
 violation is asserted, not lived; C21/C23/C24 are bond-lived (n=1) and unexercised by
 cairn.

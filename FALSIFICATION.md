@@ -24,7 +24,7 @@ updated: 2026-07-14
 
 # Falsifying the Cairn — the formal surface
 
-This is the attacker's document. Its sibling, `README.md`, is the plain lens: the same
+This is the attacker's document. Its sibling, [`README.md`](README.md), is the plain lens: the same
 belief, the same six claims, one-line falsifiers. This page carries what the plain lens
 deliberately does not: each claim's **full falsifier extension** (exactly what counts as
 a refutation), the argument each claim stands on, its evidence pointer, and protocols
@@ -48,7 +48,7 @@ history. Generative memory is summaries stacked on summaries — the smoothing o
 smoothing of the smoothing — and you cannot build with pure mortar; continuous dyadic
 extraction is the only mechanism that replaces that soft context with load-bearing
 invariants. → *Break it:* any autonomous (pure 100% agent) generative memory system
-that scales across time without structural collapse. *Evidence:* `DYAD.md` § Craft
+that scales across time without structural collapse. *Evidence:* [`DYAD.md`](DYAD.md) § Craft
 (Dimension 1 & 6).
 
 **Claim 2 — The kernel.** A purely generative model will always smooth over missing
@@ -56,14 +56,14 @@ pieces with plausible mortar; only deterministic extraction of stone prevents th
 This is the load-bearing collapse-target: refute it and the belief is false, not
 redefined. → *Break it:* a generative model that inherently halts and demands reality
 from the Operator when structural pieces are missing, rather than generating plausible
-mortar. *Evidence:* `DYAD.md` § Craft (Dimension 1 & 6).
+mortar. *Evidence:* [`DYAD.md`](DYAD.md) § Craft (Dimension 1 & 6).
 
 **Claim 3 — The handles.** The human (The Diviner) keeps the structure grounded by
 identifying the high-value signal in the Quarry; the agent extracts the stone. The
 structure remains grounded only because the Operator chooses the signal and the Agent
 extracts the stone. → *Break it:* an agent that can autonomously act as The Diviner —
 identifying high-value signal from the Quarry — without human steering or loss of
-relevance. *Evidence:* `DYAD.md` § Channel Discipline.
+relevance. *Evidence:* [`DYAD.md`](DYAD.md) § Channel Discipline.
 
 **Claim 4 — The Ontological Bond.** The truth cannot be buried purely in code. It must
 span three orthogonal axes — the declarative *Why*, the mechanical *How*, the
@@ -71,7 +71,7 @@ procedural *When* — so the human's philosophical intent is physically bound to
 agent's execution, and a change in consensus must land on all three or the rule is
 lost. → *Break it:* demonstrate a system where philosophical intent is durably embedded
 within execution code without requiring a separate declarative Why. *Evidence:*
-`DYAD.md` § NON-NEGOTIABLE (The Orthogonality Invariant).
+[`DYAD.md`](DYAD.md) § NON-NEGOTIABLE (The Orthogonality Invariant).
 
 **Claim 5 — The deepest failure.** The Builder vs Enforcer invariant. A Cairn is a
 load-bearing structure, not a sandbox warden; conflating the two destroys the strict
@@ -79,7 +79,7 @@ abstraction. If a generative model could police its own boundaries without physi
 deterministic wrappers (`./bin`), the architectural division of labor collapses — and
 the loudest AI fear, an agent that hallucinates logic and smooths over reality, is this
 belief's own deepest falsifier. → *Break it:* demonstrate an LLM that maintains strict
-extraction boundaries purely via self-policing. *Evidence:* `DYAD.md` § NON-NEGOTIABLE
+extraction boundaries purely via self-policing. *Evidence:* [`DYAD.md`](DYAD.md) § NON-NEGOTIABLE
 (The Builder vs Enforcer Invariant).
 
 **Claim 6 — The standing invitation.** Every claim above is argued and lived inside one
@@ -122,6 +122,6 @@ into real systems as pure mortar, so if the belief holds, the structural weaknes
 compounds with every unexamined run — which is why we want the attack now, not later.
 
 *This page is the formal register of a lens — still not the rules themselves. Those
-live in `DYAD.md` (§ Craft (Dimension 1 & 6), § Channel Discipline, § NON-NEGOTIABLE,
+live in [`DYAD.md`](DYAD.md) (§ Craft (Dimension 1 & 6), § Channel Discipline, § NON-NEGOTIABLE,
 § Ontology & Vocabulary). If you're going to quote us, quote that. The plain-language
-sibling of this page is `README.md`.*
+sibling of this page is [`README.md`](README.md).*

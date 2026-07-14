@@ -90,4 +90,4 @@ We mean this. Below are the exact claims we're standing on. Pick one by its numb
 
 ---
 
-*This page is a plain-English lens on the real rules — not the rules themselves. Those live in `DYAD.md` (§ Craft (Dimension 1 & 6), § Channel Discipline, § NON-NEGOTIABLE, § Ontology & Vocabulary). If you're going to quote us, quote that, not this page. This page's formal sibling — same claims, full extensions, for the attacker — is `FALSIFICATION.md`.*
+*This page is a plain-English lens on the real rules — not the rules themselves. Those live in [`DYAD.md`](DYAD.md) (§ Craft (Dimension 1 & 6), § Channel Discipline, § NON-NEGOTIABLE, § Ontology & Vocabulary). If you're going to quote us, quote that, not this page. This page's formal sibling — same claims, full extensions, for the attacker — is [`FALSIFICATION.md`](FALSIFICATION.md).*

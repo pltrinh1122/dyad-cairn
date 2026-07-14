@@ -130,6 +130,28 @@ def test_missing_frontmatter_block_fails(tmp_path):
     assert any("frontmatter" in e for e in errors)
 
 
+# --- Reference links (HOW-0006 C25) ---
+
+
+def test_bare_reference_to_existing_doc_fails(tmp_path):
+    """C25: naming an existing in-repo document without a link is a violation."""
+    body = VALID_BODY + "\nThe real rules live in `ANCHOR.md`.\n"
+    errors = lint(write_fixture(tmp_path, body=body))
+    assert any("ANCHOR.md" in e and "hyperlink" in e for e in errors)
+
+
+def test_linked_reference_passes(tmp_path):
+    body = VALID_BODY + "\nThe real rules live in [`ANCHOR.md`](ANCHOR.md).\n"
+    assert lint(write_fixture(tmp_path, body=body)) == []
+
+
+def test_mention_of_nonexistent_doc_not_flagged_as_link(tmp_path):
+    """A nonexistent file is a grounding problem (C14), not a linking one."""
+    body = VALID_BODY + "\nSee GHOST.md for nothing.\n"
+    errors = lint(write_fixture(tmp_path, body=body))
+    assert not any("hyperlink" in e for e in errors)
+
+
 # --- Concision modes (HOW-0006 C22/C24, adopted from dyad-bond, falsified 2026-07-13) ---
 
 KNIFE_A = "**Claim 1.** Thing. → *Break it:* show one counterexample.\n"
