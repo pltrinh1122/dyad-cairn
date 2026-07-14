@@ -57,6 +57,16 @@ def test_exemplar_readme_passes():
     assert lint(REPO_ROOT / "README.md") == []
 
 
+def test_formal_surface_passes():
+    """FALSIFICATION.md (the formal sibling, HOW-0006 C24) must conform too."""
+    assert lint(REPO_ROOT / "FALSIFICATION.md") == []
+
+
+def test_sibling_registers_claim_parity():
+    """C24: the plain lens and the formal surface carry the same claim set."""
+    assert claim_parity(REPO_ROOT / "README.md", REPO_ROOT / "FALSIFICATION.md") == []
+
+
 def test_valid_fixture_passes(tmp_path):
     assert lint(write_fixture(tmp_path)) == []
 

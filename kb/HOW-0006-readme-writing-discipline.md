@@ -33,9 +33,11 @@
 >   (audit `wf_8918028a-253`, PR #154).
 > - **Content-conciseness (C20): n=0** — added by Operator directive (session d-start,
 >   2026-07-13); no arc has exercised it yet.
-> - **Concision conditions (C21–C24): n=1, cross-dyad** — lived by bond's 2026-07-13
->   arc (bond PR #96), contributed by DM, adopted after cairn's falsification run.
->   Not yet exercised by cairn itself.
+> - **Concision conditions (C21–C24): n=1 cross-dyad (bond)** — lived by bond's
+>   2026-07-13 arc (bond PR #96), contributed by DM, adopted after cairn's
+>   falsification run. **C22/C23/C24 subsequently n=2** — exercised by cairn's own
+>   two-register materialization arc, 2026-07-14 (knife-freeze empty-diff, post-pass
+>   grounding audit, sibling split with parity 6=6); C21 still n=1.
 > - **This document's own conditions: hardened n=1** by an adversarial run of the
 >   discipline against itself (`wf_aa885aeb-4ec`).
 
@@ -46,7 +48,8 @@ states one belief with conviction, decomposes it into numbered attackable claims
 every claim with an explicit falsifier, and carries machine-readable honesty fields
 (`status`/`grade`/`coverage`/`dogma`) that never overstate the evidence.
 
-**Exemplar:** `dyad-cairn/README.md` (this repo — the reference output). The exemplar is
+**Exemplar:** `dyad-cairn/README.md` (this repo — the reference output), with its
+formal sibling `FALSIFICATION.md` as the C24 register-split exemplar. The exemplar is
 the model for the three *content* conditions (C5–C7): a consumer reads its structure,
 audience-handling, tone, and stance off the exemplar rather than off a re-specification here.
 **Form ancestor:** `dyad-bond/README.md` ("The Covalent Bond", `github.com/pltrinh1122/dyad-bond`,
@@ -202,7 +205,8 @@ bond to two). *Verifier:* AUDIT. *Origin (n=1):* the refinement arc shipped four
 drifts through six careful register passes; only the audit caught them (`wf_8918028a-253`).
 
 **C13 — Proof of origin resolves, at whichever layer.** In the formal register, each
-claim carries a resolvable footnote pointer (`[^cN]: … Evidence: FILE § Heading` — see
+claim carries a resolvable evidence pointer (`Evidence: FILE § Heading` — the live
+formal surface is `FALSIFICATION.md`; its footnoted ancestor survives at
 `./bin/git show c252640:README.md`). A plain-register projection may drop the footnotes;
 then proof of origin holds at the document level **iff `canonical_home` enumerates the
 home of *every* claim** (not just the belief's) — which is exactly why the exemplar's
@@ -279,11 +283,15 @@ both passing the mechanical gate, the compressions governed by C22/C23. *Violati
 armament deleted to meet a length target (disarming disguised as concision); OR sibling
 documents whose claim sets disagree in number or extension. *Verifier:* LINT
 (`--claim-parity LENS FORMAL`; both documents individually gated) + OPERATOR (the split
-decision itself) + AUDIT (extension agreement). *Origin (n=1, cross-dyad):* bond's
+decision itself) + AUDIT (extension agreement). *Origin (n=2):* bond's
 `README.md`/`FALSIFICATION.md` split — verified landed (bond PR #96 merged, claim
-parity 9 = 9, mutual pointers present). The sibling form is the newest component here;
-bond offered it for falsification, not as settled, and cairn's verification covers its
-mechanics, not its longevity.
+parity 9 = 9, mutual pointers present) — **and cairn's own split (2026-07-14)**, whose
+falsification run refuted the cut-the-README half of the form for a lens already lean
+(93 lines held no excess mass) and kept the other half: materializing the formal
+surface that had lived only in git history, so the attacker gets a live document and
+the C12 extension baseline stops aging in a pinned commit
+(`dyad-state/retros/falsification_20260714_two_register_cairn.md`). The sibling form
+remains open on longevity; neither dyad has lived a third register.
 
 ### Close and adoption
 
@@ -315,11 +323,12 @@ against three anchor classes, and each finding is adversarially verified before 
 applied:
 
 1. **The canonical home** — the `DYAD.md` sections named in `canonical_home`.
-2. **The formal baseline** — the last committed formal version
-   (`./bin/git show HEAD:README.md`). **First-authorship branch (no committed baseline
-   yet):** the Operator-approved spine (C11) serves as the falsifier-extension baseline,
-   since it fixed one falsifier per claim before any register pass. *(This branch: n=0 —
-   no dyad has run it.)*
+2. **The formal baseline** — where a formal sibling exists (C24), the formal document
+   is the extension baseline (`./bin/git show HEAD:FALSIFICATION.md`); otherwise the
+   last committed version (`./bin/git show HEAD:README.md`). **First-authorship branch
+   (no committed baseline yet):** the Operator-approved spine (C11) serves as the
+   falsifier-extension baseline, since it fixed one falsifier per claim before any
+   register pass. *(This branch: n=0 — no dyad has run it.)*
 3. **The physical substrate** — the artifacts each claim presupposes (C14).
 
 The audit is adversarial by construction: a finding survives only if an independent pass
