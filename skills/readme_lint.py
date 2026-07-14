@@ -19,6 +19,15 @@ and emphasis judgments live in the playbook, never here):
   7. The body contains numbered claims ("**Claim N"), and every claim block
      carries a falsifier marker ("Break it:").
 
+Concision modes (HOW-0006 C22/C24, adopted from dyad-bond's contribution DM,
+falsified 2026-07-13):
+
+  --knife-diff BASELINE CURRENT   The knife-freeze (C22): the multiset of
+      falsifier lines must be byte-identical across a concision/register
+      pass. Relocation is permitted; rewording is not.
+  --claim-parity LENS FORMAL      Sibling-register gate (C24): both documents
+      must carry the same claim-number set.
+
 Usage: python3 skills/readme_lint.py [path/to/README.md]
 Exit 0 = pass; exit 1 = itemized failures on stdout.
 """
@@ -36,6 +45,7 @@ REQUIRED_FIELDS = [
 REQUIRED_BELIEF_FIELDS = ["statement", "foundation", "stance", "status"]
 ALLOWED_STATUS = {"hypothesis", "theory"}
 FALSIFIER_MARKER = "Break it:"
+KNIFE_MARKERS = (FALSIFIER_MARKER, "**Falsifier**")
 CLAIM_RE = re.compile(r"\*\*Claim (\d+)")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
@@ -126,6 +136,51 @@ def lint_claims(body):
     return errors
 
 
+def extract_knives(text):
+    """Every line carrying a falsifier marker, verbatim (the knife snapshot)."""
+    return [line for line in text.splitlines()
+            if any(marker in line for marker in KNIFE_MARKERS)]
+
+
+def knife_diff(baseline_path, current_path):
+    """C22 — the knife-freeze: falsifier lines survive a pass byte-identical.
+
+    The multiset of knife lines must match; relocation (reordering) passes,
+    any rewording, loss, or unpinned addition fails.
+    """
+    errors = []
+    texts = []
+    for p in (baseline_path, current_path):
+        path = Path(p)
+        if not path.is_file():
+            return [f"file not found: {p}"]
+        texts.append(path.read_text(encoding="utf-8"))
+    before, after = (sorted(extract_knives(t)) for t in texts)
+    for line in [l for l in before if l not in after]:
+        errors.append(f"knife lost or reworded: {line.strip()!r}")
+    for line in [l for l in after if l not in before]:
+        errors.append(f"knife added or reworded: {line.strip()!r}")
+    return errors
+
+
+def claim_parity(lens_path, formal_path):
+    """C24 — sibling registers carry the same claim-number set."""
+    numbers = []
+    for p in (lens_path, formal_path):
+        path = Path(p)
+        if not path.is_file():
+            return [f"file not found: {p}"]
+        numbers.append({int(m.group(1)) for m in
+                        CLAIM_RE.finditer(path.read_text(encoding="utf-8"))})
+    lens, formal = numbers
+    errors = []
+    if lens - formal:
+        errors.append(f"claims only in {lens_path}: {sorted(lens - formal)}")
+    if formal - lens:
+        errors.append(f"claims only in {formal_path}: {sorted(formal - lens)}")
+    return errors
+
+
 def lint(path):
     readme = Path(path)
     if not readme.is_file():
@@ -140,6 +195,21 @@ def lint(path):
 
 
 def main(argv):
+    if len(argv) > 1 and argv[1] in ("--knife-diff", "--claim-parity"):
+        if len(argv) != 4:
+            print(f"Usage: python3 skills/readme_lint.py {argv[1]} FILE_A FILE_B")
+            return 1
+        mode, check = (("knife-freeze", knife_diff) if argv[1] == "--knife-diff"
+                       else ("claim-parity", claim_parity))
+        errors = check(argv[2], argv[3])
+        if errors:
+            print(f"[README-LINT] FAIL: {mode} ({argv[2]} vs {argv[3]}) — {len(errors)} violation(s):")
+            for e in errors:
+                print(f"  - {e}")
+            return 1
+        print(f"[README-LINT] PASS: {mode} holds ({argv[2]} vs {argv[3]}).")
+        return 0
+
     path = argv[1] if len(argv) > 1 else "README.md"
     errors = lint(path)
     if errors:

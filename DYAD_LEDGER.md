@@ -802,3 +802,4 @@
     `WHY-0001` now exists.
   
   </details>
+- **2026-07-13 19:51:57** | `COMMONS_SYNC` | Registry-only drift, no playbook/library or script changes: two new dyads registered — dyad-milo (mental-stamina; self-restarting daily practices; public anchor) and dyad-alfred (whole-life operational caretaker, vanish/counsel two-mode structure; PRIVATE anchor with public dm_locator mailbox — first dm_locator use ingested); dyad-milo summit lexicon fix (emotional-capacity → emotional-capability); two automated DIRECTORY.md regenerations. falsify.py and Commons playbooks untouched; no stone.yaml codification (sovereignty trigger stays quiet).

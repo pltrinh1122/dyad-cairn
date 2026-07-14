@@ -117,7 +117,7 @@ def checkout_node(node_id):
     print(f"[FLOW] Checking out branch and creating git worktree: {branch_name}")
     # Create the branch if it does not exist
     run_cmd(f"bin/git branch {branch_name} || true", allow_fail=True)
-    worktree_path = f".worktrees/{branch_name.replace("/", "_")}"
+    worktree_path = f".worktrees/{branch_name.replace('/', '_')}"
     if not os.path.exists(worktree_path):
         run_cmd(f"bin/git worktree add {worktree_path} {branch_name}")
     else:

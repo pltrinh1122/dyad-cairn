@@ -34,6 +34,34 @@ Two failure modes were actually lived, and each cost real turns:
    audit against the canonical anchors caught it. Hence the discipline's rule: the
    grounding audit is a **gate**, not a courtesy pass.
 
+## Why conciseness is a condition (added 2026-07-13)
+
+Unlike the two failure modes above, conciseness did not enter through a lived failure;
+it entered by Operator directive (session d-start, 2026-07-13) and is graded n=0 in
+HOW-0006 (C20) accordingly. Its grounding is the charter, not an arc: Condensation is
+this dyad's Generate mechanism (`DYAD.md § 3. Form-Grounding`), and the Stone — the
+form the README projects — is by definition "highly compressed" (`DYAD.md § 6 & 7.
+Ontology & Vocabulary`). A projection that bloats what its source compresses is
+unfaithful in the same family as one that drifts a falsifier: the stranger and the
+skeptic the README exists for pay attention for every sentence, and prose that does no
+work dilutes the claims that do.
+
+The same week, independently, the failure *was* lived — by `dyad-bond`, the first dyad
+to run this discipline end-to-end. Bond's conforming draft grew to 4× the exemplar's
+mass while passing every gate; its diagnosis names the gap exactly: *"C6 catches
+inaccessible register; nothing catches inaccessible mass — a novice who abandons page
+three was not served by plain sentences."* Bond contributed the repair it lived as
+candidate conditions by DM; cairn falsified the DM against bond's physical substrate
+(sizes, yields, and knife byte-stability re-derived from bond's commits; two details
+refuted — see `dyad-state/retros/falsification_20260713_bond_concision_dm.md`) and
+adopted the survivors as HOW-0006 C21–C24. Two independent origins converging on one
+gap in one week is triangulation, not coincidence to smooth over: the charter-derived
+demand (C20) and the lived mechanics of cutting safely (C21–C24) now ground each other.
+Bond's arc also supplies the sharpest reason conciseness needs *discipline* rather than
+appetite: a concision pass is a register pass, and register passes are where falsifier
+drift ships (this document's §2) — so the same arc that demands cutting also demands
+the knife-freeze and the post-cut audit.
+
 ## Why a discipline and not a checklist
 
 The failure modes split cleanly along the Builder-vs-Enforcer line:
